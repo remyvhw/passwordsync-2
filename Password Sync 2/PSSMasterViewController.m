@@ -36,16 +36,8 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 
-    // On the iPad, we'll show the + button on the top bar. On the iPhone, at the bottom.
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self.navigationController setToolbarHidden:NO];
-                
-        [self setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], addButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]]];
-        
-    } else {
-        
-        self.navigationItem.rightBarButtonItem = addButton;
-    }
+    self.navigationItem.rightBarButtonItem = addButton;
+    
     
     
 }

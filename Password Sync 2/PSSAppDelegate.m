@@ -31,7 +31,10 @@
         PSSMasterViewController *controller = (PSSMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
-         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+        
+        UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+        
+        UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
         PSSMasterViewController *controller = (PSSMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }

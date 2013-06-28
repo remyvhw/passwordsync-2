@@ -51,6 +51,15 @@
 		AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */; };
 		AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */; };
 		AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */; };
+		AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821057177D37ED00B6F501 /* RNCryptor.m */; };
+		AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821057177D37ED00B6F501 /* RNCryptor.m */; };
+		AD821066177D37ED00B6F501 /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821059177D37ED00B6F501 /* RNCryptorEngine.m */; };
+		AD821067177D37ED00B6F501 /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821059177D37ED00B6F501 /* RNCryptorEngine.m */; };
+		AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105B177D37ED00B6F501 /* RNDecryptor.m */; };
+		AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105B177D37ED00B6F501 /* RNDecryptor.m */; };
+		AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
+		AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
+		AD821073177D37FA00B6F501 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD821072177D37FA00B6F501 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +123,17 @@
 		AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardVersion.m; sourceTree = "<group>"; };
 		AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseGenericObject.h; sourceTree = "<group>"; };
 		AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseGenericObject.m; sourceTree = "<group>"; };
+		AD821054177D37ED00B6F501 /* RNCryptor+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNCryptor+Private.h"; sourceTree = "<group>"; };
+		AD821055177D37ED00B6F501 /* RNCryptor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-Prefix.pch"; sourceTree = "<group>"; };
+		AD821056177D37ED00B6F501 /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
+		AD821057177D37ED00B6F501 /* RNCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptor.m; sourceTree = "<group>"; };
+		AD821058177D37ED00B6F501 /* RNCryptorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptorEngine.h; sourceTree = "<group>"; };
+		AD821059177D37ED00B6F501 /* RNCryptorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptorEngine.m; sourceTree = "<group>"; };
+		AD82105A177D37ED00B6F501 /* RNDecryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDecryptor.h; sourceTree = "<group>"; };
+		AD82105B177D37ED00B6F501 /* RNDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDecryptor.m; sourceTree = "<group>"; };
+		AD82105C177D37ED00B6F501 /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
+		AD82105D177D37ED00B6F501 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
+		AD821072177D37FA00B6F501 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD821073177D37FA00B6F501 /* Security.framework in Frameworks */,
 				AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */,
 				AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */,
 				AD72C3C3177B7E27009AADC8 /* CoreData.framework in Frameworks */,
@@ -166,6 +187,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD821072177D37FA00B6F501 /* Security.framework */,
 				AD82101E177CFB2900B6F501 /* StoreKit.framework */,
 				AD72C3FE177B8BF3009AADC8 /* StoreKit.framework */,
 				AD72C3BC177B7E27009AADC8 /* Foundation.framework */,
@@ -199,6 +221,7 @@
 		AD72C3C5177B7E27009AADC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD821053177D37ED00B6F501 /* RNCryptor */,
 				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
 				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
 				AD72C3CA177B7E27009AADC8 /* main.m */,
@@ -223,6 +246,23 @@
 				AD72C3F0177B7E28009AADC8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD821053177D37ED00B6F501 /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				AD821054177D37ED00B6F501 /* RNCryptor+Private.h */,
+				AD821055177D37ED00B6F501 /* RNCryptor-Prefix.pch */,
+				AD821056177D37ED00B6F501 /* RNCryptor.h */,
+				AD821057177D37ED00B6F501 /* RNCryptor.m */,
+				AD821058177D37ED00B6F501 /* RNCryptorEngine.h */,
+				AD821059177D37ED00B6F501 /* RNCryptorEngine.m */,
+				AD82105A177D37ED00B6F501 /* RNDecryptor.h */,
+				AD82105B177D37ED00B6F501 /* RNDecryptor.m */,
+				AD82105C177D37ED00B6F501 /* RNEncryptor.h */,
+				AD82105D177D37ED00B6F501 /* RNEncryptor.m */,
+			);
+			path = RNCryptor;
 			sourceTree = "<group>";
 		};
 		ADDC8BB2177CEA9E00021D92 /* Core Data Stack */ = {
@@ -373,11 +413,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSDetailViewController.m in Sources */,
+				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSMasterViewController.m in Sources */,
 				AD821036177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
@@ -386,6 +429,7 @@
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD72C3CF177B7E27009AADC8 /* PSSAppDelegate.m in Sources */,
 				AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD821066177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
 				AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
@@ -400,6 +444,10 @@
 				AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
 				AD821037177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
+				AD821067177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
+				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
+				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
+				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
 				AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
