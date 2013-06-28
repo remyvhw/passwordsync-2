@@ -11,7 +11,6 @@
 
 @implementation PSSPasswordVersion
 
-@dynamic hostname;
 @dynamic notes;
 @dynamic password;
 @dynamic username;

@@ -13,7 +13,6 @@
 
 @interface PSSPasswordVersion : PSSBaseObjectVersion
 
-@property (nonatomic, retain) NSString * hostname;
 @property (nonatomic, retain) NSData * notes;
 @property (nonatomic, retain) NSData * password;
 @property (nonatomic, retain) NSData * username;

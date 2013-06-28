@@ -13,5 +13,6 @@
 
 @dynamic autofill;
 @dynamic favicon;
+@dynamic hostname;
 
 @end

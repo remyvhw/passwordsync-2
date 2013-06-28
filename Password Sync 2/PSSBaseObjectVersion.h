@@ -14,7 +14,6 @@
 @interface PSSBaseObjectVersion : NSManagedObject
 
 @property (nonatomic, retain) NSData * additionalJSONfields;
-@property (nonatomic, retain) NSString * displayName;
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;

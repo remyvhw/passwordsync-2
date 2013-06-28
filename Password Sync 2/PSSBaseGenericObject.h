@@ -14,6 +14,7 @@
 @interface PSSBaseGenericObject : NSManagedObject
 
 @property (nonatomic, retain) NSDate * created;
+@property (nonatomic, retain) NSString * displayName;
 @property (nonatomic, retain) PSSObjectCategory *category;
 @property (nonatomic, retain) PSSBaseGenericObject *children;
 @property (nonatomic, retain) NSSet *decorativeImage;

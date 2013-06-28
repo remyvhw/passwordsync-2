@@ -15,5 +15,6 @@
 
 @property (nonatomic, retain) NSNumber * autofill;
 @property (nonatomic, retain) NSData * favicon;
+@property (nonatomic, retain) NSString * hostname;
 
 @end

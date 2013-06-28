@@ -26,31 +26,31 @@
 		AD72C3EA177B7E28009AADC8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3C2177B7E27009AADC8 /* CoreData.framework */; };
 		AD72C3F2177B7E28009AADC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD72C3F0177B7E28009AADC8 /* InfoPlist.strings */; };
 		AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */; };
-		AD72C3FF177B8BF3009AADC8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3FE177B8BF3009AADC8 /* StoreKit.framework */; };
-		ADDC8B84177CEA8300021D92 /* PSSObjectAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B83177CEA8300021D92 /* PSSObjectAttachment.m */; };
-		ADDC8B85177CEA8300021D92 /* PSSObjectAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B83177CEA8300021D92 /* PSSObjectAttachment.m */; };
-		ADDC8B88177CEA8400021D92 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B87177CEA8400021D92 /* PSSBaseObjectVersion.m */; };
-		ADDC8B89177CEA8400021D92 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B87177CEA8400021D92 /* PSSBaseObjectVersion.m */; };
-		ADDC8B8C177CEA8400021D92 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B8B177CEA8400021D92 /* PSSObjectCategory.m */; };
-		ADDC8B8D177CEA8400021D92 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B8B177CEA8400021D92 /* PSSObjectCategory.m */; };
-		ADDC8B90177CEA8400021D92 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B8F177CEA8400021D92 /* PSSCreditCardVersion.m */; };
-		ADDC8B91177CEA8400021D92 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B8F177CEA8400021D92 /* PSSCreditCardVersion.m */; };
-		ADDC8B94177CEA8400021D92 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B93177CEA8400021D92 /* PSSNoteVersion.m */; };
-		ADDC8B95177CEA8400021D92 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B93177CEA8400021D92 /* PSSNoteVersion.m */; };
-		ADDC8B98177CEA8400021D92 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B97177CEA8400021D92 /* PSSObjectTag.m */; };
-		ADDC8B99177CEA8400021D92 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B97177CEA8400021D92 /* PSSObjectTag.m */; };
-		ADDC8B9C177CEA8400021D92 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B9B177CEA8400021D92 /* PSSPasswordVersion.m */; };
-		ADDC8B9D177CEA8400021D92 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B9B177CEA8400021D92 /* PSSPasswordVersion.m */; };
-		ADDC8BA0177CEA8400021D92 /* PSSObjectDecorativeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B9F177CEA8400021D92 /* PSSObjectDecorativeImage.m */; };
-		ADDC8BA1177CEA8400021D92 /* PSSObjectDecorativeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8B9F177CEA8400021D92 /* PSSObjectDecorativeImage.m */; };
-		ADDC8BA4177CEA8400021D92 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BA3177CEA8400021D92 /* PSSCreditCardBaseObject.m */; };
-		ADDC8BA5177CEA8400021D92 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BA3177CEA8400021D92 /* PSSCreditCardBaseObject.m */; };
-		ADDC8BA8177CEA8400021D92 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BA7177CEA8400021D92 /* PSSPasswordBaseObject.m */; };
-		ADDC8BA9177CEA8400021D92 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BA7177CEA8400021D92 /* PSSPasswordBaseObject.m */; };
-		ADDC8BAC177CEA8400021D92 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BAB177CEA8400021D92 /* PSSBaseGenericObject.m */; };
-		ADDC8BAD177CEA8400021D92 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BAB177CEA8400021D92 /* PSSBaseGenericObject.m */; };
-		ADDC8BB0177CEA8400021D92 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BAF177CEA8400021D92 /* PSSNoteBaseObject.m */; };
-		ADDC8BB1177CEA8400021D92 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDC8BAF177CEA8400021D92 /* PSSNoteBaseObject.m */; };
+		AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD82101E177CFB2900B6F501 /* StoreKit.framework */; };
+		AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
+		AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
+		AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */; };
+		AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */; };
+		AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */; };
+		AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */; };
+		AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */; };
+		AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */; };
+		AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */; };
+		AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */; };
+		AD821036177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821035177CFBD400B6F501 /* PSSObjectAttachment.m */; };
+		AD821037177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821035177CFBD400B6F501 /* PSSObjectAttachment.m */; };
+		AD82103A177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821039177CFBD400B6F501 /* PSSObjectDecorativeImage.m */; };
+		AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821039177CFBD400B6F501 /* PSSObjectDecorativeImage.m */; };
+		AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82103D177CFBD400B6F501 /* PSSNoteVersion.m */; };
+		AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82103D177CFBD400B6F501 /* PSSNoteVersion.m */; };
+		AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */; };
+		AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */; };
+		AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821045177CFBD400B6F501 /* PSSObjectTag.m */; };
+		AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821045177CFBD400B6F501 /* PSSObjectTag.m */; };
+		AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */; };
+		AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */; };
+		AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */; };
+		AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,32 +88,33 @@
 		AD72C3EF177B7E28009AADC8 /* Password Sync 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Sync 2Tests-Info.plist"; sourceTree = "<group>"; };
 		AD72C3F1177B7E28009AADC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_Sync_2Tests.m; sourceTree = "<group>"; };
-		AD72C3FD177B8BD7009AADC8 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
 		AD72C3FE177B8BF3009AADC8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		ADDC8B82177CEA8300021D92 /* PSSObjectAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectAttachment.h; sourceTree = "<group>"; };
-		ADDC8B83177CEA8300021D92 /* PSSObjectAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectAttachment.m; sourceTree = "<group>"; };
-		ADDC8B86177CEA8400021D92 /* PSSBaseObjectVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseObjectVersion.h; sourceTree = "<group>"; };
-		ADDC8B87177CEA8400021D92 /* PSSBaseObjectVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseObjectVersion.m; sourceTree = "<group>"; };
-		ADDC8B8A177CEA8400021D92 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
-		ADDC8B8B177CEA8400021D92 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
-		ADDC8B8E177CEA8400021D92 /* PSSCreditCardVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardVersion.h; sourceTree = "<group>"; };
-		ADDC8B8F177CEA8400021D92 /* PSSCreditCardVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardVersion.m; sourceTree = "<group>"; };
-		ADDC8B92177CEA8400021D92 /* PSSNoteVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteVersion.h; sourceTree = "<group>"; };
-		ADDC8B93177CEA8400021D92 /* PSSNoteVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteVersion.m; sourceTree = "<group>"; };
-		ADDC8B96177CEA8400021D92 /* PSSObjectTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectTag.h; sourceTree = "<group>"; };
-		ADDC8B97177CEA8400021D92 /* PSSObjectTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectTag.m; sourceTree = "<group>"; };
-		ADDC8B9A177CEA8400021D92 /* PSSPasswordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordVersion.h; sourceTree = "<group>"; };
-		ADDC8B9B177CEA8400021D92 /* PSSPasswordVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordVersion.m; sourceTree = "<group>"; };
-		ADDC8B9E177CEA8400021D92 /* PSSObjectDecorativeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectDecorativeImage.h; sourceTree = "<group>"; };
-		ADDC8B9F177CEA8400021D92 /* PSSObjectDecorativeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectDecorativeImage.m; sourceTree = "<group>"; };
-		ADDC8BA2177CEA8400021D92 /* PSSCreditCardBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardBaseObject.h; sourceTree = "<group>"; };
-		ADDC8BA3177CEA8400021D92 /* PSSCreditCardBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardBaseObject.m; sourceTree = "<group>"; };
-		ADDC8BA6177CEA8400021D92 /* PSSPasswordBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordBaseObject.h; sourceTree = "<group>"; };
-		ADDC8BA7177CEA8400021D92 /* PSSPasswordBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordBaseObject.m; sourceTree = "<group>"; };
-		ADDC8BAA177CEA8400021D92 /* PSSBaseGenericObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseGenericObject.h; sourceTree = "<group>"; };
-		ADDC8BAB177CEA8400021D92 /* PSSBaseGenericObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseGenericObject.m; sourceTree = "<group>"; };
-		ADDC8BAE177CEA8400021D92 /* PSSNoteBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteBaseObject.h; sourceTree = "<group>"; };
-		ADDC8BAF177CEA8400021D92 /* PSSNoteBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteBaseObject.m; sourceTree = "<group>"; };
+		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AD821020177CFBD300B6F501 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
+		AD821021177CFBD300B6F501 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
+		AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordBaseObject.h; sourceTree = "<group>"; };
+		AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordBaseObject.m; sourceTree = "<group>"; };
+		AD821028177CFBD400B6F501 /* PSSCreditCardBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardBaseObject.h; sourceTree = "<group>"; };
+		AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardBaseObject.m; sourceTree = "<group>"; };
+		AD82102C177CFBD400B6F501 /* PSSNoteBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteBaseObject.h; sourceTree = "<group>"; };
+		AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteBaseObject.m; sourceTree = "<group>"; };
+		AD821030177CFBD400B6F501 /* PSSBaseObjectVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseObjectVersion.h; sourceTree = "<group>"; };
+		AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseObjectVersion.m; sourceTree = "<group>"; };
+		AD821034177CFBD400B6F501 /* PSSObjectAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectAttachment.h; sourceTree = "<group>"; };
+		AD821035177CFBD400B6F501 /* PSSObjectAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectAttachment.m; sourceTree = "<group>"; };
+		AD821038177CFBD400B6F501 /* PSSObjectDecorativeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectDecorativeImage.h; sourceTree = "<group>"; };
+		AD821039177CFBD400B6F501 /* PSSObjectDecorativeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectDecorativeImage.m; sourceTree = "<group>"; };
+		AD82103C177CFBD400B6F501 /* PSSNoteVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteVersion.h; sourceTree = "<group>"; };
+		AD82103D177CFBD400B6F501 /* PSSNoteVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteVersion.m; sourceTree = "<group>"; };
+		AD821040177CFBD400B6F501 /* PSSPasswordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordVersion.h; sourceTree = "<group>"; };
+		AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordVersion.m; sourceTree = "<group>"; };
+		AD821044177CFBD400B6F501 /* PSSObjectTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectTag.h; sourceTree = "<group>"; };
+		AD821045177CFBD400B6F501 /* PSSObjectTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectTag.m; sourceTree = "<group>"; };
+		AD821048177CFBD400B6F501 /* PSSCreditCardVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardVersion.h; sourceTree = "<group>"; };
+		AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardVersion.m; sourceTree = "<group>"; };
+		AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseGenericObject.h; sourceTree = "<group>"; };
+		AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseGenericObject.m; sourceTree = "<group>"; };
+		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD72C3FF177B8BF3009AADC8 /* StoreKit.framework in Frameworks */,
+				AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */,
 				AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */,
 				AD72C3C3177B7E27009AADC8 /* CoreData.framework in Frameworks */,
 				AD72C3C1177B7E27009AADC8 /* UIKit.framework in Frameworks */,
@@ -165,6 +166,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD82101E177CFB2900B6F501 /* StoreKit.framework */,
 				AD72C3FE177B8BF3009AADC8 /* StoreKit.framework */,
 				AD72C3BC177B7E27009AADC8 /* Foundation.framework */,
 				AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */,
@@ -178,7 +180,7 @@
 		AD72C3C4177B7E27009AADC8 /* Password Sync 2 */ = {
 			isa = PBXGroup;
 			children = (
-				AD72C3FD177B8BD7009AADC8 /* Password Sync 2.entitlements */,
+				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
 				AD72C3D0177B7E27009AADC8 /* Main_iPhone.storyboard */,
@@ -227,30 +229,30 @@
 			isa = PBXGroup;
 			children = (
 				AD72C3D6177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld */,
-				ADDC8BAE177CEA8400021D92 /* PSSNoteBaseObject.h */,
-				ADDC8BAF177CEA8400021D92 /* PSSNoteBaseObject.m */,
-				ADDC8BAA177CEA8400021D92 /* PSSBaseGenericObject.h */,
-				ADDC8BAB177CEA8400021D92 /* PSSBaseGenericObject.m */,
-				ADDC8BA6177CEA8400021D92 /* PSSPasswordBaseObject.h */,
-				ADDC8BA7177CEA8400021D92 /* PSSPasswordBaseObject.m */,
-				ADDC8BA2177CEA8400021D92 /* PSSCreditCardBaseObject.h */,
-				ADDC8BA3177CEA8400021D92 /* PSSCreditCardBaseObject.m */,
-				ADDC8B9E177CEA8400021D92 /* PSSObjectDecorativeImage.h */,
-				ADDC8B9F177CEA8400021D92 /* PSSObjectDecorativeImage.m */,
-				ADDC8B9A177CEA8400021D92 /* PSSPasswordVersion.h */,
-				ADDC8B9B177CEA8400021D92 /* PSSPasswordVersion.m */,
-				ADDC8B96177CEA8400021D92 /* PSSObjectTag.h */,
-				ADDC8B97177CEA8400021D92 /* PSSObjectTag.m */,
-				ADDC8B92177CEA8400021D92 /* PSSNoteVersion.h */,
-				ADDC8B93177CEA8400021D92 /* PSSNoteVersion.m */,
-				ADDC8B8E177CEA8400021D92 /* PSSCreditCardVersion.h */,
-				ADDC8B8F177CEA8400021D92 /* PSSCreditCardVersion.m */,
-				ADDC8B8A177CEA8400021D92 /* PSSObjectCategory.h */,
-				ADDC8B8B177CEA8400021D92 /* PSSObjectCategory.m */,
-				ADDC8B86177CEA8400021D92 /* PSSBaseObjectVersion.h */,
-				ADDC8B87177CEA8400021D92 /* PSSBaseObjectVersion.m */,
-				ADDC8B82177CEA8300021D92 /* PSSObjectAttachment.h */,
-				ADDC8B83177CEA8300021D92 /* PSSObjectAttachment.m */,
+				AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */,
+				AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */,
+				AD821048177CFBD400B6F501 /* PSSCreditCardVersion.h */,
+				AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */,
+				AD821044177CFBD400B6F501 /* PSSObjectTag.h */,
+				AD821045177CFBD400B6F501 /* PSSObjectTag.m */,
+				AD821040177CFBD400B6F501 /* PSSPasswordVersion.h */,
+				AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */,
+				AD82103C177CFBD400B6F501 /* PSSNoteVersion.h */,
+				AD82103D177CFBD400B6F501 /* PSSNoteVersion.m */,
+				AD821038177CFBD400B6F501 /* PSSObjectDecorativeImage.h */,
+				AD821039177CFBD400B6F501 /* PSSObjectDecorativeImage.m */,
+				AD821034177CFBD400B6F501 /* PSSObjectAttachment.h */,
+				AD821035177CFBD400B6F501 /* PSSObjectAttachment.m */,
+				AD821030177CFBD400B6F501 /* PSSBaseObjectVersion.h */,
+				AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */,
+				AD82102C177CFBD400B6F501 /* PSSNoteBaseObject.h */,
+				AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */,
+				AD821028177CFBD400B6F501 /* PSSCreditCardBaseObject.h */,
+				AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */,
+				AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */,
+				AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */,
+				AD821020177CFBD300B6F501 /* PSSObjectCategory.h */,
+				AD821021177CFBD300B6F501 /* PSSObjectCategory.m */,
 			);
 			name = "Core Data Stack";
 			sourceTree = "<group>";
@@ -313,7 +315,7 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 1;
@@ -371,23 +373,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC8B90177CEA8400021D92 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
-				ADDC8B9C177CEA8400021D92 /* PSSPasswordVersion.m in Sources */,
-				ADDC8BA4177CEA8400021D92 /* PSSCreditCardBaseObject.m in Sources */,
-				ADDC8B8C177CEA8400021D92 /* PSSObjectCategory.m in Sources */,
+				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
+				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSDetailViewController.m in Sources */,
-				ADDC8BAC177CEA8400021D92 /* PSSBaseGenericObject.m in Sources */,
-				ADDC8BB0177CEA8400021D92 /* PSSNoteBaseObject.m in Sources */,
-				ADDC8BA0177CEA8400021D92 /* PSSObjectDecorativeImage.m in Sources */,
+				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSMasterViewController.m in Sources */,
-				ADDC8B98177CEA8400021D92 /* PSSObjectTag.m in Sources */,
+				AD821036177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
+				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
+				AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
+				AD82103A177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
+				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD72C3CF177B7E27009AADC8 /* PSSAppDelegate.m in Sources */,
-				ADDC8BA8177CEA8400021D92 /* PSSPasswordBaseObject.m in Sources */,
-				ADDC8B84177CEA8300021D92 /* PSSObjectAttachment.m in Sources */,
-				ADDC8B94177CEA8400021D92 /* PSSNoteVersion.m in Sources */,
+				AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
-				ADDC8B88177CEA8400021D92 /* PSSBaseObjectVersion.m in Sources */,
+				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
+				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,19 +397,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC8B89177CEA8400021D92 /* PSSBaseObjectVersion.m in Sources */,
-				ADDC8B8D177CEA8400021D92 /* PSSObjectCategory.m in Sources */,
-				ADDC8BA9177CEA8400021D92 /* PSSPasswordBaseObject.m in Sources */,
-				ADDC8B85177CEA8300021D92 /* PSSObjectAttachment.m in Sources */,
-				ADDC8B95177CEA8400021D92 /* PSSNoteVersion.m in Sources */,
-				ADDC8BA1177CEA8400021D92 /* PSSObjectDecorativeImage.m in Sources */,
-				ADDC8BAD177CEA8400021D92 /* PSSBaseGenericObject.m in Sources */,
-				ADDC8BA5177CEA8400021D92 /* PSSCreditCardBaseObject.m in Sources */,
-				ADDC8B91177CEA8400021D92 /* PSSCreditCardVersion.m in Sources */,
-				ADDC8BB1177CEA8400021D92 /* PSSNoteBaseObject.m in Sources */,
+				AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
+				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
+				AD821037177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
-				ADDC8B9D177CEA8400021D92 /* PSSPasswordVersion.m in Sources */,
-				ADDC8B99177CEA8400021D92 /* PSSObjectTag.m in Sources */,
+				AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
+				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
+				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
+				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
+				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
+				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
+				AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +536,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
 				INFOPLIST_FILE = "Password Sync 2/Password Sync 2-Info.plist";
@@ -548,7 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
 				INFOPLIST_FILE = "Password Sync 2/Password Sync 2-Info.plist";

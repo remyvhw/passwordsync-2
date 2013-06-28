@@ -17,6 +17,7 @@
 @implementation PSSBaseGenericObject
 
 @dynamic created;
+@dynamic displayName;
 @dynamic category;
 @dynamic children;
 @dynamic decorativeImage;

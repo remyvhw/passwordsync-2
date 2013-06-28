@@ -14,7 +14,6 @@
 @implementation PSSBaseObjectVersion
 
 @dynamic additionalJSONfields;
-@dynamic displayName;
 @dynamic timestamp;
 @dynamic attachments;
 @dynamic encryptedObject;

@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3381.3" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="PSSBaseGenericObject" representedClassName="PSSBaseGenericObject" isAbstract="YES" syncable="YES">
         <attribute name="created" attributeType="Date" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectCategory" inverseName="encryptedObjects" inverseEntity="PSSObjectCategory" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="parent" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="decorativeImage" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
@@ -14,7 +15,6 @@
     </entity>
     <entity name="PSSBaseObjectVersion" representedClassName="PSSBaseObjectVersion" isAbstract="YES" syncable="YES">
         <attribute name="additionalJSONfields" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="displayName" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectAttachment" inverseName="encryptedObjectVersions" inverseEntity="PSSObjectAttachment" syncable="YES"/>
         <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="versions" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
@@ -65,9 +65,9 @@
     <entity name="PSSPasswordBaseObject" representedClassName="PSSPasswordBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
         <attribute name="autofill" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="favicon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PSSPasswordVersion" representedClassName="PSSPasswordVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
-        <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="Binary" syncable="YES"/>
