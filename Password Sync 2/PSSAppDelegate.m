@@ -7,8 +7,9 @@
 //
 
 #import "PSSAppDelegate.h"
-
+#import "MKiCloudSync.h"
 #import "PSSMasterViewController.h"
+#import "PDKeychainBindings.h"
 
 @implementation PSSAppDelegate
 
@@ -18,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Start iCloud synchronization of NSUserDefaults
+    [MKiCloudSync start];
+    
+    
     // Override point for customization after application launch.
     
     [self.window setTintColor:[UIColor colorWithRed:0. green:204./255. blue:92./255.0 alpha:1.0]];
@@ -38,9 +43,19 @@
         PSSMasterViewController *controller = (PSSMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
+    
+    
+    
+        
+    
+    
     return YES;
 }
 							
+
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -61,6 +76,37 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Check for a master password on file
+    
+    /* Present next run loop. Prevents "unbalanced VC display" warnings. */
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
+        
+        NSString * hashedMasterPassword = [keychainBindings stringForKey:PSSHashedMasterPasswordKeychainEntry];
+        
+        NSString * hashedPasscode = [keychainBindings stringForKey:PSSHashedPasscodeCodeKeychainEntry];
+        
+        
+        if (!hashedMasterPassword || !hashedPasscode) {
+            // Launch the welcome screen
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:nil];
+            UINavigationController *vc = [sb instantiateInitialViewController];
+            
+            [self.window.rootViewController presentViewController:vc animated:YES completion:^{
+                
+            }];
+            
+            
+            
+        }
+    });
+    
+    
+
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -7,6 +7,10 @@
 //
 
 #import "PSSDetailViewController.h"
+#import "PDKeychainBindings.h"
+#import <Security/Security.h>
+#import "RVshaDigester.h"
+#import "RNEncryptor.h"
 
 @interface PSSDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YkD-t6-hIx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BSV-pt-VyM">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="YkD-t6-hIx" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="997-IJ-1AJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="72R-GY-BAB" kind="relationship" relationship="rootViewController" id="YLs-D0-8UO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wl6-EM-YNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="-237"/>
+        </scene>
+        <!--View Controller - Password Sync 2-->
+        <scene sceneID="RdX-rX-Fuw">
+            <objects>
+                <viewController title="Password Sync 2" id="72R-GY-BAB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pu1-Mf-MOm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-GM-vK5">
+                                <rect key="frame" x="124" y="440" width="79" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Let's begin!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sgt-0X-Ary" kind="push" id="pds-jw-3Em"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="scQ-TC-LiY">
+                                <rect key="frame" x="20" y="20" width="280" height="412"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="scQ-TC-LiY" firstAttribute="leading" secondItem="pu1-Mf-MOm" secondAttribute="leading" constant="20" id="B33-gB-pFa"/>
+                            <constraint firstItem="scQ-TC-LiY" firstAttribute="top" secondItem="pu1-Mf-MOm" secondAttribute="top" constant="20" id="NVa-6A-lmm"/>
+                            <constraint firstAttribute="trailing" secondItem="scQ-TC-LiY" secondAttribute="trailing" constant="20" id="PXn-13-4MU"/>
+                            <constraint firstItem="jfM-GM-vK5" firstAttribute="top" secondItem="scQ-TC-LiY" secondAttribute="bottom" constant="8" id="eZa-M8-1R3"/>
+                            <constraint firstAttribute="bottom" secondItem="jfM-GM-vK5" secondAttribute="bottom" constant="20" id="v0T-z4-X8i"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Welcome to Password Sync !" id="wCv-LL-H7o">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="j7Z-IS-EaL"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9F4-eV-56l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="-237"/>
+        </scene>
+        <!--Welcome Screen Master Password Explanation View Controller - Master Password-->
+        <scene sceneID="fyb-4o-XUL">
+            <objects>
+                <viewController title="Master Password" id="sgt-0X-Ary" customClass="PSSWelcomeScreenMasterPasswordExplanationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RdS-lp-ibD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Time to choose a Master Password explanation text." translatesAutoresizingMaskIntoConstraints="NO" id="573-Em-UeK">
+                                <rect key="frame" x="20" y="20" width="280" height="412"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI1-BX-QHb">
+                                <rect key="frame" x="108" y="440" width="105" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonWasPressed:" destination="sgt-0X-Ary" eventType="touchUpInside" id="KaB-Il-3Oi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="573-Em-UeK" firstAttribute="leading" secondItem="RdS-lp-ibD" secondAttribute="leading" constant="20" id="NtO-Ux-abu"/>
+                            <constraint firstItem="nI1-BX-QHb" firstAttribute="top" secondItem="573-Em-UeK" secondAttribute="bottom" constant="8" id="WuH-nB-Oc9"/>
+                            <constraint firstItem="573-Em-UeK" firstAttribute="top" secondItem="RdS-lp-ibD" secondAttribute="top" constant="20" id="deu-eF-dz3"/>
+                            <constraint firstAttribute="trailing" secondItem="573-Em-UeK" secondAttribute="trailing" constant="20" id="fz4-4P-WQD"/>
+                            <constraint firstAttribute="bottom" secondItem="nI1-BX-QHb" secondAttribute="bottom" constant="20" id="ztp-vY-9LJ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Master Password" id="ehc-OE-S35">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hA6-vm-lwg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="continueAsNewUserButton" destination="nI1-BX-QHb" id="y4A-mf-0JZ"/>
+                        <outlet property="masterPasswordExplanationTextView" destination="573-Em-UeK" id="ikE-cC-7o8"/>
+                        <segue destination="5cD-SY-2DK" kind="push" identifier="masterPasswordForNewUserSegue" id="gUR-Ko-jBQ"/>
+                        <segue destination="CUI-hp-yuu" kind="push" identifier="masterPasswordForExistingUserSegue" id="3Ca-co-1U0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aiz-Zu-ZKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="419" y="-237"/>
+        </scene>
+        <!--Welcome Screen Master Password Good Practices View Controller - Master Password-->
+        <scene sceneID="VjF-VH-W47">
+            <objects>
+                <viewController title="Master Password" id="5cD-SY-2DK" customClass="PSSWelcomeScreenMasterPasswordGoodPracticesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uNA-I0-OyZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-5o-e3O">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Y1d-Om-ofu">
+                                        <rect key="frame" x="20" y="20" width="280" height="185"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seriously bad password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-Xi-YjV">
+                                        <rect key="frame" x="20" y="213" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" red="0.64929448341836737" green="0.056682724335841136" blue="0.066866659439630188" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="banana" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgp-gE-Ah3">
+                                        <rect key="frame" x="20" y="242" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6D-HH-ND0">
+                                        <rect key="frame" x="20" y="271" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" red="0.8780691964285714" green="0.53895122974949006" blue="0.12589620529070022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b4n@na83984" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-VU-dnT">
+                                        <rect key="frame" x="20" y="300" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xl-9H-1lE">
+                                        <rect key="frame" x="20" y="324" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" red="0.41965585417623769" green="0.75573979591836737" blue="0.36771109678897673" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5Cxqqj-jKW_hN7ELdw jLCY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG5-pN-KTp">
+                                        <rect key="frame" x="20" y="353" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXE-yl-P6K">
+                                        <rect key="frame" x="20" y="382" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" red="0.16546140147954946" green="0.79079639668367352" blue="0.13521572086108197" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correctH0rseB4tteryStap!e487" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-1M-N3R">
+                                        <rect key="frame" x="20" y="411" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tby-4i-BVB">
+                                        <rect key="frame" x="20" y="440" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="8xF-sM-O93" kind="push" id="STY-Nx-rY9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tby-4i-BVB" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="0Aq-p9-9gb"/>
+                                    <constraint firstItem="QNQ-VU-dnT" firstAttribute="top" secondItem="O6D-HH-ND0" secondAttribute="bottom" constant="8" id="7MA-ij-2fm"/>
+                                    <constraint firstItem="jgp-gE-Ah3" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="7fO-WX-rm4"/>
+                                    <constraint firstItem="6fa-1M-N3R" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="9ev-V0-CoQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y1d-Om-ofu" secondAttribute="trailing" constant="20" id="Ctx-vV-G02"/>
+                                    <constraint firstItem="BG5-pN-KTp" firstAttribute="top" secondItem="2xl-9H-1lE" secondAttribute="bottom" constant="8" id="Dgm-Pa-6Hn"/>
+                                    <constraint firstItem="sXE-yl-P6K" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="F9i-WR-5UM"/>
+                                    <constraint firstItem="sXE-yl-P6K" firstAttribute="top" secondItem="BG5-pN-KTp" secondAttribute="bottom" constant="8" id="Ga4-Rp-xmc"/>
+                                    <constraint firstItem="tby-4i-BVB" firstAttribute="top" secondItem="6fa-1M-N3R" secondAttribute="bottom" constant="8" id="JqR-A9-c7N"/>
+                                    <constraint firstAttribute="trailing" secondItem="tby-4i-BVB" secondAttribute="trailing" constant="20" id="Ktq-es-TOW"/>
+                                    <constraint firstItem="BG5-pN-KTp" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="LCv-EQ-rag"/>
+                                    <constraint firstAttribute="trailing" secondItem="QNQ-VU-dnT" secondAttribute="trailing" constant="20" id="LPq-Xs-aRg"/>
+                                    <constraint firstAttribute="trailing" secondItem="2xl-9H-1lE" secondAttribute="trailing" constant="20" id="Ny1-Jj-YMr"/>
+                                    <constraint firstItem="QNQ-VU-dnT" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="SP0-7w-TKH"/>
+                                    <constraint firstItem="jgp-gE-Ah3" firstAttribute="top" secondItem="fBO-Xi-YjV" secondAttribute="bottom" constant="8" id="V9I-0l-5hX"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgp-gE-Ah3" secondAttribute="trailing" constant="20" id="VpN-zD-pfa"/>
+                                    <constraint firstItem="6fa-1M-N3R" firstAttribute="top" secondItem="sXE-yl-P6K" secondAttribute="bottom" constant="8" id="WAv-My-kcB"/>
+                                    <constraint firstItem="O6D-HH-ND0" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="WNk-1g-YNE"/>
+                                    <constraint firstAttribute="trailing" secondItem="6fa-1M-N3R" secondAttribute="trailing" constant="20" id="XCv-yy-Gh1"/>
+                                    <constraint firstItem="fBO-Xi-YjV" firstAttribute="top" secondItem="Y1d-Om-ofu" secondAttribute="bottom" constant="8" id="XdG-e9-TiU"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXE-yl-P6K" secondAttribute="trailing" constant="20" id="a1L-UD-m1a"/>
+                                    <constraint firstItem="O6D-HH-ND0" firstAttribute="top" secondItem="jgp-gE-Ah3" secondAttribute="bottom" constant="8" id="cSi-45-itp"/>
+                                    <constraint firstAttribute="bottom" secondItem="tby-4i-BVB" secondAttribute="bottom" constant="20" id="dMW-Bi-Xko"/>
+                                    <constraint firstItem="Y1d-Om-ofu" firstAttribute="top" secondItem="5Ob-5o-e3O" secondAttribute="top" constant="20" id="fcn-cm-35f"/>
+                                    <constraint firstItem="Y1d-Om-ofu" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="fqr-Z7-Fgf"/>
+                                    <constraint firstAttribute="trailing" secondItem="fBO-Xi-YjV" secondAttribute="trailing" constant="20" id="iw6-Pc-MPu"/>
+                                    <constraint firstItem="fBO-Xi-YjV" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="neS-yh-f68"/>
+                                    <constraint firstItem="2xl-9H-1lE" firstAttribute="leading" secondItem="5Ob-5o-e3O" secondAttribute="leading" constant="20" id="nmg-FW-miH"/>
+                                    <constraint firstAttribute="trailing" secondItem="BG5-pN-KTp" secondAttribute="trailing" constant="20" id="oZ2-dT-Vwb"/>
+                                    <constraint firstAttribute="trailing" secondItem="O6D-HH-ND0" secondAttribute="trailing" constant="20" id="v6n-0m-n3E"/>
+                                    <constraint firstItem="2xl-9H-1lE" firstAttribute="top" secondItem="QNQ-VU-dnT" secondAttribute="bottom" constant="3" id="wuf-A6-dbf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Master Password" id="40Y-Sm-jUK">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="avy-TM-icN"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="continueButton" destination="tby-4i-BVB" id="CPS-GE-tM0"/>
+                        <outlet property="explaningText" destination="Y1d-Om-ofu" id="kUx-Lm-gAB"/>
+                        <outlet property="mainScrollView" destination="5Ob-5o-e3O" id="eTI-YR-lVy"/>
+                        <outlet property="view" destination="uNA-I0-OyZ" id="uJS-bR-K9t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OeY-V8-E1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="-525"/>
+        </scene>
+        <!--Welcome New User Set Master Password View Controller - Master Password-->
+        <scene sceneID="UsL-kg-PWj">
+            <objects>
+                <viewController title="Master Password" id="8xF-sM-O93" customClass="PSSWelcomeNewUserSetMasterPasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u4y-xy-YbR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your master password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZR-0Y-F0F">
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Hint" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDv-LG-NUI">
+                                <rect key="frame" x="20" y="58" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-DX-Qiy">
+                                <rect key="frame" x="124" y="96" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="8xF-sM-O93" eventType="touchUpInside" id="RLW-s4-6Sr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wDv-LG-NUI" firstAttribute="top" secondItem="7ZR-0Y-F0F" secondAttribute="bottom" constant="8" id="KF2-At-jPL"/>
+                            <constraint firstItem="7ZR-0Y-F0F" firstAttribute="top" secondItem="u4y-xy-YbR" secondAttribute="top" constant="20" id="P2q-U1-8Qh"/>
+                            <constraint firstItem="IPJ-DX-Qiy" firstAttribute="top" secondItem="wDv-LG-NUI" secondAttribute="bottom" constant="8" id="tGQ-5r-REL"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Master Password" id="pzY-bR-Zgl">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="F5X-hu-YHY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="masterPasswordTextField" destination="7ZR-0Y-F0F" id="3BG-8Q-wRN"/>
+                        <outlet property="passwordHintTextField" destination="wDv-LG-NUI" id="Uot-Y2-L87"/>
+                        <segue destination="mnz-43-Rbj" kind="push" identifier="newUserFinishedSettingMasterPasswordNoPrintNecessarySegue" id="UOB-3z-VWt"/>
+                        <segue destination="UMp-Tg-reG" kind="push" identifier="newUserFinishedSettingMasterPasswordPushPrintViewControllerSegue" id="mRk-sa-HcT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y7-4a-M7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431" y="-525"/>
+        </scene>
+        <!--Welcome Screen Print Master Password View Controller - Print your master password-->
+        <scene sceneID="68r-KJ-pnk">
+            <objects>
+                <viewController id="UMp-Tg-reG" customClass="PSSWelcomeScreenPrintMasterPasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sij-iF-9Jf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-o2-JAt">
+                                <rect key="frame" x="20" y="440" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="b1D-1v-DV4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Print">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="printAction:" destination="UMp-Tg-reG" eventType="touchUpInside" id="9Io-Bf-4i0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmv-to-jJc">
+                                <rect key="frame" x="20" y="388" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0TL-2E-eGc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Skip for now">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipForNowAction:" destination="UMp-Tg-reG" eventType="touchUpInside" id="qLn-xw-xKW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKV-JA-LXB">
+                                <rect key="frame" x="20" y="336" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yzL-hD-fPY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Never ask again">
+                                    <color key="titleColor" red="0.64929448339999996" green="0.056682724339999997" blue="0.066866659440000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="neverAskAgainAction:" destination="UMp-Tg-reG" eventType="touchUpInside" id="y7U-nM-hgx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Print a copy of your master password and keep it in a safe location." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LWo-3n-Vmo">
+                                <rect key="frame" x="20" y="20" width="280" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YEt-o2-JAt" firstAttribute="leading" secondItem="sij-iF-9Jf" secondAttribute="leading" constant="20" id="2ke-To-kNm"/>
+                            <constraint firstItem="LWo-3n-Vmo" firstAttribute="leading" secondItem="sij-iF-9Jf" secondAttribute="leading" constant="20" id="E8u-js-9Fw"/>
+                            <constraint firstAttribute="trailing" secondItem="pmv-to-jJc" secondAttribute="trailing" constant="20" id="Osm-Sz-wqc"/>
+                            <constraint firstItem="LWo-3n-Vmo" firstAttribute="top" secondItem="sij-iF-9Jf" secondAttribute="top" constant="20" id="Z1T-R1-iG9"/>
+                            <constraint firstAttribute="trailing" secondItem="KKV-JA-LXB" secondAttribute="trailing" constant="20" id="dM3-tK-q2f"/>
+                            <constraint firstAttribute="bottom" secondItem="YEt-o2-JAt" secondAttribute="bottom" constant="20" id="ePp-08-DiR"/>
+                            <constraint firstItem="pmv-to-jJc" firstAttribute="top" secondItem="KKV-JA-LXB" secondAttribute="bottom" constant="8" id="fET-fi-fwB"/>
+                            <constraint firstItem="pmv-to-jJc" firstAttribute="leading" secondItem="sij-iF-9Jf" secondAttribute="leading" constant="20" id="iKQ-Qq-gsv"/>
+                            <constraint firstAttribute="trailing" secondItem="LWo-3n-Vmo" secondAttribute="trailing" constant="20" id="rA8-Nu-3bU"/>
+                            <constraint firstItem="YEt-o2-JAt" firstAttribute="top" secondItem="pmv-to-jJc" secondAttribute="bottom" constant="8" id="sAx-sL-uFb"/>
+                            <constraint firstItem="KKV-JA-LXB" firstAttribute="leading" secondItem="sij-iF-9Jf" secondAttribute="leading" constant="20" id="wJw-qX-m7e"/>
+                            <constraint firstAttribute="trailing" secondItem="YEt-o2-JAt" secondAttribute="trailing" constant="20" id="zyi-nh-Z5x"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Print your master password" id="7e9-Tc-s5o">
+                        <barButtonItem key="backBarButtonItem" title="Print" id="a5a-eY-CBQ"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="mnz-43-Rbj" kind="push" identifier="userFinishedPrintingMasterPasswordPushToPasscodeChooserSegue" id="sQc-ke-dez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIB-uv-P9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010" y="-158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lg6-VF-JLr">
+            <objects>
+                <viewController storyboardIdentifier="com.pumaxprod.ios.Password-Sync-2.id.PasscodeChoosingProcessFirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mnz-43-Rbj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAH-bt-C3h">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="OY1-Pk-thy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGv-o9-xbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="-158"/>
+        </scene>
+        <!--Welcome Screen Master Password Check For Existing Users View Controller - Master Password-->
+        <scene sceneID="Obc-9f-mVl">
+            <objects>
+                <viewController id="CUI-hp-yuu" customClass="PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2aa-MG-i9K">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your master password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-Fr-TWD">
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="continueAction:" destination="CUI-hp-yuu" eventType="editingDidEndOnExit" id="szz-pv-OG3"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-q6-bHw">
+                                <rect key="frame" x="124" y="58" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sMw-fd-lgA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueAction:" destination="CUI-hp-yuu" eventType="touchUpInside" id="0NI-bo-c9o"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password hint text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="92n-da-B5T">
+                                <rect key="frame" x="20" y="139" width="280" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Hint" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlS-YV-AKz">
+                                <rect key="frame" x="20" y="110" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X7y-Fr-TWD" firstAttribute="leading" secondItem="2aa-MG-i9K" secondAttribute="leading" constant="20" id="2l9-1V-NIL"/>
+                            <constraint firstAttribute="trailing" secondItem="92n-da-B5T" secondAttribute="trailing" constant="20" id="7aZ-zJ-lOD"/>
+                            <constraint firstAttribute="trailing" secondItem="X7y-Fr-TWD" secondAttribute="trailing" constant="20" id="EUl-XD-Q2A"/>
+                            <constraint firstAttribute="centerX" secondItem="P4E-q6-bHw" secondAttribute="centerX" constant="-0.5" id="GqQ-1n-s6P"/>
+                            <constraint firstItem="P4E-q6-bHw" firstAttribute="top" secondItem="X7y-Fr-TWD" secondAttribute="bottom" constant="8" id="Hi8-Qq-E38"/>
+                            <constraint firstAttribute="trailing" secondItem="MlS-YV-AKz" secondAttribute="trailing" constant="20" id="KOa-WL-Otk"/>
+                            <constraint firstItem="MlS-YV-AKz" firstAttribute="top" secondItem="P4E-q6-bHw" secondAttribute="bottom" constant="8" id="OfG-Ig-IBN"/>
+                            <constraint firstItem="X7y-Fr-TWD" firstAttribute="top" secondItem="2aa-MG-i9K" secondAttribute="top" constant="20" id="ZtU-dv-LOk"/>
+                            <constraint firstItem="92n-da-B5T" firstAttribute="leading" secondItem="2aa-MG-i9K" secondAttribute="leading" constant="20" id="biw-2J-STd"/>
+                            <constraint firstItem="P4E-q6-bHw" firstAttribute="leading" secondItem="92n-da-B5T" secondAttribute="trailing" constant="-176" id="fkT-Zg-iZn"/>
+                            <constraint firstItem="92n-da-B5T" firstAttribute="top" secondItem="MlS-YV-AKz" secondAttribute="bottom" constant="8" id="mCS-cf-zwU"/>
+                            <constraint firstItem="MlS-YV-AKz" firstAttribute="leading" secondItem="2aa-MG-i9K" secondAttribute="leading" constant="20" id="nD7-Cr-GSf"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Master Password" id="lot-A2-gsj">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="wgh-tp-7b6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="continueButton" destination="P4E-q6-bHw" id="hiq-7t-AO8"/>
+                        <outlet property="hintCaption" destination="MlS-YV-AKz" id="Eyb-hW-YeL"/>
+                        <outlet property="hintTextField" destination="92n-da-B5T" id="yfZ-Dd-2ud"/>
+                        <outlet property="masterPasswordTextField" destination="X7y-Fr-TWD" id="v9x-NV-qaF"/>
+                        <segue destination="mnz-43-Rbj" kind="push" identifier="existingUserFinishedSettingMasterPasswordNoPrintNecessarySegue" id="RdE-Ct-VYC"/>
+                        <segue destination="UMp-Tg-reG" kind="push" identifier="existingUserFinishedSettingMasterPasswordPushPrintViewControllerSegue" id="X50-2d-Sm3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTo-wI-5yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431" y="222"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="X50-2d-Sm3"/>
+        <segue reference="sQc-ke-dez"/>
+    </inferredMetricsTieBreakers>
+</document>

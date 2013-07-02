@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */; };
+		AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */; };
+		AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
+		AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
+		AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
+		AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
+		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
+		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD72C3BD177B7E27009AADC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3BC177B7E27009AADC8 /* Foundation.framework */; };
 		AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */; };
 		AD72C3C1177B7E27009AADC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3C0177B7E27009AADC8 /* UIKit.framework */; };
@@ -60,6 +68,26 @@
 		AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
 		AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
 		AD821073177D37FA00B6F501 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD821072177D37FA00B6F501 /* Security.framework */; };
+		AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821075177D3B8000B6F501 /* MKiCloudSync.m */; };
+		AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821075177D3B8000B6F501 /* MKiCloudSync.m */; };
+		AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107A177D40F100B6F501 /* PDKeychainBindings.m */; };
+		AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107A177D40F100B6F501 /* PDKeychainBindings.m */; };
+		AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
+		AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
+		AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
+		AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
+		AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
+		AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
+		AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */; };
+		AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */; };
+		AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */; };
+		AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */; };
+		AD8F5AE217823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */; };
+		AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */; };
+		AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AE51782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m */; };
+		AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AE51782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m */; };
+		ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
+		ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,15 +101,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0FAA2F177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeNewUserSetMasterPasswordViewController.h; sourceTree = "<group>"; };
+		AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeNewUserSetMasterPasswordViewController.m; sourceTree = "<group>"; };
+		AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVshaDigester.h; path = "Password Sync 2/RVshaDigester.h"; sourceTree = "<group>"; };
+		AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVshaDigester.m; path = "Password Sync 2/RVshaDigester.m"; sourceTree = "<group>"; };
+		AD0FAA381780F5610066B7E7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		AD0FAA391780F5610066B7E7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
+		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD72C3B9177B7E27009AADC8 /* Password Sync 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Sync 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72C3BC177B7E27009AADC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AD72C3C0177B7E27009AADC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD72C3C2177B7E27009AADC8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Sync 2-Info.plist"; sourceTree = "<group>"; };
+		AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Password Sync 2-Info.plist"; path = "Password Sync 2/Password Sync 2-Info.plist"; sourceTree = "<group>"; };
 		AD72C3C8177B7E27009AADC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD72C3CA177B7E27009AADC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Password Sync 2-Prefix.pch"; sourceTree = "<group>"; };
+		AD72C3CA177B7E27009AADC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Password Sync 2/main.m"; sourceTree = "<group>"; };
+		AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Password Sync 2-Prefix.pch"; path = "Password Sync 2/Password Sync 2-Prefix.pch"; sourceTree = "<group>"; };
 		AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSAppDelegate.h; sourceTree = "<group>"; };
 		AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSAppDelegate.m; sourceTree = "<group>"; };
 		AD72C3D1177B7E27009AADC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -134,7 +170,25 @@
 		AD82105C177D37ED00B6F501 /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
 		AD82105D177D37ED00B6F501 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
 		AD821072177D37FA00B6F501 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AD821074177D3B8000B6F501 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
+		AD821075177D3B8000B6F501 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
+		AD821079177D40F100B6F501 /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		AD82107A177D40F100B6F501 /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		AD8F5AD31781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPrintMasterPasswordViewController.h; sourceTree = "<group>"; };
+		AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPrintMasterPasswordViewController.m; sourceTree = "<group>"; };
+		AD8F5AD71782056B00702EFA /* PSSMasterPasswordPrintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordPrintView.h; sourceTree = "<group>"; };
+		AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordPrintView.m; sourceTree = "<group>"; };
+		AD8F5ADD17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordVerifyerViewController.h; sourceTree = "<group>"; };
+		AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordVerifyerViewController.m; sourceTree = "<group>"; };
+		AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSMasterPasswordVerifyerViewController.xib; sourceTree = "<group>"; };
+		AD8F5AE41782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.h; sourceTree = "<group>"; };
+		AD8F5AE51782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
+		ADED6D03177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordExplanationViewController.h; sourceTree = "<group>"; };
+		ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordExplanationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,10 +219,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0FAA371780F5610066B7E7 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				AD0FAA381780F5610066B7E7 /* Base64.h */,
+				AD0FAA391780F5610066B7E7 /* Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
 		AD72C3B0177B7E27009AADC8 = {
 			isa = PBXGroup;
 			children = (
 				AD72C3C4177B7E27009AADC8 /* Password Sync 2 */,
+				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
+				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
+				AD72C3CA177B7E27009AADC8 /* main.m */,
+				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
 				AD72C3ED177B7E28009AADC8 /* Password Sync 2Tests */,
 				AD72C3BB177B7E27009AADC8 /* Frameworks */,
 				AD72C3BA177B7E27009AADC8 /* Products */,
@@ -187,6 +254,12 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD0FAA371780F5610066B7E7 /* Base64 */,
+				AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */,
+				AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */,
+				AD821053177D37ED00B6F501 /* RNCryptor */,
+				AD821078177D3B8400B6F501 /* MKiCloudSync */,
+				AD72C3C5177B7E27009AADC8 /* PDKeychainBindings */,
 				AD821072177D37FA00B6F501 /* Security.framework */,
 				AD82101E177CFB2900B6F501 /* StoreKit.framework */,
 				AD72C3FE177B8BF3009AADC8 /* StoreKit.framework */,
@@ -203,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
+				AD821084177F407200B6F501 /* Splash welcome screen */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
 				AD72C3D0177B7E27009AADC8 /* Main_iPhone.storyboard */,
@@ -213,21 +287,23 @@
 				AD72C3DD177B7E27009AADC8 /* PSSDetailViewController.m */,
 				AD72C3DF177B7E27009AADC8 /* Images.xcassets */,
 				ADDC8BB2177CEA9E00021D92 /* Core Data Stack */,
-				AD72C3C5177B7E27009AADC8 /* Supporting Files */,
+				AD8F5ADD17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.h */,
+				AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */,
+				AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
 		};
-		AD72C3C5177B7E27009AADC8 /* Supporting Files */ = {
+		AD72C3C5177B7E27009AADC8 /* PDKeychainBindings */ = {
 			isa = PBXGroup;
 			children = (
-				AD821053177D37ED00B6F501 /* RNCryptor */,
-				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
-				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
-				AD72C3CA177B7E27009AADC8 /* main.m */,
-				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
+				AD821079177D40F100B6F501 /* PDKeychainBindings.h */,
+				AD82107A177D40F100B6F501 /* PDKeychainBindings.m */,
+				AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */,
+				AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */,
 			);
-			name = "Supporting Files";
+			name = PDKeychainBindings;
+			path = "Password Sync 2";
 			sourceTree = "<group>";
 		};
 		AD72C3ED177B7E28009AADC8 /* Password Sync 2Tests */ = {
@@ -262,7 +338,54 @@
 				AD82105C177D37ED00B6F501 /* RNEncryptor.h */,
 				AD82105D177D37ED00B6F501 /* RNEncryptor.m */,
 			);
-			path = RNCryptor;
+			name = RNCryptor;
+			path = "Password Sync 2/RNCryptor";
+			sourceTree = "<group>";
+		};
+		AD821078177D3B8400B6F501 /* MKiCloudSync */ = {
+			isa = PBXGroup;
+			children = (
+				AD821074177D3B8000B6F501 /* MKiCloudSync.h */,
+				AD821075177D3B8000B6F501 /* MKiCloudSync.m */,
+			);
+			name = MKiCloudSync;
+			path = "Password Sync 2";
+			sourceTree = "<group>";
+		};
+		AD821084177F407200B6F501 /* Splash welcome screen */ = {
+			isa = PBXGroup;
+			children = (
+				AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */,
+				AD8F5ADC1782058500702EFA /* Master Password */,
+				AD8F5ADB1782057300702EFA /* Print */,
+			);
+			name = "Splash welcome screen";
+			sourceTree = "<group>";
+		};
+		AD8F5ADB1782057300702EFA /* Print */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F5AD31781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.h */,
+				AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */,
+				AD8F5AD71782056B00702EFA /* PSSMasterPasswordPrintView.h */,
+				AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */,
+			);
+			name = Print;
+			sourceTree = "<group>";
+		};
+		AD8F5ADC1782058500702EFA /* Master Password */ = {
+			isa = PBXGroup;
+			children = (
+				ADED6D03177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.h */,
+				ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */,
+				AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */,
+				AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */,
+				AD0FAA2F177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.h */,
+				AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */,
+				AD8F5AE41782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.h */,
+				AD8F5AE51782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m */,
+			);
+			name = "Master Password";
 			sourceTree = "<group>";
 		};
 		ADDC8BB2177CEA9E00021D92 /* Core Data Stack */ = {
@@ -395,6 +518,8 @@
 				AD72C3E0177B7E27009AADC8 /* Images.xcassets in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD72C3C9177B7E27009AADC8 /* InfoPlist.strings in Resources */,
+				AD8F5AE217823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
+				AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +527,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
 				AD72C3F2177B7E28009AADC8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,14 +540,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
+				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
+				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
+				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
+				AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSDetailViewController.m in Sources */,
+				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
+				AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSMasterViewController.m in Sources */,
 				AD821036177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
@@ -431,8 +566,12 @@
 				AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
 				AD821066177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
 				AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
+				AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
+				AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
+				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
+				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,18 +583,30 @@
 				AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
 				AD821037177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
+				AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD821067177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
+				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
+				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
+				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
+				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
+				AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
+				ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
+				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
+				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
+				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 				AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 			);
@@ -478,6 +629,7 @@
 				AD72C3C8177B7E27009AADC8 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = "Password Sync 2";
 			sourceTree = "<group>";
 		};
 		AD72C3D0177B7E27009AADC8 /* Main_iPhone.storyboard */ = {
