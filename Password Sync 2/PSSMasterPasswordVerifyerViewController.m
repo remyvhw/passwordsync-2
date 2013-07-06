@@ -37,9 +37,24 @@
 -(void)saveMasterPasswordToKeychain:(NSString*)masterPassword{
     RVshaDigester * shaDigester = [[RVshaDigester alloc] init];
     
-    // Save the master password itself in keychain as a SHA512 basee64 encoded string.
+    // Save the master password itself in keychain as a SHA512 base64 encoded string.
     [[PDKeychainBindings sharedKeychainBindings] setString:[shaDigester base64EncodedSha512DigestWithString:masterPassword] forKey:PSSHashedMasterPasswordKeychainEntry];
 }
+
+-(void)saveLastMasterPasswordLocalChangeToKeychainWithDate:(NSString*)dateString{
+    // Will save the last master password change locally so we can compare with an iCloud global value so we know when the user changes it's master password
+    
+    [[PDKeychainBindings sharedKeychainBindings] setString:dateString forKey:PSSlastLocalMasterPasswordChange];
+    
+}
+
+-(void)saveLastMasterPasswordGlobalChangeToSyncingDefaults:(NSString*)dateString{
+    // Will save the last master password change globally
+    
+    [[NSUserDefaults standardUserDefaults] setObject:dateString forKey:PSSlastGlobalMasterPasswordChange];
+    
+}
+
 
 #pragma mark - Public methods
 -(void)saveMasterPassword:(NSString*)masterPassword hint:(NSString*)hint{
@@ -68,6 +83,13 @@
     [userDefaults setObject:encryptedVerificationString forKey:PSSMasterPasswordVerificationHash];
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PSSApplicationWasConfiguredOnAnotherDeviceDefaults];
+    
+    NSDate * now = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+    NSString *strDate = [dateFormatter stringFromDate:now];
+    [self saveLastMasterPasswordLocalChangeToKeychainWithDate:strDate];
+    [self saveLastMasterPasswordGlobalChangeToSyncingDefaults:strDate];
     
     [userDefaults synchronize];
     
@@ -119,6 +141,8 @@
             // Save the master password to the keychain
             
             [self saveMasterPasswordToKeychain:providedMasterPassword];
+            
+            [self saveLastMasterPasswordLocalChangeToKeychainWithDate:[[NSUserDefaults standardUserDefaults] stringForKey:PSSlastGlobalMasterPasswordChange]];
         
             return YES;
         }

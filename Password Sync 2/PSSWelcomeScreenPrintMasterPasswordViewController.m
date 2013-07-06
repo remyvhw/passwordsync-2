@@ -86,6 +86,7 @@
 }
 
 - (IBAction)skipForNowAction:(id)sender {
+    [self navigateToNextViewControllerOrCloseModalNeverAskingAgain:NO];
 }
 
 

@@ -44,7 +44,7 @@
     if ([userDefaults boolForKey:PSSApplicationWasConfiguredOnAnotherDeviceDefaults] || hashedMasterPassword) {
         // Not a first launch, just explain how the master password must stay the same.
         
-        self.masterPasswordExplanationTextView.text = NSLocalizedString(@"Welcome back to Password Sync 2. As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices.", @"First master password explanation screen for existing users.");
+        self.masterPasswordExplanationTextView.text = NSLocalizedString(@"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password.", @"First master password explanation screen for existing users.");
         
     } else {
         // First launch, explain why is there a need for a master password.
