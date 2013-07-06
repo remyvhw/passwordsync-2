@@ -47,7 +47,6 @@
 #pragma mark - Public methods
 -(void)savePasscode:(NSString*)passcode withType:(PSSPasscodeType)passcodeType{
     
-    return;
     [self savePasscodeToKeychain:passcode];
     // Save the passcode type to the keychain; we save it on the keychain so it doesn't get synced all over icloud.
     [[PDKeychainBindings sharedKeychainBindings] setString:[@(passcodeType) stringValue] forKey:PSSDefinedPasscodeType];
