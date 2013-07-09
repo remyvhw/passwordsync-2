@@ -92,6 +92,10 @@
 		AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
 		AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
 		AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
+		AD873B5C178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */; };
+		AD873B5D178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */; };
+		AD873B60178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */; };
+		AD873B61178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */; };
 		AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
 		AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
 		AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */; };
@@ -110,70 +114,8 @@
 		ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */; };
 		ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */; };
 		ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */; };
-		ADC9DF531788C28A006F2858 /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF1E1788C28A006F2858 /* FKBadgeField.m */; };
-		ADC9DF541788C28A006F2858 /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF1E1788C28A006F2858 /* FKBadgeField.m */; };
-		ADC9DF551788C28A006F2858 /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF201788C28A006F2858 /* FKButtonField.m */; };
-		ADC9DF561788C28A006F2858 /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF201788C28A006F2858 /* FKButtonField.m */; };
-		ADC9DF571788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF221788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m */; };
-		ADC9DF581788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF221788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m */; };
-		ADC9DF591788C28A006F2858 /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF271788C28A006F2858 /* FKFloatField.m */; };
-		ADC9DF5A1788C28A006F2858 /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF271788C28A006F2858 /* FKFloatField.m */; };
-		ADC9DF5B1788C28A006F2858 /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF291788C28A006F2858 /* FKImageField.m */; };
-		ADC9DF5C1788C28A006F2858 /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF291788C28A006F2858 /* FKImageField.m */; };
-		ADC9DF5D1788C28A006F2858 /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2B1788C28A006F2858 /* FKIntegerField.m */; };
-		ADC9DF5E1788C28A006F2858 /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2B1788C28A006F2858 /* FKIntegerField.m */; };
-		ADC9DF5F1788C28A006F2858 /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2D1788C28A006F2858 /* FKLabelField.m */; };
-		ADC9DF601788C28A006F2858 /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2D1788C28A006F2858 /* FKLabelField.m */; };
-		ADC9DF611788C28A006F2858 /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2F1788C28A006F2858 /* FKPasswordTextField.m */; };
-		ADC9DF621788C28A006F2858 /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF2F1788C28A006F2858 /* FKPasswordTextField.m */; };
-		ADC9DF631788C28A006F2858 /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF311788C28A006F2858 /* FKSaveButtonField.m */; };
-		ADC9DF641788C28A006F2858 /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF311788C28A006F2858 /* FKSaveButtonField.m */; };
-		ADC9DF651788C28A006F2858 /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF331788C28A006F2858 /* FKSimpleField.m */; };
-		ADC9DF661788C28A006F2858 /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF331788C28A006F2858 /* FKSimpleField.m */; };
-		ADC9DF671788C28A006F2858 /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF351788C28A006F2858 /* FKSliderField.m */; };
-		ADC9DF681788C28A006F2858 /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF351788C28A006F2858 /* FKSliderField.m */; };
-		ADC9DF691788C28A006F2858 /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF371788C28A006F2858 /* FKSwitchField.m */; };
-		ADC9DF6A1788C28A006F2858 /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF371788C28A006F2858 /* FKSwitchField.m */; };
-		ADC9DF6B1788C28A006F2858 /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF391788C28A006F2858 /* FKTextField.m */; };
-		ADC9DF6C1788C28A006F2858 /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF391788C28A006F2858 /* FKTextField.m */; };
-		ADC9DF6D1788C28A006F2858 /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF3B1788C28A006F2858 /* FKTextViewField.m */; };
-		ADC9DF6E1788C28A006F2858 /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF3B1788C28A006F2858 /* FKTextViewField.m */; };
-		ADC9DF6F1788C28A006F2858 /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF3D1788C28A006F2858 /* FKValueViewField.m */; };
-		ADC9DF701788C28A006F2858 /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF3D1788C28A006F2858 /* FKValueViewField.m */; };
-		ADC9DF711788C28A006F2858 /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF401788C28A006F2858 /* FKFormAttributeMapping.m */; };
-		ADC9DF721788C28A006F2858 /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF401788C28A006F2858 /* FKFormAttributeMapping.m */; };
-		ADC9DF731788C28A006F2858 /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF421788C28A006F2858 /* FKFormAttributeValidation.m */; };
-		ADC9DF741788C28A006F2858 /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF421788C28A006F2858 /* FKFormAttributeValidation.m */; };
-		ADC9DF751788C28A006F2858 /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF441788C28A006F2858 /* FKFormMapper.m */; };
-		ADC9DF761788C28A006F2858 /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF441788C28A006F2858 /* FKFormMapper.m */; };
-		ADC9DF771788C28A006F2858 /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF461788C28A006F2858 /* FKFormMapping.m */; };
-		ADC9DF781788C28A006F2858 /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF461788C28A006F2858 /* FKFormMapping.m */; };
-		ADC9DF791788C28A006F2858 /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF481788C28A006F2858 /* FKFormModel.m */; };
-		ADC9DF7A1788C28A006F2858 /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF481788C28A006F2858 /* FKFormModel.m */; };
-		ADC9DF7B1788C28A006F2858 /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF4B1788C28A006F2858 /* FKSectionObject.m */; };
-		ADC9DF7C1788C28A006F2858 /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF4B1788C28A006F2858 /* FKSectionObject.m */; };
-		ADC9DF7D1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF4E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m */; };
-		ADC9DF7E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF4E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m */; };
-		ADC9DF7F1788C28A006F2858 /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF501788C28A006F2858 /* UITableViewCell+FormKit.m */; };
-		ADC9DF801788C28A006F2858 /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF501788C28A006F2858 /* UITableViewCell+FormKit.m */; };
-		ADC9DF811788C28A006F2858 /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF521788C28A006F2858 /* UIView+FormKit.m */; };
-		ADC9DF821788C28A006F2858 /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF521788C28A006F2858 /* UIView+FormKit.m */; };
-		ADC9DF981788C2AD006F2858 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF861788C2AD006F2858 /* AbstractActionSheetPicker.m */; };
-		ADC9DF991788C2AD006F2858 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF861788C2AD006F2858 /* AbstractActionSheetPicker.m */; };
-		ADC9DF9A1788C2AD006F2858 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF881788C2AD006F2858 /* ActionSheetCustomPicker.m */; };
-		ADC9DF9B1788C2AD006F2858 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF881788C2AD006F2858 /* ActionSheetCustomPicker.m */; };
-		ADC9DF9C1788C2AD006F2858 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8B1788C2AD006F2858 /* ActionSheetDatePicker.m */; };
-		ADC9DF9D1788C2AD006F2858 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8B1788C2AD006F2858 /* ActionSheetDatePicker.m */; };
-		ADC9DF9E1788C2AD006F2858 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8D1788C2AD006F2858 /* ActionSheetDistancePicker.m */; };
-		ADC9DF9F1788C2AD006F2858 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8D1788C2AD006F2858 /* ActionSheetDistancePicker.m */; };
-		ADC9DFA01788C2AD006F2858 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8F1788C2AD006F2858 /* ActionSheetStringPicker.m */; };
-		ADC9DFA11788C2AD006F2858 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF8F1788C2AD006F2858 /* ActionSheetStringPicker.m */; };
-		ADC9DFA21788C2AD006F2858 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF911788C2AD006F2858 /* DistancePickerView.m */; };
-		ADC9DFA31788C2AD006F2858 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF911788C2AD006F2858 /* DistancePickerView.m */; };
-		ADC9DFA41788C2AD006F2858 /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF941788C2AD006F2858 /* BWLongTextViewController.m */; };
-		ADC9DFA51788C2AD006F2858 /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF941788C2AD006F2858 /* BWLongTextViewController.m */; };
-		ADC9DFA61788C2AD006F2858 /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF971788C2AD006F2858 /* BWSelectViewController.m */; };
-		ADC9DFA71788C2AD006F2858 /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DF971788C2AD006F2858 /* BWSelectViewController.m */; };
+		ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
+		ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
 		ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
 		ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
 /* End PBXBuildFile section */
@@ -279,6 +221,10 @@
 		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 		AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		AD873B5A178BB6B500B77412 /* PSSPasswordEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordEditorTableViewController.h; sourceTree = "<group>"; };
+		AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordEditorTableViewController.m; sourceTree = "<group>"; };
+		AD873B5E178BB79F00B77412 /* PSSFormSimpleFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSFormSimpleFieldCell.h; sourceTree = "<group>"; };
+		AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSFormSimpleFieldCell.m; sourceTree = "<group>"; };
 		AD8F5AD31781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPrintMasterPasswordViewController.h; sourceTree = "<group>"; };
 		AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPrintMasterPasswordViewController.m; sourceTree = "<group>"; };
 		AD8F5AD71782056B00702EFA /* PSSMasterPasswordPrintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordPrintView.h; sourceTree = "<group>"; };
@@ -296,77 +242,8 @@
 		ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPINpasscodeButtonView.m; sourceTree = "<group>"; };
 		ADC9DEAF17862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPINPasscodeSetterViewController.h; sourceTree = "<group>"; };
 		ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPINPasscodeSetterViewController.m; sourceTree = "<group>"; };
-		ADC9DF1D1788C28A006F2858 /* FKBadgeField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBadgeField.h; sourceTree = "<group>"; };
-		ADC9DF1E1788C28A006F2858 /* FKBadgeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBadgeField.m; sourceTree = "<group>"; };
-		ADC9DF1F1788C28A006F2858 /* FKButtonField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKButtonField.h; sourceTree = "<group>"; };
-		ADC9DF201788C28A006F2858 /* FKButtonField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKButtonField.m; sourceTree = "<group>"; };
-		ADC9DF211788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDisclosureIndicatorAccessoryField.h; sourceTree = "<group>"; };
-		ADC9DF221788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDisclosureIndicatorAccessoryField.m; sourceTree = "<group>"; };
-		ADC9DF231788C28A006F2858 /* FKFieldErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFieldErrorProtocol.h; sourceTree = "<group>"; };
-		ADC9DF241788C28A006F2858 /* FKFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFields.h; sourceTree = "<group>"; };
-		ADC9DF251788C28A006F2858 /* FKFieldsBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFieldsBlocks.h; sourceTree = "<group>"; };
-		ADC9DF261788C28A006F2858 /* FKFloatField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFloatField.h; sourceTree = "<group>"; };
-		ADC9DF271788C28A006F2858 /* FKFloatField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFloatField.m; sourceTree = "<group>"; };
-		ADC9DF281788C28A006F2858 /* FKImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKImageField.h; sourceTree = "<group>"; };
-		ADC9DF291788C28A006F2858 /* FKImageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImageField.m; sourceTree = "<group>"; };
-		ADC9DF2A1788C28A006F2858 /* FKIntegerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKIntegerField.h; sourceTree = "<group>"; };
-		ADC9DF2B1788C28A006F2858 /* FKIntegerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKIntegerField.m; sourceTree = "<group>"; };
-		ADC9DF2C1788C28A006F2858 /* FKLabelField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLabelField.h; sourceTree = "<group>"; };
-		ADC9DF2D1788C28A006F2858 /* FKLabelField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLabelField.m; sourceTree = "<group>"; };
-		ADC9DF2E1788C28A006F2858 /* FKPasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPasswordTextField.h; sourceTree = "<group>"; };
-		ADC9DF2F1788C28A006F2858 /* FKPasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPasswordTextField.m; sourceTree = "<group>"; };
-		ADC9DF301788C28A006F2858 /* FKSaveButtonField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSaveButtonField.h; sourceTree = "<group>"; };
-		ADC9DF311788C28A006F2858 /* FKSaveButtonField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSaveButtonField.m; sourceTree = "<group>"; };
-		ADC9DF321788C28A006F2858 /* FKSimpleField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSimpleField.h; sourceTree = "<group>"; };
-		ADC9DF331788C28A006F2858 /* FKSimpleField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSimpleField.m; sourceTree = "<group>"; };
-		ADC9DF341788C28A006F2858 /* FKSliderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSliderField.h; sourceTree = "<group>"; };
-		ADC9DF351788C28A006F2858 /* FKSliderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSliderField.m; sourceTree = "<group>"; };
-		ADC9DF361788C28A006F2858 /* FKSwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSwitchField.h; sourceTree = "<group>"; };
-		ADC9DF371788C28A006F2858 /* FKSwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSwitchField.m; sourceTree = "<group>"; };
-		ADC9DF381788C28A006F2858 /* FKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTextField.h; sourceTree = "<group>"; };
-		ADC9DF391788C28A006F2858 /* FKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTextField.m; sourceTree = "<group>"; };
-		ADC9DF3A1788C28A006F2858 /* FKTextViewField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTextViewField.h; sourceTree = "<group>"; };
-		ADC9DF3B1788C28A006F2858 /* FKTextViewField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTextViewField.m; sourceTree = "<group>"; };
-		ADC9DF3C1788C28A006F2858 /* FKValueViewField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKValueViewField.h; sourceTree = "<group>"; };
-		ADC9DF3D1788C28A006F2858 /* FKValueViewField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKValueViewField.m; sourceTree = "<group>"; };
-		ADC9DF3E1788C28A006F2858 /* FKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBlocks.h; sourceTree = "<group>"; };
-		ADC9DF3F1788C28A006F2858 /* FKFormAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormAttributeMapping.h; sourceTree = "<group>"; };
-		ADC9DF401788C28A006F2858 /* FKFormAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormAttributeMapping.m; sourceTree = "<group>"; };
-		ADC9DF411788C28A006F2858 /* FKFormAttributeValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormAttributeValidation.h; sourceTree = "<group>"; };
-		ADC9DF421788C28A006F2858 /* FKFormAttributeValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormAttributeValidation.m; sourceTree = "<group>"; };
-		ADC9DF431788C28A006F2858 /* FKFormMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormMapper.h; sourceTree = "<group>"; };
-		ADC9DF441788C28A006F2858 /* FKFormMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormMapper.m; sourceTree = "<group>"; };
-		ADC9DF451788C28A006F2858 /* FKFormMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormMapping.h; sourceTree = "<group>"; };
-		ADC9DF461788C28A006F2858 /* FKFormMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormMapping.m; sourceTree = "<group>"; };
-		ADC9DF471788C28A006F2858 /* FKFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormModel.h; sourceTree = "<group>"; };
-		ADC9DF481788C28A006F2858 /* FKFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormModel.m; sourceTree = "<group>"; };
-		ADC9DF491788C28A006F2858 /* FKMacrosDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacrosDefinitions.h; sourceTree = "<group>"; };
-		ADC9DF4A1788C28A006F2858 /* FKSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSectionObject.h; sourceTree = "<group>"; };
-		ADC9DF4B1788C28A006F2858 /* FKSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSectionObject.m; sourceTree = "<group>"; };
-		ADC9DF4C1788C28A006F2858 /* FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormKit.h; sourceTree = "<group>"; };
-		ADC9DF4D1788C28A006F2858 /* NSObject+FKFormAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FKFormAttributeMapping.h"; sourceTree = "<group>"; };
-		ADC9DF4E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FKFormAttributeMapping.m"; sourceTree = "<group>"; };
-		ADC9DF4F1788C28A006F2858 /* UITableViewCell+FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FormKit.h"; sourceTree = "<group>"; };
-		ADC9DF501788C28A006F2858 /* UITableViewCell+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FormKit.m"; sourceTree = "<group>"; };
-		ADC9DF511788C28A006F2858 /* UIView+FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormKit.h"; sourceTree = "<group>"; };
-		ADC9DF521788C28A006F2858 /* UIView+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormKit.m"; sourceTree = "<group>"; };
-		ADC9DF851788C2AD006F2858 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
-		ADC9DF861788C2AD006F2858 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
-		ADC9DF871788C2AD006F2858 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
-		ADC9DF881788C2AD006F2858 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
-		ADC9DF891788C2AD006F2858 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
-		ADC9DF8A1788C2AD006F2858 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
-		ADC9DF8B1788C2AD006F2858 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
-		ADC9DF8C1788C2AD006F2858 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
-		ADC9DF8D1788C2AD006F2858 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
-		ADC9DF8E1788C2AD006F2858 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
-		ADC9DF8F1788C2AD006F2858 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
-		ADC9DF901788C2AD006F2858 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
-		ADC9DF911788C2AD006F2858 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
-		ADC9DF931788C2AD006F2858 /* BWLongTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLongTextViewController.h; sourceTree = "<group>"; };
-		ADC9DF941788C2AD006F2858 /* BWLongTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLongTextViewController.m; sourceTree = "<group>"; };
-		ADC9DF961788C2AD006F2858 /* BWSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSelectViewController.h; sourceTree = "<group>"; };
-		ADC9DF971788C2AD006F2858 /* BWSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSelectViewController.m; sourceTree = "<group>"; };
+		ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSEncryptor.h; sourceTree = "<group>"; };
+		ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSEncryptor.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
 		ADED6D03177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordExplanationViewController.h; sourceTree = "<group>"; };
 		ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordExplanationViewController.m; sourceTree = "<group>"; };
@@ -428,10 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				AD72C3C4177B7E27009AADC8 /* Password Sync 2 */,
-				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
-				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
-				AD72C3CA177B7E27009AADC8 /* main.m */,
-				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
+				ADC9DFB51788C988006F2858 /* Others */,
 				AD72C3ED177B7E28009AADC8 /* Password Sync 2Tests */,
 				AD72C3BB177B7E27009AADC8 /* Frameworks */,
 				AD72C3BA177B7E27009AADC8 /* Products */,
@@ -450,7 +324,6 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADC9DF1B1788C28A006F2858 /* FormKit */,
 				AD5176011784906700B30295 /* SPLockScreen */,
 				AD0FAA371780F5610066B7E7 /* Base64 */,
 				AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */,
@@ -473,25 +346,19 @@
 			isa = PBXGroup;
 			children = (
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
-				AD821084177F407200B6F501 /* Splash welcome screen */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
-				AD72C3D0177B7E27009AADC8 /* Main_iPhone.storyboard */,
-				AD72C3D3177B7E27009AADC8 /* Main_iPad.storyboard */,
-				AD72C3D9177B7E27009AADC8 /* PSSMasterViewController.h */,
-				AD72C3DA177B7E27009AADC8 /* PSSMasterViewController.m */,
-				AD72C3DC177B7E27009AADC8 /* PSSDetailViewController.h */,
-				AD72C3DD177B7E27009AADC8 /* PSSDetailViewController.m */,
+				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
+				AD821084177F407200B6F501 /* Splash welcome screen storyboard */,
 				AD72C3DF177B7E27009AADC8 /* Images.xcassets */,
 				ADDC8BB2177CEA9E00021D92 /* Core Data Stack */,
-				AD8F5ADD17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.h */,
-				AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */,
-				AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */,
-				AD5176061784A63000B30295 /* PSSPasscodeVerifyerViewController.h */,
-				AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */,
-				AD5176081784A63000B30295 /* PSSPasscodeVerifyerViewController.xib */,
-				ADC9DEAB1786242D006F2858 /* PSSPINpasscodeButtonView.h */,
-				ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */,
+				ADC9DFA91788C500006F2858 /* Master password and passcode controllers */,
+				ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */,
+				ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */,
+				AD873B5A178BB6B500B77412 /* PSSPasswordEditorTableViewController.h */,
+				AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */,
+				AD873B5E178BB79F00B77412 /* PSSFormSimpleFieldCell.h */,
+				AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -554,7 +421,7 @@
 			path = "Password Sync 2";
 			sourceTree = "<group>";
 		};
-		AD821084177F407200B6F501 /* Splash welcome screen */ = {
+		AD821084177F407200B6F501 /* Splash welcome screen storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */,
@@ -563,7 +430,7 @@
 				AD8F5ADC1782058500702EFA /* Master Password */,
 				AD8F5AEC17827F8300702EFA /* Passcode */,
 			);
-			name = "Splash welcome screen";
+			name = "Splash welcome screen storyboard";
 			sourceTree = "<group>";
 		};
 		AD8F5ADB1782057300702EFA /* Print */ = {
@@ -608,122 +475,43 @@
 			name = Passcode;
 			sourceTree = "<group>";
 		};
-		ADC9DF1B1788C28A006F2858 /* FormKit */ = {
+		ADC9DFA81788C4BA006F2858 /* Main Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				ADC9DF831788C2AD006F2858 /* Vendor */,
-				ADC9DF1C1788C28A006F2858 /* Fields */,
-				ADC9DF3E1788C28A006F2858 /* FKBlocks.h */,
-				ADC9DF3F1788C28A006F2858 /* FKFormAttributeMapping.h */,
-				ADC9DF401788C28A006F2858 /* FKFormAttributeMapping.m */,
-				ADC9DF411788C28A006F2858 /* FKFormAttributeValidation.h */,
-				ADC9DF421788C28A006F2858 /* FKFormAttributeValidation.m */,
-				ADC9DF431788C28A006F2858 /* FKFormMapper.h */,
-				ADC9DF441788C28A006F2858 /* FKFormMapper.m */,
-				ADC9DF451788C28A006F2858 /* FKFormMapping.h */,
-				ADC9DF461788C28A006F2858 /* FKFormMapping.m */,
-				ADC9DF471788C28A006F2858 /* FKFormModel.h */,
-				ADC9DF481788C28A006F2858 /* FKFormModel.m */,
-				ADC9DF491788C28A006F2858 /* FKMacrosDefinitions.h */,
-				ADC9DF4A1788C28A006F2858 /* FKSectionObject.h */,
-				ADC9DF4B1788C28A006F2858 /* FKSectionObject.m */,
-				ADC9DF4C1788C28A006F2858 /* FormKit.h */,
-				ADC9DF4D1788C28A006F2858 /* NSObject+FKFormAttributeMapping.h */,
-				ADC9DF4E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m */,
-				ADC9DF4F1788C28A006F2858 /* UITableViewCell+FormKit.h */,
-				ADC9DF501788C28A006F2858 /* UITableViewCell+FormKit.m */,
-				ADC9DF511788C28A006F2858 /* UIView+FormKit.h */,
-				ADC9DF521788C28A006F2858 /* UIView+FormKit.m */,
+				AD72C3D0177B7E27009AADC8 /* Main_iPhone.storyboard */,
+				AD72C3D3177B7E27009AADC8 /* Main_iPad.storyboard */,
+				AD72C3D9177B7E27009AADC8 /* PSSMasterViewController.h */,
+				AD72C3DA177B7E27009AADC8 /* PSSMasterViewController.m */,
+				AD72C3DC177B7E27009AADC8 /* PSSDetailViewController.h */,
+				AD72C3DD177B7E27009AADC8 /* PSSDetailViewController.m */,
 			);
-			path = FormKit;
+			name = "Main Storyboard";
 			sourceTree = "<group>";
 		};
-		ADC9DF1C1788C28A006F2858 /* Fields */ = {
+		ADC9DFA91788C500006F2858 /* Master password and passcode controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADC9DF1D1788C28A006F2858 /* FKBadgeField.h */,
-				ADC9DF1E1788C28A006F2858 /* FKBadgeField.m */,
-				ADC9DF1F1788C28A006F2858 /* FKButtonField.h */,
-				ADC9DF201788C28A006F2858 /* FKButtonField.m */,
-				ADC9DF211788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.h */,
-				ADC9DF221788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m */,
-				ADC9DF231788C28A006F2858 /* FKFieldErrorProtocol.h */,
-				ADC9DF241788C28A006F2858 /* FKFields.h */,
-				ADC9DF251788C28A006F2858 /* FKFieldsBlocks.h */,
-				ADC9DF261788C28A006F2858 /* FKFloatField.h */,
-				ADC9DF271788C28A006F2858 /* FKFloatField.m */,
-				ADC9DF281788C28A006F2858 /* FKImageField.h */,
-				ADC9DF291788C28A006F2858 /* FKImageField.m */,
-				ADC9DF2A1788C28A006F2858 /* FKIntegerField.h */,
-				ADC9DF2B1788C28A006F2858 /* FKIntegerField.m */,
-				ADC9DF2C1788C28A006F2858 /* FKLabelField.h */,
-				ADC9DF2D1788C28A006F2858 /* FKLabelField.m */,
-				ADC9DF2E1788C28A006F2858 /* FKPasswordTextField.h */,
-				ADC9DF2F1788C28A006F2858 /* FKPasswordTextField.m */,
-				ADC9DF301788C28A006F2858 /* FKSaveButtonField.h */,
-				ADC9DF311788C28A006F2858 /* FKSaveButtonField.m */,
-				ADC9DF321788C28A006F2858 /* FKSimpleField.h */,
-				ADC9DF331788C28A006F2858 /* FKSimpleField.m */,
-				ADC9DF341788C28A006F2858 /* FKSliderField.h */,
-				ADC9DF351788C28A006F2858 /* FKSliderField.m */,
-				ADC9DF361788C28A006F2858 /* FKSwitchField.h */,
-				ADC9DF371788C28A006F2858 /* FKSwitchField.m */,
-				ADC9DF381788C28A006F2858 /* FKTextField.h */,
-				ADC9DF391788C28A006F2858 /* FKTextField.m */,
-				ADC9DF3A1788C28A006F2858 /* FKTextViewField.h */,
-				ADC9DF3B1788C28A006F2858 /* FKTextViewField.m */,
-				ADC9DF3C1788C28A006F2858 /* FKValueViewField.h */,
-				ADC9DF3D1788C28A006F2858 /* FKValueViewField.m */,
+				AD8F5ADD17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.h */,
+				AD8F5ADE17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m */,
+				AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */,
+				AD5176061784A63000B30295 /* PSSPasscodeVerifyerViewController.h */,
+				AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */,
+				AD5176081784A63000B30295 /* PSSPasscodeVerifyerViewController.xib */,
+				ADC9DEAB1786242D006F2858 /* PSSPINpasscodeButtonView.h */,
+				ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */,
 			);
-			path = Fields;
+			name = "Master password and passcode controllers";
 			sourceTree = "<group>";
 		};
-		ADC9DF831788C2AD006F2858 /* Vendor */ = {
+		ADC9DFB51788C988006F2858 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				ADC9DF841788C2AD006F2858 /* ActionSheetPicker */,
-				ADC9DF921788C2AD006F2858 /* BWLongTextViewController */,
-				ADC9DF951788C2AD006F2858 /* BWSelectViewController */,
+				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
+				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
+				AD72C3CA177B7E27009AADC8 /* main.m */,
+				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
 			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		ADC9DF841788C2AD006F2858 /* ActionSheetPicker */ = {
-			isa = PBXGroup;
-			children = (
-				ADC9DF851788C2AD006F2858 /* AbstractActionSheetPicker.h */,
-				ADC9DF861788C2AD006F2858 /* AbstractActionSheetPicker.m */,
-				ADC9DF871788C2AD006F2858 /* ActionSheetCustomPicker.h */,
-				ADC9DF881788C2AD006F2858 /* ActionSheetCustomPicker.m */,
-				ADC9DF891788C2AD006F2858 /* ActionSheetCustomPickerDelegate.h */,
-				ADC9DF8A1788C2AD006F2858 /* ActionSheetDatePicker.h */,
-				ADC9DF8B1788C2AD006F2858 /* ActionSheetDatePicker.m */,
-				ADC9DF8C1788C2AD006F2858 /* ActionSheetDistancePicker.h */,
-				ADC9DF8D1788C2AD006F2858 /* ActionSheetDistancePicker.m */,
-				ADC9DF8E1788C2AD006F2858 /* ActionSheetStringPicker.h */,
-				ADC9DF8F1788C2AD006F2858 /* ActionSheetStringPicker.m */,
-				ADC9DF901788C2AD006F2858 /* DistancePickerView.h */,
-				ADC9DF911788C2AD006F2858 /* DistancePickerView.m */,
-			);
-			path = ActionSheetPicker;
-			sourceTree = "<group>";
-		};
-		ADC9DF921788C2AD006F2858 /* BWLongTextViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ADC9DF931788C2AD006F2858 /* BWLongTextViewController.h */,
-				ADC9DF941788C2AD006F2858 /* BWLongTextViewController.m */,
-			);
-			path = BWLongTextViewController;
-			sourceTree = "<group>";
-		};
-		ADC9DF951788C2AD006F2858 /* BWSelectViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ADC9DF961788C2AD006F2858 /* BWSelectViewController.h */,
-				ADC9DF971788C2AD006F2858 /* BWSelectViewController.m */,
-			);
-			path = BWSelectViewController;
+			name = Others;
 			sourceTree = "<group>";
 		};
 		ADDC8BB2177CEA9E00021D92 /* Core Data Stack */ = {
@@ -882,79 +670,50 @@
 			files = (
 				AD5175FB1784906200B30295 /* NormalCircle.m in Sources */,
 				AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */,
-				ADC9DF7B1788C28A006F2858 /* FKSectionObject.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
-				ADC9DF6F1788C28A006F2858 /* FKValueViewField.m in Sources */,
-				ADC9DF711788C28A006F2858 /* FKFormAttributeMapping.m in Sources */,
-				ADC9DF9A1788C2AD006F2858 /* ActionSheetCustomPicker.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
-				ADC9DF6D1788C28A006F2858 /* FKTextViewField.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
-				ADC9DF551788C28A006F2858 /* FKButtonField.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
-				ADC9DF631788C28A006F2858 /* FKSaveButtonField.m in Sources */,
-				ADC9DF611788C28A006F2858 /* FKPasswordTextField.m in Sources */,
-				ADC9DF671788C28A006F2858 /* FKSliderField.m in Sources */,
 				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				AD5176041784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
-				ADC9DFA01788C2AD006F2858 /* ActionSheetStringPicker.m in Sources */,
-				ADC9DF731788C28A006F2858 /* FKFormAttributeValidation.m in Sources */,
 				AD5175FF1784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
-				ADC9DFA41788C2AD006F2858 /* BWLongTextViewController.m in Sources */,
-				ADC9DF7F1788C28A006F2858 /* UITableViewCell+FormKit.m in Sources */,
-				ADC9DF6B1788C28A006F2858 /* FKTextField.m in Sources */,
-				ADC9DF771788C28A006F2858 /* FKFormMapping.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSDetailViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
-				ADC9DFA21788C2AD006F2858 /* DistancePickerView.m in Sources */,
-				ADC9DF591788C28A006F2858 /* FKFloatField.m in Sources */,
-				ADC9DF5F1788C28A006F2858 /* FKLabelField.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSMasterViewController.m in Sources */,
 				AD821036177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
-				ADC9DF651788C28A006F2858 /* FKSimpleField.m in Sources */,
-				ADC9DF811788C28A006F2858 /* UIView+FormKit.m in Sources */,
-				ADC9DF531788C28A006F2858 /* FKBadgeField.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 				AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
-				ADC9DF571788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m in Sources */,
 				AD82103A177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD72C3CF177B7E27009AADC8 /* PSSAppDelegate.m in Sources */,
 				AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD873B60178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */,
+				AD873B5C178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD5175F91784906200B30295 /* SPLockScreen.m in Sources */,
 				AD821066177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
 				AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
-				ADC9DF9E1788C2AD006F2858 /* ActionSheetDistancePicker.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
-				ADC9DFA61788C2AD006F2858 /* BWSelectViewController.m in Sources */,
+				ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				AD5176091784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
-				ADC9DF9C1788C2AD006F2858 /* ActionSheetDatePicker.m in Sources */,
-				ADC9DF751788C28A006F2858 /* FKFormMapper.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
-				ADC9DF691788C28A006F2858 /* FKSwitchField.m in Sources */,
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
-				ADC9DF5D1788C28A006F2858 /* FKIntegerField.m in Sources */,
-				ADC9DF981788C2AD006F2858 /* AbstractActionSheetPicker.m in Sources */,
-				ADC9DF5B1788C28A006F2858 /* FKImageField.m in Sources */,
-				ADC9DF7D1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
-				ADC9DF791788C28A006F2858 /* FKFormModel.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -964,76 +723,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
-				ADC9DF661788C28A006F2858 /* FKSimpleField.m in Sources */,
-				ADC9DF9B1788C2AD006F2858 /* ActionSheetCustomPicker.m in Sources */,
-				ADC9DF561788C28A006F2858 /* FKButtonField.m in Sources */,
-				ADC9DF681788C28A006F2858 /* FKSliderField.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
-				ADC9DF781788C28A006F2858 /* FKFormMapping.m in Sources */,
+				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD821037177CFBD400B6F501 /* PSSObjectAttachment.m in Sources */,
-				ADC9DF541788C28A006F2858 /* FKBadgeField.m in Sources */,
 				AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
-				ADC9DFA71788C2AD006F2858 /* BWSelectViewController.m in Sources */,
 				AD821067177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
-				ADC9DF991788C2AD006F2858 /* AbstractActionSheetPicker.m in Sources */,
-				ADC9DF821788C28A006F2858 /* UIView+FormKit.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
-				ADC9DF7C1788C28A006F2858 /* FKSectionObject.m in Sources */,
 				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
-				ADC9DF9F1788C2AD006F2858 /* ActionSheetDistancePicker.m in Sources */,
-				ADC9DF761788C28A006F2858 /* FKFormMapper.m in Sources */,
-				ADC9DF9D1788C2AD006F2858 /* ActionSheetDatePicker.m in Sources */,
 				ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
-				ADC9DF5A1788C28A006F2858 /* FKFloatField.m in Sources */,
-				ADC9DF621788C28A006F2858 /* FKPasswordTextField.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
-				ADC9DFA51788C2AD006F2858 /* BWLongTextViewController.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
-				ADC9DF6E1788C28A006F2858 /* FKTextViewField.m in Sources */,
 				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
-				ADC9DF601788C28A006F2858 /* FKLabelField.m in Sources */,
 				AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
-				ADC9DF721788C28A006F2858 /* FKFormAttributeMapping.m in Sources */,
 				AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
-				ADC9DF6C1788C28A006F2858 /* FKTextField.m in Sources */,
 				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
-				ADC9DFA31788C2AD006F2858 /* DistancePickerView.m in Sources */,
+				AD873B5D178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
-				ADC9DFA11788C2AD006F2858 /* ActionSheetStringPicker.m in Sources */,
+				AD873B61178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */,
 				AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
-				ADC9DF581788C28A006F2858 /* FKDisclosureIndicatorAccessoryField.m in Sources */,
-				ADC9DF5E1788C28A006F2858 /* FKIntegerField.m in Sources */,
-				ADC9DF801788C28A006F2858 /* UITableViewCell+FormKit.m in Sources */,
 				AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */,
-				ADC9DF7E1788C28A006F2858 /* NSObject+FKFormAttributeMapping.m in Sources */,
 				ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
-				ADC9DF6A1788C28A006F2858 /* FKSwitchField.m in Sources */,
 				AD5175FE1784906200B30295 /* SPLine.m in Sources */,
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
-				ADC9DF5C1788C28A006F2858 /* FKImageField.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
-				ADC9DF701788C28A006F2858 /* FKValueViewField.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
-				ADC9DF741788C28A006F2858 /* FKFormAttributeValidation.m in Sources */,
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
-				ADC9DF641788C28A006F2858 /* FKSaveButtonField.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
-				ADC9DF7A1788C28A006F2858 /* FKFormModel.m in Sources */,
 				AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,11 +10,17 @@
 #import <CoreData/CoreData.h>
 #import "PSSBaseGenericObject.h"
 
+@class PSSPasswordVersion;
 
 @interface PSSPasswordBaseObject : PSSBaseGenericObject
 
 @property (nonatomic, retain) NSNumber * autofill;
 @property (nonatomic, retain) NSData * favicon;
 @property (nonatomic, retain) NSString * hostname;
+
+@property (strong, nonatomic) PSSPasswordVersion * currentVersion;
+@property (readonly, nonatomic) NSString * notes;
+@property (nonatomic, readonly) NSString * password;
+@property (readonly, nonatomic) NSString * username;
 
 @end

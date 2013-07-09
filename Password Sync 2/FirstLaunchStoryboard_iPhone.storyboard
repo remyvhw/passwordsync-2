@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YkD-t6-hIx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YkD-t6-hIx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -24,6 +24,10 @@
         <scene sceneID="RdX-rX-Fuw">
             <objects>
                 <viewController title="Password Sync 2" id="72R-GY-BAB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AVC-J4-0ar"/>
+                        <viewControllerLayoutGuide type="bottom" id="5BM-J8-x2g"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pu1-Mf-MOm">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -79,6 +83,10 @@
         <scene sceneID="fyb-4o-XUL">
             <objects>
                 <viewController title="Master Password" id="sgt-0X-Ary" customClass="PSSWelcomeScreenMasterPasswordExplanationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AaR-MC-a3b"/>
+                        <viewControllerLayoutGuide type="bottom" id="7fI-rZ-ZwM"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RdS-lp-ibD">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -134,6 +142,10 @@
         <scene sceneID="VjF-VH-W47">
             <objects>
                 <viewController title="Master Password" id="5cD-SY-2DK" customClass="PSSWelcomeScreenMasterPasswordGoodPracticesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qxI-2A-tDz"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRc-LF-lXc"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uNA-I0-OyZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -277,6 +289,10 @@
         <scene sceneID="UsL-kg-PWj">
             <objects>
                 <viewController title="Master Password" id="8xF-sM-O93" customClass="PSSWelcomeNewUserSetMasterPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XPN-49-dFD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y4M-7E-KXJ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u4y-xy-YbR">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -335,6 +351,10 @@
         <scene sceneID="68r-KJ-pnk">
             <objects>
                 <viewController id="UMp-Tg-reG" customClass="PSSWelcomeScreenPrintMasterPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b2y-eq-htO"/>
+                        <viewControllerLayoutGuide type="bottom" id="UO7-5D-0ze"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sij-iF-9Jf">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -393,13 +413,13 @@
                                     <action selector="neverAskAgainAction:" destination="UMp-Tg-reG" eventType="touchUpInside" id="y7U-nM-hgx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Print a copy of your master password and keep it in a safe location." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LWo-3n-Vmo">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Print a copy of your master password and keep it in a safe location." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="LWo-3n-Vmo">
                                 <rect key="frame" x="20" y="20" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="printedPasswordPreview" translatesAutoresizingMaskIntoConstraints="NO" id="FMs-FR-JYB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="printedPasswordPreview" translatesAutoresizingMaskIntoConstraints="NO" id="FMs-FR-JYB">
                                 <rect key="frame" x="45" y="69" width="230" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -439,6 +459,10 @@
         <scene sceneID="lg6-VF-JLr">
             <objects>
                 <viewController storyboardIdentifier="com.pumaxprod.ios.Password-Sync-2.id.PasscodeChoosingProcessFirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mnz-43-Rbj" customClass="PSSWelcomeScreenPasscodeFirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KDq-Nk-Zs1"/>
+                        <viewControllerLayoutGuide type="bottom" id="lk1-vl-5ks"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dAH-bt-C3h">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -492,6 +516,10 @@
         <scene sceneID="3LK-jB-qsc">
             <objects>
                 <viewController id="fBT-rV-zDe" customClass="PSSWelcomeScreenPasscodeModeChooserTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hnp-wY-RZ2"/>
+                        <viewControllerLayoutGuide type="bottom" id="OUF-fZ-bWy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1gY-89-pPA">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -504,19 +532,19 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PasscodeModeCell" textLabel="sY2-Mj-sg5" detailTextLabel="8cP-pt-IKI" imageView="POn-m7-g43" style="IBUITableViewCellStyleSubtitle" id="nlX-D6-g7h">
                                         <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="87"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nlX-D6-g7h" id="TRf-wy-DGm">
+                                            <rect key="frame" x="0.0" y="0.0" width="289" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-Mj-sg5">
-                                                    <rect key="frame" x="70" y="26" width="32" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sY2-Mj-sg5">
+                                                    <rect key="frame" x="70" y="27" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-pt-IKI">
-                                                    <rect key="frame" x="70" y="48" width="39" height="13"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8cP-pt-IKI">
+                                                    <rect key="frame" x="70" y="48" width="40" height="13"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -527,8 +555,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -575,6 +602,10 @@
         <scene sceneID="TCw-P1-xeG">
             <objects>
                 <viewController id="ZvW-jO-trq" customClass="PSSWelcomeScreenGesturePasscodeSetterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4u-oX-lQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="517-ZD-Emz"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ulG-Fu-XA8">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -625,6 +656,10 @@
         <scene sceneID="5jj-23-Vf1">
             <objects>
                 <viewController id="zU2-bP-Lhw" customClass="PSSWelcomeScreenFinishedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9cK-je-oXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="aGg-S0-6Cn"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mZw-dI-Jyj">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -676,6 +711,10 @@
         <scene sceneID="3qV-NX-C2G">
             <objects>
                 <viewController id="Amr-x9-ur7" customClass="PSSWelcomeScreenPINPasscodeSetterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3n7-Qe-U2C"/>
+                        <viewControllerLayoutGuide type="bottom" id="REb-mn-XQU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SlE-S7-Vhf">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -985,6 +1024,10 @@
         <scene sceneID="Obc-9f-mVl">
             <objects>
                 <viewController id="CUI-hp-yuu" customClass="PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AkJ-bm-ZsF"/>
+                        <viewControllerLayoutGuide type="bottom" id="gR3-Gk-Dn8"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2aa-MG-i9K">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
