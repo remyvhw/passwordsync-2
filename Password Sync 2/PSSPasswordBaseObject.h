@@ -22,5 +22,7 @@
 @property (readonly, nonatomic) NSString * notes;
 @property (nonatomic, readonly) NSString * password;
 @property (readonly, nonatomic) NSString * username;
+@property (nonatomic, retain) NSSet *domains;
+
 
 @end

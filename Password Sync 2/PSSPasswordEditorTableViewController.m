@@ -179,6 +179,8 @@
             }
             self.usernameCell.textField.placeholder = NSLocalizedString(@"Username", nil);
             self.usernameCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.usernameCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            self.usernameCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
         }
         cell = self.usernameCell;
         
@@ -210,6 +212,9 @@
             }
             self.hostCell.textField.placeholder = NSLocalizedString(@"URL", nil);
             self.hostCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.hostCell.textField.keyboardType = UIKeyboardTypeURL;
+            self.hostCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            self.hostCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
         }
         cell = self.hostCell;
         

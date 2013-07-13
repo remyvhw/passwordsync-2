@@ -23,7 +23,8 @@
     if (self) {
         // Initialization code
         [self.textField setSecureTextEntry:YES];
-        
+        self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
         
         UIButton * shuffleButton = [[UIButton alloc] init];
         UIImage * shuffleImage = [UIImage imageNamed:@"Shuffle"];

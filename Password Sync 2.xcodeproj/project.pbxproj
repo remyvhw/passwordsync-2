@@ -118,6 +118,8 @@
 		ADA0E53017907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */; };
 		ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */; };
 		ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */; };
+		ADA0E5371791162C00F284B9 /* PSSPasswordDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */; };
+		ADA0E5381791162C00F284B9 /* PSSPasswordDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */; };
 		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
@@ -267,6 +269,8 @@
 		ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordPasswordTextFieldCell.m; sourceTree = "<group>"; };
 		ADA0E5311790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordStrengthGaugeView.h; sourceTree = "<group>"; };
 		ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordStrengthGaugeView.m; sourceTree = "<group>"; };
+		ADA0E5351791162C00F284B9 /* PSSPasswordDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordDomain.h; sourceTree = "<group>"; };
+		ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordDomain.m; sourceTree = "<group>"; };
 		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
 		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
@@ -597,6 +601,8 @@
 			isa = PBXGroup;
 			children = (
 				AD72C3D6177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld */,
+				ADA0E5351791162C00F284B9 /* PSSPasswordDomain.h */,
+				ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */,
 				AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */,
 				AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */,
 				AD821048177CFBD400B6F501 /* PSSCreditCardVersion.h */,
@@ -803,6 +809,7 @@
 				AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */,
+				ADA0E5371791162C00F284B9 /* PSSPasswordDomain.m in Sources */,
 				AD5176091784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
@@ -841,6 +848,7 @@
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				ADA0E5381791162C00F284B9 /* PSSPasswordDomain.m in Sources */,
 				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,

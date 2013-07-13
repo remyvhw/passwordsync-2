@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3381.3" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="PSSBaseGenericObject" representedClassName="PSSBaseGenericObject" isAbstract="YES" syncable="YES">
         <attribute name="created" attributeType="Date" syncable="YES"/>
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
@@ -66,6 +66,13 @@
         <attribute name="autofill" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="favicon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="domains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSPasswordDomain" inverseName="passwords" inverseEntity="PSSPasswordDomain" syncable="YES"/>
+    </entity>
+    <entity name="PSSPasswordDomain" representedClassName="PSSPasswordDomain" syncable="YES">
+        <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="original_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSPasswordBaseObject" inverseName="domains" inverseEntity="PSSPasswordBaseObject" syncable="YES"/>
     </entity>
     <entity name="PSSPasswordVersion" representedClassName="PSSPasswordVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
         <attribute name="notes" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -85,5 +92,6 @@
         <element name="PSSObjectTag" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSPasswordBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSPasswordVersion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSPasswordDomain" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

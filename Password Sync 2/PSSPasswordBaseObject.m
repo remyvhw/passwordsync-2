@@ -17,6 +17,7 @@
 @dynamic autofill;
 @dynamic favicon;
 @dynamic hostname;
+@dynamic domains;
 
 
 -(PSSPasswordVersion*)currentVersion{
