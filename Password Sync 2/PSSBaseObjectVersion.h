@@ -26,4 +26,6 @@
 - (void)addAttachments:(NSSet *)values;
 - (void)removeAttachments:(NSSet *)values;
 
+-(NSString*)decryptDataToUTF8String:(NSData*)encryptedString;
+
 @end

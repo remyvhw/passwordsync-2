@@ -7,7 +7,7 @@
 //
 
 #import "PSSMasterViewController.h"
-
+#import "PSSPasswordEditorTableViewController.h"
 #import "PSSDetailViewController.h"
 
 @interface PSSMasterViewController ()
@@ -50,6 +50,16 @@
 
 - (void)insertNewObject:(id)sender
 {
+    
+    UIStoryboard * storyboardContainingEditor = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    UINavigationController * passwordEditorNavController = [storyboardContainingEditor instantiateInitialViewController];
+    [self.navigationController presentViewController:passwordEditorNavController animated:YES completion:^{
+        
+    }];
+    
+    
+    /*
+     // Sample code from the original template. Kept for possible later re-use of good practices
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
@@ -66,6 +76,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+     */
 }
 
 #pragma mark - Table View

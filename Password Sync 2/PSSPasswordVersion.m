@@ -8,11 +8,25 @@
 
 #import "PSSPasswordVersion.h"
 
-
 @implementation PSSPasswordVersion
 
 @dynamic notes;
 @dynamic password;
 @dynamic username;
+
+
+-(NSString*)decryptedUsername{
+    return [self decryptDataToUTF8String:self.username];
+}
+
+
+-(NSString*)decryptedPassword{
+    return [self decryptDataToUTF8String:self.password];
+}
+
+
+-(NSString*)decryptedNotes{
+    return [self decryptDataToUTF8String:self.notes];
+}
 
 @end

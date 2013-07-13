@@ -9,6 +9,8 @@
 #import "PSSBaseObjectVersion.h"
 #import "PSSBaseGenericObject.h"
 #import "PSSObjectAttachment.h"
+#import "PSSEncryptor.h"
+
 
 
 @implementation PSSBaseObjectVersion
@@ -17,5 +19,12 @@
 @dynamic timestamp;
 @dynamic attachments;
 @dynamic encryptedObject;
+
+
+-(NSString*)decryptDataToUTF8String:(NSData*)encryptedString{
+    return [NSString stringWithCString:[[PSSEncryptor decryptData:encryptedString] bytes] encoding:NSUTF8StringEncoding];
+}
+
+
 
 @end

@@ -92,10 +92,14 @@
 		AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
 		AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
 		AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
-		AD873B5C178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */; };
-		AD873B5D178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */; };
-		AD873B60178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */; };
-		AD873B61178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */; };
+		AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */; };
+		AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */; };
+		AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */; };
+		AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */; };
+		AD873B6B178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */; };
+		AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */; };
+		AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */; };
+		AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */; };
 		AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
 		AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */; };
 		AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AD81782056B00702EFA /* PSSMasterPasswordPrintView.m */; };
@@ -110,6 +114,24 @@
 		AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */; };
 		AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
 		AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
+		ADA0E52F17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */; };
+		ADA0E53017907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */; };
+		ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */; };
+		ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */; };
+		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
+		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
+		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
+		ADC844B91790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
+		ADC844BA1790709800349B16 /* Logo152.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B51790709800349B16 /* Logo152.png */; };
+		ADC844BB1790709800349B16 /* Logo152.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B51790709800349B16 /* Logo152.png */; };
+		ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C0179074DA00349B16 /* commonPassDict.plist */; };
+		ADC844C5179074DA00349B16 /* commonPassDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C0179074DA00349B16 /* commonPassDict.plist */; };
+		ADC844C6179074DA00349B16 /* 15Dict_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C1179074DA00349B16 /* 15Dict_en.plist */; };
+		ADC844C7179074DA00349B16 /* 15Dict_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C1179074DA00349B16 /* 15Dict_en.plist */; };
+		ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC844C3179074DA00349B16 /* PSSRandomPasswordGenerator.m */; };
+		ADC844C9179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC844C3179074DA00349B16 /* PSSRandomPasswordGenerator.m */; };
+		ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC844CD1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m */; };
+		ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC844CD1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m */; };
 		ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */; };
 		ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */; };
 		ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */; };
@@ -221,10 +243,13 @@
 		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 		AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		AD873B5A178BB6B500B77412 /* PSSPasswordEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordEditorTableViewController.h; sourceTree = "<group>"; };
-		AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordEditorTableViewController.m; sourceTree = "<group>"; };
-		AD873B5E178BB79F00B77412 /* PSSFormSimpleFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSFormSimpleFieldCell.h; sourceTree = "<group>"; };
-		AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSFormSimpleFieldCell.m; sourceTree = "<group>"; };
+		AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSSNewPasswordObjectStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		AD873B65178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordBasicTextFieldCell.h; sourceTree = "<group>"; };
+		AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordBasicTextFieldCell.m; sourceTree = "<group>"; };
+		AD873B69178E614F00B77412 /* PSSPasswordEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordEditorTableViewController.h; sourceTree = "<group>"; };
+		AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordEditorTableViewController.m; sourceTree = "<group>"; };
+		AD873B6D178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordMultilineTextFieldCell.h; sourceTree = "<group>"; };
+		AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordMultilineTextFieldCell.m; sourceTree = "<group>"; };
 		AD8F5AD31781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPrintMasterPasswordViewController.h; sourceTree = "<group>"; };
 		AD8F5AD41781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPrintMasterPasswordViewController.m; sourceTree = "<group>"; };
 		AD8F5AD71782056B00702EFA /* PSSMasterPasswordPrintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordPrintView.h; sourceTree = "<group>"; };
@@ -238,6 +263,19 @@
 		AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeFirstViewController.m; sourceTree = "<group>"; };
 		AD8F5AED1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.h; sourceTree = "<group>"; };
 		AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.m; sourceTree = "<group>"; };
+		ADA0E52D17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordPasswordTextFieldCell.h; sourceTree = "<group>"; };
+		ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordPasswordTextFieldCell.m; sourceTree = "<group>"; };
+		ADA0E5311790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordStrengthGaugeView.h; sourceTree = "<group>"; };
+		ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordStrengthGaugeView.m; sourceTree = "<group>"; };
+		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
+		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
+		ADC844C0179074DA00349B16 /* commonPassDict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commonPassDict.plist; sourceTree = "<group>"; };
+		ADC844C1179074DA00349B16 /* 15Dict_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 15Dict_en.plist; sourceTree = "<group>"; };
+		ADC844C2179074DA00349B16 /* PSSRandomPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSRandomPasswordGenerator.h; sourceTree = "<group>"; };
+		ADC844C3179074DA00349B16 /* PSSRandomPasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSRandomPasswordGenerator.m; sourceTree = "<group>"; };
+		ADC844CC1790758D00349B16 /* PSSPasswordGeneratorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordGeneratorTableViewController.h; sourceTree = "<group>"; };
+		ADC844CD1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordGeneratorTableViewController.m; sourceTree = "<group>"; };
 		ADC9DEAB1786242D006F2858 /* PSSPINpasscodeButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPINpasscodeButtonView.h; sourceTree = "<group>"; };
 		ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPINpasscodeButtonView.m; sourceTree = "<group>"; };
 		ADC9DEAF17862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPINPasscodeSetterViewController.h; sourceTree = "<group>"; };
@@ -345,6 +383,7 @@
 		AD72C3C4177B7E27009AADC8 /* Password Sync 2 */ = {
 			isa = PBXGroup;
 			children = (
+				ADC844B21790709800349B16 /* Temporary Icons */,
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
@@ -355,10 +394,7 @@
 				ADC9DFA91788C500006F2858 /* Master password and passcode controllers */,
 				ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */,
 				ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */,
-				AD873B5A178BB6B500B77412 /* PSSPasswordEditorTableViewController.h */,
-				AD873B5B178BB6B500B77412 /* PSSPasswordEditorTableViewController.m */,
-				AD873B5E178BB79F00B77412 /* PSSFormSimpleFieldCell.h */,
-				AD873B5F178BB79F00B77412 /* PSSFormSimpleFieldCell.m */,
+				ADC844CB179074F100349B16 /* New Password / Password Editor */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -473,6 +509,49 @@
 				ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */,
 			);
 			name = Passcode;
+			sourceTree = "<group>";
+		};
+		ADC844B21790709800349B16 /* Temporary Icons */ = {
+			isa = PBXGroup;
+			children = (
+				ADC844B31790709800349B16 /* Icon76.png */,
+				ADC844B41790709800349B16 /* Icon@2x.png */,
+				ADC844B51790709800349B16 /* Logo152.png */,
+			);
+			name = "Temporary Icons";
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		ADC844CA179074DF00349B16 /* Random Password Generator */ = {
+			isa = PBXGroup;
+			children = (
+				ADC844CC1790758D00349B16 /* PSSPasswordGeneratorTableViewController.h */,
+				ADC844CD1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m */,
+				ADC844C0179074DA00349B16 /* commonPassDict.plist */,
+				ADC844C1179074DA00349B16 /* 15Dict_en.plist */,
+				ADC844C2179074DA00349B16 /* PSSRandomPasswordGenerator.h */,
+				ADC844C3179074DA00349B16 /* PSSRandomPasswordGenerator.m */,
+				ADA0E5311790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.h */,
+				ADA0E5321790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m */,
+			);
+			name = "Random Password Generator";
+			sourceTree = "<group>";
+		};
+		ADC844CB179074F100349B16 /* New Password / Password Editor */ = {
+			isa = PBXGroup;
+			children = (
+				AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */,
+				AD873B69178E614F00B77412 /* PSSPasswordEditorTableViewController.h */,
+				AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */,
+				AD873B6D178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.h */,
+				AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */,
+				AD873B65178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.h */,
+				AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */,
+				ADA0E52D17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.h */,
+				ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */,
+				ADC844CA179074DF00349B16 /* Random Password Generator */,
+			);
+			name = "New Password / Password Editor";
 			sourceTree = "<group>";
 		};
 		ADC9DFA81788C4BA006F2858 /* Main Storyboard */ = {
@@ -643,10 +722,16 @@
 				AD72C3D5177B7E27009AADC8 /* Main_iPad.storyboard in Resources */,
 				AD72C3E0177B7E27009AADC8 /* Images.xcassets in Resources */,
 				AD51760B1784A63000B30295 /* PSSPasscodeVerifyerViewController.xib in Resources */,
+				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
+				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
+				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
 				AD72C3C9177B7E27009AADC8 /* InfoPlist.strings in Resources */,
 				AD8F5AE217823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
 				AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				ADC844C6179074DA00349B16 /* 15Dict_en.plist in Resources */,
+				ADC844B61790709800349B16 /* Icon76.png in Resources */,
+				ADC844B81790709800349B16 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,8 +741,14 @@
 			files = (
 				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD51760C1784A63000B30295 /* PSSPasscodeVerifyerViewController.xib in Resources */,
+				ADC844B91790709800349B16 /* Icon@2x.png in Resources */,
 				AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
+				AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
 				AD72C3F2177B7E28009AADC8 /* InfoPlist.strings in Resources */,
+				ADC844C5179074DA00349B16 /* commonPassDict.plist in Resources */,
+				ADC844C7179074DA00349B16 /* 15Dict_en.plist in Resources */,
+				ADC844B71790709800349B16 /* Icon76.png in Resources */,
+				ADC844BB1790709800349B16 /* Logo152.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +765,7 @@
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
+				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
@@ -688,6 +780,7 @@
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
+				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSMasterViewController.m in Sources */,
@@ -695,16 +788,19 @@
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 				AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
 				AD82103A177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
+				ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD72C3CF177B7E27009AADC8 /* PSSAppDelegate.m in Sources */,
 				AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
-				AD873B60178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */,
-				AD873B5C178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
+				AD873B6B178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD5175F91784906200B30295 /* SPLockScreen.m in Sources */,
+				AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD821066177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
+				ADA0E52F17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */,
 				AD82103E177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
+				AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				AD5176091784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
@@ -722,6 +818,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA0E53017907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */,
 				AD82103F177CFBD400B6F501 /* PSSNoteVersion.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
@@ -739,16 +836,17 @@
 				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD82103B177CFBD400B6F501 /* PSSObjectDecorativeImage.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
+				AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
-				AD873B5D178BB6B500B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
-				AD873B61178BB79F00B77412 /* PSSFormSimpleFieldCell.m in Sources */,
 				AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
 				AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */,
@@ -757,9 +855,12 @@
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
+				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
+				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
+				ADC844C9179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
@@ -888,7 +989,6 @@
 		AD72C3F8177B7E28009AADC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -904,7 +1004,6 @@
 		AD72C3F9177B7E28009AADC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";

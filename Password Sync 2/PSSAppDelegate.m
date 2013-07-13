@@ -17,6 +17,24 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+-(void)checkForJailbreaks{
+    
+    
+    NSURL* url = [NSURL URLWithString:@"cydia://package/com.example.package"];
+    if ([[UIApplication sharedApplication] canOpenURL:url]){
+        
+        // iOS Device might be jailbroken. We'll alert the user (in english, we assume jailbreakers understand english and we won't pay to translate this).
+        
+        NSString * alertString = @"It appears your device is jailbroken. This is not the usual piracy yadayada: Password Sync relies on the OS' keychain to encrypt securely your data. YOUR DATA MIGHT NOT BE SAFE on a jailbroken devices, as accessing the keychain through unofficial paths is possible.\nThe jailbreak should not prevent Password Sync to run. We also might be paranoid. But be sure not to loose your device and be extremely cautious about what third party non sandboxed software you install.";
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Jailbreak warning" message:alertString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+    }
+    
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Start iCloud synchronization of NSUserDefaults
@@ -25,7 +43,7 @@
     
     // Override point for customization after application launch.
     
-    [self.window setTintColor:[UIColor colorWithRed:0. green:204./255. blue:92./255.0 alpha:1.0]];
+    [self.window setTintColor:[UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0]];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -44,7 +62,7 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
     
-    
+    [self checkForJailbreaks];
     
         
     
