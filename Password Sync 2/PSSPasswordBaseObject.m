@@ -9,6 +9,7 @@
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
 #import "PSSEncryptor.h"
+#import "PSSPasswordDomain.h"
 
 @implementation PSSPasswordBaseObject
 @synthesize currentVersion = _currentVersion;
@@ -16,7 +17,6 @@
 
 @dynamic autofill;
 @dynamic favicon;
-@dynamic hostname;
 @dynamic domains;
 
 
@@ -83,5 +83,86 @@
     
 }
 
+
+-(PSSPasswordDomain*)insertNewDomainInManagedObjectWithURLString:(NSString*)urlString{
+    
+    
+    // Look up for a similar URL
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PSSPasswordDomain"];
+    
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"original_url like[cd] %@", urlString]];
+    [fetchRequest setFetchBatchSize:1];
+    
+    NSArray * existingDomainsWithSameURL = [self.managedObjectContext executeFetchRequest:fetchRequest error:NULL];
+    
+    if ([existingDomainsWithSameURL count]) {
+        // Already exists
+        return [existingDomainsWithSameURL objectAtIndex:0];
+    }
+    
+    // No such object, create one
+    
+    PSSPasswordDomain *newManagedObject = (PSSPasswordDomain*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordDomain" inManagedObjectContext:self.managedObjectContext];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    newManagedObject.original_url = urlString;
+    newManagedObject.hostname = [newManagedObject cleanUpHostname:urlString];
+    
+    return newManagedObject;
+}
+
+-(void)setMainDomainFromString:(NSString *)originalStringDomain{
+    
+    
+    NSString * mainDomain = nil;
+    if ([originalStringDomain length] && [originalStringDomain rangeOfString:@"://"].location == NSNotFound) {
+        
+        // URL Exists but does not contains @"http://", @"ftp://", @"ssh://", @"pop3.", @"imap.",  insert it.
+        mainDomain = [[NSString alloc] initWithFormat:@"http://%@", originalStringDomain];
+    } else {
+        mainDomain = originalStringDomain;
+    }
+
+    
+    if (![self.domains count] && ![mainDomain isEqualToString:@""]) {
+        // There are no domains yet and user provided a domain, find the same URL in the datastore just in case. If we can't find any, create a new domain.
+        PSSPasswordDomain * domain = [self insertNewDomainInManagedObjectWithURLString:mainDomain];
+        NSMutableSet * mutableSet = [NSMutableSet setWithSet:domain.passwords];
+        [mutableSet addObject:self];
+        domain.passwords = (NSSet*)mutableSet;
+        
+    } else if ([self.domains count] ){
+        // There a domains in the password list
+        
+        if ([mainDomain isEqualToString:@""]) {
+            // User deleted hostname. Delete all hostnames
+            
+            self.domains = nil;
+            
+        } else if (![mainDomain isEqualToString:[[self mainDomain] original_url]]) {
+            // Maindomains are differents
+            
+            PSSPasswordDomain * domain = [self insertNewDomainInManagedObjectWithURLString:mainDomain];
+            NSMutableSet * mutableSet = [NSMutableSet setWithSet:domain.passwords];
+            [mutableSet addObject:self];
+            domain.passwords = (NSSet*)mutableSet;
+            
+        }
+        
+    }
+    
+}
+
+-(PSSPasswordDomain*)mainDomain{
+    
+    NSSortDescriptor * timestampDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    NSArray * allDomains = [self.domains sortedArrayUsingDescriptors:@[timestampDescriptor]];
+    
+    if ([allDomains count]) {
+        return [allDomains objectAtIndex:0];
+    }
+    return nil;
+}
 
 @end

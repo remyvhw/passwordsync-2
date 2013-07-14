@@ -20,7 +20,7 @@
 @dynamic displayName;
 @dynamic category;
 @dynamic children;
-@dynamic decorativeImage;
+@dynamic decorativeImages;
 @dynamic parent;
 @dynamic tags;
 @dynamic versions;

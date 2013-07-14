@@ -25,6 +25,10 @@
     return [NSString stringWithCString:[[PSSEncryptor decryptData:encryptedString] bytes] encoding:NSUTF8StringEncoding];
 }
 
+-(NSData*)encryptedDataFromUTF8String:(NSString*)string{
+    
+    return [PSSEncryptor encryptData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+}
 
 
 @end

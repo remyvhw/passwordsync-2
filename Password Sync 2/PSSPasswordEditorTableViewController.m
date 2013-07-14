@@ -12,6 +12,10 @@
 #import "PSSnewPasswordPasswordTextFieldCell.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
+#import "PSSPasswordDomain.h"
+#import "PSSAppDelegate.h"
+
+#import "PSSFaviconFetcher.h"
 
 #define kTextFieldTableViewCell @"kTextFieldTableViewCell"
 #define kMultilineTableViewCell @"kMultilineTableViewCell"
@@ -30,6 +34,110 @@
 
 @implementation PSSPasswordEditorTableViewController
 
+
+
+-(PSSPasswordVersion*)insertNewPasswordVersionInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSPasswordVersion *newManagedObject = (PSSPasswordVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordVersion" inManagedObjectContext:context];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(PSSPasswordBaseObject*)insertNewPasswordInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSPasswordBaseObject *newManagedObject = (PSSPasswordBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordBaseObject" inManagedObjectContext:context];
+    
+    // We'll add a creation date automatically
+    newManagedObject.created = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(void)saveChangesAndDismiss{
+    
+    BOOL editingMode = NO;
+    
+    if (!self.passwordBaseObject) {
+        self.passwordBaseObject = [self insertNewPasswordInManagedObject];
+        editingMode = YES;
+    }
+    
+    
+    [self.passwordBaseObject setMainDomainFromString:self.hostCell.textField.text];
+    
+    
+    // We need to create a new version
+    
+    PSSPasswordVersion * version = [self insertNewPasswordVersionInManagedObject];
+    
+    version.encryptedObject = self.passwordBaseObject;
+    
+    version.displayName = self.titleCell.textField.text;
+    // We update the display name with the latest
+    self.passwordBaseObject.displayName = version.displayName;
+    
+    version.decryptedUsername = self.usernameCell.textField.text;
+    version.decryptedPassword = self.passwordCell.textField.text;
+    version.decryptedNotes = self.notesCell.textView.text;
+    
+
+    NSError *error = nil;
+    if (![self.passwordBaseObject.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
+        
+    }
+    
+    if (editingMode) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
+            
+            [faviconFetcher backgroundFetchFaviconForBasePassword:self.passwordBaseObject];
+            
+        }];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+}
+
+
+-(void)doneEditing:(id)sender{
+    
+    NSString * filePath = [[NSBundle mainBundle] pathForResource:@"commonPassDict" ofType:@"plist"];
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+    
+    NSArray * commonPasswordsArray = (NSArray*)[dict objectForKey:@"Root"];
+    
+    // Check if password is one of the top 500 passwords in use
+    if ([commonPasswordsArray containsObject:self.passwordCell.textField.text] || [commonPasswordsArray containsObject:[self.passwordCell.textField.text lowercaseString]]) {
+        // Alert the user it's password is sorta lame
+        
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Weak Password Alert", nil) message:NSLocalizedString(@"The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password.", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                                   
+        [alertView show];
+    } else {
+        
+        // We're good, we can proceed with save
+        [self saveChangesAndDismiss];
+    }
+    
+}
 
 -(void)showPasswordGenerator:(id)sender{
     [self performSegueWithIdentifier:@"pushPasswordGeneratorOnStackSegueIdentifier" sender:sender];
@@ -53,6 +161,9 @@
     [self.tableView registerClass:[PSSnewPasswordBasicTextFieldCell class] forCellReuseIdentifier:kTextFieldTableViewCell];
     
     
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
     if (self.passwordBaseObject) {
         // We're in edit mode
     } else {
@@ -62,6 +173,7 @@
         
         self.navigationItem.leftBarButtonItem = cancelButton;
         
+
         
     }
     
@@ -208,7 +320,7 @@
             
             self.hostCell = hostCell;
             if (self.passwordBaseObject) {
-                self.hostCell.textField.text = [self.passwordBaseObject hostname];
+                self.hostCell.textField.text = [[self.passwordBaseObject mainDomain] original_url];
             }
             self.hostCell.textField.placeholder = NSLocalizedString(@"URL", nil);
             self.hostCell.selectionStyle = UITableViewCellSelectionStyleNone;

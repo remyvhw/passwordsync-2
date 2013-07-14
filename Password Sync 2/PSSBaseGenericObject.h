@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * displayName;
 @property (nonatomic, retain) PSSObjectCategory *category;
 @property (nonatomic, retain) PSSBaseGenericObject *children;
-@property (nonatomic, retain) NSSet *decorativeImage;
+@property (nonatomic, retain) NSSet *decorativeImages;
 @property (nonatomic, retain) PSSBaseGenericObject *parent;
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) NSSet *versions;

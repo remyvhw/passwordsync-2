@@ -11,18 +11,22 @@
 #import "PSSBaseGenericObject.h"
 
 @class PSSPasswordVersion;
+@class PSSPasswordDomain;
 
 @interface PSSPasswordBaseObject : PSSBaseGenericObject
 
 @property (nonatomic, retain) NSNumber * autofill;
 @property (nonatomic, retain) NSData * favicon;
-@property (nonatomic, retain) NSString * hostname;
 
 @property (strong, nonatomic) PSSPasswordVersion * currentVersion;
 @property (readonly, nonatomic) NSString * notes;
 @property (nonatomic, readonly) NSString * password;
 @property (readonly, nonatomic) NSString * username;
+
 @property (nonatomic, retain) NSSet *domains;
 
+
+-(PSSPasswordDomain*)mainDomain;
+-(void)setMainDomainFromString:(NSString *)mainDomain;
 
 @end

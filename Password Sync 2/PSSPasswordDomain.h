@@ -26,4 +26,6 @@
 - (void)addPasswords:(NSSet *)values;
 - (void)removePasswords:(NSSet *)values;
 
+-(NSString*)cleanUpHostname:(NSString*)dirtyHost;
+
 @end

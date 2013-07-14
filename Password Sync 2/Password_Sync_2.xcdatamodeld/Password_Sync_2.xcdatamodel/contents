@@ -5,7 +5,7 @@
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectCategory" inverseName="encryptedObjects" inverseEntity="PSSObjectCategory" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="parent" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
-        <relationship name="decorativeImage" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
+        <relationship name="decorativeImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="PSSBaseGenericObject" inverseName="children" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSObjectTag" inverseName="encryptedObjects" inverseEntity="PSSObjectTag" syncable="YES"/>
         <relationship name="versions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSBaseObjectVersion" inverseName="encryptedObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
@@ -55,7 +55,7 @@
         <attribute name="data" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
         <attribute name="viewportIdentifier" attributeType="String" syncable="YES"/>
-        <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="decorativeImage" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
+        <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="decorativeImages" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
     </entity>
     <entity name="PSSObjectTag" representedClassName="PSSObjectTag" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -65,7 +65,6 @@
     <entity name="PSSPasswordBaseObject" representedClassName="PSSPasswordBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
         <attribute name="autofill" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="favicon" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="domains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSPasswordDomain" inverseName="passwords" inverseEntity="PSSPasswordDomain" syncable="YES"/>
     </entity>
     <entity name="PSSPasswordDomain" representedClassName="PSSPasswordDomain" syncable="YES">
@@ -75,6 +74,7 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSPasswordBaseObject" inverseName="domains" inverseEntity="PSSPasswordBaseObject" syncable="YES"/>
     </entity>
     <entity name="PSSPasswordVersion" representedClassName="PSSPasswordVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="Binary" syncable="YES"/>

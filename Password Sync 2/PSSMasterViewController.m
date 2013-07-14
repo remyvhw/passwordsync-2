@@ -247,6 +247,8 @@
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"displayName"] description];
+    cell.imageView.image = [UIImage imageWithData:[object valueForKey:@"favicon"]];
+
 }
 
 @end

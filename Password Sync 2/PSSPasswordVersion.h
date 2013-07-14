@@ -16,9 +16,11 @@
 @property (nonatomic, retain) NSData * notes;
 @property (nonatomic, retain) NSData * password;
 @property (nonatomic, retain) NSData * username;
+@property (nonatomic, retain) NSString * displayName;
 
--(NSString*)decryptedUsername;
--(NSString*)decryptedPassword;
--(NSString*)decryptedNotes;
+@property (nonatomic, strong) NSString * decryptedUsername;
+@property (nonatomic, strong) NSString * decryptedPassword;
+@property (nonatomic, strong) NSString * decryptedNotes;
+
 
 @end
