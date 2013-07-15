@@ -10,9 +10,10 @@
 #import <CoreData/CoreData.h>
 #import "PSSBaseGenericObject.h"
 
-
+@class PSSCreditCardVersion;
 @interface PSSCreditCardBaseObject : PSSBaseGenericObject
 
 @property (nonatomic, retain) NSNumber * autofill;
+@property (nonatomic, strong) PSSCreditCardVersion * currentVersion;
 
 @end

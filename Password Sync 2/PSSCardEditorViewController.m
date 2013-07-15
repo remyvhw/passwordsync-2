@@ -12,6 +12,9 @@
 #import "PSSnewCardExpirationTextFieldCell.h"
 #import "PSSnewCardNumberTextFieldCell.h"
 #import "PSSCardsEditorCardTypeSelectorTableViewController.h"
+#import "PSSCreditCardVersion.h"
+#import "PSSCreditCardBaseObject.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSCardEditorViewController ()
 
@@ -34,6 +37,147 @@
 @implementation PSSCardEditorViewController
 @synthesize cardType = _cardType;
 dispatch_queue_t backgroundQueue;
+
+-(PSSCreditCardVersion*)insertNewCardVersionInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSCreditCardVersion *newManagedObject = (PSSCreditCardVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSCreditCardVersion" inManagedObjectContext:context];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(PSSCreditCardBaseObject*)insertNewCardInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSCreditCardBaseObject *newManagedObject = (PSSCreditCardBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSCreditCardBaseObject" inManagedObjectContext:context];
+    
+    // We'll add a creation date automatically
+    newManagedObject.created = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(NSString*)redactedCardNumber:(NSString*)cardNumber{
+    
+    if ([cardNumber length] > 4) {
+        NSMutableString*newString = [[NSMutableString alloc] initWithCapacity:[cardNumber length]];
+        
+        for (NSInteger counter = 0; counter<[cardNumber length]-4; counter++) {
+            [newString appendString:@"•"];
+        }
+        // Add the last 4 digits
+        NSString *trimmedString=[cardNumber substringFromIndex:[cardNumber length]-4];
+        [newString appendString:trimmedString];
+        return (NSString*)newString;
+    }
+    
+    return @"••••";
+}
+
+-(void)saveChangesAndDismiss{
+    
+    BOOL editingMode = NO;
+    
+    if (!self.cardBaseObject) {
+        self.cardBaseObject = [self insertNewCardInManagedObject];
+        self.cardBaseObject.autofill = [NSNumber numberWithBool:YES];
+        editingMode = YES;
+    }
+    
+    
+    // We need to create a new version
+    
+    PSSCreditCardVersion * version = [self insertNewCardVersionInManagedObject];
+    version.encryptedObject = self.cardBaseObject;
+    
+    version.decryptedNumber = self.numberCell.textField.text;
+    version.decryptedCardholdersName = self.nameCell.textField.text;
+    version.decryptedExpiryDate = self.expirationCell.textField.text;
+    version.decryptedVerificationcode = self.expirationCell.cvvField.text;
+    version.decryptedNote = self.notesCell.textView.text;
+    
+
+    version.bankWebsite = self.bankURLCell.textField.text;
+    version.bankPhoneNumber = self.bankNumberCell.textField.text;
+    version.issuingBank = self.bankNameCell.textField.text;
+    version.unencryptedLastDigits = [self redactedCardNumber:self.numberCell.textField.text];
+    
+    
+    NSError *error = nil;
+    if (![self.cardBaseObject.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
+        
+    }
+    
+    if (editingMode) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+}
+
+
+-(void)saveActionWasTriggered:(id)sender{
+    [self saveChangesAndDismiss];
+}
+
+
+-(NSString*)stringForCardType:(CardIOCreditCardType)cardType{
+    NSString * cardTypeString;
+    switch (cardType) {
+        case CardIOCreditCardTypeVisa:
+            cardTypeString = @"Visa";
+            break;
+        case CardIOCreditCardTypeMastercard:
+            cardTypeString = @"Mastercard";
+            break;
+        case CardIOCreditCardTypeAmex:
+            cardTypeString = @"Amex";
+            break;
+        case CardIOCreditCardTypeJCB:
+            cardTypeString = @"JCB";
+            break;
+        case CardIOCreditCardTypeDiscover:
+            cardTypeString = @"Discover";
+            break;
+        default:
+            cardTypeString = @"";
+    }
+    return cardTypeString;
+}
+
+-(CardIOCreditCardType)cardTypeFromString:(NSString*)cardString{
+    if ([cardString isEqualToString:@"Visa"]) {
+        return CardIOCreditCardTypeVisa;
+    } else if ([cardString isEqualToString:@"Mastercard"]){
+        return CardIOCreditCardTypeMastercard;
+    } else if ([cardString isEqualToString:@"Amex"]){
+        return CardIOCreditCardTypeAmex;
+    } else if ([cardString isEqualToString:@"Discover"]){
+        return CardIOCreditCardTypeDiscover;
+    } else if ([cardString isEqualToString:@"JCB"]){
+        return CardIOCreditCardTypeJCB;
+    }
+    
+    return CardIOCreditCardTypeUnrecognized;
+    
+}
 
 // Card type getter-setter
 -(void)setCardType:(CardIOCreditCardType)cardType{
@@ -97,9 +241,12 @@ dispatch_queue_t backgroundQueue;
     
     backgroundQueue = dispatch_queue_create("com.pumaxprod.iOS.Password-Sync2.cardBankBackgroundFetchThread", NULL);
     
+    UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveActionWasTriggered:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
     if (self.cardBaseObject) {
         // We're in edit mode
-        //self.cardType =
+        self.cardType = [self cardTypeFromString:self.cardBaseObject.currentVersion.cardType];
     } else {
         
         self.title = NSLocalizedString(@"New Card", nil);
@@ -110,6 +257,7 @@ dispatch_queue_t backgroundQueue;
         
         self.navigationItem.leftBarButtonItem = cancelButton;
     }
+    
     
     
     
@@ -258,7 +406,7 @@ dispatch_queue_t backgroundQueue;
             PSSnewCardNumberTextFieldCell * numberCell = [[PSSnewCardNumberTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.numberCell = numberCell;
             if (self.cardBaseObject) {
-                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+                self.numberCell.textField.text = self.cardBaseObject.currentVersion.decryptedNumber;
             }
             self.numberCell.textField.placeholder = NSLocalizedString(@"Card Number", nil);
             self.numberCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -270,17 +418,10 @@ dispatch_queue_t backgroundQueue;
             __weak typeof(self) weakSelf = self;
             if (!self.cardBaseObject) {
                 [self.numberCell setFinishedEditingNumberBlock:^{
-                    
                     // Only proceed with the filling if user has not already started typing in the bank infos
                     if ([weakSelf.bankNameCell.textField.text isEqualToString:@""]) {
-                        
-                        
                         [weakSelf automaticallyFetchBankDataForCardNumber:weakSelf.numberCell.textField.text];
-                        
-                        
-                        
                     }
-                    
                 }];
             }
             
@@ -297,7 +438,8 @@ dispatch_queue_t backgroundQueue;
             PSSnewCardExpirationTextFieldCell * expirationCell = [[PSSnewCardExpirationTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.expirationCell = expirationCell;
             if (self.cardBaseObject) {
-                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+                self.expirationCell.textField.text = self.cardBaseObject.currentVersion.decryptedExpiryDate;
+                self.expirationCell.cvvField.text = self.cardBaseObject.currentVersion.decryptedVerificationcode;
             }
             self.expirationCell.textField.placeholder = NSLocalizedString(@"MM/YYYY", nil);
             self.expirationCell.cvvField.placeholder = NSLocalizedString(@"CVV/CVC2", nil);
@@ -316,7 +458,7 @@ dispatch_queue_t backgroundQueue;
             UITableViewCell * cardTypeCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.cardTypeCell = cardTypeCell;
             if (self.cardBaseObject) {
-                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+                [self displayCartTypeVerboseName];
             } else {
                 self.cardTypeCell.textLabel.text = NSLocalizedString(@"Card Type", nil);
             }
@@ -336,8 +478,8 @@ dispatch_queue_t backgroundQueue;
             
             PSSnewPasswordBasicTextFieldCell * nameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.nameCell = nameCell;
-            if (self.nameCell) {
-                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            if (self.cardBaseObject) {
+                self.nameCell.textField.text = self.cardBaseObject.currentVersion.decryptedCardholdersName;
             }
             self.nameCell.textField.placeholder = NSLocalizedString(@"Name on card", nil);
             self.nameCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -356,13 +498,13 @@ dispatch_queue_t backgroundQueue;
             
             PSSnewPasswordBasicTextFieldCell * bankNameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.bankNameCell = bankNameCell;
-            if (self.bankNameCell) {
-                //self.bankNameCell.textField.text = self.bankNameCell..displayName;
+            if (self.cardBaseObject) {
+                self.bankNameCell.textField.text = self.cardBaseObject.currentVersion.issuingBank;
             }
             self.bankNameCell.textField.placeholder = NSLocalizedString(@"Card Issuer / Bank Name", nil);
             self.bankNameCell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.bankNameCell.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-            //self.nameCell.nextFormField = self.cardType.textField;
+            self.bankNameCell.nextFormField = self.bankNumberCell.textField;
             
         }
         cell = self.bankNameCell;
@@ -379,10 +521,10 @@ dispatch_queue_t backgroundQueue;
             self.bankNumberCell = bankNumberCell;
             self.bankNumberCell.textField.placeholder = NSLocalizedString(@"Emergency Phone Number", nil);
             if (self.cardBaseObject) {
-                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+                self.bankNumberCell.textField.text = self.cardBaseObject.currentVersion.bankPhoneNumber;
             }
             self.bankNumberCell.selectionStyle =UITableViewCellSelectionStyleNone;
-            
+            self.bankNumberCell.nextFormField = self.bankURLCell.textField;
         }
         
         cell = self.bankNumberCell;
@@ -397,7 +539,7 @@ dispatch_queue_t backgroundQueue;
             self.bankURLCell = bankURLCell;
             self.bankURLCell.textField.placeholder = NSLocalizedString(@"Website", nil);
             if (self.cardBaseObject) {
-                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+                self.bankURLCell.textField.text = self.cardBaseObject.currentVersion.bankWebsite;
             }
             self.bankURLCell.selectionStyle =UITableViewCellSelectionStyleNone;
             
@@ -414,7 +556,7 @@ dispatch_queue_t backgroundQueue;
             
             self.notesCell = notesCell;
             if (self.cardBaseObject) {
-                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+                self.notesCell.textView.text = [self.cardBaseObject.currentVersion decryptedNote];
             }
             self.notesCell.selectionStyle =UITableViewCellSelectionStyleNone;
             

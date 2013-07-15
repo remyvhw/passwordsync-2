@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSCardsTableViewController : UITableViewController
+@interface PSSCardsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

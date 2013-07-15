@@ -25,4 +25,11 @@
 @property (nonatomic, retain) NSString * unencryptedLastDigits;
 @property (nonatomic, retain) NSData * verificationCode;
 
+@property (nonatomic, strong) NSString * decryptedCardholdersName;
+@property (nonatomic, strong) NSString * decryptedExpiryDate;
+@property (nonatomic, strong) NSString * decryptedNote;
+@property (nonatomic, strong) NSString * decryptedNumber;
+@property (nonatomic, strong) NSString * decryptedPin;
+@property (nonatomic, strong) NSString * decryptedVerificationcode;
+
 @end

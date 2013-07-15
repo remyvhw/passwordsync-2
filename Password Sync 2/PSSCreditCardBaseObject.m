@@ -7,10 +7,35 @@
 //
 
 #import "PSSCreditCardBaseObject.h"
-
+#import "PSSCreditCardVersion.h"
 
 @implementation PSSCreditCardBaseObject
-
+@synthesize currentVersion = _currentVersion;
 @dynamic autofill;
+
+-(PSSCreditCardVersion*)currentVersion{
+    
+    if (_currentVersion) {
+        return _currentVersion;
+    }
+    
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"PSSCreditCardVersion"];
+    NSSortDescriptor *dateSort = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(encryptedObject == %@)", self];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:dateSort]];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setFetchLimit:1];
+    
+    NSError * error;
+    NSArray * results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error || [results count] == 0) {
+        return nil;
+    }
+    
+    return [results objectAtIndex:0];
+}
+
+
+
 
 @end
