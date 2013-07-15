@@ -7,12 +7,48 @@
 //
 
 #import "PSSCardEditorViewController.h"
+#import "PSSnewPasswordBasicTextFieldCell.h"
+#import "PSSnewPasswordMultilineTextFieldCell.h"
+#import "PSSnewCardExpirationTextFieldCell.h"
+#import "PSSnewCardNumberTextFieldCell.h"
 
 @interface PSSCardEditorViewController ()
+
+@property (strong, nonatomic) PSSnewCardNumberTextFieldCell * numberCell;
+@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * nameCell;
+@property (strong, nonatomic) PSSnewCardExpirationTextFieldCell * expirationCell;
+@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * cardType;
+
+@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankNameCell;
+@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankNumberCell;
+@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankURLCell;
+
+
+@property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
 
 @end
 
 @implementation PSSCardEditorViewController
+dispatch_queue_t backgroundQueue;
+
+
+-(void)startCameraImport:(id)sender{
+    
+    CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+    scanViewController.appToken = @"879f7903c4d14602a8c0115a4594cc9a";
+    
+    
+    if (self.cardBaseObject) {
+        // We're in editing mode
+    } else{
+        scanViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self.navigationController presentViewController:scanViewController animated:YES completion:^{
+            
+        }];
+    }
+    
+    
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -21,6 +57,13 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)cancelNewCardEditor:(id)sender{
+    
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
+    
 }
 
 - (void)viewDidLoad
@@ -33,8 +76,24 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-   
-
+    backgroundQueue = dispatch_queue_create("com.pumaxprod.iOS.Password-Sync2.cardBankBackgroundFetchThread", NULL);
+    
+    if (self.cardBaseObject) {
+        // We're in edit mode
+    } else {
+        
+        self.title = NSLocalizedString(@"New Card", nil);
+        
+        // We're writing a new password
+        
+        UIBarButtonItem * cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewCardEditor:)];
+        
+        self.navigationItem.leftBarButtonItem = cancelButton;
+    }
+    
+    
+    
+    
     
 }
 
@@ -44,70 +103,262 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)fillBankDetailsWithBank:(NSDictionary*)bankInfo{
+    self.bankNameCell.textField.text = [bankInfo objectForKey:@"bankName"];
+    self.bankNumberCell.textField.text = [bankInfo objectForKey:@"emergencyNumber"];
+    self.bankURLCell.textField.text = [bankInfo objectForKey:@"bankWebsite"];
+}
+
+-(NSDictionary*)automaticallyFetchBankDataForCardNumber:(NSString*)bankNumber{
+    
+    // Do this on a background thread to avoid blocking the UI
+    dispatch_async(backgroundQueue, ^(void) {
+        
+        
+        // Load a PLIST containing the bank infos
+        NSString* filePath = [[NSBundle mainBundle] pathForResource:@"bankEmercyContacts" ofType:@"plist"];
+        
+        // The PLIST contains an array of NSDictionarys, on for each bank
+        NSArray * bankEmergencyContactArray = [[NSArray alloc] initWithContentsOfFile:filePath];
+        
+        
+        // Go through each bank, one after the other
+        for (NSDictionary * bankDetails in bankEmergencyContactArray) {
+            
+            // We'll iterate through each of the reserved numbers for that bank
+            NSArray * bankReservedNumbers = [bankDetails objectForKey:@"cardID"];
+            for (NSString * bankReservedNumber in bankReservedNumbers) {
+                
+                if ([bankNumber hasPrefix:bankReservedNumber]) {
+                    // We have a match: return the bank NSDictionary on the main queue
+                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+                        [self fillBankDetailsWithBank:bankDetails];
+                        return;
+                    });
+                    
+                }
+                
+                
+            }
+        }
+        
+        
+    });
+    
+    
+    
+    
+    
+    return nil;
+}
+
 #pragma mark - Table view data source
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 2) {
+        return 144.;
+    }
+    
+    return 44.;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section == 1) {
+        return NSLocalizedString(@"Emergency Details", nil);
+    } else if (section == 2){
+        return NSLocalizedString(@"Notes", nil);
+    }
+    
+    return @"";
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    if (section == 0) {
+        // Basic informations
+        return 3;
+    } else if (section == 1) {
+        // Emergency information
+        return 3;
+    } else if (section == 2) {
+        // Notes
+        return 1;
+    }
+
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell * cell;
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        // Number Cell
+        
+        if (!self.numberCell) {
+            
+            PSSnewCardNumberTextFieldCell * numberCell = [[PSSnewCardNumberTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            self.numberCell = numberCell;
+            if (self.cardBaseObject) {
+                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            }
+            self.numberCell.textField.placeholder = NSLocalizedString(@"Card Number", nil);
+            self.numberCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.numberCell.nextFormField = self.expirationCell.textField;
+            
+            
+            // Automatically try to complete the bank details for the typed credit card number
+            // We never query bank details one existing card object / edit mode.
+            __weak typeof(self) weakSelf = self;
+            if (!self.cardBaseObject) {
+                [self.numberCell setFinishedEditingNumberBlock:^{
+                    
+                    // Only proceed with the filling if user has not already started typing in the bank infos
+                    if ([weakSelf.bankNameCell.textField.text isEqualToString:@""]) {
+                        
+                        
+                        [weakSelf automaticallyFetchBankDataForCardNumber:weakSelf.numberCell.textField.text];
+                        
+                        
+                        
+                    }
+                    
+                }];
+            }
+            
+            [self.numberCell.cameraButton addTarget:self action:@selector(startCameraImport:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }
+        cell = self.numberCell;
+        
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        // Expiration Cell
+        
+        if (!self.expirationCell) {
+            
+            PSSnewCardExpirationTextFieldCell * expirationCell = [[PSSnewCardExpirationTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            self.expirationCell = expirationCell;
+            if (self.cardBaseObject) {
+                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            }
+            self.expirationCell.textField.placeholder = NSLocalizedString(@"MM/YYYY", nil);
+            self.expirationCell.cvvField.placeholder = NSLocalizedString(@"CVV/CVC2", nil);
+            self.expirationCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.expirationCell.nextFormField = self.nameCell.textField;
+            
+            
+        }
+        cell = self.expirationCell;
+        
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        // Name on card Cell
+        
+        if (!self.nameCell) {
+            
+            PSSnewPasswordBasicTextFieldCell * nameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            self.nameCell = nameCell;
+            if (self.nameCell) {
+                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            }
+            self.nameCell.textField.placeholder = NSLocalizedString(@"Name on card", nil);
+            self.nameCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.nameCell.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+            self.nameCell.nextFormField = self.bankNameCell.textField;
+            
+        }
+        cell = self.nameCell;
+        
+        
+        
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        // Bank name Cell
+        
+        if (!self.bankNameCell) {
+            
+            PSSnewPasswordBasicTextFieldCell * bankNameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            self.bankNameCell = bankNameCell;
+            if (self.bankNameCell) {
+                //self.bankNameCell.textField.text = self.bankNameCell..displayName;
+            }
+            self.bankNameCell.textField.placeholder = NSLocalizedString(@"Card Issuer / Bank Name", nil);
+            self.bankNameCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.bankNameCell.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+            //self.nameCell.nextFormField = self.cardType.textField;
+            
+        }
+        cell = self.bankNameCell;
+        
+        
+        
+    } else if (indexPath.section == 1 && indexPath.row == 1){
+        // Bank Phone Number cell
+        
+        if (!self.bankNumberCell) {
+            
+            PSSnewPasswordBasicTextFieldCell * bankNumberCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            
+            self.bankNumberCell = bankNumberCell;
+            self.bankNumberCell.textField.placeholder = NSLocalizedString(@"Emergency Phone Number", nil);
+            if (self.cardBaseObject) {
+                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+            }
+            self.bankNumberCell.selectionStyle =UITableViewCellSelectionStyleNone;
+            
+        }
+        
+        cell = self.bankNumberCell;
+        
+    } else if (indexPath.section == 1 && indexPath.row == 2){
+        // Bank URL cell
+        
+        if (!self.bankURLCell) {
+            
+            PSSnewPasswordBasicTextFieldCell * bankURLCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            
+            self.bankURLCell = bankURLCell;
+            self.bankURLCell.textField.placeholder = NSLocalizedString(@"Website", nil);
+            if (self.cardBaseObject) {
+                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+            }
+            self.bankURLCell.selectionStyle =UITableViewCellSelectionStyleNone;
+            
+        }
+        
+        cell = self.bankURLCell;
+        
+    } else if (indexPath.section == 2 && indexPath.row == 0){
+        // Notes cell
+        
+        if (!self.notesCell) {
+            
+            PSSnewPasswordMultilineTextFieldCell * notesCell = [[PSSnewPasswordMultilineTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            
+            self.notesCell = notesCell;
+            if (self.cardBaseObject) {
+                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+            }
+            self.notesCell.selectionStyle =UITableViewCellSelectionStyleNone;
+            
+        }
+        
+        cell = self.notesCell;
+        
+    }
+
+
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -120,5 +371,32 @@
 }
 
  */
+
+#pragma mark - Card.io delegate
+
+- (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController {
+    
+    if (!self.cardBaseObject) {
+        [scanViewController dismissViewControllerAnimated:YES completion:^{}];
+    }
+    
+}
+
+- (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController {
+
+    [self.numberCell setCardNumber:info.cardNumber];
+    [self.expirationCell setExpirationDate:[NSString stringWithFormat:@"%02i/%i", info.expiryMonth, info.expiryYear]];
+    self.expirationCell.cvvField.text = info.cvv;
+    
+    
+    // Use the card info...
+    if (!self.cardBaseObject) {
+        [scanViewController dismissViewControllerAnimated:YES completion:^{
+            // Give first responder to name field
+            [self.nameCell.textField becomeFirstResponder];
+
+        }];
+    }
+}
 
 @end

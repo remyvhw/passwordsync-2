@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardIO.h"
+@class PSSCreditCardBaseObject;
+@interface PSSCardEditorViewController : UITableViewController <CardIOPaymentViewControllerDelegate>
 
-@interface PSSCardEditorViewController : UITableViewController
+@property (strong, nonatomic) PSSCreditCardBaseObject * cardBaseObject;
 
 @end
