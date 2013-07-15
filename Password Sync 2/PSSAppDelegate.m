@@ -65,7 +65,7 @@
     [self checkForJailbreaks];
     
         
-    
+    [self setIsUnlocked:NO];
     
     return YES;
 }
