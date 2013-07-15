@@ -10,7 +10,7 @@
 #import "PSSBaseGenericObject.h"
 #import "PSSObjectAttachment.h"
 #import "PSSEncryptor.h"
-
+#import "PSSAppDelegate.h"
 
 
 @implementation PSSBaseObjectVersion
@@ -22,7 +22,17 @@
 
 
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString{
-    return [NSString stringWithCString:[[PSSEncryptor decryptData:encryptedString] bytes] encoding:NSUTF8StringEncoding];
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    if (appDelegate.isUnlocked) {
+        return @"••••••••••";
+    }
+    
+    NSData * decryptedData = [PSSEncryptor decryptData:encryptedString];
+    if (!decryptedData || ![decryptedData bytes]) {
+        return @"";
+    }
+    
+    return [NSString stringWithCString:[decryptedData bytes] encoding:NSUTF8StringEncoding];
 }
 
 -(NSData*)encryptedDataFromUTF8String:(NSString*)string{

@@ -6,24 +6,18 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSMasterViewController.h"
+#import "PSSPasswordListViewController.h"
 #import "PSSPasswordEditorTableViewController.h"
 #import "PSSDetailViewController.h"
+#import "PSSPasswordBaseObject.h"
+#import "PSSPasswordVersion.h"
 
-@interface PSSMasterViewController ()
+@interface PSSPasswordListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation PSSMasterViewController
+@implementation PSSPasswordListViewController
 
-- (void)awakeFromNib
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    }
-    [super awakeFromNib];
-}
 
 - (void)viewDidLoad
 {
@@ -94,7 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PasswordCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -245,9 +239,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"displayName"] description];
-    cell.imageView.image = [UIImage imageWithData:[object valueForKey:@"favicon"]];
+    PSSPasswordBaseObject *object = (PSSPasswordBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = object.displayName;
+    cell.imageView.image = [UIImage imageWithData:object.favicon];
+    cell.detailTextLabel.text = object.currentVersion.decryptedUsername;
 
 }
 

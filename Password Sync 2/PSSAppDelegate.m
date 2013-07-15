@@ -8,7 +8,7 @@
 
 #import "PSSAppDelegate.h"
 #import "MKiCloudSync.h"
-#import "PSSMasterViewController.h"
+#import "PSSPasswordListViewController.h"
 #import "PDKeychainBindings.h"
 
 @implementation PSSAppDelegate
@@ -51,14 +51,14 @@
         splitViewController.delegate = (id)navigationController.topViewController;
         
         UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        PSSMasterViewController *controller = (PSSMasterViewController *)masterNavigationController.topViewController;
+        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
         
         UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
         
         UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
-        PSSMasterViewController *controller = (PSSMasterViewController *)navigationController.topViewController;
+        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
     

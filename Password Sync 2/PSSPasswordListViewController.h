@@ -12,7 +12,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface PSSMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) PSSDetailViewController *detailViewController;
 
