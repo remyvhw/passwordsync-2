@@ -35,6 +35,8 @@
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
 		AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
+		AD6133F01793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */; };
+		AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */; };
 		AD72C3BD177B7E27009AADC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3BC177B7E27009AADC8 /* Foundation.framework */; };
 		AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */; };
 		AD72C3C1177B7E27009AADC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72C3C0177B7E27009AADC8 /* UIKit.framework */; };
@@ -206,6 +208,8 @@
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
+		AD6133EE1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsEditorCardTypeSelectorTableViewController.h; sourceTree = "<group>"; };
+		AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsEditorCardTypeSelectorTableViewController.m; sourceTree = "<group>"; };
 		AD72C3B9177B7E27009AADC8 /* Password Sync 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Sync 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72C3BC177B7E27009AADC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -402,6 +406,17 @@
 				AD5175F71784906200B30295 /* SPLockOverlay.m */,
 			);
 			name = SPLockScreen;
+			sourceTree = "<group>";
+		};
+		AD6133F21793BFC2004CEDF2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ADFA1A1E17926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.h */,
+				ADFA1A1F17926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.m */,
+				AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */,
+				AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		AD72C3B0177B7E27009AADC8 = {
@@ -731,10 +746,9 @@
 				ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */,
 				ADDD9650179253FD00AB2CC5 /* PSSCardEditorViewController.h */,
 				ADDD9651179253FD00AB2CC5 /* PSSCardEditorViewController.m */,
-				ADFA1A1E17926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.h */,
-				ADFA1A1F17926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.m */,
-				AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */,
-				AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */,
+				AD6133EE1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.h */,
+				AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */,
+				AD6133F21793BFC2004CEDF2 /* Cells */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -888,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */,
+				AD6133F01793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD5175FB1784906200B30295 /* NormalCircle.m in Sources */,
 				AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
@@ -1002,6 +1017,7 @@
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
+				AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				ADC844C9179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADDD9653179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,

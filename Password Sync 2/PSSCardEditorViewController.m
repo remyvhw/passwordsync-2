@@ -11,25 +11,44 @@
 #import "PSSnewPasswordMultilineTextFieldCell.h"
 #import "PSSnewCardExpirationTextFieldCell.h"
 #import "PSSnewCardNumberTextFieldCell.h"
+#import "PSSCardsEditorCardTypeSelectorTableViewController.h"
 
 @interface PSSCardEditorViewController ()
 
 @property (strong, nonatomic) PSSnewCardNumberTextFieldCell * numberCell;
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * nameCell;
 @property (strong, nonatomic) PSSnewCardExpirationTextFieldCell * expirationCell;
-@property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * cardType;
+@property (strong, nonatomic) UITableViewCell * cardTypeCell;
+@property CardIOCreditCardType cardType;
+
 
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankNameCell;
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankNumberCell;
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * bankURLCell;
 
-
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
+
 
 @end
 
 @implementation PSSCardEditorViewController
+@synthesize cardType = _cardType;
 dispatch_queue_t backgroundQueue;
+
+// Card type getter-setter
+-(void)setCardType:(CardIOCreditCardType)cardType{
+    
+    _cardType = cardType;
+    if (self.cardTypeCell) {
+        [self displayCartTypeVerboseName];
+    }
+    
+}
+
+-(CardIOCreditCardType)cardType{
+    return _cardType;
+}
+
 
 
 -(void)startCameraImport:(id)sender{
@@ -80,6 +99,7 @@ dispatch_queue_t backgroundQueue;
     
     if (self.cardBaseObject) {
         // We're in edit mode
+        //self.cardType =
     } else {
         
         self.title = NSLocalizedString(@"New Card", nil);
@@ -153,6 +173,36 @@ dispatch_queue_t backgroundQueue;
     return nil;
 }
 
+-(void)displayCartTypeVerboseName{
+    
+    switch (self.cardType) {
+        case CardIOCreditCardTypeUnrecognized:
+        case CardIOCreditCardTypeAmbiguous:
+            self.cardTypeCell.textLabel.text = NSLocalizedString(@"Other", nil);
+            break;
+        case CardIOCreditCardTypeAmex:
+            self.cardTypeCell.textLabel.text = @"American Express";
+            self.bankNameCell.textField.text = NSLocalizedString(@"American Express", nil);
+            self.bankNumberCell.textField.text = @"(North America) 1-800-992-3404; (Abroad) +1-336-393-1111";
+            self.bankURLCell.textField.text = NSLocalizedString(@"http://www.americanexpress.com/", nil);
+            break;
+        case CardIOCreditCardTypeDiscover:
+            self.cardTypeCell.textLabel.text = @"Discover";
+            break;
+        case CardIOCreditCardTypeJCB:
+            self.cardTypeCell.textLabel.text = @"JCB";
+            break;
+        case CardIOCreditCardTypeMastercard:
+            self.cardTypeCell.textLabel.text = @"MasterCard";
+            break;
+        case CardIOCreditCardTypeVisa:
+            self.cardTypeCell.textLabel.text = @"Visa";
+        default:
+            break;
+    }
+    
+}
+
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -185,7 +235,7 @@ dispatch_queue_t backgroundQueue;
 {
     if (section == 0) {
         // Basic informations
-        return 3;
+        return 4;
     } else if (section == 1) {
         // Emergency information
         return 3;
@@ -259,6 +309,27 @@ dispatch_queue_t backgroundQueue;
         cell = self.expirationCell;
         
     } else if (indexPath.section == 0 && indexPath.row == 2) {
+        // Card Type
+        
+        if (!self.cardTypeCell) {
+            
+            UITableViewCell * cardTypeCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            self.cardTypeCell = cardTypeCell;
+            if (self.cardBaseObject) {
+                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            } else {
+                self.cardTypeCell.textLabel.text = NSLocalizedString(@"Card Type", nil);
+            }
+            
+            self.cardTypeCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            self.cardTypeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+        }
+        cell = self.cardTypeCell;
+        
+        
+        
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
         // Name on card Cell
         
         if (!self.nameCell) {
@@ -360,17 +431,26 @@ dispatch_queue_t backgroundQueue;
 
 
 
-/*
+
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 
- */
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        // Card Type
+        
+        PSSCardsEditorCardTypeSelectorTableViewController * typeSelector = [[PSSCardsEditorCardTypeSelectorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        
+        typeSelector.selectedCardType = self.cardType;
+        typeSelector.cardEditorDelegate = self;
+        [self.navigationController pushViewController:typeSelector animated:YES];
+        
+        
+    }
+    
+    
+}
 
 #pragma mark - Card.io delegate
 
@@ -387,7 +467,7 @@ dispatch_queue_t backgroundQueue;
     [self.numberCell setCardNumber:info.cardNumber];
     [self.expirationCell setExpirationDate:[NSString stringWithFormat:@"%02i/%i", info.expiryMonth, info.expiryYear]];
     self.expirationCell.cvvField.text = info.cvv;
-    
+    self.cardType = info.cardType;
     
     // Use the card info...
     if (!self.cardBaseObject) {
@@ -397,6 +477,12 @@ dispatch_queue_t backgroundQueue;
 
         }];
     }
+}
+
+#pragma mark - PSSCardsEditorCardTypeSelectorProtocol methods
+
+-(void)cardSelector:(PSSCardsEditorCardTypeSelectorTableViewController *)cardSelector finishedWithCardType:(CardIOCreditCardType)cardType{
+    [self setCardType:cardType];
 }
 
 @end
