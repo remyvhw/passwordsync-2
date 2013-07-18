@@ -612,6 +612,8 @@
 				AD5176031784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m */,
 				ADC9DEAF17862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.h */,
 				ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */,
+				ADC9DEAB1786242D006F2858 /* PSSPINpasscodeButtonView.h */,
+				ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */,
 			);
 			name = Passcode;
 			sourceTree = "<group>";
@@ -687,8 +689,6 @@
 				AD8F5ADF17823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib */,
 				AD5176061784A63000B30295 /* PSSPasscodeVerifyerViewController.h */,
 				AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */,
-				ADC9DEAB1786242D006F2858 /* PSSPINpasscodeButtonView.h */,
-				ADC9DEAC1786242D006F2858 /* PSSPINpasscodeButtonView.m */,
 			);
 			name = "Master password and passcode controllers";
 			sourceTree = "<group>";

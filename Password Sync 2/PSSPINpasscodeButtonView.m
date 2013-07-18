@@ -98,7 +98,7 @@
     UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
     UIColor* bottomTint;
     if (self.highlighted) {
-        bottomTint = [UIColor colorWithRed: 0.892 green: 1 blue: 0 alpha: 0];
+        bottomTint = self.window.tintColor;
     } else {
         bottomTint = [UIColor colorWithRed: 0.892 green: 0.892 blue: 0.892 alpha: 0];
     }
