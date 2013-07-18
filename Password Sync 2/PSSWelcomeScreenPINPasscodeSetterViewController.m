@@ -9,6 +9,7 @@
 #import "PSSWelcomeScreenPINPasscodeSetterViewController.h"
 #import "PSSPINpasscodeButtonView.h"
 #import "PSSPasscodeVerifyerViewController.h"
+#import "PSSUnlockPromptViewController.h"
 
 @interface PSSWelcomeScreenPINPasscodeSetterViewController ()
 @property (weak, nonatomic) IBOutlet PSSPINpasscodeButtonView *pinOneButton;
@@ -25,25 +26,62 @@
 
 @property (strong) NSMutableString * passcodeString;
 @property (strong) NSMutableString * validationString;
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
 @property PSSPINpasscodeStatus passcodeStatus;
 
 -(void)refreshLabel;
 -(IBAction)pressedKeypad:(PSSPINpasscodeButtonView*)sender;
+- (IBAction)pressedClearButton:(id)sender;
 
 @end
 
 @implementation PSSWelcomeScreenPINPasscodeSetterViewController
 
--(void)finishWithPasscode:(NSString*)passcode{
+-(void)finishSetterWithPasscode:(NSString*)passcode{
     
     PSSPasscodeVerifyerViewController * passcodeVerifyer = [[PSSPasscodeVerifyerViewController alloc] init];
     
+    
+    // We're in setter's mode
+        
     [passcodeVerifyer savePasscode:passcode withType:PSSPasscodeTypeNIPcode];
-    
-    
+        
     [self performSegueWithIdentifier:@"userFinishedSettingPINPasscodeSegue" sender:nil];
+    
+    
 }
+
+-(void)verifyProvidedPasscode:(NSString*)passcode{
+    
+    PSSPasscodeVerifyerViewController * passcodeVerifyer = [[PSSPasscodeVerifyerViewController alloc] init];
+    
+    
+    if ([passcodeVerifyer verifyPasscode:passcode]) {
+        
+        PSSUnlockPromptViewController* navigationController = (PSSUnlockPromptViewController*)self.navigationController;
+        [navigationController userDidSuccessfullyUnlockWithPasscode];
+        
+    } else {
+        
+        if (passcodeVerifyer.countOfPasscodeAttempts >= 5) {
+            // We must alert the delegate that it's time to reset the passcode with the master password.
+            
+            PSSUnlockPromptViewController * promptNavigator = (PSSUnlockPromptViewController*)self.navigationController;
+            [promptNavigator skipPasscodeVerification];
+            
+            
+        } else {
+            self.passcodeString = [[NSMutableString alloc] initWithCapacity:5];
+            self.passcodeStatus = PSSPINpasscodeStatusPromptInvalid;
+            [self refreshLabel];
+        }
+        
+        
+    }
+    
+}
+
 
 -(void)refreshLabel{
     
@@ -56,7 +94,11 @@
         // Edit the text
         switch (self.passcodeStatus) {
             case PSSPINpasscodeStatusUndefined:
-                self.captionText.text = NSLocalizedString(@"Enter a 5 digits passcode.", nil);
+                if (self.promptMode) {
+                    self.captionText.text = NSLocalizedString(@"Enter your passcode.", nil);
+                } else {
+                    self.captionText.text = NSLocalizedString(@"Enter a 5 digits passcode.", nil);
+                }
                 break;
             case PSSPINpasscodeStatusOne:
                 self.captionText.text = @"◉○○○○";
@@ -85,8 +127,11 @@
             case PSSPINpasscodeStatusValidate:
                 self.captionText.text = NSLocalizedString(@"Re-enter your passcode", nil);
                 break;
-            case PSSPINpasscodeStatusInvalid:
+            case PSSPINpasscodeStatusDoubleEntryInvalid:
                 self.captionText.text = NSLocalizedString(@"Passcodes did not match, try again", nil);
+                break;
+            case PSSPINpasscodeStatusPromptInvalid:
+                self.captionText.text = NSLocalizedString(@"Invalid Passcode", nil);
                 break;
             default:
                 break;
@@ -225,6 +270,7 @@
     
     [self refreshLabel];
     
+    self.clearButton.tintColor = [[self.view window] tintColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -236,7 +282,7 @@
 
 -(IBAction)pressedKeypad:(PSSPINpasscodeButtonView*)sender{
     
-    if (self.passcodeStatus == PSSPINpasscodeStatusUndefined || self.passcodeStatus == PSSPINpasscodeStatusInvalid) {
+    if (self.passcodeStatus == PSSPINpasscodeStatusUndefined || self.passcodeStatus == PSSPINpasscodeStatusDoubleEntryInvalid || self.passcodeStatus == PSSPINpasscodeStatusPromptInvalid) {
         [self.passcodeString appendString:[sender numberForCurrentPasscodeNumber]];
         self.passcodeStatus = PSSPINpasscodeStatusOne;
     } else if (self.passcodeStatus == PSSPINpasscodeStatusOne){
@@ -250,8 +296,15 @@
         self.passcodeStatus = PSSPINpasscodeStatusFour;
     } else if (self.passcodeStatus == PSSPINpasscodeStatusFour){
         [self.passcodeString appendString:[sender numberForCurrentPasscodeNumber]];
-        self.validationString = [[NSMutableString alloc] initWithCapacity:5];
-        self.passcodeStatus = PSSPINpasscodeStatusValidate;
+        if (self.promptMode) {
+            
+            [self verifyProvidedPasscode:self.passcodeString];
+            
+        } else {
+            self.validationString = [[NSMutableString alloc] initWithCapacity:5];
+            self.passcodeStatus = PSSPINpasscodeStatusValidate;
+        }
+        
     } else if (self.passcodeStatus == PSSPINpasscodeStatusValidate){
         [self.validationString appendString:[sender numberForCurrentPasscodeNumber]];
         self.passcodeStatus = PSSPINpasscodeStatusValidateOne;
@@ -267,21 +320,38 @@
     } else if (self.passcodeStatus == PSSPINpasscodeStatusValidateFour){
         [self.validationString appendString:[sender numberForCurrentPasscodeNumber]];
         
-        // Now verify if passcode was correctly typed
+        // Now verify if passcode was correctly retyped
+                     // We're setting our passcode.
+            if ([self.validationString isEqualToString:self.passcodeString]) {
+                // Passcode is valid
+                [self finishSetterWithPasscode:self.passcodeString];
+            } else {
+                // Oops, invalid passcode. Retry
+                self.passcodeString = [[NSMutableString alloc] initWithCapacity:5];
+                self.passcodeStatus = PSSPINpasscodeStatusDoubleEntryInvalid;
+            }
         
-        if ([self.validationString isEqualToString:self.passcodeString]) {
-            // Passcode is valid
-            [self finishWithPasscode:self.passcodeString];
-        } else {
-            // Oops, invalid passcode. Retry
-            self.passcodeString = [[NSMutableString alloc] initWithCapacity:5];
-            self.passcodeStatus = PSSPINpasscodeStatusInvalid;
-        }
+     
+        
+        
     }
     
       
     [self refreshLabel];
     
     
+}
+
+- (IBAction)pressedClearButton:(id)sender {
+    
+    if (self.passcodeStatus == PSSPINpasscodeStatusValidate || self.passcodeStatus==PSSPINpasscodeStatusValidateOne || self.passcodeStatus ==  PSSPINpasscodeStatusValidateTwo|| self.passcodeStatus == PSSPINpasscodeStatusValidateThree || self.passcodeStatus == PSSPINpasscodeStatusValidateFour) {
+        self.validationString = [[NSMutableString alloc] initWithCapacity:5];
+        self.passcodeStatus = PSSPINpasscodeStatusValidate;
+    } else {
+        self.passcodeString = [[NSMutableString alloc] initWithCapacity:5];
+        self.passcodeStatus = PSSPINpasscodeStatusUndefined;
+    }
+    
+    [self refreshLabel];
 }
 @end

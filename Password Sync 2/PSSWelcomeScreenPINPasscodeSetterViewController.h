@@ -19,9 +19,12 @@ typedef enum {
     PSSPINpasscodeStatusValidateThree,
     PSSPINpasscodeStatusValidateFour,
     PSSPINpasscodeStatusValidate,
-    PSSPINpasscodeStatusInvalid,
+    PSSPINpasscodeStatusDoubleEntryInvalid,
+    PSSPINpasscodeStatusPromptInvalid,
 } PSSPINpasscodeStatus;
 
 @interface PSSWelcomeScreenPINPasscodeSetterViewController : UIViewController
+
+@property BOOL promptMode;
 
 @end

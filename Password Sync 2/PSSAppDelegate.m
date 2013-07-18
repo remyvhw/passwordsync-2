@@ -10,12 +10,29 @@
 #import "MKiCloudSync.h"
 #import "PSSPasswordListViewController.h"
 #import "PDKeychainBindings.h"
+#import "PSSUnlockPromptViewController.h"
 
 @implementation PSSAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+
+-(void)presentUnlockPromptAnimated:(BOOL)animated{
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:nil];
+    PSSUnlockPromptViewController *promptController = [sb instantiateInitialViewController];
+    
+    
+    //[promptController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self.window.rootViewController presentViewController:[promptController promptForPasscodeBlockingView:YES completion:^{
+        [self setIsUnlocked:YES];
+    } cancelation:nil] animated:animated completion:^{
+        
+    }];
+    
+}
 
 -(void)checkForJailbreaks{
     
@@ -25,9 +42,9 @@
         
         // iOS Device might be jailbroken. We'll alert the user (in english, we assume jailbreakers understand english and we won't pay to translate this).
         
-        NSString * alertString = @"It appears your device is jailbroken. This is not the usual piracy yadayada: Password Sync relies on the OS' keychain to encrypt securely your data. YOUR DATA MIGHT NOT BE SAFE on a jailbroken devices, as accessing the keychain through unofficial paths is possible.\nThe jailbreak should not prevent Password Sync to run. We also might be paranoid. But be sure not to loose your device and be extremely cautious about what third party non sandboxed software you install.";
+        NSString * alertString = @"It appears your device is jailbroken. This is not the usual piracy yada yada: Password Sync relies on the OS' keychain to encrypt securely your data. YOUR DATA MIGHT NOT BE SAFE on a jailbroken devices, as accessing the keychain through unofficial paths (and therefore retrieving the encryption key that locks the app's database) is possible.\nThe jailbreak should not prevent Password Sync to run normally. However, as a precaution, be extra-caraful about not losing your device and be extremely cautious about what third party non sandboxed software you install.";
         
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Jailbreak warning" message:alertString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Jailbreak Warning" message:alertString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         
     }
@@ -44,6 +61,7 @@
     // Override point for customization after application launch.
     
     [self.window setTintColor:[UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0]];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -60,12 +78,15 @@
         UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
         PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
+        
+        
     }
     
     [self checkForJailbreaks];
     
-        
-    [self setIsUnlocked:NO];
+    
+    
+    
     
     return YES;
 }
@@ -98,7 +119,7 @@
     // Check for a master password on file
     
     /* Present next run loop. Prevents "unbalanced VC display" warnings. */
-    double delayInSeconds = 0.1;
+    double delayInSeconds = 0.01;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
@@ -117,6 +138,12 @@
                 
             }];
             
+            
+            
+        } else {
+            
+            
+            [self presentUnlockPromptAnimated:YES];
             
             
         }

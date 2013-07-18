@@ -12,6 +12,7 @@
 #import "RVshaDigester.h"
 #import "RNEncryptor.h"
 #import "RNDecryptor.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSMasterPasswordVerifyerViewController ()
 
@@ -93,6 +94,9 @@
     
     [userDefaults synchronize];
     
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.isUnlocked = YES;
+    
 }
 
 -(BOOL)verifyMasterPasswordValidity:(NSString *)providedMasterPassword{
@@ -109,6 +113,8 @@
         
         if ([hashedMasterPasswordInKeychain isEqualToString:shaedProvidedPassword]) {
             // The same passwords are identical
+            PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+            appDelegate.isUnlocked = YES;
             return YES;
         }
         

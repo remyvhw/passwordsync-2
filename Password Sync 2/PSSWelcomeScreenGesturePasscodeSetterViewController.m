@@ -9,6 +9,7 @@
 #import "PSSWelcomeScreenGesturePasscodeSetterViewController.h"
 #import "SPLockScreen.h"
 #import "PSSPasscodeVerifyerViewController.h"
+#import "PSSUnlockPromptViewController.h"
 
 @interface PSSWelcomeScreenGesturePasscodeSetterViewController ()
 @property (weak, nonatomic) IBOutlet SPLockScreen *lockScreen;
@@ -100,62 +101,112 @@
 
 -(void)lockScreen:(SPLockScreen *)lockScreen didEndWithPattern:(NSNumber *)patternNumber{
     
-    // First, let's make sure the pattern number is positive. Negative values are not accepted.
-    // We take the long long value as the patterns can be long ass numbers
-    if ([patternNumber longLongValue] < 0) {
-        [self rejectInvalidPasscode];
-        return;
-    }
-    
-    
-    // We must parse the chosen passcode to look for repetitions. Theoretically, no number should be repeated.
     NSString * chosenPasscode = [patternNumber stringValue];
     
-    NSMutableArray * arrayOfNumbers = [NSMutableArray arrayWithCapacity:[chosenPasscode length]];
-    BOOL shouldRejectRepeteaingNumber = NO;
-    for (int counter = 0; counter < [chosenPasscode length]; counter++) {
+    if (self.promptMode) {
         
-        unichar character = [chosenPasscode characterAtIndex:counter];
-        NSNumber * numberForCharacter = @(character); // ASCII decimal character (ex.: @"1" = 49)
+        PSSPasscodeVerifyerViewController * passcodeVerifyer = [[PSSPasscodeVerifyerViewController alloc] init];
         
-        BOOL alreadyInArray = NO;
-        for (NSNumber *number in arrayOfNumbers) {
-            if ([number isEqualToNumber:numberForCharacter]) {
-                alreadyInArray = YES;
+        if ([passcodeVerifyer verifyPasscode:chosenPasscode]) {
+            
+            PSSUnlockPromptViewController * unlockPromptViewController = (PSSUnlockPromptViewController*)self.navigationController;
+            
+            [unlockPromptViewController userDidSuccessfullyUnlockWithPasscode];
+            
+        } else {
+            
+            if (passcodeVerifyer.countOfPasscodeAttempts >= 5) {
+                // We must alert the delegate that it's time to reset the passcode with the master password.
+                
+                PSSUnlockPromptViewController * promptNavigator = (PSSUnlockPromptViewController*)self.navigationController;
+                [promptNavigator skipPasscodeVerification];
+                
+                
+            } else {
+                
+                [UIView animateWithDuration:0.1 animations:^{
+                    [self.instructionsLabel setAlpha:0.0];
+                } completion:^(BOOL finished) {
+                    
+                    [self.instructionsLabel setText:NSLocalizedString(@"Invalid gesture. Try again.", nil)];
+                    
+                    [UIView animateWithDuration:0.1 animations:^{
+                        [self.instructionsLabel setAlpha:1.0];
+                    }];
+                    
+                }];
+                
+                
+            }
+
+            
+        }
+        
+        
+    } else {
+        // We're in setter mode.
+        
+        // First, let's make sure the pattern number is positive. Negative values are not accepted.
+        // We take the long long value as the patterns can be long ass numbers
+        if ([patternNumber longLongValue] < 0) {
+            [self rejectInvalidPasscode];
+            return;
+        }
+        
+        
+        // We must parse the chosen passcode to look for repetitions. Theoretically, no number should be repeated.
+        
+        
+        NSMutableArray * arrayOfNumbers = [NSMutableArray arrayWithCapacity:[chosenPasscode length]];
+        BOOL shouldRejectRepeteaingNumber = NO;
+        for (int counter = 0; counter < [chosenPasscode length]; counter++) {
+            
+            unichar character = [chosenPasscode characterAtIndex:counter];
+            NSNumber * numberForCharacter = @(character); // ASCII decimal character (ex.: @"1" = 49)
+            
+            BOOL alreadyInArray = NO;
+            for (NSNumber *number in arrayOfNumbers) {
+                if ([number isEqualToNumber:numberForCharacter]) {
+                    alreadyInArray = YES;
+                }
+            }
+            if (!alreadyInArray) {
+                [arrayOfNumbers addObject:numberForCharacter];
+            } else {
+                shouldRejectRepeteaingNumber = YES;
             }
         }
-        if (!alreadyInArray) {
-            [arrayOfNumbers addObject:numberForCharacter];
-        } else {
-            shouldRejectRepeteaingNumber = YES;
+        
+        
+        if (shouldRejectRepeteaingNumber) {
+            [self rejectInvalidPasscode];
+            return;
         }
-    }
-    
-    
-    if (shouldRejectRepeteaingNumber) {
-        [self rejectInvalidPasscode];
-        return;
-    }
-    
-    
-    // Now set the passcode
-    if (!self.currentPasscode) {
-        self.currentPasscode = chosenPasscode;
-        self.passcodeStatus = PSSGesturePasscodeStatusValid;
-        [self refreshLabel];
-    } else {
-        if ([chosenPasscode isEqualToString:self.currentPasscode]) {
-            
-            // We can now proceed, the passcodes are identical!
-            
-            [self savePasscodeAndContinueWithSegue];
-        } else {
-            
-            self.passcodeStatus = PSSGesturePasscodeStatusNotMatching;
+        
+        
+        // Now set the passcode
+        if (!self.currentPasscode) {
+            self.currentPasscode = chosenPasscode;
+            self.passcodeStatus = PSSGesturePasscodeStatusValid;
             [self refreshLabel];
-            
+        } else {
+            if ([chosenPasscode isEqualToString:self.currentPasscode]) {
+                
+                // We can now proceed, the passcodes are identical!
+                
+                [self savePasscodeAndContinueWithSegue];
+            } else {
+                
+                self.passcodeStatus = PSSGesturePasscodeStatusNotMatching;
+                [self refreshLabel];
+                
+            }
         }
+        
+        
     }
+    
+    
     
     
     

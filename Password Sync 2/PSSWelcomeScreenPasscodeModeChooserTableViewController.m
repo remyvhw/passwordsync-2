@@ -7,11 +7,13 @@
 //
 
 #import "PSSWelcomeScreenPasscodeModeChooserTableViewController.h"
+#import "PSSPasscodeVerifyerViewController.h"
 
 @interface PSSWelcomeScreenPasscodeModeChooserTableViewController ()
 
 @property (strong) NSString * gesturePasscodeEntryDetailText;
 @property (strong) NSString * pinPasscodeEntryDetailText;
+@property (weak, nonatomic) IBOutlet UILabel *explanationText;
 
 @end
 
@@ -28,6 +30,18 @@
         // Custom initialization
         self.gesturePasscodeEntryDetailText = NSLocalizedString(@"Simply draw a pattern.", nil);
         self.pinPasscodeEntryDetailText = NSLocalizedString(@"Five digit passcode.", nil);
+            
+            
+            PSSPasscodeVerifyerViewController * passcodeVerifyer = [[PSSPasscodeVerifyerViewController alloc] init];
+            if (passcodeVerifyer.countOfPasscodeAttempts >= 5) {
+                // User is resetting it's passcode
+                
+                self.explanationText.text = NSLocalizedString(@"Please choose a new passcode.", nil);
+                
+                self.title = NSLocalizedString(@"Reset Passcode", nil);
+                
+            }
+            
     }
 
     

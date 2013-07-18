@@ -19,4 +19,6 @@ typedef enum {
 
 @interface PSSWelcomeScreenGesturePasscodeSetterViewController : UIViewController <LockScreenDelegate>
 
+@property BOOL promptMode;
+
 @end

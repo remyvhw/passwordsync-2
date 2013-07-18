@@ -18,6 +18,11 @@
 
 @implementation PSSPasswordListViewController
 
+-(void)userUnlockedDatabase:(id)sender{
+    
+    [self.tableView reloadData];
+    
+}
 
 - (void)viewDidLoad
 {
@@ -33,7 +38,13 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     
+    // Register to unlock notification so we can replace the "dots" on the username field.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUnlockedDatabase:) name:PSSGlobalUnlockNotification object:nil];
     
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning

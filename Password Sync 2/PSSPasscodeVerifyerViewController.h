@@ -16,11 +16,16 @@ typedef enum {
 } PSSPasscodeType;
 
 
-@interface PSSPasscodeVerifyerViewController : UIViewController
+@interface PSSPasscodeVerifyerViewController : NSObject
 
-
+-(NSInteger)countOfPasscodeAttempts;
 
 -(void)savePasscode:(NSString*)passcode withType:(PSSPasscodeType)passcodeType;
 /// @description This method will save the passcode in the keychain as a digested value.
+
+
+-(BOOL)verifyPasscode:(NSString*)passcode;
+/// @description This method will verify the passcode in the keychain.
+
 
 @end
