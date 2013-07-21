@@ -18,6 +18,7 @@
                     <connections>
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="RNY-mV-Lfz"/>
                         <segue destination="bPR-by-1uu" kind="relationship" relationship="viewControllers" id="b4a-SN-Q6X"/>
+                        <segue destination="nDn-CH-52o" kind="relationship" relationship="viewControllers" id="Ge4-G2-n81"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nB-2I-EZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,12 +158,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-7" y="64"/>
+        </scene>
+        <!--Location List Table View Controller - Root View Controller-->
+        <scene sceneID="gKi-yg-xGo">
+            <objects>
+                <tableViewController id="Lde-AW-riU" customClass="PSSLocationListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aaq-bq-iia">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="pfy-Zq-QRB">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pfy-Zq-QRB" id="Fzj-Nr-YSt">
+                                    <rect key="frame" x="0.0" y="0.0" width="322" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Wtj-gW-IrV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnM-kW-JyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="763"/>
+        </scene>
+        <!--Navigation Controller - Locations-->
+        <scene sceneID="bwt-EI-m9n">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="nDn-CH-52o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" image="Pin" id="GYH-V0-t4f"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TIX-Kr-Mmy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lde-AW-riU" kind="relationship" relationship="rootViewController" id="UEf-fE-43p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N0i-l3-pEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="763"/>
         </scene>
     </scenes>
     <resources>
         <image name="CardsIcon" width="33" height="30"/>
         <image name="KeyIcon" width="30" height="30"/>
+        <image name="Pin" width="17" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

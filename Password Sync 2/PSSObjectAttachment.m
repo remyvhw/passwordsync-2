@@ -2,7 +2,7 @@
 //  PSSObjectAttachment.m
 //  Password Sync 2
 //
-//  Created by Remy Vanherweghem on 2013-06-27.
+//  Created by Remy Vanherweghem on 2013-07-18.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 @implementation PSSObjectAttachment
 
 @dynamic name;
-@dynamic path;
+@dynamic binaryContent;
 @dynamic encryptedObjectVersions;
 
 @end

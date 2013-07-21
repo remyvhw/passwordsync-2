@@ -2,7 +2,7 @@
 //  PSSNoteVersion.h
 //  Password Sync 2
 //
-//  Created by Remy Vanherweghem on 2013-06-27.
+//  Created by Remy Vanherweghem on 2013-07-18.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface PSSNoteVersion : PSSBaseObjectVersion
 
-@property (nonatomic, retain) NSData * noteContent;
-@property (nonatomic, retain) NSString * noteTitle;
+@property (nonatomic, retain) NSData * noteTextContent;
+@property (nonatomic, retain) NSString * displayName;
 
 @end

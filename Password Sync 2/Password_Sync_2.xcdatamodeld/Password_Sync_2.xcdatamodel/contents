@@ -35,14 +35,25 @@
         <attribute name="unencryptedLastDigits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="verificationCode" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
+    <entity name="PSSLocationBaseObject" representedClassName="PSSLocationBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES"/>
+    <entity name="PSSLocationVersion" representedClassName="PSSLocationVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
+        <attribute name="cllocation" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="radius" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="PSSNoteBaseObject" representedClassName="PSSNoteBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES"/>
     <entity name="PSSNoteVersion" representedClassName="PSSNoteVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
-        <attribute name="noteContent" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="noteTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noteTextContent" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="PSSObjectAttachment" representedClassName="PSSObjectAttachment" syncable="YES">
+        <attribute name="binaryContent" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="encryptedObjectVersions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="attachments" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
     </entity>
     <entity name="PSSObjectCategory" representedClassName="PSSObjectCategory" syncable="YES">
@@ -84,6 +95,8 @@
         <element name="PSSBaseObjectVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSCreditCardBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSCreditCardVersion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSLocationBaseObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSLocationVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSNoteBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSNoteVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectAttachment" positionX="0" positionY="0" width="0" height="0"/>
@@ -91,7 +104,7 @@
         <element name="PSSObjectDecorativeImage" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectTag" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSPasswordBaseObject" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PSSPasswordVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSPasswordDomain" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSPasswordVersion" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

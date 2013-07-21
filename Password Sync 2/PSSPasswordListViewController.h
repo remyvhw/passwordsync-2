@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import CoreData;
 
 @class PSSDetailViewController;
 
-#import <CoreData/CoreData.h>
 
 @interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 

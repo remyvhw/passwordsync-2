@@ -21,6 +21,9 @@
         [textField setBackgroundColor:[UIColor clearColor]];
         [self addSubview:textField];
         self.textField = textField;
+        
+        
+        
     }
     return self;
 }
