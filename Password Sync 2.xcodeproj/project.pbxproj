@@ -539,11 +539,7 @@
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
-				AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */,
-				AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */,
-				AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */,
-				ADA24BEE1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.h */,
-				ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */,
+				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
 				AD36371117989D95005F1542 /* Location */,
 				ADDD964F1792539A00AB2CC5 /* Cards */,
@@ -823,6 +819,18 @@
 				AD6133F21793BFC2004CEDF2 /* Cells */,
 			);
 			name = Cards;
+			sourceTree = "<group>";
+		};
+		ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */,
+				AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */,
+				AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */,
+				ADA24BEE1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.h */,
+				ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */,
+			);
+			name = "Unlock Prompt";
 			sourceTree = "<group>";
 		};
 		ADFA1A0A179257BB0038EF14 /* CardIO */ = {
