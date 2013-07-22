@@ -19,5 +19,6 @@
 -(void)userDidUnlockWithPasscode;
 -(void)editorAction:(id)sender;
 -(void)lockUIAction:(id)notification;
+-(UIView*)lockedImageAccessoryView;
 
 @end

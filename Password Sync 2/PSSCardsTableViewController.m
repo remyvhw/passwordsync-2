@@ -11,6 +11,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSCreditCardBaseObject.h"
 #import "PSSCreditCardVersion.h"
+#import "PSSCardDetailViewController.h"
 
 @interface PSSCardsTableViewController ()
 
@@ -42,7 +43,6 @@
     PSSAppDelegate *appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,6 +56,17 @@
 
     
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"cardDetailViewControllerSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        
+        [[segue destinationViewController] setDetailItem:object];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +90,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -112,12 +123,7 @@
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        
-    }
-}
+
 
 
 #pragma mark - Fetched results controller
@@ -224,6 +230,12 @@
     PSSCreditCardBaseObject *object = (PSSCreditCardBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = object.currentVersion.unencryptedLastDigits;
+    if (object.currentVersion.issuingBank) {
+        cell.detailTextLabel.text = object.currentVersion.issuingBank;
+    } else {
+        cell.detailTextLabel.text = nil;
+    }
+    
     
 }
 

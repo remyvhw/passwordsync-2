@@ -20,6 +20,13 @@
 
 #pragma mark - Managing the detail item
 
+-(UIView*)lockedImageAccessoryView{
+    
+    UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
+    
+    UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[lockImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    return accessoryView;
+}
 
 -(void)lockUIAction:(id)notification{
     
@@ -143,6 +150,15 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
+}
+
+#pragma mark - UITableViewDelegate methods
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (![self isPasscodeUnlocked]) {
+        
+        [self showUnlockingViewController];
+        return;
+    }
 }
 
 #pragma mark - PSSObjectEditorProtocol methods

@@ -32,7 +32,9 @@
         return nil;
     }
     
-    return [results objectAtIndex:0];
+    PSSCreditCardVersion * currentVersion = [results objectAtIndex:0];
+    _currentVersion = currentVersion;
+    return currentVersion;
 }
 
 

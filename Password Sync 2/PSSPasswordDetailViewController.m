@@ -29,11 +29,7 @@
 
 @implementation PSSPasswordDetailViewController
 
--(void)lockUIAction:(id)notification{
-    self.isPasscodeUnlocked = NO;
-    [self createNotesCell];
-    [super lockUIAction:notification];
-}
+
 
 
 
@@ -50,12 +46,10 @@
     
 }
 
--(UIView*)lockedImageAccessoryView{
-    
-    UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
-    
-    UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[lockImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    return accessoryView;
+-(void)lockUIAction:(id)notification{
+    self.isPasscodeUnlocked = NO;
+    [self createNotesCell];
+    [super lockUIAction:notification];
 }
 
 -(void)userDidUnlockWithPasscode{
