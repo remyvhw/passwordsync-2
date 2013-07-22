@@ -52,9 +52,25 @@
         return nil;
     }
     
+    
     return unencryptedData;
 }
 
 
++(NSData*)encryptString:(NSString *)stringToEncrypt{
+    
+    NSData* data=[stringToEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return [PSSEncryptor encryptData:data];
+}
+
++(NSString*)decryptString:(NSData *)encryptedData{
+    
+    NSData *decryptedData = [PSSEncryptor decryptData:encryptedData];
+    
+    NSString* decryptedString = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+    
+    return decryptedString;
+}
 
 @end

@@ -8,9 +8,9 @@
 
 #import "PSSPasswordListViewController.h"
 #import "PSSPasswordEditorTableViewController.h"
-#import "PSSDetailViewController.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
+#import "PSSPasswordDetailViewController.h"
 
 @interface PSSPasswordListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -31,7 +31,7 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     
-    self.detailViewController = (PSSDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (PSSPasswordDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 
@@ -142,7 +142,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"passwordDetailViewControllerSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];

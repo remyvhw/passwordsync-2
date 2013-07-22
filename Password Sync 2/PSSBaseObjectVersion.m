@@ -28,16 +28,18 @@
     }
     
     NSData * decryptedData = [PSSEncryptor decryptData:encryptedString];
-    if (!decryptedData || ![decryptedData bytes]) {
+    if (!decryptedData) {
         return @"";
     }
     
-    return [NSString stringWithCString:[decryptedData bytes] encoding:NSUTF8StringEncoding];
+    NSString * decryptedString = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+    
+    return decryptedString;
 }
 
 -(NSData*)encryptedDataFromUTF8String:(NSString*)string{
     
-    return [PSSEncryptor encryptData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+    return [PSSEncryptor encryptString:string];
 }
 
 

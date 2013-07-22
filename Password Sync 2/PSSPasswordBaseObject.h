@@ -13,7 +13,9 @@
 @class PSSPasswordVersion;
 @class PSSPasswordDomain;
 
-@interface PSSPasswordBaseObject : PSSBaseGenericObject
+@interface PSSPasswordBaseObject : PSSBaseGenericObject {
+    PSSPasswordDomain * _mainDomain;
+}
 
 @property (nonatomic, retain) NSNumber * autofill;
 @property (nonatomic, retain) NSData * favicon;
@@ -24,6 +26,7 @@
 @property (readonly, nonatomic) NSString * username;
 
 @property (nonatomic, retain) NSSet *domains;
+@property (nonatomic, retain) NSArray * fetchedDomains;
 
 
 -(PSSPasswordDomain*)mainDomain;

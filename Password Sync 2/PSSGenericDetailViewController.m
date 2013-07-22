@@ -6,20 +6,50 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSDetailViewController.h"
-#import "PDKeychainBindings.h"
-#import <Security/Security.h>
-#import "RVshaDigester.h"
-#import "RNEncryptor.h"
+#import "PSSGenericDetailViewController.h"
 
-@interface PSSDetailViewController ()
+#import "PSSEncryptor.h"
+#import "PSSUnlockPromptViewController.h"
+
+@interface PSSGenericDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
+
 @end
 
-@implementation PSSDetailViewController
+@implementation PSSGenericDetailViewController
 
 #pragma mark - Managing the detail item
+
+-(void)userDidUnlockWithPasscode{
+    [self.tableView reloadData];
+}
+
+-(void)showUnlockingViewController{
+    
+    
+    UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
+    PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
+   
+    [self.navigationController presentViewController:[unlockController promptForPasscodeBlockingView:NO completion:^{
+        
+        self.isPasscodeUnlocked = YES;
+        [self userDidUnlockWithPasscode];
+        
+    } cancelation:^{
+        
+    }] animated:YES completion:^{
+        
+    }];
+
+    
+    
+    
+}
+
+-(void)updateViewForNewDetailItem{
+    
+}
+
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -27,7 +57,7 @@
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
+        [self updateViewForNewDetailItem];
     }
 
     if (self.masterPopoverController != nil) {
@@ -35,20 +65,12 @@
     }        
 }
 
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
-    }
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    self.isPasscodeUnlocked = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +93,20 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - UITableViewDataSource methods
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 0;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
 }
 
 @end

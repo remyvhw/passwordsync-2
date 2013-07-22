@@ -13,7 +13,7 @@
 
 @implementation PSSPasswordBaseObject
 @synthesize currentVersion = _currentVersion;
-
+@synthesize fetchedDomains = _fetchedDomains;
 
 @dynamic autofill;
 @dynamic favicon;
@@ -39,6 +39,7 @@
         return nil;
     }
     
+    _currentVersion = [results objectAtIndex:0];
     return [results objectAtIndex:0];
 }
 
@@ -156,13 +157,32 @@
 
 -(PSSPasswordDomain*)mainDomain{
     
-    NSSortDescriptor * timestampDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
-    NSArray * allDomains = [self.domains sortedArrayUsingDescriptors:@[timestampDescriptor]];
+    if (_mainDomain) {
+        return _mainDomain;
+    }
+    
+    NSArray * allDomains = [self fetchedDomains];
     
     if ([allDomains count]) {
-        return [allDomains objectAtIndex:0];
+        PSSPasswordDomain * domain = [allDomains objectAtIndex:0];
+        _mainDomain = domain;
+        return domain;
     }
     return nil;
+}
+
+
+-(NSArray*)fetchedDomains{
+    
+    if (_fetchedDomains) {
+        return _fetchedDomains;
+    }
+    
+    NSSortDescriptor * sortByTimestamp = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    
+    NSArray * allDomains = [self.domains sortedArrayUsingDescriptors:@[sortByTimestamp]];
+    _fetchedDomains = allDomains;
+    return allDomains;
 }
 
 @end

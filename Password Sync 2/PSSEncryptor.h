@@ -13,5 +13,8 @@
 +(NSData*)decryptData:(NSData*)encryptedData;
 +(NSData*)encryptData:(NSData*)dataToEncrypt;
 
++(NSData*)encryptString:(NSString*)stringToEncrypt;
++(NSString*)decryptString:(NSData*)encryptedData;
+
 
 @end

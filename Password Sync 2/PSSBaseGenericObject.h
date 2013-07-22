@@ -21,6 +21,10 @@
 @property (nonatomic, retain) PSSBaseGenericObject *parent;
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) NSSet *versions;
+
+@property (nonatomic, strong) UIImage * decorativeImageForDevice;
+
+
 @end
 
 @interface PSSBaseGenericObject (CoreDataGeneratedAccessors)
