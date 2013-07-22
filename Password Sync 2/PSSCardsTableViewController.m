@@ -230,10 +230,15 @@
     PSSCreditCardBaseObject *object = (PSSCreditCardBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = object.currentVersion.unencryptedLastDigits;
-    if (object.currentVersion.issuingBank) {
+    if (object.currentVersion.cardType || ![object.currentVersion.cardType isEqualToString:@""]) {
+        cell.detailTextLabel.text = [object.currentVersion localizedCardType];
+        cell.imageView.image = [object.currentVersion imageForCardType];
+    } else if (object.currentVersion.issuingBank) {
         cell.detailTextLabel.text = object.currentVersion.issuingBank;
+        cell.imageView.image = nil;
     } else {
         cell.detailTextLabel.text = nil;
+        cell.imageView.image = nil;
     }
     
     
