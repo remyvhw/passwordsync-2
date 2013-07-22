@@ -28,10 +28,13 @@
 @property (strong) PSSnewPasswordPasswordTextFieldCell * passwordCell;
 @property (strong) PSSnewPasswordMultilineTextFieldCell * notesCell;
 
+@property BOOL isPasscodeUnlocked;
 
 @end
 
 @implementation PSSPasswordEditorTableViewController
+
+
 
 
 
@@ -157,6 +160,45 @@
     return self;
 }
 
+-(void)lockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = NO;
+    
+    // Hide our sensitive information fields
+    [self.passwordCell.textField setAlpha:0.0];
+    
+    // Launch a timer. If after 30 seconds our user is not back in the app, we'll just pop this editor our of the stack
+    double delayInSeconds = 15.;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        // If user came back to the app in the meantime we just invalidate this timer
+        if (!self.isPasscodeUnlocked) {
+            
+            if (self.navigationController.visibleViewController == self) {
+                
+                [self.navigationController popViewControllerAnimated:NO];
+                
+            }
+            
+        }
+        
+    });
+    
+    
+}
+
+-(void)unlockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = YES;
+    [self.passwordCell.textField setAlpha:1.0];
+    
+    
+    
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -171,6 +213,13 @@
     
     if (self.passwordBaseObject) {
         // We're in edit mode
+        
+        // Register for notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUI:) name:PSSGlobalLockNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUI:) name:PSSGlobalUnlockNotification object:nil];
+        
+        self.isPasscodeUnlocked = YES;
+        
     } else {
         // We're writing a new password
         
@@ -207,6 +256,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark Selectors
