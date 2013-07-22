@@ -28,7 +28,6 @@
 @property (strong) PSSnewPasswordPasswordTextFieldCell * passwordCell;
 @property (strong) PSSnewPasswordMultilineTextFieldCell * notesCell;
 
-@property (strong) PSSPasswordBaseObject * passwordBaseObject;
 
 @end
 
@@ -66,13 +65,12 @@
 
 -(void)saveChangesAndDismiss{
     
-    BOOL editingMode = NO;
+    BOOL creatingMode = NO;
     
     if (!self.passwordBaseObject) {
         self.passwordBaseObject = [self insertNewPasswordInManagedObject];
-        editingMode = YES;
+        creatingMode = YES;
     }
-    
     
     [self.passwordBaseObject setMainDomainFromString:self.hostCell.textField.text];
     
@@ -91,7 +89,8 @@
     version.decryptedPassword = self.passwordCell.textField.text;
     version.decryptedNotes = self.notesCell.textView.text;
     
-
+    self.passwordBaseObject.currentVersion = version;
+    
     NSError *error = nil;
     if (![self.passwordBaseObject.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -101,7 +100,8 @@
         
     }
     
-    if (editingMode) {
+    if (creatingMode) {
+        
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
             
@@ -109,6 +109,11 @@
             
         }];
     } else {
+        
+        if (self.editorDelegate) {
+            [self.editorDelegate objectEditor:self finishedWithObject:self.passwordBaseObject];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -207,7 +212,19 @@
 #pragma mark Selectors
 
 -(void)cancelNewPasswordEditor:(id)sender{
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
+    
+    if (self.passwordBaseObject) {
+        
+        if (self.editorDelegate && [self.editorDelegate respondsToSelector:@selector(objectEditor:canceledOperationOnObject:)]) {
+            [self.editorDelegate objectEditor:self canceledOperationOnObject:self.passwordBaseObject];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } else {
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
+    }
+    
+    
 }
 
 

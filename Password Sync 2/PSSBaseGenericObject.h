@@ -22,7 +22,10 @@
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) NSSet *versions;
 
+@property (nonatomic, strong) id currentVersion;
+
 @property (nonatomic, strong) UIImage * decorativeImageForDevice;
+
 
 
 @end

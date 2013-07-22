@@ -7,7 +7,9 @@
 //
 
 @import UIKit;
-@interface PSSGenericDetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+#import "PSSObjectEditorProtocol.h"
+
+@interface PSSGenericDetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, PSSObjectEditorProtocol>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
@@ -15,6 +17,6 @@
 
 -(void)showUnlockingViewController;
 -(void)userDidUnlockWithPasscode;
-
+-(void)editorAction:(id)sender;
 
 @end

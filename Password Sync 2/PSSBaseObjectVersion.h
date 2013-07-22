@@ -13,10 +13,14 @@
 
 @interface PSSBaseObjectVersion : NSManagedObject
 
+
 @property (nonatomic, retain) NSData * additionalJSONfields;
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
+
+
+
 @end
 
 @interface PSSBaseObjectVersion (CoreDataGeneratedAccessors)
@@ -28,5 +32,6 @@
 
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString;
 -(NSData*)encryptedDataFromUTF8String:(NSString*)string;
+
 
 @end

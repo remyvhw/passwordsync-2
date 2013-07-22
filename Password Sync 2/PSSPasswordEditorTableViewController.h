@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PSSPasswordGeneratorTableViewController.h"
+#import "PSSObjectEditorProtocol.h"
+
+@class PSSPasswordBaseObject;
 
 @interface PSSPasswordEditorTableViewController : UITableViewController <PSSPasswordGeneratorTableViewControllerProtocol>
+
+@property (strong) PSSPasswordBaseObject * passwordBaseObject;
+@property (weak) id<PSSObjectEditorProtocol> editorDelegate;
 
 @end

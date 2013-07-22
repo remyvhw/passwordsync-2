@@ -16,6 +16,7 @@
 
 @implementation PSSBaseGenericObject
 @synthesize decorativeImageForDevice = _decorativeImageForDevice;
+@synthesize currentVersion = _currentVersion;
 
 @dynamic created;
 @dynamic displayName;
@@ -26,6 +27,12 @@
 @dynamic tags;
 @dynamic versions;
 
+-(void)setCurrentVersion:(id)currentVersion{
+    _currentVersion = currentVersion;
+    
+    // Delete other cached data
+    
+}
 
 -(NSString*)viewportIdentifierForCurrentDevice{
     

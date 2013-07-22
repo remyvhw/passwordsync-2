@@ -20,8 +20,16 @@
 
 #pragma mark - Managing the detail item
 
+-(void)editorAction:(id)sender{
+    
+    
+    
+}
+
 -(void)userDidUnlockWithPasscode{
     [self.tableView reloadData];
+    UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editorAction:)];
+    [self.navigationItem setRightBarButtonItem:editButton animated:YES];
 }
 
 -(void)showUnlockingViewController{
@@ -108,5 +116,12 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
 }
+
+#pragma mark - PSSObjectEditorProtocol methods
+
+-(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
+    [self.tableView reloadData];
+}
+
 
 @end

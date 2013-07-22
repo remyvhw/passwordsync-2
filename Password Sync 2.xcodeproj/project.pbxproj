@@ -366,6 +366,7 @@
 		ADDD9651179253FD00AB2CC5 /* PSSCardEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardEditorViewController.m; sourceTree = "<group>"; };
 		ADE7E8C3179C62E900BA09E7 /* PSSPasswordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordDetailViewController.h; sourceTree = "<group>"; };
 		ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordDetailViewController.m; sourceTree = "<group>"; };
+		ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectEditorProtocol.h; sourceTree = "<group>"; };
 		ADED6D03177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordExplanationViewController.h; sourceTree = "<group>"; };
 		ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordExplanationViewController.m; sourceTree = "<group>"; };
 		ADFA1A0B179257BB0038EF14 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
@@ -543,6 +544,7 @@
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
+				ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */,
 				AD72C3DC177B7E27009AADC8 /* PSSGenericDetailViewController.h */,
 				AD72C3DD177B7E27009AADC8 /* PSSGenericDetailViewController.m */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,

@@ -10,6 +10,7 @@
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDomain.h"
+#import "PSSPasswordEditorTableViewController.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -28,6 +29,19 @@
 
 @implementation PSSPasswordDetailViewController
 
+-(void)editorAction:(id)sender{
+    
+    UIStoryboard * newPasswordStoryboard = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    PSSPasswordEditorTableViewController * passwordEditor = [newPasswordStoryboard instantiateViewControllerWithIdentifier:@"passwordEditorBaseViewControlller"];
+    
+    passwordEditor.editorDelegate = self;
+    passwordEditor.passwordBaseObject = self.detailItem;
+    
+    [self.navigationController pushViewController:passwordEditor animated:YES];
+    
+    
+}
+
 -(UIView*)lockedImageAccessoryView{
     
     UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
@@ -40,7 +54,15 @@
     
     // We need to reload the note cell
     [self createNotesCell];
-    [self.tableView reloadData];
+    [super userDidUnlockWithPasscode];
+    
+}
+
+-(void)showWebBrowserForDomain:(PSSPasswordDomain*)domain {
+    
+    NSURL * urlWithDomain = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", [domain hostname]]];
+    
+    [[UIApplication sharedApplication] openURL:urlWithDomain];
     
 }
 
@@ -182,6 +204,13 @@
 
 #pragma mark - UITableViewDelegate methods
 
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 3) {
+        return NSLocalizedString(@"Notes", nil);
+    }
+    return @"";
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 3) {
@@ -244,11 +273,12 @@
         // Title cell
         if (!self.titleCell) {
             UITableViewCell * titleCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            [titleCell.imageView setImage:[UIImage imageWithData:self.detailItem.favicon]];
-            titleCell.textLabel.text = self.detailItem.currentVersion.displayName;
             titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.titleCell = titleCell;
         }
+        self.titleCell.textLabel.text = self.detailItem.displayName;
+        [self.titleCell.imageView setImage:[UIImage imageWithData:self.detailItem.favicon]];
+        
         return self.titleCell;
     }
     
@@ -319,6 +349,13 @@
         
         [self showUnlockingViewController];
         return;
+    }
+    
+    if (indexPath.section == 2) {
+        // URL
+        
+        [self showWebBrowserForDomain:[self.detailItem.fetchedDomains objectAtIndex:indexPath.row]];
+        
     }
     
     // Offer different options
