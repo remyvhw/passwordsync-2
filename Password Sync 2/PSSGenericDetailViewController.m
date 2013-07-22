@@ -55,9 +55,11 @@
     PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
    
     [self.navigationController presentViewController:[unlockController promptForPasscodeBlockingView:NO completion:^{
-        
-        self.isPasscodeUnlocked = YES;
-        [self userDidUnlockWithPasscode];
+        // We only run the refresh if the UI was locked to prevent double reloads
+        if (!self.isPasscodeUnlocked) {
+            self.isPasscodeUnlocked = YES;
+            [self userDidUnlockWithPasscode];
+        }
         
     } cancelation:^{
         
