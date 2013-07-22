@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CardIO.h"
+#import "PSSObjectEditorProtocol.h"
 @class PSSCreditCardBaseObject;
 @protocol PSSCardsEditorCardTypeSelectorProtocol;
 @interface PSSCardEditorViewController : UITableViewController <CardIOPaymentViewControllerDelegate, PSSCardsEditorCardTypeSelectorProtocol>
 
 @property (strong, nonatomic) PSSCreditCardBaseObject * cardBaseObject;
+@property (weak, nonatomic) id<PSSObjectEditorProtocol> editorDelegate;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "PSSCreditCardVersion.h"
 
-
 @implementation PSSCreditCardVersion
 
 @dynamic bankPhoneNumber;
@@ -123,5 +122,73 @@
 }
 
 
+
+-(CardIOCreditCardType)rawCardType{
+    NSString * cardString = self.cardType;
+    
+    if ([cardString isEqualToString:@"Visa"]) {
+        return CardIOCreditCardTypeVisa;
+    } else if ([cardString isEqualToString:@"Mastercard"]){
+        return CardIOCreditCardTypeMastercard;
+    } else if ([cardString isEqualToString:@"Amex"]){
+        return CardIOCreditCardTypeAmex;
+    } else if ([cardString isEqualToString:@"Discover"]){
+        return CardIOCreditCardTypeDiscover;
+    } else if ([cardString isEqualToString:@"JCB"]){
+        return CardIOCreditCardTypeJCB;
+    }
+    
+    return CardIOCreditCardTypeUnrecognized;
+    
+}
+
+-(void)setRawCardType:(CardIOCreditCardType)rawCardType{
+    NSString * cardTypeString;
+    switch (rawCardType) {
+        case CardIOCreditCardTypeVisa:
+            cardTypeString = @"Visa";
+            break;
+        case CardIOCreditCardTypeMastercard:
+            cardTypeString = @"Mastercard";
+            break;
+        case CardIOCreditCardTypeAmex:
+            cardTypeString = @"Amex";
+            break;
+        case CardIOCreditCardTypeJCB:
+            cardTypeString = @"JCB";
+            break;
+        case CardIOCreditCardTypeDiscover:
+            cardTypeString = @"Discover";
+            break;
+        default:
+            cardTypeString = @"";
+    }
+    self.cardType = cardTypeString;
+}
+
+-(UIImage*)imageForCardType{
+    
+    CardIOCreditCardType cardType = self.rawCardType;
+    
+    if (cardType) {
+        return [CardIOCreditCardInfo logoForCardType:cardType];
+    }
+    
+    
+    
+    return nil;
+}
+
+-(NSString*)localizedCardType{
+    CardIOCreditCardType cardType = self.rawCardType;
+    
+    if (cardType) {
+        return [CardIOCreditCardInfo displayStringForCardType:cardType usingLanguageOrLocale:[[NSLocale currentLocale] objectForKey:NSLocaleIdentifier]];
+    }
+    
+    
+    
+    return NSLocalizedString(@"Other", nil);
+}
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "PSSBaseObjectVersion.h"
-
+#import "CardIO.h"
 
 @interface PSSCreditCardVersion : PSSBaseObjectVersion
 
@@ -31,5 +31,11 @@
 @property (nonatomic, strong) NSString * decryptedNumber;
 @property (nonatomic, strong) NSString * decryptedPin;
 @property (nonatomic, strong) NSString * decryptedVerificationcode;
+
+@property CardIOCreditCardType rawCardType;
+
+
+-(NSString*)localizedCardType;
+-(UIImage*)imageForCardType;
 
 @end

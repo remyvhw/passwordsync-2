@@ -31,12 +31,55 @@
 
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
 
+@property BOOL isPasscodeUnlocked;
 
 @end
 
 @implementation PSSCardEditorViewController
 @synthesize cardType = _cardType;
 dispatch_queue_t backgroundQueue;
+
+
+
+-(void)lockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = NO;
+    
+    // Hide our sensitive information fields
+    [self.numberCell.textField setAlpha:0.0];
+    [self.expirationCell.cvvField setAlpha:0.0];
+    
+    // Launch a timer. If after 15 seconds our user is not back in the app, we'll just pop this editor our of the stack
+    double delayInSeconds = 15.;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        // If user came back to the app in the meantime we just invalidate this timer
+        if (!self.isPasscodeUnlocked) {
+            
+            if (self.navigationController.visibleViewController == self) {
+                
+                [self.navigationController popViewControllerAnimated:NO];
+                
+            }
+            
+        }
+        
+    });
+    
+    
+}
+
+-(void)unlockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = YES;
+    [self.numberCell.textField setAlpha:1.0];
+    [self.expirationCell.cvvField setAlpha:1.0];
+    
+    
+}
+
+
 
 -(PSSCreditCardVersion*)insertNewCardVersionInManagedObject{
     
@@ -85,12 +128,12 @@ dispatch_queue_t backgroundQueue;
 
 -(void)saveChangesAndDismiss{
     
-    BOOL editingMode = NO;
+    BOOL creationMode = NO;
     
     if (!self.cardBaseObject) {
         self.cardBaseObject = [self insertNewCardInManagedObject];
         self.cardBaseObject.autofill = [NSNumber numberWithBool:YES];
-        editingMode = YES;
+        creationMode = YES;
     }
     
     
@@ -104,6 +147,7 @@ dispatch_queue_t backgroundQueue;
     version.decryptedExpiryDate = self.expirationCell.textField.text;
     version.decryptedVerificationcode = self.expirationCell.cvvField.text;
     version.decryptedNote = self.notesCell.textView.text;
+    version.cardType = [self stringForCardType:self.cardType];
     
 
     version.bankWebsite = self.bankURLCell.textField.text;
@@ -111,7 +155,7 @@ dispatch_queue_t backgroundQueue;
     version.issuingBank = self.bankNameCell.textField.text;
     version.unencryptedLastDigits = [self redactedCardNumber:self.numberCell.textField.text];
     
-    
+    self.cardBaseObject.currentVersion = version;
     NSError *error = nil;
     if (![self.cardBaseObject.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -121,11 +165,15 @@ dispatch_queue_t backgroundQueue;
         
     }
     
-    if (editingMode) {
+    if (creationMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             
         }];
     } else {
+        if (self.editorDelegate) {
+            [self.editorDelegate objectEditor:self finishedWithObject:self.cardBaseObject];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -224,6 +272,9 @@ dispatch_queue_t backgroundQueue;
 
 -(void)cancelNewCardEditor:(id)sender{
     
+    if (self.editorDelegate && [self.editorDelegate respondsToSelector:@selector(objectEditor:canceledOperationOnObject:)]) {
+        [self.editorDelegate objectEditor:self canceledOperationOnObject:self.cardBaseObject];
+    }
     
     [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
     
@@ -247,6 +298,11 @@ dispatch_queue_t backgroundQueue;
     if (self.cardBaseObject) {
         // We're in edit mode
         self.cardType = [self cardTypeFromString:self.cardBaseObject.currentVersion.cardType];
+        self.isPasscodeUnlocked = YES;
+        // Register for notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUI:) name:PSSGlobalLockNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUI:) name:PSSGlobalUnlockNotification object:nil];
+        
     } else {
         
         self.title = NSLocalizedString(@"New Card", nil);
@@ -271,6 +327,9 @@ dispatch_queue_t backgroundQueue;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 -(void)fillBankDetailsWithBank:(NSDictionary*)bankInfo{
     self.bankNameCell.textField.text = [bankInfo objectForKey:@"bankName"];

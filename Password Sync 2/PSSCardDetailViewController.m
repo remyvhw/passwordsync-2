@@ -8,6 +8,7 @@
 
 #import "PSSCardDetailViewController.h"
 #import "PSSCreditCardVersion.h"
+#import "PSSCardEditorViewController.h"
 
 @interface PSSCardDetailViewController ()
 
@@ -15,6 +16,15 @@
 
 @implementation PSSCardDetailViewController
 
+
+-(void)editorAction:(id)sender{
+    
+    PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    [cardEditor setCardBaseObject:self.detailItem];
+    
+    [self.navigationController pushViewController:cardEditor animated:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -102,9 +112,13 @@
         
         PSSCreditCardVersion * version = self.detailItem.currentVersion;
         
-        if (self.isPasscodeUnlocked) {
+        if (self.isPasscodeUnlocked || indexPath.row == 4) {
             cell.detailTextLabel.textColor = [UIColor blackColor];
-            cell.accessoryView = nil;
+            if (indexPath.row == 4) {
+                cell.accessoryView = [[UIImageView alloc] initWithImage:[version imageForCardType]];
+            } else {
+                cell.accessoryView = nil;
+            }
         } else {
             cell.accessoryView = [self lockedImageAccessoryView];
             cell.detailTextLabel.textColor = [UIColor lightGrayColor];
@@ -135,19 +149,19 @@
                     cell.detailTextLabel.text = version.decryptedVerificationcode;
                 }
                 break;
+            
             case 3:
-                // Type
-                cell.textLabel.text = NSLocalizedString(@"Type", nil);
-                if (self.isPasscodeUnlocked) {
-                    cell.detailTextLabel.text = @"NULL";
-                }
-                break;
-            case 4:
                 // Name on card
                 cell.textLabel.text = NSLocalizedString(@"Name on card", nil);
                 if (self.isPasscodeUnlocked) {
                     cell.detailTextLabel.text = version.decryptedCardholdersName;
                 }
+                break;
+            case 4:
+                // Type
+                cell.textLabel.text = NSLocalizedString(@"Type", nil);
+                cell.detailTextLabel.text = [version localizedCardType];
+                cell.imageView.image = [version imageForCardType];
                 break;
             default:
                 break;
