@@ -29,6 +29,14 @@
 
 @implementation PSSPasswordDetailViewController
 
+-(void)lockUIAction:(id)notification{
+    self.isPasscodeUnlocked = NO;
+    [self createNotesCell];
+    [super lockUIAction:notification];
+}
+
+
+
 -(void)editorAction:(id)sender{
     
     UIStoryboard * newPasswordStoryboard = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
@@ -57,6 +65,7 @@
     [super userDidUnlockWithPasscode];
     
 }
+
 
 -(void)showWebBrowserForDomain:(PSSPasswordDomain*)domain {
     

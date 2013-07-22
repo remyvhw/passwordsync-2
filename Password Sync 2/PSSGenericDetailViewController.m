@@ -20,6 +20,20 @@
 
 #pragma mark - Managing the detail item
 
+
+-(void)lockUIAction:(id)notification{
+    
+    
+    self.isPasscodeUnlocked = NO;
+    [self.tableView reloadData];
+    
+}
+
+-(void)unlockUIAction:(id)notification{
+    self.isPasscodeUnlocked = YES;
+    [self userDidUnlockWithPasscode];
+}
+
 -(void)editorAction:(id)sender{
     
     
@@ -31,6 +45,8 @@
     UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editorAction:)];
     [self.navigationItem setRightBarButtonItem:editButton animated:YES];
 }
+
+
 
 -(void)showUnlockingViewController{
     
@@ -79,12 +95,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.isPasscodeUnlocked = NO;
+    
+    // Subscribe to the lock notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUIAction:) name:PSSGlobalLockNotification object:nil];
+    
+    // Subscribe to unlock notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUIAction:) name:PSSGlobalUnlockNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Split view
