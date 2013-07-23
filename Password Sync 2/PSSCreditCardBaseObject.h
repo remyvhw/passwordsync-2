@@ -14,6 +14,7 @@
 @interface PSSCreditCardBaseObject : PSSBaseGenericObject
 
 @property (nonatomic, retain) NSNumber * autofill;
+@property (nonatomic, retain) NSString * cardName;
 @property (nonatomic, strong) PSSCreditCardVersion * currentVersion;
 
 @end

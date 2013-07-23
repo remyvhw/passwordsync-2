@@ -12,6 +12,9 @@
 @implementation PSSLocationBaseObject
 @synthesize currentVersion = _currentVersion;
 
+@dynamic shouldGeofence;
+@dynamic address;
+
 -(PSSLocationVersion*)currentVersion{
     
     if (_currentVersion) {

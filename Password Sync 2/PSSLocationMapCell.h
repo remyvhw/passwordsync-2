@@ -15,6 +15,8 @@
 @property (strong, nonatomic) MKMapView * mapView;
 @property (strong, nonatomic) MKPointAnnotation * locationPin;
 
+@property (nonatomic) BOOL  userEditable;
+
 -(void)rearrangePinAndMapLocationWithLocation:(CLLocationCoordinate2D)pinLocation;
 -(void)rearrangePinAndMapLocationWithPlacemark:(CLPlacemark*)pinPlacemark;
 

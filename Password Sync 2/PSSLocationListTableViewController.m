@@ -11,6 +11,7 @@
 #import "PSSLocationBaseObject.h"
 #import "PSSLocationVersion.h"
 #import "PSSAppDelegate.h"
+#import "PSSLocationDetailViewController.h"
 
 @interface PSSLocationListTableViewController ()
 
@@ -45,7 +46,6 @@
     PSSAppDelegate *appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"LocationCell"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -62,6 +62,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"locationDetailViewControllerSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailItem:object];
+        
+    }
 }
 
 #pragma mark - Table view data source
@@ -111,6 +121,7 @@
     // The table view should not be re-orderable.
     return NO;
 }
+
 
 #pragma mark - Fetched results controller
 
@@ -207,6 +218,7 @@
 {
     PSSLocationBaseObject *object = (PSSLocationBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
+    cell.detailTextLabel.text = object.address;
 
 }
 

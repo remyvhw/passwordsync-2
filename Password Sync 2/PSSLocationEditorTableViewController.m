@@ -24,14 +24,14 @@
 @interface PSSLocationEditorTableViewController ()
 
 @property (strong) PSSnewPasswordBasicTextFieldCell * titleCell;
-@property (strong) PSSnewPasswordBasicTextFieldCell * usernameCell;
 @property (strong) PSSnewPasswordPasswordTextFieldCell * passwordCell;
 
 @property (strong) PSSlocationSearchTextFieldCell * locationSearchCell;
 @property (strong) PSSLocationMapCell * mapCell;
 
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
-@property (strong) CLPlacemark * pinLocation;
+@property (nonatomic) CLLocationCoordinate2D pinLocation;
+@property (nonatomic) NSString * addressString;
 
 
 
@@ -78,7 +78,7 @@
         editingMode = YES;
     }
     
-    
+    self.locationBaseObject.shouldGeofence = [NSNumber numberWithBool:YES];
     
     // We need to create a new version
     
@@ -90,17 +90,19 @@
     // We update the display name with the latest
     self.locationBaseObject.displayName = version.displayName;
     
-    version.decryptedUsername = self.usernameCell.textField.text;
     version.decryptedPassword = self.passwordCell.textField.text;
     version.decryptedNotes = self.notesCell.textView.text;
     
     
     // We save the location
-    version.cllocation = [NSKeyedArchiver archivedDataWithRootObject:self.pinLocation];
+    
     // We save the latitude and longitude separately as they could differ from the "official" ones if the user drags the pin around.
     version.latitude = @(self.mapCell.locationPin.coordinate.latitude);
     version.longitude = @(self.mapCell.locationPin.coordinate.longitude);
+    version.address = self.addressString;
     
+    self.locationBaseObject.address = version.address;
+    self.locationBaseObject.currentVersion = version;
     NSError *error = nil;
     if (![self.locationBaseObject.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -170,11 +172,13 @@
                
                // Prompt user for a specific location
            } else {
-               self.pinLocation = [placemarks objectAtIndex:0];
+               CLLocation * location = [(CLPlacemark*)[placemarks objectAtIndex:0] location];
+               self.pinLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+               self.addressString = ABCreateStringWithAddressDictionary([(CLPlacemark*)[placemarks objectAtIndex:0] addressDictionary], NO);
            }
            
            
-            [self.mapCell rearrangePinAndMapLocationWithPlacemark:self.pinLocation];
+            [self.mapCell rearrangePinAndMapLocationWithLocation:self.pinLocation];
            
        }
        
@@ -207,9 +211,6 @@
         // We're in edit mode
         
         // Set the location object
-        NSData * encodedPlacemark = self.locationBaseObject.currentVersion.cllocation;
-        CLPlacemark * placemark = [NSKeyedUnarchiver unarchiveObjectWithData:encodedPlacemark];
-        self.pinLocation = placemark;
         
     } else {
         
@@ -271,7 +272,7 @@
     // Return the number of rows in the section.
     if (section == 0) {
         // Title / password / pin
-        return 3;
+        return 2;
     } else if (section == 1){
         // Location
         return 2;
@@ -297,30 +298,12 @@
             }
             self.titleCell.textField.placeholder = NSLocalizedString(@"Title", nil);
             self.titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            self.titleCell.nextFormField = self.usernameCell.textField;
+            self.titleCell.nextFormField = self.passwordCell.textField;
             
         }
         cell = self.titleCell;
         
     } else if (indexPath.section == 0 && indexPath.row == 1) {
-        // Username Cell
-        
-        if (!self.usernameCell) {
-            PSSnewPasswordBasicTextFieldCell * usernameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            
-            self.usernameCell = usernameCell;
-            if (self.locationBaseObject) {
-                self.usernameCell.textField.text = [self.locationBaseObject.currentVersion decryptedUsername];
-            }
-            self.usernameCell.textField.placeholder = NSLocalizedString(@"Username (optional)", nil);
-            self.usernameCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            self.usernameCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            self.usernameCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
-            self.usernameCell.nextFormField = self.passwordCell.textField;
-        }
-        cell = self.usernameCell;
-        
-    } else if (indexPath.section == 0 && indexPath.row == 2) {
         // Password Cell
         
         if (!self.passwordCell) {
@@ -330,7 +313,7 @@
             if (self.locationBaseObject) {
                 self.passwordCell.textField.text = [self.locationBaseObject.currentVersion decryptedPassword];
             }
-            self.passwordCell.textField.placeholder = NSLocalizedString(@"Password / PIN", nil);
+            self.passwordCell.textField.placeholder = NSLocalizedString(@"PIN", nil);
             self.passwordCell.selectionStyle = UITableViewCellSelectionStyleNone;
             [self.passwordCell.shuffleButton addTarget:self action:@selector(showPasswordGenerator:) forControlEvents:UIControlEventTouchUpInside];
             self.passwordCell.nextFormField = self.locationSearchCell.textField;
@@ -345,10 +328,7 @@
             PSSlocationSearchTextFieldCell * locationSearchCell = [[PSSlocationSearchTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.locationSearchCell = locationSearchCell;
             if (self.locationBaseObject) {
-                
-                NSString * formattedAddress = ABCreateStringWithAddressDictionary(self.pinLocation.addressDictionary, NO);
-                
-                self.locationSearchCell.textField.text = formattedAddress;
+                self.locationSearchCell.textField.text = self.locationBaseObject.currentVersion.address;
                 
             }
             self.locationSearchCell.textField.placeholder = NSLocalizedString(@"Address", nil);
@@ -371,7 +351,7 @@
         
         if (!self.mapCell) {
             PSSLocationMapCell * mapCell = [[PSSLocationMapCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            
+            mapCell.userEditable = YES;
             self.mapCell = mapCell;
             
             self.mapCell.selectionStyle = UITableViewCellSelectionStyleNone;

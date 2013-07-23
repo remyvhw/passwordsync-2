@@ -21,19 +21,34 @@
 @dynamic password;
 @dynamic notes;
 @dynamic radius;
-@dynamic cllocation;
+@dynamic address;
 
 -(NSString*)decryptedUsername{
-    return [self decryptDataToUTF8String:self.username];
+    
+    if (_decryptedUsername) {
+        return _decryptedUsername;
+    }
+    
+    NSString * decryptedUsername = [self decryptDataToUTF8String:self.username];
+    
+    _decryptedUsername = decryptedUsername;
+    return _decryptedUsername;
 }
 
 -(void)setDecryptedUsername:(NSString *)decryptedUsername{
-    
+    _decryptedUsername = decryptedUsername;
     self.username = [self encryptedDataFromUTF8String:decryptedUsername];
 }
 
 -(NSString*)decryptedPassword{
-    return [self decryptDataToUTF8String:self.password];
+    
+    if (_decryptedPassword) {
+        return _decryptedPassword;
+    }
+    
+    NSString * decryptedPassword = [self decryptDataToUTF8String:self.password];
+    _decryptedPassword = decryptedPassword;
+    return decryptedPassword;
 }
 
 -(void)setDecryptedPassword:(NSString *)decryptedPassword{

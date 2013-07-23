@@ -21,6 +21,7 @@
     </entity>
     <entity name="PSSCreditCardBaseObject" representedClassName="PSSCreditCardBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
         <attribute name="autofill" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PSSCreditCardVersion" representedClassName="PSSCreditCardVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
         <attribute name="bankPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,9 +36,12 @@
         <attribute name="unencryptedLastDigits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="verificationCode" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
-    <entity name="PSSLocationBaseObject" representedClassName="PSSLocationBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES"/>
+    <entity name="PSSLocationBaseObject" representedClassName="PSSLocationBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shouldGeofence" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
+    </entity>
     <entity name="PSSLocationVersion" representedClassName="PSSLocationVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
-        <attribute name="cllocation" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>

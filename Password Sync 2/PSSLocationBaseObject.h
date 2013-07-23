@@ -12,7 +12,10 @@
 
 @class PSSLocationVersion;
 @interface PSSLocationBaseObject : PSSBaseGenericObject
+@property (retain, nonatomic) NSString * address;
+@property (retain, nonatomic) NSNumber * shouldGeofence;
 
 @property (strong, nonatomic) PSSLocationVersion * currentVersion;
+
 
 @end

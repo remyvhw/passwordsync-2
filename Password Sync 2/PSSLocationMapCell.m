@@ -90,7 +90,7 @@
     if (pav == nil)
     {
         pav = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
-        pav.draggable = YES;
+        pav.draggable = self.userEditable;
         pav.pinColor = MKPinAnnotationColorGreen;
         pav.canShowCallout = NO;
     }

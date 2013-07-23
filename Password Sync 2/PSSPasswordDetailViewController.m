@@ -335,6 +335,9 @@
         if (!self.notesCell) {
             [self createNotesCell];
         }
+        
+        
+        
         return self.notesCell;
         
     }

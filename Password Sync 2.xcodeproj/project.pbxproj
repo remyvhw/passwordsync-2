@@ -25,6 +25,8 @@
 		AD312648179F08A600483E2F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD31262A179F08A600483E2F /* README.md */; };
 		AD31266B179F08A600483E2F /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312640179F08A600483E2F /* TSMessageView.m */; };
 		AD31266C179F08A600483E2F /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312640179F08A600483E2F /* TSMessageView.m */; };
+		AD312670179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
+		AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
 		AD36370F17989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */; };
@@ -236,6 +238,8 @@
 		AD31262A179F08A600483E2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		AD31263F179F08A600483E2F /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		AD312640179F08A600483E2F /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
+		AD31266E179F13CB00483E2F /* PSSLocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationDetailViewController.h; sourceTree = "<group>"; };
+		AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationDetailViewController.m; sourceTree = "<group>"; };
 		AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationListTableViewController.h; sourceTree = "<group>"; };
 		AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationListTableViewController.m; sourceTree = "<group>"; };
 		AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationEditorTableViewController.h; sourceTree = "<group>"; };
@@ -510,6 +514,8 @@
 				AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */,
 				AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */,
 				AD36371B179AFB71005F1542 /* Editor */,
+				AD31266E179F13CB00483E2F /* PSSLocationDetailViewController.h */,
+				AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -1116,6 +1122,7 @@
 				ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
 				AD727A4B179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
 				AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
+				AD312670179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
 				AD5175FF1784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD727A42179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
@@ -1218,6 +1225,7 @@
 				AD312644179F08A600483E2F /* HexColor.m in Sources */,
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				ADA24BF5179851A8003BDCC5 /* PSSNoteVersion.m in Sources */,
+				AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,

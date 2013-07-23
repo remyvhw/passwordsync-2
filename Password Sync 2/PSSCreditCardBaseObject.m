@@ -11,6 +11,8 @@
 
 @implementation PSSCreditCardBaseObject
 @synthesize currentVersion = _currentVersion;
+
+@dynamic cardName;
 @dynamic autofill;
 
 -(PSSCreditCardVersion*)currentVersion{
