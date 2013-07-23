@@ -11,6 +11,7 @@
 #import "PSSPasswordListViewController.h"
 #import "PDKeychainBindings.h"
 #import "PSSUnlockPromptViewController.h"
+#import "TSMessage.h"
 
 @implementation PSSAppDelegate
 
@@ -19,18 +20,38 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 
+
+-(void)presentInAppGeofenceNotification:(id)sender{
+    
+    [TSMessage showNotificationInViewController:self.window.rootViewController withTitle:NSLocalizedString(@"Location Alert", nil) withMessage:NSLocalizedString(@"A favorite location is nearby", nil) withType:TSMessageNotificationTypeMessage withDuration:TSMessageNotificationDurationEndless withCallback:NULL withButtonTitle:NSLocalizedString(@"Open", nil) withButtonCallback:^{
+        NSLog(@"Open callback");
+    } atPosition:TSMessageNotificationPositionBottom canBeDismisedByUser:YES];
+
+}
+
+
 -(void)presentUnlockPromptAnimated:(BOOL)animated{
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:nil];
-    PSSUnlockPromptViewController *promptController = [sb instantiateInitialViewController];
     
-    
-    //[promptController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [self.window.rootViewController presentViewController:[promptController promptForPasscodeBlockingView:YES completion:^{
-        [self setIsUnlocked:YES];
-    } cancelation:nil] animated:animated completion:^{
+    // Make sure we're not in a modal view.
+    if (self.window.rootViewController.isViewLoaded && self.window.rootViewController.view.window) {
         
-    }];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:nil];
+        PSSUnlockPromptViewController *promptController = [sb instantiateInitialViewController];
+        
+        
+        [self.window.rootViewController presentViewController:[promptController promptForPasscodeBlockingView:YES completion:^{
+            [self setIsUnlocked:YES];
+        } cancelation:nil] animated:animated completion:^{
+            
+        }];
+
+    }
+    
+    
+    
+    
+    
     
 }
 
