@@ -372,8 +372,8 @@
     </scenes>
     <resources>
         <image name="Browser" width="30" height="30"/>
-        <image name="CardsIcon" width="33" height="30"/>
-        <image name="Pin" width="17" height="30"/>
+        <image name="CardsIcon" width="37" height="25"/>
+        <image name="Pin" width="35" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
