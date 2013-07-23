@@ -8,6 +8,7 @@
 
 #import "PSSLocationDetailViewController.h"
 #import "PSSLocationVersion.h"
+#import "PSSLocationEditorTableViewController.h"
 
 #import "PSSLocationMapCell.h"
 @import CoreLocation;
@@ -21,6 +22,20 @@
 @end
 
 @implementation PSSLocationDetailViewController
+
+
+-(void)editorAction:(id)sender{
+    
+    PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    locationEditor.editorDelegate = self;
+    locationEditor.locationBaseObject = self.detailItem;
+    
+    [self.navigationController pushViewController:locationEditor animated:YES];
+    
+    
+}
+
 
 -(void)lockUIAction:(id)notification{
     self.isPasscodeUnlocked = NO;
@@ -88,15 +103,24 @@
 
 #pragma mark - UITableViewDataSource methods
 
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section == 2) {
+        return NSLocalizedString(@"Notes", nil);
+    }
+    
+    return @"";
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         // Map
         return 244.;
     }
     
     
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         // Notes
         
         if (!self.notesCell) {
@@ -122,14 +146,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 1;
+        // Title && Password
+        return 2;
     } else if (section == 1) {
-        // Password
-        return 1;
-    } else if (section == 2) {
         // Map
         return 1;
-    } else if (section == 3) {
+    } else if (section == 2) {
         // Notes
         return 1;
     }
@@ -153,8 +175,8 @@
     }
     
     
-    if (indexPath.section == 1) {
-        // Username && password
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        // Password
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KeyValueCell" forIndexPath:indexPath];
         cell.detailTextLabel.textColor = [UIColor blackColor];
@@ -177,7 +199,7 @@
     }
     
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         
         if (!self.mapCell) {
             PSSLocationMapCell * mapCell = [[PSSLocationMapCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -194,7 +216,7 @@
         return self.mapCell;
     }
     
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         // Notes
         if (!self.notesCell) {
             [self createNotesCell];
@@ -208,6 +230,17 @@
 
     
     
+}
+
+#pragma mark - PSSObjectEditorDelegate methods
+
+-(void)objectEditor:(id)editor finishedWithObject:(PSSLocationBaseObject *)genericObject{
+    
+    [self createNotesCell];
+    CLLocationCoordinate2D newlocation = CLLocationCoordinate2DMake([genericObject.currentVersion.latitude doubleValue], [genericObject.currentVersion.longitude doubleValue]);
+    [self.mapCell rearrangePinAndMapLocationWithLocation:newlocation];
+    
+    [super objectEditor:editor finishedWithObject:genericObject];
 }
 
 @end

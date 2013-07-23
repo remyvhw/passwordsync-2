@@ -34,7 +34,7 @@
 @property (nonatomic) NSString * addressString;
 
 
-
+@property (nonatomic) BOOL isPasscodeUnlocked;
 
 @end
 
@@ -71,11 +71,11 @@
 
 -(void)saveChangesAndDismiss{
     
-    BOOL editingMode = NO;
+    BOOL creatingMode = NO;
     
     if (!self.locationBaseObject) {
         self.locationBaseObject = [self insertNewLocationInManagedObject];
-        editingMode = YES;
+        creatingMode = YES;
     }
     
     self.locationBaseObject.shouldGeofence = [NSNumber numberWithBool:YES];
@@ -112,10 +112,13 @@
         
     }
     
-    if (editingMode) {
+    if (creatingMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
         }];
     } else {
+        if (self.editorDelegate) {
+            [self.editorDelegate objectEditor:self finishedWithObject:self.locationBaseObject];
+        }
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -201,7 +204,52 @@
     
     [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
     
+    if (self.editorDelegate && [self.editorDelegate respondsToSelector:@selector(objectEditor:canceledOperationOnObject:)]) {
+        [self.editorDelegate objectEditor:self canceledOperationOnObject:self.locationBaseObject];
+    }
+    
 }
+
+
+
+-(void)lockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = NO;
+    
+    // Hide our sensitive information fields
+    [self.passwordCell.textField setAlpha:0.0];
+    
+    // Launch a timer. If after 30 seconds our user is not back in the app, we'll just pop this editor our of the stack
+    double delayInSeconds = 15.;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        // If user came back to the app in the meantime we just invalidate this timer
+        if (!self.isPasscodeUnlocked) {
+            
+            if (self.navigationController.visibleViewController == self) {
+                
+                [self.navigationController popViewControllerAnimated:NO];
+                
+            }
+            
+        }
+        
+    });
+    
+    
+}
+
+-(void)unlockUI:(id)sender{
+    
+    self.isPasscodeUnlocked = YES;
+    [self.passwordCell.textField setAlpha:1.0];
+    
+    
+    
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -211,6 +259,12 @@
         // We're in edit mode
         
         // Set the location object
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUI:) name:PSSGlobalLockNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUI:) name:PSSGlobalUnlockNotification object:nil];
+        
+        self.isPasscodeUnlocked = YES;
+        
+        self.addressString = self.locationBaseObject.address;
         
     } else {
         
@@ -233,6 +287,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 #pragma mark - Table view data source
 
