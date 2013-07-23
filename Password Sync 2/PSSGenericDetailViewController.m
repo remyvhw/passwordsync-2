@@ -110,6 +110,8 @@
     
     // Subscribe to unlock notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUIAction:) name:PSSGlobalUnlockNotification object:nil];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,6 +161,8 @@
         [self showUnlockingViewController];
         return;
     }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - PSSObjectEditorProtocol methods
@@ -166,6 +170,7 @@
 -(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
     [self.tableView reloadData];
 }
+
 
 
 @end

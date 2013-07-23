@@ -9,6 +9,7 @@
 #import "PSSCardDetailViewController.h"
 #import "PSSCreditCardVersion.h"
 #import "PSSCardEditorViewController.h"
+#import "PSSCardEmergencyContactTableViewController.h"
 
 @interface PSSCardDetailViewController ()
 
@@ -50,8 +51,8 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     // If we have bank contact information, return one more
-    if (self.detailItem.currentVersion.issuingBank) {
-        
+    if (self.detailItem.currentVersion.issuingBank && ![self.detailItem.currentVersion.issuingBank isEqualToString:@""]) {
+        return 3;
     }
     
     return 2;
@@ -63,6 +64,8 @@
         return 5;
     } else if (section==1){
         // Note
+        return 1;
+    } else if (section==2){
         return 1;
     }
     
@@ -188,6 +191,10 @@
     } else if (indexPath.section == 2) {
         // Emergency information
         
+        cell = [tableView dequeueReusableCellWithIdentifier:@"buttonCell" forIndexPath:indexPath];
+        cell.textLabel.textColor = [self.view.window tintColor];
+        cell.textLabel.text = NSLocalizedString(@"Contact Bank", nil);
+        
     }
     
     
@@ -200,12 +207,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (indexPath.section == 2) {
+        
+        PSSCardEmergencyContactTableViewController * emergencyContactTableViewController = [[PSSCardEmergencyContactTableViewController alloc] initWithNibName:@"PSSCardEmergencyContactTableViewController" bundle:[NSBundle mainBundle]];
+        emergencyContactTableViewController.detailItem = self.detailItem;
+        [self.navigationController pushViewController:emergencyContactTableViewController animated:YES];
+        
+    } else {
+        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    }
     
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
     
     
     // Offer different options
-    
+
     
 }
 
