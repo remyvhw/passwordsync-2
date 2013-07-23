@@ -30,7 +30,7 @@
 {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGFloat lineWidth = 5.0;
+	CGFloat lineWidth = 1.0;
 	
 	CGContextSetLineWidth(context, lineWidth);
 	CGContextSetStrokeColorWithColor(context, kLineColor.CGColor);
