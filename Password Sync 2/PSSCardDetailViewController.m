@@ -41,7 +41,7 @@
 
 -(NSString*)textInNotesCell {
     if (self.isPasscodeUnlocked) {
-        return self.detailItem.currentVersion.decryptedNote;
+        return [(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion decryptedNote];
     }
     return NSLocalizedString(@"Locked", nil);
 }
@@ -51,7 +51,7 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     // If we have bank contact information, return one more
-    if (self.detailItem.currentVersion.issuingBank && ![self.detailItem.currentVersion.issuingBank isEqualToString:@""]) {
+    if ([(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion issuingBank] && ![[(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion issuingBank] isEqualToString:@""]) {
         return 3;
     }
     
@@ -113,7 +113,7 @@
         // Top level information
         cell = [tableView dequeueReusableCellWithIdentifier:@"leftDetailCell" forIndexPath:indexPath];
         
-        PSSCreditCardVersion * version = self.detailItem.currentVersion;
+        PSSCreditCardVersion * version = (PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion;
         
         if (self.isPasscodeUnlocked || indexPath.row == 4) {
             cell.detailTextLabel.textColor = [UIColor blackColor];
@@ -178,7 +178,7 @@
         cell.textLabel.numberOfLines = 0;
         
         
-        NSString * decryptedNotes = self.detailItem.currentVersion.decryptedNote;
+        NSString * decryptedNotes = [(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion decryptedNote];
         if (decryptedNotes && ![decryptedNotes isEqualToString:@""]) {
             
             if (self.isPasscodeUnlocked) {
