@@ -76,6 +76,10 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 64.;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [[self.fetchedResultsController sections] count];
@@ -89,15 +93,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+    
+    
+    /*
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mapCell" forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+     */
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -219,8 +231,21 @@
     PSSLocationBaseObject *object = (PSSLocationBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
     cell.detailTextLabel.text = object.address;
+    
+    if ([object.shouldGeofence boolValue]) {
+        cell.imageView.image = [[UIImage imageNamed:@"Geofenced"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    } else {
+        cell.imageView.image = nil;
+    }
 
 }
-
+/*
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    PSSLocationBaseObject *object = (PSSLocationBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [(UILabel*)[cell viewWithTag:1] setText:object.displayName];
+    [(UILabel*)[cell viewWithTag:2] setText:object.address];
+    
+}*/
 
 @end
