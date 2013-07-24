@@ -136,6 +136,14 @@ dispatch_queue_t backgroundQueue;
         creationMode = YES;
     }
     
+    NSMutableString * descriptionString = [[NSMutableString alloc] initWithCapacity:25];
+    [descriptionString appendString:[CardIOCreditCardInfo displayStringForCardType:self.cardType usingLanguageOrLocale:[[NSLocale currentLocale] objectForKey:NSLocaleIdentifier]]];
+    
+    if (![self.bankNameCell.textField.text isEqualToString:@""]) {
+        [descriptionString appendFormat:@" - %@", self.bankNameCell.textField.text];
+    }
+    self.cardBaseObject.cardName = descriptionString;
+    self.cardBaseObject.displayName = [self redactedCardNumber:self.numberCell.textField.text];
     
     // We need to create a new version
     
@@ -153,7 +161,7 @@ dispatch_queue_t backgroundQueue;
     version.bankWebsite = self.bankURLCell.textField.text;
     version.bankPhoneNumber = self.bankNumberCell.textField.text;
     version.issuingBank = self.bankNameCell.textField.text;
-    version.unencryptedLastDigits = [self redactedCardNumber:self.numberCell.textField.text];
+    version.unencryptedLastDigits = self.cardBaseObject.displayName;
     
     self.cardBaseObject.currentVersion = version;
     NSError *error = nil;
