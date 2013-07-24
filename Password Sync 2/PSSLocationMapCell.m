@@ -112,8 +112,7 @@
         pav.pinColor = MKPinAnnotationColorGreen;
         pav.canShowCallout = NO;
     }
-    else
-    {
+    else {
         pav.annotation = annotation;
     }
     
@@ -123,8 +122,8 @@
 - (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
 {
     MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-    circleView.strokeColor = [UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0];
-    circleView.fillColor = [UIColor colorWithWhite:1.0 alpha:0.3];
+    circleView.strokeColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    circleView.fillColor = [UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:0.2];
     return circleView;
 }
 
