@@ -17,6 +17,7 @@
 @property (strong, nonatomic) MKCircle * locationCircle;
 
 @property (nonatomic) BOOL  userEditable;
+@property (nonatomic) BOOL shouldDrawCircle;
 
 @property (nonatomic, strong) NSNumber * circleRadius;
 

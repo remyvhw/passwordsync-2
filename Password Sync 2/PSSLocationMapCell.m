@@ -44,7 +44,7 @@
     [self.locationPin setCoordinate:pinLocation.coordinate];
         
         
-    if (!self.userEditable) {
+    if (self.shouldDrawCircle) {
         // Clean previous overlays
         [self.mapView removeOverlays:[self.mapView overlays]];
         MKCircle *circle = [MKCircle circleWithCenterCoordinate:pinLocation.coordinate radius:[self.circleRadius doubleValue]];

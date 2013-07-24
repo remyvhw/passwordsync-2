@@ -205,7 +205,14 @@
             PSSLocationMapCell * mapCell = [[PSSLocationMapCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             mapCell.selectionStyle = UITableViewCellSelectionStyleNone;
             mapCell.userEditable = NO;
-            mapCell.circleRadius = self.detailItem.currentVersion.radius;
+            
+            
+            if ([self.detailItem.shouldGeofence boolValue]) {
+                mapCell.circleRadius = self.detailItem.currentVersion.radius;
+                mapCell.shouldDrawCircle = YES;
+            }
+            
+            
             CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([self.detailItem.currentVersion.latitude doubleValue], [self.detailItem.currentVersion.longitude doubleValue]);
             [mapCell rearrangePinAndMapLocationWithLocation:coordinates];
             
