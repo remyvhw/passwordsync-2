@@ -207,10 +207,9 @@
             mapCell.userEditable = NO;
             
             
-            if ([self.detailItem.shouldGeofence boolValue]) {
-                mapCell.circleRadius = self.detailItem.currentVersion.radius;
-                mapCell.shouldDrawCircle = YES;
-            }
+            mapCell.shouldDrawCircle = [self.detailItem.shouldGeofence boolValue];
+            mapCell.circleRadius = self.detailItem.currentVersion.radius;
+            
             
             
             CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([self.detailItem.currentVersion.latitude doubleValue], [self.detailItem.currentVersion.longitude doubleValue]);
@@ -246,6 +245,8 @@
     
     [self createNotesCell];
     CLLocationCoordinate2D newlocation = CLLocationCoordinate2DMake([genericObject.currentVersion.latitude doubleValue], [genericObject.currentVersion.longitude doubleValue]);
+    
+    self.mapCell.shouldDrawCircle = [self.detailItem.shouldGeofence boolValue];
     [self.mapCell rearrangePinAndMapLocationWithLocation:newlocation];
     
     [super objectEditor:editor finishedWithObject:genericObject];

@@ -21,6 +21,9 @@
         self.mapView = mapView;
         
         [self addSubview:mapView];
+        
+        self.shouldDrawCircle = NO;
+        self.circleRadius = @150;
     }
     return self;
 }
@@ -43,10 +46,9 @@
     
     [self.locationPin setCoordinate:pinLocation.coordinate];
         
-        
+    [self.mapView removeOverlays:[self.mapView overlays]];
     if (self.shouldDrawCircle) {
         // Clean previous overlays
-        [self.mapView removeOverlays:[self.mapView overlays]];
         MKCircle *circle = [MKCircle circleWithCenterCoordinate:pinLocation.coordinate radius:[self.circleRadius doubleValue]];
         [self.mapView addOverlay:circle];
     }
@@ -122,8 +124,8 @@
 - (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
 {
     MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-    circleView.strokeColor = [UIColor colorWithWhite:1.0 alpha:0.8];
-    circleView.fillColor = [UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:0.2];
+    circleView.strokeColor = [UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:0.9];
+    circleView.fillColor = [UIColor colorWithWhite:1.0 alpha:0.2];
     return circleView;
 }
 
