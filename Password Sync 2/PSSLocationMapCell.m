@@ -33,7 +33,8 @@
 
 -(void)rearrangePinAndMapLocationWithRegion:(MKCoordinateRegion)region location:(CLLocation*)pinLocation{
     
-    if (!self.locationPin) {
+    
+   if (!self.locationPin) {
         MKPointAnnotation * pinMarker = [[MKPointAnnotation alloc] init];
         self.locationPin = pinMarker;
         
@@ -41,13 +42,30 @@
     }
     
     [self.locationPin setCoordinate:pinLocation.coordinate];
-
+        
+        
+    if (!self.userEditable) {
+        // Clean previous overlays
+        [self.mapView removeOverlays:[self.mapView overlays]];
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:pinLocation.coordinate radius:[self.circleRadius doubleValue]];
+        [self.mapView addOverlay:circle];
+    }
+    
+    
+    
+    
     [self.mapView setRegion:region animated:YES];
     
 }
 
 -(MKCoordinateRegion)defaultRegionForLocation:(CLLocation*)location{
-    MKCoordinateSpan span = MKCoordinateSpanMake(1/60, 1/60);
+    MKCoordinateSpan span;
+    if (self.userEditable) {
+           span = MKCoordinateSpanMake(1/60, 1/60);
+    } else {
+            span = MKCoordinateSpanMake(0.007, 0.007);
+    }
+
     MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
     return region;
 }
@@ -100,6 +118,14 @@
     }
     
     return pav;
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+    circleView.strokeColor = [UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0];
+    circleView.fillColor = [UIColor colorWithWhite:1.0 alpha:0.3];
+    return circleView;
 }
 
 @end

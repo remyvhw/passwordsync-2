@@ -14,8 +14,11 @@
 
 @property (strong, nonatomic) MKMapView * mapView;
 @property (strong, nonatomic) MKPointAnnotation * locationPin;
+@property (strong, nonatomic) MKCircle * locationCircle;
 
 @property (nonatomic) BOOL  userEditable;
+
+@property (nonatomic, strong) NSNumber * circleRadius;
 
 -(void)rearrangePinAndMapLocationWithLocation:(CLLocationCoordinate2D)pinLocation;
 -(void)rearrangePinAndMapLocationWithPlacemark:(CLPlacemark*)pinPlacemark;
