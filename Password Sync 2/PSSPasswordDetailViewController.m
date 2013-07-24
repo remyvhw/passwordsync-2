@@ -182,7 +182,7 @@
     notesCell.textLabel.numberOfLines = 0;
     notesCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString * decryptedNotes = self.detailItem.currentVersion.decryptedNotes;
+    NSString * decryptedNotes = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedNotes];
     if (decryptedNotes && ![decryptedNotes isEqualToString:@""]) {
         
         if (self.isPasscodeUnlocked) {
@@ -247,10 +247,10 @@
     } else if (section == 1) {
         // Password and username
         int numberOfRows = 0;
-        if (self.detailItem.currentVersion.username) {
+        if ([(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion username]) {
             numberOfRows++;
         }
-        if (self.detailItem.currentVersion.username) {
+        if ([(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion username]) {
             numberOfRows++;
         }
         
@@ -260,7 +260,7 @@
         return [self.detailItem.domains count];
     } else if (section == 3) {
         // Notes
-        if (self.detailItem.currentVersion.notes) {
+        if ([(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion notes]) {
             return 1;
         }
     }
@@ -292,16 +292,16 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kKeyValueCell forIndexPath:indexPath];
         cell.detailTextLabel.textColor = [UIColor blackColor];
         cell.accessoryView = nil;
-        if (indexPath.row == 0 && self.detailItem.currentVersion.username) {
+        if (indexPath.row == 0 && [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion username]) {
             
             cell.textLabel.text = NSLocalizedString(@"Username", nil);
-            cell.detailTextLabel.text = self.detailItem.currentVersion.decryptedUsername;
+            cell.detailTextLabel.text = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedUsername];
             
         } else if (indexPath.row == 1) {
             
             cell.textLabel.text = NSLocalizedString(@"Password", nil);
             if (self.isPasscodeUnlocked) {
-                cell.detailTextLabel.text = self.detailItem.currentVersion.decryptedPassword;
+                cell.detailTextLabel.text = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedPassword];
             } else {
                 cell.detailTextLabel.text = NSLocalizedString(@"Locked", nil);
                 cell.detailTextLabel.textColor = [UIColor lightGrayColor];
