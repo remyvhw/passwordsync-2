@@ -79,7 +79,7 @@
     notesCell.textLabel.numberOfLines = 0;
     notesCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString * decryptedNotes = self.detailItem.currentVersion.decryptedNotes;
+    NSString * decryptedNotes = [(PSSLocationVersion*)self.detailItem.currentHardLinkedVersion decryptedNotes];
     if (decryptedNotes && ![decryptedNotes isEqualToString:@""]) {
         
         if (self.isPasscodeUnlocked) {
@@ -184,7 +184,7 @@
         
         cell.textLabel.text = NSLocalizedString(@"PIN", nil);
         if (self.isPasscodeUnlocked) {
-            cell.detailTextLabel.text = self.detailItem.currentVersion.decryptedPassword;
+            cell.detailTextLabel.text = [(PSSLocationVersion*)self.detailItem.currentHardLinkedVersion decryptedPassword];
         } else {
             cell.detailTextLabel.text = NSLocalizedString(@"Locked", nil);
             cell.detailTextLabel.textColor = [UIColor lightGrayColor];
@@ -208,11 +208,11 @@
             
             
             mapCell.shouldDrawCircle = [self.detailItem.shouldGeofence boolValue];
-            mapCell.circleRadius = self.detailItem.currentVersion.radius;
+            mapCell.circleRadius = [(PSSLocationVersion*)self.detailItem.currentHardLinkedVersion radius];
             
             
             
-            CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([self.detailItem.currentVersion.latitude doubleValue], [self.detailItem.currentVersion.longitude doubleValue]);
+            CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([[(PSSLocationVersion*)self.detailItem.currentHardLinkedVersion latitude] doubleValue], [[(PSSLocationVersion*)self.detailItem.currentHardLinkedVersion longitude] doubleValue]);
             [mapCell rearrangePinAndMapLocationWithLocation:coordinates];
             
             
@@ -244,7 +244,7 @@
 -(void)objectEditor:(id)editor finishedWithObject:(PSSLocationBaseObject *)genericObject{
     
     [self createNotesCell];
-    CLLocationCoordinate2D newlocation = CLLocationCoordinate2DMake([genericObject.currentVersion.latitude doubleValue], [genericObject.currentVersion.longitude doubleValue]);
+    CLLocationCoordinate2D newlocation = CLLocationCoordinate2DMake([[(PSSLocationVersion*)genericObject.currentHardLinkedVersion latitude] doubleValue], [[(PSSLocationVersion*)genericObject.currentHardLinkedVersion longitude] doubleValue]);
     
     self.mapCell.shouldDrawCircle = [self.detailItem.shouldGeofence boolValue];
     [self.mapCell rearrangePinAndMapLocationWithLocation:newlocation];

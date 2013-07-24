@@ -254,7 +254,6 @@
     cell.textLabel.text = object.displayName;
     cell.imageView.image = [UIImage imageWithData:object.favicon];
     cell.detailTextLabel.text = [(PSSPasswordVersion*)object.currentHardLinkedVersion decryptedUsername];
-    NSLog(@"%@", [object.currentHardLinkedVersion description]);
 
 }
 
