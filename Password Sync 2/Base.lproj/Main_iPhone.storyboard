@@ -379,7 +379,7 @@
         <!--Location Detail View Controller-->
         <scene sceneID="bW8-De-SAD">
             <objects>
-                <viewController id="igo-ff-nZH" customClass="PSSLocationDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationDetailViewController" id="igo-ff-nZH" customClass="PSSLocationDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qBF-b8-ZFf"/>
                         <viewControllerLayoutGuide type="bottom" id="g6K-Va-5aL"/>

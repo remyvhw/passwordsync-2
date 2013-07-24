@@ -43,6 +43,40 @@
 @implementation PSSLocationEditorTableViewController
 
 
+-(void)startGeofencingLocation:(PSSLocationBaseObject*)locationObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString * identifierString = [[[locationObject objectID] URIRepresentation] absoluteString];
+    
+    CLLocationManager * locationManager = appDelegate.locationManager;
+    
+    CLCircularRegion * geofence = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake([locationObject.currentVersion.latitude doubleValue], [locationObject.currentVersion.longitude doubleValue]) radius:[locationObject.currentVersion.radius doubleValue] identifier:identifierString];
+    
+    [locationManager startMonitoringForRegion:geofence];
+    
+    
+}
+
+
+-(void)stopGeofencingLocation:(PSSLocationBaseObject*)locationObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString * identifierString = [[[locationObject objectID] URIRepresentation] absoluteString];
+    CLLocationManager * locationManager = appDelegate.locationManager;
+    
+    
+    for (CLRegion * region in locationManager.monitoredRegions) {
+        if ([region.identifier isEqualToString:identifierString]) {
+            
+            [locationManager stopMonitoringForRegion:region];
+            break;
+        }
+    }
+    
+    
+}
+
+
 -(PSSLocationVersion*)insertNewLocationVersionInManagedObject{
     
     PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -80,7 +114,19 @@
         creatingMode = YES;
     }
     
+    
+    // Check if user decided to stop geofencing the location
+    if (!creatingMode) {
+        
+        if ([self.locationBaseObject.shouldGeofence boolValue] && !self.geofenceCell.switchView.isOn) {
+            // Base object says yes, new switch value says no. Remove the location from the geofenced areas.
+            [self stopGeofencingLocation:self.locationBaseObject];
+        }
+        
+    }
+    
     self.locationBaseObject.shouldGeofence = [NSNumber numberWithBool:self.geofenceCell.switchView.isOn];
+    
     
     // We need to create a new version
     
@@ -115,6 +161,12 @@
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
         
     }
+    
+    // Start geofencing the saved object
+    if (self.geofenceCell.switchView.isOn) {
+        [self startGeofencingLocation:self.locationBaseObject];
+    }
+    
     
     if (creatingMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{

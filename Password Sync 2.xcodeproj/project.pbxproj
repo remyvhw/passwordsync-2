@@ -29,6 +29,8 @@
 		AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
 		AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
 		AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
+		AD31267717A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
+		AD31267817A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
 		AD36370F17989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */; };
@@ -244,6 +246,7 @@
 		AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationDetailViewController.m; sourceTree = "<group>"; };
 		AD312672179F8E8A00483E2F /* PSSSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSwitchTableViewCell.h; sourceTree = "<group>"; };
 		AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSwitchTableViewCell.m; sourceTree = "<group>"; };
+		AD31267617A03AE700483E2F /* Appart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Appart.gpx; sourceTree = "<group>"; };
 		AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationListTableViewController.h; sourceTree = "<group>"; };
 		AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationListTableViewController.m; sourceTree = "<group>"; };
 		AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationEditorTableViewController.h; sourceTree = "<group>"; };
@@ -601,6 +604,7 @@
 		AD72C3B0177B7E27009AADC8 = {
 			isa = PBXGroup;
 			children = (
+				AD31267617A03AE700483E2F /* Appart.gpx */,
 				AD72C3C4177B7E27009AADC8 /* Password Sync 2 */,
 				ADC9DFB51788C988006F2858 /* Others */,
 				AD72C3ED177B7E28009AADC8 /* Password Sync 2Tests */,
@@ -1064,6 +1068,7 @@
 				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
+				AD31267717A03AE700483E2F /* Appart.gpx in Resources */,
 				AD746918179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
 				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
 				AD72C3C9177B7E27009AADC8 /* InfoPlist.strings in Resources */,
@@ -1087,6 +1092,7 @@
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				AD31267817A03AE700483E2F /* Appart.gpx in Resources */,
 				ADC844B91790709800349B16 /* Icon@2x.png in Resources */,
 				AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
 				AD312648179F08A600483E2F /* README.md in Resources */,

@@ -12,6 +12,14 @@
 #import "PDKeychainBindings.h"
 #import "PSSUnlockPromptViewController.h"
 #import "TSMessage.h"
+#import "PSSLocationBaseObject.h"
+#import "PSSLocationDetailViewController.h"
+
+@interface PSSAppDelegate ()
+
+@property (strong, nonatomic) PSSLocationBaseObject *awaitingBaseObject;
+
+@end
 
 @implementation PSSAppDelegate
 
@@ -21,12 +29,88 @@
 
 
 
--(void)presentInAppGeofenceNotification:(id)sender{
+- (NSManagedObject *)objectWithURI:(NSURL *)uri
+{
+    NSManagedObjectID *objectID = [[self persistentStoreCoordinator] managedObjectIDForURIRepresentation:uri];
     
-    [TSMessage showNotificationInViewController:self.window.rootViewController withTitle:NSLocalizedString(@"Location Alert", nil) withMessage:NSLocalizedString(@"A favorite location is nearby", nil) withType:TSMessageNotificationTypeMessage withDuration:TSMessageNotificationDurationEndless withCallback:NULL withButtonTitle:NSLocalizedString(@"Open", nil) withButtonCallback:^{
-        NSLog(@"Open callback");
-    } atPosition:TSMessageNotificationPositionBottom canBeDismisedByUser:YES];
+    if (!objectID)
+    {
+        return nil;
+    }
+    
+    NSManagedObject *objectForID = [self.managedObjectContext objectWithID:objectID];
+    if (![objectForID isFault])
+    {
+        return objectForID;
+    }
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[objectID entity]];
+    
 
+    NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression: [NSExpression expressionForEvaluatedObject] rightExpression: [NSExpression expressionForConstantValue:objectForID] modifier:NSDirectPredicateModifier type:NSEqualToPredicateOperatorType options:0];
+    [request setPredicate:predicate];
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:nil];
+    if ([results count] > 0 )
+    {
+        return [results objectAtIndex:0];
+    }
+    
+    return nil;
+}
+
+
+-(void)openLocationDetailView:(PSSLocationBaseObject*)locationObject {
+    
+    UITabBarController * tabBarController = (UITabBarController*)self.window.rootViewController;
+    
+    // Location is at index 2
+    [tabBarController setSelectedIndex:2];
+    
+    UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
+    
+    PSSLocationDetailViewController * detailViewController = (PSSLocationDetailViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"locationDetailViewController"];
+    detailViewController.detailItem = locationObject;
+    
+    [navController pushViewController:detailViewController animated:YES];
+    
+}
+
+-(PSSLocationBaseObject *)findLocationObjectForRegion:(CLRegion*)region{
+    
+    
+    NSString * regionIdentifier = region.identifier;
+    NSURL * regionObjectURI = [NSURL URLWithString:regionIdentifier];
+    
+    
+    PSSLocationBaseObject * locationObject = (PSSLocationBaseObject*)[self objectWithURI:regionObjectURI];
+    return locationObject;
+}
+
+-(void)presentLocalNotificationForLocation:(PSSLocationBaseObject*)locationObject{
+    
+    NSString * identifierString = [[[locationObject objectID] URIRepresentation] absoluteString];
+    
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.fireDate = [NSDate date];
+    localNotification.repeatInterval = 0;
+    localNotification.alertBody = [NSString stringWithFormat:@"%@ %@", locationObject.displayName, NSLocalizedString(@"is nearby.", nil)];
+    localNotification.userInfo = @{@"locationObjectIDURI" : identifierString};
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
+}
+
+-(void)presentActiveNotificationForLocation:(PSSLocationBaseObject*)locationObject{
+    
+    NSString * locationMessage = [NSString stringWithFormat:@"%@ %@", locationObject.displayName, NSLocalizedString(@"is nearby.", nil)];
+    
+    [TSMessage showNotificationInViewController:self.window.rootViewController withTitle:NSLocalizedString(@"Location Alert", nil) withMessage:locationMessage withType:TSMessageNotificationTypeMessage withDuration:TSMessageNotificationDurationEndless withCallback:NULL withButtonTitle:NSLocalizedString(@"Open", nil) withButtonCallback:^{
+        [self openLocationDetailView:locationObject];
+    } atPosition:TSMessageNotificationPositionBottom canBeDismisedByUser:YES];
+    
+    self.awaitingBaseObject = nil;
 }
 
 
@@ -42,6 +126,12 @@
         
         [self.window.rootViewController presentViewController:[promptController promptForPasscodeBlockingView:YES completion:^{
             [self setIsUnlocked:YES];
+            
+            if (self.awaitingBaseObject) {
+                [self presentActiveNotificationForLocation:self.awaitingBaseObject];
+            }
+            
+            
         } cancelation:nil] animated:animated completion:^{
             
         }];
@@ -63,7 +153,7 @@
         
         // iOS Device might be jailbroken. We'll alert the user (in english, we assume jailbreakers understand english and we won't pay to translate this).
         
-        NSString * alertString = @"It appears your device is jailbroken. This is not the usual piracy yada yada: Password Sync relies on the OS' keychain to encrypt securely your data. YOUR DATA MIGHT NOT BE SAFE on a jailbroken devices, as accessing the keychain through unofficial paths (and therefore retrieving the encryption key that locks the app's database) is possible.\nThe jailbreak should not prevent Password Sync to run normally. However, as a precaution, be extra-caraful about not losing your device and be extremely cautious about what third party non sandboxed software you install.";
+        NSString * alertString = @"It appears your device is jailbroken. This is not the usual piracy yada yada: Password Sync relies on the OS' keychain to encrypt securely your data. YOUR DATA MIGHT NOT BE SAFE on a jailbroken device, as accessing the keychain through unofficial paths (and therefore retrieving the encryption key that locks the app's database) is possible.\nThe jailbreak should not prevent Password Sync to run normally. However, as a precaution, be extra-caraful about not losing your device and be extremely cautious about what third party non sandboxed software you install. Good luck!";
         
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Jailbreak Warning" message:alertString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
@@ -72,12 +162,19 @@
     
     
 }
+-(void)instanciateLocationManager{
+    CLLocationManager * locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    self.locationManager = locationManager;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
+    [self instanciateLocationManager];
     
     // Override point for customization after application launch.
     
@@ -112,7 +209,6 @@
     return YES;
 }
 							
-
 
 
 
@@ -279,5 +375,42 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+#pragma mark - CLLocationManager delegate
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    
+    PSSLocationBaseObject * locationObject = [self findLocationObjectForRegion:region];
+    
+    [self presentLocalNotificationForLocation:locationObject];
+    
+    
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
+        // We'll show an alert since the app is currently running
+        
+        [self presentActiveNotificationForLocation:locationObject];
+        
+    } else {
+        
+        // Send a local notification to the user
+        [self presentLocalNotificationForLocation:locationObject];
+        self.awaitingBaseObject = locationObject;
+        
+    }
+    
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    self.awaitingBaseObject = nil;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"%@", [error localizedDescription]);
+}
+
+
+
 
 @end
