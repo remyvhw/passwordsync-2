@@ -27,6 +27,8 @@
 		AD31266C179F08A600483E2F /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312640179F08A600483E2F /* TSMessageView.m */; };
 		AD312670179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
 		AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
+		AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
+		AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
 		AD36370F17989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */; };
@@ -240,6 +242,8 @@
 		AD312640179F08A600483E2F /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
 		AD31266E179F13CB00483E2F /* PSSLocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationDetailViewController.h; sourceTree = "<group>"; };
 		AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationDetailViewController.m; sourceTree = "<group>"; };
+		AD312672179F8E8A00483E2F /* PSSSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSwitchTableViewCell.h; sourceTree = "<group>"; };
+		AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSwitchTableViewCell.m; sourceTree = "<group>"; };
 		AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationListTableViewController.h; sourceTree = "<group>"; };
 		AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationListTableViewController.m; sourceTree = "<group>"; };
 		AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationEditorTableViewController.h; sourceTree = "<group>"; };
@@ -527,6 +531,8 @@
 				AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */,
 				AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */,
 				AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */,
+				AD312672179F8E8A00483E2F /* PSSSwitchTableViewCell.h */,
+				AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1110,6 +1116,7 @@
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
+				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
@@ -1216,6 +1223,7 @@
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
+				AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				ADA0E5381791162C00F284B9 /* PSSPasswordDomain.m in Sources */,
 				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,

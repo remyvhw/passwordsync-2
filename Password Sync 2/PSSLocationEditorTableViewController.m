@@ -16,6 +16,7 @@
 #import "PSSlocationSearchTextFieldCell.h"
 #import "PSSLocationMapCell.h"
 #import "PSSAppDelegate.h"
+#import "PSSSwitchTableViewCell.h"
 
 @import CoreLocation;
 @import MapKit;
@@ -25,6 +26,7 @@
 
 @property (strong) PSSnewPasswordBasicTextFieldCell * titleCell;
 @property (strong) PSSnewPasswordPasswordTextFieldCell * passwordCell;
+@property (strong) PSSSwitchTableViewCell * geofenceCell;
 
 @property (strong) PSSlocationSearchTextFieldCell * locationSearchCell;
 @property (strong) PSSLocationMapCell * mapCell;
@@ -78,7 +80,7 @@
         creatingMode = YES;
     }
     
-    self.locationBaseObject.shouldGeofence = [NSNumber numberWithBool:YES];
+    self.locationBaseObject.shouldGeofence = [NSNumber numberWithBool:self.geofenceCell.switchView.isOn];
     
     // We need to create a new version
     
@@ -100,6 +102,8 @@
     version.latitude = @(self.mapCell.locationPin.coordinate.latitude);
     version.longitude = @(self.mapCell.locationPin.coordinate.longitude);
     version.address = self.addressString;
+    // Just fake a radius.
+    version.radius = @100;
     
     self.locationBaseObject.address = version.address;
     self.locationBaseObject.currentVersion = version;
@@ -334,7 +338,7 @@
         return 2;
     } else if (section == 1){
         // Location
-        return 2;
+        return 3;
     } else if (section == 2){
         // Note
         return 1;
@@ -421,6 +425,26 @@
             
         }
         cell = self.mapCell;
+        
+    } else if (indexPath.section == 1 && indexPath.row==2 ) {
+        
+        if (!self.geofenceCell) {
+            PSSSwitchTableViewCell * geofenceCell = [[PSSSwitchTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+            geofenceCell.textLabel.text = NSLocalizedString(@"Location monotoring", nil);
+            geofenceCell.detailTextLabel.text = NSLocalizedString(@"Monitor up to 20 locations", nil);
+            
+            self.geofenceCell = geofenceCell;
+        }
+        
+        if (self.locationBaseObject) {
+            if ([self.locationBaseObject.shouldGeofence boolValue]) {
+                [self.geofenceCell.switchView setOn:YES];
+            } else {
+                [self.geofenceCell.switchView setOn:NO];
+            }
+        }
+        
+        cell = self.geofenceCell;
         
     } else if (indexPath.section == 2 && indexPath.row == 0){
         // Notes cell

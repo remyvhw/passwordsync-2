@@ -205,7 +205,7 @@
             PSSLocationMapCell * mapCell = [[PSSLocationMapCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             mapCell.selectionStyle = UITableViewCellSelectionStyleNone;
             mapCell.userEditable = NO;
-            mapCell.circleRadius = @100;
+            mapCell.circleRadius = self.detailItem.currentVersion.radius;
             CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake([self.detailItem.currentVersion.latitude doubleValue], [self.detailItem.currentVersion.longitude doubleValue]);
             [mapCell rearrangePinAndMapLocationWithLocation:coordinates];
             
