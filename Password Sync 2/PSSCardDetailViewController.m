@@ -176,17 +176,26 @@
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell" forIndexPath:indexPath];
         cell.textLabel.numberOfLines = 0;
-        if (self.isPasscodeUnlocked) {
-            PSSCreditCardVersion * version = self.detailItem.currentVersion;
-            cell.textLabel.textColor = [UIColor blackColor];
-            cell.accessoryView = nil;
-            cell.textLabel.text = version.decryptedNote;
+        
+        
+        NSString * decryptedNotes = self.detailItem.currentVersion.decryptedNote;
+        if (decryptedNotes && ![decryptedNotes isEqualToString:@""]) {
+            
+            if (self.isPasscodeUnlocked) {
+                cell.textLabel.text = decryptedNotes;
+            } else {
+                cell.textLabel.text = NSLocalizedString(@"Locked", nil);
+                cell.textLabel.textColor = [UIColor lightGrayColor];
+                cell.accessoryView = [self lockedImageAccessoryView];
+            }
+            
+            
         } else {
-            cell.accessoryView = [self lockedImageAccessoryView];
+            cell.textLabel.text = NSLocalizedString(@"No Notes", nil);
             cell.textLabel.textColor = [UIColor lightGrayColor];
-            cell.textLabel.text = NSLocalizedString(@"Locked", nil);
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
         }
-
+        
         
     } else if (indexPath.section == 2) {
         // Emergency information
