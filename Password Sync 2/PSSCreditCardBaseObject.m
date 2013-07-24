@@ -39,7 +39,9 @@
     return currentVersion;
 }
 
-
+-(void)setCurrentVersion:(PSSCreditCardBaseObject *)currentVersion{
+    [super setCurrentVersion:currentVersion];
+}
 
 
 @end

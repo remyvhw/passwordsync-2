@@ -37,4 +37,8 @@
     return [results objectAtIndex:0];
 }
 
+-(void)setCurrentVersion:(PSSLocationVersion *)currentVersion{
+    [super setCurrentVersion:currentVersion];
+}
+
 @end

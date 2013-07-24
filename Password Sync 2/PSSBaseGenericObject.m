@@ -29,6 +29,7 @@
 
 -(void)setCurrentVersion:(id)currentVersion{
     _currentVersion = currentVersion;
+    self.currentHardLinkedVersion = currentVersion;
     
     // Delete other cached data
     

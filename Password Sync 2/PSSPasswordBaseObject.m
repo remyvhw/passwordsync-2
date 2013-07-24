@@ -43,6 +43,9 @@
     return [results objectAtIndex:0];
 }
 
+-(void)setCurrentVersion:(PSSPasswordVersion *)currentVersion{
+    [super setCurrentVersion:currentVersion];
+}
 
 
 -(NSString*)notes{

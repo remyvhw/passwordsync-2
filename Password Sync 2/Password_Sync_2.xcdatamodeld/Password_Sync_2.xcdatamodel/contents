@@ -5,6 +5,7 @@
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectCategory" inverseName="encryptedObjects" inverseEntity="PSSObjectCategory" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="parent" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
+        <relationship name="currentHardLinkedVersion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="currentOwningBaseObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
         <relationship name="decorativeImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="PSSBaseGenericObject" inverseName="children" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSObjectTag" inverseName="encryptedObjects" inverseEntity="PSSObjectTag" syncable="YES"/>
@@ -17,6 +18,7 @@
         <attribute name="additionalJSONfields" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectAttachment" inverseName="encryptedObjectVersions" inverseEntity="PSSObjectAttachment" syncable="YES"/>
+        <relationship name="currentOwningBaseObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="currentHardLinkedVersion" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="versions" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
     </entity>
     <entity name="PSSCreditCardBaseObject" representedClassName="PSSCreditCardBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">

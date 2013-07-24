@@ -19,6 +19,7 @@
 @dynamic timestamp;
 @dynamic attachments;
 @dynamic encryptedObject;
+@dynamic currentOwningBaseObject;
 
 
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString{

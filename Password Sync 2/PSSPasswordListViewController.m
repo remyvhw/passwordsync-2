@@ -253,7 +253,8 @@
     PSSPasswordBaseObject *object = (PSSPasswordBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
     cell.imageView.image = [UIImage imageWithData:object.favicon];
-    cell.detailTextLabel.text = object.currentVersion.decryptedUsername;
+    cell.detailTextLabel.text = [(PSSPasswordVersion*)object.currentHardLinkedVersion decryptedUsername];
+    NSLog(@"%@", [object.currentHardLinkedVersion description]);
 
 }
 

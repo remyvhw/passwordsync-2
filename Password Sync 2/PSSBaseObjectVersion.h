@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
-
+@property (nonatomic, retain) PSSBaseGenericObject *currentOwningBaseObject;
 
 
 @end
