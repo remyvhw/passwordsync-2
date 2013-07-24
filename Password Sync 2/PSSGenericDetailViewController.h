@@ -8,8 +8,10 @@
 
 @import UIKit;
 #import "PSSObjectEditorProtocol.h"
+#import "SVProgressHUD.h"
 
-@interface PSSGenericDetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, PSSObjectEditorProtocol>
+
+@interface PSSGenericDetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, PSSObjectEditorProtocol, UIActionSheetDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
@@ -19,6 +21,8 @@
 -(void)userDidUnlockWithPasscode;
 -(void)editorAction:(id)sender;
 -(void)lockUIAction:(id)notification;
+
 -(UIView*)lockedImageAccessoryView;
+-(UIView*)copyImageAccessoryView;
 
 @end

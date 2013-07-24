@@ -46,6 +46,17 @@
     return NSLocalizedString(@"Locked", nil);
 }
 
+
+-(NSAttributedString*)createLightGraySlashOnExpirationDateWithString:(NSString*)adjustedText{
+    NSMutableAttributedString * attributedExpiration = [[NSMutableAttributedString alloc] initWithString:adjustedText];
+    if ([attributedExpiration length] == 7) {
+        
+        [attributedExpiration addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(2, 1)];
+        
+    }
+    return attributedExpiration;
+}
+
 #pragma mark - UITableViewDatasource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -132,9 +143,10 @@
             case 0:
                 // Number
                 cell.textLabel.text = NSLocalizedString(@"Number", nil);
-                if (self.isPasscodeUnlocked)
+                if (self.isPasscodeUnlocked){
                     cell.detailTextLabel.text = version.decryptedNumber;
-                else
+                    cell.accessoryView = [self copyImageAccessoryView];
+                } else
                     cell.detailTextLabel.text = version.unencryptedLastDigits;
                 break;
             
@@ -142,7 +154,7 @@
                 // Expiration
                 cell.textLabel.text = NSLocalizedString(@"Expiration", nil);
                 if (self.isPasscodeUnlocked) {
-                    cell.detailTextLabel.text = version.decryptedExpiryDate;
+                    cell.detailTextLabel.attributedText = [self createLightGraySlashOnExpirationDateWithString:version.decryptedExpiryDate];
                 }
                 break;
             case 2:
@@ -155,9 +167,10 @@
             
             case 3:
                 // Name on card
-                cell.textLabel.text = NSLocalizedString(@"Name on card", nil);
+                cell.textLabel.text = NSLocalizedString(@"Cardholder", nil);
                 if (self.isPasscodeUnlocked) {
                     cell.detailTextLabel.text = version.decryptedCardholdersName;
+                    cell.accessoryView = [self copyImageAccessoryView];
                 }
                 break;
             case 4:
@@ -223,7 +236,37 @@
         [self.navigationController pushViewController:emergencyContactTableViewController animated:YES];
         
     } else {
-        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+        if (![self isPasscodeUnlocked]) {
+            
+            [self showUnlockingViewController];
+            return;
+        }
+        
+        
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            // Number
+            
+            UIActionSheet * copyNumberActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Copy Card Number", nil), nil];
+            
+            [copyNumberActionSheet setTag:1000];
+            
+            [copyNumberActionSheet showFromTabBar:[(UITabBarController*)self.view.window.rootViewController tabBar]];
+            
+        } else if (indexPath.section == 0 && indexPath.row == 3) {
+            // Cardholder's name
+            
+            UIActionSheet * copyCardholdersNameActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Copy Cardholder's Name", nil), nil];
+            
+            [copyCardholdersNameActionSheet setTag:1001];
+            
+            [copyCardholdersNameActionSheet showFromTabBar:[(UITabBarController*)self.view.window.rootViewController tabBar]];
+            
+            
+        }
+        
+        
+        
+        
     }
     
     
@@ -233,5 +276,33 @@
 
     
 }
+
+#pragma mark - UIActionSheetDelegate
+
+-(void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex{
+    
+    if (actionSheet.tag == 1000) {
+        // Number
+        
+        if (buttonIndex==0) {
+            [UIPasteboard generalPasteboard].string = [(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion decryptedNumber];
+            [SVProgressHUD showImage:[UIImage imageNamed:@"Success"] status:NSLocalizedString(@"Copied", nil)];
+        }
+        
+        
+    } else if (actionSheet.tag == 1001) {
+        // Cardholder's name
+        
+        if (buttonIndex==0) {
+            [UIPasteboard generalPasteboard].string = [(PSSCreditCardVersion*)self.detailItem.currentHardLinkedVersion decryptedCardholdersName];
+            [SVProgressHUD showImage:[UIImage imageNamed:@"Success"] status:NSLocalizedString(@"Copied", nil)];
+        }
+        
+        
+    }
+    
+    
+}
+
 
 @end

@@ -11,6 +11,7 @@
 #import "PSSEncryptor.h"
 #import "PSSUnlockPromptViewController.h"
 
+
 @interface PSSGenericDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
@@ -25,6 +26,13 @@
     UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
     
     UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[lockImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    return accessoryView;
+}
+
+-(UIView*)copyImageAccessoryView{
+    UIImage * copyImage = [UIImage imageNamed:@"Copy"];
+    
+    UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[copyImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     return accessoryView;
 }
 

@@ -31,6 +31,10 @@
 		AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
 		AD31267717A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
 		AD31267817A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
+		AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */; };
+		AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */; };
+		AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31267C17A07CBD00483E2F /* SVProgressHUD.m */; };
+		AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31267C17A07CBD00483E2F /* SVProgressHUD.m */; };
 		AD36370F17989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */; };
@@ -247,6 +251,9 @@
 		AD312672179F8E8A00483E2F /* PSSSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSwitchTableViewCell.h; sourceTree = "<group>"; };
 		AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSwitchTableViewCell.m; sourceTree = "<group>"; };
 		AD31267617A03AE700483E2F /* Appart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Appart.gpx; sourceTree = "<group>"; };
+		AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		AD31267B17A07CBD00483E2F /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		AD31267C17A07CBD00483E2F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationListTableViewController.h; sourceTree = "<group>"; };
 		AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationListTableViewController.m; sourceTree = "<group>"; };
 		AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationEditorTableViewController.h; sourceTree = "<group>"; };
@@ -515,6 +522,16 @@
 			name = TSMessage;
 			sourceTree = "<group>";
 		};
+		AD31267917A07CBD00483E2F /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */,
+				AD31267B17A07CBD00483E2F /* SVProgressHUD.h */,
+				AD31267C17A07CBD00483E2F /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		AD36371117989D95005F1542 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +642,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD31267917A07CBD00483E2F /* SVProgressHUD */,
 				AD31266D179F08AB00483E2F /* TSMessage */,
 				ADFA1A1C179258410038EF14 /* QuartzCore.framework */,
 				ADFA1A1A179258350038EF14 /* OpenGLES.framework */,
@@ -1068,6 +1086,7 @@
 				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
+				AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD31267717A03AE700483E2F /* Appart.gpx in Resources */,
 				AD746918179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
 				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
@@ -1089,6 +1108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
+				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
@@ -1150,6 +1170,7 @@
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
+				AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
@@ -1262,6 +1283,7 @@
 				AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
+				AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,

@@ -291,8 +291,14 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kKeyValueCell forIndexPath:indexPath];
         cell.detailTextLabel.textColor = [UIColor blackColor];
-        cell.accessoryView = nil;
         if (indexPath.row == 0 && [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion username]) {
+            
+            if (self.isPasscodeUnlocked) {
+                cell.detailTextLabel.text = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedPassword];
+                cell.accessoryView = [self copyImageAccessoryView];
+            } else {
+                cell.accessoryView = nil;
+            }
             
             cell.textLabel.text = NSLocalizedString(@"Username", nil);
             cell.detailTextLabel.text = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedUsername];
@@ -302,6 +308,7 @@
             cell.textLabel.text = NSLocalizedString(@"Password", nil);
             if (self.isPasscodeUnlocked) {
                 cell.detailTextLabel.text = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedPassword];
+                cell.accessoryView = [self copyImageAccessoryView];
             } else {
                 cell.detailTextLabel.text = NSLocalizedString(@"Locked", nil);
                 cell.detailTextLabel.textColor = [UIColor lightGrayColor];
@@ -357,6 +364,29 @@
         return;
     }
     
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        // Copy username
+        
+        UIActionSheet * copyUsernameActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Copy Username", nil), nil];
+        
+        [copyUsernameActionSheet setTag:1000];
+        
+        [copyUsernameActionSheet showFromTabBar:[(UITabBarController*)self.view.window.rootViewController tabBar]];
+        
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        // Copy password
+        
+        UIActionSheet * copyPasswordActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Copy Password", nil) otherButtonTitles:nil];
+        
+        [copyPasswordActionSheet setTag:1001];
+        
+        [copyPasswordActionSheet showFromTabBar:[(UITabBarController*)self.view.window.rootViewController tabBar]];
+        
+    }
+    
+    
+    
     if (indexPath.section == 2) {
         // URL
         
@@ -368,6 +398,7 @@
     
     
 }
+
 
 #pragma mark - UIWebViewDelegate methods
 
@@ -391,6 +422,34 @@
 
 - (void)webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error {
     __webViewLoads--;
+}
+
+
+#pragma mark - UIActionSheetDelegate
+
+-(void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex{
+    
+    if (actionSheet.tag == 1000) {
+        // Username
+        
+        if (buttonIndex==0) {
+            [UIPasteboard generalPasteboard].string = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedUsername];
+            [SVProgressHUD showImage:[UIImage imageNamed:@"Success"] status:NSLocalizedString(@"Copied", nil)];
+        }
+        
+        
+    } else if (actionSheet.tag == 1001) {
+        // Password
+        
+        if (buttonIndex==0) {
+            [UIPasteboard generalPasteboard].string = [(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion decryptedPassword];
+            [SVProgressHUD showImage:[UIImage imageNamed:@"Success"] status:NSLocalizedString(@"Copied", nil)];
+        }
+        
+        
+    }
+    
+    
 }
 
 
