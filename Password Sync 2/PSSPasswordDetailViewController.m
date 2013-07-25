@@ -11,6 +11,7 @@
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDomain.h"
 #import "PSSPasswordEditorTableViewController.h"
+#import "PSSGenericObjectVersionsBrowserViewController.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -30,7 +31,14 @@
 @implementation PSSPasswordDetailViewController
 
 
-
+-(void)openVersions:(id)sender{
+    
+    
+    PSSGenericObjectVersionsBrowserViewController * browser = [[PSSGenericObjectVersionsBrowserViewController alloc] init];
+    
+    [self.navigationController pushViewController:browser animated:YES];
+    
+}
 
 
 -(void)editorAction:(id)sender{
@@ -57,6 +65,10 @@
     // We need to reload the note cell
     [self createNotesCell];
     [super userDidUnlockWithPasscode];
+    
+    UIBarButtonItem * versionsButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Versions", nil) style:UIBarButtonItemStylePlain target:self action:@selector(openVersions:)];
+    
+    self.navigationItem.rightBarButtonItems = @[versionsButton, [self.navigationItem.rightBarButtonItems objectAtIndex:0]];
     
 }
 

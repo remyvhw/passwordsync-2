@@ -43,6 +43,8 @@
 		AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */; };
 		AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
+		AD40FE8717A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD40FE8617A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m */; };
+		AD40FE8817A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD40FE8617A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m */; };
 		AD5175F91784906200B30295 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F11784906200B30295 /* SPLockScreen.m */; };
 		AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F11784906200B30295 /* SPLockScreen.m */; };
 		AD5175FB1784906200B30295 /* NormalCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F31784906200B30295 /* NormalCircle.m */; };
@@ -262,6 +264,8 @@
 		AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSlocationSearchTextFieldCell.m; sourceTree = "<group>"; };
 		AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationMapCell.h; sourceTree = "<group>"; };
 		AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationMapCell.m; sourceTree = "<group>"; };
+		AD40FE8517A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGenericObjectVersionsBrowserViewController.h; sourceTree = "<group>"; };
+		AD40FE8617A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericObjectVersionsBrowserViewController.m; sourceTree = "<group>"; };
 		AD5175F11784906200B30295 /* SPLockScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockScreen.m; sourceTree = "<group>"; };
 		AD5175F21784906200B30295 /* NormalCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCircle.h; sourceTree = "<group>"; };
 		AD5175F31784906200B30295 /* NormalCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCircle.m; sourceTree = "<group>"; };
@@ -567,6 +571,15 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		AD40FE8D17A0D78600E4A630 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				AD40FE8517A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.h */,
+				AD40FE8617A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		AD5176011784906700B30295 /* SPLockScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +694,7 @@
 				ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */,
 				AD72C3DC177B7E27009AADC8 /* PSSGenericDetailViewController.h */,
 				AD72C3DD177B7E27009AADC8 /* PSSGenericDetailViewController.m */,
+				AD40FE8D17A0D78600E4A630 /* New Group */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
 				AD36371117989D95005F1542 /* Location */,
@@ -1212,6 +1226,7 @@
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
+				AD40FE8717A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1246,6 +1261,7 @@
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
+				AD40FE8817A0D6C000E4A630 /* PSSGenericObjectVersionsBrowserViewController.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
