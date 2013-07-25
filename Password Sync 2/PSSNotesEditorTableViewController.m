@@ -23,7 +23,16 @@
 -(void)presentDocumentCapturer:(id)sender{
     
     
+    MAImagePickerController *imagePicker = [[MAImagePickerController alloc] init];
     
+    [imagePicker setDelegate:self];
+    [imagePicker setSourceType:MAImagePickerControllerSourceTypeCamera];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:imagePicker];
+    
+    navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:navigationController animated:YES completion:NULL];
     
 }
 
@@ -205,5 +214,31 @@
     
     
 }
+
+#pragma mark - MAImagePickerDelegate methods
+
+- (void)imagePickerDidCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerDidChooseImageWithPath:(NSString *)path
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSLog(@"File Found at %@", path);
+        
+    }
+    else
+    {
+        NSLog(@"No File Found at %@", path);
+    }
+    
+    [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+}
+
+
 
 @end

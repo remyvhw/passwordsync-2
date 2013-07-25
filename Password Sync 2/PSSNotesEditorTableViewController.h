@@ -8,6 +8,8 @@
 
 #import "PSSGenericEditorTableViewController.h"
 
-@interface PSSNotesEditorTableViewController : PSSGenericEditorTableViewController
+#import "MAImagePickerController.h"
+
+@interface PSSNotesEditorTableViewController : PSSGenericEditorTableViewController <MAImagePickerControllerDelegate>
 
 @end
