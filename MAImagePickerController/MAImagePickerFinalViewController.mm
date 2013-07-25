@@ -319,45 +319,41 @@
     
     UIView *firstSetting = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, editorView.frame.size.height)];
     _firstSettingIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-    _firstSettingIcon.accessibilityLabel = @"No Filter";
+    _firstSettingIcon.accessibilityLabel = NSLocalizedString(@"No Filter", nil);
     [_firstSettingIcon setFrame:CGRectMake(12, 0, 57, 58)];
     [_firstSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-1"] forState:UIControlStateNormal];
-    [_firstSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-1-active"] forState:UIControlStateHighlighted];
     [_firstSettingIcon setTag:1];
     [_firstSettingIcon addTarget:self action:@selector(filterChanged:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     [firstSetting addSubview:_firstSettingIcon];
     
     UIView *secondSetting = [[UIView alloc] initWithFrame:CGRectMake(80, 0, 80, editorView.frame.size.height)];
     _secondSettingIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-    _secondSettingIcon.accessibilityLabel = @"Text Only Enhance Filter";
+    _secondSettingIcon.accessibilityLabel = NSLocalizedString(@"Text Only Enhance Filter", nil);
     [_secondSettingIcon setFrame:CGRectMake(12, 0, 57, 58)];
     [_secondSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-2"] forState:UIControlStateNormal];
-    [_secondSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-2-active"] forState:UIControlStateHighlighted];
     [_secondSettingIcon setTag:2];
     [_secondSettingIcon addTarget:self action:@selector(filterChanged:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     [secondSetting addSubview:_secondSettingIcon];
     
     UIView *thirdSetting = [[UIView alloc] initWithFrame:CGRectMake(160, 0, 80, editorView.frame.size.height)];
     _thirdSettingIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-    _thirdSettingIcon.accessibilityLabel = @"Photo and Text Enhance Filter (Black and White)";
+    _thirdSettingIcon.accessibilityLabel = NSLocalizedString(@"Photo and Text Enhance Filter (Black and White)", nil);
     [_thirdSettingIcon setFrame:CGRectMake(12, 0, 57, 58)];
     [_thirdSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-3"] forState:UIControlStateNormal];
-    [_thirdSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-3-active"] forState:UIControlStateHighlighted];
     [_thirdSettingIcon setTag:3];
     [_thirdSettingIcon addTarget:self action:@selector(filterChanged:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     [thirdSetting addSubview:_thirdSettingIcon];
     
     UIView *fourthSetting = [[UIView alloc] initWithFrame:CGRectMake(240, 0, 80, editorView.frame.size.height)];
     _fourthSettingIcon = [UIButton buttonWithType:UIButtonTypeCustom];
-    _fourthSettingIcon.accessibilityLabel = @"Photo Only Enhance Filter";
+    _fourthSettingIcon.accessibilityLabel = NSLocalizedString(@"Photo Only Enhance Filter", nil);
     [_fourthSettingIcon setFrame:CGRectMake(12, 0, 57, 58)];
     [_fourthSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-4"] forState:UIControlStateNormal];
-    [_fourthSettingIcon setBackgroundImage:[UIImage imageNamed:@"f-setting-4-active"] forState:UIControlStateHighlighted];
     [_fourthSettingIcon setTag:4];
     [_fourthSettingIcon addTarget:self action:@selector(filterChanged:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     [fourthSetting addSubview:_fourthSettingIcon];
     
-    _activityIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"f-setting-indicator-active"]];
+    _activityIndicator = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"f-setting-indicator-active"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     
     [editorView addSubview:editorViewBackground];
     
@@ -373,16 +369,17 @@
 - (void)setupToolbar
 {
     UIToolbar *finishToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - kCameraToolBarHeight, self.view.bounds.size.width, kCameraToolBarHeight)];
-    [finishToolBar setBackgroundImage:[UIImage imageNamed:@"camera-bottom-bar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    [finishToolBar setBarStyle:UIBarStyleBlack];
+    [finishToolBar setTranslucent:YES];
     
     UIBarButtonItem *undoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"toolbar-icon-crop"] style:UIBarButtonItemStylePlain target:self action:@selector(popCurrentViewController)];
-    undoButton.accessibilityLabel = @"Return to Frame Adjustment View";
+    undoButton.accessibilityLabel = NSLocalizedString(@"Return to Frame Adjustment Option", nil);
     
     _rotateButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"f-setting-rotate"] style:UIBarButtonItemStylePlain target:self action:@selector(rotateImage)];
-    _rotateButton.accessibilityLabel = @"Rotate Image by 90 Degrees";
+    _rotateButton.accessibilityLabel = NSLocalizedString(@"Rotate Image by 90 Degrees", nil);
     
     UIBarButtonItem *confirmButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"confirm-button"] style:UIBarButtonItemStylePlain target:self action:@selector(comfirmFinishedImage)];
-    confirmButton.accessibilityLabel = @"Confirm adjusted Image";
+    confirmButton.accessibilityLabel = NSLocalizedString(@"Continue", nil);
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];

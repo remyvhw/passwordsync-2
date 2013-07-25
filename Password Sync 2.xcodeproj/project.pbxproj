@@ -150,18 +150,6 @@
 		AD54804B17A1C7EE008FAFFB /* flash-on-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD547FFF17A1C7EE008FAFFB /* flash-on-button.png */; };
 		AD54804C17A1C7EE008FAFFB /* flash-on-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800017A1C7EE008FAFFB /* flash-on-button@2x.png */; };
 		AD54804D17A1C7EE008FAFFB /* flash-on-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800017A1C7EE008FAFFB /* flash-on-button@2x.png */; };
-		AD54804E17A1C7EE008FAFFB /* camera-bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800117A1C7EE008FAFFB /* camera-bottom-bar.png */; };
-		AD54804F17A1C7EE008FAFFB /* camera-bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800117A1C7EE008FAFFB /* camera-bottom-bar.png */; };
-		AD54805017A1C7EE008FAFFB /* camera-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800217A1C7EE008FAFFB /* camera-button.png */; };
-		AD54805117A1C7EE008FAFFB /* camera-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800217A1C7EE008FAFFB /* camera-button.png */; };
-		AD54805217A1C7EE008FAFFB /* camera-button-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800317A1C7EE008FAFFB /* camera-button-pressed.png */; };
-		AD54805317A1C7EE008FAFFB /* camera-button-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800317A1C7EE008FAFFB /* camera-button-pressed.png */; };
-		AD54805417A1C7EE008FAFFB /* camera-bottom-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800417A1C7EE008FAFFB /* camera-bottom-bar@2x.png */; };
-		AD54805517A1C7EE008FAFFB /* camera-bottom-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800417A1C7EE008FAFFB /* camera-bottom-bar@2x.png */; };
-		AD54805617A1C7EE008FAFFB /* camera-button-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800517A1C7EE008FAFFB /* camera-button-pressed@2x.png */; };
-		AD54805717A1C7EE008FAFFB /* camera-button-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800517A1C7EE008FAFFB /* camera-button-pressed@2x.png */; };
-		AD54805817A1C7EE008FAFFB /* camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800617A1C7EE008FAFFB /* camera-button@2x.png */; };
-		AD54805917A1C7EE008FAFFB /* camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800617A1C7EE008FAFFB /* camera-button@2x.png */; };
 		AD54805A17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800717A1C7EE008FAFFB /* camera-grid-1136@2x.png */; };
 		AD54805B17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800717A1C7EE008FAFFB /* camera-grid-1136@2x.png */; };
 		AD54805C17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800817A1C7EE008FAFFB /* camera-grid@2x.png */; };
@@ -455,12 +443,6 @@
 		AD547FFE17A1C7EE008FAFFB /* flash-off-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-off-button@2x.png"; sourceTree = "<group>"; };
 		AD547FFF17A1C7EE008FAFFB /* flash-on-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-on-button.png"; sourceTree = "<group>"; };
 		AD54800017A1C7EE008FAFFB /* flash-on-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-on-button@2x.png"; sourceTree = "<group>"; };
-		AD54800117A1C7EE008FAFFB /* camera-bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-bottom-bar.png"; sourceTree = "<group>"; };
-		AD54800217A1C7EE008FAFFB /* camera-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button.png"; sourceTree = "<group>"; };
-		AD54800317A1C7EE008FAFFB /* camera-button-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button-pressed.png"; sourceTree = "<group>"; };
-		AD54800417A1C7EE008FAFFB /* camera-bottom-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-bottom-bar@2x.png"; sourceTree = "<group>"; };
-		AD54800517A1C7EE008FAFFB /* camera-button-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button-pressed@2x.png"; sourceTree = "<group>"; };
-		AD54800617A1C7EE008FAFFB /* camera-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button@2x.png"; sourceTree = "<group>"; };
 		AD54800717A1C7EE008FAFFB /* camera-grid-1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-grid-1136@2x.png"; sourceTree = "<group>"; };
 		AD54800817A1C7EE008FAFFB /* camera-grid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-grid@2x.png"; sourceTree = "<group>"; };
 		AD54800917A1C7EE008FAFFB /* camera-grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-grid.png"; sourceTree = "<group>"; };
@@ -851,12 +833,6 @@
 				AD547FFE17A1C7EE008FAFFB /* flash-off-button@2x.png */,
 				AD547FFF17A1C7EE008FAFFB /* flash-on-button.png */,
 				AD54800017A1C7EE008FAFFB /* flash-on-button@2x.png */,
-				AD54800117A1C7EE008FAFFB /* camera-bottom-bar.png */,
-				AD54800217A1C7EE008FAFFB /* camera-button.png */,
-				AD54800317A1C7EE008FAFFB /* camera-button-pressed.png */,
-				AD54800417A1C7EE008FAFFB /* camera-bottom-bar@2x.png */,
-				AD54800517A1C7EE008FAFFB /* camera-button-pressed@2x.png */,
-				AD54800617A1C7EE008FAFFB /* camera-button@2x.png */,
 				AD54800717A1C7EE008FAFFB /* camera-grid-1136@2x.png */,
 				AD54800817A1C7EE008FAFFB /* camera-grid@2x.png */,
 				AD54800917A1C7EE008FAFFB /* camera-grid.png */,
@@ -1383,23 +1359,19 @@
 				AD54801217A1C7EE008FAFFB /* f-setting-tray.png in Resources */,
 				AD54806217A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
 				AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
-				AD54805617A1C7EE008FAFFB /* camera-button-pressed@2x.png in Resources */,
 				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
-				AD54805017A1C7EE008FAFFB /* camera-button.png in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
 				AD54801C17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
-				AD54805217A1C7EE008FAFFB /* camera-button-pressed.png in Resources */,
 				AD54806017A1C7EE008FAFFB /* crop-button-icon.png in Resources */,
 				AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD54804817A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
 				AD31267717A03AE700483E2F /* Appart.gpx in Resources */,
 				AD746918179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
-				AD54805417A1C7EE008FAFFB /* camera-bottom-bar@2x.png in Resources */,
 				AD54805C17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */,
 				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
 				AD54804417A1C7EE008FAFFB /* confirm-button@2x.png in Resources */,
@@ -1417,7 +1389,6 @@
 				AD54804217A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54803E17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54800E17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
-				AD54804E17A1C7EE008FAFFB /* camera-bottom-bar.png in Resources */,
 				AD54805E17A1C7EE008FAFFB /* camera-grid.png in Resources */,
 				AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD54803217A1C7EE008FAFFB /* f-setting-4.png in Resources */,
@@ -1437,7 +1408,6 @@
 				AD54801817A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
 				AD54804017A1C7EE008FAFFB /* close-button@2x.png in Resources */,
 				AD54802017A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
-				AD54805817A1C7EE008FAFFB /* camera-button@2x.png in Resources */,
 				AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1456,7 +1426,6 @@
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				AD54803517A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
-				AD54805117A1C7EE008FAFFB /* camera-button.png in Resources */,
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
@@ -1477,15 +1446,12 @@
 				AD54806317A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
 				AD54801F17A1C7EE008FAFFB /* f-setting-2-active.png in Resources */,
 				AD312648179F08A600483E2F /* README.md in Resources */,
-				AD54805517A1C7EE008FAFFB /* camera-bottom-bar@2x.png in Resources */,
 				AD54802917A1C7EE008FAFFB /* f-setting-3-active@2x.png in Resources */,
 				AD54804317A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54802B17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD312646179F08A600483E2F /* LICENCE in Resources */,
 				AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
-				AD54805717A1C7EE008FAFFB /* camera-button-pressed@2x.png in Resources */,
-				AD54805917A1C7EE008FAFFB /* camera-button@2x.png in Resources */,
 				AD9935941794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
 				AD54805B17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */,
 				AD54802F17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
@@ -1494,14 +1460,12 @@
 				AD54801717A1C7EE008FAFFB /* f-setting-1-active.png in Resources */,
 				AD54804D17A1C7EE008FAFFB /* flash-on-button@2x.png in Resources */,
 				AD54802517A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
-				AD54804F17A1C7EE008FAFFB /* camera-bottom-bar.png in Resources */,
 				AD54805F17A1C7EE008FAFFB /* camera-grid.png in Resources */,
 				AD72C3F2177B7E28009AADC8 /* InfoPlist.strings in Resources */,
 				AD54804517A1C7EE008FAFFB /* confirm-button@2x.png in Resources */,
 				ADC844C5179074DA00349B16 /* commonPassDict.plist in Resources */,
 				AD54802717A1C7EE008FAFFB /* f-setting-3-active.png in Resources */,
 				AD54803117A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
-				AD54805317A1C7EE008FAFFB /* camera-button-pressed.png in Resources */,
 				AD54801517A1C7EE008FAFFB /* f-setting-tray@2x.png in Resources */,
 				ADC844C7179074DA00349B16 /* 15Dict_en.plist in Resources */,
 				AD54804117A1C7EE008FAFFB /* close-button@2x.png in Resources */,

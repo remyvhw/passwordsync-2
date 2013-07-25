@@ -54,23 +54,24 @@
     _adjustRect= [[MADrawRect alloc] initWithFrame:_sourceImageView.contentFrame];
     [self.view addSubview:_adjustRect];
     
-    _adjustToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - kCameraToolBarHeight, self.view.bounds.size.width, kCameraToolBarHeight)];
-    [_adjustToolBar setBackgroundImage:[UIImage imageNamed:@"camera-bottom-bar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+     _adjustToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - kCameraToolBarHeight, self.view.bounds.size.width, kCameraToolBarHeight)];
+    
+    [_adjustToolBar setBarStyle:UIBarStyleBlack];
+    [_adjustToolBar setTranslucent:YES];
+    
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close-button"] style:UIBarButtonItemStylePlain target:self action:@selector(popCurrentViewController)];
-    cancelButton.accessibilityLabel = @"Return to Camera Viewer";
+    cancelButton.accessibilityLabel = NSLocalizedString(@"Delete this picture", nil);
     
     UIBarButtonItem *undoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"toolbar-icon-crop"] style:UIBarButtonItemStylePlain target:self action:@selector(resetRectFrame)];
-    undoButton.accessibilityLabel = @"Reset Frame";
+    undoButton.accessibilityLabel = NSLocalizedString(@"Reset Frame", nil);
     
     UIBarButtonItem *confirmButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"confirm-button"] style:UIBarButtonItemStylePlain target:self action:@selector(confirmedImage)];
-    confirmButton.accessibilityLabel = @"Confirm adjusted Image";
+    confirmButton.accessibilityLabel = NSLocalizedString(@"Continue", nil);
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    [fixedSpace setWidth:10.0f];
     
-    [_adjustToolBar setItems:[NSArray arrayWithObjects:fixedSpace,cancelButton,flexibleSpace,undoButton,flexibleSpace,confirmButton,fixedSpace, nil]];
+    [_adjustToolBar setItems:[NSArray arrayWithObjects:cancelButton,flexibleSpace,undoButton,flexibleSpace,confirmButton, nil]];
     
     [self.view addSubview:_adjustToolBar];
     
@@ -157,7 +158,6 @@
                 continue;
             }
             
-            NSLog(@"MSSSING %i", i);
             
             missingIndexOne = i;
         }

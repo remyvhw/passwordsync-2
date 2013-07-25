@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define kImageCapturedSuccessfully @"imageCapturedSuccessfully"
-#define kCameraToolBarHeight 54
+#define kCameraToolBarHeight 44
 #define kCameraFlashDefaultsKey @"MAImagePickerControllerFlashIsOn"
 #define kCropButtonSize 200
 #define kActivityIndicatorSize 100

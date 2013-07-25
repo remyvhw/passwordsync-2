@@ -90,20 +90,16 @@
         [[self view] addSubview:gridCameraView];
         
         _cameraToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - kCameraToolBarHeight, self.view.bounds.size.width, kCameraToolBarHeight)];
-        [_cameraToolbar setBackgroundImage:[UIImage imageNamed:@"camera-bottom-bar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+        [_cameraToolbar setBarStyle:UIBarStyleBlack];
+        [_cameraToolbar setTranslucent:YES];
+        //[_cameraToolbar setBackgroundImage:[UIImage imageNamed:@"camera-bottom-bar"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
         
-        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close-button"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissMAImagePickerController)];
-        cancelButton.accessibilityLabel = @"Close Camera Viewer";
+        UIBarButtonItem * cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissMAImagePickerController)];
+       cancelButton.accessibilityLabel = NSLocalizedString(@"Close Camera", nil);
         
-        UIImage *cameraButtonImage = [UIImage imageNamed:@"camera-button"];
-        UIImage *cameraButtonImagePressed = [UIImage imageNamed:@"camera-button-pressed"];
-        UIButton *pictureButtonRaw = [UIButton buttonWithType:UIButtonTypeCustom];
-        [pictureButtonRaw setImage:cameraButtonImage forState:UIControlStateNormal];
-        [pictureButtonRaw setImage:cameraButtonImagePressed forState:UIControlStateHighlighted];
-        [pictureButtonRaw addTarget:self action:@selector(pictureMAIMagePickerController) forControlEvents:UIControlEventTouchUpInside];
-        pictureButtonRaw.frame = CGRectMake(0.0, 0.0, cameraButtonImage.size.width, cameraButtonImage.size.height);
-        _pictureButton = [[UIBarButtonItem alloc] initWithCustomView:pictureButtonRaw];
-        _pictureButton.accessibilityLabel = @"Take Picture";
+        
+        _pictureButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(pictureMAIMagePickerController)];
+        _pictureButton.accessibilityLabel = NSLocalizedString(@"Take Picture", nil);
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:kCameraFlashDefaultsKey] == nil)
         {
@@ -113,14 +109,14 @@
         if ([[NSUserDefaults standardUserDefaults] boolForKey:kCameraFlashDefaultsKey])
         {
             _flashButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"flash-on-button"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFlash)];
-            _flashButton.accessibilityLabel = @"Disable Camera Flash";
+            _flashButton.accessibilityLabel = NSLocalizedString(@"Disable Camera Flash", nil);
             flashIsOn = YES;
             [_captureManager setFlashOn:YES];
         }
         else
         {
             _flashButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"flash-off-button"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFlash)];
-            _flashButton.accessibilityLabel = @"Enable Camera Flash";
+            _flashButton.accessibilityLabel = NSLocalizedString(@"Enable Camera Flash", nil);
             flashIsOn = NO;
             [_captureManager setFlashOn:NO];
         }
@@ -132,10 +128,9 @@
         }
         
         UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        [fixedSpace setWidth:10.0f];
         
-        [_cameraToolbar setItems:[NSArray arrayWithObjects:fixedSpace,cancelButton,flexibleSpace,_pictureButton,flexibleSpace,_flashButton,fixedSpace, nil]];
+        
+        [_cameraToolbar setItems:[NSArray arrayWithObjects:cancelButton,flexibleSpace,_pictureButton,flexibleSpace,_flashButton, nil]];
         
         [self.view addSubview:_cameraToolbar];
         
@@ -202,7 +197,7 @@
         flashIsOn = NO;
         [_captureManager setFlashOn:NO];
         [_flashButton setImage:[UIImage imageNamed:@"flash-off-button"]];
-        _flashButton.accessibilityLabel = @"Enable Camera Flash";
+        _flashButton.accessibilityLabel = NSLocalizedString(@"Enable Camera Flash", nil);
         [self storeFlashSettingWithBool:NO];
     }
     else
@@ -210,7 +205,7 @@
         flashIsOn = YES;
         [_captureManager setFlashOn:YES];
         [_flashButton setImage:[UIImage imageNamed:@"flash-on-button"]];
-        _flashButton.accessibilityLabel = @"Disable Camera Flash";
+        _flashButton.accessibilityLabel = NSLocalizedString(@"Disable Camera Flash", nil);
         [self storeFlashSettingWithBool:YES];
     }
 }
@@ -277,7 +272,7 @@
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     if (error != NULL) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Image couldn't be saved" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
         [alert show];
     }
 }
