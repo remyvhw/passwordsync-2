@@ -19,11 +19,12 @@
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="RNY-mV-Lfz"/>
                         <segue destination="bPR-by-1uu" kind="relationship" relationship="viewControllers" id="b4a-SN-Q6X"/>
                         <segue destination="nDn-CH-52o" kind="relationship" relationship="viewControllers" id="Ge4-G2-n81"/>
+                        <segue destination="s7i-za-tJ6" kind="relationship" relationship="viewControllers" id="EBk-LD-2fN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nB-2I-EZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="-294"/>
+            <point key="canvasLocation" x="-796" y="426"/>
         </scene>
         <!--Cards Table View Controller-->
         <scene sceneID="JEM-Lz-6GH">
@@ -462,6 +463,47 @@
             </objects>
             <point key="canvasLocation" x="896" y="763"/>
         </scene>
+        <!--Notes List Table View Controller-->
+        <scene sceneID="wac-sr-3aC">
+            <objects>
+                <tableViewController id="SP7-Ho-tWG" customClass="PSSNotesListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8rQ-dc-WDz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="H4G-aj-ar2">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4G-aj-ar2" id="p75-iY-BCn">
+                                    <rect key="frame" x="0.0" y="0.0" width="322" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BNw-of-tzA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93u-3W-elh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="1465"/>
+        </scene>
+        <!--Navigation Controller - Notes-->
+        <scene sceneID="ezp-Ej-0Ab">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="s7i-za-tJ6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notes" image="Document" id="Ew0-b1-0af"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="283-s2-X7W">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SP7-Ho-tWG" kind="relationship" relationship="rootViewController" id="sF1-hv-CPr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYQ-Jr-mhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="1465"/>
+        </scene>
         <!--Navigation Controller - Locations-->
         <scene sceneID="bwt-EI-m9n">
             <objects>
@@ -482,6 +524,7 @@
     <resources>
         <image name="Browser" width="30" height="30"/>
         <image name="CardsIcon" width="37" height="25"/>
+        <image name="Document" width="21" height="30"/>
         <image name="Pin" width="35" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
