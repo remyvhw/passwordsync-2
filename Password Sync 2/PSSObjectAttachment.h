@@ -2,20 +2,21 @@
 //  PSSObjectAttachment.h
 //  Password Sync 2
 //
-//  Created by Remy Vanherweghem on 2013-07-18.
+//  Created by Remy Vanherweghem on 2013-07-25.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PSSBaseObjectVersion;
+@class PSSBaseObjectVersion, PSSObjectDecorativeImage;
 
 @interface PSSObjectAttachment : NSManagedObject
 
-@property (nonatomic, retain) NSData * name;
 @property (nonatomic, retain) NSData * binaryContent;
+@property (nonatomic, retain) NSData * name;
 @property (nonatomic, retain) NSSet *encryptedObjectVersions;
+@property (nonatomic, retain) PSSObjectDecorativeImage *thumbnail;
 @end
 
 @interface PSSObjectAttachment (CoreDataGeneratedAccessors)

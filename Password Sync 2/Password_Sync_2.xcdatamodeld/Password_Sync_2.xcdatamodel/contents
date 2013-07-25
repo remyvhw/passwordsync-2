@@ -61,6 +61,7 @@
         <attribute name="binaryContent" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="encryptedObjectVersions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="attachments" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="attachment" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
     </entity>
     <entity name="PSSObjectCategory" representedClassName="PSSObjectCategory" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -72,6 +73,7 @@
         <attribute name="data" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
         <attribute name="viewportIdentifier" attributeType="String" syncable="YES"/>
+        <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectAttachment" inverseName="thumbnail" inverseEntity="PSSObjectAttachment" syncable="YES"/>
         <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="decorativeImages" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
     </entity>
     <entity name="PSSObjectTag" representedClassName="PSSObjectTag" syncable="YES">

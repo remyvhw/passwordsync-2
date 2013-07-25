@@ -2,14 +2,14 @@
 //  PSSObjectDecorativeImage.h
 //  Password Sync 2
 //
-//  Created by Remy Vanherweghem on 2013-06-27.
+//  Created by Remy Vanherweghem on 2013-07-25.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PSSBaseGenericObject;
+@class PSSBaseGenericObject, PSSObjectAttachment;
 
 @interface PSSObjectDecorativeImage : NSManagedObject
 
@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSString * viewportIdentifier;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
+@property (nonatomic, retain) PSSObjectAttachment *attachment;
 
 @end
