@@ -798,7 +798,7 @@
 			name = SPLockScreen;
 			sourceTree = "<group>";
 		};
-		AD547FAA17A1AC24008FAFFB /* Notes */ = {
+		AD547FAA17A1AC24008FAFFB /* Documents */ = {
 			isa = PBXGroup;
 			children = (
 				AD547FA617A1AADF008FAFFB /* PSSDocumentListTableViewController.h */,
@@ -809,7 +809,7 @@
 				ADF10D4317A43ED800CAB546 /* PSSExtentedNoteViewController.m */,
 				AD1BECDE17A428A3001292E8 /* Editor */,
 			);
-			name = Notes;
+			name = Documents;
 			sourceTree = "<group>";
 		};
 		AD547FB617A1C5A6008FAFFB /* MAImagePickerController */ = {
@@ -997,7 +997,7 @@
 				AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
-				AD547FAA17A1AC24008FAFFB /* Notes */,
+				AD547FAA17A1AC24008FAFFB /* Documents */,
 				AD36371117989D95005F1542 /* Location */,
 				ADDD964F1792539A00AB2CC5 /* Cards */,
 				ADDD964A1792535900AB2CC5 /* Passwords */,
