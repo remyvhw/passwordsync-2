@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSGenericDetailViewController.h"
+#import "PSSGenericDetailTableViewController.h"
 #import "PSSLocationBaseObject.h"
 
-@interface PSSLocationDetailViewController : PSSGenericDetailViewController
+@interface PSSLocationDetailViewController : PSSGenericDetailTableViewController
 
 @property (strong, nonatomic) PSSLocationBaseObject * detailItem;
 

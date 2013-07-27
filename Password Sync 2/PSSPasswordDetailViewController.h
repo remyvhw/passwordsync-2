@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSGenericDetailViewController.h"
+#import "PSSGenericDetailTableViewController.h"
 
 @class PSSPasswordBaseObject;
-@interface PSSPasswordDetailViewController : PSSGenericDetailViewController <UIWebViewDelegate>
+@interface PSSPasswordDetailViewController : PSSGenericDetailTableViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) PSSPasswordBaseObject * detailItem;
 

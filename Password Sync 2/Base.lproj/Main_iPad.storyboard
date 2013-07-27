@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="448" y="-630"/>
         </scene>
-        <!--Generic Detail View Controller - Detail-->
+        <!--Generic Detail Table View Controller - Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="PSSGenericDetailViewController" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="PSSGenericDetailTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Oz-7F-bsd"/>
                         <viewControllerLayoutGuide type="bottom" id="KMV-Zd-bxS"/>

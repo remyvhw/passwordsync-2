@@ -175,7 +175,6 @@
 
 - (void)endPattern
 {
-	NSLog(@"PATTERN: %@",[self patternToUniqueId]);
 	if ([self.delegate respondsToSelector:@selector(lockScreen:didEndWithPattern:)])
 		[self.delegate lockScreen:self didEndWithPattern:[self patternToUniqueId]];
 	

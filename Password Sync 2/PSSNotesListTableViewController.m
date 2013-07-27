@@ -8,7 +8,7 @@
 
 #import "PSSNotesListTableViewController.h"
 #import "PSSNotesEditorTableViewController.h"
-#import "PSSGenericDetailViewController.h"
+#import "PSSGenericDetailTableViewController.h"
 #import "PSSNoteBaseObject.h"
 #import "PSSAppDelegate.h"
 

@@ -1,46 +1,27 @@
 //
-//  PSSDetailViewController.m
+//  PSSGenericDetailViewController.m
 //  Password Sync 2
 //
-//  Created by Remy Vanherweghem on 2013-06-26.
+//  Created by Remy Vanherweghem on 2013-07-27.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
 #import "PSSGenericDetailViewController.h"
-
-#import "PSSEncryptor.h"
 #import "PSSUnlockPromptViewController.h"
 
-
 @interface PSSGenericDetailViewController ()
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
 @end
 
 @implementation PSSGenericDetailViewController
 
-#pragma mark - Managing the detail item
-
--(UIView*)lockedImageAccessoryView{
-    
-    UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
-    
-    UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[lockImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    return accessoryView;
-}
-
--(UIView*)copyImageAccessoryView{
-    UIImage * copyImage = [UIImage imageNamed:@"Copy"];
-    
-    UIImageView * accessoryView = [[UIImageView alloc] initWithImage:[copyImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    return accessoryView;
-}
 
 -(void)lockUIAction:(id)notification{
     
     
     self.isPasscodeUnlocked = NO;
-    [self.tableView reloadData];
     
 }
 
@@ -56,7 +37,6 @@
 }
 
 -(void)userDidUnlockWithPasscode{
-    [self.tableView reloadData];
     UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editorAction:)];
     [self.navigationItem setRightBarButtonItem:editButton animated:YES];
 }
@@ -68,7 +48,7 @@
     
     UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
     PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
-   
+    
     [self.navigationController presentViewController:[unlockController promptForPasscodeBlockingView:NO completion:^{
         // We only run the refresh if the UI was locked to prevent double reloads
         if (!self.isPasscodeUnlocked) {
@@ -81,7 +61,7 @@
     }] animated:YES completion:^{
         
     }];
-
+    
     
     
     
@@ -100,17 +80,29 @@
         // Update the view.
         [self updateViewForNewDetailItem];
     }
-
+    
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
+
+#pragma mark - Common stuff
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
+    
     self.isPasscodeUnlocked = NO;
     
     // Subscribe to the lock notification
@@ -132,7 +124,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - Split view
+#pragma mark - SplitViewControllerDelegate methods
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
@@ -148,37 +140,14 @@
     self.masterPopoverController = nil;
 }
 
-#pragma mark - UITableViewDataSource methods
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 0;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
-}
-
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
-}
-
-#pragma mark - UITableViewDelegate methods
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (![self isPasscodeUnlocked]) {
-        
-        [self showUnlockingViewController];
-        return;
-    }
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
 
 #pragma mark - PSSObjectEditorProtocol methods
 
 -(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
-    [self.tableView reloadData];
+    
+    
 }
-
 
 
 @end

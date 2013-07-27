@@ -9,12 +9,12 @@
 @import UIKit;
 @import CoreData;
 
-@class PSSGenericDetailViewController;
+@class PSSGenericDetailTableViewController;
 
 
 @interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) PSSGenericDetailViewController *detailViewController;
+@property (strong, nonatomic) PSSGenericDetailTableViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

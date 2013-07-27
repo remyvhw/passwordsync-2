@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSGenericDetailViewController.h"
+#import "PSSGenericDetailTableViewController.h"
 #import "PSSCreditCardBaseObject.h"
 
-@interface PSSCardDetailViewController : PSSGenericDetailViewController
+@interface PSSCardDetailViewController : PSSGenericDetailTableViewController
 
 @property (strong, nonatomic) PSSCreditCardBaseObject * detailItem;
 
