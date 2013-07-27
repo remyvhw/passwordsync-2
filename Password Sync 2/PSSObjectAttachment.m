@@ -18,6 +18,7 @@
 @dynamic name;
 @dynamic encryptedObjectVersions;
 @dynamic thumbnail;
+@dynamic timestamp;
 
 @synthesize decryptedBinaryContent = _decryptedBinaryContent;
 

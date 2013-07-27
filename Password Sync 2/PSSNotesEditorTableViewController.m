@@ -13,6 +13,7 @@
 #import "PSSObjectAttachment.h"
 #import "PSSObjectDecorativeImage.h"
 #import "PSSThumbnailMaker.h"
+#import "PSSAppDelegate.h"
 
 
 @interface PSSNotesEditorTableViewController ()
@@ -25,14 +26,178 @@
 
 @implementation PSSNotesEditorTableViewController
 
+#pragma mark Saving methods
+
+
+
+
+-(PSSObjectDecorativeImage*)insertNewDecorativeImageInManagedObject{
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSObjectDecorativeImage *newManagedObject = (PSSObjectDecorativeImage*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSObjectDecorativeImage" inManagedObjectContext:context];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    return newManagedObject;
+}
+
+
+-(PSSObjectAttachment*)insertNewAttachmentInManagedObject{
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSObjectAttachment *newManagedObject = (PSSObjectAttachment*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSObjectAttachment" inManagedObjectContext:context];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    return newManagedObject;
+}
+
+-(PSSNoteVersion*)insertNewNoteVersionInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSNoteVersion *newManagedObject = (PSSNoteVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSNoteVersion" inManagedObjectContext:context];
+    
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(PSSNoteBaseObject*)insertNewNoteInManagedObject{
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    PSSNoteBaseObject *newManagedObject = (PSSNoteBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSNoteBaseObject" inManagedObjectContext:context];
+    
+    // We'll add a creation date automatically
+    newManagedObject.created = [NSDate date];
+    
+    return newManagedObject;
+    
+}
+
+-(void)saveChangesAndDismiss{
+    
+    BOOL creatingMode = NO;
+    
+    if (!self.baseObject) {
+        self.baseObject = [self insertNewNoteInManagedObject];
+        creatingMode = YES;
+    }
+    
+
+    
+    
+    // We need to create a new version
+    
+    PSSNoteVersion * version = [self insertNewNoteVersionInManagedObject];
+    
+    // Save the version
+    version.encryptedObject = self.baseObject;
+    
+    version.displayName = self.titleCell.textField.text;
+    // We update the display name with the latest
+    self.baseObject.displayName = version.displayName;
+    
+    version.decryptedNoteTextContent = self.notesCell.textView.text;
+    
+    
+    
+    // Save the attachments
+    if ([self.attachmentsArray count]) {
+        NSMutableSet * setOfnewAttachments = [[NSMutableSet alloc] initWithCapacity:[self.attachmentsArray count]];
+        NSInteger counter = 0;
+        for (id attachment in self.attachmentsArray) {
+            
+            PSSObjectDecorativeImage * thumbnail;
+            
+            if ([attachment isKindOfClass:[PSSObjectAttachment class]]) {
+                [setOfnewAttachments addObject:attachment];
+                
+                thumbnail = [(PSSObjectAttachment*)attachment thumbnail];
+                
+            } else if ([attachment isKindOfClass:[NSString class]]) {
+                UIImage * imageObject = [UIImage imageWithContentsOfFile:attachment];
+                
+                // We need to create a new attachment object
+                PSSObjectAttachment * attachmentObject = [self insertNewAttachmentInManagedObject];
+                
+                attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
+                // Create the attachment a thumbnail
+                
+                thumbnail = [self insertNewDecorativeImageInManagedObject];
+                thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
+                thumbnail.data = [PSSThumbnailMaker thumbnailPNGImageDataFromImageAtURL:[NSURL fileURLWithPath:attachment] maxSize:450];
+                attachmentObject.thumbnail = thumbnail;
+                
+                [setOfnewAttachments addObject:attachmentObject];
+                
+            }
+            
+            if (counter==0) {
+                self.baseObject.thumbnail = thumbnail;
+            }
+            
+            counter++;
+        }
+        
+        version.attachments = (NSSet*)setOfnewAttachments;
+    }
+
+    
+    
+    
+    
+    // Save the object
+    self.baseObject.currentVersion = version;
+    
+    
+    
+    
+    
+    NSError *error = nil;
+    if (![self.baseObject.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
+        
+    }
+    
+    if (creatingMode) {
+       
+        [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+        
+       
+    } else {
+        
+        if (self.editorDelegate) {
+            [self.editorDelegate objectEditor:self finishedWithObject:self.baseObject];
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+}
+
+
+#pragma mark Custom methods
+
 -(void)deleteAttachment:(id)attachment{
     
     if ([attachment isKindOfClass:[PSSObjectAttachment class]]) {
         // Actual attachment object
         
-        PSSObjectAttachment * objectAttachment = (PSSObjectAttachment*)attachment;
-        
-        [objectAttachment.managedObjectContext deleteObject:objectAttachment];
+        // We won't delete it as it was saved with another version
         
     } else if ([attachment isKindOfClass:[NSString class]]) {
         // NSString is a path to large attachment image
@@ -54,6 +219,10 @@
     [super cancelAction:sender];
     
     [self cleanupUnsavedFilesInAttachmentArray];
+}
+
+-(void)saveAction:(id)sender{
+    [self saveChangesAndDismiss];
 }
 
 -(void)cleanupUnsavedFilesInAttachmentArray{
@@ -128,6 +297,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"PSSNotesAttachmentTableViewCell" bundle:[NSBundle mainBundle]]  forCellReuseIdentifier:@"attachmentCell"];
     
     
+    //UIBarButtonItem * saveButton =
     
     if (self.baseObject) {
         NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];

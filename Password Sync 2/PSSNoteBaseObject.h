@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "PSSBaseGenericObject.h"
-
+#import "PSSObjectDecorativeImage.h"
 
 @interface PSSNoteBaseObject : PSSBaseGenericObject
 
+@property (nonatomic, retain) PSSObjectDecorativeImage * thumbnail;
 
 @end

@@ -208,7 +208,7 @@
     [self.tableView registerClass:[PSSnewPasswordBasicTextFieldCell class] forCellReuseIdentifier:kTextFieldTableViewCell];
     
     
-    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing:)];
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(doneEditing:)];
     self.navigationItem.rightBarButtonItem = doneButton;
     
     if (self.passwordBaseObject) {

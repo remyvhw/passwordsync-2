@@ -22,6 +22,11 @@
     }
 }
 
+-(void)saveAction:(id)sender{
+    
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -40,6 +45,12 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAction:)];
+    
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
     
     if (self.baseObject) {
         

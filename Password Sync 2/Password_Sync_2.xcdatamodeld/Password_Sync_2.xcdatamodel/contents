@@ -6,7 +6,7 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectCategory" inverseName="encryptedObjects" inverseEntity="PSSObjectCategory" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="parent" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="currentHardLinkedVersion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="currentOwningBaseObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
-        <relationship name="decorativeImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
+        <relationship name="decorativeImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="PSSBaseGenericObject" inverseName="children" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSObjectTag" inverseName="encryptedObjects" inverseEntity="PSSObjectTag" syncable="YES"/>
         <relationship name="versions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSBaseObjectVersion" inverseName="encryptedObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
@@ -52,7 +52,9 @@
         <attribute name="radius" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
-    <entity name="PSSNoteBaseObject" representedClassName="PSSNoteBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES"/>
+    <entity name="PSSNoteBaseObject" representedClassName="PSSNoteBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="noteBaseObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
+    </entity>
     <entity name="PSSNoteVersion" representedClassName="PSSNoteVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="noteTextContent" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -60,6 +62,7 @@
     <entity name="PSSObjectAttachment" representedClassName="PSSObjectAttachment" syncable="YES">
         <attribute name="binaryContent" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="encryptedObjectVersions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="attachments" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
         <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="attachment" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
     </entity>
@@ -74,7 +77,8 @@
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
         <attribute name="viewportIdentifier" attributeType="String" syncable="YES"/>
         <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectAttachment" inverseName="thumbnail" inverseEntity="PSSObjectAttachment" syncable="YES"/>
-        <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="decorativeImages" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
+        <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" syncable="YES"/>
+        <relationship name="noteBaseObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSNoteBaseObject" inverseName="thumbnail" inverseEntity="PSSNoteBaseObject" syncable="YES"/>
     </entity>
     <entity name="PSSObjectTag" representedClassName="PSSObjectTag" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>

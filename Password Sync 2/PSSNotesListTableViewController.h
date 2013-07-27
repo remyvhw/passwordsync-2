@@ -6,8 +6,15 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import CoreData;
+@class PSSGenericDetailViewController;
 
-@interface PSSNotesListTableViewController : UITableViewController
+@interface PSSNotesListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) PSSGenericDetailViewController *detailViewController;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

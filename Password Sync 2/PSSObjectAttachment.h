@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSData * binaryContent;
 @property (nonatomic, retain) NSData * name;
+@property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *encryptedObjectVersions;
 @property (nonatomic, retain) PSSObjectDecorativeImage *thumbnail;
 

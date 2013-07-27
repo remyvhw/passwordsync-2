@@ -17,4 +17,6 @@
 +(UIImage*)thumbnailImageFromImageAtURL:(NSURL*)url maxSize:(double)maxSize;
 +(NSData*)thumbnailPNGImageDataFromImageAtURL:(NSURL *)url maxSize:(double)maxSize;
 
++(NSData*)createPDFfromImage:(UIImage*)image;
+
 @end

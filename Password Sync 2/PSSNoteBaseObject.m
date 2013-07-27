@@ -11,5 +11,6 @@
 
 @implementation PSSNoteBaseObject
 
+@dynamic thumbnail;
 
 @end

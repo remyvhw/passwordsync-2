@@ -52,4 +52,26 @@
     return nil;
 }
 
+
++(NSData*)createPDFfromImage:(UIImage*)image
+{
+    
+    UIImageView * aView = [[UIImageView alloc] initWithImage:image];
+    
+    // Creates a mutable data object for updating with binary data, like a byte array
+    NSMutableData *pdfData = [NSMutableData data];
+    
+    // Points the pdf converter to the mutable data object and to the UIView to be converted
+    UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil);
+    UIGraphicsBeginPDFPage();
+    
+    // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
+    [aView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    // remove PDF rendering context
+    UIGraphicsEndPDFContext();
+    
+    return (NSData*)pdfData;
+}
+
 @end
