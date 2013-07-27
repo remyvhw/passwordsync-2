@@ -18,11 +18,42 @@
 @interface PSSNotesDetailCollectionViewController ()
 
 @property (nonatomic, strong) NSArray * attachments;
+@property (nonatomic, strong) NSMutableArray * arrayOfTemporaryFilePaths;
 
 @end
 
 @implementation PSSNotesDetailCollectionViewController
 dispatch_queue_t backgroundQueue;
+
+
+-(void)cleanupUnsavedFilesInAttachmentArray{
+    
+    for (id attachment in self.arrayOfTemporaryFilePaths) {
+        
+        if ([attachment isKindOfClass:[NSString class]]) {
+            
+            [[NSFileManager defaultManager] removeItemAtPath:(NSString*)attachment error:nil];
+            
+        }
+        
+    }
+    
+}
+
+-(void)presentQuickLookViewerForAttachmentAtIndex:(NSInteger)index{
+    
+    QLPreviewController * previewController = [[QLPreviewController alloc] init];
+    
+    previewController.dataSource = self;
+    previewController.currentPreviewItemIndex = index;
+    
+    previewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    previewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self.navigationController presentViewController:previewController animated:YES completion:NULL];
+    
+}
+
 
 -(void)editorAction:(id)sender{
     
@@ -76,6 +107,10 @@ dispatch_queue_t backgroundQueue;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [self cleanupUnsavedFilesInAttachmentArray];
 }
 
 
@@ -215,7 +250,48 @@ dispatch_queue_t backgroundQueue;
         return;
     }
     
+    [self presentQuickLookViewerForAttachmentAtIndex:indexPath.row];
+    
     
 }
+
+#pragma mark - QLPreviewControllerDataSource methods
+
+-(NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller{
+    
+    if (self.attachments) {
+        return self.attachments.count;
+    }
+    
+    return 0;
+}
+
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index
+{
+    
+    
+    // We need to write the decrypted item to the file system in a cache directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [paths objectAtIndex:0];
+    BOOL isDir = NO;
+    NSError *error;
+    if (! [[NSFileManager defaultManager] fileExistsAtPath:cachePath isDirectory:&isDir] && isDir == NO) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:cachePath withIntermediateDirectories:NO attributes:nil error:&error];
+    }
+    
+    PSSObjectAttachment * attachmentObject = [self.attachments objectAtIndex:index];
+    
+    
+    NSString *filePath =  [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%f.pdf", [attachmentObject.timestamp timeIntervalSinceReferenceDate]]];
+    
+    if (![self.arrayOfTemporaryFilePaths containsObject:filePath]) {
+        [attachmentObject.decryptedBinaryContent writeToFile:filePath atomically:YES];
+        [self.arrayOfTemporaryFilePaths addObject:filePath];
+    }
+    
+    
+    return [NSURL fileURLWithPath:filePath];
+}
+
 
 @end

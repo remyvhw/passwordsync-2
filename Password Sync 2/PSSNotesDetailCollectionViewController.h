@@ -7,9 +7,10 @@
 //
 
 #import "PSSGenericDetailCollectionViewController.h"
+@import QuickLook;
 
 @class PSSNoteBaseObject;
-@interface PSSNotesDetailCollectionViewController : PSSGenericDetailCollectionViewController
+@interface PSSNotesDetailCollectionViewController : PSSGenericDetailCollectionViewController <QLPreviewControllerDataSource>
 
 @property (nonatomic, strong) PSSNoteBaseObject * detailItem;
 
