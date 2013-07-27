@@ -19,6 +19,7 @@
 @dynamic encryptedObjectVersions;
 @dynamic thumbnail;
 @dynamic timestamp;
+@dynamic fileExtension;
 
 @synthesize decryptedBinaryContent = _decryptedBinaryContent;
 

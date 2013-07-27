@@ -282,7 +282,7 @@ dispatch_queue_t backgroundQueue;
     PSSObjectAttachment * attachmentObject = [self.attachments objectAtIndex:index];
     
     
-    NSString *filePath =  [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%f.pdf", [attachmentObject.timestamp timeIntervalSinceReferenceDate]]];
+    NSString *filePath =  [cachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%f.%@", [attachmentObject.timestamp timeIntervalSinceReferenceDate], attachmentObject.fileExtension]];
     
     if (![self.arrayOfTemporaryFilePaths containsObject:filePath]) {
         [attachmentObject.decryptedBinaryContent writeToFile:filePath atomically:YES];

@@ -133,6 +133,8 @@
                 attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
                 // Create the attachment a thumbnail
                 
+                attachmentObject.fileExtension = @"pdf";
+                
                 thumbnail = [self insertNewDecorativeImageInManagedObject];
                 thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
                 thumbnail.data = [PSSThumbnailMaker thumbnailPNGImageDataFromImageAtURL:[NSURL fileURLWithPath:attachment] maxSize:450];

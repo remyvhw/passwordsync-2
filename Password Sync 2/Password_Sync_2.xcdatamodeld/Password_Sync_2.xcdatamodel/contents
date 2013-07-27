@@ -61,6 +61,7 @@
     </entity>
     <entity name="PSSObjectAttachment" representedClassName="PSSObjectAttachment" syncable="YES">
         <attribute name="binaryContent" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="fileExtension" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="encryptedObjectVersions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="attachments" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
