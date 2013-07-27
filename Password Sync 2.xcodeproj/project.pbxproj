@@ -23,8 +23,8 @@
 		AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECD717A42410001292E8 /* PSSGenericDetailViewController.m */; };
 		AD1BECDC17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */; };
 		AD1BECDD17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */; };
-		AD1BECE117A42919001292E8 /* PSSNotesDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSNotesDetailCollectionViewController.m */; };
-		AD1BECE217A42919001292E8 /* PSSNotesDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSNotesDetailCollectionViewController.m */; };
+		AD1BECE117A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */; };
+		AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
@@ -69,12 +69,12 @@
 		AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */; };
 		AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */; };
 		AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */; };
-		AD547FA817A1AADF008FAFFB /* PSSNotesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSNotesListTableViewController.m */; };
-		AD547FA917A1AADF008FAFFB /* PSSNotesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSNotesListTableViewController.m */; };
+		AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */; };
+		AD547FA917A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */; };
 		AD547FAD17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */; };
 		AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */; };
-		AD547FB117A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m */; };
-		AD547FB217A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m */; };
+		AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */; };
+		AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */; };
 		AD547FB417A1C4AB008FAFFB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD547FB317A1C4AB008FAFFB /* opencv2.framework */; };
 		AD547FB517A1C4AB008FAFFB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD547FB317A1C4AB008FAFFB /* opencv2.framework */; };
 		AD547FC917A1C5A6008FAFFB /* MACaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB817A1C5A6008FAFFB /* MACaptureSession.m */; };
@@ -218,8 +218,8 @@
 		AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */; };
 		AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */; };
 		AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */; };
-		AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */; };
-		AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */; };
+		AD82102E177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSDocumentBaseObject.m */; };
+		AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82102D177CFBD400B6F501 /* PSSDocumentBaseObject.m */; };
 		AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */; };
 		AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */; };
 		AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */; };
@@ -288,8 +288,8 @@
 		ADA0E54B179249B900F284B9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA0E54A179249B900F284B9 /* libxml2.dylib */; };
 		ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */; };
 		ADA24BF11795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */; };
-		ADA24BF4179851A8003BDCC5 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BF3179851A8003BDCC5 /* PSSNoteVersion.m */; };
-		ADA24BF5179851A8003BDCC5 /* PSSNoteVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BF3179851A8003BDCC5 /* PSSNoteVersion.m */; };
+		ADA24BF4179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BF3179851A8003BDCC5 /* PSSDocumentVersion.m */; };
+		ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BF3179851A8003BDCC5 /* PSSDocumentVersion.m */; };
 		ADA24BFC179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BFB179851A8003BDCC5 /* PSSLocationBaseObject.m */; };
 		ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BFB179851A8003BDCC5 /* PSSLocationBaseObject.m */; };
 		ADA24C00179851A8003BDCC5 /* PSSLocationVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BFF179851A8003BDCC5 /* PSSLocationVersion.m */; };
@@ -366,8 +366,8 @@
 		AD1BECD717A42410001292E8 /* PSSGenericDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericDetailViewController.m; sourceTree = "<group>"; };
 		AD1BECDA17A42896001292E8 /* PSSGenericDetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGenericDetailCollectionViewController.h; sourceTree = "<group>"; };
 		AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericDetailCollectionViewController.m; sourceTree = "<group>"; };
-		AD1BECDF17A42919001292E8 /* PSSNotesDetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNotesDetailCollectionViewController.h; sourceTree = "<group>"; };
-		AD1BECE017A42919001292E8 /* PSSNotesDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNotesDetailCollectionViewController.m; sourceTree = "<group>"; };
+		AD1BECDF17A42919001292E8 /* PSSDocumentDetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentDetailCollectionViewController.h; sourceTree = "<group>"; };
+		AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentDetailCollectionViewController.m; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
@@ -408,12 +408,12 @@
 		AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasscodeVerifyerViewController.m; sourceTree = "<group>"; };
 		AD51760D1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenFinishedViewController.h; sourceTree = "<group>"; };
 		AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenFinishedViewController.m; sourceTree = "<group>"; };
-		AD547FA617A1AADF008FAFFB /* PSSNotesListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNotesListTableViewController.h; sourceTree = "<group>"; };
-		AD547FA717A1AADF008FAFFB /* PSSNotesListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNotesListTableViewController.m; sourceTree = "<group>"; };
+		AD547FA617A1AADF008FAFFB /* PSSDocumentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentListTableViewController.h; sourceTree = "<group>"; };
+		AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentListTableViewController.m; sourceTree = "<group>"; };
 		AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGenericEditorTableViewController.h; sourceTree = "<group>"; };
 		AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericEditorTableViewController.m; sourceTree = "<group>"; };
-		AD547FAF17A1ACCA008FAFFB /* PSSNotesEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNotesEditorTableViewController.h; sourceTree = "<group>"; };
-		AD547FB017A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNotesEditorTableViewController.m; sourceTree = "<group>"; };
+		AD547FAF17A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentEditorTableViewController.h; sourceTree = "<group>"; };
+		AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentEditorTableViewController.m; sourceTree = "<group>"; };
 		AD547FB317A1C4AB008FAFFB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		AD547FB717A1C5A6008FAFFB /* MACaptureSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACaptureSession.h; sourceTree = "<group>"; };
 		AD547FB817A1C5A6008FAFFB /* MACaptureSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACaptureSession.m; sourceTree = "<group>"; };
@@ -518,8 +518,8 @@
 		AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordBaseObject.m; sourceTree = "<group>"; };
 		AD821028177CFBD400B6F501 /* PSSCreditCardBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardBaseObject.h; sourceTree = "<group>"; };
 		AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardBaseObject.m; sourceTree = "<group>"; };
-		AD82102C177CFBD400B6F501 /* PSSNoteBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteBaseObject.h; sourceTree = "<group>"; };
-		AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteBaseObject.m; sourceTree = "<group>"; };
+		AD82102C177CFBD400B6F501 /* PSSDocumentBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentBaseObject.h; sourceTree = "<group>"; };
+		AD82102D177CFBD400B6F501 /* PSSDocumentBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentBaseObject.m; sourceTree = "<group>"; };
 		AD821030177CFBD400B6F501 /* PSSBaseObjectVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseObjectVersion.h; sourceTree = "<group>"; };
 		AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseObjectVersion.m; sourceTree = "<group>"; };
 		AD821040177CFBD400B6F501 /* PSSPasswordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordVersion.h; sourceTree = "<group>"; };
@@ -586,8 +586,8 @@
 		ADA0E54A179249B900F284B9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		ADA24BEE1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordPromptViewController.h; sourceTree = "<group>"; };
 		ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordPromptViewController.m; sourceTree = "<group>"; };
-		ADA24BF2179851A8003BDCC5 /* PSSNoteVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSNoteVersion.h; sourceTree = "<group>"; };
-		ADA24BF3179851A8003BDCC5 /* PSSNoteVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSNoteVersion.m; sourceTree = "<group>"; };
+		ADA24BF2179851A8003BDCC5 /* PSSDocumentVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentVersion.h; sourceTree = "<group>"; };
+		ADA24BF3179851A8003BDCC5 /* PSSDocumentVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentVersion.m; sourceTree = "<group>"; };
 		ADA24BFA179851A8003BDCC5 /* PSSLocationBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationBaseObject.h; sourceTree = "<group>"; };
 		ADA24BFB179851A8003BDCC5 /* PSSLocationBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationBaseObject.m; sourceTree = "<group>"; };
 		ADA24BFE179851A8003BDCC5 /* PSSLocationVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationVersion.h; sourceTree = "<group>"; };
@@ -692,8 +692,8 @@
 		AD1BECDE17A428A3001292E8 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
-				AD547FAF17A1ACCA008FAFFB /* PSSNotesEditorTableViewController.h */,
-				AD547FB017A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m */,
+				AD547FAF17A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.h */,
+				AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */,
 				AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */,
 			);
 			name = Editor;
@@ -801,10 +801,10 @@
 		AD547FAA17A1AC24008FAFFB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				AD547FA617A1AADF008FAFFB /* PSSNotesListTableViewController.h */,
-				AD547FA717A1AADF008FAFFB /* PSSNotesListTableViewController.m */,
-				AD1BECDF17A42919001292E8 /* PSSNotesDetailCollectionViewController.h */,
-				AD1BECE017A42919001292E8 /* PSSNotesDetailCollectionViewController.m */,
+				AD547FA617A1AADF008FAFFB /* PSSDocumentListTableViewController.h */,
+				AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */,
+				AD1BECDF17A42919001292E8 /* PSSDocumentDetailCollectionViewController.h */,
+				AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */,
 				ADF10D4217A43ED800CAB546 /* PSSExtentedNoteViewController.h */,
 				ADF10D4317A43ED800CAB546 /* PSSExtentedNoteViewController.m */,
 				AD1BECDE17A428A3001292E8 /* Editor */,
@@ -1227,8 +1227,8 @@
 				ADA24BFF179851A8003BDCC5 /* PSSLocationVersion.m */,
 				ADA24BFA179851A8003BDCC5 /* PSSLocationBaseObject.h */,
 				ADA24BFB179851A8003BDCC5 /* PSSLocationBaseObject.m */,
-				ADA24BF2179851A8003BDCC5 /* PSSNoteVersion.h */,
-				ADA24BF3179851A8003BDCC5 /* PSSNoteVersion.m */,
+				ADA24BF2179851A8003BDCC5 /* PSSDocumentVersion.h */,
+				ADA24BF3179851A8003BDCC5 /* PSSDocumentVersion.m */,
 				ADA0E5351791162C00F284B9 /* PSSPasswordDomain.h */,
 				ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */,
 				AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */,
@@ -1241,8 +1241,8 @@
 				AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */,
 				AD821030177CFBD400B6F501 /* PSSBaseObjectVersion.h */,
 				AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */,
-				AD82102C177CFBD400B6F501 /* PSSNoteBaseObject.h */,
-				AD82102D177CFBD400B6F501 /* PSSNoteBaseObject.m */,
+				AD82102C177CFBD400B6F501 /* PSSDocumentBaseObject.h */,
+				AD82102D177CFBD400B6F501 /* PSSDocumentBaseObject.m */,
 				AD821028177CFBD400B6F501 /* PSSCreditCardBaseObject.h */,
 				AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */,
 				AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */,
@@ -1555,11 +1555,11 @@
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
-				ADA24BF4179851A8003BDCC5 /* PSSNoteVersion.m in Sources */,
+				ADA24BF4179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
-				AD547FB117A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m in Sources */,
+				AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				ADFB4A6B17A1A1B000E268E3 /* PSSObjectAttachment.m in Sources */,
@@ -1579,7 +1579,7 @@
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
-				AD547FA817A1AADF008FAFFB /* PSSNotesListTableViewController.m in Sources */,
+				AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
 				ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
@@ -1598,7 +1598,7 @@
 				AD31266B179F08A600483E2F /* TSMessageView.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSPasswordListViewController.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
-				AD82102E177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
+				AD82102E177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				ADA0E5471792498C00F284B9 /* HTMLParser.m in Sources */,
@@ -1611,7 +1611,7 @@
 				AD873B6B178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD363718179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				AD5175F91784906200B30295 /* SPLockScreen.m in Sources */,
-				AD1BECE117A42919001292E8 /* PSSNotesDetailCollectionViewController.m in Sources */,
+				AD1BECE117A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
 				AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD547FD917A1C5A6008FAFFB /* UIImageView+ContentFrame.m in Sources */,
 				AD9935971794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */,
@@ -1647,7 +1647,7 @@
 				ADA0E53017907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */,
 				AD547FD417A1C5A6008FAFFB /* MAImagePickerFinalViewController.mm in Sources */,
 				AD31266C179F08A600483E2F /* TSMessageView.m in Sources */,
-				AD82102F177CFBD400B6F501 /* PSSNoteBaseObject.m in Sources */,
+				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
 				AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
@@ -1696,9 +1696,9 @@
 				AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD312644179F08A600483E2F /* HexColor.m in Sources */,
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
-				ADA24BF5179851A8003BDCC5 /* PSSNoteVersion.m in Sources */,
-				AD1BECE217A42919001292E8 /* PSSNotesDetailCollectionViewController.m in Sources */,
-				AD547FA917A1AADF008FAFFB /* PSSNotesListTableViewController.m in Sources */,
+				ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
+				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
+				AD547FA917A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
 				AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
@@ -1715,7 +1715,7 @@
 				AD312642179F08A600483E2F /* TSMessage.m in Sources */,
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
-				AD547FB217A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m in Sources */,
+				AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 				ADFA1A2117926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.m in Sources */,
 				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,

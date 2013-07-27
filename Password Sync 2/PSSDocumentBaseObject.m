@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSNoteBaseObject.h"
+#import "PSSDocumentBaseObject.h"
 
 
-@implementation PSSNoteBaseObject
+@implementation PSSDocumentBaseObject
 
 @dynamic thumbnail;
 

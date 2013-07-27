@@ -38,6 +38,13 @@
         <attribute name="unencryptedLastDigits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="verificationCode" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
+    <entity name="PSSDocumentBaseObject" representedClassName="PSSDocumentBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="noteBaseObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
+    </entity>
+    <entity name="PSSDocumentVersion" representedClassName="PSSDocumentVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noteTextContent" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="PSSLocationBaseObject" representedClassName="PSSLocationBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shouldGeofence" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
@@ -51,13 +58,6 @@
         <attribute name="password" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="radius" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="Binary" syncable="YES"/>
-    </entity>
-    <entity name="PSSNoteBaseObject" representedClassName="PSSNoteBaseObject" parentEntity="PSSBaseGenericObject" syncable="YES">
-        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="noteBaseObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
-    </entity>
-    <entity name="PSSNoteVersion" representedClassName="PSSNoteVersion" parentEntity="PSSBaseObjectVersion" syncable="YES">
-        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="noteTextContent" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="PSSObjectAttachment" representedClassName="PSSObjectAttachment" syncable="YES">
         <attribute name="binaryContent" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -79,7 +79,7 @@
         <attribute name="viewportIdentifier" attributeType="String" syncable="YES"/>
         <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectAttachment" inverseName="thumbnail" inverseEntity="PSSObjectAttachment" syncable="YES"/>
         <relationship name="encryptedObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" syncable="YES"/>
-        <relationship name="noteBaseObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSNoteBaseObject" inverseName="thumbnail" inverseEntity="PSSNoteBaseObject" syncable="YES"/>
+        <relationship name="noteBaseObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSDocumentBaseObject" inverseName="thumbnail" inverseEntity="PSSDocumentBaseObject" syncable="YES"/>
     </entity>
     <entity name="PSSObjectTag" representedClassName="PSSObjectTag" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -108,10 +108,10 @@
         <element name="PSSBaseObjectVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSCreditCardBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSCreditCardVersion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSDocumentBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSLocationBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSLocationVersion" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PSSNoteBaseObject" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PSSNoteVersion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSDocumentVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectAttachment" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectCategory" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectDecorativeImage" positionX="0" positionY="0" width="0" height="0"/>

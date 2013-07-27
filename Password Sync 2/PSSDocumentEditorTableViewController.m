@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSNotesEditorTableViewController.h"
+#import "PSSDocumentEditorTableViewController.h"
 #import "PSSnewPasswordBasicTextFieldCell.h"
 #import "PSSnewPasswordMultilineTextFieldCell.h"
-#import "PSSNoteVersion.h"
+#import "PSSDocumentVersion.h"
 #import "PSSObjectAttachment.h"
 #import "PSSObjectDecorativeImage.h"
 #import "PSSThumbnailMaker.h"
 #import "PSSAppDelegate.h"
 
 
-@interface PSSNotesEditorTableViewController ()
+@interface PSSDocumentEditorTableViewController ()
 
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * titleCell;
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation PSSNotesEditorTableViewController
+@implementation PSSDocumentEditorTableViewController
 
 #pragma mark Saving methods
 
@@ -56,12 +56,12 @@
     return newManagedObject;
 }
 
--(PSSNoteVersion*)insertNewNoteVersionInManagedObject{
+-(PSSDocumentVersion*)insertNewNoteVersionInManagedObject{
     
     PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    PSSNoteVersion *newManagedObject = (PSSNoteVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSNoteVersion" inManagedObjectContext:context];
+    PSSDocumentVersion *newManagedObject = (PSSDocumentVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSDocumentVersion" inManagedObjectContext:context];
     
     // We'll automatically timestamp it
     newManagedObject.timestamp = [NSDate date];
@@ -70,12 +70,12 @@
     
 }
 
--(PSSNoteBaseObject*)insertNewNoteInManagedObject{
+-(PSSDocumentBaseObject*)insertNewNoteInManagedObject{
     
     PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    PSSNoteBaseObject *newManagedObject = (PSSNoteBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSNoteBaseObject" inManagedObjectContext:context];
+    PSSDocumentBaseObject *newManagedObject = (PSSDocumentBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSDocumentBaseObject" inManagedObjectContext:context];
     
     // We'll add a creation date automatically
     newManagedObject.created = [NSDate date];
@@ -98,7 +98,7 @@
     
     // We need to create a new version
     
-    PSSNoteVersion * version = [self insertNewNoteVersionInManagedObject];
+    PSSDocumentVersion * version = [self insertNewNoteVersionInManagedObject];
     
     // Save the version
     version.encryptedObject = self.baseObject;
@@ -303,7 +303,7 @@
     
     if (self.baseObject) {
         NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
-        NSSet * attachments = [(PSSNoteVersion*)self.baseObject.currentHardLinkedVersion attachments];
+        NSSet * attachments = [(PSSDocumentVersion*)self.baseObject.currentHardLinkedVersion attachments];
         NSArray * arrayOfAttachments = [attachments sortedArrayUsingDescriptors:@[sortDescriptor]];
         self.attachmentsArray = [[NSMutableArray alloc] initWithArray:arrayOfAttachments];
     } else {
@@ -457,7 +457,7 @@
             
             self.notesCell = notesCell;
             if (self.baseObject) {
-                self.notesCell.textView.text = [(PSSNoteVersion*)self.baseObject.currentHardLinkedVersion decryptedNoteTextContent];
+                self.notesCell.textView.text = [(PSSDocumentVersion*)self.baseObject.currentHardLinkedVersion decryptedNoteTextContent];
             }
             self.notesCell.selectionStyle =UITableViewCellSelectionStyleNone;
             

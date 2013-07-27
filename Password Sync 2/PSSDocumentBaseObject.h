@@ -11,7 +11,7 @@
 #import "PSSBaseGenericObject.h"
 #import "PSSObjectDecorativeImage.h"
 
-@interface PSSNoteBaseObject : PSSBaseGenericObject
+@interface PSSDocumentBaseObject : PSSBaseGenericObject
 
 @property (nonatomic, retain) PSSObjectDecorativeImage * thumbnail;
 

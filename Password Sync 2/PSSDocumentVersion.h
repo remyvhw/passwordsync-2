@@ -11,7 +11,7 @@
 #import "PSSBaseObjectVersion.h"
 
 
-@interface PSSNoteVersion : PSSBaseObjectVersion
+@interface PSSDocumentVersion : PSSBaseObjectVersion
 
 @property (nonatomic, retain) NSData * noteTextContent;
 @property (nonatomic, retain) NSString * displayName;

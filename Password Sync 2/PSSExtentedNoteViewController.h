@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSSNoteBaseObject.h"
+#import "PSSDocumentBaseObject.h"
 
 @interface PSSExtentedNoteViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (strong, nonatomic) PSSNoteBaseObject* detailItem;
+@property (strong, nonatomic) PSSDocumentBaseObject* detailItem;
 
 @end

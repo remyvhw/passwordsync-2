@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSNoteVersion.h"
+#import "PSSDocumentVersion.h"
 
 
-@implementation PSSNoteVersion
+@implementation PSSDocumentVersion
 
 @dynamic noteTextContent;
 @dynamic displayName;

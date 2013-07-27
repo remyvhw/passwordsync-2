@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PSSBaseGenericObject, PSSNoteBaseObject, PSSObjectAttachment;
+@class PSSBaseGenericObject, PSSDocumentBaseObject, PSSObjectAttachment;
 
 @interface PSSObjectDecorativeImage : NSManagedObject
 
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString * viewportIdentifier;
 @property (nonatomic, retain) PSSObjectAttachment *attachment;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
-@property (nonatomic, retain) PSSNoteBaseObject *noteBaseObject;
+@property (nonatomic, retain) PSSDocumentBaseObject *noteBaseObject;
 
 @property (nonatomic, strong, readonly) UIImage * imageNormal;
 @property (nonatomic, strong, readonly) UIImage * imageLightEffect;

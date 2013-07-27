@@ -6,23 +6,23 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSNotesDetailCollectionViewController.h"
-#import "PSSNoteBaseObject.h"
-#import "PSSNoteVersion.h"
+#import "PSSDocumentDetailCollectionViewController.h"
+#import "PSSDocumentBaseObject.h"
+#import "PSSDocumentVersion.h"
 #import "PSSObjectAttachment.h"
 #import "PSSObjectDecorativeImage.h"
 #import "PSSExtentedNoteViewController.h"
 #import "UIImage+ImageEffects.h"
-#import "PSSNotesEditorTableViewController.h"
+#import "PSSDocumentEditorTableViewController.h"
 
-@interface PSSNotesDetailCollectionViewController ()
+@interface PSSDocumentDetailCollectionViewController ()
 
 @property (nonatomic, strong) NSArray * attachments;
 @property (nonatomic, strong) NSMutableArray * arrayOfTemporaryFilePaths;
 
 @end
 
-@implementation PSSNotesDetailCollectionViewController
+@implementation PSSDocumentDetailCollectionViewController
 dispatch_queue_t backgroundQueue;
 
 
@@ -57,7 +57,7 @@ dispatch_queue_t backgroundQueue;
 
 -(void)editorAction:(id)sender{
     
-    PSSNotesEditorTableViewController * notesEditor = [[PSSNotesEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    PSSDocumentEditorTableViewController * notesEditor = [[PSSDocumentEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     notesEditor.editorDelegate = self;
     notesEditor.baseObject = self.detailItem;
@@ -134,7 +134,7 @@ dispatch_queue_t backgroundQueue;
         }
         
         // Check that we have a note to show.
-        NSString * decryptedNote = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+        NSString * decryptedNote = [(PSSDocumentVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
         
         if (!decryptedNote || [decryptedNote isEqualToString:@""]) {
             return NO;
@@ -163,7 +163,7 @@ dispatch_queue_t backgroundQueue;
         UIImageView * accessoryView = (UIImageView*)[collectionReusableView viewWithTag:2];
         
         
-        NSString * decryptedNote = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+        NSString * decryptedNote = [(PSSDocumentVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
         
         if (decryptedNote && ![decryptedNote isEqualToString:@""]) {
             if (self.isPasscodeUnlocked) {

@@ -8,7 +8,7 @@
 
 #import "PSSObjectDecorativeImage.h"
 #import "PSSBaseGenericObject.h"
-#import "PSSNoteBaseObject.h"
+#import "PSSDocumentBaseObject.h"
 #import "PSSObjectAttachment.h"
 
 #import "UIImage+ImageEffects.h"

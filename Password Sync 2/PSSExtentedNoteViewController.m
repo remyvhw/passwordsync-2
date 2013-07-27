@@ -7,7 +7,7 @@
 //
 
 #import "PSSExtentedNoteViewController.h"
-#import "PSSNoteVersion.h"
+#import "PSSDocumentVersion.h"
 
 @interface PSSExtentedNoteViewController ()
 
@@ -31,7 +31,7 @@
     self.title = NSLocalizedString(@"Note", nil);
     
     
-    self.textView.text = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+    self.textView.text = [(PSSDocumentVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
 }
 
 - (void)didReceiveMemoryWarning

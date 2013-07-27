@@ -6,26 +6,26 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSNotesListTableViewController.h"
-#import "PSSNotesEditorTableViewController.h"
+#import "PSSDocumentListTableViewController.h"
+#import "PSSDocumentEditorTableViewController.h"
 #import "PSSGenericDetailTableViewController.h"
-#import "PSSNoteBaseObject.h"
+#import "PSSDocumentBaseObject.h"
 #import "PSSAppDelegate.h"
 
 #import "PSSObjectDecorativeImage.h"
 
 
-@interface PSSNotesListTableViewController ()
+@interface PSSDocumentListTableViewController ()
 
 @end
 
-@implementation PSSNotesListTableViewController
+@implementation PSSDocumentListTableViewController
 
 -(void)newNoteAction:(id)sender{
     
     
     
-    PSSNotesEditorTableViewController * notesEditor = [[PSSNotesEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    PSSDocumentEditorTableViewController * notesEditor = [[PSSDocumentEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:notesEditor];
     
     [self.navigationController presentViewController:navController animated:YES completion:NULL];
@@ -142,7 +142,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PSSNoteBaseObject" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PSSDocumentBaseObject" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -233,7 +233,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    PSSNoteBaseObject *object = (PSSNoteBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    PSSDocumentBaseObject *object = (PSSDocumentBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
 
     

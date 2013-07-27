@@ -10,7 +10,7 @@
 @import CoreData;
 @class PSSGenericDetailTableViewController;
 
-@interface PSSNotesListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface PSSDocumentListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) PSSGenericDetailTableViewController *detailViewController;
 
