@@ -9,7 +9,8 @@
 #import "PSSObjectAttachment.h"
 #import "PSSBaseObjectVersion.h"
 #import "PSSObjectDecorativeImage.h"
-
+#import "PSSEncryptor.h"
+#import "PSSAppDelegate.h"
 
 @implementation PSSObjectAttachment
 
@@ -17,5 +18,39 @@
 @dynamic name;
 @dynamic encryptedObjectVersions;
 @dynamic thumbnail;
+
+@synthesize decryptedBinaryContent = _decryptedBinaryContent;
+
+
+
+-(void)setDecryptedBinaryContent:(NSData *)decryptedBinaryContent{
+    _decryptedBinaryContent = decryptedBinaryContent;
+    
+    self.binaryContent = [PSSEncryptor encryptData:decryptedBinaryContent];
+}
+
+
+-(NSData*)decryptedBinaryContent{
+    if (_decryptedBinaryContent) {
+        return _decryptedBinaryContent;
+    }
+    
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    if (!appDelegate.isUnlocked) {
+        return nil;
+    }
+    
+    
+    NSData * decryptedData = [PSSEncryptor decryptData:self.binaryContent];
+    _decryptedBinaryContent = decryptedData;
+    
+    return _decryptedBinaryContent;
+    
+}
+
+
+
+
 
 @end

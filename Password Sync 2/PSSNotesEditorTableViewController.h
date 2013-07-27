@@ -7,9 +7,11 @@
 //
 
 #import "PSSGenericEditorTableViewController.h"
-
+#import "PSSNoteBaseObject.h"
 #import "MAImagePickerController.h"
 
 @interface PSSNotesEditorTableViewController : PSSGenericEditorTableViewController <MAImagePickerControllerDelegate>
+
+@property (strong, nonatomic) PSSNoteBaseObject * baseObject;
 
 @end

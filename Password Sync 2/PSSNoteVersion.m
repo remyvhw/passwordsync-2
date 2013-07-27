@@ -13,5 +13,23 @@
 
 @dynamic noteTextContent;
 @dynamic displayName;
+@synthesize decryptedNoteTextContent = _decryptedNoteTextContent;
+
+-(NSString*)decryptedNoteTextContent{
+    
+    if (_decryptedNoteTextContent) {
+        return _decryptedNoteTextContent;
+    }
+    
+    NSString * decryptedNoteTextContent = [self decryptDataToUTF8String:self.noteTextContent];
+    
+    _decryptedNoteTextContent = decryptedNoteTextContent;
+    return _decryptedNoteTextContent;
+}
+
+-(void)setDecryptedNoteTextContent:(NSString *)decryptedNoteTextContent{
+    _decryptedNoteTextContent = decryptedNoteTextContent;
+    self.noteTextContent = [self encryptedDataFromUTF8String:decryptedNoteTextContent];
+}
 
 @end

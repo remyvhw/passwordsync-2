@@ -13,6 +13,10 @@
 		AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
 		AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
 		AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
+		AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
+		AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
+		AD1BECD017A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */; };
+		AD1BECD117A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
@@ -343,6 +347,9 @@
 		AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVshaDigester.m; path = "Password Sync 2/RVshaDigester.m"; sourceTree = "<group>"; };
 		AD0FAA381780F5610066B7E7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		AD0FAA391780F5610066B7E7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		AD1BECCB17A33C68001292E8 /* PSSThumbnailMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSThumbnailMaker.h; sourceTree = "<group>"; };
+		AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSThumbnailMaker.m; sourceTree = "<group>"; };
+		AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSNotesAttachmentTableViewCell.xib; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
@@ -768,6 +775,7 @@
 				AD547FA717A1AADF008FAFFB /* PSSNotesListTableViewController.m */,
 				AD547FAF17A1ACCA008FAFFB /* PSSNotesEditorTableViewController.h */,
 				AD547FB017A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m */,
+				AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */,
 			);
 			name = Notes;
 			sourceTree = "<group>";
@@ -964,6 +972,8 @@
 				ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */,
 				ADA0E53D1792036500F284B9 /* PSSFaviconFetcher.h */,
 				ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */,
+				AD1BECCB17A33C68001292E8 /* PSSThumbnailMaker.h */,
+				AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -1394,6 +1404,7 @@
 				AD54803217A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD727A4D179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD312647179F08A600483E2F /* README.md in Resources */,
+				AD1BECD017A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */,
 				ADC844C6179074DA00349B16 /* 15Dict_en.plist in Resources */,
 				AD54802617A1C7EE008FAFFB /* f-setting-3-active.png in Resources */,
 				AD74691B179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
@@ -1447,6 +1458,7 @@
 				AD54801F17A1C7EE008FAFFB /* f-setting-2-active.png in Resources */,
 				AD312648179F08A600483E2F /* README.md in Resources */,
 				AD54802917A1C7EE008FAFFB /* f-setting-3-active@2x.png in Resources */,
+				AD1BECD117A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */,
 				AD54804317A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54802B17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
@@ -1498,6 +1510,7 @@
 				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
 				ADA24BF4179851A8003BDCC5 /* PSSNoteVersion.m in Sources */,
+				AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
 				AD547FB117A1ACCA008FAFFB /* PSSNotesEditorTableViewController.m in Sources */,
@@ -1602,6 +1615,7 @@
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD547FD817A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
+				AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,

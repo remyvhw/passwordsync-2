@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) id baseObject;
 
+-(void)cancelAction:(id)sender;
+
 @end

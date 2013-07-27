@@ -9,6 +9,11 @@
 #import "PSSNotesEditorTableViewController.h"
 #import "PSSnewPasswordBasicTextFieldCell.h"
 #import "PSSnewPasswordMultilineTextFieldCell.h"
+#import "PSSNoteVersion.h"
+#import "PSSObjectAttachment.h"
+#import "PSSObjectDecorativeImage.h"
+#import "PSSThumbnailMaker.h"
+
 
 @interface PSSNotesEditorTableViewController ()
 
@@ -19,6 +24,74 @@
 @end
 
 @implementation PSSNotesEditorTableViewController
+
+-(void)deleteAttachment:(id)attachment{
+    
+    if ([attachment isKindOfClass:[PSSObjectAttachment class]]) {
+        // Actual attachment object
+        
+        PSSObjectAttachment * objectAttachment = (PSSObjectAttachment*)attachment;
+        
+        [objectAttachment.managedObjectContext deleteObject:objectAttachment];
+        
+    } else if ([attachment isKindOfClass:[NSString class]]) {
+        // NSString is a path to large attachment image
+        
+        NSURL * pathURL = [NSURL fileURLWithPath:(NSString*)attachment];
+        [[NSFileManager defaultManager] removeItemAtPath:(NSString*)pathURL error:nil];
+        
+        
+    }
+    [self.attachmentsArray removeObject:attachment];
+    
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+-(void)cancelAction:(id)sender{
+    
+    [super cancelAction:sender];
+    
+    [self cleanupUnsavedFilesInAttachmentArray];
+}
+
+-(void)cleanupUnsavedFilesInAttachmentArray{
+    
+    for (id attachment in self.attachmentsArray) {
+        
+        if ([attachment isKindOfClass:[NSString class]]) {
+            
+            [[NSFileManager defaultManager] removeItemAtPath:(NSString*)attachment error:nil];
+            
+        }
+        
+    }
+    
+}
+
+-(UIImage*)tableViewThumbnailForAttachment:(id)attachment{
+    
+    if ([attachment isKindOfClass:[PSSObjectAttachment class]]) {
+        // Actual attachment object
+        
+        PSSObjectAttachment * objectAttachment = (PSSObjectAttachment*)attachment;
+        
+        UIImage * attachment = [UIImage imageWithData:objectAttachment.thumbnail.data];
+        return attachment;
+        
+    } else if ([attachment isKindOfClass:[NSString class]]) {
+        // NSString is a path to large attachment image
+        
+        NSURL * pathURL = [NSURL fileURLWithPath:(NSString*)attachment];
+        
+        UIImage * thumbnailImage = [PSSThumbnailMaker thumbnailImageFromImageAtURL:pathURL maxSize:[UIScreen mainScreen].scale*195.];
+        return thumbnailImage;
+    }
+    
+    return nil;
+}
+
 
 -(void)presentDocumentCapturer:(id)sender{
     
@@ -36,6 +109,7 @@
     
 }
 
+#pragma mark - UIViewController lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +125,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"buttonCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PSSNotesAttachmentTableViewCell" bundle:[NSBundle mainBundle]]  forCellReuseIdentifier:@"attachmentCell"];
+    
+    
+    
+    if (self.baseObject) {
+        NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
+        NSSet * attachments = [(PSSNoteVersion*)self.baseObject.currentHardLinkedVersion attachments];
+        NSArray * arrayOfAttachments = [attachments sortedArrayUsingDescriptors:@[sortDescriptor]];
+        self.attachmentsArray = [[NSMutableArray alloc] initWithArray:arrayOfAttachments];
+    } else {
+        NSMutableArray * mutableArray = [[NSMutableArray alloc] initWithCapacity:5];
+        self.attachmentsArray = mutableArray;
+    }
+    
+}
+
+-(void)dealloc{
+    [self cleanupUnsavedFilesInAttachmentArray];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +165,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 2) {
+    if (indexPath.section==1) {
+        
+        NSInteger firstButtonIndex = [self.attachmentsArray count];
+        if (indexPath.row < firstButtonIndex) {
+            
+            return 215.;
+            
+        }
+        
+        
+    } else if (indexPath.section == 2) {
         return 144.;
     }
     
@@ -92,7 +194,7 @@
         return 1;
     } else if (section == 1) {
         // Attachments
-        return 1;
+        return [self.attachmentsArray count] + 1;
     } else if (section == 2) {
         // Notes
         return 1;
@@ -128,10 +230,22 @@
         // Before the button cells we must count the number of attachment objects to insert
         
         
-        NSInteger firstButtonIndex = [self.attachmentsArray count] - 1;
+        NSInteger firstButtonIndex = [self.attachmentsArray count];
         
         if (indexPath.row < firstButtonIndex) {
             // Attachments rows
+            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attachmentCell" forIndexPath:indexPath];
+            
+            UIImage * attachmentThumbnail = [self tableViewThumbnailForAttachment:[self.attachmentsArray objectAtIndex:indexPath.row]];
+            
+            UIImageView * cellImageView = (UIImageView*)[cell viewWithTag:100];
+            [cellImageView setImage:attachmentThumbnail];
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+            
             
         } else {
             // Buttons rows
@@ -215,6 +329,35 @@
     
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    
+    
+    if (indexPath.section == 1) {
+        
+        NSInteger firstButtonIndex = [self.attachmentsArray count];
+        if (indexPath.row < firstButtonIndex) {
+            return YES;
+        }
+        
+        
+    }
+    
+    return NO;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        
+        [self deleteAttachment:[self.attachmentsArray objectAtIndex:indexPath.row]];
+        
+    }
+}
+
+
 #pragma mark - MAImagePickerDelegate methods
 
 - (void)imagePickerDidCancel
@@ -224,19 +367,19 @@
 
 - (void)imagePickerDidChooseImageWithPath:(NSString *)path
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+            [self.attachmentsArray addObject:path];
+            
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+
+    }];
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-    {
-        NSLog(@"File Found at %@", path);
-        
-    }
-    else
-    {
-        NSLog(@"No File Found at %@", path);
-    }
+
     
-    [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+    
 }
 
 

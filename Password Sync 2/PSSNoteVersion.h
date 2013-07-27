@@ -16,4 +16,7 @@
 @property (nonatomic, retain) NSData * noteTextContent;
 @property (nonatomic, retain) NSString * displayName;
 
+@property (strong, nonatomic) NSString * decryptedNoteTextContent;
+
+
 @end

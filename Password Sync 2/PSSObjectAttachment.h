@@ -17,6 +17,10 @@
 @property (nonatomic, retain) NSData * name;
 @property (nonatomic, retain) NSSet *encryptedObjectVersions;
 @property (nonatomic, retain) PSSObjectDecorativeImage *thumbnail;
+
+@property (nonatomic, retain) NSData * decryptedBinaryContent;
+
+
 @end
 
 @interface PSSObjectAttachment (CoreDataGeneratedAccessors)

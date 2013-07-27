@@ -240,7 +240,8 @@
 
 - (void)storeImageToCache
 {
-    NSString *tmpPath = [NSString stringWithFormat:@"%@/%@", [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0], @"maimagepickercontollerfinalimage.jpg"];
+    NSString * imageUniqueName = [NSString stringWithFormat:@"finalImage-%f.jpg", [NSDate timeIntervalSinceReferenceDate]];
+    NSString *tmpPath = [NSString stringWithFormat:@"%@/%@", [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0], imageUniqueName];
     NSData* imageData = UIImageJPEGRepresentation(_adjustedImage, 0.8);
     [imageData writeToFile:tmpPath atomically:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MAIPCSuccessInternal" object:tmpPath];
