@@ -384,7 +384,7 @@
             PSSnewPasswordBasicTextFieldCell * titleCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.titleCell = titleCell;
             if (self.baseObject) {
-                //self.titleCell.textField.text = self.passwordBaseObject.displayName;
+                self.titleCell.textField.text = self.baseObject.displayName;
             }
             self.titleCell.textField.placeholder = NSLocalizedString(@"Title", nil);
             self.titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -455,7 +455,7 @@
             
             self.notesCell = notesCell;
             if (self.baseObject) {
-                //self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+                self.notesCell.textView.text = [(PSSNoteVersion*)self.baseObject.currentHardLinkedVersion decryptedNoteTextContent];
             }
             self.notesCell.selectionStyle =UITableViewCellSelectionStyleNone;
             

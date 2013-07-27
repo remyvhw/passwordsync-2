@@ -20,5 +20,7 @@
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
 @property (nonatomic, retain) PSSNoteBaseObject *noteBaseObject;
 
+@property (nonatomic, strong, readonly) UIImage * imageNormal;
+@property (nonatomic, strong, readonly) UIImage * imageLightEffect;
 
 @end

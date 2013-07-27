@@ -11,6 +11,7 @@
 #import "PSSNoteBaseObject.h"
 #import "PSSObjectAttachment.h"
 
+#import "UIImage+ImageEffects.h"
 
 @implementation PSSObjectDecorativeImage
 
@@ -20,5 +21,34 @@
 @dynamic attachment;
 @dynamic encryptedObject;
 @dynamic noteBaseObject;
+
+@synthesize imageNormal = _imageNormal;
+@synthesize imageLightEffect = _imageLightEffect;
+
+
+-(UIImage*)imageNormal{
+    
+    if (_imageNormal) {
+        return _imageNormal;
+    }
+    
+    UIImage * normalImage = [UIImage imageWithData:self.data];
+    _imageNormal = normalImage;
+    return _imageNormal;
+}
+
+
+-(UIImage*)imageLightEffect{
+    
+    if (_imageLightEffect) {
+        return _imageLightEffect;
+    }
+    
+    
+    UIImage * blurredImage = [self.imageNormal applyLightEffect];
+    _imageLightEffect = blurredImage;
+    return _imageLightEffect;
+}
+
 
 @end

@@ -125,11 +125,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-   /* if ([[segue identifier] isEqualToString:@"passwordDetailViewControllerSegue"]) {
+    if ([[segue identifier] isEqualToString:@"notesDetailViewControllerSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
-    } */
+    }
 }
 
 #pragma mark - Fetched results controller
