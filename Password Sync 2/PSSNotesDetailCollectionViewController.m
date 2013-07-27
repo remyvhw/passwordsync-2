@@ -22,6 +22,7 @@
 @end
 
 @implementation PSSNotesDetailCollectionViewController
+dispatch_queue_t backgroundQueue;
 
 -(void)editorAction:(id)sender{
     
@@ -52,6 +53,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -60,6 +62,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    backgroundQueue = dispatch_queue_create("com.pumaxprod.iOS.PasswordSync-2.notesCollectionViewBackgroundThread", NULL);
+
     
     self.collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
@@ -93,6 +98,13 @@
             return NO;
         }
         
+        // Check that we have a note to show.
+        NSString * decryptedNote = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+        
+        if (!decryptedNote || [decryptedNote isEqualToString:@""]) {
+            return NO;
+        }
+        
     }
     
     return YES;
@@ -115,16 +127,24 @@
         UILabel * label = (UILabel*)[collectionReusableView viewWithTag:1];
         UIImageView * accessoryView = (UIImageView*)[collectionReusableView viewWithTag:2];
         
-        NSLog(@"%@", [accessoryView description]);
         
-        if (self.isPasscodeUnlocked) {
-            [accessoryView setImage:[[UIImage imageNamed:@"Chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-            label.textColor = [UIColor darkTextColor];
-            label.text = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+        NSString * decryptedNote = [(PSSNoteVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+        
+        if (decryptedNote && ![decryptedNote isEqualToString:@""]) {
+            if (self.isPasscodeUnlocked) {
+                [accessoryView setImage:[[UIImage imageNamed:@"Chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+                label.textColor = [UIColor darkTextColor];
+                label.text = decryptedNote;
+            } else {
+                [accessoryView setImage:[[UIImage imageNamed:@"SmallLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+                label.textColor = [UIColor lightGrayColor];
+                label.text = NSLocalizedString(@"Locked", nil);
+            }
         } else {
-            [accessoryView setImage:[[UIImage imageNamed:@"SmallLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+            label.text = NSLocalizedString(@"No Notes", nil);
             label.textColor = [UIColor lightGrayColor];
-            label.text = NSLocalizedString(@"Locked", nil);
+            label.textAlignment = NSTextAlignmentCenter;
+
         }
 
         
@@ -149,16 +169,39 @@
     PSSObjectDecorativeImage * thumbnail = attachmentAtIndex.thumbnail;
     
     UIImageView * imageView = (UIImageView*)[cell viewWithTag:100];
+    UIImageView * lockImageView = (UIImageView*)[cell viewWithTag:2];
     
     UIImage * contentImage;
     if (self.isPasscodeUnlocked) {
+        [lockImageView setImage:nil];
+        
         contentImage = thumbnail.imageNormal;
+        imageView.image = contentImage;
     } else {
+        
+        [lockImageView setImage:[[UIImage imageNamed:@"LargeLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        
         // We blur the image
-        contentImage = thumbnail.imageLightEffect;
+        dispatch_async(backgroundQueue, ^(void) {
+            
+            UIImage * blurredThumbnail = thumbnail.imageLightEffect;
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+                [imageView setAlpha:0.0];
+                imageView.image = blurredThumbnail;
+                [UIView animateWithDuration:0.1 animations:^{
+                    [imageView setAlpha:1.0];
+                }];
+                
+                
+            });
+            
+        });
+        
     }
     
-    imageView.image = contentImage;
+    
     
     return cell;
 }
@@ -166,7 +209,13 @@
 #pragma mark - UICollectionViewDelegate methods
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%@", [indexPath description]);
+    
+    if (!self.isPasscodeUnlocked) {
+        [self showUnlockingViewController];
+        return;
+    }
+    
+    
 }
 
 @end
