@@ -181,17 +181,19 @@
     [self.window setTintColor:[UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     
+    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
         
-        UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)masterNavigationController.topViewController;
+        UISplitViewController *splitViewController = (UISplitViewController *)[[tabBarController viewControllers] objectAtIndex:0];
+        
+        UINavigationController *navigationController = [splitViewController.viewControllers firstObject];
+        
+        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
+        
     } else {
         
-        UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
         
         UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
         PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;

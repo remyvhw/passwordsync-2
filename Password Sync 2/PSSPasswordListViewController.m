@@ -30,7 +30,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     
-    self.detailViewController = (PSSPasswordDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 
@@ -116,8 +115,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = object;
     }
 }
 
