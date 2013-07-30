@@ -75,8 +75,6 @@
 		AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */; };
 		AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */; };
 		AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */; };
-		AD547FB417A1C4AB008FAFFB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD547FB317A1C4AB008FAFFB /* opencv2.framework */; };
-		AD547FB517A1C4AB008FAFFB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD547FB317A1C4AB008FAFFB /* opencv2.framework */; };
 		AD547FC917A1C5A6008FAFFB /* MACaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB817A1C5A6008FAFFB /* MACaptureSession.m */; };
 		AD547FCA17A1C5A6008FAFFB /* MACaptureSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FB817A1C5A6008FAFFB /* MACaptureSession.m */; };
 		AD547FCB17A1C5A6008FAFFB /* MAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FBA17A1C5A6008FAFFB /* MAConstants.m */; };
@@ -269,6 +267,8 @@
 		AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */; };
 		AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
 		AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
+		AD940E5B17A8651C001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
+		AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
 		AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */; };
 		AD9935941794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */; };
 		AD9935971794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */; };
@@ -414,7 +414,6 @@
 		AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericEditorTableViewController.m; sourceTree = "<group>"; };
 		AD547FAF17A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentEditorTableViewController.h; sourceTree = "<group>"; };
 		AD547FB017A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentEditorTableViewController.m; sourceTree = "<group>"; };
-		AD547FB317A1C4AB008FAFFB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		AD547FB717A1C5A6008FAFFB /* MACaptureSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACaptureSession.h; sourceTree = "<group>"; };
 		AD547FB817A1C5A6008FAFFB /* MACaptureSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACaptureSession.m; sourceTree = "<group>"; };
 		AD547FB917A1C5A6008FAFFB /* MAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAConstants.h; sourceTree = "<group>"; };
@@ -568,6 +567,7 @@
 		AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeFirstViewController.m; sourceTree = "<group>"; };
 		AD8F5AED1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.h; sourceTree = "<group>"; };
 		AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.m; sourceTree = "<group>"; };
+		AD940E5A17A8651C001442F0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnlockPrompt.storyboard; sourceTree = "<group>"; };
 		AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSUnlockPromptViewController.h; sourceTree = "<group>"; };
 		AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSUnlockPromptViewController.m; sourceTree = "<group>"; };
@@ -649,13 +649,13 @@
 				ADFA1A1D179258410038EF14 /* QuartzCore.framework in Frameworks */,
 				ADFA1A1B179258350038EF14 /* OpenGLES.framework in Frameworks */,
 				ADFA1A191792581C0038EF14 /* MobileCoreServices.framework in Frameworks */,
-				AD547FB417A1C4AB008FAFFB /* opencv2.framework in Frameworks */,
 				ADFA1A17179257FF0038EF14 /* CoreMedia.framework in Frameworks */,
 				ADFA1A15179257F80038EF14 /* AudioToolbox.framework in Frameworks */,
 				ADFA1A13179257EF0038EF14 /* AVFoundation.framework in Frameworks */,
 				ADA0E54B179249B900F284B9 /* libxml2.dylib in Frameworks */,
 				AD821073177D37FA00B6F501 /* Security.framework in Frameworks */,
 				AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */,
+				AD940E5B17A8651C001442F0 /* opencv2.framework in Frameworks */,
 				ADFA1A10179257BB0038EF14 /* libCardIO.a in Frameworks */,
 				AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */,
 				AD72C3C3177B7E27009AADC8 /* CoreData.framework in Frameworks */,
@@ -668,7 +668,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD547FB517A1C4AB008FAFFB /* opencv2.framework in Frameworks */,
+				AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */,
 				AD72C3E7177B7E28009AADC8 /* XCTest.framework in Frameworks */,
 				AD72C3EA177B7E28009AADC8 /* CoreData.framework in Frameworks */,
 				ADFA1A11179257BB0038EF14 /* libCardIO.a in Frameworks */,
@@ -944,12 +944,12 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD940E5A17A8651C001442F0 /* opencv2.framework */,
 				ADF10D4A17A4667000CAB546 /* UIIMage Blur Category */,
 				AD547FDF17A1C679008FAFFB /* MediaPlayer.framework */,
 				AD547FDD17A1C667008FAFFB /* CoreImage.framework */,
 				AD547FDB17A1C653008FAFFB /* ImageIO.framework */,
 				AD547FB617A1C5A6008FAFFB /* MAImagePickerController */,
-				AD547FB317A1C4AB008FAFFB /* opencv2.framework */,
 				AD31267917A07CBD00483E2F /* SVProgressHUD */,
 				AD31266D179F08AB00483E2F /* TSMessage */,
 				ADFA1A1C179258410038EF14 /* QuartzCore.framework */,
@@ -1866,6 +1866,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
@@ -1890,6 +1891,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
@@ -1914,6 +1916,7 @@
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
 					"$(SRCROOT)",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
@@ -1941,6 +1944,7 @@
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
 					"$(SRCROOT)",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";

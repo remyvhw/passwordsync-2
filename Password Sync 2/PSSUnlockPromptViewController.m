@@ -145,7 +145,9 @@
 
 -(PSSWelcomeScreenGesturePasscodeSetterViewController*)instanciateGestureViewController{
     
-    PSSWelcomeScreenGesturePasscodeSetterViewController * gestureController = [self.storyboard instantiateViewControllerWithIdentifier:@"gesturePatternViewController"];
+    UIStoryboard * welcomeScreenStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    
+    PSSWelcomeScreenGesturePasscodeSetterViewController * gestureController = [welcomeScreenStoryboard instantiateViewControllerWithIdentifier:@"gesturePatternViewController"];
     gestureController.promptMode = YES;
     return gestureController;
 }
@@ -174,7 +176,9 @@
 
 -(PSSWelcomeScreenPINPasscodeSetterViewController*)instanciatePINViewController{
     
-    PSSWelcomeScreenPINPasscodeSetterViewController * pinController = [self.storyboard instantiateViewControllerWithIdentifier:@"PINviewController"];
+    UIStoryboard * welcomeScreenStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    
+    PSSWelcomeScreenPINPasscodeSetterViewController * pinController = [welcomeScreenStoryboard instantiateViewControllerWithIdentifier:@"PINviewController"];
     pinController.promptMode = YES;
     return pinController;
 }

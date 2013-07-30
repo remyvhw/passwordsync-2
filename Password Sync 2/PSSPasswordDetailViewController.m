@@ -104,7 +104,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        UIImage * image = [self drawWebViewToImage:[self.backgroundWebView snapshotView]];
+        UIImage * image = [self drawWebViewToImage:[self.backgroundWebView snapshotViewAfterScreenUpdates:YES]];
         [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:image animated:YES];
         [self.backgroundWebView removeFromSuperview];
         self.backgroundWebView = nil;
