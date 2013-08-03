@@ -789,30 +789,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDK-dJ-xCS">
-                                <rect key="frame" x="0.0" y="640" width="320" height="320"/>
+                                <rect key="frame" x="163" y="497" width="443" height="443"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="BRF-GD-Xg7"/>
-                                    <constraint firstAttribute="height" constant="320" id="tpa-2V-Seh"/>
+                                    <constraint firstAttribute="height" constant="443" id="N70-oD-mPM"/>
+                                    <constraint firstAttribute="width" constant="443" id="gMo-j6-l7j"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw your custom gesture pattern" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="YJA-B0-tFF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Draw your custom gesture pattern" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="YJA-B0-tFF">
                                 <rect key="frame" x="20" y="20" width="728" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="YJA-B0-tFF" secondAttribute="trailing" constant="20" id="E5Q-rk-Ucs"/>
-                            <constraint firstItem="YJA-B0-tFF" firstAttribute="top" secondItem="P4u-oX-lQR" secondAttribute="bottom" constant="20" id="Gzm-L9-wfd"/>
-                            <constraint firstItem="MDK-dJ-xCS" firstAttribute="leading" secondItem="ulG-Fu-XA8" secondAttribute="leading" id="Q3X-I0-nZy"/>
-                            <constraint firstItem="YJA-B0-tFF" firstAttribute="leading" secondItem="ulG-Fu-XA8" secondAttribute="leading" constant="20" id="WHy-cJ-df6"/>
-                            <constraint firstItem="517-ZD-Emz" firstAttribute="top" secondItem="MDK-dJ-xCS" secondAttribute="bottom" id="bqi-Qd-1xq"/>
-                            <constraint firstAttribute="trailing" secondItem="MDK-dJ-xCS" secondAttribute="trailing" id="mnG-7c-DlZ"/>
+                            <constraint firstAttribute="centerX" secondItem="YJA-B0-tFF" secondAttribute="centerX" id="awe-xn-X0A"/>
+                            <constraint firstItem="YJA-B0-tFF" firstAttribute="top" secondItem="P4u-oX-lQR" secondAttribute="bottom" constant="20" id="da7-AB-SRW"/>
+                            <constraint firstItem="517-ZD-Emz" firstAttribute="top" secondItem="MDK-dJ-xCS" secondAttribute="bottom" constant="20" id="oip-vG-56c"/>
+                            <constraint firstAttribute="centerX" secondItem="MDK-dJ-xCS" secondAttribute="centerX" constant="-0.5" id="qYx-iO-4bm"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -829,7 +826,7 @@
             </objects>
             <point key="canvasLocation" x="5702" y="-917"/>
         </scene>
-        <!--Welcome Screen Finished View Controller - You're done!-->
+        <!--Welcome Screen Finished View Controller - All done!-->
         <scene sceneID="5jj-23-Vf1">
             <objects>
                 <viewController id="zU2-bP-Lhw" customClass="PSSWelcomeScreenFinishedViewController" sceneMemberID="viewController">
@@ -841,22 +838,26 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="gEo-0Y-Ljq">
-                                <rect key="frame" x="20" y="20" width="728" height="868"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Congratulations! Your Password Sync is now configured and ready to use on this device! Just launch Password Sync on your other devices to enable syncing and you'll be done!</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MD9-Cp-Vk3">
-                                <rect key="frame" x="58" y="896" width="205" height="44"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="525" translatesAutoresizingMaskIntoConstraints="NO" id="gEo-0Y-Ljq">
+                                <rect key="frame" x="122" y="444" width="525" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="525" id="bVJ-K6-mAn"/>
+                                </constraints>
+                                <string key="text">Congratulations! Your Password Sync is now configured and ready to use on this device! Just launch Password Sync on your other devices to enable syncing and you'll be done!</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MD9-Cp-Vk3">
+                                <rect key="frame" x="224" y="896" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Xqx-SW-c9q"/>
                                     <constraint firstAttribute="height" constant="44" id="ebC-vN-0u7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline1"/>
-                                <state key="normal" title="Start using Password Sync">
-                                    <color key="titleColor" red="0.180392161" green="0.5647059083" blue="0.35294118520000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start using Password Sync" backgroundImage="GreenIcon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -866,19 +867,26 @@
                                     <action selector="finishWelcomeScreenWalkthrough:" destination="zU2-bP-Lhw" eventType="touchUpInside" id="QG5-v2-2I1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-rn-tpR">
+                                <rect key="frame" x="266" y="20" width="236" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="150"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gEo-0Y-Ljq" firstAttribute="leading" secondItem="mZw-dI-Jyj" secondAttribute="leading" constant="20" id="9hT-Zb-Twd"/>
+                            <constraint firstItem="Btg-rn-tpR" firstAttribute="top" secondItem="9cK-je-oXg" secondAttribute="bottom" constant="20" id="2aH-dd-JdU"/>
+                            <constraint firstAttribute="centerY" secondItem="gEo-0Y-Ljq" secondAttribute="centerY" id="Hx1-Kl-90p"/>
                             <constraint firstAttribute="bottom" secondItem="MD9-Cp-Vk3" secondAttribute="bottom" constant="20" id="IfN-Vs-ulS"/>
-                            <constraint firstAttribute="trailing" secondItem="gEo-0Y-Ljq" secondAttribute="trailing" constant="20" id="MJE-5k-Tub"/>
+                            <constraint firstAttribute="centerX" secondItem="Btg-rn-tpR" secondAttribute="centerX" id="WN3-Gd-ACA"/>
                             <constraint firstAttribute="centerX" secondItem="MD9-Cp-Vk3" secondAttribute="centerX" id="b7V-bc-cGH"/>
-                            <constraint firstItem="MD9-Cp-Vk3" firstAttribute="top" secondItem="gEo-0Y-Ljq" secondAttribute="bottom" constant="8" id="mpl-qo-XJc"/>
-                            <constraint firstItem="gEo-0Y-Ljq" firstAttribute="top" secondItem="mZw-dI-Jyj" secondAttribute="top" constant="20" id="zvx-5f-174"/>
+                            <constraint firstAttribute="centerX" secondItem="gEo-0Y-Ljq" secondAttribute="centerX" constant="-0.5" id="uOf-bO-tjk"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="You're done!" id="dWf-N2-9WG"/>
+                    <navigationItem key="navigationItem" title="All done!" id="dWf-N2-9WG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NoA-iP-NSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1137,7 +1145,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="•••••" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUo-PX-vvd">
-                                <rect key="frame" x="123" y="20" width="75" height="36"/>
+                                <rect key="frame" x="347" y="20" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1324,8 +1332,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="X50-2d-Sm3"/>
+        <segue reference="KnS-XS-8Om"/>
         <segue reference="sQc-ke-dez"/>
-        <segue reference="YbN-GI-6qd"/>
+        <segue reference="X50-2d-Sm3"/>
     </inferredMetricsTieBreakers>
 </document>

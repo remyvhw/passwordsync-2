@@ -81,22 +81,39 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    
-    
-    SPLockScreen * lockScreen = [[SPLockScreen alloc] initWithFrame:CGRectMake(0, 0, self.lockScreenSubview.frame.size.width, self.lockScreenSubview.frame.size.height)];
+    SPLockScreen * lockScreen;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        lockScreen = [[SPLockScreen alloc] initWithFrame:CGRectMake(self.lockScreenSubview.frame.origin.x, self.lockScreenSubview.frame.origin.y, self.lockScreenSubview.frame.size.width, self.lockScreenSubview.frame.size.height)];
+    } else {
+            lockScreen = [[SPLockScreen alloc] initWithFrame:CGRectMake(0, 0, self.lockScreenSubview.frame.size.width, self.lockScreenSubview.frame.size.height)];
+    }
+
     [lockScreen setAlpha:0.0];
-    [self.lockScreenSubview addSubview:lockScreen];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.view addSubview:lockScreen];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        [self.lockScreenSubview addSubview:lockScreen];
+    }
+
+
     
     lockScreen.delegate = self;
     self.lockScreen = lockScreen;
     
     CGAffineTransform scaleTransform = CGAffineTransformScale(self.lockScreen.transform, 1.25, 1.25);
+        
+        self.lockScreen.transform = scaleTransform;
     
-    self.lockScreen.transform = scaleTransform;
     
     [UIView animateWithDuration:0.1 animations:^{
         [lockScreen setAlpha:1.0];
+        
         self.lockScreen.transform = CGAffineTransformScale(self.lockScreen.transform, 0.8, 0.8);
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+           [self.lockScreen setCenter:self.lockScreenSubview.center];
+        }
+
+        
     }];
     
 }
@@ -231,5 +248,18 @@
     
     
 }
+
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [UIView animateWithDuration:0.1 animations:^{
+            [self.lockScreen setCenter:self.lockScreenSubview.center];
+        }];
+        
+    }
+}
+
+
 
 @end
