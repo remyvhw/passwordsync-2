@@ -905,8 +905,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHk-u7-fg4" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="257" y="595" width="75" height="75"/>
+                                <rect key="frame" x="257" y="307" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="1">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -929,8 +930,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-ZF-gpS" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="347" y="595" width="75" height="75"/>
+                                <rect key="frame" x="347" y="307" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="2">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -953,8 +955,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jly-Xd-iJI" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="437" y="595" width="75" height="75"/>
+                                <rect key="frame" x="437" y="307" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="3">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -977,8 +980,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hZ-0D-BW1" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="257" y="685" width="75" height="75"/>
+                                <rect key="frame" x="257" y="397" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="4">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1001,8 +1005,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-Et-XpG" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="347" y="685" width="75" height="75"/>
+                                <rect key="frame" x="347" y="397" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="5">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1025,8 +1030,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-GP-gj8" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="437" y="685" width="75" height="75"/>
+                                <rect key="frame" x="437" y="397" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="6">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1049,8 +1055,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtS-B9-EBh" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="257" y="775" width="75" height="75"/>
+                                <rect key="frame" x="257" y="487" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="7">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1073,8 +1080,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-ht-Huw" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="347" y="775" width="75" height="75"/>
+                                <rect key="frame" x="347" y="487" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="8">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1097,8 +1105,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0m-aL-icR" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="437" y="775" width="75" height="75"/>
+                                <rect key="frame" x="437" y="487" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="9">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1121,8 +1130,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHa-0W-U2c" customClass="PSSPINpasscodeButtonView">
-                                <rect key="frame" x="347" y="865" width="75" height="75"/>
+                                <rect key="frame" x="347" y="577" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" hint="" label="0">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
@@ -1144,10 +1154,10 @@
                                     <action selector="pressedKeypad:" destination="Amr-x9-ur7" eventType="touchUpInside" id="PtR-Rl-4Vq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="•••••" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUo-PX-vvd">
-                                <rect key="frame" x="347" y="20" width="75" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="•••••" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="481" translatesAutoresizingMaskIntoConstraints="NO" id="dUo-PX-vvd">
+                                <rect key="frame" x="144" y="20" width="481" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1160,7 +1170,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Clear">
-                                    <color key="titleColor" red="0.16546140149999999" green="0.79079639670000001" blue="0.1352157209" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.180392161" green="0.5647059083" blue="0.35294118520000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -1173,38 +1183,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vtS-B9-EBh" firstAttribute="top" secondItem="5hZ-0D-BW1" secondAttribute="bottom" constant="15" id="2em-vi-NVs"/>
-                            <constraint firstItem="5hZ-0D-BW1" firstAttribute="top" secondItem="eHk-u7-fg4" secondAttribute="bottom" constant="15" id="7Gj-F7-cfd"/>
-                            <constraint firstItem="3Od-ht-Huw" firstAttribute="leading" secondItem="vtS-B9-EBh" secondAttribute="trailing" constant="15" id="8Hw-ac-nOa"/>
-                            <constraint firstItem="G0m-aL-icR" firstAttribute="top" secondItem="Ahu-GP-gj8" secondAttribute="bottom" constant="15" id="9vS-wQ-9oS"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G0m-aL-icR" secondAttribute="trailing" constant="32" id="Ae9-ci-jxo"/>
-                            <constraint firstItem="3Dp-Et-XpG" firstAttribute="top" secondItem="Sdd-ZF-gpS" secondAttribute="bottom" constant="15" id="BQK-Kf-n18"/>
-                            <constraint firstItem="3Dp-Et-XpG" firstAttribute="leading" secondItem="5hZ-0D-BW1" secondAttribute="trailing" constant="15" id="DZI-xH-iQf"/>
-                            <constraint firstItem="G0m-aL-icR" firstAttribute="leading" secondItem="3Od-ht-Huw" secondAttribute="trailing" constant="15" id="FkR-dR-PSX"/>
-                            <constraint firstAttribute="bottom" secondItem="0VI-fQ-UT3" secondAttribute="bottom" constant="20" id="Iv0-Cw-VGa"/>
-                            <constraint firstItem="jly-Xd-iJI" firstAttribute="leading" secondItem="Sdd-ZF-gpS" secondAttribute="trailing" constant="15" id="JJ3-ej-pat"/>
-                            <constraint firstItem="Ahu-GP-gj8" firstAttribute="top" secondItem="jly-Xd-iJI" secondAttribute="bottom" constant="15" id="LM9-hx-fRw"/>
-                            <constraint firstItem="Ahu-GP-gj8" firstAttribute="leading" secondItem="3Dp-Et-XpG" secondAttribute="trailing" constant="15" id="LxL-Xk-8JO"/>
-                            <constraint firstItem="vtS-B9-EBh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SlE-S7-Vhf" secondAttribute="leading" constant="33" id="OPW-4H-lO0"/>
-                            <constraint firstAttribute="centerX" secondItem="Sdd-ZF-gpS" secondAttribute="centerX" constant="-0.5" id="TCX-te-7WH"/>
-                            <constraint firstItem="cHa-0W-U2c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SlE-S7-Vhf" secondAttribute="leading" constant="123" id="X1x-sC-a8O"/>
-                            <constraint firstAttribute="centerX" secondItem="dUo-PX-vvd" secondAttribute="centerX" id="Zil-eE-7Lk"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cHa-0W-U2c" secondAttribute="trailing" constant="122" id="dX3-kV-OEb"/>
-                            <constraint firstItem="3Od-ht-Huw" firstAttribute="top" secondItem="3Dp-Et-XpG" secondAttribute="bottom" constant="15" id="hte-oH-xTu"/>
-                            <constraint firstItem="eHk-u7-fg4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SlE-S7-Vhf" secondAttribute="leading" constant="33" id="nxP-fb-Gkb"/>
-                            <constraint firstAttribute="bottom" secondItem="vtS-B9-EBh" secondAttribute="bottom" constant="110" id="nz5-yK-0gW"/>
-                            <constraint firstAttribute="centerX" secondItem="cHa-0W-U2c" secondAttribute="centerX" constant="-0.5" id="pA2-Fc-xqg"/>
-                            <constraint firstAttribute="centerX" secondItem="3Dp-Et-XpG" secondAttribute="centerX" constant="-0.5" id="phS-jp-bUt"/>
-                            <constraint firstAttribute="bottom" secondItem="G0m-aL-icR" secondAttribute="bottom" constant="110" id="sFS-fI-ntO"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jly-Xd-iJI" secondAttribute="trailing" constant="32" id="tm0-Cg-EVO"/>
-                            <constraint firstAttribute="bottom" secondItem="cHa-0W-U2c" secondAttribute="bottom" constant="20" id="uK5-NH-i6C"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ahu-GP-gj8" secondAttribute="trailing" constant="32" id="uUT-pa-Wvm"/>
-                            <constraint firstItem="5hZ-0D-BW1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SlE-S7-Vhf" secondAttribute="leading" constant="33" id="vnN-YA-Old"/>
-                            <constraint firstItem="cHa-0W-U2c" firstAttribute="top" secondItem="3Od-ht-Huw" secondAttribute="bottom" constant="15" id="vpP-te-cVx"/>
-                            <constraint firstAttribute="trailing" secondItem="0VI-fQ-UT3" secondAttribute="trailing" constant="20" id="w0f-ym-taS"/>
-                            <constraint firstItem="dUo-PX-vvd" firstAttribute="top" secondItem="SlE-S7-Vhf" secondAttribute="top" constant="20" id="w34-7U-AqJ"/>
-                            <constraint firstItem="Sdd-ZF-gpS" firstAttribute="leading" secondItem="eHk-u7-fg4" secondAttribute="trailing" constant="15" id="xEy-KN-y9p"/>
-                            <constraint firstAttribute="centerX" secondItem="3Od-ht-Huw" secondAttribute="centerX" constant="-0.5" id="xV3-XD-RLL"/>
+                            <constraint firstAttribute="centerX" secondItem="3Dp-Et-XpG" secondAttribute="centerX" constant="-0.5" id="2im-gs-Jpu"/>
+                            <constraint firstItem="jly-Xd-iJI" firstAttribute="leading" secondItem="Sdd-ZF-gpS" secondAttribute="trailing" constant="15" id="39n-bK-umX"/>
+                            <constraint firstItem="cHa-0W-U2c" firstAttribute="top" secondItem="3Od-ht-Huw" secondAttribute="bottom" constant="15" id="C05-wl-zsY"/>
+                            <constraint firstItem="Sdd-ZF-gpS" firstAttribute="leading" secondItem="eHk-u7-fg4" secondAttribute="trailing" constant="15" id="CqS-1U-JVM"/>
+                            <constraint firstAttribute="centerY" secondItem="5hZ-0D-BW1" secondAttribute="centerY" constant="45.5" id="D2g-PG-cry"/>
+                            <constraint firstAttribute="centerX" secondItem="3Od-ht-Huw" secondAttribute="centerX" constant="-0.5" id="EiB-DO-fr0"/>
+                            <constraint firstAttribute="centerX" secondItem="dUo-PX-vvd" secondAttribute="centerX" constant="-0.5" id="GfX-tk-EtH"/>
+                            <constraint firstItem="G0m-aL-icR" firstAttribute="top" secondItem="Ahu-GP-gj8" secondAttribute="bottom" constant="15" id="IIE-bC-e2h"/>
+                            <constraint firstItem="3Dp-Et-XpG" firstAttribute="leading" secondItem="5hZ-0D-BW1" secondAttribute="trailing" constant="15" id="JXE-ey-IrO"/>
+                            <constraint firstItem="5hZ-0D-BW1" firstAttribute="top" secondItem="eHk-u7-fg4" secondAttribute="bottom" constant="15" id="L48-bW-E7S"/>
+                            <constraint firstItem="vtS-B9-EBh" firstAttribute="top" secondItem="5hZ-0D-BW1" secondAttribute="bottom" constant="15" id="Ml2-42-XFB"/>
+                            <constraint firstItem="jly-Xd-iJI" firstAttribute="leading" secondItem="Sdd-ZF-gpS" secondAttribute="trailing" constant="15" id="NSQ-IM-ReU"/>
+                            <constraint firstItem="Ahu-GP-gj8" firstAttribute="leading" secondItem="3Dp-Et-XpG" secondAttribute="trailing" constant="15" id="Nen-zh-AXa"/>
+                            <constraint firstItem="3Od-ht-Huw" firstAttribute="top" secondItem="3Dp-Et-XpG" secondAttribute="bottom" constant="15" id="SDl-mz-rBP"/>
+                            <constraint firstAttribute="trailing" secondItem="0VI-fQ-UT3" secondAttribute="trailing" constant="20" id="VAA-WV-pUC"/>
+                            <constraint firstItem="REb-mn-XQU" firstAttribute="top" secondItem="0VI-fQ-UT3" secondAttribute="bottom" constant="20" id="Yoh-hV-Kr0"/>
+                            <constraint firstItem="G0m-aL-icR" firstAttribute="leading" secondItem="3Od-ht-Huw" secondAttribute="trailing" constant="15" id="a06-Xg-SWb"/>
+                            <constraint firstItem="3Od-ht-Huw" firstAttribute="leading" secondItem="vtS-B9-EBh" secondAttribute="trailing" constant="15" id="awJ-z8-6Ss"/>
+                            <constraint firstItem="dUo-PX-vvd" firstAttribute="top" secondItem="3n7-Qe-U2C" secondAttribute="bottom" constant="20" id="d9y-aO-CT4"/>
+                            <constraint firstAttribute="centerY" secondItem="Ahu-GP-gj8" secondAttribute="centerY" constant="45.5" id="fY8-jJ-Opw"/>
+                            <constraint firstItem="3Dp-Et-XpG" firstAttribute="top" secondItem="Sdd-ZF-gpS" secondAttribute="bottom" constant="15" id="kf0-pK-zsI"/>
+                            <constraint firstItem="Ahu-GP-gj8" firstAttribute="top" secondItem="jly-Xd-iJI" secondAttribute="bottom" constant="15" id="mBe-u5-rcJ"/>
+                            <constraint firstAttribute="centerX" secondItem="cHa-0W-U2c" secondAttribute="centerX" constant="-0.5" id="okW-Jd-cF9"/>
+                            <constraint firstItem="jly-Xd-iJI" firstAttribute="leading" secondItem="Sdd-ZF-gpS" secondAttribute="trailing" constant="15" id="sRL-8y-yBc"/>
+                            <constraint firstAttribute="centerX" secondItem="Sdd-ZF-gpS" secondAttribute="centerX" constant="-0.5" id="twS-Sy-n1F"/>
+                            <constraint firstAttribute="centerY" secondItem="3Dp-Et-XpG" secondAttribute="centerY" constant="45.5" id="xWD-qI-aUX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
