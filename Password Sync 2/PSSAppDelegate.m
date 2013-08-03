@@ -175,7 +175,9 @@
     [MKiCloudSync start];
     
     
-    if (1) {
+    
+    ///////DEBUG 
+    if (0) {
         
         PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
         [keychainBindings removeObjectForKey:PSSHashedMasterPasswordKeychainEntry];

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="PSSBaseGenericObject" representedClassName="PSSBaseGenericObject" isAbstract="YES" syncable="YES">
         <attribute name="created" attributeType="Date" syncable="YES"/>
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectCategory" inverseName="encryptedObjects" inverseEntity="PSSObjectCategory" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseGenericObject" inverseName="parent" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="currentHardLinkedVersion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSBaseObjectVersion" inverseName="currentOwningBaseObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
@@ -109,9 +110,9 @@
         <element name="PSSCreditCardBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSCreditCardVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSDocumentBaseObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PSSDocumentVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSLocationBaseObject" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSLocationVersion" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PSSDocumentVersion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectAttachment" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectCategory" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PSSObjectDecorativeImage" positionX="0" positionY="0" width="0" height="0"/>
