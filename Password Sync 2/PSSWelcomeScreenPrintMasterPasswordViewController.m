@@ -15,6 +15,7 @@
 - (IBAction)neverAskAgainAction:(id)sender;
 - (IBAction)printAction:(id)sender;
 - (IBAction)skipForNowAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *printButton;
 
 @end
 
@@ -133,7 +134,11 @@
                 }
             };
             
-            [printer presentAnimated:YES completionHandler:completionHandler];
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                [printer presentFromRect:self.printButton.frame inView:self.view animated:YES completionHandler:completionHandler];
+            } else {
+                [printer presentAnimated:YES completionHandler:completionHandler];
+            }
             
             
             
