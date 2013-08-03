@@ -91,8 +91,13 @@
     if ([passcodeVerifyer countOfPasscodeAttempts] >= 5) {
         // User has been locked out, present the passcode setter view controller.
         
+        UIStoryboard * welcomeStoryboard;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            welcomeStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPad" bundle:[NSBundle mainBundle]];
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            welcomeStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+        }
         
-        UIStoryboard * welcomeStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
         
         PSSWelcomeScreenPasscodeModeChooserTableViewController * passcodeChooserController = [welcomeStoryboard instantiateViewControllerWithIdentifier:@"passcodeChooserTypeSelectorViewController"];
 
@@ -176,7 +181,14 @@
 
 -(PSSWelcomeScreenPINPasscodeSetterViewController*)instanciatePINViewController{
     
-    UIStoryboard * welcomeScreenStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    UIStoryboard * welcomeScreenStoryboard;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        welcomeScreenStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPad" bundle:[NSBundle mainBundle]];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        welcomeScreenStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    }
+    
+    
     
     PSSWelcomeScreenPINPasscodeSetterViewController * pinController = [welcomeScreenStoryboard instantiateViewControllerWithIdentifier:@"PINviewController"];
     pinController.promptMode = YES;

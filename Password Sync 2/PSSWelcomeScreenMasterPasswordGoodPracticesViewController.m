@@ -7,6 +7,8 @@
 //
 
 #import "PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h"
+#import "UIImage+ImageEffects.h"
+
 
 @interface PSSWelcomeScreenMasterPasswordGoodPracticesViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -30,16 +32,27 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.mainScrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    for (UIView * subview in [self.mainScrollView subviews]) {
-        [subview setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    NSString * explanationText = NSLocalizedString(@"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!", nil);
+    
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        
+                
+        self.explaningText.text = explanationText;
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        [self.mainScrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
+        for (UIView * subview in [self.mainScrollView subviews]) {
+            [subview setTranslatesAutoresizingMaskIntoConstraints:NO];
+        }
+        
+        self.explaningText.text = explanationText;
+        [self.explaningText sizeToFit];
+        
+        [self.mainScrollView setContentInset:UIEdgeInsetsMake(0, 0, self.navigationController.navigationBar.frame.size.height*2, 0)];
     }
     
-    self.explaningText.text = NSLocalizedString(@"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!", nil);
-    [self.explaningText sizeToFit];
-    
-    [self.mainScrollView setContentInset:UIEdgeInsetsMake(0, 0, self.navigationController.navigationBar.frame.size.height*2, 0)];
 
 }
 

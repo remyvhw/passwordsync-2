@@ -11,6 +11,8 @@
 #import "PSSMasterPasswordVerifyerViewController.h"
 
 @interface PSSWelcomeNewUserSetMasterPasswordViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *keyIconImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *hintIconImageView;
 
 @end
 
@@ -51,6 +53,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.masterPasswordTextField becomeFirstResponder];
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UIImage * keyIcon = [UIImage imageNamed:@"KeyIcon"];
+        UIImage * umbrellaIcon = [UIImage imageNamed:@"Umbrella"];
+        
+        
+        [self.keyIconImageView setImage:[keyIcon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        
+        
+        [self.hintIconImageView setImage:[umbrellaIcon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -174,6 +174,31 @@
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
+    
+    if (1) {
+        
+        PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
+        [keychainBindings removeObjectForKey:PSSHashedMasterPasswordKeychainEntry];
+        [keychainBindings removeObjectForKey:PSSHashedPasscodeCodeKeychainEntry];
+        [keychainBindings removeObjectForKey:PSSDefinedPasscodeType];
+        [keychainBindings removeObjectForKey:PSSlastLocalMasterPasswordChange];
+        [keychainBindings removeObjectForKey:PSSFailedPasscodeAttempsCount];
+        
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults removeObjectForKey:PSSApplicationWasConfiguredOnAnotherDeviceDefaults];
+        [userDefaults removeObjectForKey:PSSMasterPasswordHintTextString];
+        [userDefaults removeObjectForKey:PSSMasterPasswordVerificationHash];
+        [userDefaults removeObjectForKey:PSSUserAlreadyPrintedMasterPassword];
+        [userDefaults removeObjectForKey:PSSlastGlobalMasterPasswordChange];
+        
+
+    }
+
+
+    
+    
+    
+    
     [self instanciateLocationManager];
     
     // Override point for customization after application launch.
@@ -205,6 +230,9 @@
     [self checkForJailbreaks];
     
     
+    
+    
+
     
     
     
@@ -254,7 +282,14 @@
         
         if (!hashedMasterPassword || !hashedPasscode) {
             // Launch the welcome screen
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:nil];
+            UIStoryboard * sb;
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                sb = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPad" bundle:[NSBundle mainBundle]];
+            } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+                sb = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+            }
+            
+            
             UINavigationController *vc = [sb instantiateInitialViewController];
             
             [self.window.rootViewController presentViewController:vc animated:YES completion:^{

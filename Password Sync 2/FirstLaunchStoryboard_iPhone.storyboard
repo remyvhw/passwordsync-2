@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-600" y="-237"/>
         </scene>
-        <!--View Controller - Password Sync 2-->
+        <!--Splash Welcome View Controller - Password Sync 2-->
         <scene sceneID="RdX-rX-Fuw">
             <objects>
-                <viewController title="Password Sync 2" id="72R-GY-BAB" sceneMemberID="viewController">
+                <viewController title="Password Sync 2" id="72R-GY-BAB" customClass="PSSSplashWelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AVC-J4-0ar"/>
                         <viewControllerLayoutGuide type="bottom" id="5BM-J8-x2g"/>
@@ -50,16 +50,19 @@
                                     <segue destination="sgt-0X-Ary" kind="push" id="pds-jw-3Em"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="scQ-TC-LiY">
-                                <rect key="frame" x="20" y="287" width="280" height="145"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="scQ-TC-LiY">
+                                <rect key="frame" x="20" y="229" width="280" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="203" id="DZe-aT-8is"/>
+                                </constraints>
                                 <string key="text">Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8yB-JP-y2u">
-                                <rect key="frame" x="20" y="20" width="280" height="259"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8yB-JP-y2u">
+                                <rect key="frame" x="20" y="20" width="280" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -81,6 +84,9 @@
                     <navigationItem key="navigationItem" title="Welcome to Password Sync !" id="wCv-LL-H7o">
                         <barButtonItem key="backBarButtonItem" title="Back" id="j7Z-IS-EaL"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="welcomeText" destination="scQ-TC-LiY" id="6QG-kD-aoU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9F4-eV-56l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1154,6 +1160,7 @@
         <image name="Logo" width="210" height="201"/>
         <image name="printedPasswordPreview" width="230" height="270"/>
     </resources>
+    <color key="tintColor" red="0.180392161" green="0.5647059083" blue="0.35294118520000001" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
