@@ -11,6 +11,7 @@
 #import "PSSGenericDetailTableViewController.h"
 #import "PSSDocumentBaseObject.h"
 #import "PSSAppDelegate.h"
+#import "PSSDocumentsSplitViewDetailViewController.h"
 
 #import "PSSObjectDecorativeImage.h"
 
@@ -20,6 +21,10 @@
 @end
 
 @implementation PSSDocumentListTableViewController
+
+-(void)deselectAllRowsAnimated:(BOOL)animated{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 -(void)newNoteAction:(id)sender{
     
@@ -49,14 +54,19 @@
     self.managedObjectContext = appDelegate.managedObjectContext;
 
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIBarButtonItem * newNoteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newNoteAction:)];
     
-    self.navigationItem.rightBarButtonItem = newNoteButton;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // Special iPhone stuff
+        UIBarButtonItem * newNoteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newNoteAction:)];
+        
+        self.navigationItem.rightBarButtonItem = newNoteButton;
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self setClearsSelectionOnViewWillAppear:NO];
+    }
+
     
     
 }
@@ -115,11 +125,16 @@
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = object;
+        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
+        // CardsList ↑ Splitview ↓ Detail view ↓ NavController
+        
+        PSSDocumentsSplitViewDetailViewController * detailController = (PSSDocumentsSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PSSDocumentBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [detailController presentViewControllerForDocumentEntity:object];
+        
     }
 }
 
@@ -131,6 +146,8 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
+
+
 
 #pragma mark - Fetched results controller
 

@@ -8,13 +8,13 @@
 
 @import UIKit;
 @import CoreData;
-@class PSSGenericDetailTableViewController;
 
 @interface PSSDocumentListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) PSSGenericDetailTableViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+-(void)deselectAllRowsAnimated:(BOOL)animated;
 
 @end

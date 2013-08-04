@@ -245,6 +245,10 @@
 		AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
 		AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
 		AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
+		AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */; };
+		AD83AE5917AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */; };
+		AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5B17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m */; };
+		AD83AE5D17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5B17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m */; };
 		AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */; };
 		AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */; };
 		AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */; };
@@ -569,6 +573,10 @@
 		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 		AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		AD83AE5617AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentsFavoritesViewController.h; sourceTree = "<group>"; };
+		AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentsFavoritesViewController.m; sourceTree = "<group>"; };
+		AD83AE5A17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentsSplitViewDetailViewController.h; sourceTree = "<group>"; };
+		AD83AE5B17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentsSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		AD873B62178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PSSNewPasswordObjectStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		AD873B65178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordBasicTextFieldCell.h; sourceTree = "<group>"; };
 		AD873B66178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordBasicTextFieldCell.m; sourceTree = "<group>"; };
@@ -853,6 +861,10 @@
 				ADF10D4217A43ED800CAB546 /* PSSExtentedNoteViewController.h */,
 				ADF10D4317A43ED800CAB546 /* PSSExtentedNoteViewController.m */,
 				AD1BECDE17A428A3001292E8 /* Editor */,
+				AD83AE5617AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.h */,
+				AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */,
+				AD83AE5A17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.h */,
+				AD83AE5B17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -1645,6 +1657,7 @@
 				AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
+				AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
 				AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
@@ -1723,6 +1736,7 @@
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
+				AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
@@ -1747,6 +1761,7 @@
 				ADDD964E1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */,
 				AD9935981794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */,
 				AD547FCC17A1C5A6008FAFFB /* MAConstants.m in Sources */,
+				AD83AE5917AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
 				AD3637151798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
 				AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
@@ -1812,6 +1827,7 @@
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
+				AD83AE5D17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 				ADFA1A2117926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.m in Sources */,
 				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
