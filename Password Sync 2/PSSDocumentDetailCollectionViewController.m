@@ -47,7 +47,6 @@ dispatch_queue_t backgroundQueue;
     previewController.dataSource = self;
     previewController.currentPreviewItemIndex = index;
     
-    previewController.modalPresentationStyle = UIModalPresentationPageSheet;
     previewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     [self.navigationController presentViewController:previewController animated:YES completion:NULL];
