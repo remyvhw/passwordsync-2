@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface PSSLocationFavoritesViewController : UIViewController
+@interface PSSLocationFavoritesViewController : UIViewController <NSFetchedResultsControllerDelegate, MKMapViewDelegate>
 
 @end

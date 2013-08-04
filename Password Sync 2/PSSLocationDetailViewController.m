@@ -116,7 +116,12 @@
     
     if (indexPath.section == 1) {
         // Map
-        return 244.;
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+            return 244.;
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+            return 344.;
+        }
+        
     }
     
     

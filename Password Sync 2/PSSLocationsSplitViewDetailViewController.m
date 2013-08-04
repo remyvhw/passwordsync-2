@@ -39,6 +39,7 @@
 -(void)presentViewControllerForLocationEntity:(PSSLocationBaseObject *)locationBaseObject{
     PSSLocationDetailViewController * detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"locationDetailViewController"];
     
+    self.splitViewController.presentsWithGesture = YES;
     
     detailView.detailItem = locationBaseObject;
     
@@ -50,5 +51,9 @@
     }
     
 }
+
+#pragma mark - UISplitViewController Delegate
+
+
 
 @end

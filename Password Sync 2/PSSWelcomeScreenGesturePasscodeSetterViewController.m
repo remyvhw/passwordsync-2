@@ -84,6 +84,8 @@
     SPLockScreen * lockScreen;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         lockScreen = [[SPLockScreen alloc] initWithFrame:CGRectMake(self.lockScreenSubview.frame.origin.x, self.lockScreenSubview.frame.origin.y, self.lockScreenSubview.frame.size.width, self.lockScreenSubview.frame.size.height)];
+        [lockScreen setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
     } else {
             lockScreen = [[SPLockScreen alloc] initWithFrame:CGRectMake(0, 0, self.lockScreenSubview.frame.size.width, self.lockScreenSubview.frame.size.height)];
     }
