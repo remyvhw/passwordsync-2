@@ -26,6 +26,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(void)dismissPopoverWithSelectedPassword:(NSString*)selectedPassword{
+    if (self.generatorDelegate) {
+        [self.generatorDelegate passwordGenerator:self finishedWithPassword:selectedPassword];
+    }
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -89,6 +96,10 @@
     [self setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], shuffleButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]]];
     
     [self.navigationController setHidesBottomBarWhenPushed:YES];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
     
 }
 
@@ -158,6 +169,8 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [self popToPasswordEditorSelectedPassword:selectedString];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        [self dismissPopoverWithSelectedPassword:selectedString];
     }
     
 }

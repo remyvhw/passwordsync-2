@@ -28,6 +28,8 @@
 @property (strong) PSSnewPasswordPasswordTextFieldCell * passwordCell;
 @property (strong) PSSnewPasswordMultilineTextFieldCell * notesCell;
 
+@property (strong, nonatomic) UIPopoverController * generatorPopover;
+
 @property BOOL isPasscodeUnlocked;
 
 @end
@@ -148,7 +150,31 @@
 }
 
 -(void)showPasswordGenerator:(id)sender{
-    [self performSegueWithIdentifier:@"pushPasswordGeneratorOnStackSegueIdentifier" sender:sender];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        if (self.generatorPopover) {
+            [self.generatorPopover dismissPopoverAnimated:YES];
+            self.generatorPopover = nil;
+            return;
+        }
+        
+        PSSPasswordGeneratorTableViewController * generatorView = [self.storyboard instantiateViewControllerWithIdentifier:@"passwordGenerator"];
+        
+        generatorView.generatorDelegate = self;
+        
+        UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:generatorView];
+        
+        UIPopoverController * popover = [[UIPopoverController alloc] initWithContentViewController:navController];
+        self.generatorPopover = popover;
+        
+        
+        [popover presentPopoverFromRect:self.passwordCell.shuffleButton.frame inView:self.passwordCell permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self performSegueWithIdentifier:@"pushPasswordGeneratorOnStackSegueIdentifier" sender:sender];
+    }
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -444,6 +470,12 @@
 
 #pragma mark - PSSPasswordGeneratorTableViewControllerProtocol methods
 -(void)passwordGenerator:(PSSPasswordGeneratorTableViewController *)generator finishedWithPassword:(NSString *)randomPassword{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.generatorPopover dismissPopoverAnimated:YES];
+        self.generatorPopover = nil;
+    }
+    
     [self.passwordCell setUnsecureTextPassword:randomPassword];
 }
 

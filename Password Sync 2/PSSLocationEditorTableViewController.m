@@ -35,6 +35,8 @@
 @property (nonatomic) CLLocationCoordinate2D pinLocation;
 @property (nonatomic) NSString * addressString;
 
+@property (strong, nonatomic) UIPopoverController * generatorPopover;
+
 
 @property (nonatomic) BOOL isPasscodeUnlocked;
 
@@ -207,9 +209,31 @@
 
 
 -(void)showPasswordGenerator:(id)sender{
+    
     PSSPasswordGeneratorTableViewController * passwordGenerator = [[PSSPasswordGeneratorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     passwordGenerator.generatorDelegate = self;
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        if (self.generatorPopover) {
+            [self.generatorPopover dismissPopoverAnimated:YES];
+            self.generatorPopover = nil;
+            return;
+        }
+        
+        
+        UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:passwordGenerator];
+        
+        UIPopoverController * popover = [[UIPopoverController alloc] initWithContentViewController:navController];
+        self.generatorPopover = popover;
+        
+        
+        [popover presentPopoverFromRect:self.passwordCell.shuffleButton.frame inView:self.passwordCell permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+    
     [self.navigationController pushViewController:passwordGenerator animated:YES];
+    }
 }
 
 
@@ -522,6 +546,12 @@
 
 #pragma mark - PSSPasswordGeneratorTableViewControllerProtocol methods
 -(void)passwordGenerator:(PSSPasswordGeneratorTableViewController *)generator finishedWithPassword:(NSString *)randomPassword{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.generatorPopover dismissPopoverAnimated:YES];
+        self.generatorPopover = nil;
+    }
+    
     [self.passwordCell setUnsecureTextPassword:randomPassword];
 }
 
