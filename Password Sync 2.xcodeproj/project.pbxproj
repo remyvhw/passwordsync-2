@@ -306,6 +306,10 @@
 		ADAD160717ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */; };
 		ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */; };
 		ADAD160B17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */; };
+		ADAD160E17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */; };
+		ADAD160F17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */; };
+		ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */; };
+		ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */; };
 		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
@@ -615,6 +619,10 @@
 		ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplitViewGenericDetailNavigationViewController.m; sourceTree = "<group>"; };
 		ADAD160817ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordSplitViewDetailViewController.h; sourceTree = "<group>"; };
 		ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordSplitViewDetailViewController.m; sourceTree = "<group>"; };
+		ADAD160C17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsFavoritesViewController.h; sourceTree = "<group>"; };
+		ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsFavoritesViewController.m; sourceTree = "<group>"; };
+		ADAD161017ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsSplitViewDetailViewController.h; sourceTree = "<group>"; };
+		ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
 		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
@@ -1326,6 +1334,10 @@
 				AD727A40179DBA350030707F /* PSSCardDetailViewController.h */,
 				AD727A41179DBA350030707F /* PSSCardDetailViewController.m */,
 				AD727A4F179DE7100030707F /* Emergency Contact */,
+				ADAD160C17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.h */,
+				ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */,
+				ADAD161017ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.h */,
+				ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -1611,6 +1623,7 @@
 				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD547FD717A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
+				ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
@@ -1630,6 +1643,7 @@
 				AD547FD317A1C5A6008FAFFB /* MAImagePickerFinalViewController.mm in Sources */,
 				AD312670179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
 				AD5175FF1784906200B30295 /* SPLockOverlay.m in Sources */,
+				ADAD160E17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,
 				AD727A42179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
@@ -1725,6 +1739,7 @@
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
 				ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
+				ADAD160F17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD547FD817A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
@@ -1799,6 +1814,7 @@
 				ADDD9653179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
+				ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 				AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,

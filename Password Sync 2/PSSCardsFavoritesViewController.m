@@ -1,35 +1,29 @@
 //
-//  PSSWebsitesFavoritesViewController.m
+//  PSSCardsFavoritesViewController.m
 //  Password Sync 2
 //
 //  Created by Remy Vanherweghem on 2013-08-03.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSWebsitesFavoritesViewController.h"
-#import "PSSPasswordListViewController.h"
+#import "PSSCardsFavoritesViewController.h"
+#import "PSSCardsTableViewController.h"
+#import "PSSCardEditorViewController.h"
 
-@interface PSSWebsitesFavoritesViewController ()
+@interface PSSCardsFavoritesViewController ()
 
 @end
 
-@implementation PSSWebsitesFavoritesViewController
+@implementation PSSCardsFavoritesViewController
 
-- (void)insertNewObject:(id)sender
-{
+- (void)insertNewObject:(id)sender {
     
-    UIStoryboard * storyboardContainingEditor = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
-    UINavigationController * passwordEditorNavController = [storyboardContainingEditor instantiateInitialViewController];
-    
-    passwordEditorNavController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentViewController:passwordEditorNavController animated:YES completion:^{
-        
-    }];
-    
-    
+    PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
+    editorNavController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentViewController:editorNavController animated:YES completion:^{}];
     
 }
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,8 +46,8 @@
         
     }
 
-    
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -61,17 +55,17 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         UINavigationController * masterNavController = [self.splitViewController.viewControllers firstObject];
-        PSSPasswordListViewController * mainViewController = (PSSPasswordListViewController*)[masterNavController.viewControllers firstObject];
+        PSSCardsTableViewController * mainViewController = (PSSCardsTableViewController*)[masterNavController.viewControllers firstObject];
         
         
         if ([mainViewController respondsToSelector:@selector(deselectAllRowsAnimated:)]) {
             [mainViewController deselectAllRowsAnimated:YES];
         }
-
+        
     }
     
     
-
+    
     
     
 }

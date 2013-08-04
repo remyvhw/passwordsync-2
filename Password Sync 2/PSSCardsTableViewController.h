@@ -13,4 +13,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+-(void)deselectAllRowsAnimated:(BOOL)animated;
+
+
 @end

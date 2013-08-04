@@ -12,12 +12,17 @@
 #import "PSSCreditCardBaseObject.h"
 #import "PSSCreditCardVersion.h"
 #import "PSSCardDetailViewController.h"
+#import "PSSCardsSplitViewDetailViewController.h"
 
 @interface PSSCardsTableViewController ()
 
 @end
 
 @implementation PSSCardsTableViewController
+
+-(void)deselectAllRowsAnimated:(BOOL)animated{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -50,9 +55,19 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newCardAction:)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // Special iPhone stuff
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newCardAction:)];
+        
+        self.navigationItem.rightBarButtonItem = addButton;
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self setClearsSelectionOnViewWillAppear:NO];
+    }
+
     
-    self.navigationItem.rightBarButtonItem = addButton;
+   
 
     
     
@@ -124,7 +139,18 @@
 }
 
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
+        // CardsList ↑ Splitview ↓ Detail view ↓ NavController
+        
+        PSSCardsSplitViewDetailViewController * detailController = (PSSCardsSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PSSCreditCardBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [detailController presentViewControllerForCardEntity:object];
+        
+    }
+}
 
 #pragma mark - Fetched results controller
 
