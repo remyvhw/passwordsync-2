@@ -12,12 +12,17 @@
 #import "PSSLocationVersion.h"
 #import "PSSAppDelegate.h"
 #import "PSSLocationDetailViewController.h"
+#import "PSSLocationsSplitViewDetailViewController.h"
 
 @interface PSSLocationListTableViewController ()
 
 @end
 
 @implementation PSSLocationListTableViewController
+
+-(void)deselectAllRowsAnimated:(BOOL)animated{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 -(void)newLocationAction:(id)sender{
     
@@ -47,12 +52,19 @@
     self.managedObjectContext = appDelegate.managedObjectContext;
     
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
  
-    UIBarButtonItem * newLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newLocationAction:)];
     
-    self.navigationItem.rightBarButtonItem = newLocationButton;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // Special iPhone stuff
+        UIBarButtonItem * newLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newLocationAction:)];
+        
+        self.navigationItem.rightBarButtonItem = newLocationButton;
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self setClearsSelectionOnViewWillAppear:NO];
+    }
+    
     
     
     
@@ -134,6 +146,18 @@
     return NO;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
+        // CardsList ↑ Splitview ↓ Detail view ↓ NavController
+        
+        PSSLocationsSplitViewDetailViewController * detailController = (PSSLocationsSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PSSLocationBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [detailController presentViewControllerForLocationEntity:object];
+        
+    }
+}
 
 #pragma mark - Fetched results controller
 

@@ -1,29 +1,30 @@
 //
-//  PSSCardsFavoritesViewController.m
+//  PSSLocationFavoritesViewController.m
 //  Password Sync 2
 //
 //  Created by Remy Vanherweghem on 2013-08-03.
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSCardsFavoritesViewController.h"
-#import "PSSCardsTableViewController.h"
-#import "PSSCardEditorViewController.h"
+#import "PSSLocationFavoritesViewController.h"
+#import "PSSLocationListTableViewController.h"
+#import "PSSLocationEditorTableViewController.h"
 
-@interface PSSCardsFavoritesViewController ()
+@interface PSSLocationFavoritesViewController ()
 
 @end
 
-@implementation PSSCardsFavoritesViewController
+@implementation PSSLocationFavoritesViewController
 
 - (void)insertNewObject:(id)sender {
     
-    PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
-    editorNavController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentViewController:editorNavController animated:YES completion:^{}];
+    PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:locationEditor];
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentViewController:navController animated:YES completion:NULL];
     
 }
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,9 +46,14 @@
         self.navigationItem.rightBarButtonItem = addButton;
         
     }
-
+    
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -55,7 +61,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         UINavigationController * masterNavController = [self.splitViewController.viewControllers firstObject];
-        PSSCardsTableViewController * mainViewController = (PSSCardsTableViewController*)[masterNavController.viewControllers firstObject];
+        PSSLocationListTableViewController * mainViewController = (PSSLocationListTableViewController*)[masterNavController.viewControllers firstObject];
         
         
         if ([mainViewController respondsToSelector:@selector(deselectAllRowsAnimated:)]) {
@@ -64,12 +70,6 @@
         
     }
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

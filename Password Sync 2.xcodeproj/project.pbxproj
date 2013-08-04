@@ -310,6 +310,10 @@
 		ADAD160F17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */; };
 		ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */; };
 		ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */; };
+		ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */; };
+		ADAD161717AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */; };
+		ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */; };
+		ADAD161B17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */; };
 		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
@@ -623,6 +627,10 @@
 		ADAD160D17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsFavoritesViewController.m; sourceTree = "<group>"; };
 		ADAD161017ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsSplitViewDetailViewController.h; sourceTree = "<group>"; };
 		ADAD161117ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsSplitViewDetailViewController.m; sourceTree = "<group>"; };
+		ADAD161417AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationsSplitViewDetailViewController.h; sourceTree = "<group>"; };
+		ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationsSplitViewDetailViewController.m; sourceTree = "<group>"; };
+		ADAD161817AE04760035ABB4 /* PSSLocationFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationFavoritesViewController.h; sourceTree = "<group>"; };
+		ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationFavoritesViewController.m; sourceTree = "<group>"; };
 		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
 		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
@@ -789,6 +797,10 @@
 				AD36371B179AFB71005F1542 /* Editor */,
 				AD31266E179F13CB00483E2F /* PSSLocationDetailViewController.h */,
 				AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */,
+				ADAD161817AE04760035ABB4 /* PSSLocationFavoritesViewController.h */,
+				ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */,
+				ADAD161417AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.h */,
+				ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -1619,6 +1631,7 @@
 				ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */,
 				AD547FCD17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
+				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
@@ -1664,6 +1677,7 @@
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD1BECD417A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
+				ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
 				AD547FD517A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD547FCF17A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
@@ -1768,6 +1782,7 @@
 				AD547FCA17A1C5A6008FAFFB /* MACaptureSession.m in Sources */,
 				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,
+				ADAD161B17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD547FDA17A1C5A6008FAFFB /* UIImageView+ContentFrame.m in Sources */,
 				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
@@ -1807,6 +1822,7 @@
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
+				ADAD161717AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
 				AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				ADF10D4917A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
