@@ -14,6 +14,9 @@
 #import "PSSLocationVersion.h"
 #import "PSSLocationBaseObject.h"
 
+#define MAP_PADDING 2.6
+#define MINIMUM_VISIBLE_LATITUDE 0.01
+
 @interface PSSLocationFavoritesViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController * fetchedResultsController;
@@ -34,25 +37,87 @@
 }
 
 
--(void)updateAnnotations{
+-(void)updateAnnotationsAnimated:(BOOL)animated{
     
     // Clean the annotations
     [self.mapView removeAnnotations:[self.mapView annotations]];
     
     NSMutableArray * locations = [[NSMutableArray alloc] initWithCapacity:self.fetchedResultsController.fetchedObjects.count];
+    
+    double minLatitude = 0;
+    double maxLatitude = 0;
+    double minLongitude = 0;
+    double maxLongitude = 0;
+    
     for (PSSLocationBaseObject * location in self.fetchedResultsController.fetchedObjects) {
         
         PSSLocationVersion * currentVersion = (PSSLocationVersion*)location.currentHardLinkedVersion;
         MKPointAnnotation *newAnnotation = [[MKPointAnnotation alloc] init];
-        [newAnnotation setCoordinate:CLLocationCoordinate2DMake([[currentVersion latitude] doubleValue], [[currentVersion longitude] doubleValue])];
+        
+        double latitude = [[currentVersion latitude] doubleValue];
+        double longitude = [[currentVersion longitude] doubleValue];
+        
+        [newAnnotation setCoordinate:CLLocationCoordinate2DMake(latitude, longitude)];
         
         newAnnotation.title = currentVersion.displayName;
         newAnnotation.subtitle  = currentVersion.address;
         [locations addObject:newAnnotation];
+        
+        
+        if (minLatitude == 0 && maxLatitude == 0 && minLongitude == 0 && maxLatitude == 0) {
+            // First run in the loop
+            minLatitude = latitude;
+            maxLatitude = latitude;
+            minLongitude = longitude;
+            maxLongitude = longitude;
+            
+        } else {
+            
+            if (latitude < minLatitude) {
+                minLatitude = latitude;
+            }
+            
+            if (latitude > maxLatitude) {
+                maxLatitude = latitude;
+            }
+            
+            if (longitude < minLongitude) {
+                minLongitude = longitude;
+            }
+            
+            if (longitude > maxLongitude) {
+                maxLongitude = longitude;
+            }
+            
+            
+        }
+        
+        
+        
     }
     
     [self.mapView addAnnotations:locations];
     
+    // Update the region showed on map
+    MKCoordinateRegion region;
+    region.center.latitude = (minLatitude + maxLatitude) / 2;
+    region.center.longitude = (minLongitude + maxLongitude) / 2;
+    
+    region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;
+    
+    region.span.latitudeDelta = (region.span.latitudeDelta < MINIMUM_VISIBLE_LATITUDE)
+    ? MINIMUM_VISIBLE_LATITUDE
+    : region.span.latitudeDelta;
+    
+    region.span.longitudeDelta = (maxLongitude - minLongitude) * MAP_PADDING;
+    
+    MKCoordinateRegion scaledRegion = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:scaledRegion animated:animated];
+    
+}
+
+-(void)updateAnnotations{
+    [self updateAnnotationsAnimated:YES];
 }
 
 
@@ -91,10 +156,9 @@
     self.managedObjectContext = appDelegate.managedObjectContext;
     
     
-    for (PSSLocationBaseObject *location in self.fetchedResultsController.fetchedObjects) {
-        
-    }
+    [self updateAnnotationsAnimated:NO];
     
+   
     
 }
 
@@ -122,7 +186,6 @@
     }
     
     
-    [self updateAnnotations];
     
 }
 

@@ -14,6 +14,7 @@
 #import "TSMessage.h"
 #import "PSSLocationBaseObject.h"
 #import "PSSLocationDetailViewController.h"
+#import "PSSLocationsSplitViewDetailViewController.h"
 
 @interface PSSAppDelegate ()
 
@@ -68,12 +69,22 @@
     // Location is at index 2
     [tabBarController setSelectedIndex:2];
     
-    UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
-    
-    PSSLocationDetailViewController * detailViewController = (PSSLocationDetailViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"locationDetailViewController"];
-    detailViewController.detailItem = locationObject;
-    
-    [navController pushViewController:detailViewController animated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        UISplitViewController * splitViewForLocations = (UISplitViewController*)tabBarController.selectedViewController;
+        
+        PSSLocationsSplitViewDetailViewController * navController = [splitViewForLocations.viewControllers lastObject];
+        [navController presentViewControllerForLocationEntity:locationObject];
+        
+    } else {
+        UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
+        
+        PSSLocationDetailViewController * detailViewController = (PSSLocationDetailViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"locationDetailViewController"];
+        detailViewController.detailItem = locationObject;
+        
+        [navController pushViewController:detailViewController animated:YES];
+
+    }
     
 }
 
