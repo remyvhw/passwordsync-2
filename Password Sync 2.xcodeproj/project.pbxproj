@@ -300,6 +300,12 @@
 		ADAD15FD17AB43D60035ABB4 /* KeyImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAD15FA17AB43D60035ABB4 /* KeyImage.jpg */; };
 		ADAD15FE17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAD15FB17AB43D60035ABB4 /* KeyImage@2x.jpg */; };
 		ADAD15FF17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAD15FB17AB43D60035ABB4 /* KeyImage@2x.jpg */; };
+		ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160117ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m */; };
+		ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160117ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m */; };
+		ADAD160617ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */; };
+		ADAD160717ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */; };
+		ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */; };
+		ADAD160B17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */; };
 		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
 		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
@@ -603,6 +609,12 @@
 		ADA24BFF179851A8003BDCC5 /* PSSLocationVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationVersion.m; sourceTree = "<group>"; };
 		ADAD15FA17AB43D60035ABB4 /* KeyImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KeyImage.jpg; sourceTree = "<group>"; };
 		ADAD15FB17AB43D60035ABB4 /* KeyImage@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "KeyImage@2x.jpg"; sourceTree = "<group>"; };
+		ADAD160017ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWebsitesFavoritesViewController.h; sourceTree = "<group>"; };
+		ADAD160117ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWebsitesFavoritesViewController.m; sourceTree = "<group>"; };
+		ADAD160417ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplitViewGenericDetailNavigationViewController.h; sourceTree = "<group>"; };
+		ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplitViewGenericDetailNavigationViewController.m; sourceTree = "<group>"; };
+		ADAD160817ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordSplitViewDetailViewController.h; sourceTree = "<group>"; };
+		ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
 		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
@@ -1009,6 +1021,8 @@
 				AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */,
 				AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */,
 				AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */,
+				ADAD160417ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.h */,
+				ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
 				AD547FAA17A1AC24008FAFFB /* Documents */,
@@ -1295,6 +1309,10 @@
 				AD72C3DA177B7E27009AADC8 /* PSSPasswordListViewController.m */,
 				ADE7E8C3179C62E900BA09E7 /* PSSPasswordDetailViewController.h */,
 				ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */,
+				ADAD160017ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.h */,
+				ADAD160117ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m */,
+				ADAD160817ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.h */,
+				ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */,
 			);
 			name = Passwords;
 			sourceTree = "<group>";
@@ -1590,6 +1608,7 @@
 				AD547FCD17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
+				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD547FD717A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
@@ -1615,6 +1634,7 @@
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				ADF10D4817A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
+				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
@@ -1637,6 +1657,7 @@
 				AD312641179F08A600483E2F /* TSMessage.m in Sources */,
 				ADA24C00179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,
 				AD31266B179F08A600483E2F /* TSMessageView.m in Sources */,
+				ADAD160617ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSPasswordListViewController.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 				AD82102E177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
@@ -1702,6 +1723,7 @@
 				AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
+				ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD547FD817A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
@@ -1723,6 +1745,7 @@
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
+				ADAD160B17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD547FCE17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
 				AD547FD217A1C5A6008FAFFB /* MAImagePickerControllerAdjustViewController.mm in Sources */,
@@ -1742,6 +1765,7 @@
 				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
 				AD547FA917A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
 				AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
+				ADAD160717ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */,
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,

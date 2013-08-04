@@ -11,12 +11,17 @@
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDetailViewController.h"
+#import "PSSPasswordSplitViewDetailViewController.h"
 
 @interface PSSPasswordListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation PSSPasswordListViewController
+
+-(void)deselectAllRowsAnimated:(BOOL)animated{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 -(void)userUnlockedDatabase:(id)sender{
     
@@ -30,14 +35,21 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-
-    self.navigationItem.rightBarButtonItem = addButton;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // Special iPhone stuff
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+        
+        self.navigationItem.rightBarButtonItem = addButton;
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self setClearsSelectionOnViewWillAppear:NO];
+    }
     
     
     // Register to unlock notification so we can replace the "dots" on the username field.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUnlockedDatabase:) name:PSSGlobalUnlockNotification object:nil];
+    
     
 }
 
@@ -115,6 +127,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
+        // PSSPasswordListViewController ↑ Splitview ↓ Detail view ↓ NavController
+        
+        PSSPasswordSplitViewDetailViewController * detailController = (PSSPasswordSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PSSPasswordBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [detailController presentViewControllerForPasswordEntity:object];
+        
     }
 }
 
