@@ -250,7 +250,26 @@
 {
     PSSPasswordBaseObject *object = (PSSPasswordBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
-    cell.imageView.image = [UIImage imageWithData:object.favicon];
+    
+    
+    UIImage * favicon = [UIImage imageWithData:object.favicon];
+    cell.imageView.image = favicon;
+    
+    if (favicon.size.height>40 || favicon.size.width>40) {
+        cell.imageView.contentMode = UIViewContentModeScaleToFill;
+    } else {
+        cell.imageView.contentMode = UIViewContentModeCenter;
+    }
+    
+    cell.imageView.clipsToBounds = YES;
+    
+    
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[[UIImage imageNamed:@"TableViewRoundMask"] CGImage];
+    mask.frame = CGRectMake(0, 0, 40., 40.);
+    cell.imageView.layer.mask = mask;
+    cell.imageView.layer.masksToBounds = YES;
+    
     cell.detailTextLabel.text = [(PSSPasswordVersion*)object.currentHardLinkedVersion decryptedUsername];
 
 }
