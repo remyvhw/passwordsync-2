@@ -26,6 +26,16 @@
 @dynamic parent;
 @dynamic tags;
 @dynamic versions;
+@dynamic thumbnail;
+
+-(UIImage*)squareThumbnailWithScreencap:(UIImage*)screenCap{
+    
+    
+    
+    return nil;
+    
+}
+
 
 -(void)setCurrentVersion:(id)currentVersion{
     _currentVersion = currentVersion;

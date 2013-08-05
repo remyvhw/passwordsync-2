@@ -11,6 +11,5 @@
 
 @implementation PSSDocumentBaseObject
 
-@dynamic thumbnail;
 
 @end
