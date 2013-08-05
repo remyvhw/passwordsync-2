@@ -30,9 +30,14 @@
 
 -(UIImage*)squareThumbnailWithScreencap:(UIImage*)screenCap{
     
+    CGSize thumbnailSize = CGSizeMake(225., 225.);
     
+    UIGraphicsBeginImageContext( thumbnailSize );
+    [screenCap drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
-    return nil;
+    return newImage;
     
 }
 
@@ -104,6 +109,21 @@
     newManagedObject.viewportIdentifier = [self viewportIdentifierForCurrentDevice];
     newManagedObject.encryptedObject = self;
     newManagedObject.data = UIImagePNGRepresentation(decorativeImageForDevice);
+    
+    
+    // If the object doesn't have a thumbnail yet, we'll create one.
+    if (!self.thumbnail) {
+        
+        // Create a new thumbnail image.
+        PSSObjectDecorativeImage * thumbnail = (PSSObjectDecorativeImage*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSObjectDecorativeImage" inManagedObjectContext:self.managedObjectContext];
+        thumbnail.timestamp = [NSDate date];
+        thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
+        thumbnail.data = UIImagePNGRepresentation([self squareThumbnailWithScreencap:decorativeImageForDevice]);
+        
+        self.thumbnail = thumbnail;
+        
+        
+    }
     
     
     NSError *error = nil;

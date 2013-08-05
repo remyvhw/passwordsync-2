@@ -11,7 +11,7 @@
         <relationship name="decorativeImages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="encryptedObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="PSSBaseGenericObject" inverseName="children" inverseEntity="PSSBaseGenericObject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PSSObjectTag" inverseName="encryptedObjects" inverseEntity="PSSObjectTag" syncable="YES"/>
-        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PSSObjectDecorativeImage" inverseName="thumbnailOfObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PSSObjectDecorativeImage" inverseName="thumbnailOfObject" inverseEntity="PSSObjectDecorativeImage" syncable="YES"/>
         <relationship name="versions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PSSBaseObjectVersion" inverseName="encryptedObject" inverseEntity="PSSBaseObjectVersion" syncable="YES"/>
         <fetchedProperty name="latestVersion" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="PSSBaseObjectVersion"/>

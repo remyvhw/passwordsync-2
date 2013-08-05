@@ -125,6 +125,9 @@ dispatch_queue_t backgroundQueue;
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         UIImage * image = [self drawWebViewToImage:self.backgroundWebView];
+        
+        [self.detailItem setDecorativeImageForDevice:image];
+        
         [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:image animated:YES];
         [self.backgroundWebView stopLoading];
         [self.backgroundWebView removeFromSuperview];
@@ -180,7 +183,7 @@ dispatch_queue_t backgroundQueue;
     
     self.tableView.backgroundColor = [UIColor clearColor];
     if (self.detailItem.decorativeImageForDevice) {
-        [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:NO];
+        [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:YES];
     } else {
         [self fetchDecorativeImageForCurrentDevice];
         [self.backgroundWebView setScalesPageToFit:YES];
