@@ -98,21 +98,24 @@
     }
     [self.mapView addAnnotations:locations];
     
-    // Update the region showed on map
-    MKCoordinateRegion region;
-    region.center.latitude = (minLatitude + maxLatitude) / 2;
-    region.center.longitude = (minLongitude + maxLongitude) / 2;
-    
-    region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;
-    
-    region.span.latitudeDelta = (region.span.latitudeDelta < MINIMUM_VISIBLE_LATITUDE)
-    ? MINIMUM_VISIBLE_LATITUDE
-    : region.span.latitudeDelta;
-    
-    region.span.longitudeDelta = (maxLongitude - minLongitude) * MAP_PADDING;
-    
-    MKCoordinateRegion scaledRegion = [self.mapView regionThatFits:region];
-    [self.mapView setRegion:scaledRegion animated:animated];
+    // Update the region showed on map if we actually have latitude and longitudes
+    if (minLatitude != 0 && maxLongitude !=0) {
+        MKCoordinateRegion region;
+        region.center.latitude = (minLatitude + maxLatitude) / 2;
+        region.center.longitude = (minLongitude + maxLongitude) / 2;
+        
+        region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;
+        
+        region.span.latitudeDelta = (region.span.latitudeDelta < MINIMUM_VISIBLE_LATITUDE)
+        ? MINIMUM_VISIBLE_LATITUDE
+        : region.span.latitudeDelta;
+        
+        region.span.longitudeDelta = (maxLongitude - minLongitude) * MAP_PADDING;
+        
+        MKCoordinateRegion scaledRegion = [self.mapView regionThatFits:region];
+        [self.mapView setRegion:scaledRegion animated:animated];
+
+    }
     
 }
 

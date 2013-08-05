@@ -655,7 +655,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-1G-uHG">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-1G-uHG">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -664,6 +664,12 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OLS-1G-uHG" secondAttribute="bottom" id="1Lu-hm-C1y"/>
+                            <constraint firstAttribute="trailing" secondItem="OLS-1G-uHG" secondAttribute="trailing" id="47E-wm-75w"/>
+                            <constraint firstItem="OLS-1G-uHG" firstAttribute="leading" secondItem="IdF-A4-Goa" secondAttribute="leading" id="cDh-vT-aoK"/>
+                            <constraint firstItem="OLS-1G-uHG" firstAttribute="top" secondItem="IdF-A4-Goa" secondAttribute="top" id="xin-fB-f5N"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8pB-1v-Qgc"/>
                     <connections>
