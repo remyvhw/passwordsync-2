@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSWebsitesFavoritesViewController : UIViewController
+@interface PSSWebsitesFavoritesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate>
+
 
 
 @end

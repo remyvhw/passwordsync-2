@@ -8,8 +8,16 @@
 
 #import "PSSWebsitesFavoritesViewController.h"
 #import "PSSPasswordListViewController.h"
+#import "PSSPasswordBaseObject.h"
+#import "PSSAppDelegate.h"
+#import "PSSObjectDecorativeImage.h"
+#import "PSSPasswordSplitViewDetailViewController.h"
 
 @interface PSSWebsitesFavoritesViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -51,7 +59,9 @@
         self.navigationItem.rightBarButtonItem = addButton;
         
     }
-
+    
+    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
     
 }
 
@@ -81,5 +91,108 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UICollectionViewDataSource methods
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.fetchedResultsController.fetchedObjects.count;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"websiteCell" forIndexPath:indexPath];
+    
+    
+    UIImageView * thumbnailView = (UIImageView*)[cell viewWithTag:1];
+    UILabel * labelView = (UILabel*)[cell viewWithTag:2];
+    
+    PSSPasswordBaseObject * object = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    labelView.text = object.displayName;
+    
+    
+    // Set the thumbnail
+    UIImage * contentImage;
+    if (object.thumbnail) {
+        
+        PSSObjectDecorativeImage * thumbnailDecorativeImage = object.thumbnail;
+        contentImage = thumbnailDecorativeImage.imageNormal;
+
+    } else {
+        contentImage = [UIImage imageNamed:@"WebsitePlaceholder"];
+    }
+    thumbnailView.image = contentImage;
+    
+    
+    
+
+    return cell;
+}
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PSSPasswordBaseObject" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"FavoritePasswords"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    return _fetchedResultsController;
+}
+
+ // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
+ 
+ - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+ {
+ // In the simplest, most efficient, case, reload the table view.
+ [self.collectionView reloadData];
+
+}
+
+#pragma mark - UICollectionViewDelegate methods
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PSSPasswordBaseObject * baseObject = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        PSSPasswordSplitViewDetailViewController * navController = (PSSPasswordSplitViewDetailViewController*)self.navigationController;
+        
+        [navController presentViewControllerForPasswordEntity:baseObject];
+    }
+    
+    
+}
+
 
 @end

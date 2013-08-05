@@ -30,9 +30,9 @@
 
 -(UIImage*)squareThumbnailWithScreencap:(UIImage*)screenCap{
     
-    CGSize thumbnailSize = CGSizeMake(225., 225.);
+    CGSize thumbnailSize = CGSizeMake(400., (screenCap.size.height*400.)/screenCap.size.width);
     
-    UIGraphicsBeginImageContext( thumbnailSize );
+    UIGraphicsBeginImageContext( CGSizeMake(400., 400.) );
     [screenCap drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
