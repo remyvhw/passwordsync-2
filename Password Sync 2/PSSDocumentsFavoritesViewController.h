@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSDocumentsFavoritesViewController : UIViewController
+@interface PSSDocumentsFavoritesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate>
 
 @end

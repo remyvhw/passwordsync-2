@@ -44,6 +44,7 @@
     
     NSMutableArray * locations = [[NSMutableArray alloc] initWithCapacity:self.fetchedResultsController.fetchedObjects.count];
     
+    
     double minLatitude = 0;
     double maxLatitude = 0;
     double minLongitude = 0;
@@ -95,7 +96,6 @@
         
         
     }
-    
     [self.mapView addAnnotations:locations];
     
     // Update the region showed on map
