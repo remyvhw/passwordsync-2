@@ -265,7 +265,7 @@ dispatch_queue_t backgroundQueue;
     cell.imageView.image = [UIImage imageNamed:@"WebsiteSmallPlaceholder"];
     cell.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
     cell.backgroundColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundView.layer.backgroundColor = [UIColor whiteColor].CGColor;
     cell.textLabel.textColor = [UIColor darkTextColor];
     cell.detailTextLabel.textColor = [UIColor darkGrayColor];
     cell.textLabel.backgroundColor = [UIColor clearColor];
@@ -307,6 +307,7 @@ dispatch_queue_t backgroundQueue;
                 [UIView animateWithDuration:0.07 animations:^{
                     
                     cell.contentView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
+                    cell.backgroundView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
                     
                     cell.textLabel.textColor = colorArt.primaryColor;
                     
