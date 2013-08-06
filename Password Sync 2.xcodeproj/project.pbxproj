@@ -174,6 +174,8 @@
 		AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800C17A1C7EE008FAFFB /* toolbar-icon-crop@2x.png */; };
 		AD54806617A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */; };
 		AD54806717A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */; };
+		AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
+		AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -502,6 +504,8 @@
 		AD54800B17A1C7EE008FAFFB /* crop-button-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-button-icon@2x.png"; sourceTree = "<group>"; };
 		AD54800C17A1C7EE008FAFFB /* toolbar-icon-crop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-icon-crop@2x.png"; sourceTree = "<group>"; };
 		AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-icon-crop.png"; sourceTree = "<group>"; };
+		AD58F94C17B14A5F00344134 /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
+		AD58F94D17B14A5F00344134 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -944,6 +948,15 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		AD58F95017B14A6300344134 /* SLColorArt */ = {
+			isa = PBXGroup;
+			children = (
+				AD58F94C17B14A5F00344134 /* SLColorArt.h */,
+				AD58F94D17B14A5F00344134 /* SLColorArt.m */,
+			);
+			name = SLColorArt;
+			sourceTree = "<group>";
+		};
 		AD6133F21793BFC2004CEDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1004,6 +1017,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD58F95017B14A6300344134 /* SLColorArt */,
 				AD940E5A17A8651C001442F0 /* opencv2.framework */,
 				ADF10D4A17A4667000CAB546 /* UIIMage Blur Category */,
 				AD547FDF17A1C679008FAFFB /* MediaPlayer.framework */,
@@ -1682,6 +1696,7 @@
 				ADF10D4817A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
 				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */,
+				AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
@@ -1760,6 +1775,7 @@
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
+				AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */,

@@ -12,12 +12,15 @@
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDetailViewController.h"
 #import "PSSPasswordSplitViewDetailViewController.h"
+#import "SLColorArt.h"
+#import "UIImage+ImageEffects.h"
 
 @interface PSSPasswordListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation PSSPasswordListViewController
+dispatch_queue_t backgroundQueue;
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
@@ -34,6 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesTableViewImageRenderingThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         // Special iPhone stuff
@@ -253,24 +257,78 @@
     
     
     UIImage * favicon = [UIImage imageWithData:object.favicon];
-    cell.imageView.image = favicon;
     
-    if (favicon.size.height>40 || favicon.size.width>40) {
-        cell.imageView.contentMode = UIViewContentModeScaleToFill;
-    } else {
-        cell.imageView.contentMode = UIViewContentModeCenter;
+    
+    
+    //cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Disclosure"]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.imageView.image = [UIImage imageNamed:@"WebsiteSmallPlaceholder"];
+    cell.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor darkTextColor];
+    cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    
+    if (favicon) {
+        dispatch_async(backgroundQueue, ^(void) {
+            
+            
+            // Replace any transparency in the favicon by white so we don't end up with black cells (unless we have a black favicon)
+            UIImage *bottomImage = [UIImage imageNamed:@"WhiteOpaque"];
+            UIImage *topImage = favicon;
+            
+            CGSize newSize = CGSizeMake(topImage.size.width, topImage.size.height);
+            UIGraphicsBeginImageContext( newSize );
+            
+            // Use existing opacity as is
+            [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+            // Apply supplied opacity
+            [topImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1.0];
+            
+            UIImage *nonTransparentFavicon = UIGraphicsGetImageFromCurrentImageContext();
+            
+            UIGraphicsEndImageContext();
+            
+            
+            
+            SLColorArt *colorArt;
+            colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon scaledSize:CGSizeMake(40., 40.)];
+
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                if (favicon.size.height<39 || favicon.size.width<39) {
+                    
+                } else {
+                    UIImage * scaledImage = colorArt.scaledImage;;
+                    cell.imageView.image = scaledImage;
+                }
+                
+                [UIView animateWithDuration:0.07 animations:^{
+                    
+                    cell.contentView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
+                    
+                    cell.textLabel.textColor = colorArt.primaryColor;
+                    
+                    cell.detailTextLabel.textColor = colorArt.secondaryColor;
+
+                } completion:^(BOOL finished) {
+                    cell.backgroundColor = colorArt.backgroundColor;
+                    cell.contentView.backgroundColor = colorArt.backgroundColor;
+                }];
+                
+                
+            });
+            
+        });
+        
+        
+        
+        
     }
+
     
-    cell.imageView.clipsToBounds = YES;
-    
-    
-    CALayer *mask = [CALayer layer];
-    mask.contents = (id)[[UIImage imageNamed:@"TableViewRoundMask"] CGImage];
-    mask.frame = CGRectMake(0, 0, 40., 40.);
-    cell.imageView.layer.mask = mask;
-    cell.imageView.layer.masksToBounds = YES;
-    
-    cell.detailTextLabel.text = [(PSSPasswordVersion*)object.currentHardLinkedVersion decryptedUsername];
+
 
 }
 
