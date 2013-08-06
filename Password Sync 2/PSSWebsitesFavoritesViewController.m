@@ -112,8 +112,6 @@
     UILabel * labelView = (UILabel*)[cell viewWithTag:2];
     
     PSSPasswordBaseObject * object = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    labelView.text = object.displayName;
-    
     
     // Set the thumbnail
     UIImage * contentImage;
@@ -126,7 +124,8 @@
         contentImage = [UIImage imageNamed:@"WebsitePlaceholder"];
     }
     thumbnailView.image = contentImage;
-    
+    labelView.text = object.displayName;
+
     
     
 

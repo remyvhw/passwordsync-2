@@ -255,8 +255,23 @@
 {
     PSSCreditCardBaseObject *object = (PSSCreditCardBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = object.displayName;
-    cell.detailTextLabel.text = object.cardName;
+    NSString * cardNumber;
+    if ([[object displayName] length] == 16) {
+        cardNumber = [NSString stringWithFormat:@"•••• •••• •••• %@", [object.displayName stringByReplacingOccurrencesOfString:@"•" withString:@""]];
+    } else {
+        // Not a credit card
+        cardNumber = object.displayName;
+    }
+    
+    cell.textLabel.font = [UIFont fontWithName:@"OCRA" size:15.];
+    
+    cell.textLabel.text = cardNumber;
+    if (!object.cardName || [object.cardName isEqualToString:@""]) {
+        cell.detailTextLabel.text = NSLocalizedString(@"Other", nil);
+    } else {
+        cell.detailTextLabel.text = object.cardName;
+    }
+    
     
 }
 
