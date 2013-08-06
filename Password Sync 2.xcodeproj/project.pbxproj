@@ -209,6 +209,8 @@
 		AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */; };
 		AD74691B179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
 		AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
+		AD7F800417B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
+		AD7F800517B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
 		AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD82101E177CFB2900B6F501 /* StoreKit.framework */; };
 		AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
 		AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
@@ -536,6 +538,7 @@
 		AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_Sync_2Tests.m; sourceTree = "<group>"; };
 		AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactWebsiteCell.xib; sourceTree = "<group>"; };
 		AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactPhoneNumberCell.xib; sourceTree = "<group>"; };
+		AD7F800317B082E600A590FA /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD821020177CFBD300B6F501 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
 		AD821021177CFBD300B6F501 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
@@ -1269,6 +1272,7 @@
 		ADC9DFB51788C988006F2858 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				AD7F800317B082E600A590FA /* OCRA.ttf */,
 				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
 				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
 				AD72C3CA177B7E27009AADC8 /* main.m */,
@@ -1554,6 +1558,7 @@
 				AD54803C17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				ADAD15FE17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD54801817A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
+				AD7F800417B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54804017A1C7EE008FAFFB /* close-button@2x.png in Resources */,
 				AD54802017A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
 				AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
@@ -1569,6 +1574,7 @@
 				AD54801117A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54803D17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
+				AD7F800517B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54803B17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
 				AD54802117A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
