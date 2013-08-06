@@ -387,6 +387,26 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+    
+    //notification subscriptions, put these after you instantiate the instance of NSPersistentStoreCoordinator your app is going to use.
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self
+           selector:@selector(storesWillChange:)
+               name:NSPersistentStoreCoordinatorStoresWillChangeNotification
+             object:_persistentStoreCoordinator];
+    
+    [defaultCenter addObserver:self
+           selector:@selector(storesDidChange:)
+               name:NSPersistentStoreCoordinatorStoresDidChangeNotification
+             object:_persistentStoreCoordinator];
+    
+    [defaultCenter addObserver:self
+           selector:@selector(persistentStoreDidImportUbiquitiousContentChanges:)
+               name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+             object:_persistentStoreCoordinator];
+    
+    
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
@@ -460,6 +480,49 @@
     NSLog(@"%@", [error localizedDescription]);
 }
 
+
+#pragma mark - iCloud Support
+/**
+ Use these options in your call to -addPersistentStore:
+ */
+- (NSDictionary*) iCloudPersistentStoreOptions{
+    NSDictionary *options = @{ NSPersistentStoreUbiquitousContentNameKey : @"com~pumaxprod~Password-Sync-2" };
+    return options;
+}
+
+/**
+ Subscribe to NSPersistentStoreDidImportUbiquitousContentChangesNotification
+ */
+- (void)persistentStoreDidImportUbiquitiousContentChanges:(NSNotification*)changeNotification{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    [moc performBlock:^{
+        [moc mergeChangesFromContextDidSaveNotification:changeNotification];
+    }];
+}
+
+/**
+ Subscribe to NSPersistentStoreCoordinatorStoresWillChangeNotification
+ */
+- (void)storesWillChange:(NSNotification *)n {
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    [moc performBlockAndWait:^{
+        NSError *error = nil;
+        if ([moc hasChanges]) {
+            [moc save:&error];
+        }
+        
+        [moc reset];
+    }];
+    
+    //reset user interface
+}
+
+/**
+ Subscribe to NSPersistentStoreCoordinatorStoresDidChangeNotification
+ */
+- (void)storesDidChange:(NSNotification *)n {
+    //refresh user interface
+}
 
 
 
