@@ -176,6 +176,8 @@
 		AD54806717A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */; };
 		AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
 		AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
+		AD58F95317B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
+		AD58F95417B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -506,6 +508,8 @@
 		AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-icon-crop.png"; sourceTree = "<group>"; };
 		AD58F94C17B14A5F00344134 /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
 		AD58F94D17B14A5F00344134 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
+		AD58F95117B178AE00344134 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AD58F95217B178AE00344134 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -957,6 +961,15 @@
 			name = SLColorArt;
 			sourceTree = "<group>";
 		};
+		AD58F95517B1790500344134 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AD58F95117B178AE00344134 /* Reachability.h */,
+				AD58F95217B178AE00344134 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		AD6133F21793BFC2004CEDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1030,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD58F95517B1790500344134 /* Reachability */,
 				AD58F95017B14A6300344134 /* SLColorArt */,
 				AD940E5A17A8651C001442F0 /* opencv2.framework */,
 				ADF10D4A17A4667000CAB546 /* UIIMage Blur Category */,
@@ -1761,6 +1775,7 @@
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
+				AD58F95317B178AE00344134 /* Reachability.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1795,6 +1810,7 @@
 				AD547FD817A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
+				AD58F95417B178AE00344134 /* Reachability.m in Sources */,
 				ADF10D4517A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,

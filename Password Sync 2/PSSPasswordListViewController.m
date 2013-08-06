@@ -259,9 +259,9 @@ dispatch_queue_t backgroundQueue;
     UIImage * favicon = [UIImage imageWithData:object.favicon];
     
     
-    
-    //cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Disclosure"]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     cell.imageView.image = [UIImage imageNamed:@"WebsiteSmallPlaceholder"];
     cell.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
     cell.backgroundColor = [UIColor whiteColor];

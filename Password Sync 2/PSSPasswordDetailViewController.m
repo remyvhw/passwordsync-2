@@ -12,6 +12,7 @@
 #import "PSSPasswordDomain.h"
 #import "PSSPasswordEditorTableViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "Reachability.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -31,7 +32,11 @@
 @implementation PSSPasswordDetailViewController
 dispatch_queue_t backgroundQueue;
 
-
+-(void)removeWebViewFromViewStack{
+    [self.backgroundWebView stopLoading];
+    [self.backgroundWebView removeFromSuperview];
+    self.backgroundWebView = nil;
+}
 
 
 -(void)editorAction:(id)sender{
@@ -129,9 +134,7 @@ dispatch_queue_t backgroundQueue;
         [self.detailItem setDecorativeImageForDevice:image];
         
         [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:image animated:YES];
-        [self.backgroundWebView stopLoading];
-        [self.backgroundWebView removeFromSuperview];
-        self.backgroundWebView = nil;
+        [self removeWebViewFromViewStack];
     });
     
     
@@ -180,13 +183,35 @@ dispatch_queue_t backgroundQueue;
     backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesWebViewFetchBlurThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
     
     
-    
     self.tableView.backgroundColor = [UIColor clearColor];
     if (self.detailItem.decorativeImageForDevice) {
+        [self removeWebViewFromViewStack];
         [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:YES];
     } else {
-        [self fetchDecorativeImageForCurrentDevice];
-        [self.backgroundWebView setScalesPageToFit:YES];
+        
+        // Test for reachability
+        
+        __weak Reachability* reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+        
+        // We only will capture a screenshot if user is currently connected to wifi.
+        reachability.reachableOnWWAN = NO;
+        
+        reachability.reachableBlock = ^(Reachability*reach)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [self fetchDecorativeImageForCurrentDevice];
+                [self.backgroundWebView setScalesPageToFit:YES];
+            });
+            [reachability stopNotifier];
+        };
+        
+        reachability.unreachableBlock = ^(Reachability*reach)
+        {
+            [reachability stopNotifier];
+        };
+        
+        [reachability startNotifier];
+        
     }
     
     self.automaticallyAdjustsScrollViewInsets = NO;
