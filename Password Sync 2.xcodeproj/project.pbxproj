@@ -174,6 +174,10 @@
 		AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800C17A1C7EE008FAFFB /* toolbar-icon-crop@2x.png */; };
 		AD54806617A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */; };
 		AD54806717A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */ = {isa = PBXBuildFile; fileRef = AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */; };
+		AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
+		AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
+		AD58F95317B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
+		AD58F95417B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -209,6 +213,8 @@
 		AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */; };
 		AD74691B179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
 		AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
+		AD7F800417B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
+		AD7F800517B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
 		AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD82101E177CFB2900B6F501 /* StoreKit.framework */; };
 		AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
 		AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
@@ -500,6 +506,10 @@
 		AD54800B17A1C7EE008FAFFB /* crop-button-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-button-icon@2x.png"; sourceTree = "<group>"; };
 		AD54800C17A1C7EE008FAFFB /* toolbar-icon-crop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-icon-crop@2x.png"; sourceTree = "<group>"; };
 		AD54800D17A1C7EE008FAFFB /* toolbar-icon-crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-icon-crop.png"; sourceTree = "<group>"; };
+		AD58F94C17B14A5F00344134 /* SLColorArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLColorArt.h; sourceTree = "<group>"; };
+		AD58F94D17B14A5F00344134 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
+		AD58F95117B178AE00344134 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AD58F95217B178AE00344134 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -536,6 +546,7 @@
 		AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_Sync_2Tests.m; sourceTree = "<group>"; };
 		AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactWebsiteCell.xib; sourceTree = "<group>"; };
 		AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactPhoneNumberCell.xib; sourceTree = "<group>"; };
+		AD7F800317B082E600A590FA /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD821020177CFBD300B6F501 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
 		AD821021177CFBD300B6F501 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
@@ -941,6 +952,24 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		AD58F95017B14A6300344134 /* SLColorArt */ = {
+			isa = PBXGroup;
+			children = (
+				AD58F94C17B14A5F00344134 /* SLColorArt.h */,
+				AD58F94D17B14A5F00344134 /* SLColorArt.m */,
+			);
+			name = SLColorArt;
+			sourceTree = "<group>";
+		};
+		AD58F95517B1790500344134 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AD58F95117B178AE00344134 /* Reachability.h */,
+				AD58F95217B178AE00344134 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		AD6133F21793BFC2004CEDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1030,8 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD58F95517B1790500344134 /* Reachability */,
+				AD58F95017B14A6300344134 /* SLColorArt */,
 				AD940E5A17A8651C001442F0 /* opencv2.framework */,
 				ADF10D4A17A4667000CAB546 /* UIIMage Blur Category */,
 				AD547FDF17A1C679008FAFFB /* MediaPlayer.framework */,
@@ -1269,6 +1300,7 @@
 		ADC9DFB51788C988006F2858 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				AD7F800317B082E600A590FA /* OCRA.ttf */,
 				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
 				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
 				AD72C3CA177B7E27009AADC8 /* main.m */,
@@ -1554,6 +1586,7 @@
 				AD54803C17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				ADAD15FE17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD54801817A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
+				AD7F800417B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54804017A1C7EE008FAFFB /* close-button@2x.png in Resources */,
 				AD54802017A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
 				AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
@@ -1569,6 +1602,7 @@
 				AD54801117A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54803D17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
+				AD7F800517B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54803B17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
 				AD54802117A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
@@ -1676,6 +1710,7 @@
 				ADF10D4817A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
 				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */,
+				AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
@@ -1740,6 +1775,7 @@
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
+				AD58F95317B178AE00344134 /* Reachability.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1754,6 +1790,7 @@
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
+				AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */,
@@ -1773,6 +1810,7 @@
 				AD547FD817A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				ADC9DEAE1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
+				AD58F95417B178AE00344134 /* Reachability.m in Sources */,
 				ADF10D4517A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,

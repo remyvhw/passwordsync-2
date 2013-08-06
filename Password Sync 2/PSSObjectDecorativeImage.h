@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString * viewportIdentifier;
 @property (nonatomic, retain) PSSObjectAttachment *attachment;
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
-@property (nonatomic, retain) PSSDocumentBaseObject *noteBaseObject;
+@property (nonatomic, retain) PSSBaseGenericObject *thumbnailOfObject;
 
 @property (nonatomic, strong, readonly) UIImage * imageNormal;
 @property (nonatomic, strong, readonly) UIImage * imageLightEffect;

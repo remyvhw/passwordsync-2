@@ -20,7 +20,7 @@
 @dynamic viewportIdentifier;
 @dynamic attachment;
 @dynamic encryptedObject;
-@dynamic noteBaseObject;
+@dynamic thumbnailOfObject;
 
 @synthesize imageNormal = _imageNormal;
 @synthesize imageLightEffect = _imageLightEffect;

@@ -11,6 +11,8 @@
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDomain.h"
 #import "PSSPasswordEditorTableViewController.h"
+#import "UIImage+ImageEffects.h"
+#import "Reachability.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -19,8 +21,8 @@
     NSInteger __webViewLoads;
 }
 
-@property (strong, nonatomic) UIWebView * backgroundWebView;
-@property (weak, nonatomic) IBOutlet UIImageView * backgroundImageView;
+@property (strong, nonatomic) IBOutlet UIWebView * backgroundWebView;
+@property (strong, nonatomic) IBOutlet UIImageView * backgroundImageView;
 
 @property (strong, nonatomic) UITableViewCell * titleCell;
 @property (strong, nonatomic) UITableViewCell * notesCell;
@@ -28,9 +30,13 @@
 @end
 
 @implementation PSSPasswordDetailViewController
+dispatch_queue_t backgroundQueue;
 
-
-
+-(void)removeWebViewFromViewStack{
+    [self.backgroundWebView stopLoading];
+    [self.backgroundWebView removeFromSuperview];
+    self.backgroundWebView = nil;
+}
 
 
 -(void)editorAction:(id)sender{
@@ -69,30 +75,49 @@
     
 }
 
--(void)insertBlurredBackgroundImageViewInViewHierarchyWithImage:(UIImage*)image animated:(BOOL)animated{
+-(void)insertBlurredBackgroundImageViewInViewHierarchyWithImage:(UIImage*)backgroundImage animated:(BOOL)animated{
     
     
-    
-    CGFloat animationDuration = 0;
-    if (animated) {
-        animationDuration = 1;
+    if (!self.backgroundImageView.image) {
+        
+        
+        CGFloat animationDuration = 0;
+        if (animated) {
+            animationDuration = 1;
+        }
+        
+        [self.backgroundImageView setAlpha:0.0];
+        
+        
+        dispatch_async(backgroundQueue, ^(void) {
+            UIImage * blurredImage = [backgroundImage applyLightEffect];
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+                // Set the image on the main thread
+                [self.backgroundImageView setImage:blurredImage];
+                [UIView animateWithDuration:animationDuration animations:^{
+                    [self.backgroundImageView setAlpha:1.0];
+                }];
+            });
+            
+        });
+        
+
     }
     
-    [self.backgroundImageView setAlpha:0.0];
-    [self.backgroundImageView setImage:image];
-    [UIView animateWithDuration:animationDuration animations:^{
-        [self.backgroundImageView setAlpha:1.0];
-    }];
     
 }
 
 -(UIImage *)drawWebViewToImage:(UIView *)view{
+
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    view.hidden = NO;
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    
-    UIGraphicsBeginImageContext(view.bounds.size);
-    [view.layer drawInContext:UIGraphicsGetCurrentContext()];
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    view.hidden = YES;
     return img;
 }
 
@@ -104,10 +129,12 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        UIImage * image = [self drawWebViewToImage:[self.backgroundWebView snapshotViewAfterScreenUpdates:YES]];
+        UIImage * image = [self drawWebViewToImage:self.backgroundWebView];
+        
+        [self.detailItem setDecorativeImageForDevice:image];
+        
         [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:image animated:YES];
-        [self.backgroundWebView removeFromSuperview];
-        self.backgroundWebView = nil;
+        [self removeWebViewFromViewStack];
     });
     
     
@@ -121,10 +148,9 @@
         return;
     }
     
-    UIWebView * backgroundWebView = [[UIWebView alloc] initWithFrame:self.view.frame];
     
-    [backgroundWebView setUserInteractionEnabled:NO];
-    [backgroundWebView setOpaque:YES];
+    [self.backgroundWebView setUserInteractionEnabled:NO];
+    [self.backgroundWebView setOpaque:YES];
     
     NSString * domainHostname = [self.detailItem.mainDomain hostname];
     
@@ -132,13 +158,9 @@
     
     NSURLRequest * domainRequest = [[NSURLRequest alloc] initWithURL:hostnameURL];
     
-    [backgroundWebView loadRequest:domainRequest];
-    backgroundWebView.delegate = self;
-    [self.view addSubview:backgroundWebView];
+    [self.backgroundWebView loadRequest:domainRequest];
+    self.backgroundWebView.delegate = self;
     
-    self.backgroundWebView = backgroundWebView;
-    
-    [self.view sendSubviewToBack:self.backgroundWebView];
     
 }
 
@@ -156,15 +178,44 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    /*__webViewLoads = 0;
+    __webViewLoads = 0;
+    
+    backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesWebViewFetchBlurThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
+    
     
     self.tableView.backgroundColor = [UIColor clearColor];
     if (self.detailItem.decorativeImageForDevice) {
-        [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:NO];
+        [self removeWebViewFromViewStack];
+        [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:YES];
     } else {
-        [self fetchDecorativeImageForCurrentDevice];
+        
+        // Test for reachability
+        
+        __weak Reachability* reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+        
+        // We only will capture a screenshot if user is currently connected to wifi.
+        reachability.reachableOnWWAN = NO;
+        
+        reachability.reachableBlock = ^(Reachability*reach)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [self fetchDecorativeImageForCurrentDevice];
+                [self.backgroundWebView setScalesPageToFit:YES];
+            });
+            [reachability stopNotifier];
+        };
+        
+        reachability.unreachableBlock = ^(Reachability*reach)
+        {
+            [reachability stopNotifier];
+        };
+        
+        [reachability startNotifier];
+        
     }
-    */
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(64., 0, 49., 0);
     
     
     
@@ -410,14 +461,12 @@
     __webViewLoads--;
     
     if (__webViewLoads > 0) {
+        
         return;
     }
     [self saveDecorativeImageViewAndAnimateBackgroundAppearance];
     
-    [self.view sendSubviewToBack:webView];
-    //[webView removeFromSuperview];
-    //self.backgroundWebView = nil;
-    //[webView setAlpha:0.2];
+    
 }
 
 - (void)webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error {

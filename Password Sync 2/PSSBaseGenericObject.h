@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) NSSet *versions;
 @property (nonatomic, retain) PSSBaseObjectVersion * currentHardLinkedVersion;
+@property (nonatomic, retain) PSSObjectDecorativeImage * thumbnail;
 
 @property (nonatomic, strong) id currentVersion;
 

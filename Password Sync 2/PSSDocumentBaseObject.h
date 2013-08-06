@@ -13,6 +13,5 @@
 
 @interface PSSDocumentBaseObject : PSSBaseGenericObject
 
-@property (nonatomic, retain) PSSObjectDecorativeImage * thumbnail;
 
 @end

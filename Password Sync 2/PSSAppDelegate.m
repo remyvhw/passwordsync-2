@@ -185,8 +185,7 @@
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
-    
-    
+        
     ///////DEBUG 
     if (0) {
         

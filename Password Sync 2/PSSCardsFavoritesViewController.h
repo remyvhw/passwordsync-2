@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSCardsFavoritesViewController : UIViewController
+@interface PSSCardsFavoritesViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate>
 
 @end
