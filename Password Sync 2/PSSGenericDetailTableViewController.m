@@ -14,8 +14,27 @@
 
 @implementation PSSGenericDetailTableViewController
 @synthesize detailItem = _detailItem;
+@synthesize versionsTableViewCell = _versionsTableViewCell;
+
+-(UITableViewCell*)versionsTableViewCell{
+    
+    if (_versionsTableViewCell) {
+        return _versionsTableViewCell;
+    }
+    
+    UITableViewCell * versionsTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    versionsTableViewCell.textLabel.text = NSLocalizedString(@"Versions", nil);
+    versionsTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    versionsTableViewCell.imageView.image = [[UIImage imageNamed:@"Versions"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _versionsTableViewCell = versionsTableViewCell;
+    return versionsTableViewCell;
+    
+}
 
 #pragma mark - Managing the detail item
+
 
 -(UIView*)lockedImageAccessoryView{
     

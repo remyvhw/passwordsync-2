@@ -18,8 +18,15 @@
 @implementation PSSGenericDetailViewController
 
 
--(void)lockUIAction:(id)notification{
+
+
+-(void)presentVersionsBrowser:(id)sender{
     
+}
+
+
+
+-(void)lockUIAction:(id)notification{
     
     self.isPasscodeUnlocked = NO;
     
@@ -39,6 +46,7 @@
 -(void)userDidUnlockWithPasscode{
     UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editorAction:)];
     [self.navigationItem setRightBarButtonItem:editButton animated:YES];
+    
 }
 
 
@@ -113,6 +121,7 @@
     
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {

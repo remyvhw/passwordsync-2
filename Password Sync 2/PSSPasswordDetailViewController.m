@@ -13,6 +13,7 @@
 #import "PSSPasswordEditorTableViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "Reachability.h"
+#import "PSSVersionFlowPasswordCollectionViewController.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -58,11 +59,25 @@ dispatch_queue_t backgroundQueue;
     [super lockUIAction:notification];
 }
 
+
+-(void)presentVersionsBrowser:(id)sender{
+    
+    PSSVersionFlowPasswordCollectionViewController * flowController = [[PSSVersionFlowPasswordCollectionViewController alloc] initWithNibName:@"PSSVersionFlowGenericControllerViewController" bundle:[NSBundle mainBundle]];
+    
+    flowController.detailItem = self.detailItem;
+    flowController.backgroundImage.image = self.backgroundImageView.image;
+    
+    [self.navigationController pushViewController:flowController animated:YES];
+    
+}
+
+
 -(void)userDidUnlockWithPasscode{
     
     // We need to reload the note cell
     [self createNotesCell];
     [super userDidUnlockWithPasscode];
+    
     
 }
 
@@ -287,6 +302,9 @@ dispatch_queue_t backgroundQueue;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (self.isPasscodeUnlocked) {
+        return 5;
+    }
     return 4;
 }
 
@@ -314,6 +332,9 @@ dispatch_queue_t backgroundQueue;
         if ([(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion notes]) {
             return 1;
         }
+    } else if (section==4){
+        // Buttons
+        return 1;
     }
     
     return 0;
@@ -400,6 +421,15 @@ dispatch_queue_t backgroundQueue;
         
     }
     
+    // Buttons
+    if (indexPath.section == 4) {
+        
+        if (indexPath.row == 0) {
+            // Versions
+            return [self versionsTableViewCell];
+        }
+        
+    }
     
     return nil;
 }
@@ -445,7 +475,17 @@ dispatch_queue_t backgroundQueue;
         
     }
     
-    // Offer different options
+    
+    
+    // Buttons
+    if (indexPath.section == 4) {
+        
+        if (indexPath.row == 0) {
+            // Versions
+            [self presentVersionsBrowser:tableView];
+        }
+        
+    }
     
     
 }

@@ -12,8 +12,13 @@
 @interface PSSGenericDetailTableViewController : PSSGenericDetailViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
+@property (strong, nonatomic, readonly) UITableViewCell * versionsTableViewCell;
+
+
 
 -(UIView*)lockedImageAccessoryView;
 -(UIView*)copyImageAccessoryView;
+
+
 
 @end
