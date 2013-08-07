@@ -8,12 +8,23 @@
 
 #import "PSSVersionFlowGenericControllerViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "PSSVersionsCollectionViewFlowLayout.h"
 
 @interface PSSVersionFlowGenericControllerViewController ()
 
 @end
 
 @implementation PSSVersionFlowGenericControllerViewController
+
+-(void)configureCollectionViewFlowLayout{
+    
+    PSSVersionsCollectionViewFlowLayout * flowLayout = (PSSVersionsCollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+    [flowLayout setSectionInset:UIEdgeInsetsMake(40., 0, 40, 0)];
+    [flowLayout setMinimumLineSpacing:40];
+    [flowLayout setItemSize:CGSizeMake(280., 287.)];
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,16 +48,28 @@
     }
     
     self.collectionView.contentInset = UIEdgeInsetsMake(64., 0, 49., 0);
+    [self configureCollectionViewFlowLayout];
+    
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSInteger numberOfCells = 10;//self.orderedVersions.count;
-    NSIndexPath * lastCollectionCell = [NSIndexPath indexPathForRow:numberOfCells-1 inSection:0];
     
-    [self.collectionView scrollToItemAtIndexPath:lastCollectionCell atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
     
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        NSInteger numberOfCells = 10;//self.orderedVersions.count;
+        NSIndexPath * lastCollectionCell = [NSIndexPath indexPathForRow:numberOfCells-1 inSection:0];
+
+        PSSVersionsCollectionViewFlowLayout * flowLayout = (PSSVersionsCollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
+
+        flowLayout.preventBounce = YES;
+        [self.collectionView scrollToItemAtIndexPath:lastCollectionCell atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
+        
+        flowLayout.preventBounce = NO;
+
+    }
     
     
 }
@@ -72,5 +95,8 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
 }
+
+
+
 
 @end

@@ -20,17 +20,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-FO-wLq">
+                <collectionView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-FO-wLq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="49"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="20" id="AO8-Fd-cdj">
-                        <size key="itemSize" width="280" height="400"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
-                    </collectionViewFlowLayout>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="mSm-My-jka"/>
+                    </constraints>
+                    <collectionViewLayout key="collectionViewLayout" id="Ocy-mD-Xuu" customClass="PSSVersionsCollectionViewFlowLayout"/>
                     <cells/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jjp-ub-hiI"/>
@@ -40,12 +37,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="vSn-FO-wLq" firstAttribute="top" secondItem="1" secondAttribute="top" id="1vG-ph-QES"/>
+                <constraint firstItem="vSn-FO-wLq" firstAttribute="top" secondItem="1" secondAttribute="top" id="2bq-9m-5J5"/>
                 <constraint firstAttribute="bottom" secondItem="2aA-wr-aAa" secondAttribute="bottom" id="B0V-b4-ovL"/>
                 <constraint firstItem="2aA-wr-aAa" firstAttribute="top" secondItem="1" secondAttribute="top" id="GkL-4H-UHi"/>
-                <constraint firstAttribute="bottom" secondItem="vSn-FO-wLq" secondAttribute="bottom" id="Koj-Z2-k53"/>
-                <constraint firstItem="vSn-FO-wLq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="PXi-j4-TiD"/>
-                <constraint firstAttribute="trailing" secondItem="vSn-FO-wLq" secondAttribute="trailing" id="gCw-gD-103"/>
+                <constraint firstAttribute="bottom" secondItem="vSn-FO-wLq" secondAttribute="bottom" id="KpR-Uw-U3z"/>
+                <constraint firstAttribute="centerX" secondItem="vSn-FO-wLq" secondAttribute="centerX" id="SIR-CR-Bi9"/>
                 <constraint firstAttribute="trailing" secondItem="2aA-wr-aAa" secondAttribute="trailing" id="j0O-Nh-Brm"/>
                 <constraint firstItem="2aA-wr-aAa" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yoS-UI-bCi"/>
             </constraints>

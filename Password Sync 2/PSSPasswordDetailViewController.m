@@ -485,6 +485,9 @@ dispatch_queue_t backgroundQueue;
             [self presentVersionsBrowser:tableView];
         }
         
+        
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
     }
     
     

@@ -17,4 +17,6 @@
 
 @property (nonatomic, strong) NSArray * orderedVersions;
 
+-(void)configureCollectionViewFlowLayout;
+
 @end

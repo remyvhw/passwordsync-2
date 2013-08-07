@@ -215,6 +215,8 @@
 		AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
 		AD7F800417B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
 		AD7F800517B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
+		AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */; };
+		AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */; };
 		AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD82101E177CFB2900B6F501 /* StoreKit.framework */; };
 		AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
 		AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
@@ -559,6 +561,8 @@
 		AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactWebsiteCell.xib; sourceTree = "<group>"; };
 		AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactPhoneNumberCell.xib; sourceTree = "<group>"; };
 		AD7F800317B082E600A590FA /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
+		AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVersionsCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVersionsCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD821020177CFBD300B6F501 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
 		AD821021177CFBD300B6F501 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
@@ -1209,6 +1213,8 @@
 				AD8C835717B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib */,
 				AD8C836317B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.h */,
 				AD8C836417B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m */,
+				AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */,
+				AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -1838,6 +1844,7 @@
 				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				AD8C836117B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
+				AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD58F95317B178AE00344134 /* Reachability.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
@@ -1880,6 +1887,7 @@
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
+				AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
 				AD1BECD517A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
 				AD8C835917B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
 				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
