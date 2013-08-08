@@ -24,9 +24,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="320" id="mSm-My-jka"/>
-                    </constraints>
                     <collectionViewLayout key="collectionViewLayout" id="Ocy-mD-Xuu" customClass="PSSVersionsCollectionViewFlowLayout"/>
                     <cells/>
                     <connections>
@@ -40,9 +37,11 @@
                 <constraint firstItem="vSn-FO-wLq" firstAttribute="top" secondItem="1" secondAttribute="top" id="2bq-9m-5J5"/>
                 <constraint firstAttribute="bottom" secondItem="2aA-wr-aAa" secondAttribute="bottom" id="B0V-b4-ovL"/>
                 <constraint firstItem="2aA-wr-aAa" firstAttribute="top" secondItem="1" secondAttribute="top" id="GkL-4H-UHi"/>
+                <constraint firstAttribute="trailing" secondItem="vSn-FO-wLq" secondAttribute="trailing" id="Kng-vt-DrA"/>
                 <constraint firstAttribute="bottom" secondItem="vSn-FO-wLq" secondAttribute="bottom" id="KpR-Uw-U3z"/>
                 <constraint firstAttribute="centerX" secondItem="vSn-FO-wLq" secondAttribute="centerX" id="SIR-CR-Bi9"/>
                 <constraint firstAttribute="trailing" secondItem="2aA-wr-aAa" secondAttribute="trailing" id="j0O-Nh-Brm"/>
+                <constraint firstItem="vSn-FO-wLq" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="qEs-3a-jHH"/>
                 <constraint firstItem="2aA-wr-aAa" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yoS-UI-bCi"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

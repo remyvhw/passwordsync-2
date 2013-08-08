@@ -1211,10 +1211,10 @@
 				AD8C835517B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.h */,
 				AD8C835617B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m */,
 				AD8C835717B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib */,
-				AD8C836317B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.h */,
-				AD8C836417B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m */,
 				AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */,
 				AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */,
+				AD8C836317B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.h */,
+				AD8C836417B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m */,
 			);
 			name = Generic;
 			sourceTree = "<group>";

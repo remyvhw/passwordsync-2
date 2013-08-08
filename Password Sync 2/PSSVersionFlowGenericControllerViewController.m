@@ -47,7 +47,9 @@
         self.backgroundImage.image = [self.detailItem.decorativeImageForDevice applyLightEffect];
     }
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(64., 0, 49., 0);
+    
+    
+
     [self configureCollectionViewFlowLayout];
     
     
@@ -57,9 +59,12 @@
     [super viewWillAppear:animated];
     
     
+    CGFloat padding = MIN(320, (self.view.frame.size.width-320.)/2);
+    self.collectionView.contentInset = UIEdgeInsetsMake(64, padding, 49, padding);
+    
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        NSInteger numberOfCells = 10;//self.orderedVersions.count;
+        NSInteger numberOfCells = self.orderedVersions.count;
         NSIndexPath * lastCollectionCell = [NSIndexPath indexPathForRow:numberOfCells-1 inSection:0];
 
         PSSVersionsCollectionViewFlowLayout * flowLayout = (PSSVersionsCollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
@@ -89,7 +94,7 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 0;
+    return [self.detailItem.versions count];
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

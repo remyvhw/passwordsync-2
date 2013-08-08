@@ -8,17 +8,32 @@
 
 #import "PSSVersionGenericCollectionViewCell.h"
 
+@interface PSSVersionGenericCollectionViewCell ()
+
+
+
+@end
+
 @implementation PSSVersionGenericCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+@synthesize currentVersion = _currentVersion;
+
+-(BOOL)currentVersion{
+    return _currentVersion;
 }
 
-
+-(void)setCurrentVersion:(BOOL)currentVersion{
+    
+    
+    if (currentVersion == YES) {
+        // We need to hide the info button
+        [self.infoButton setHidden:YES];
+        self.backgroundColor = self.window.tintColor;
+    } else {
+        [self.infoButton setHidden:NO];
+    }
+    
+    
+}
 
 @end
