@@ -10,7 +10,6 @@
 
 @interface PSSVersionsCollectionViewFlowLayout ()
 
-@property (strong, nonatomic) UIDynamicAnimator * dynamicAnimator;
 
 @end
 
@@ -45,6 +44,10 @@
             
         }
     }
+}
+
+-(void)prepareForCollectionViewUpdates:(NSArray *)updateItems{
+    NSLog(@"%@", [updateItems description]);
 }
 
 

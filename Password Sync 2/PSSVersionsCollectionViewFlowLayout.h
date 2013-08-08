@@ -11,5 +11,7 @@
 @interface PSSVersionsCollectionViewFlowLayout : UICollectionViewFlowLayout
 
 @property BOOL preventBounce;
+@property (strong, nonatomic) UIDynamicAnimator * dynamicAnimator;
+
 
 @end

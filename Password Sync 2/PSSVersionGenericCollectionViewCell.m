@@ -7,6 +7,7 @@
 //
 
 #import "PSSVersionGenericCollectionViewCell.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSVersionGenericCollectionViewCell ()
 
@@ -28,9 +29,14 @@
     if (currentVersion == YES) {
         // We need to hide the info button
         [self.infoButton setHidden:YES];
-        self.backgroundColor = self.window.tintColor;
+        self.backgroundColor = APP_DELEGATE.window.tintColor;
+        self.dateLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [UIColor whiteColor];
     } else {
         [self.infoButton setHidden:NO];
+        self.backgroundColor = [UIColor whiteColor];
+        self.dateLabel.textColor = [UIColor blackColor];
+        self.titleLabel.textColor = [UIColor blackColor];
     }
     
     

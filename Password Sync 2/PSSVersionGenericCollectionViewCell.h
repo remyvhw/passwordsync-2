@@ -11,6 +11,7 @@
 @interface PSSVersionGenericCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property BOOL currentVersion;
 

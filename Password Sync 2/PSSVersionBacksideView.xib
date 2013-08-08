@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="999" contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="287"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" tag="995" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DC4-bu-t88">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="287"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Wn-7ek">
+                    <rect key="frame" x="67" y="148" width="136" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Restore this version">
+                        <color key="titleColor" red="0.180392161" green="0.5647059083" blue="0.35294118520000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R88-bq-m3L">
+                    <rect key="frame" x="72" y="110" width="127" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Delete this version">
+                        <color key="titleColor" red="0.64929448339999996" green="0.056682724339999997" blue="0.066866659440000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DC4-bu-t88" firstAttribute="top" secondItem="1" secondAttribute="top" id="0ou-m9-skT"/>
+                <constraint firstItem="DC4-bu-t88" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="2yO-bS-zlJ"/>
+                <constraint firstAttribute="centerX" secondItem="R88-bq-m3L" secondAttribute="centerX" constant="4.5" id="8lI-OO-r8x"/>
+                <constraint firstItem="l55-Wn-7ek" firstAttribute="top" secondItem="R88-bq-m3L" secondAttribute="bottom" constant="8" id="9ia-Nv-nq5"/>
+                <constraint firstAttribute="trailing" secondItem="DC4-bu-t88" secondAttribute="trailing" id="9mx-Re-SQc"/>
+                <constraint firstAttribute="bottom" secondItem="DC4-bu-t88" secondAttribute="bottom" id="cP3-TM-rew"/>
+                <constraint firstAttribute="centerX" secondItem="l55-Wn-7ek" secondAttribute="centerX" constant="5" id="gF8-Od-QHt"/>
+                <constraint firstAttribute="centerY" secondItem="R88-bq-m3L" secondAttribute="centerY" constant="18.5" id="zfi-Qy-Um2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

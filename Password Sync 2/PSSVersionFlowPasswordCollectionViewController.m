@@ -7,13 +7,16 @@
 //
 
 #import "PSSVersionFlowPasswordCollectionViewController.h"
-#import "PSSVersionGenericCollectionViewCell.h"
+#import "PSSPasswordVersion.h"
 
 @interface PSSVersionFlowPasswordCollectionViewController ()
 
 @end
 
 @implementation PSSVersionFlowPasswordCollectionViewController
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,8 +51,78 @@
     
     PSSVersionGenericCollectionViewCell * cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"passwordVersionCell" forIndexPath:indexPath];
     
+    PSSPasswordVersion * passwordVersion = [self.orderedVersions objectAtIndex:indexPath.row];
     
-    cell.dateLabel.text = [[NSDate date] description];
+    cell.dateLabel.text = [self.dateFormatter stringFromDate:passwordVersion.timestamp];
+    
+    cell.titleLabel.text = passwordVersion.displayName;
+    
+    [cell.infoButton addTarget:self action:@selector(showBacksideViewByPressingButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel * usernameCell = (UILabel*)[cell viewWithTag:5];
+    UILabel * passwordCell = (UILabel*)[cell viewWithTag:7];
+    UILabel * notesCell = (UILabel*)[cell viewWithTag:9];
+    
+    usernameCell.textColor = [UIColor lightGrayColor];
+    passwordCell.textColor = [UIColor lightGrayColor];
+    notesCell.textColor = [UIColor lightGrayColor];
+    
+    usernameCell.text = NSLocalizedString(@"Decrypting...", nil);
+    passwordCell.text = NSLocalizedString(@"Decrypting...", nil);
+    notesCell.text = NSLocalizedString(@"Decrypting...", nil);
+    
+    dispatch_async(self.backgroundQueue, ^(void) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            
+            NSString * decryptedUsername = [passwordVersion decryptedUsername];
+            NSString * decryptedPassword = [passwordVersion decryptedPassword];
+            NSString * decryptedNotes = [passwordVersion decryptedNotes];
+            
+            [UIView animateWithDuration:0.1 animations:^{
+                
+                usernameCell.alpha = 0;
+                passwordCell.alpha = 0;
+                notesCell.alpha = 0;
+                
+            } completion:^(BOOL finished) {
+                usernameCell.textColor = [UIColor blackColor];
+                passwordCell.textColor = [UIColor blackColor];
+                
+                usernameCell.text = decryptedUsername;
+                passwordCell.text = decryptedPassword;
+                
+                if (decryptedNotes && ![decryptedNotes isEqualToString:@""]) {
+                    notesCell.textColor = [UIColor blackColor];
+                    notesCell.text = decryptedNotes;
+                } else {
+                    notesCell.textColor = [UIColor lightGrayColor];
+                    notesCell.text = NSLocalizedString(@"No Notes", nil);
+                }
+                
+                [UIView animateWithDuration:0.1 animations:^{
+                    
+                    usernameCell.alpha = 1;
+                    passwordCell.alpha = 1;
+                    notesCell.alpha = 1;
+                    
+                }];
+                
+            }];
+            
+            
+        });
+        
+    });
+    
+    
+    if (passwordVersion == [self.orderedVersions lastObject]) {
+        cell.currentVersion = YES;
+    } else {
+        cell.currentVersion = NO;
+    }
+    
+    
     
     return cell;
 }

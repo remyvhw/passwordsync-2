@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD09C9ED17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD09C9EC17B33D04002408BF /* PSSVersionBacksideView.xib */; };
+		AD09C9EE17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD09C9EC17B33D04002408BF /* PSSVersionBacksideView.xib */; };
 		AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */; };
 		AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */; };
 		AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
@@ -397,6 +399,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD09C9EC17B33D04002408BF /* PSSVersionBacksideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSVersionBacksideView.xib; sourceTree = "<group>"; };
 		AD0FAA2F177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeNewUserSetMasterPasswordViewController.h; sourceTree = "<group>"; };
 		AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeNewUserSetMasterPasswordViewController.m; sourceTree = "<group>"; };
 		AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVshaDigester.h; path = "Password Sync 2/RVshaDigester.h"; sourceTree = "<group>"; };
@@ -1215,6 +1218,7 @@
 				AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */,
 				AD8C836317B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.h */,
 				AD8C836417B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m */,
+				AD09C9EC17B33D04002408BF /* PSSVersionBacksideView.xib */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -1603,6 +1607,7 @@
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
+				AD09C9ED17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
 				AD54801C17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
@@ -1675,6 +1680,7 @@
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				ADAD15FF17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
+				AD09C9EE17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803517A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PSSBaseGenericObject.h"
+#import "PSSVersionGenericCollectionViewCell.h"
 
 @interface PSSVersionFlowGenericControllerViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -16,6 +17,17 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @property (nonatomic, strong) NSArray * orderedVersions;
+@property (nonatomic, strong) NSDateFormatter * dateFormatter;
+
+@property dispatch_queue_t backgroundQueue;
+
+-(void)showBacksideViewByPressingButton:(UIButton*)sender;
+-(void)showBacksideViewForCell:(PSSVersionGenericCollectionViewCell*)cell;
+-(void)hideBacksideViewByPressingButton:(UIButton*)sender;
+-(void)hideBacksideViewForCell:(PSSVersionGenericCollectionViewCell*)cell;
+
+-(void)restoreVersionForCell:(PSSVersionGenericCollectionViewCell*)cell;
+-(void)deleteVersionForCell:(PSSVersionGenericCollectionViewCell*)cell;
 
 -(void)configureCollectionViewFlowLayout;
 
