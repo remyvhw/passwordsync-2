@@ -8,6 +8,7 @@
 
 #import "PSSVersionFlowPasswordCollectionViewController.h"
 #import "PSSPasswordVersion.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSVersionFlowPasswordCollectionViewController ()
 
@@ -16,6 +17,40 @@
 @implementation PSSVersionFlowPasswordCollectionViewController
 
 
+-(void)restoreVersionForCell:(PSSVersionGenericCollectionViewCell *)cell{
+
+    NSInteger indexOfCell = [self.collectionView indexPathForCell:cell].row;
+
+    PSSPasswordVersion * versionToRestore = [self.orderedVersions objectAtIndex:indexOfCell];
+    
+    NSManagedObjectContext *context = [APP_DELEGATE managedObjectContext];
+    PSSPasswordVersion *newManagedObject = (PSSPasswordVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordVersion" inManagedObjectContext:context];
+        
+    // We'll automatically timestamp it
+    newManagedObject.timestamp = [NSDate date];
+    
+    newManagedObject.displayName = versionToRestore.displayName;
+    newManagedObject.encryptedObject = versionToRestore.encryptedObject;
+    newManagedObject.username = versionToRestore.username;
+    newManagedObject.password = versionToRestore.password;
+    newManagedObject.notes = versionToRestore.notes;
+    newManagedObject.attachments = versionToRestore.attachments;
+    newManagedObject.additionalJSONfields = versionToRestore.additionalJSONfields;
+    
+    self.detailItem.displayName = newManagedObject.displayName;
+    self.detailItem.currentHardLinkedVersion = newManagedObject;
+    
+    [newManagedObject.managedObjectContext save:NULL];
+    
+    // Perform animation on cell
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        cell.transform = CGAffineTransformScale(cell.transform, 3., 3.);
+        
+    }];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
