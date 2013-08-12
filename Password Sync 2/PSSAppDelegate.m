@@ -187,7 +187,7 @@
     
         
     ///////DEBUG 
-    if (0) {
+    if (1) {
         
         PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
         [keychainBindings removeObjectForKey:PSSHashedMasterPasswordKeychainEntry];

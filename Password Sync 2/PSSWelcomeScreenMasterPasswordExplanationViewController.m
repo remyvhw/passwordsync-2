@@ -70,7 +70,8 @@
         self.masterPasswordExplanationTextView.text = explanationText;
     }
     
-    
+    [self.masterPasswordExplanationTextView setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self.masterPasswordExplanationTextView setTextAlignment:NSTextAlignmentCenter];
     
     
 }
