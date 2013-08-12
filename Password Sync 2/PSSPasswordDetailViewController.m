@@ -66,6 +66,7 @@ dispatch_queue_t backgroundQueue;
     
     flowController.detailItem = self.detailItem;
     flowController.backgroundImage.image = self.backgroundImageView.image;
+    flowController.editorDelegate = self;
     
     [self.navigationController pushViewController:flowController animated:YES];
     

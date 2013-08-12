@@ -117,6 +117,7 @@
 
 -(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
     [super objectEditor:editor finishedWithObject:genericObject];
+    self.detailItem = genericObject;
     [self.tableView reloadData];
 }
 

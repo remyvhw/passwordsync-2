@@ -52,6 +52,10 @@
 
 -(void)restoreVersionForCell:(PSSVersionGenericCollectionViewCell *)cell{
     
+    if (self.editorDelegate && [self.editorDelegate respondsToSelector:@selector(objectEditor:finishedWithObject:)]) {
+        [self.editorDelegate objectEditor:self finishedWithObject:self.detailItem];
+    }
+    
 }
 
 -(void)deleteVersionByPressingButton:(UIButton *)sender{

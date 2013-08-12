@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "PSSBaseGenericObject.h"
 #import "PSSVersionGenericCollectionViewCell.h"
+#import "PSSObjectEditorProtocol.h"
 
 @interface PSSVersionFlowGenericControllerViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) PSSBaseGenericObject * detailItem;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) id<PSSObjectEditorProtocol> editorDelegate;
 
 @property (nonatomic, strong) NSArray * orderedVersions;
 @property (nonatomic, strong) NSDateFormatter * dateFormatter;
