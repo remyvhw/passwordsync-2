@@ -27,6 +27,7 @@
 @dynamic tags;
 @dynamic versions;
 @dynamic thumbnail;
+@dynamic favorite;
 
 -(UIImage*)squareThumbnailWithScreencap:(UIImage*)screenCap{
     

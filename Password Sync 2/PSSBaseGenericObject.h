@@ -23,6 +23,8 @@
 @property (nonatomic, retain) NSSet *versions;
 @property (nonatomic, retain) PSSBaseObjectVersion * currentHardLinkedVersion;
 @property (nonatomic, retain) PSSObjectDecorativeImage * thumbnail;
+@property (nonatomic, retain) NSNumber * favorite;
+
 
 @property (nonatomic, strong) id currentVersion;
 

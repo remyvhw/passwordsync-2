@@ -151,6 +151,21 @@
 
 
 
+-(void)toggleFavorite{
+    
+    if ([self.detailItem.favorite boolValue]) {
+        // Item is already a favorite. Remove it.
+        self.detailItem.favorite = [NSNumber numberWithBool:NO];
+    } else {
+        self.detailItem.favorite = [NSNumber numberWithBool:YES];
+    }
+    
+    // Save the context
+    [self.detailItem.managedObjectContext save:NULL];
+    
+}
+
+
 #pragma mark - PSSObjectEditorProtocol methods
 
 -(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{

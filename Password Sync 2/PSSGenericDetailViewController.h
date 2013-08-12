@@ -8,10 +8,11 @@
 
 @import UIKit;
 #import "PSSObjectEditorProtocol.h"
+#import "PSSBaseGenericObject.h"
 
 @interface PSSGenericDetailViewController : UIViewController <PSSObjectEditorProtocol, UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) PSSBaseGenericObject* detailItem;
 @property BOOL isPasscodeUnlocked;
 
 -(void)showUnlockingViewController;
@@ -20,6 +21,8 @@
 -(void)lockUIAction:(id)notification;
 -(void)presentVersionsBrowser:(id)sender;
 
+
+-(void)toggleFavorite;
 
 
 @end

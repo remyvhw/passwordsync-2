@@ -15,6 +15,7 @@
 @implementation PSSGenericDetailTableViewController
 @synthesize detailItem = _detailItem;
 @synthesize versionsTableViewCell = _versionsTableViewCell;
+@synthesize favoriteTableViewCell = _favoriteTableViewCell;
 
 -(UITableViewCell*)versionsTableViewCell{
     
@@ -30,6 +31,24 @@
     
     _versionsTableViewCell = versionsTableViewCell;
     return versionsTableViewCell;
+    
+}
+
+
+-(UITableViewCell*)favoriteTableViewCell{
+    
+    if (_favoriteTableViewCell) {
+        return _favoriteTableViewCell;
+    }
+    
+    UITableViewCell * favoriteTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    favoriteTableViewCell.textLabel.text = NSLocalizedString(@"Favorite", nil);
+    
+    favoriteTableViewCell.imageView.image = [[UIImage imageNamed:@"Favorite"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _favoriteTableViewCell = favoriteTableViewCell;
+    return favoriteTableViewCell;
     
 }
 

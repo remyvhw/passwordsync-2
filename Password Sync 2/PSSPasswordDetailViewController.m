@@ -335,7 +335,7 @@ dispatch_queue_t backgroundQueue;
         }
     } else if (section==4){
         // Buttons
-        return 1;
+        return 2;
     }
     
     return 0;
@@ -426,6 +426,16 @@ dispatch_queue_t backgroundQueue;
     if (indexPath.section == 4) {
         
         if (indexPath.row == 0) {
+            // Favorite
+            UITableViewCell * favoriteCell = [self favoriteTableViewCell];
+            if ([[self.detailItem favorite] boolValue]) {
+                favoriteCell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                favoriteCell.accessoryType = UITableViewCellAccessoryNone;
+            }
+            
+            return favoriteCell;
+        } else if (indexPath.row == 1) {
             // Versions
             return [self versionsTableViewCell];
         }
@@ -482,6 +492,11 @@ dispatch_queue_t backgroundQueue;
     if (indexPath.section == 4) {
         
         if (indexPath.row == 0) {
+            // Favorite
+            [self toggleFavorite];
+            self.favoriteTableViewCell= nil;
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        } else if (indexPath.row == 1) {
             // Versions
             [self presentVersionsBrowser:tableView];
         }

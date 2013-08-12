@@ -555,7 +555,7 @@
 		AD72C3DA177B7E27009AADC8 /* PSSPasswordListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordListViewController.m; sourceTree = "<group>"; };
 		AD72C3DC177B7E27009AADC8 /* PSSGenericDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSGenericDetailTableViewController.h; sourceTree = "<group>"; };
 		AD72C3DD177B7E27009AADC8 /* PSSGenericDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSGenericDetailTableViewController.m; sourceTree = "<group>"; };
-		AD72C3DF177B7E27009AADC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD72C3DF177B7E27009AADC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Password Sync 2/Images.xcassets"; sourceTree = "<group>"; };
 		AD72C3E5177B7E28009AADC8 /* Password Sync 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password Sync 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72C3E6177B7E28009AADC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AD72C3EF177B7E28009AADC8 /* Password Sync 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Sync 2Tests-Info.plist"; sourceTree = "<group>"; };
@@ -1040,6 +1040,7 @@
 				AD31267617A03AE700483E2F /* Appart.gpx */,
 				AD72C3C4177B7E27009AADC8 /* Password Sync 2 */,
 				ADC9DFB51788C988006F2858 /* Others */,
+				AD72C3DF177B7E27009AADC8 /* Images.xcassets */,
 				AD72C3ED177B7E28009AADC8 /* Password Sync 2Tests */,
 				AD72C3BB177B7E27009AADC8 /* Frameworks */,
 				AD72C3BA177B7E27009AADC8 /* Products */,
@@ -1121,7 +1122,6 @@
 				ADDD964F1792539A00AB2CC5 /* Cards */,
 				ADDD964A1792535900AB2CC5 /* Passwords */,
 				AD821084177F407200B6F501 /* Splash welcome screen storyboard */,
-				AD72C3DF177B7E27009AADC8 /* Images.xcassets */,
 				ADDC8BB2177CEA9E00021D92 /* Core Data Stack */,
 				ADC9DFA91788C500006F2858 /* Master password and passcode controllers */,
 				ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */,
