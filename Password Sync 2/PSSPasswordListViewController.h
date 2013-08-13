@@ -12,13 +12,24 @@
 @class PSSGenericDetailTableViewController;
 
 
-@interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
+    
+    NSString        *savedSearchTerm_;
+    NSInteger       savedScopeButtonIndex_;
+    BOOL            searchWasActive_;
+}
 
 @property (strong, nonatomic) PSSGenericDetailTableViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (nonatomic, strong) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedScopeButtonIndex;
+@property (nonatomic) BOOL searchWasActive;
+
 -(void)deselectAllRowsAnimated:(BOOL)animated;
+
+
 
 @end

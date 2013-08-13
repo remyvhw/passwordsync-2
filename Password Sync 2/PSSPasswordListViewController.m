@@ -9,18 +9,24 @@
 #import "PSSPasswordListViewController.h"
 #import "PSSPasswordEditorTableViewController.h"
 #import "PSSPasswordBaseObject.h"
-#import "PSSPasswordVersion.h"
+#import "PSSPasswordDomain.h"
 #import "PSSPasswordDetailViewController.h"
 #import "PSSPasswordSplitViewDetailViewController.h"
 #import "SLColorArt.h"
 #import "UIImage+ImageEffects.h"
 
 @interface PSSPasswordListViewController ()
+@property (nonatomic, strong) NSFetchedResultsController *searchFetchedResultsController;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation PSSPasswordListViewController
+@synthesize searchFetchedResultsController = _searchFetchedResultsController;
 dispatch_queue_t backgroundQueue;
+
+
+
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
@@ -48,13 +54,39 @@ dispatch_queue_t backgroundQueue;
     } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         [self setClearsSelectionOnViewWillAppear:NO];
+        
+        // Set the search bar as a top navigation bar view
+        //self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
     }
     
     
     // Register to unlock notification so we can replace the "dots" on the username field.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userUnlockedDatabase:) name:PSSGlobalUnlockNotification object:nil];
     
+    // Register search cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"PSSPasswordListSearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchPasswordCell"];
     
+    
+    // Restore search view in case of a memory warning clearing the view
+    if (self.savedSearchTerm)
+    {
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+        [self.searchDisplayController.searchBar setText:self.savedSearchTerm];
+        
+        self.savedSearchTerm = nil;
+    }
+    
+    
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // save the state of the search UI so that it can be restored if the view is re-created
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
 -(void)dealloc{
@@ -63,9 +95,17 @@ dispatch_queue_t backgroundQueue;
 
 - (void)didReceiveMemoryWarning
 {
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
+    
+    _searchFetchedResultsController = nil;
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 - (void)insertNewObject:(id)sender
 {
@@ -84,19 +124,40 @@ dispatch_queue_t backgroundQueue;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    NSInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
+    
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    NSInteger numberOfRows = 0;
+    NSFetchedResultsController *fetchController = [self fetchedResultsControllerForTableView:tableView];
+    NSArray *sections = fetchController.sections;
+    if(sections.count > 0)
+    {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        numberOfRows = [sectionInfo numberOfObjects];
+    }
+    
+    return numberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PasswordCell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    UITableViewCell * cell;
+    if (tableView == self.tableView) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"PasswordCell" forIndexPath:indexPath];
+        [self configureCell:cell atIndexPath:indexPath];
+    } else {
+        // Search Table View
+        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"SearchPasswordCell" forIndexPath:indexPath];
+        [self configureSearchCell:cell atIndexPath:indexPath];
+        
+    }
+
+    
     return cell;
 }
 
@@ -128,30 +189,73 @@ dispatch_queue_t backgroundQueue;
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
-        // PSSPasswordListViewController ↑ Splitview ↓ Detail view ↓ NavController
-        
-        PSSPasswordSplitViewDetailViewController * detailController = (PSSPasswordSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        PSSPasswordBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [detailController presentViewControllerForPasswordEntity:object];
-        
-    }
-}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"passwordDetailViewControllerSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        PSSBaseGenericObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
 
-#pragma mark - Fetched results controller
+#pragma mark - Fetched results controllers
+
+- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
+{
+    // Which fetch results controller to use?
+    return tableView == self.tableView ? self.fetchedResultsController : self.searchFetchedResultsController;
+}
+
+
+
+
+
+- (NSFetchedResultsController *)searchFetchedResultsController
+{
+    if (_searchFetchedResultsController != nil) {
+        return _searchFetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PSSPasswordBaseObject" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+
+
+    NSString * searchString = self.searchDisplayController.searchBar.text;
+    if(searchString.length)
+    {
+        // your search predicate(s) are added to this array
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(displayName contains[cd] %@) OR (ANY domains.hostname contains[cd] %@)", searchString, searchString]];
+        
+    }
+    
+    
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    _searchFetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![_searchFetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    
+    return _searchFetchedResultsController;
+}
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -192,19 +296,20 @@ dispatch_queue_t backgroundQueue;
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView beginUpdates];
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+    [tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
@@ -213,7 +318,7 @@ dispatch_queue_t backgroundQueue;
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
@@ -237,18 +342,25 @@ dispatch_queue_t backgroundQueue;
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView endUpdates];
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+    [tableView endUpdates];
 }
 
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
+
+
+-(void)configureSearchCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
+    
+    
+    
+    PSSPasswordBaseObject *object = (PSSPasswordBaseObject*)[self.searchFetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSMutableAttributedString * attributedTitle = [[NSMutableAttributedString alloc] initWithString:object.displayName];
+    [attributedTitle addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.displayName rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
+    cell.textLabel.attributedText = attributedTitle;
+    
+    cell.detailTextLabel.text = object.mainDomain.hostname;
+
 }
- */
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
@@ -331,6 +443,74 @@ dispatch_queue_t backgroundQueue;
     
 
 
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSFetchedResultsController * fetchedResultsController = [self fetchedResultsControllerForTableView:tableView];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
+        // PSSPasswordListViewController ↑ Splitview ↓ Detail view ↓ NavController
+        
+        PSSPasswordSplitViewDetailViewController * detailController = (PSSPasswordSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
+        PSSPasswordBaseObject *object = [fetchedResultsController objectAtIndexPath:indexPath];
+        [detailController presentViewControllerForPasswordEntity:object];
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        
+        if (tableView == self.searchDisplayController.searchResultsTableView) {
+            
+            PSSPasswordDetailViewController * detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PSSPasswordDetailViewController"];
+            
+            detailViewController.detailItem = [fetchedResultsController objectAtIndexPath:indexPath];
+            
+            [self.navigationController pushViewController:detailViewController animated:YES];
+            
+            
+        }
+        
+    }
+}
+
+
+#pragma mark - Content Filtering
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSInteger)scope
+{
+    // update the filter, in this case just blow away the FRC and let lazy evaluation create another with the relevant search info
+    self.searchFetchedResultsController.delegate = nil;
+    self.searchFetchedResultsController = nil;
+    // if you care about the scope save off the index to be used by the serchFetchedResultsController
+    self.savedScopeButtonIndex = scope;
+}
+
+#pragma mark -
+#pragma mark Search Bar
+- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView;
+{
+    // search is done so get rid of the search FRC and reclaim memory
+    self.searchFetchedResultsController.delegate = nil;
+    self.searchFetchedResultsController = nil;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text]
+                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 @end

@@ -174,9 +174,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="hPL-9t-6mg">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="lW3-HP-KVu" id="8fL-mL-FPT"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PasswordCell" textLabel="GL1-F8-F6c" style="IBUITableViewCellStyleDefault" id="F95-GP-Ta1">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="F95-GP-Ta1" id="1Vk-2s-OO4">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -204,15 +212,27 @@
                     <navigationItem key="navigationItem" id="bNd-dr-4al">
                         <barButtonItem key="backBarButtonItem" title="Websites" id="tNZ-hZ-o1O"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="7ku-Vh-BqB" id="PWg-0C-rFP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1i6-7b-NuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="7ku-Vh-BqB">
+                    <connections>
+                        <outlet property="delegate" destination="lW3-HP-KVu" id="sZX-f7-FFe"/>
+                        <outlet property="searchBar" destination="hPL-9t-6mg" id="aA8-sQ-lhm"/>
+                        <outlet property="searchContentsController" destination="lW3-HP-KVu" id="c5r-GX-EMs"/>
+                        <outlet property="searchResultsDataSource" destination="lW3-HP-KVu" id="sGQ-t8-Ibn"/>
+                        <outlet property="searchResultsDelegate" destination="lW3-HP-KVu" id="Skt-ay-ZJY"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
         <!--Password Detail View Controller-->
         <scene sceneID="pBQ-nn-0H7">
             <objects>
-                <viewController id="m4k-pr-hRw" customClass="PSSPasswordDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSSPasswordDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="m4k-pr-hRw" customClass="PSSPasswordDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8xQ-hL-Exz"/>
                         <viewControllerLayoutGuide type="bottom" id="ZX1-29-oXt"/>
