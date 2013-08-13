@@ -154,6 +154,11 @@
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
+    // Only fetch the favorites
+    NSPredicate * favoritesPredicate = [NSPredicate predicateWithFormat:@"favorite == YES"];
+    
+    [fetchRequest setPredicate:favoritesPredicate];
+    
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"FavoritePasswords"];
