@@ -358,8 +358,15 @@ dispatch_queue_t backgroundQueue;
     [attributedTitle addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.displayName rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
     cell.textLabel.attributedText = attributedTitle;
     
-    cell.detailTextLabel.text = object.mainDomain.hostname;
-
+    
+    NSMutableAttributedString * attributedDomain = [[NSMutableAttributedString alloc] initWithString:object.mainDomain.hostname];
+    [attributedDomain addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.mainDomain.hostname rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
+    cell.detailTextLabel.attributedText = attributedDomain;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
