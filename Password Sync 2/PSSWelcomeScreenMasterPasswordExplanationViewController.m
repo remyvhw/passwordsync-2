@@ -60,6 +60,12 @@
         
         explanationText = NSLocalizedString(@"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password.", @"First master password explanation screen for first launch.");
 
+        // Make sure to enable default preferences
+        
+        [userDefaults setBool:YES forKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry];
+        [userDefaults setBool:NO forKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch];
+        
+        
         
     }
     

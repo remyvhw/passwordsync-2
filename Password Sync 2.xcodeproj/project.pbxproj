@@ -31,6 +31,10 @@
 		AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
+		AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
+		AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
+		AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
+		AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312642179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312643179F08A600483E2F /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312628179F08A600483E2F /* HexColor.m */; };
@@ -360,8 +364,6 @@
 		ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */; };
 		ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
 		ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
-		ADD6280017B1FD420018BDA9 /* Galaxy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADD627FF17B1FD420018BDA9 /* Galaxy.jpg */; };
-		ADD6280117B1FD420018BDA9 /* Galaxy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADD627FF17B1FD420018BDA9 /* Galaxy.jpg */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
@@ -422,6 +424,10 @@
 		AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentDetailCollectionViewController.m; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
+		AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsAndDirectoriesTableViewController.h; sourceTree = "<group>"; };
+		AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagsAndDirectoriesTableViewController.m; sourceTree = "<group>"; };
+		AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsTableViewController.h; sourceTree = "<group>"; };
+		AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsTableViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
 		AD312625179F08A600483E2F /* TSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessage.m; sourceTree = "<group>"; };
 		AD312627179F08A600483E2F /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -695,7 +701,6 @@
 		ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPINPasscodeSetterViewController.m; sourceTree = "<group>"; };
 		ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSEncryptor.h; sourceTree = "<group>"; };
 		ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSEncryptor.m; sourceTree = "<group>"; };
-		ADD627FF17B1FD420018BDA9 /* Galaxy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Galaxy.jpg; sourceTree = "<group>"; };
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
@@ -788,6 +793,40 @@
 				AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */,
 			);
 			name = Editor;
+			sourceTree = "<group>";
+		};
+		AD2C5A8717BC3BB500C23AFA /* Tags and Directories */ = {
+			isa = PBXGroup;
+			children = (
+				AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */,
+				AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */,
+			);
+			name = "Tags and Directories";
+			sourceTree = "<group>";
+		};
+		AD2C5A8C17BC3BE100C23AFA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */,
+				AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		AD2C5A8D17BC3BE900C23AFA /* Generic controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */,
+				AD1BECD617A42410001292E8 /* PSSGenericDetailViewController.h */,
+				AD1BECD717A42410001292E8 /* PSSGenericDetailViewController.m */,
+				AD72C3DC177B7E27009AADC8 /* PSSGenericDetailTableViewController.h */,
+				AD72C3DD177B7E27009AADC8 /* PSSGenericDetailTableViewController.m */,
+				AD1BECDA17A42896001292E8 /* PSSGenericDetailCollectionViewController.h */,
+				AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */,
+				AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */,
+				AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */,
+			);
+			name = "Generic controllers";
 			sourceTree = "<group>";
 		};
 		AD312623179F08A600483E2F /* Classes */ = {
@@ -1102,24 +1141,17 @@
 		AD72C3C4177B7E27009AADC8 /* Password Sync 2 */ = {
 			isa = PBXGroup;
 			children = (
-				ADD627FF17B1FD420018BDA9 /* Galaxy.jpg */,
 				ADC844B21790709800349B16 /* Temporary Icons */,
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
-				ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */,
-				AD1BECD617A42410001292E8 /* PSSGenericDetailViewController.h */,
-				AD1BECD717A42410001292E8 /* PSSGenericDetailViewController.m */,
-				AD72C3DC177B7E27009AADC8 /* PSSGenericDetailTableViewController.h */,
-				AD72C3DD177B7E27009AADC8 /* PSSGenericDetailTableViewController.m */,
-				AD1BECDA17A42896001292E8 /* PSSGenericDetailCollectionViewController.h */,
-				AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */,
-				AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */,
-				AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */,
+				AD2C5A8D17BC3BE900C23AFA /* Generic controllers */,
 				ADAD160417ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.h */,
 				ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */,
+				AD2C5A8C17BC3BE100C23AFA /* Settings */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
+				AD2C5A8717BC3BB500C23AFA /* Tags and Directories */,
 				AD547FAA17A1AC24008FAFFB /* Documents */,
 				AD36371117989D95005F1542 /* Location */,
 				ADDD964F1792539A00AB2CC5 /* Cards */,
@@ -1662,7 +1694,6 @@
 				AD7F800417B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54804017A1C7EE008FAFFB /* close-button@2x.png in Resources */,
 				AD54802017A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
-				ADD6280017B1FD420018BDA9 /* Galaxy.jpg in Resources */,
 				AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1678,7 +1709,6 @@
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
 				AD7F800517B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54803B17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
-				ADD6280117B1FD420018BDA9 /* Galaxy.jpg in Resources */,
 				AD54802117A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD8C835E17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
@@ -1755,6 +1785,7 @@
 				AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */,
 				ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */,
 				AD547FCD17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
+				AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
 				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
@@ -1801,6 +1832,7 @@
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
+				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
@@ -1869,6 +1901,7 @@
 			files = (
 				ADA0E53017907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */,
 				AD547FD417A1C5A6008FAFFB /* MAImagePickerFinalViewController.mm in Sources */,
+				AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */,
 				AD31266C179F08A600483E2F /* TSMessageView.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
@@ -1912,6 +1945,7 @@
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
 				ADAD160B17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
