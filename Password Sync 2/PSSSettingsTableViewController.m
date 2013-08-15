@@ -52,68 +52,89 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 2;
+    if (section==0) {
+        // Passcode
+        return 2;
+    } else if (section==1) {
+        // legal
+        return 1;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"settingsSubtitleTableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    if (indexPath.section == 0) {
-        // Passcode
+    if (indexPath.section==0) {
+        static NSString *CellIdentifier = @"settingsSubtitleTableViewCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        UISwitch * accessorySwitch = [[UISwitch alloc] init];
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
         
-        cell.accessoryView = accessorySwitch;
-        
-        if (indexPath.row == 0) {
-            // Prompt on launch
-        
-            if ([userDefaults boolForKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch]) {
-                [accessorySwitch setOn:YES animated:NO];
-            } else {
-                [accessorySwitch setOn:NO animated:NO];
+        if (indexPath.section == 0) {
+            // Passcode
+            
+            UISwitch * accessorySwitch = [[UISwitch alloc] init];
+            
+            cell.accessoryView = accessorySwitch;
+            
+            if (indexPath.row == 0) {
+                // Prompt on launch
+                
+                if ([[userDefaults objectForKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch] boolValue]) {
+                    [accessorySwitch setOn:YES animated:NO];
+                } else {
+                    [accessorySwitch setOn:NO animated:NO];
+                }
+                
+                [accessorySwitch addTarget:self action:@selector(promptForPasscodeOnLaunchHandler:) forControlEvents:UIControlEventValueChanged];
+                
+                
+                cell.textLabel.text = NSLocalizedString(@"Prompt on launch", nil);
+                cell.detailTextLabel.text = NSLocalizedString(@"When on, will ask for a passcode every time the app launches.", nil);
+                
+            } else if (indexPath.row == 1) {
+                
+                
+                // Prompt for every item
+                if ([[userDefaults objectForKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry] boolValue]) {
+                    [accessorySwitch setOn:YES animated:NO];
+                } else {
+                    [accessorySwitch setOn:NO animated:NO];
+                }
+                
+                [accessorySwitch addTarget:self action:@selector(promptForPasscodeOnEveryEntry:) forControlEvents:UIControlEventValueChanged];
+                
+                
+                cell.textLabel.text = NSLocalizedString(@"Prompt for every entry", nil);
+                cell.detailTextLabel.text = NSLocalizedString(@"When on, will ask for a passcode for every unlocked website's password, card, location and document.", nil);
+                
+                
+                
             }
-            
-            [accessorySwitch addTarget:self action:@selector(promptForPasscodeOnLaunchHandler:) forControlEvents:UIControlEventValueChanged];
-            
-            
-            cell.textLabel.text = NSLocalizedString(@"Prompt on launch", nil);
-            cell.detailTextLabel.text = NSLocalizedString(@"When on, will ask for a passcode every time the app launches.", nil);
-            
-        } else if (indexPath.row == 1) {
-        
-            
-            // Prompt for every item
-            if ([userDefaults boolForKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry]) {
-                [accessorySwitch setOn:YES animated:NO];
-            } else {
-                [accessorySwitch setOn:NO animated:NO];
-            }
-            
-            [accessorySwitch addTarget:self action:@selector(promptForPasscodeOnEveryEntry:) forControlEvents:UIControlEventValueChanged];
-            
-            
-            cell.textLabel.text = NSLocalizedString(@"Prompt for every entry", nil);
-            cell.detailTextLabel.text = NSLocalizedString(@"When on, will ask for a passcode for every unlocked website's password, card, location and document.", nil);
-        
-            
             
         }
-
+        
+        
+        return cell;
+        
+    } else if (indexPath.section==1){
+        
+        static NSString *CellIdentifier = @"submenuCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        cell.textLabel.text = NSLocalizedString(@"Legal", nil);
+        
+        return cell;
     }
     
-        
-    return cell;
+    return nil;
+    
 }
 
 /*
@@ -172,12 +193,14 @@
 
 -(void)promptForPasscodeOnLaunchHandler:(UISwitch*)sender{
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standardUserDefaults setBool:sender.isOn forKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch];
+    [standardUserDefaults setObject:[NSNumber numberWithBool:sender.isOn] forKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch];
+    [standardUserDefaults synchronize];
 }
 
 -(void)promptForPasscodeOnEveryEntry:(UISwitch*)sender{
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standardUserDefaults setBool:sender.isOn forKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry];
+    [standardUserDefaults setObject:[NSNumber numberWithBool:sender.isOn] forKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry];
+    [standardUserDefaults synchronize];
 }
 
 @end

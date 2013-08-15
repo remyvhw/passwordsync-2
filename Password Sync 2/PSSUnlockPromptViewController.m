@@ -23,6 +23,7 @@
 @implementation PSSUnlockPromptViewController
 
 -(void)sendUserUnlockedNotification{
+    APP_DELEGATE.isUnlocked = YES;
     NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter postNotificationName:PSSGlobalUnlockNotification object:self];
 }

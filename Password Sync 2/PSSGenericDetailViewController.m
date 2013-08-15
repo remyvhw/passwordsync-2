@@ -8,6 +8,7 @@
 
 #import "PSSGenericDetailViewController.h"
 #import "PSSUnlockPromptViewController.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSGenericDetailViewController ()
 
@@ -54,6 +55,16 @@
 -(void)showUnlockingViewController{
     
     
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![[standardUserDefaults objectForKey:PSSUserSettingsPromptForPasscodeForEveryUnlockedEntry] boolValue] && APP_DELEGATE.isUnlocked) {
+        if (!self.isPasscodeUnlocked) {
+            self.isPasscodeUnlocked = YES;
+            [self userDidUnlockWithPasscode];
+        }
+        return;
+    }
+    
     UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
     PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
     
@@ -76,7 +87,7 @@
 }
 
 -(void)updateViewForNewDetailItem{
-    
+    // Will be subclassed
 }
 
 

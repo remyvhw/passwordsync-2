@@ -63,6 +63,10 @@
 		AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */; };
 		AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
+		AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
+		AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
+		AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */; };
+		AD49C8A517BC6F12000DE850 /* PSSLegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */; };
 		AD5175F91784906200B30295 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F11784906200B30295 /* SPLockScreen.m */; };
 		AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F11784906200B30295 /* SPLockScreen.m */; };
 		AD5175FB1784906200B30295 /* NormalCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5175F31784906200B30295 /* NormalCircle.m */; };
@@ -253,8 +257,6 @@
 		AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
 		AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82105D177D37ED00B6F501 /* RNEncryptor.m */; };
 		AD821073177D37FA00B6F501 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD821072177D37FA00B6F501 /* Security.framework */; };
-		AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821075177D3B8000B6F501 /* MKiCloudSync.m */; };
-		AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821075177D3B8000B6F501 /* MKiCloudSync.m */; };
 		AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107A177D40F100B6F501 /* PDKeychainBindings.m */; };
 		AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107A177D40F100B6F501 /* PDKeychainBindings.m */; };
 		AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
@@ -452,6 +454,10 @@
 		AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSlocationSearchTextFieldCell.m; sourceTree = "<group>"; };
 		AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationMapCell.h; sourceTree = "<group>"; };
 		AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationMapCell.m; sourceTree = "<group>"; };
+		AD49C89D17BC6365000DE850 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
+		AD49C89E17BC6365000DE850 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
+		AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLegalViewController.h; sourceTree = "<group>"; };
+		AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLegalViewController.m; sourceTree = "<group>"; };
 		AD5175F11784906200B30295 /* SPLockScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockScreen.m; sourceTree = "<group>"; };
 		AD5175F21784906200B30295 /* NormalCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCircle.h; sourceTree = "<group>"; };
 		AD5175F31784906200B30295 /* NormalCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCircle.m; sourceTree = "<group>"; };
@@ -605,8 +611,6 @@
 		AD82105C177D37ED00B6F501 /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
 		AD82105D177D37ED00B6F501 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
 		AD821072177D37FA00B6F501 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		AD821074177D3B8000B6F501 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
-		AD821075177D3B8000B6F501 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
 		AD821079177D40F100B6F501 /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
 		AD82107A177D40F100B6F501 /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
 		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
@@ -809,6 +813,8 @@
 			children = (
 				AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */,
 				AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */,
+				AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */,
+				AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -915,6 +921,15 @@
 				AD36371A179AFB6A005F1542 /* Cells */,
 			);
 			name = Editor;
+			sourceTree = "<group>";
+		};
+		AD49C8A117BC6374000DE850 /* MKiCloudSync */ = {
+			isa = PBXGroup;
+			children = (
+				AD49C89D17BC6365000DE850 /* MKiCloudSync.h */,
+				AD49C89E17BC6365000DE850 /* MKiCloudSync.m */,
+			);
+			name = MKiCloudSync;
 			sourceTree = "<group>";
 		};
 		AD5176011784906700B30295 /* SPLockScreen */ = {
@@ -1101,6 +1116,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD49C8A117BC6374000DE850 /* MKiCloudSync */,
 				AD58F95517B1790500344134 /* Reachability */,
 				AD58F95017B14A6300344134 /* SLColorArt */,
 				AD940E5A17A8651C001442F0 /* opencv2.framework */,
@@ -1125,7 +1141,6 @@
 				AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */,
 				AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */,
 				AD821053177D37ED00B6F501 /* RNCryptor */,
-				AD821078177D3B8400B6F501 /* MKiCloudSync */,
 				AD72C3C5177B7E27009AADC8 /* PDKeychainBindings */,
 				AD821072177D37FA00B6F501 /* Security.framework */,
 				AD82101E177CFB2900B6F501 /* StoreKit.framework */,
@@ -1217,16 +1232,6 @@
 			);
 			name = RNCryptor;
 			path = "Password Sync 2/RNCryptor";
-			sourceTree = "<group>";
-		};
-		AD821078177D3B8400B6F501 /* MKiCloudSync */ = {
-			isa = PBXGroup;
-			children = (
-				AD821074177D3B8000B6F501 /* MKiCloudSync.h */,
-				AD821075177D3B8000B6F501 /* MKiCloudSync.m */,
-			);
-			name = MKiCloudSync;
-			path = "Password Sync 2";
 			sourceTree = "<group>";
 		};
 		AD821084177F407200B6F501 /* Splash welcome screen storyboard */ = {
@@ -1804,7 +1809,6 @@
 				AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
 				AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
-				AD821076177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				ADFB4A6B17A1A1B000E268E3 /* PSSObjectAttachment.m in Sources */,
 				AD5176041784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
@@ -1831,8 +1835,10 @@
 				ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
 				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
+				AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
@@ -1903,6 +1909,7 @@
 				AD547FD417A1C5A6008FAFFB /* MAImagePickerFinalViewController.mm in Sources */,
 				AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */,
 				AD31266C179F08A600483E2F /* TSMessageView.m in Sources */,
+				AD49C8A517BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
@@ -1941,11 +1948,11 @@
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
 				AD547FD617A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
-				AD821077177D3B8000B6F501 /* MKiCloudSync.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
+				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
 				ADAD160B17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
