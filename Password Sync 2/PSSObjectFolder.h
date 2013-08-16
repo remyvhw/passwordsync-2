@@ -1,5 +1,5 @@
 //
-//  PSSObjectTag.h
+//  PSSObjectFolder.h
 //  Password Sync 2
 //
 //  Created by Remy Vanherweghem on 2013-08-15.
@@ -9,17 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PSSBaseGenericObject;
+@class PSSBaseGenericObject, PSSObjectFolder;
 
-@interface PSSObjectTag : NSManagedObject
+@interface PSSObjectFolder : NSManagedObject
 
-@property (nonatomic, retain) id color;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * position;
+@property (nonatomic, retain) NSSet *children;
 @property (nonatomic, retain) NSSet *encryptedObjects;
+@property (nonatomic, retain) PSSObjectFolder *parent;
 @end
 
-@interface PSSObjectTag (CoreDataGeneratedAccessors)
+@interface PSSObjectFolder (CoreDataGeneratedAccessors)
+
+- (void)addChildrenObject:(PSSObjectFolder *)value;
+- (void)removeChildrenObject:(PSSObjectFolder *)value;
+- (void)addChildren:(NSSet *)values;
+- (void)removeChildren:(NSSet *)values;
 
 - (void)addEncryptedObjectsObject:(PSSBaseGenericObject *)value;
 - (void)removeEncryptedObjectsObject:(PSSBaseGenericObject *)value;

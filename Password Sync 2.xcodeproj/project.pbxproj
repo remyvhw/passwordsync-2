@@ -17,6 +17,54 @@
 		AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
 		AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
 		AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
+		AD10E72517BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */; };
+		AD10E72617BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */; };
+		AD10E72917BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */; };
+		AD10E72A17BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */; };
+		AD10E73517BD79CB00CF3402 /* PSSObjectFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73417BD79CB00CF3402 /* PSSObjectFolder.m */; };
+		AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73417BD79CB00CF3402 /* PSSObjectFolder.m */; };
+		AD10E73917BD7B4600CF3402 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73817BD7B4600CF3402 /* PSSObjectTag.m */; };
+		AD10E73A17BD7B4600CF3402 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73817BD7B4600CF3402 /* PSSObjectTag.m */; };
+		AD10E73D17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */; };
+		AD10E73E17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */; };
+		AD10E74517BDB56E00CF3402 /* PSSTagColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */; };
+		AD10E74617BDB56E00CF3402 /* PSSTagColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */; };
+		AD10E76F17BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74917BDB6F400CF3402 /* ANImageBitmapRep.m */; };
+		AD10E77017BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74917BDB6F400CF3402 /* ANImageBitmapRep.m */; };
+		AD10E77117BDB6F400CF3402 /* BitmapContextRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74B17BDB6F400CF3402 /* BitmapContextRep.m */; };
+		AD10E77217BDB6F400CF3402 /* BitmapContextRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74B17BDB6F400CF3402 /* BitmapContextRep.m */; };
+		AD10E77317BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74E17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m */; };
+		AD10E77417BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E74E17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m */; };
+		AD10E77517BDB6F400CF3402 /* OSCommonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75017BDB6F400CF3402 /* OSCommonImage.m */; };
+		AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75017BDB6F400CF3402 /* OSCommonImage.m */; };
+		AD10E77717BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75217BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m */; };
+		AD10E77817BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75217BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m */; };
+		AD10E77917BDB6F400CF3402 /* CGContextCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75517BDB6F400CF3402 /* CGContextCreator.m */; };
+		AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75517BDB6F400CF3402 /* CGContextCreator.m */; };
+		AD10E77B17BDB6F400CF3402 /* CGImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75717BDB6F400CF3402 /* CGImageContainer.m */; };
+		AD10E77C17BDB6F400CF3402 /* CGImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75717BDB6F400CF3402 /* CGImageContainer.m */; };
+		AD10E77D17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75A17BDB6F400CF3402 /* BitmapContextManipulator.m */; };
+		AD10E77E17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75A17BDB6F400CF3402 /* BitmapContextManipulator.m */; };
+		AD10E77F17BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75C17BDB6F400CF3402 /* BitmapCropManipulator.m */; };
+		AD10E78017BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75C17BDB6F400CF3402 /* BitmapCropManipulator.m */; };
+		AD10E78117BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75E17BDB6F400CF3402 /* BitmapDrawManipulator.m */; };
+		AD10E78217BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E75E17BDB6F400CF3402 /* BitmapDrawManipulator.m */; };
+		AD10E78317BDB6F400CF3402 /* BitmapRotationManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76017BDB6F400CF3402 /* BitmapRotationManipulator.m */; };
+		AD10E78417BDB6F400CF3402 /* BitmapRotationManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76017BDB6F400CF3402 /* BitmapRotationManipulator.m */; };
+		AD10E78517BDB6F400CF3402 /* BitmapScaleManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76217BDB6F400CF3402 /* BitmapScaleManipulator.m */; };
+		AD10E78617BDB6F400CF3402 /* BitmapScaleManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76217BDB6F400CF3402 /* BitmapScaleManipulator.m */; };
+		AD10E78717BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76417BDB6F400CF3402 /* BGRSLoupeLayer.m */; };
+		AD10E78817BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76417BDB6F400CF3402 /* BGRSLoupeLayer.m */; };
+		AD10E78917BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76617BDB6F400CF3402 /* RSBrightnessSlider.m */; };
+		AD10E78A17BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76617BDB6F400CF3402 /* RSBrightnessSlider.m */; };
+		AD10E78B17BDB6F400CF3402 /* RSColorFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76817BDB6F400CF3402 /* RSColorFunctions.m */; };
+		AD10E78C17BDB6F400CF3402 /* RSColorFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76817BDB6F400CF3402 /* RSColorFunctions.m */; };
+		AD10E78D17BDB6F400CF3402 /* RSColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76A17BDB6F400CF3402 /* RSColorPickerView.m */; };
+		AD10E78E17BDB6F400CF3402 /* RSColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76A17BDB6F400CF3402 /* RSColorPickerView.m */; };
+		AD10E78F17BDB6F400CF3402 /* RSOpacitySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */; };
+		AD10E79017BDB6F400CF3402 /* RSOpacitySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */; };
+		AD10E79117BDB6F400CF3402 /* RSSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */; };
+		AD10E79217BDB6F400CF3402 /* RSSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */; };
 		AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
 		AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
 		AD1BECD017A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */; };
@@ -230,8 +278,6 @@
 		AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */; };
 		AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */; };
 		AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD82101E177CFB2900B6F501 /* StoreKit.framework */; };
-		AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
-		AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821021177CFBD300B6F501 /* PSSObjectCategory.m */; };
 		AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */; };
 		AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */; };
 		AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */; };
@@ -242,8 +288,6 @@
 		AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */; };
 		AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */; };
 		AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */; };
-		AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821045177CFBD400B6F501 /* PSSObjectTag.m */; };
-		AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821045177CFBD400B6F501 /* PSSObjectTag.m */; };
 		AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */; };
 		AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */; };
 		AD82104E177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */; };
@@ -413,6 +457,54 @@
 		AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVshaDigester.m; path = "Password Sync 2/RVshaDigester.m"; sourceTree = "<group>"; };
 		AD0FAA381780F5610066B7E7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		AD0FAA391780F5610066B7E7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		AD10E72317BD5E5B00CF3402 /* PSSTagEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagEditorTableViewController.h; sourceTree = "<group>"; };
+		AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagEditorTableViewController.m; sourceTree = "<group>"; };
+		AD10E72717BD62A300CF3402 /* PSSFolderEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSFolderEditorViewController.h; sourceTree = "<group>"; };
+		AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSFolderEditorViewController.m; sourceTree = "<group>"; };
+		AD10E73317BD79CB00CF3402 /* PSSObjectFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectFolder.h; sourceTree = "<group>"; };
+		AD10E73417BD79CB00CF3402 /* PSSObjectFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectFolder.m; sourceTree = "<group>"; };
+		AD10E73717BD7B4600CF3402 /* PSSObjectTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectTag.h; sourceTree = "<group>"; };
+		AD10E73817BD7B4600CF3402 /* PSSObjectTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectTag.m; sourceTree = "<group>"; };
+		AD10E73B17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PSSDictionaryCoding.h"; sourceTree = "<group>"; };
+		AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PSSDictionaryCoding.m"; sourceTree = "<group>"; };
+		AD10E74317BDB56E00CF3402 /* PSSTagColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagColorPickerViewController.h; sourceTree = "<group>"; };
+		AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagColorPickerViewController.m; sourceTree = "<group>"; };
+		AD10E74817BDB6F400CF3402 /* ANImageBitmapRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageBitmapRep.h; sourceTree = "<group>"; };
+		AD10E74917BDB6F400CF3402 /* ANImageBitmapRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageBitmapRep.m; sourceTree = "<group>"; };
+		AD10E74A17BDB6F400CF3402 /* BitmapContextRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapContextRep.h; sourceTree = "<group>"; };
+		AD10E74B17BDB6F400CF3402 /* BitmapContextRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapContextRep.m; sourceTree = "<group>"; };
+		AD10E74D17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
+		AD10E74E17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
+		AD10E74F17BDB6F400CF3402 /* OSCommonImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCommonImage.h; sourceTree = "<group>"; };
+		AD10E75017BDB6F400CF3402 /* OSCommonImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCommonImage.m; sourceTree = "<group>"; };
+		AD10E75117BDB6F400CF3402 /* UIImage+ANImageBitmapRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ANImageBitmapRep.h"; sourceTree = "<group>"; };
+		AD10E75217BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ANImageBitmapRep.m"; sourceTree = "<group>"; };
+		AD10E75417BDB6F400CF3402 /* CGContextCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContextCreator.h; sourceTree = "<group>"; };
+		AD10E75517BDB6F400CF3402 /* CGContextCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContextCreator.m; sourceTree = "<group>"; };
+		AD10E75617BDB6F400CF3402 /* CGImageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGImageContainer.h; sourceTree = "<group>"; };
+		AD10E75717BDB6F400CF3402 /* CGImageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGImageContainer.m; sourceTree = "<group>"; };
+		AD10E75917BDB6F400CF3402 /* BitmapContextManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapContextManipulator.h; sourceTree = "<group>"; };
+		AD10E75A17BDB6F400CF3402 /* BitmapContextManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapContextManipulator.m; sourceTree = "<group>"; };
+		AD10E75B17BDB6F400CF3402 /* BitmapCropManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapCropManipulator.h; sourceTree = "<group>"; };
+		AD10E75C17BDB6F400CF3402 /* BitmapCropManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapCropManipulator.m; sourceTree = "<group>"; };
+		AD10E75D17BDB6F400CF3402 /* BitmapDrawManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapDrawManipulator.h; sourceTree = "<group>"; };
+		AD10E75E17BDB6F400CF3402 /* BitmapDrawManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapDrawManipulator.m; sourceTree = "<group>"; };
+		AD10E75F17BDB6F400CF3402 /* BitmapRotationManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapRotationManipulator.h; sourceTree = "<group>"; };
+		AD10E76017BDB6F400CF3402 /* BitmapRotationManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapRotationManipulator.m; sourceTree = "<group>"; };
+		AD10E76117BDB6F400CF3402 /* BitmapScaleManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapScaleManipulator.h; sourceTree = "<group>"; };
+		AD10E76217BDB6F400CF3402 /* BitmapScaleManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapScaleManipulator.m; sourceTree = "<group>"; };
+		AD10E76317BDB6F400CF3402 /* BGRSLoupeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRSLoupeLayer.h; sourceTree = "<group>"; };
+		AD10E76417BDB6F400CF3402 /* BGRSLoupeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGRSLoupeLayer.m; sourceTree = "<group>"; };
+		AD10E76517BDB6F400CF3402 /* RSBrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBrightnessSlider.h; sourceTree = "<group>"; };
+		AD10E76617BDB6F400CF3402 /* RSBrightnessSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBrightnessSlider.m; sourceTree = "<group>"; };
+		AD10E76717BDB6F400CF3402 /* RSColorFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSColorFunctions.h; sourceTree = "<group>"; };
+		AD10E76817BDB6F400CF3402 /* RSColorFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSColorFunctions.m; sourceTree = "<group>"; };
+		AD10E76917BDB6F400CF3402 /* RSColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSColorPickerView.h; sourceTree = "<group>"; };
+		AD10E76A17BDB6F400CF3402 /* RSColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSColorPickerView.m; sourceTree = "<group>"; };
+		AD10E76B17BDB6F400CF3402 /* RSOpacitySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSOpacitySlider.h; sourceTree = "<group>"; };
+		AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOpacitySlider.m; sourceTree = "<group>"; };
+		AD10E76D17BDB6F400CF3402 /* RSSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSelectionView.h; sourceTree = "<group>"; };
+		AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSelectionView.m; sourceTree = "<group>"; };
 		AD1BECCB17A33C68001292E8 /* PSSThumbnailMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSThumbnailMaker.h; sourceTree = "<group>"; };
 		AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSThumbnailMaker.m; sourceTree = "<group>"; };
 		AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSNotesAttachmentTableViewCell.xib; sourceTree = "<group>"; };
@@ -582,8 +674,6 @@
 		AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVersionsCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVersionsCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		AD821020177CFBD300B6F501 /* PSSObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectCategory.h; sourceTree = "<group>"; };
-		AD821021177CFBD300B6F501 /* PSSObjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectCategory.m; sourceTree = "<group>"; };
 		AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordBaseObject.h; sourceTree = "<group>"; };
 		AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordBaseObject.m; sourceTree = "<group>"; };
 		AD821028177CFBD400B6F501 /* PSSCreditCardBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardBaseObject.h; sourceTree = "<group>"; };
@@ -594,8 +684,6 @@
 		AD821031177CFBD400B6F501 /* PSSBaseObjectVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBaseObjectVersion.m; sourceTree = "<group>"; };
 		AD821040177CFBD400B6F501 /* PSSPasswordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordVersion.h; sourceTree = "<group>"; };
 		AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordVersion.m; sourceTree = "<group>"; };
-		AD821044177CFBD400B6F501 /* PSSObjectTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectTag.h; sourceTree = "<group>"; };
-		AD821045177CFBD400B6F501 /* PSSObjectTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectTag.m; sourceTree = "<group>"; };
 		AD821048177CFBD400B6F501 /* PSSCreditCardVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCreditCardVersion.h; sourceTree = "<group>"; };
 		AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCreditCardVersion.m; sourceTree = "<group>"; };
 		AD82104C177CFBD400B6F501 /* PSSBaseGenericObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBaseGenericObject.h; sourceTree = "<group>"; };
@@ -789,6 +877,81 @@
 			path = Base64;
 			sourceTree = "<group>";
 		};
+		AD10E74717BDB6F400CF3402 /* ANImageBitmapRep */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E74817BDB6F400CF3402 /* ANImageBitmapRep.h */,
+				AD10E74917BDB6F400CF3402 /* ANImageBitmapRep.m */,
+				AD10E74A17BDB6F400CF3402 /* BitmapContextRep.h */,
+				AD10E74B17BDB6F400CF3402 /* BitmapContextRep.m */,
+				AD10E74C17BDB6F400CF3402 /* Compatibility */,
+				AD10E75317BDB6F400CF3402 /* CoreGraphics */,
+				AD10E75817BDB6F400CF3402 /* Manipulators */,
+			);
+			path = ANImageBitmapRep;
+			sourceTree = "<group>";
+		};
+		AD10E74C17BDB6F400CF3402 /* Compatibility */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E74D17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.h */,
+				AD10E74E17BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m */,
+				AD10E74F17BDB6F400CF3402 /* OSCommonImage.h */,
+				AD10E75017BDB6F400CF3402 /* OSCommonImage.m */,
+				AD10E75117BDB6F400CF3402 /* UIImage+ANImageBitmapRep.h */,
+				AD10E75217BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m */,
+			);
+			path = Compatibility;
+			sourceTree = "<group>";
+		};
+		AD10E75317BDB6F400CF3402 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E75417BDB6F400CF3402 /* CGContextCreator.h */,
+				AD10E75517BDB6F400CF3402 /* CGContextCreator.m */,
+				AD10E75617BDB6F400CF3402 /* CGImageContainer.h */,
+				AD10E75717BDB6F400CF3402 /* CGImageContainer.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		AD10E75817BDB6F400CF3402 /* Manipulators */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E75917BDB6F400CF3402 /* BitmapContextManipulator.h */,
+				AD10E75A17BDB6F400CF3402 /* BitmapContextManipulator.m */,
+				AD10E75B17BDB6F400CF3402 /* BitmapCropManipulator.h */,
+				AD10E75C17BDB6F400CF3402 /* BitmapCropManipulator.m */,
+				AD10E75D17BDB6F400CF3402 /* BitmapDrawManipulator.h */,
+				AD10E75E17BDB6F400CF3402 /* BitmapDrawManipulator.m */,
+				AD10E75F17BDB6F400CF3402 /* BitmapRotationManipulator.h */,
+				AD10E76017BDB6F400CF3402 /* BitmapRotationManipulator.m */,
+				AD10E76117BDB6F400CF3402 /* BitmapScaleManipulator.h */,
+				AD10E76217BDB6F400CF3402 /* BitmapScaleManipulator.m */,
+			);
+			path = Manipulators;
+			sourceTree = "<group>";
+		};
+		AD10E79317BDB6FA00CF3402 /* RSColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E74717BDB6F400CF3402 /* ANImageBitmapRep */,
+				AD10E76317BDB6F400CF3402 /* BGRSLoupeLayer.h */,
+				AD10E76417BDB6F400CF3402 /* BGRSLoupeLayer.m */,
+				AD10E76517BDB6F400CF3402 /* RSBrightnessSlider.h */,
+				AD10E76617BDB6F400CF3402 /* RSBrightnessSlider.m */,
+				AD10E76717BDB6F400CF3402 /* RSColorFunctions.h */,
+				AD10E76817BDB6F400CF3402 /* RSColorFunctions.m */,
+				AD10E76917BDB6F400CF3402 /* RSColorPickerView.h */,
+				AD10E76A17BDB6F400CF3402 /* RSColorPickerView.m */,
+				AD10E76B17BDB6F400CF3402 /* RSOpacitySlider.h */,
+				AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */,
+				AD10E76D17BDB6F400CF3402 /* RSSelectionView.h */,
+				AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */,
+			);
+			name = RSColorPicker;
+			sourceTree = "<group>";
+		};
 		AD1BECDE17A428A3001292E8 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,6 +967,12 @@
 			children = (
 				AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */,
 				AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */,
+				AD10E72317BD5E5B00CF3402 /* PSSTagEditorTableViewController.h */,
+				AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */,
+				AD10E74317BDB56E00CF3402 /* PSSTagColorPickerViewController.h */,
+				AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */,
+				AD10E72717BD62A300CF3402 /* PSSFolderEditorViewController.h */,
+				AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */,
 			);
 			name = "Tags and Directories";
 			sourceTree = "<group>";
@@ -1116,6 +1285,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD10E79317BDB6FA00CF3402 /* RSColorPicker */,
 				AD49C8A117BC6374000DE850 /* MKiCloudSync */,
 				AD58F95517B1790500344134 /* Reachability */,
 				AD58F95017B14A6300344134 /* SLColorArt */,
@@ -1182,6 +1352,8 @@
 				AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */,
 				AD8C836817B1CC9500A3AE79 /* Versions */,
 				AD8C836917B1CCA500A3AE79 /* Password */,
+				AD10E73B17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.h */,
+				AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -1436,6 +1608,10 @@
 			isa = PBXGroup;
 			children = (
 				AD72C3D6177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld */,
+				AD10E73717BD7B4600CF3402 /* PSSObjectTag.h */,
+				AD10E73817BD7B4600CF3402 /* PSSObjectTag.m */,
+				AD10E73317BD79CB00CF3402 /* PSSObjectFolder.h */,
+				AD10E73417BD79CB00CF3402 /* PSSObjectFolder.m */,
 				AD1BECD217A391BD001292E8 /* PSSObjectDecorativeImage.h */,
 				AD1BECD317A391BD001292E8 /* PSSObjectDecorativeImage.m */,
 				ADFB4A6917A1A1B000E268E3 /* PSSObjectAttachment.h */,
@@ -1452,8 +1628,6 @@
 				AD82104D177CFBD400B6F501 /* PSSBaseGenericObject.m */,
 				AD821048177CFBD400B6F501 /* PSSCreditCardVersion.h */,
 				AD821049177CFBD400B6F501 /* PSSCreditCardVersion.m */,
-				AD821044177CFBD400B6F501 /* PSSObjectTag.h */,
-				AD821045177CFBD400B6F501 /* PSSObjectTag.m */,
 				AD821040177CFBD400B6F501 /* PSSPasswordVersion.h */,
 				AD821041177CFBD400B6F501 /* PSSPasswordVersion.m */,
 				AD821030177CFBD400B6F501 /* PSSBaseObjectVersion.h */,
@@ -1464,8 +1638,6 @@
 				AD821029177CFBD400B6F501 /* PSSCreditCardBaseObject.m */,
 				AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */,
 				AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */,
-				AD821020177CFBD300B6F501 /* PSSObjectCategory.h */,
-				AD821021177CFBD300B6F501 /* PSSObjectCategory.m */,
 			);
 			name = "Core Data Stack";
 			sourceTree = "<group>";
@@ -1794,19 +1966,23 @@
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
 				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
+				AD10E77B17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
 				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
+				AD10E78B17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
 				AD547FD717A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADC844C8179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
+				AD10E77517BDB6F400CF3402 /* OSCommonImage.m in Sources */,
 				ADA24BF4179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
 				AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
 				AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
+				AD10E77317BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */,
 				AD547FB117A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD8F5AE017823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				ADFB4A6B17A1A1B000E268E3 /* PSSObjectAttachment.m in Sources */,
@@ -1821,24 +1997,35 @@
 				ADAD160E17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,
 				AD727A42179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
+				AD10E72917BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
+				AD10E78717BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */,
 				ADF10D4817A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
+				AD10E74517BDB56E00CF3402 /* PSSTagColorPickerViewController.m in Sources */,
 				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD8C835817B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
+				AD10E77F17BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */,
 				ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */,
 				AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */,
+				AD10E78D17BDB6F400CF3402 /* RSColorPickerView.m in Sources */,
+				AD10E78F17BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
+				AD10E79117BDB6F400CF3402 /* RSSelectionView.m in Sources */,
 				AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
+				AD10E78517BDB6F400CF3402 /* BitmapScaleManipulator.m in Sources */,
 				ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
-				AD821046177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
 				AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
+				AD10E73917BD7B4600CF3402 /* PSSObjectTag.m in Sources */,
 				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
+				AD10E77917BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
+				AD10E72517BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */,
+				AD10E73517BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
 				ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
@@ -1847,14 +2034,20 @@
 				ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
 				AD547FD517A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
+				AD10E78917BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD547FCF17A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
+				AD10E77717BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
+				AD10E73D17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */,
 				AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD312641179F08A600483E2F /* TSMessage.m in Sources */,
 				ADA24C00179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,
 				AD31266B179F08A600483E2F /* TSMessageView.m in Sources */,
 				ADAD160617ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */,
+				AD10E78117BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSPasswordListViewController.m in Sources */,
+				AD10E78317BDB6F400CF3402 /* BitmapRotationManipulator.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
+				AD10E77117BDB6F400CF3402 /* BitmapContextRep.m in Sources */,
 				AD82102E177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
@@ -1868,6 +2061,7 @@
 				AD873B6B178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD363718179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				AD5175F91784906200B30295 /* SPLockScreen.m in Sources */,
+				AD10E77D17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */,
 				AD1BECE117A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
 				AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD547FD917A1C5A6008FAFFB /* UIImageView+ContentFrame.m in Sources */,
@@ -1885,13 +2079,13 @@
 				ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5371791162C00F284B9 /* PSSPasswordDomain.m in Sources */,
+				AD10E76F17BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */,
 				AD5176091784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD547FCB17A1C5A6008FAFFB /* MAConstants.m in Sources */,
 				AD72C3D8177B7E27009AADC8 /* Password_Sync_2.xcdatamodeld in Sources */,
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
-				AD821022177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 				AD8C836117B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
@@ -1911,19 +2105,26 @@
 				AD31266C179F08A600483E2F /* TSMessageView.m in Sources */,
 				AD49C8A517BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
+				AD10E79217BDB6F400CF3402 /* RSSelectionView.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
 				AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */,
+				AD10E78617BDB6F400CF3402 /* BitmapScaleManipulator.m in Sources */,
+				AD10E78417BDB6F400CF3402 /* BitmapRotationManipulator.m in Sources */,
+				AD10E78E17BDB6F400CF3402 /* RSColorPickerView.m in Sources */,
 				AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */,
 				AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */,
 				AD821067177D37ED00B6F501 /* RNCryptorEngine.m in Sources */,
 				ADDD964E1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */,
+				AD10E73E17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */,
 				AD9935981794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */,
 				AD547FCC17A1C5A6008FAFFB /* MAConstants.m in Sources */,
+				AD10E73A17BD7B4600CF3402 /* PSSObjectTag.m in Sources */,
 				AD83AE5917AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
 				AD8C836217B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				AD3637151798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
+				AD10E77E17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */,
 				AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
@@ -1941,6 +2142,8 @@
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
 				AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
 				AD1BECD517A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
+				AD10E78A17BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
+				AD10E77417BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */,
 				AD8C835917B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
 				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
@@ -1950,7 +2153,7 @@
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
-				AD821047177CFBD400B6F501 /* PSSObjectTag.m in Sources */,
+				AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
@@ -1963,6 +2166,7 @@
 				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
 				AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,
 				ADAD161B17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
+				AD10E78217BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */,
 				AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD547FDA17A1C5A6008FAFFB /* UIImageView+ContentFrame.m in Sources */,
 				AD8F5AE71782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
@@ -1973,6 +2177,9 @@
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
+				AD10E79017BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,
+				AD10E72617BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */,
+				AD10E77817BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
 				AD547FA917A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
 				AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
 				ADAD160717ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */,
@@ -1980,42 +2187,51 @@
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
+				AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */,
+				AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
 				AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				ADA0E5461792498C00F284B9 /* HTMLNode.m in Sources */,
 				ADA24BF11795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
 				AD1BECDD17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */,
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
+				AD10E78817BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */,
 				AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */,
 				ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD5175FE1784906200B30295 /* SPLine.m in Sources */,
 				AD8C836617B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m in Sources */,
 				AD312642179F08A600483E2F /* TSMessage.m in Sources */,
+				AD10E78C17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
+				AD10E77C17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
 				AD83AE5D17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
 				AD821033177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
+				AD10E77217BDB6F400CF3402 /* BitmapContextRep.m in Sources */,
 				ADFA1A2117926CB40038EF14 /* PSSnewCardExpirationTextFieldCell.m in Sources */,
 				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
+				AD10E77017BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */,
 				AD727A4C179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
 				ADA0E5481792498C00F284B9 /* HTMLParser.m in Sources */,
 				AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */,
+				AD10E72A17BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				ADAD161717AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
 				AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD8F5AE117823F5600702EFA /* PSSMasterPasswordVerifyerViewController.m in Sources */,
 				ADF10D4917A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
+				AD10E74617BDB56E00CF3402 /* PSSTagColorPickerViewController.m in Sources */,
 				ADC844C9179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADDD9653179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
+				AD10E78017BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */,
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
-				AD821023177CFBD300B6F501 /* PSSObjectCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

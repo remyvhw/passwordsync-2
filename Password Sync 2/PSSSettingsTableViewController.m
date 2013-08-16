@@ -42,6 +42,15 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0) {
+        return 80.;
+    }
+    
+    return 44.;
+}
+
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return NSLocalizedString(@"Passcode", nil);
@@ -130,6 +139,7 @@
         
         cell.textLabel.text = NSLocalizedString(@"Legal", nil);
         
+        cell.imageView.image = [[UIImage imageNamed:@"Mug"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         return cell;
     }
     

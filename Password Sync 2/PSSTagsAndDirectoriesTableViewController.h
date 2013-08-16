@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSTagsAndDirectoriesTableViewController : UITableViewController
+@interface PSSTagsAndDirectoriesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
+    
+    NSString        *savedSearchTerm_;
+    NSInteger       savedScopeButtonIndex_;
+    BOOL            searchWasActive_;
+    BOOL            userDrivenDataModelChange;
+}
+
+@property (nonatomic, strong) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedScopeButtonIndex;
+@property (nonatomic) BOOL searchWasActive;
+
 
 @end
