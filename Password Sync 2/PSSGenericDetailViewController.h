@@ -21,6 +21,8 @@
 -(void)lockUIAction:(id)notification;
 -(void)presentVersionsBrowser:(id)sender;
 
+-(void)presentTagsBrowser:(id)sender;
+
 
 -(void)toggleFavorite;
 

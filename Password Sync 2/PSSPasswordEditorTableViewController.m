@@ -72,32 +72,34 @@
     
     BOOL creatingMode = NO;
     
-    if (!self.passwordBaseObject) {
-        self.passwordBaseObject = [self insertNewPasswordInManagedObject];
+    if (!self.baseObject) {
+        self.baseObject = [self insertNewPasswordInManagedObject];
         creatingMode = YES;
     }
     
-    [self.passwordBaseObject setMainDomainFromString:self.hostCell.textField.text];
+    [self.baseObject setMainDomainFromString:self.hostCell.textField.text];
     
     
     // We need to create a new version
     
     PSSPasswordVersion * version = [self insertNewPasswordVersionInManagedObject];
     
-    version.encryptedObject = self.passwordBaseObject;
+    version.encryptedObject = self.baseObject;
     
     version.displayName = self.titleCell.textField.text;
     // We update the display name with the latest
-    self.passwordBaseObject.displayName = version.displayName;
+    self.baseObject.displayName = version.displayName;
     
     version.decryptedUsername = self.usernameCell.textField.text;
     version.decryptedPassword = self.passwordCell.textField.text;
     version.decryptedNotes = self.notesCell.textView.text;
     
-    self.passwordBaseObject.currentVersion = version;
+    self.baseObject.currentVersion = version;
+    self.baseObject.tags = self.itemTags;
+    
     
     NSError *error = nil;
-    if (![self.passwordBaseObject.managedObjectContext save:&error]) {
+    if (![self.baseObject.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -110,13 +112,13 @@
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
             
-            [faviconFetcher backgroundFetchFaviconForBasePassword:self.passwordBaseObject];
+            [faviconFetcher backgroundFetchFaviconForBasePassword:self.baseObject];
             
         }];
     } else {
         
         if (self.editorDelegate) {
-            [self.editorDelegate objectEditor:self finishedWithObject:self.passwordBaseObject];
+            [self.editorDelegate objectEditor:self finishedWithObject:self.baseObject];
         }
         
         [self.navigationController popViewControllerAnimated:YES];
@@ -237,7 +239,7 @@
     UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(doneEditing:)];
     self.navigationItem.rightBarButtonItem = doneButton;
     
-    if (self.passwordBaseObject) {
+    if (self.baseObject) {
         // We're in edit mode
         
         // Register for notifications
@@ -245,15 +247,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUI:) name:PSSGlobalUnlockNotification object:nil];
         
         self.isPasscodeUnlocked = YES;
-        
-    } else {
-        // We're writing a new password
-        
-        UIBarButtonItem * cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewPasswordEditor:)];
-        
-        self.navigationItem.leftBarButtonItem = cancelButton;
-        
-
         
     }
     
@@ -288,23 +281,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark Selectors
 
--(void)cancelNewPasswordEditor:(id)sender{
-    
-    if (self.passwordBaseObject) {
-        
-        if (self.editorDelegate && [self.editorDelegate respondsToSelector:@selector(objectEditor:canceledOperationOnObject:)]) {
-            [self.editorDelegate objectEditor:self canceledOperationOnObject:self.passwordBaseObject];
-        }
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    } else {
-        [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
-    }
-    
-    
-}
+
 
 
 #pragma mark - Table view data source
@@ -327,6 +305,8 @@
         return NSLocalizedString(@"Login essentials", nil);
     } else if (section == 1){
         return NSLocalizedString(@"Notes", nil);
+    } else if (section == 2) {
+        return NSLocalizedString(@"Advanced", nil);
     }
     
     return @"";
@@ -335,7 +315,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -349,6 +329,9 @@
         
         return 1;
         
+    } else if (section == 2) {
+        // Advanced
+        return 1;
     }
     
     return 0;
@@ -365,8 +348,8 @@
             
             PSSnewPasswordBasicTextFieldCell * titleCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             self.titleCell = titleCell;
-            if (self.passwordBaseObject) {
-                self.titleCell.textField.text = self.passwordBaseObject.displayName;
+            if (self.baseObject) {
+                self.titleCell.textField.text = self.baseObject.displayName;
             }
             self.titleCell.textField.placeholder = NSLocalizedString(@"Title", nil);
             self.titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -382,8 +365,8 @@
             PSSnewPasswordBasicTextFieldCell * usernameCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             
             self.usernameCell = usernameCell;
-            if (self.passwordBaseObject) {
-                self.usernameCell.textField.text = [self.passwordBaseObject.currentVersion decryptedUsername];
+            if (self.baseObject) {
+                self.usernameCell.textField.text = [self.baseObject.currentVersion decryptedUsername];
             }
             self.usernameCell.textField.placeholder = NSLocalizedString(@"Username", nil);
             self.usernameCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -399,8 +382,8 @@
             PSSnewPasswordPasswordTextFieldCell * passwordCell = [[PSSnewPasswordPasswordTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             
             self.passwordCell = passwordCell;
-            if (self.passwordBaseObject) {
-                self.passwordCell.textField.text = [self.passwordBaseObject.currentVersion decryptedPassword];
+            if (self.baseObject) {
+                self.passwordCell.textField.text = [self.baseObject.currentVersion decryptedPassword];
             }
             self.passwordCell.textField.placeholder = NSLocalizedString(@"Password", nil);
             self.passwordCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -415,8 +398,8 @@
             PSSnewPasswordBasicTextFieldCell * hostCell = [[PSSnewPasswordBasicTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             
             self.hostCell = hostCell;
-            if (self.passwordBaseObject) {
-                self.hostCell.textField.text = [[self.passwordBaseObject mainDomain] original_url];
+            if (self.baseObject) {
+                self.hostCell.textField.text = [[self.baseObject mainDomain] original_url];
             }
             self.hostCell.textField.placeholder = NSLocalizedString(@"URL", nil);
             self.hostCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -434,8 +417,8 @@
             PSSnewPasswordMultilineTextFieldCell * notesCell = [[PSSnewPasswordMultilineTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             
             self.notesCell = notesCell;
-            if (self.passwordBaseObject) {
-                self.notesCell.textView.text = [self.passwordBaseObject.currentVersion decryptedNotes];
+            if (self.baseObject) {
+                self.notesCell.textView.text = [self.baseObject.currentVersion decryptedNotes];
             }
             self.notesCell.selectionStyle =UITableViewCellSelectionStyleNone;
             
@@ -443,6 +426,9 @@
         
         cell = self.notesCell;
         
+    } else if (indexPath.section == 2 && indexPath.row == 0) {
+        // Tags
+        cell = [self tagsTableViewCell];
     }
     
     
@@ -467,6 +453,15 @@
     
     
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [self presentTagSelectorViewController];
+    }
+    
+}
+
 
 #pragma mark - PSSPasswordGeneratorTableViewControllerProtocol methods
 -(void)passwordGenerator:(PSSPasswordGeneratorTableViewController *)generator finishedWithPassword:(NSString *)randomPassword{

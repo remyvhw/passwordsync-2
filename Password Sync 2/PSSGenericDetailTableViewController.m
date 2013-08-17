@@ -17,6 +17,24 @@
 @synthesize versionsTableViewCell = _versionsTableViewCell;
 @synthesize favoriteTableViewCell = _favoriteTableViewCell;
 
+-(UITableViewCell*)tagsTableViewCell{
+    
+    if (_tagsTableViewCell) {
+        return _tagsTableViewCell;
+    }
+    
+    UITableViewCell * tagsTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    tagsTableViewCell.textLabel.text = NSLocalizedString(@"Tags", nil);
+    tagsTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    tagsTableViewCell.imageView.image = [[UIImage imageNamed:@"Tags"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _tagsTableViewCell = tagsTableViewCell;
+    return tagsTableViewCell;
+    
+}
+
+
 -(UITableViewCell*)versionsTableViewCell{
     
     if (_versionsTableViewCell) {

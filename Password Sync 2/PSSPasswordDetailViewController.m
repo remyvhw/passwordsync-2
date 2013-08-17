@@ -46,10 +46,9 @@ dispatch_queue_t backgroundQueue;
     PSSPasswordEditorTableViewController * passwordEditor = [newPasswordStoryboard instantiateViewControllerWithIdentifier:@"passwordEditorBaseViewControlller"];
     
     passwordEditor.editorDelegate = self;
-    passwordEditor.passwordBaseObject = self.detailItem;
+    passwordEditor.baseObject = self.detailItem;
     
     [self.navigationController pushViewController:passwordEditor animated:YES];
-    
     
 }
 
@@ -335,7 +334,7 @@ dispatch_queue_t backgroundQueue;
         }
     } else if (section==4){
         // Buttons
-        return 2;
+        return 3;
     }
     
     return 0;
@@ -438,7 +437,11 @@ dispatch_queue_t backgroundQueue;
         } else if (indexPath.row == 1) {
             // Versions
             return [self versionsTableViewCell];
+        } else if (indexPath.row == 2) {
+            // Tags
+            return [self tagsTableViewCell];
         }
+        
         
     }
     
@@ -499,6 +502,9 @@ dispatch_queue_t backgroundQueue;
         } else if (indexPath.row == 1) {
             // Versions
             [self presentVersionsBrowser:tableView];
+        } else if (indexPath.row == 2) {
+            // Tags
+            [self presentTagsBrowser:[tableView cellForRowAtIndexPath:indexPath]];
         }
         
         

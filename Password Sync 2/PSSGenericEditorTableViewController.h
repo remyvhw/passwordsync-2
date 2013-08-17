@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "PSSObjectEditorProtocol.h"
+#import "PSSTagsSelectorTableViewController.h"
 
-@interface PSSGenericEditorTableViewController : UITableViewController
+@interface PSSGenericEditorTableViewController : UITableViewController <PSSTagsSelectorDelegate>
 
 @property (strong, nonatomic) id baseObject;
 @property (weak, nonatomic) id<PSSObjectEditorProtocol> editorDelegate;
+@property (strong, nonatomic) UITableViewCell * tagsTableViewCell;
+@property (strong, nonatomic) NSSet * itemTags;
+
+
 
 -(void)cancelAction:(id)sender;
 -(void)saveAction:(id)sender;
+
+-(void)presentTagSelectorViewController;
 
 @end

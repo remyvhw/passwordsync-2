@@ -9,6 +9,7 @@
 #import "PSSGenericDetailViewController.h"
 #import "PSSUnlockPromptViewController.h"
 #import "PSSAppDelegate.h"
+#import "PSSTagsSelectorTableViewController.h"
 
 @interface PSSGenericDetailViewController ()
 
@@ -19,7 +20,18 @@
 @implementation PSSGenericDetailViewController
 
 
+-(void)presentTagsBrowser:(id)sender{
+    
+    
+    PSSTagsSelectorTableViewController * tagsSelector = [[PSSTagsSelectorTableViewController alloc] initWithNibName:@"PSSTagsSelectorTableViewController" bundle:[NSBundle mainBundle]];
+    
+    
+    tagsSelector.editionMode = NO;
+    tagsSelector.detailItem = self.detailItem;
+    
+    [self.navigationController pushViewController:tagsSelector animated:YES];
 
+}
 
 -(void)presentVersionsBrowser:(id)sender{
     

@@ -103,6 +103,10 @@
 		AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */; };
 		AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31267C17A07CBD00483E2F /* SVProgressHUD.m */; };
 		AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31267C17A07CBD00483E2F /* SVProgressHUD.m */; };
+		AD33DD6A17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */; };
+		AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */; };
+		AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */; };
+		AD33DD6D17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */; };
 		AD36370F17989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD36371017989BA4005F1542 /* PSSLocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */; };
 		AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */; };
@@ -538,6 +542,9 @@
 		AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		AD31267B17A07CBD00483E2F /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		AD31267C17A07CBD00483E2F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		AD33DD6717BE679C008F80FD /* PSSTagsSelectorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsSelectorTableViewController.h; sourceTree = "<group>"; };
+		AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagsSelectorTableViewController.m; sourceTree = "<group>"; };
+		AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSTagsSelectorTableViewController.xib; sourceTree = "<group>"; };
 		AD36370D17989BA4005F1542 /* PSSLocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationListTableViewController.h; sourceTree = "<group>"; };
 		AD36370E17989BA4005F1542 /* PSSLocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationListTableViewController.m; sourceTree = "<group>"; };
 		AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationEditorTableViewController.h; sourceTree = "<group>"; };
@@ -967,10 +974,7 @@
 			children = (
 				AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */,
 				AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */,
-				AD10E72317BD5E5B00CF3402 /* PSSTagEditorTableViewController.h */,
-				AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */,
-				AD10E74317BDB56E00CF3402 /* PSSTagColorPickerViewController.h */,
-				AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */,
+				AD33DD6617BE66E7008F80FD /* Tags */,
 				AD10E72717BD62A300CF3402 /* PSSFolderEditorViewController.h */,
 				AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */,
 			);
@@ -1051,6 +1055,20 @@
 				AD31267C17A07CBD00483E2F /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		AD33DD6617BE66E7008F80FD /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				AD10E72317BD5E5B00CF3402 /* PSSTagEditorTableViewController.h */,
+				AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */,
+				AD10E74317BDB56E00CF3402 /* PSSTagColorPickerViewController.h */,
+				AD10E74417BDB56E00CF3402 /* PSSTagColorPickerViewController.m */,
+				AD33DD6717BE679C008F80FD /* PSSTagsSelectorTableViewController.h */,
+				AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */,
+				AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */,
+			);
+			name = Tags;
 			sourceTree = "<group>";
 		};
 		AD36371117989D95005F1542 /* Location */ = {
@@ -1839,6 +1857,7 @@
 				AD54801617A1C7EE008FAFFB /* f-setting-1-active.png in Resources */,
 				AD8F5AE217823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
 				ADAD15FC17AB43D60035ABB4 /* KeyImage.jpg in Resources */,
+				AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
 				AD54803617A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54804617A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				AD54802E17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
@@ -1890,6 +1909,7 @@
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD8C835E17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
+				AD33DD6D17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
 				AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				ADAD15FF17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD09C9EE17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
@@ -2023,6 +2043,7 @@
 				AD10E73917BD7B4600CF3402 /* PSSObjectTag.m in Sources */,
 				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				AD10E77917BDB6F400CF3402 /* CGContextCreator.m in Sources */,
+				AD33DD6A17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
 				AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				AD10E72517BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */,
 				AD10E73517BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
@@ -2153,6 +2174,7 @@
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
+				AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
 				AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,

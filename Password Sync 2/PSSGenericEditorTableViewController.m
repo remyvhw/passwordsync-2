@@ -7,12 +7,48 @@
 //
 
 #import "PSSGenericEditorTableViewController.h"
+#import "PSSTagsSelectorTableViewController.h"
 
 @interface PSSGenericEditorTableViewController ()
+
 
 @end
 
 @implementation PSSGenericEditorTableViewController
+@synthesize tagsTableViewCell = _tagsTableViewCell;
+
+-(void)presentTagSelectorViewController{
+    
+    PSSTagsSelectorTableViewController * tagsSelector = [[PSSTagsSelectorTableViewController alloc] initWithNibName:@"PSSTagsSelectorTableViewController" bundle:[NSBundle mainBundle]];
+    
+    
+    tagsSelector.editionMode = YES;
+    tagsSelector.detailItem = self.baseObject;
+    tagsSelector.tagsSelectorDelegate = self;
+    
+    [self.navigationController pushViewController:tagsSelector animated:YES];
+    
+    
+}
+
+-(UITableViewCell*)tagsTableViewCell{
+    
+    if (_tagsTableViewCell) {
+        return _tagsTableViewCell;
+    }
+    
+    UITableViewCell * tagsTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    tagsTableViewCell.textLabel.text = NSLocalizedString(@"Tags", nil);
+    tagsTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    tagsTableViewCell.imageView.image = [[UIImage imageNamed:@"Tags"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _tagsTableViewCell = tagsTableViewCell;
+    return tagsTableViewCell;
+    
+}
+
+
 
 -(void)cancelAction:(id)sender{
     if (self.baseObject) {
@@ -23,6 +59,8 @@
 }
 
 -(void)saveAction:(id)sender{
+    
+    
     
 }
 
@@ -39,13 +77,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     
     UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAction:)];
     
@@ -94,5 +125,14 @@
     return cell;
 }
 
+
+#pragma mark - PSSTagsSelectorDelegate protocol methods
+
+-(void)tagsSelector:(PSSTagsSelectorTableViewController *)tagsSelector didFinishWithSelection:(NSSet *)selectionSet{
+    
+    self.itemTags = selectionSet;
+    
+    
+}
 
 @end
