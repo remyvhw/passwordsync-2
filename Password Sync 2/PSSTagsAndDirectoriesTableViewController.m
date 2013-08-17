@@ -12,6 +12,8 @@
 #import "PSSObjectFolder.h"
 #import "PSSAppDelegate.h"
 #import "UIColor+PSSDictionaryCoding.h"
+#import "PSSObjectsForTagViewController.h"
+#import "PSSOrganizerSplitViewDetailViewController.h"
 
 typedef enum {
     PSSTagsAndDirectoriesPresentationModeTags,
@@ -41,6 +43,9 @@ typedef enum {
     [super setEditing:editing animated:animated];
     
     if (editing) {
+        
+        [[[self.splitViewController viewControllers] objectAtIndex:1] forcePopToRoot];
+        
         [self showNewButtonAnimated:YES];
         [UIView animateWithDuration:0.2 animations:^{
             [self.tagsFoldersSegmentedControl setAlpha:0.0];
@@ -63,11 +68,17 @@ typedef enum {
 }
 
 -(void)showSettingsButtonAnimated:(BOOL)animated{
-    UIBarButtonItem * settingsButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) style:UIBarButtonItemStylePlain target:self action:@selector(presentSettingsViewAction:)];
-    
-    
-    
-    [self.navigationItem setLeftBarButtonItem:settingsButton animated:animated];
+   
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        UIBarButtonItem * settingsButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) style:UIBarButtonItemStylePlain target:self action:@selector(presentSettingsViewAction:)];
+        
+        [self.navigationItem setLeftBarButtonItem:settingsButton animated:animated];
+
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+        
+    }
 }
 
 
@@ -110,6 +121,8 @@ typedef enum {
         // New tags
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            [self performSegueWithIdentifier:@"presentNewTagEditorSegue" sender:self];
+        } else if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
             [self performSegueWithIdentifier:@"presentNewTagEditorSegue" sender:self];
         }
         
@@ -288,11 +301,49 @@ typedef enum {
 #pragma mark - UITableViewDelegate
 
 
-/*-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+ 
   
-}*/
+    NSFetchedResultsController * controller;
+    if (tableView == self.tableView && self.presentationMode == PSSTagsAndDirectoriesPresentationModeTags) {
+        controller = self.tagsFetchedResultsController;
+    } else if (tableView == self.tableView && self.presentationMode == PSSTagsAndDirectoriesPresentationModeFolders) {
+        controller = self.foldersFetchedResultsController;
+    } else {
+        controller = self.searchFetchedResultsController;
+    }
+    
+    
+    if (self.presentationMode == PSSTagsAndDirectoriesPresentationModeTags) {
+        
+        PSSObjectTag * objectTag = [controller objectAtIndexPath:indexPath];
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            PSSObjectsForTagViewController * tagsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+            
+            tagsViewController.selectedTag = objectTag;
+            
+            [self.navigationController pushViewController:tagsViewController animated:YES];
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+           PSSOrganizerSplitViewDetailViewController * navController = [[self.splitViewController viewControllers] objectAtIndex:1];
+            [navController presentViewControllerForTagEntity:objectTag];
+            
+            
+        }
 
+        
+    } else if (self.presentationMode == PSSTagsAndDirectoriesPresentationModeFolders) {
+        
+        
+    }
+
+    
+    
+}
+
+-(void)deselectAllRowsAnimated:(BOOL)animated{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 /*
 #pragma mark - Navigation
@@ -612,6 +663,10 @@ typedef enum {
 
         cell.textLabel.text = object.name;
         cell.imageView.image = [UIColor imageWithColorDictionary:object.color];
+     
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
         
     } else if (self.presentationMode == PSSTagsAndDirectoriesPresentationModeFolders) {
         // Configure a folder cell
@@ -620,7 +675,6 @@ typedef enum {
         cell.textLabel.text = object.name;
         
     }
-    
     
     
     

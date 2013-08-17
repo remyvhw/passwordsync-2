@@ -20,5 +20,7 @@
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
 
+-(void)deselectAllRowsAnimated:(BOOL)animated;
+
 
 @end

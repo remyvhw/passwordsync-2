@@ -83,6 +83,8 @@
 		AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
 		AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
 		AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
+		AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */; };
+		AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312642179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312643179F08A600483E2F /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312628179F08A600483E2F /* HexColor.m */; };
@@ -242,6 +244,10 @@
 		AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
 		AD58F95317B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
 		AD58F95417B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
+		AD5DD6C717BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */; };
+		AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */; };
+		AD5DD6CB17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
+		AD5DD6CC17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -526,6 +532,8 @@
 		AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagsAndDirectoriesTableViewController.m; sourceTree = "<group>"; };
 		AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsTableViewController.h; sourceTree = "<group>"; };
 		AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsTableViewController.m; sourceTree = "<group>"; };
+		AD2C9E3817BF1472009D22EE /* PSSObjectsForTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectsForTagViewController.h; sourceTree = "<group>"; };
+		AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectsForTagViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
 		AD312625179F08A600483E2F /* TSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessage.m; sourceTree = "<group>"; };
 		AD312627179F08A600483E2F /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -641,6 +649,10 @@
 		AD58F94D17B14A5F00344134 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
 		AD58F95117B178AE00344134 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AD58F95217B178AE00344134 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AD5DD6C517BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSOrganizerSplitViewDetailViewController.h; sourceTree = "<group>"; };
+		AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerSplitViewDetailViewController.m; sourceTree = "<group>"; };
+		AD5DD6C917C00CE000DDB614 /* PSSOrganizerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSOrganizerCollectionViewController.h; sourceTree = "<group>"; };
+		AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerCollectionViewController.m; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -977,6 +989,10 @@
 				AD33DD6617BE66E7008F80FD /* Tags */,
 				AD10E72717BD62A300CF3402 /* PSSFolderEditorViewController.h */,
 				AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */,
+				AD5DD6C517BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.h */,
+				AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */,
+				AD5DD6C917C00CE000DDB614 /* PSSOrganizerCollectionViewController.h */,
+				AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */,
 			);
 			name = "Tags and Directories";
 			sourceTree = "<group>";
@@ -1067,6 +1083,8 @@
 				AD33DD6717BE679C008F80FD /* PSSTagsSelectorTableViewController.h */,
 				AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */,
 				AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */,
+				AD2C9E3817BF1472009D22EE /* PSSObjectsForTagViewController.h */,
+				AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */,
 			);
 			name = Tags;
 			sourceTree = "<group>";
@@ -1987,6 +2005,7 @@
 				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD10E77B17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
+				AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */,
 				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD10E78B17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
@@ -2000,6 +2019,7 @@
 				ADA24BF4179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */,
 				AD72C3CB177B7E27009AADC8 /* main.m in Sources */,
+				AD5DD6CB17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */,
 				AD3637141798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
 				AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */,
 				AD10E77317BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */,
@@ -2008,6 +2028,7 @@
 				ADFB4A6B17A1A1B000E268E3 /* PSSObjectAttachment.m in Sources */,
 				AD5176041784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
+				AD5DD6C717BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
 				AD727A4B179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
 				AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
 				AD8C836517B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m in Sources */,
@@ -2196,6 +2217,7 @@
 				ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */,
 				AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD312644179F08A600483E2F /* HexColor.m in Sources */,
+				AD5DD6CC17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */,
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
@@ -2208,6 +2230,7 @@
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,
+				AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */,
 				AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
@@ -2253,6 +2276,7 @@
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
+				AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
