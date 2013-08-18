@@ -7,8 +7,16 @@
 //
 
 #import "PSSObjectsForTagViewController.h"
+#import "PSSPasswordBaseObject.h"
+#import "PSSLocationBaseObject.h"
+#import "PSSCreditCardBaseObject.h"
+#import "PSSDocumentBaseObject.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSObjectsForTagViewController ()
+
+@property (strong, nonatomic) NSMutableArray * finalArrayOfArrays;
+@property (strong, nonatomic) NSMutableArray * arrayOfTitles;
 
 @end
 
@@ -27,12 +35,41 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    // Depending of if we have a selectedTag or selectedCategory, we'll have to configure our final array
+    
+    self.arrayOfTitles = [[NSMutableArray alloc] initWithCapacity:5];
+    self.finalArrayOfArrays = [[NSMutableArray alloc] initWithCapacity:5];
+    
+    NSSet * setOfObjects = nil;
+    if (self.selectedTag) {
+        setOfObjects = self.selectedTag.encryptedObjects;
+    } else if (self.selectedFolder) {
+        setOfObjects = self.selectedFolder.encryptedObjects;
+    }
+    
+    NSSortDescriptor * orderByNameSorter = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES];
+    
+    // Now we'll parse each of the generic objects subclass
+    
+    // Websites
+    NSPredicate * passwordsPredicate = [NSPredicate predicateWithFormat: @"self isKindOfClass: %@", [PSSPasswordBaseObject class]];
+    
+    NSSet * filteredPasswords = [setOfObjects filteredSetUsingPredicate:passwordsPredicate];
+    NSArray * orderedArrayOfPasswords = [filteredPasswords sortedArrayUsingDescriptors:@[orderByNameSorter]];
+    
+    if ([orderedArrayOfPasswords count]) {
+        // If we have passwords in that tag/folder, we'll add them to the array.
+        [self.arrayOfTitles addObject:NSLocalizedString(@"Websites", nil)];
+        [self.finalArrayOfArrays addObject:orderedArrayOfPasswords];
+    }
+    
+    
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,28 +79,69 @@
 
 #pragma mark - Table view data source
 
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [self.arrayOfTitles objectAtIndex:section];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [self.finalArrayOfArrays count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSArray * currentArray = [self.finalArrayOfArrays objectAtIndex:section];
+    return [currentArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSArray * observedArray = [self.finalArrayOfArrays objectAtIndex:indexPath.section];
+    id illustratedObject = [observedArray objectAtIndex:indexPath.row];
     
-    return cell;
+    
+    if ([illustratedObject isKindOfClass:[PSSPasswordBaseObject class]]) {
+        
+        
+        PSSPasswordBaseObject * passwordObject = illustratedObject;
+        static NSString *CellIdentifier = @"passwordCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        cell.textLabel.text = passwordObject.displayName;
+        
+        UIImage * favicon = [UIImage imageWithData:passwordObject.favicon];
+        cell.imageView.image = favicon;
+        
+        CALayer *mask = [CALayer layer];
+        mask.contents = (id)[[UIImage imageNamed:@"TableViewRoundMask"] CGImage];
+        mask.frame = CGRectMake(0, 2, 40, 40);
+        cell.imageView.layer.mask = mask;
+        cell.imageView.layer.masksToBounds = YES;
+        
+        
+        return cell;
+    }
+    
+    return nil;
+
+}
+
+#pragma mark - UITableVIewDelegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSArray * observedArray = [self.finalArrayOfArrays objectAtIndex:indexPath.section];
+    id illustratedObject = [observedArray objectAtIndex:indexPath.row];
+
+    if ([illustratedObject isKindOfClass:[PSSBaseGenericObject class]]) {
+        [APP_DELEGATE openBaseObjectDetailView:illustratedObject];
+    }
+    
+    
 }
 
 /*

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @import CoreLocation;
 
+@class PSSBaseGenericObject;
 @interface PSSAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -24,5 +25,8 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 -(void)presentUnlockPromptAnimated:(BOOL)animated;
+
+-(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject;
+
 
 @end

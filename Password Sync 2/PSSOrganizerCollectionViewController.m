@@ -8,6 +8,7 @@
 
 #import "PSSOrganizerCollectionViewController.h"
 #import "PSSUnlockPromptViewController.h"
+#import "PSSTagsAndDirectoriesTableViewController.h"
 
 @interface PSSOrganizerCollectionViewController ()
 
@@ -30,6 +31,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UINavigationController * masterNavController = [self.splitViewController.viewControllers firstObject];
+        PSSTagsAndDirectoriesTableViewController * mainViewController = (PSSTagsAndDirectoriesTableViewController*)[masterNavController.viewControllers firstObject];
+        
+        
+        if ([mainViewController respondsToSelector:@selector(deselectAllRowsAnimated:)]) {
+            [mainViewController deselectAllRowsAnimated:YES];
+        }
+        
+    }
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

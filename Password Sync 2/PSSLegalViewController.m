@@ -37,6 +37,9 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.title = NSLocalizedString(@"Legal", nil);
+    }
     
     Reachability* reach = [Reachability reachabilityWithHostname:@"appspot.com"];
     

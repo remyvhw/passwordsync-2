@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PSSObjectTag.h"
+#import "PSSObjectFolder.h"
 
 @interface PSSObjectsForTagViewController : UITableViewController
 
 @property (strong, nonatomic) PSSObjectTag * selectedTag;
+@property (strong, nonatomic) PSSObjectFolder * selectedFolder;
 
 @end

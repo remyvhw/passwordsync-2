@@ -13,8 +13,12 @@
 #import "PSSUnlockPromptViewController.h"
 #import "TSMessage.h"
 #import "PSSLocationBaseObject.h"
+#import "PSSPasswordBaseObject.h"
+
 #import "PSSLocationDetailViewController.h"
 #import "PSSLocationsSplitViewDetailViewController.h"
+#import "PSSPasswordSplitViewDetailViewController.h"
+#import "PSSPasswordDetailViewController.h"
 
 @interface PSSAppDelegate ()
 
@@ -28,7 +32,16 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-
+-(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject{
+    
+    if ([baseObject isKindOfClass:[PSSLocationBaseObject class]]) {
+        [self openLocationDetailView:(PSSLocationBaseObject*)baseObject];
+    } else if ([baseObject isKindOfClass:[PSSPasswordBaseObject class]]){
+        [self openPasswordDetailView:(PSSPasswordBaseObject*)baseObject];
+    }
+    
+    
+}
 
 - (NSManagedObject *)objectWithURI:(NSURL *)uri
 {
@@ -59,6 +72,32 @@
     }
     
     return nil;
+}
+
+-(void)openPasswordDetailView:(PSSPasswordBaseObject*)passwordObject {
+    
+    UITabBarController * tabBarController = (UITabBarController*)self.window.rootViewController;
+    
+    // Passwords are at index 0
+    [tabBarController setSelectedIndex:0];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        UISplitViewController * splitViewForLocations = (UISplitViewController*)tabBarController.selectedViewController;
+        
+        PSSPasswordSplitViewDetailViewController * navController = [splitViewForLocations.viewControllers lastObject];
+        [navController presentViewControllerForPasswordEntity:passwordObject];
+        
+    } else {
+        UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
+        
+        PSSPasswordDetailViewController * detailViewController = (PSSPasswordDetailViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"PSSPasswordDetailViewController"];
+        detailViewController.detailItem = passwordObject;
+        
+        [navController pushViewController:detailViewController animated:YES];
+        
+    }
+    
 }
 
 
