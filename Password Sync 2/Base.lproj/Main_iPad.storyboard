@@ -1271,14 +1271,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bct-fL-XQP">
-                                            <rect key="frame" x="60" y="0.0" width="693" height="43"/>
+                                            <rect key="frame" x="55" y="0.0" width="698" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="Browser" id="1Gx-19-hAQ">
-                                            <rect key="frame" x="15" y="6" width="30" height="30"/>
+                                            <rect key="frame" x="15" y="9" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1313,14 +1313,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fK1-Fj-CRK">
-                                            <rect key="frame" x="65" y="0.0" width="688" height="43"/>
+                                            <rect key="frame" x="59" y="0.0" width="694" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="Pin" id="Juu-Eo-p3Q">
-                                            <rect key="frame" x="15" y="6" width="35" height="30"/>
+                                            <rect key="frame" x="15" y="9" width="29" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1334,14 +1334,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GUI-uS-44q">
-                                            <rect key="frame" x="51" y="0.0" width="702" height="43"/>
+                                            <rect key="frame" x="48" y="0.0" width="705" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="Document" id="t22-0O-RIf">
-                                            <rect key="frame" x="15" y="6" width="21" height="30"/>
+                                            <rect key="frame" x="15" y="9" width="18" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1621,11 +1621,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Browser" width="30" height="30"/>
+        <image name="Browser" width="25" height="25"/>
         <image name="CardsIcon" width="37" height="25"/>
-        <image name="Document" width="21" height="30"/>
-        <image name="Organizer" width="26" height="30"/>
-        <image name="Pin" width="35" height="30"/>
+        <image name="Document" width="18" height="25"/>
+        <image name="Organizer" width="21" height="25"/>
+        <image name="Pin" width="29" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

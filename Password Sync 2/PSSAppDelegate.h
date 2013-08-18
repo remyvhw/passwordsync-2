@@ -28,5 +28,4 @@
 
 -(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject;
 
-
 @end

@@ -10,6 +10,7 @@
 #import "PSSObjectTag.h"
 #import "PSSAppDelegate.h"
 #import "UIColor+PSSDictionaryCoding.h"
+#import "PSSObjectsForTagViewController.h"
 
 @interface PSSTagsSelectorTableViewController ()
 
@@ -163,6 +164,25 @@
         }
         
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    } else {
+        
+        // Not in edition mode
+        
+        UIStoryboard * mainStoryboard;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:[NSBundle mainBundle]];
+        }
+        
+        
+        PSSObjectsForTagViewController * objectsForTagViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+        
+        objectsForTagViewController.selectedTag = selectedTag;
+        
+        [self.navigationController pushViewController:objectsForTagViewController animated:YES];
+        
         
     }
     
