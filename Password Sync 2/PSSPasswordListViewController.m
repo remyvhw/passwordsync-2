@@ -27,11 +27,6 @@ dispatch_queue_t backgroundQueue;
 
 
 
-
--(void)deselectAllRowsAnimated:(BOOL)animated{
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
 -(void)userUnlockedDatabase:(id)sender{
     
     [self.tableView reloadData];

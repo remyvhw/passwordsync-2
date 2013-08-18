@@ -254,6 +254,8 @@
 		AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
 		AD6133F01793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */; };
 		AD6133F11793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */; };
+		AD722F5F17C11F9A0085E5ED /* PSSGenericListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD722F5E17C11F9A0085E5ED /* PSSGenericListTableViewController.m */; };
+		AD722F6017C11F9A0085E5ED /* PSSGenericListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD722F5E17C11F9A0085E5ED /* PSSGenericListTableViewController.m */; };
 		AD727A42179DBA350030707F /* PSSCardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD727A41179DBA350030707F /* PSSCardDetailViewController.m */; };
 		AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD727A41179DBA350030707F /* PSSCardDetailViewController.m */; };
 		AD727A4B179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD727A49179DE6230030707F /* PSSCardEmergencyContactTableViewController.m */; };
@@ -658,6 +660,8 @@
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
 		AD6133EE1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsEditorCardTypeSelectorTableViewController.h; sourceTree = "<group>"; };
 		AD6133EF1793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsEditorCardTypeSelectorTableViewController.m; sourceTree = "<group>"; };
+		AD722F5D17C11F9A0085E5ED /* PSSGenericListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGenericListTableViewController.h; sourceTree = "<group>"; };
+		AD722F5E17C11F9A0085E5ED /* PSSGenericListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericListTableViewController.m; sourceTree = "<group>"; };
 		AD727A40179DBA350030707F /* PSSCardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardDetailViewController.h; sourceTree = "<group>"; };
 		AD727A41179DBA350030707F /* PSSCardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardDetailViewController.m; sourceTree = "<group>"; };
 		AD727A48179DE6230030707F /* PSSCardEmergencyContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEmergencyContactTableViewController.h; sourceTree = "<group>"; };
@@ -1020,6 +1024,8 @@
 				AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */,
 				AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */,
 				AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */,
+				AD722F5D17C11F9A0085E5ED /* PSSGenericListTableViewController.h */,
+				AD722F5E17C11F9A0085E5ED /* PSSGenericListTableViewController.m */,
 			);
 			name = "Generic controllers";
 			sourceTree = "<group>";
@@ -2131,6 +2137,7 @@
 				AD8C836117B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
+				AD722F5F17C11F9A0085E5ED /* PSSGenericListTableViewController.m in Sources */,
 				AD0FAA31177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */,
 				AD58F95317B178AE00344134 /* Reachability.m in Sources */,
 				AD821032177CFBD400B6F501 /* PSSBaseObjectVersion.m in Sources */,
@@ -2187,6 +2194,7 @@
 				AD10E78A17BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD10E77417BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */,
 				AD8C835917B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
+				AD722F6017C11F9A0085E5ED /* PSSGenericListTableViewController.m in Sources */,
 				AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				ADA24C01179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,

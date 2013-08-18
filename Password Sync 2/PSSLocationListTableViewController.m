@@ -20,20 +20,9 @@
 
 @implementation PSSLocationListTableViewController
 
--(void)deselectAllRowsAnimated:(BOOL)animated{
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
 
--(void)newLocationAction:(id)sender{
-    
-    
-    
-    PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:locationEditor];
-    
-    [self.navigationController presentViewController:navController animated:YES completion:NULL];
-    
-}
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

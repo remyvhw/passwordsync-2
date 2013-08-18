@@ -38,7 +38,13 @@
         [self pushViewController:detailView animated:YES];
     }
     
+    UINavigationController * listView = [[self.splitViewController viewControllers] objectAtIndex:0];
     
+    NSLog(@"ListVIew %@", [listView description]);
+    if ([[listView visibleViewController] isKindOfClass:[PSSPasswordListViewController class]]) {
+        PSSPasswordListViewController * listOfPasswords = (PSSPasswordListViewController*)[listView visibleViewController];
+        [listOfPasswords selectRowForBaseObject:passwordBaseObject];
+    }
     
     
 }

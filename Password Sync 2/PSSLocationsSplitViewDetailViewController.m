@@ -8,6 +8,7 @@
 
 #import "PSSLocationsSplitViewDetailViewController.h"
 #import "PSSLocationDetailViewController.h"
+#import "PSSLocationListTableViewController.h"
 
 @interface PSSLocationsSplitViewDetailViewController ()
 
@@ -49,6 +50,14 @@
     } else {
         [self pushViewController:detailView animated:YES];
     }
+    
+    UINavigationController * listView = [[self.splitViewController viewControllers] objectAtIndex:0];
+    
+    if ([[listView visibleViewController] isKindOfClass:[PSSLocationListTableViewController class]]) {
+        PSSLocationListTableViewController * listOfLocations = (PSSLocationListTableViewController*)[listView visibleViewController];
+        [listOfLocations selectRowForBaseObject:locationBaseObject];
+    }
+
     
 }
 

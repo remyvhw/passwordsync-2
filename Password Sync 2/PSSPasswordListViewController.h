@@ -9,10 +9,11 @@
 @import UIKit;
 @import CoreData;
 
+@class PSSPasswordBaseObject;
 @class PSSGenericDetailTableViewController;
+#import "PSSGenericListTableViewController.h"
 
-
-@interface PSSPasswordListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
+@interface PSSPasswordListViewController : PSSGenericListTableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
     
     NSString        *savedSearchTerm_;
     NSInteger       savedScopeButtonIndex_;
@@ -27,8 +28,6 @@
 @property (nonatomic, strong) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
-
--(void)deselectAllRowsAnimated:(BOOL)animated;
 
 
 
