@@ -53,7 +53,7 @@ typedef enum {
             [self.tagsFoldersSegmentedControl setHidden:YES];
         }];
     } else {
-        [self.tagsFoldersSegmentedControl setHidden:NO];
+        //[self.tagsFoldersSegmentedControl setHidden:NO];
         [UIView animateWithDuration:0.2 animations:^{
             [self.tagsFoldersSegmentedControl setAlpha:1.0];
         }];
@@ -170,6 +170,9 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // TEMP
+    [self.tagsFoldersSegmentedControl setHidden:YES];
 
     userDrivenDataModelChange = NO;
     self.managedObjectContext = APP_DELEGATE.managedObjectContext;
