@@ -1057,15 +1057,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd8-sw-emn" customClass="RSColorPickerView">
-                                <rect key="frame" x="20" y="144" width="280" height="280"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="N4W-IG-hz9"/>
-                                    <constraint firstAttribute="width" constant="280" id="gVy-Uj-BZd"/>
-                                </constraints>
-                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r6e-pq-jHl" customClass="RSBrightnessSlider">
                                 <rect key="frame" x="18" y="432" width="194" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1078,17 +1069,206 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.64929448339999996" green="0.056682724339999997" blue="0.066866659440000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdL-q0-i7e">
+                                <rect key="frame" x="132" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.5450980392" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="QdH-O8-MPu"/>
+                                    <constraint firstAttribute="height" constant="28" id="vdz-4j-oWn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="JGH-KY-8HS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCO-FW-ADM">
+                                <rect key="frame" x="188" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.27058823529999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="sRi-GT-xqs"/>
+                                    <constraint firstAttribute="width" constant="28" id="yoe-NG-8JR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="iuE-sJ-ub4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cro-Fq-iu2">
+                                <rect key="frame" x="216" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.76862745099999996" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="OnR-7d-z8v"/>
+                                    <constraint firstAttribute="width" constant="28" id="feS-gq-Kwg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="0rk-fe-YpL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNw-wA-36t">
+                                <rect key="frame" x="244" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.27058823529999998" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="MA5-TC-C0T"/>
+                                    <constraint firstAttribute="height" constant="28" id="YZQ-l9-8Eg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="ul3-Uo-s56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hi-Tf-7Y5">
+                                <rect key="frame" x="272" y="108" width="26" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.74509803919999995" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="EBi-2O-Dl8"/>
+                                    <constraint firstAttribute="width" constant="26" id="oOg-d8-MW0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="8yI-sS-FHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhe-Qg-hsN">
+                                <rect key="frame" x="104" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.76862745099999996" green="0.4941176471" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="8FX-f6-Lpn"/>
+                                    <constraint firstAttribute="height" constant="28" id="LXx-2S-1UY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="Xk4-Tt-Njr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuN-iX-xgX">
+                                <rect key="frame" x="48" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.29411764709999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="SO4-Ed-6F5"/>
+                                    <constraint firstAttribute="height" constant="28" id="yd7-Ui-xl0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="xza-MB-b2c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9L-02-fZj">
+                                <rect key="frame" x="76" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.76862745099999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="GVP-JZ-Qok"/>
+                                    <constraint firstAttribute="height" constant="28" id="tGw-yq-BtW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="Ibf-rH-7MO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GF-An-d3a">
+                                <rect key="frame" x="160" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.63529411759999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="AhK-cg-0Ls"/>
+                                    <constraint firstAttribute="width" constant="28" id="bnb-43-XJG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="QwW-Mu-jRj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCL-zA-qe9">
+                                <rect key="frame" x="20" y="108" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.76862745099999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="4Qb-fo-9Gi"/>
+                                    <constraint firstAttribute="height" constant="28" id="IsD-On-8wh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedColorPresetButton:" destination="nIG-rq-SUT" eventType="touchUpInside" id="1gy-GK-aTg"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd8-sw-emn" customClass="RSColorPickerView">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="N4W-IG-hz9"/>
+                                    <constraint firstAttribute="width" constant="280" id="gVy-Uj-BZd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="doi-VT-59i" firstAttribute="leading" secondItem="r6e-pq-jHl" secondAttribute="trailing" constant="8" id="0WK-eQ-aha"/>
+                            <constraint firstItem="BNw-wA-36t" firstAttribute="leading" secondItem="cro-Fq-iu2" secondAttribute="trailing" id="3JN-qD-Kpg"/>
+                            <constraint firstItem="YdL-q0-i7e" firstAttribute="top" secondItem="mhe-Qg-hsN" secondAttribute="top" id="5q6-xX-oGj"/>
+                            <constraint firstItem="rd8-sw-emn" firstAttribute="top" secondItem="oCL-zA-qe9" secondAttribute="bottom" constant="8" id="7cy-wK-pRY"/>
+                            <constraint firstItem="0GF-An-d3a" firstAttribute="leading" secondItem="YdL-q0-i7e" secondAttribute="trailing" id="CYh-V0-X9s"/>
+                            <constraint firstItem="zuN-iX-xgX" firstAttribute="top" secondItem="N9L-02-fZj" secondAttribute="top" id="Lr2-ZJ-90F"/>
+                            <constraint firstItem="cro-Fq-iu2" firstAttribute="top" secondItem="RCO-FW-ADM" secondAttribute="top" id="MrK-T6-vLM"/>
                             <constraint firstItem="doi-VT-59i" firstAttribute="height" secondItem="r6e-pq-jHl" secondAttribute="height" id="Nmk-oM-9SA"/>
+                            <constraint firstItem="zuN-iX-xgX" firstAttribute="leading" secondItem="oCL-zA-qe9" secondAttribute="trailing" id="PFd-qK-b85"/>
+                            <constraint firstItem="YdL-q0-i7e" firstAttribute="leading" secondItem="mhe-Qg-hsN" secondAttribute="trailing" id="QWH-8n-oKj"/>
                             <constraint firstItem="doi-VT-59i" firstAttribute="top" secondItem="rd8-sw-emn" secondAttribute="bottom" constant="8" id="R6k-sa-DEo"/>
                             <constraint firstItem="rd8-sw-emn" firstAttribute="leading" secondItem="r6e-pq-jHl" secondAttribute="leading" id="TOq-Jk-toY"/>
+                            <constraint firstItem="N9L-02-fZj" firstAttribute="leading" secondItem="zuN-iX-xgX" secondAttribute="trailing" id="UZ8-eS-bUT"/>
+                            <constraint firstItem="BNw-wA-36t" firstAttribute="top" secondItem="cro-Fq-iu2" secondAttribute="top" id="Vk8-8h-p1o"/>
+                            <constraint firstItem="rd8-sw-emn" firstAttribute="leading" secondItem="oCL-zA-qe9" secondAttribute="leading" id="X4a-TN-KX6"/>
                             <constraint firstItem="r6e-pq-jHl" firstAttribute="top" secondItem="rd8-sw-emn" secondAttribute="bottom" constant="8" id="aB4-Bz-8HL"/>
+                            <constraint firstItem="mhe-Qg-hsN" firstAttribute="top" secondItem="N9L-02-fZj" secondAttribute="top" id="b4L-xn-vQc"/>
                             <constraint firstAttribute="centerX" secondItem="rd8-sw-emn" secondAttribute="centerX" id="fOF-TE-t0h"/>
+                            <constraint firstItem="cro-Fq-iu2" firstAttribute="leading" secondItem="RCO-FW-ADM" secondAttribute="trailing" id="faO-VT-8CO"/>
+                            <constraint firstItem="mhe-Qg-hsN" firstAttribute="leading" secondItem="N9L-02-fZj" secondAttribute="trailing" id="jx5-9w-Ihk"/>
+                            <constraint firstItem="oCL-zA-qe9" firstAttribute="top" secondItem="zuN-iX-xgX" secondAttribute="top" id="kf8-KX-1EO"/>
+                            <constraint firstItem="YdL-q0-i7e" firstAttribute="top" secondItem="0GF-An-d3a" secondAttribute="top" id="lOL-ex-tgD"/>
                             <constraint firstItem="doi-VT-59i" firstAttribute="trailing" secondItem="rd8-sw-emn" secondAttribute="trailing" id="mVd-fs-FOG"/>
+                            <constraint firstItem="0GF-An-d3a" firstAttribute="top" secondItem="RCO-FW-ADM" secondAttribute="top" id="nTR-T4-GdM"/>
                             <constraint firstAttribute="centerY" secondItem="rd8-sw-emn" secondAttribute="centerY" id="ssv-H8-36S"/>
+                            <constraint firstItem="BNw-wA-36t" firstAttribute="top" secondItem="5hi-Tf-7Y5" secondAttribute="top" id="uGI-vB-glA"/>
+                            <constraint firstItem="RCO-FW-ADM" firstAttribute="leading" secondItem="0GF-An-d3a" secondAttribute="trailing" id="xjy-cT-dQl"/>
+                            <constraint firstItem="5hi-Tf-7Y5" firstAttribute="leading" secondItem="BNw-wA-36t" secondAttribute="trailing" id="zSh-SZ-2zj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZqG-XE-Ogm"/>

@@ -17,6 +17,10 @@
 
 @implementation PSSTagColorPickerViewController
 
+-(void)pressedColorPresetButton:(UIButton *)sender{
+    [self.colorWheelView setSelectionColor:sender.backgroundColor];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,15 +30,12 @@
     return self;
 }
 
--(void)doneSelector:(id)sender{
-    
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     if (self.pickerDelegate) {
         [self.pickerDelegate pickerViewController:self didFinishSelectingColor:self.selectedColor];
     }
-    
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (void)viewDidLoad
@@ -48,8 +49,6 @@
         [self.colorWheelView setSelectionColor:self.selectedColor];
     }
     
-    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneSelector:)];
-    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
 -(void)viewDidAppear:(BOOL)animated{

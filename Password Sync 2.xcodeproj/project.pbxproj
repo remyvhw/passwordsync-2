@@ -430,6 +430,10 @@
 		ADDD9653179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD9651179253FD00AB2CC5 /* PSSCardEditorViewController.m */; };
 		ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */; };
 		ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */; };
+		ADE7F04E17C14F1300589535 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7F04D17C14F1300589535 /* RFQuiltLayout.m */; };
+		ADE7F04F17C14F1300589535 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7F04D17C14F1300589535 /* RFQuiltLayout.m */; };
+		ADE7F05217C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE7F05117C1633D00589535 /* PSSTagCollectionViewCell.xib */; };
+		ADE7F05317C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE7F05117C1633D00589535 /* PSSTagCollectionViewCell.xib */; };
 		ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
 		ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */; };
 		ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF10D4317A43ED800CAB546 /* PSSExtentedNoteViewController.m */; };
@@ -826,6 +830,9 @@
 		ADE7E8C3179C62E900BA09E7 /* PSSPasswordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordDetailViewController.h; sourceTree = "<group>"; };
 		ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordDetailViewController.m; sourceTree = "<group>"; };
 		ADE7E8CA179D965E00BA09E7 /* PSSObjectEditorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectEditorProtocol.h; sourceTree = "<group>"; };
+		ADE7F04C17C14F1300589535 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
+		ADE7F04D17C14F1300589535 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		ADE7F05117C1633D00589535 /* PSSTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		ADED6D03177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordExplanationViewController.h; sourceTree = "<group>"; };
 		ADED6D04177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordExplanationViewController.m; sourceTree = "<group>"; };
 		ADF10D4217A43ED800CAB546 /* PSSExtentedNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSExtentedNoteViewController.h; sourceTree = "<group>"; };
@@ -997,6 +1004,7 @@
 				AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */,
 				AD5DD6C917C00CE000DDB614 /* PSSOrganizerCollectionViewController.h */,
 				AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */,
+				ADE7F05117C1633D00589535 /* PSSTagCollectionViewCell.xib */,
 			);
 			name = "Tags and Directories";
 			sourceTree = "<group>";
@@ -1327,6 +1335,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADE7F05017C14F1800589535 /* RFQuiltLayout */,
 				AD10E79317BDB6FA00CF3402 /* RSColorPicker */,
 				AD49C8A117BC6374000DE850 /* MKiCloudSync */,
 				AD58F95517B1790500344134 /* Reachability */,
@@ -1730,6 +1739,15 @@
 			name = "Unlock Prompt";
 			sourceTree = "<group>";
 		};
+		ADE7F05017C14F1800589535 /* RFQuiltLayout */ = {
+			isa = PBXGroup;
+			children = (
+				ADE7F04C17C14F1300589535 /* RFQuiltLayout.h */,
+				ADE7F04D17C14F1300589535 /* RFQuiltLayout.m */,
+			);
+			name = RFQuiltLayout;
+			sourceTree = "<group>";
+		};
 		ADF10D4A17A4667000CAB546 /* UIIMage Blur Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1850,6 +1868,7 @@
 				AD54806417A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD8C835D17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
 				AD312645179F08A600483E2F /* LICENCE in Resources */,
+				ADE7F05217C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */,
 				AD8C835A17B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib in Resources */,
 				AD72C3D5177B7E27009AADC8 /* Main_iPad.storyboard in Resources */,
 				AD72C3E0177B7E27009AADC8 /* Images.xcassets in Resources */,
@@ -1940,6 +1959,7 @@
 				AD54803517A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,
+				ADE7F05317C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */,
 				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD54801D17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
 				AD54803717A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
@@ -2134,6 +2154,7 @@
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
+				ADE7F04E17C14F1300589535 /* RFQuiltLayout.m in Sources */,
 				AD8C836117B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
@@ -2280,6 +2301,7 @@
 				ADC844C9179074DA00349B16 /* PSSRandomPasswordGenerator.m in Sources */,
 				ADDD9653179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD8F5AD61781FFC000702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
+				ADE7F04F17C14F1300589535 /* RFQuiltLayout.m in Sources */,
 				AD10E78017BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */,
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,

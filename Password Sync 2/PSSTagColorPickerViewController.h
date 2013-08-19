@@ -17,6 +17,8 @@
 @property (strong, nonatomic) UIColor * selectedColor;
 @property (weak, nonatomic) id<PSSTagColorPickerViewControllerDelegate> pickerDelegate;
 
+-(IBAction)pressedColorPresetButton:(UIButton*)sender;
+
 @end
 
 @protocol PSSTagColorPickerViewControllerDelegate <NSObject>

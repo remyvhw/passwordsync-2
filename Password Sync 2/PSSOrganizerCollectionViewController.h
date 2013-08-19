@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSOrganizerCollectionViewController : UICollectionViewController
+@interface PSSOrganizerCollectionViewController : UICollectionViewController <NSFetchedResultsControllerDelegate>
 
 @end
