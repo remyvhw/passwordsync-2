@@ -44,8 +44,10 @@
     NSSet * setOfObjects = nil;
     if (self.selectedTag) {
         setOfObjects = self.selectedTag.encryptedObjects;
+        self.title = self.selectedTag.name;
     } else if (self.selectedFolder) {
         setOfObjects = self.selectedFolder.encryptedObjects;
+        self.title = self.selectedFolder.name;
     }
     
     NSSortDescriptor * orderByNameSorter = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES];

@@ -7,6 +7,7 @@
 //
 
 #import "PSSOrganizerCollectionViewController.h"
+#import "PSSOrganizerSplitViewDetailViewController.h"
 #import "PSSUnlockPromptViewController.h"
 #import "PSSTagsAndDirectoriesTableViewController.h"
 #import "RFQuiltLayout.h"
@@ -181,6 +182,13 @@
     
 }
 
+#pragma mark - UITableViewDelegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PSSObjectTag * objectTag = [self.tagsFetchedResultsController objectAtIndexPath:indexPath];
+    PSSOrganizerSplitViewDetailViewController * navController = (PSSOrganizerSplitViewDetailViewController*)self.navigationController;
+    [navController presentViewControllerForTagEntity:objectTag];
+}
 
 
 
@@ -291,22 +299,7 @@
     
     return CGSizeMake(1, 1);
     
-/*    if(indexPath.row >= self.numbers.count)
-        NSLog(@"Asking for index paths of non-existant cells!! %d from %d cells", indexPath.row, self.numbers.count);
-    
-    if (indexPath.row % 10 == 0)
-        return CGSizeMake(5, 1);
-    if (indexPath.row % 11 == 0)
-        return CGSizeMake(3, 2);
-    else if (indexPath.row % 7 == 0)
-        return CGSizeMake(1, 3);
-    else if (indexPath.row % 8 == 0)
-        return CGSizeMake(1, 2);
-    else if(indexPath.row % 11 == 0)
-        return CGSizeMake(2, 2);
-    if (indexPath.row == 0) return CGSizeMake(5, 5);
-    
-    return CGSizeMake(1, 1);*/
+
 }
 
 
