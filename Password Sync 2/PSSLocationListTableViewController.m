@@ -21,6 +21,14 @@
 @implementation PSSLocationListTableViewController
 
 
+- (void)insertNewObject:(id)sender {
+    
+    PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:locationEditor];
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentViewController:navController animated:YES completion:NULL];
+    
+}
 
 
 
@@ -45,7 +53,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         // Special iPhone stuff
-        UIBarButtonItem * newLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newLocationAction:)];
+        UIBarButtonItem * newLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
         
         self.navigationItem.rightBarButtonItem = newLocationButton;
         

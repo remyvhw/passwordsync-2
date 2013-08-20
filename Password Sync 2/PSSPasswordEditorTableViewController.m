@@ -250,6 +250,7 @@
         
     }
     
+    self.title = NSLocalizedString(@"New Password", nil);
     
 }
 

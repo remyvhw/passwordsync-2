@@ -1,0 +1,311 @@
+/* First master password explanation screen for first launch. */
+"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "Le mot de passe maître est le clé d'encryption de votre base de données Password Sync. Elle doit être identique sur l'ensemble des appareils sur lesquels vous utilisez Password Sync. Prenez bien soin de choisir un mot de passe maître qui sera à la fois facile à retenir et difficile à voler. D'un côté, vous devrez vous souvenir de votre mot de passe maître car il nous sera complètement impossible de vous aider à le retrouver si vous le perdez. D'un autre côté, sachez que la longueur et la robustesse de votre mot de passe maître sont proportionelles à la sécurité de vos données.";
+
+/* No comment provided by engineer. */
+"Address" = "Adresse";
+
+/* No comment provided by engineer. */
+"Advanced" = "Avancé";
+
+/* No comment provided by engineer. */
+"American Express" = "American Express";
+
+/* No comment provided by engineer. */
+"An Error Occured" = "Une erreur est survenue";
+
+/* No comment provided by engineer. */
+"An error occured" = "Une erreur est survenue";
+
+/* First master password explanation screen for existing users. */
+"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "Comme vous le savez, votre mot de passe maître est la clé d'encryption ultime de votre base de données Password Sync. Elle doit être strictement identique sur l'ensemble des appareils sur lesquels vous utilisez Password Sync. Ceci inclus vos iPod, iPhones, iPad et Macs. À l'écran suivant, vous aurez à entrer votre mot de passe maître tel que vous l'avez entré préalablement sur vos autres appareils. Si vous ne pouvez vous en souvenir, un indice que vous avez entré initialement vous sera présenté.";
+
+/* No comment provided by engineer. */
+"Attachments" = "Attachements";
+
+/* No comment provided by engineer. */
+"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "Avant de pouvoir utiliser Password Sync pour sauvegarder en lieux surs vos mots de passes, cartes de crédits et documents nous nous devons de vous assister dans la configuration de votre application. Ne vous inquiétez pas: vous n'en aurez que pour quelques minutes!";
+
+/* No comment provided by engineer. */
+"Call" = "Appeler";
+
+/* No comment provided by engineer. */
+"Cancel" = "Annuler";
+
+/* No comment provided by engineer. */
+"Cannot Verify Master Password" = "Impossible de vérifier le mot de passe maître";
+
+/* No comment provided by engineer. */
+"Capture Document" = "Numériser le document";
+
+/* No comment provided by engineer. */
+"Card Issuer / Bank Name" = "Nom de la banque";
+
+/* No comment provided by engineer. */
+"Card Number" = "Numéro de carte";
+
+/* No comment provided by engineer. */
+"Card Type" = "Type de carte";
+
+/* No comment provided by engineer. */
+"Cardholder" = "Titulaire";
+
+/* No comment provided by engineer. */
+"CCV/CVC2" = "CCV/CVC2";
+
+/* No comment provided by engineer. */
+"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "Choisissez soigneusement votre mot de passe maître: optez pour un mot de passe le plus long possible (plus de 12 charactères) et facile à retenir. Par exemple, joignez quelques mots choisis aléatoirement, ajoutez quelques nombres et voilà! Un mot de passe tel que CorrectChevalBatterieTrombone3827 est aussi sécuritaire que S9suiJIOuheunuE897 et pourtant infiniment plus facile à retenir.";
+
+/* No comment provided by engineer. */
+"Color" = "Couleur";
+
+/* No comment provided by engineer. */
+"Confirm" = "Confirmer";
+
+/* No comment provided by engineer. */
+"Confirm your master password" = "Confirmer votre mot de passe maître";
+
+/* No comment provided by engineer. */
+"Contact Bank" = "Contacter la banque";
+
+/* No comment provided by engineer. */
+"Copied" = "Copié";
+
+/* No comment provided by engineer. */
+"Copy Card Number" = "Copier le numéro de carte";
+
+/* No comment provided by engineer. */
+"Copy Cardholder's Name" = "Copier le nom du titulaire";
+
+/* No comment provided by engineer. */
+"Copy Password" = "Copier le mot de passe";
+
+/* No comment provided by engineer. */
+"Copy Username" = "Copier le nom d'utilisateur";
+
+/* No comment provided by engineer. */
+"CVV/CVC2" = "CVV/CVC2";
+
+/* No comment provided by engineer. */
+"Decrypting..." = "Décryption en cours...";
+
+/* No comment provided by engineer. */
+"Draw your custom gesture pattern" = "Dessinez votre schéma";
+
+/* No comment provided by engineer. */
+"Emergency Details" = "Contacts en cas d'urgence";
+
+/* No comment provided by engineer. */
+"Emergency Phone Number" = "Numéro de téléphone en cas d'urgence";
+
+/* No comment provided by engineer. */
+"Enter a 5 digits passcode." = "Enter a 5 digits passcode.";
+
+/* No comment provided by engineer. */
+"Enter your Master Password" = "Entrez votre mot de passe maître";
+
+/* No comment provided by engineer. */
+"Enter your passcode." = "Entrez votre code.";
+
+/* No comment provided by engineer. */
+"Excellent! Now repeat your gesture!" = "Excellent! Maintenant, répétez ce geste.";
+
+/* No comment provided by engineer. */
+"Expiration" = "Expiration";
+
+/* No comment provided by engineer. */
+"Favorite" = "Favoris";
+
+/* No comment provided by engineer. */
+"Five digit passcode." = "Code à cinq chiffres.";
+
+/* No comment provided by engineer. */
+"Gesture based Passcode" = "Schéma codé à dessiner";
+
+/* No comment provided by engineer. */
+"http://www.americanexpress.com/" = "http://www.americanexpress.com/";
+
+/* No comment provided by engineer. */
+"HumanPass" = "HumanPass";
+
+/* No comment provided by engineer. */
+"Invalid gesture. Try again." = "Schéma invalide. Réessayez.";
+
+/* No comment provided by engineer. */
+"Invalid Passcode" = "Code invalide";
+
+/* No comment provided by engineer. */
+"is nearby." = "est à proximité.";
+
+/* No comment provided by engineer. */
+"Legal" = "Légal";
+
+/* No comment provided by engineer. */
+"Location" = "Localisation";
+
+/* No comment provided by engineer. */
+"Location Alert" = "Alerte de localisation";
+
+/* No comment provided by engineer. */
+"Location monotoring" = "Suivi de la géolocalisation";
+
+/* No comment provided by engineer. */
+"Locked" = "Protégé";
+
+/* No comment provided by engineer. */
+"Login essentials" = "Login essentials";
+
+/* No comment provided by engineer. */
+"Make sure you wrote your master password exactly the same way in the two fields." = "Prenez soins de bien inscrire votre mot de passe maître de la même manière dans les deux champs.";
+
+/* Master */
+"Master" = "Maître";
+
+/* No comment provided by engineer. */
+"MM/YYYY" = "MM/YYYY";
+
+/* No comment provided by engineer. */
+"Monitor up to 20 locations" = "Suivez jusqu'à 20 lieux.";
+
+/* No comment provided by engineer. */
+"Name on card" = "Nom sur la carte";
+
+/* No comment provided by engineer. */
+"New Card" = "Nouvelle carte";
+
+/* No comment provided by engineer. */
+"New Location" = "Nouveau lieu";
+
+/* No comment provided by engineer. */
+"No Notes" = "Pas de notes";
+
+/* No comment provided by engineer. */
+"Note" = "Note";
+
+/* No comment provided by engineer. */
+"Notes" = "Notes";
+
+/* No comment provided by engineer. */
+"Number" = "Numéro";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is different this time. Try again from scratch!" = "Oups! Votre schéma est différent cette fois; essayez de nouveau depuis le début.";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "Oups! Votre schéma est invalide (cercles ou lignes se croisant, geste trop simple, etc.). Esssayez de nouveau!";
+
+/* No comment provided by engineer. */
+"Open" = "Open";
+
+/* No comment provided by engineer. */
+"Other" = "Other";
+
+/* No comment provided by engineer. */
+"Passcode" = "Code";
+
+/* No comment provided by engineer. */
+"Passcodes did not match, try again" = "Les codes ne correspondent pas; réessayez!";
+
+/* No comment provided by engineer. */
+"Password" = "MDP";
+
+/* No comment provided by engineer. */
+"Password is Incorrect" = "Le mot de passe est incorrect";
+
+/* No comment provided by engineer. */
+"Password is Incorrect." = "Password is Incorrect.";
+
+/* No comment provided by engineer. */
+"PIN" = "NIP";
+
+/* No comment provided by engineer. */
+"PIN based Passcode" = "PIN based Passcode";
+
+/* No comment provided by engineer. */
+"Please choose a new passcode." = "Please choose a new passcode.";
+
+/* No comment provided by engineer. */
+"Please re-enter your master password." = "Veuillez ré-inscrire votre mot de passe maître.";
+
+/* No comment provided by engineer. */
+"Please Wait" = "Veuillez patienter...";
+
+/* No comment provided by engineer. */
+"Please wait 5 seconds before trying again." = "Veuillez attendre cinq secondes avant de recommencer.";
+
+/* No comment provided by engineer. */
+"Prompt for every entry" = "Demander pour chaque entrée.";
+
+/* No comment provided by engineer. */
+"Prompt on launch" = "Demander à chaque démarrage.";
+
+/* No comment provided by engineer. */
+"Re-enter your passcode" = "Veuillez re-inscrire votre code.";
+
+/* No comment provided by engineer. */
+"Reset Passcode" = "Réinitialiser le code";
+
+/* No comment provided by engineer. */
+"Search the web" = "Rechercher sur le web";
+
+/* No comment provided by engineer. */
+"Settings" = "Paramètres";
+
+/* No comment provided by engineer. */
+"Simply draw a pattern." = "Dessinez un schéma en reliant les points.";
+
+/* No comment provided by engineer. */
+"Tags" = "Étiquettes";
+
+/* No comment provided by engineer. */
+"The Internet connection appears to be offline." = "La connexion Internet semble être hors service";
+
+/* No comment provided by engineer. */
+"The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password." = "Le mot de passe choisis est l'un des 500 mots de passe les plus utilisés sur Internet. Veuillez en choisir un autre.";
+
+/* No comment provided by engineer. */
+"Title" = "Titre";
+
+/* No comment provided by engineer. */
+"Type" = "Type";
+
+/* No comment provided by engineer. */
+"Unknown Bank" = "Banque inconnue";
+
+/* No comment provided by engineer. */
+"URL" = "URL";
+
+/* No comment provided by engineer. */
+"Username" = "Utilisateur";
+
+/* No comment provided by engineer. */
+"Versions" = "Versions";
+
+/* No comment provided by engineer. */
+"Weak Password Alert" = "Mot de passe peu sécuritaire";
+
+/* No comment provided by engineer. */
+"Website" = "Site Internet";
+
+/* No comment provided by engineer. */
+"Websites" = "Sites Internet";
+
+/* No comment provided by engineer. */
+"Welcome to Password Sync" = "Bienvenue à Password Sync";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode every time the app launches." = "Votre code vous sera demandé à chaque fois que l'app est lancée.";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "Votre code vous sera demandé lors de l'accès à chacune des ressources dans votre base de données.";
+
+/* No comment provided by engineer. */
+"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "Votre code a été bloqué. Veuillez entrer votre mot de passe maître pour réinitialiser votre code et accéder à votre base de données Password Sync.";
+
+"Password Generator" = "Générateur aléatoire";
+
+"New Password" = "Nouveau";
+
+"You're done!" = "Done!";

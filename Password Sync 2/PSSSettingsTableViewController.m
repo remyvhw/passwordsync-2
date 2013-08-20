@@ -7,6 +7,7 @@
 //
 
 #import "PSSSettingsTableViewController.h"
+#import "PSSPasswordSyncOneDataImporter.h"
 
 @interface PSSSettingsTableViewController ()
 
@@ -36,6 +37,10 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.title = NSLocalizedString(@"Settings", nil);
     }
+    
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"normalCell"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +80,10 @@
         // Passcode
         return 2;
     } else if (section==1) {
-        // legal
+        // legal (and import from Password Sync One
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"passsyncjsonexport://passsynctwoupgrade?enckey=ABCD"]])
+            return 2;
+        
         return 1;
     }
     return 0;
@@ -138,6 +146,9 @@
         
     } else if (indexPath.section==1){
         
+
+        if (indexPath.row == 0) {
+        
         static NSString *CellIdentifier = @"submenuCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
@@ -145,10 +156,33 @@
         
         cell.imageView.image = [[UIImage imageNamed:@"Mug"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         return cell;
+
+        } else if (indexPath.row == 1) {
+            
+            static NSString * cellIdentifier = @"normalCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+            
+            cell.textLabel.text = NSLocalizedString(@"Import from Password Sync 1", nil);
+            
+            cell.imageView.image = nil;
+            return cell;
+
+            
+        }
     }
     
     return nil;
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        // Import from Password Sync 1
+        
+        PSSPasswordSyncOneDataImporter * dataImporter = [[PSSPasswordSyncOneDataImporter alloc] init];
+        [dataImporter beginImportProcedure:self];
+        
+    }
 }
 
 /*

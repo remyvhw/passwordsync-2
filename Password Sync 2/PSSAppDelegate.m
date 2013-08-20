@@ -19,6 +19,7 @@
 #import "PSSLocationsSplitViewDetailViewController.h"
 #import "PSSPasswordSplitViewDetailViewController.h"
 #import "PSSPasswordDetailViewController.h"
+#import "PSSPasswordSyncOneDataImporter.h"
 
 @interface PSSAppDelegate ()
 
@@ -375,6 +376,20 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    if ([[url scheme] isEqualToString:@"passsynctwojsonimport"] && [sourceApplication isEqualToString:@"com.pumaxprod.Password-Sync"]) {
+        
+        PSSPasswordSyncOneDataImporter * dataImporter = [[PSSPasswordSyncOneDataImporter alloc] init];
+        
+        return [dataImporter handleImportURL:url];
+        
+    }
+    
+    return NO;
+}
+
 
 - (void)saveContext
 {

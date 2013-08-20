@@ -285,6 +285,10 @@
 		AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */; };
 		AD74691B179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
 		AD74691C179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */; };
+		AD7B261717C2E00D00701F52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD7B261A17C2E00D00701F52 /* Localizable.strings */; };
+		AD7B261817C2E00D00701F52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD7B261A17C2E00D00701F52 /* Localizable.strings */; };
+		AD7B262017C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7B262317C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard */; };
+		AD7B262117C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7B262317C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard */; };
 		AD7F800417B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
 		AD7F800517B082E600A590FA /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD7F800317B082E600A590FA /* OCRA.ttf */; };
 		AD7FC9A617B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */; };
@@ -317,8 +321,6 @@
 		AD82107E177D40F100B6F501 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107A177D40F100B6F501 /* PDKeychainBindings.m */; };
 		AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
 		AD821080177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */; };
-		AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
-		AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */; };
 		AD83AE5817AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */; };
 		AD83AE5917AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */; };
 		AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83AE5B17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m */; };
@@ -355,6 +357,8 @@
 		AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */; };
 		AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
 		AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */; };
+		AD90A57517C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */; };
+		AD90A57617C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */; };
 		AD940E5B17A8651C001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
 		AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
 		AD940E5E17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */; };
@@ -697,6 +701,14 @@
 		AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_Sync_2Tests.m; sourceTree = "<group>"; };
 		AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactWebsiteCell.xib; sourceTree = "<group>"; };
 		AD74691A179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactPhoneNumberCell.xib; sourceTree = "<group>"; };
+		AD7B261217C2C8F300701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD7B261317C2C8F300701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD7B261917C2E00D00701F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD7B261B17C2E01900701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD7B261D17C2E75500701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		AD7B261F17C2F55600701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		AD7B262217C2F7DD00701F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		AD7B262517C2F7E500701F52 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FirstLaunchStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		AD7F800317B082E600A590FA /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVersionsCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVersionsCollectionViewFlowLayout.m; sourceTree = "<group>"; };
@@ -730,7 +742,6 @@
 		AD82107A177D40F100B6F501 /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
 		AD82107B177D40F100B6F501 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		AD82107C177D40F100B6F501 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
-		AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		AD83AE5617AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentsFavoritesViewController.h; sourceTree = "<group>"; };
 		AD83AE5717AEA2AC0086F855 /* PSSDocumentsFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentsFavoritesViewController.m; sourceTree = "<group>"; };
 		AD83AE5A17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentsSplitViewDetailViewController.h; sourceTree = "<group>"; };
@@ -763,6 +774,8 @@
 		AD8F5AE917827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeFirstViewController.m; sourceTree = "<group>"; };
 		AD8F5AED1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.h; sourceTree = "<group>"; };
 		AD8F5AEE1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPasscodeModeChooserTableViewController.m; sourceTree = "<group>"; };
+		AD90A57317C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordSyncOneDataImporter.h; sourceTree = "<group>"; };
+		AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordSyncOneDataImporter.m; sourceTree = "<group>"; };
 		AD940E5A17A8651C001442F0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnlockPrompt.storyboard; sourceTree = "<group>"; };
@@ -1460,11 +1473,13 @@
 		AD821084177F407200B6F501 /* Splash welcome screen storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				AD821081177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard */,
+				AD7B262317C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard */,
 				AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */,
 				ADD8A31217A87F0A0025DA42 /* Other views */,
 				AD51760D1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.h */,
 				AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */,
+				AD90A57317C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.h */,
+				AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */,
 				AD8F5ADC1782058500702EFA /* Master Password */,
 				AD8F5AEC17827F8300702EFA /* Passcode */,
 			);
@@ -1632,6 +1647,7 @@
 				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
 				AD72C3CA177B7E27009AADC8 /* main.m */,
 				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
+				AD7B261A17C2E00D00701F52 /* Localizable.strings */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -1846,6 +1862,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = AD72C3B0177B7E27009AADC8;
 			productRefGroup = AD72C3BA177B7E27009AADC8 /* Products */;
@@ -1876,6 +1893,7 @@
 				AD54801217A1C7EE008FAFFB /* f-setting-tray.png in Resources */,
 				AD54806217A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
 				AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
+				AD7B261717C2E00D00701F52 /* Localizable.strings in Resources */,
 				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
@@ -1911,7 +1929,7 @@
 				AD54803E17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54800E17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
 				AD54805E17A1C7EE008FAFFB /* camera-grid.png in Resources */,
-				AD821082177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				AD7B262017C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD54803217A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD727A4D179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
 				AD312647179F08A600483E2F /* README.md in Resources */,
@@ -1960,12 +1978,13 @@
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				ADE7F05317C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */,
-				AD821083177F404700B6F501 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				AD7B262117C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD54801D17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
 				AD54803717A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54803317A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD54804B17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD31267817A03AE700483E2F /* Appart.gpx in Resources */,
+				AD7B261817C2E00D00701F52 /* Localizable.strings in Resources */,
 				AD54803F17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54803917A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54804917A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
@@ -2097,6 +2116,7 @@
 				ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
+				AD90A57517C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */,
 				AD1BECD417A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
@@ -2211,6 +2231,7 @@
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
 				AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
+				AD90A57617C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */,
 				AD1BECD517A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
 				AD10E78A17BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD10E77417BDB6F400CF3402 /* NSImage+ANImageBitmapRep.m in Sources */,
@@ -2326,6 +2347,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD72C3C8177B7E27009AADC8 /* en */,
+				AD7B261217C2C8F300701F52 /* fr */,
 			);
 			name = InfoPlist.strings;
 			path = "Password Sync 2";
@@ -2335,6 +2357,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD72C3D1177B7E27009AADC8 /* Base */,
+				AD7B261D17C2E75500701F52 /* fr */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2343,6 +2366,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD72C3D4177B7E27009AADC8 /* Base */,
+				AD7B261F17C2F55600701F52 /* fr */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -2351,8 +2375,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD72C3F1177B7E28009AADC8 /* en */,
+				AD7B261317C2C8F300701F52 /* fr */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AD7B261A17C2E00D00701F52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7B261917C2E00D00701F52 /* Base */,
+				AD7B261B17C2E01900701F52 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		AD7B262317C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7B262217C2F7DD00701F52 /* Base */,
+				AD7B262517C2F7E500701F52 /* fr */,
+			);
+			name = FirstLaunchStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

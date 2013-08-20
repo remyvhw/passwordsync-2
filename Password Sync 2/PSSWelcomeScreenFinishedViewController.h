@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSSWelcomeScreenFinishedViewController : UIViewController
+@interface PSSWelcomeScreenFinishedViewController : UIViewController <UIAlertViewDelegate>
 
 @end

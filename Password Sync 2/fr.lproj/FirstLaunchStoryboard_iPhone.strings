@@ -1,0 +1,144 @@
+
+/* Class = "IBUIButton"; normalTitle = "Clear"; ObjectID = "0VI-fQ-UT3"; */
+"0VI-fQ-UT3.normalTitle" = "Effacer";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "1Nx-qy-Wys"; */
+"1Nx-qy-Wys.normalTitle" = "Continuer";
+
+/* Class = "IBUILabel"; text = "Good password"; ObjectID = "2xl-9H-1lE"; */
+"2xl-9H-1lE.text" = "Bon mot de passe";
+
+/* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "40Y-Sm-jUK"; */
+"40Y-Sm-jUK.title" = "Mot de passe maître";
+
+/* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "41t-Wx-rGy"; */
+"41t-Wx-rGy.title" = "Code";
+
+/* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "5cD-SY-2DK"; */
+"5cD-SY-2DK.title" = "Mot de passe maître";
+
+/* Class = "IBUILabel"; text = "correctH0rseB4tteryStap!e487"; ObjectID = "6fa-1M-N3R"; */
+"6fa-1M-N3R.text" = "c0rrectChev4lBatteRieTr0mbone";
+
+/* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "76y-ok-h1Z"; */
+"76y-ok-h1Z.title" = "Code";
+
+/* Class = "IBUITextField"; placeholder = "Enter your master password"; ObjectID = "7ZR-0Y-F0F"; */
+"7ZR-0Y-F0F.placeholder" = "Inscrivez votre mot de passe maître";
+
+/* Class = "IBUINavigationItem"; title = "Print your master password"; ObjectID = "7e9-Tc-s5o"; */
+"7e9-Tc-s5o.title" = "Imprimez votre mot de passe maître";
+
+/* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "8xF-sM-O93"; */
+"8xF-sM-O93.title" = "Mot de passe maître";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "Bu7-cW-7ni"; */
+"Bu7-cW-7ni.title" = "Retour";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "F5X-hu-YHY"; */
+"F5X-hu-YHY.title" = "Retour";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "IPJ-DX-Qiy"; */
+"IPJ-DX-Qiy.normalTitle" = "Continuer";
+
+/* Class = "IBUIButton"; normalTitle = "Never ask again"; ObjectID = "KKV-JA-LXB"; */
+"KKV-JA-LXB.normalTitle" = "Ne pas redemander";
+
+/* Class = "IBUILabel"; text = "Print a copy of your master password and keep it in a safe location."; ObjectID = "LWo-3n-Vmo"; */
+"LWo-3n-Vmo.text" = "Imprimez une copie de votre mot de passe maître et conservez là en lieu sûr.";
+
+/* Class = "IBUIButton"; normalTitle = "Start using Password Sync"; ObjectID = "MD9-Cp-Vk3"; */
+"MD9-Cp-Vk3.normalTitle" = "Commencez à utiliser Password Sync";
+
+/* Class = "IBUILabel"; text = "Password Hint"; ObjectID = "MlS-YV-AKz"; */
+"MlS-YV-AKz.text" = "Indice du mot de passe";
+
+/* Class = "IBUILabel"; text = "Correct password"; ObjectID = "O6D-HH-ND0"; */
+"O6D-HH-ND0.text" = "Mot de passe correct";
+
+/* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "OY1-Pk-thy"; */
+"OY1-Pk-thy.title" = "Code";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "P4E-q6-bHw"; */
+"P4E-q6-bHw.normalTitle" = "Continuer";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "TyC-wq-xDW"; */
+"TyC-wq-xDW.title" = "Retour";
+
+/* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "WeN-x6-C33"; */
+"WeN-x6-C33.title" = "Code";
+
+/* Class = "IBUITextField"; placeholder = "Enter your master password"; ObjectID = "X7y-Fr-TWD"; */
+"X7y-Fr-TWD.placeholder" = "Saisissez votre mot de passe maître";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "Y19-5A-REb"; */
+"Y19-5A-REb.title" = "Retour";
+
+/* Class = "IBUIButton"; normalTitle = "Print"; ObjectID = "YEt-o2-JAt"; */
+"YEt-o2-JAt.normalTitle" = "Imprimer";
+
+/* Class = "IBUILabel"; text = "Draw your custom gesture pattern"; ObjectID = "YJA-B0-tFF"; */
+"YJA-B0-tFF.text" = "Dessinez votre schéma";
+
+/* Class = "IBUIBarButtonItem"; title = "Print"; ObjectID = "a5a-eY-CBQ"; */
+"a5a-eY-CBQ.title" = "Imprimer";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "avy-TM-icN"; */
+"avy-TM-icN.title" = "Retour";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "bcS-yk-1qZ"; */
+"bcS-yk-1qZ.title" = "Retour";
+
+/* Class = "IBUINavigationItem"; title = "You're done!"; ObjectID = "dWf-N2-9WG"; */
+"dWf-N2-9WG.title" = "Voilà!";
+
+/* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "ehc-OE-S35"; */
+"ehc-OE-S35.title" = "Mot de passe maître";
+
+/* Class = "IBUILabel"; text = "Seriously bad password"; ObjectID = "fBO-Xi-YjV"; */
+"fBO-Xi-YjV.text" = "Terriblement mauvais mot de passe";
+
+/* Class = "IBUILabel"; text = "Congratulations! Your Password Sync is now configured and ready to use on this device! Just launch Password Sync on your other devices to enable syncing and you'll be done!"; ObjectID = "gEo-0Y-Ljq"; */
+"gEo-0Y-Ljq.text" = "Félicitations! Password Sync est maintenant configuré sur cet appareil. Assurez-vous de lancer Password Sync sur vos autres appareils pour débuter la synchronisation.";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "hA6-vm-lwg"; */
+"hA6-vm-lwg.title" = "Retour";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "j7Z-IS-EaL"; */
+"j7Z-IS-EaL.title" = "Retour";
+
+/* Class = "IBUIButton"; normalTitle = "Let's begin!"; ObjectID = "jfM-GM-vK5"; */
+"jfM-GM-vK5.normalTitle" = "Commençons!";
+
+/* Class = "IBUILabel"; text = "banana"; ObjectID = "jgp-gE-Ah3"; */
+"jgp-gE-Ah3.text" = "banane";
+
+/* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "lot-A2-gsj"; */
+"lot-A2-gsj.title" = "Mot de passe maître";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "nI1-BX-QHb"; */
+"nI1-BX-QHb.normalTitle" = "Continuer";
+
+/* Class = "IBUIButton"; normalTitle = "Skip for now"; ObjectID = "pmv-to-jJc"; */
+"pmv-to-jJc.normalTitle" = "Plus tard";
+
+/* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "pzY-bR-Zgl"; */
+"pzY-bR-Zgl.title" = "Mot de passe maître";
+
+/* Class = "IBUILabel"; text = "Excellent password"; ObjectID = "sXE-yl-P6K"; */
+"sXE-yl-P6K.text" = "Excellent mot de passe";
+
+/* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "sgt-0X-Ary"; */
+"sgt-0X-Ary.title" = "Mot de passe maître";
+
+/* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "tby-4i-BVB"; */
+"tby-4i-BVB.normalTitle" = "Continuer";
+
+/* Class = "IBUINavigationItem"; title = "Welcome to Password Sync !"; ObjectID = "wCv-LL-H7o"; */
+"wCv-LL-H7o.title" = "Bienvenue dans Password Sync!";
+
+/* Class = "IBUITextField"; placeholder = "Password Hint or Reminder"; ObjectID = "wDv-LG-NUI"; */
+"wDv-LG-NUI.placeholder" = "Indice du mot de passe";
+
+/* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "wgh-tp-7b6"; */
+"wgh-tp-7b6.title" = "Retour";

@@ -1,0 +1,61 @@
+
+/* Class = "IBUITabBarItem"; title = "Documents"; ObjectID = "Ew0-b1-0af"; */
+"Ew0-b1-0af.title" = "Documents";
+
+/* Class = "IBUITabBarItem"; title = "Locations"; ObjectID = "GYH-V0-t4f"; */
+"GYH-V0-t4f.title" = "Lieux";
+
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[0] = "Tags"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[0]" = "Étiquettes";
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[1] = "Folders"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[1]" = "Dossiers";
+
+/* Class = "IBUITabBarItem"; title = "Organizer"; ObjectID = "iVW-xh-Xqc"; */
+"iVW-xh-Xqc.title" = "Ordonnateur";
+
+/* Class = "IBUITabBarItem"; title = "Websites"; ObjectID = "jnZ-aR-2hu"; */
+"jnZ-aR-2hu.title" = "Sites";
+
+/* Class = "IBUITabBarItem"; title = "Cards"; ObjectID = "tmS-v9-6bH"; */
+"tmS-v9-6bH.title" = "Cartes";
+
+
+/* Class = "IBUITabBarItem"; title = "Documents"; ObjectID = "Ew0-b1-0af"; */
+"Ew0-b1-0af.title" = "Documents";
+
+/* Class = "IBUITabBarItem"; title = "Locations"; ObjectID = "GYH-V0-t4f"; */
+"GYH-V0-t4f.title" = "Lieux";
+
+
+/* Class = "IBUIBarButtonItem"; title = "Locations"; ObjectID = "Ipe-zq-pqW"; */
+"Ipe-zq-pqW.title" = "Lieux";
+
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[0] = "Tags"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[0]" = "Étiquettes";
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[1] = "Folders"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[1]" = "Dossiers";
+
+
+/* Class = "IBUITabBarItem"; title = "Organizer"; ObjectID = "iVW-xh-Xqc"; */
+"iVW-xh-Xqc.title" = "Ordonnateur";
+
+
+/* Class = "IBUITabBarItem"; title = "Websites"; ObjectID = "jnZ-aR-2hu"; */
+"jnZ-aR-2hu.title" = "Sites";
+
+/* Class = "IBUILabel"; text = "Legal"; ObjectID = "jne-e0-tTp"; */
+"jne-e0-tTp.text" = "Légal";
+
+/* Class = "IBUIBarButtonItem"; title = "Cards"; ObjectID = "kIa-LU-qqz"; */
+"kIa-LU-qqz.title" = "Cartes";
+
+
+/* Class = "IBUIBarButtonItem"; title = "Websites"; ObjectID = "tNZ-hZ-o1O"; */
+"tNZ-hZ-o1O.title" = "Sites";
+
+/* Class = "IBUITabBarItem"; title = "Cards"; ObjectID = "tmS-v9-6bH"; */
+"tmS-v9-6bH.title" = "Cartes";

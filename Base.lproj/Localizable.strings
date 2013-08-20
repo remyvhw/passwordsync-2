@@ -1,0 +1,313 @@
+/* 
+  Localizable.strings
+  Password Sync 2
+
+  Created by Remy Vanherweghem on 2013-08-19.
+  Copyright (c) 2013 Pumax. All rights reserved.
+*/
+/* First master password explanation screen for first launch. */
+"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password.";
+
+/* No comment provided by engineer. */
+"Address" = "Address";
+
+/* No comment provided by engineer. */
+"Advanced" = "Advanced";
+
+/* No comment provided by engineer. */
+"American Express" = "American Express";
+
+/* No comment provided by engineer. */
+"An Error Occured" = "An Error Occured";
+
+/* No comment provided by engineer. */
+"An error occured" = "An error occured";
+
+/* First master password explanation screen for existing users. */
+"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password.";
+
+/* No comment provided by engineer. */
+"Attachments" = "Attachments";
+
+/* No comment provided by engineer. */
+"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.";
+
+/* No comment provided by engineer. */
+"Call" = "Call";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Cannot Verify Master Password" = "Cannot Verify Master Password";
+
+/* No comment provided by engineer. */
+"Capture Document" = "Capture Document";
+
+/* No comment provided by engineer. */
+"Card Issuer / Bank Name" = "Card Issuer / Bank Name";
+
+/* No comment provided by engineer. */
+"Card Number" = "Card Number";
+
+/* No comment provided by engineer. */
+"Card Type" = "Card Type";
+
+/* No comment provided by engineer. */
+"Cardholder" = "Cardholder";
+
+/* No comment provided by engineer. */
+"CCV/CVC2" = "CCV/CVC2";
+
+/* No comment provided by engineer. */
+"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!";
+
+/* No comment provided by engineer. */
+"Color" = "Color";
+
+/* No comment provided by engineer. */
+"Confirm" = "Confirm";
+
+/* No comment provided by engineer. */
+"Confirm your master password" = "Confirm your master password";
+
+/* No comment provided by engineer. */
+"Contact Bank" = "Contact Bank";
+
+/* No comment provided by engineer. */
+"Copied" = "Copied";
+
+/* No comment provided by engineer. */
+"Copy Card Number" = "Copy Card Number";
+
+/* No comment provided by engineer. */
+"Copy Cardholder's Name" = "Copy Cardholder's Name";
+
+/* No comment provided by engineer. */
+"Copy Password" = "Copy Password";
+
+/* No comment provided by engineer. */
+"Copy Username" = "Copy Username";
+
+/* No comment provided by engineer. */
+"CVV/CVC2" = "CVV/CVC2";
+
+/* No comment provided by engineer. */
+"Decrypting..." = "Decrypting...";
+
+/* No comment provided by engineer. */
+"Draw your custom gesture pattern" = "Draw your custom gesture pattern";
+
+/* No comment provided by engineer. */
+"Emergency Details" = "Emergency Details";
+
+/* No comment provided by engineer. */
+"Emergency Phone Number" = "Emergency Phone Number";
+
+/* No comment provided by engineer. */
+"Enter a 5 digits passcode." = "Enter a 5 digits passcode.";
+
+/* No comment provided by engineer. */
+"Enter your Master Password" = "Enter your Master Password";
+
+/* No comment provided by engineer. */
+"Enter your passcode." = "Enter your passcode.";
+
+/* No comment provided by engineer. */
+"Excellent! Now repeat your gesture!" = "Excellent! Now repeat your gesture!";
+
+/* No comment provided by engineer. */
+"Expiration" = "Expiration";
+
+/* No comment provided by engineer. */
+"Favorite" = "Favorite";
+
+/* No comment provided by engineer. */
+"Five digit passcode." = "Five digit passcode.";
+
+/* No comment provided by engineer. */
+"Gesture based Passcode" = "Gesture based Passcode";
+
+/* No comment provided by engineer. */
+"http://www.americanexpress.com/" = "http://www.americanexpress.com/";
+
+/* No comment provided by engineer. */
+"HumanPass" = "HumanPass";
+
+/* No comment provided by engineer. */
+"Invalid gesture. Try again." = "Invalid gesture. Try again.";
+
+/* No comment provided by engineer. */
+"Invalid Passcode" = "Invalid Passcode";
+
+/* No comment provided by engineer. */
+"is nearby." = "is nearby.";
+
+/* No comment provided by engineer. */
+"Legal" = "Legal";
+
+/* No comment provided by engineer. */
+"Location" = "Location";
+
+/* No comment provided by engineer. */
+"Location Alert" = "Location Alert";
+
+/* No comment provided by engineer. */
+"Location monotoring" = "Location monotoring";
+
+/* No comment provided by engineer. */
+"Locked" = "Locked";
+
+/* No comment provided by engineer. */
+"Login essentials" = "Login essentials";
+
+/* No comment provided by engineer. */
+"Make sure you wrote your master password exactly the same way in the two fields." = "Make sure you wrote your master password exactly the same way in the two fields.";
+
+/* Master */
+"Master" = "Master";
+
+/* No comment provided by engineer. */
+"MM/YYYY" = "MM/YYYY";
+
+/* No comment provided by engineer. */
+"Monitor up to 20 locations" = "Monitor up to 20 locations";
+
+/* No comment provided by engineer. */
+"Name on card" = "Name on card";
+
+/* No comment provided by engineer. */
+"New Card" = "New Card";
+
+/* No comment provided by engineer. */
+"New Location" = "New Location";
+
+/* No comment provided by engineer. */
+"No Notes" = "No Notes";
+
+/* No comment provided by engineer. */
+"Note" = "Note";
+
+/* No comment provided by engineer. */
+"Notes" = "Notes";
+
+/* No comment provided by engineer. */
+"Number" = "Number";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is different this time. Try again from scratch!" = "Oops! Your gesture is different this time. Try again from scratch!";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!";
+
+/* No comment provided by engineer. */
+"Open" = "Open";
+
+/* No comment provided by engineer. */
+"Other" = "Other";
+
+/* No comment provided by engineer. */
+"Passcode" = "Passcode";
+
+/* No comment provided by engineer. */
+"Passcodes did not match, try again" = "Passcodes did not match, try again";
+
+/* No comment provided by engineer. */
+"Password" = "Password";
+
+/* No comment provided by engineer. */
+"Password is Incorrect" = "Password is Incorrect";
+
+/* No comment provided by engineer. */
+"Password is Incorrect." = "Password is Incorrect.";
+
+/* No comment provided by engineer. */
+"PIN" = "PIN";
+
+/* No comment provided by engineer. */
+"PIN based Passcode" = "PIN based Passcode";
+
+/* No comment provided by engineer. */
+"Please choose a new passcode." = "Please choose a new passcode.";
+
+/* No comment provided by engineer. */
+"Please re-enter your master password." = "Please re-enter your master password.";
+
+/* No comment provided by engineer. */
+"Please Wait" = "Please Wait";
+
+/* No comment provided by engineer. */
+"Please wait 5 seconds before trying again." = "Please wait 5 seconds before trying again.";
+
+/* No comment provided by engineer. */
+"Prompt for every entry" = "Prompt for every entry";
+
+/* No comment provided by engineer. */
+"Prompt on launch" = "Prompt on launch";
+
+/* No comment provided by engineer. */
+"Re-enter your passcode" = "Re-enter your passcode";
+
+/* No comment provided by engineer. */
+"Reset Passcode" = "Reset Passcode";
+
+/* No comment provided by engineer. */
+"Search the web" = "Search the web";
+
+/* No comment provided by engineer. */
+"Settings" = "Settings";
+
+/* No comment provided by engineer. */
+"Simply draw a pattern." = "Simply draw a pattern.";
+
+/* No comment provided by engineer. */
+"Tags" = "Tags";
+
+/* No comment provided by engineer. */
+"The Internet connection appears to be offline." = "The Internet connection appears to be offline.";
+
+/* No comment provided by engineer. */
+"The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password." = "The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password.";
+
+/* No comment provided by engineer. */
+"Title" = "Title";
+
+/* No comment provided by engineer. */
+"Type" = "Type";
+
+/* No comment provided by engineer. */
+"Unknown Bank" = "Unknown Bank";
+
+/* No comment provided by engineer. */
+"URL" = "URL";
+
+/* No comment provided by engineer. */
+"Username" = "Username";
+
+/* No comment provided by engineer. */
+"Versions" = "Versions";
+
+/* No comment provided by engineer. */
+"Weak Password Alert" = "Weak Password Alert";
+
+/* No comment provided by engineer. */
+"Website" = "Website";
+
+/* No comment provided by engineer. */
+"Websites" = "Websites";
+
+/* No comment provided by engineer. */
+"Welcome to Password Sync" = "Welcome to Password Sync";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode every time the app launches." = "When on, will ask for a passcode every time the app launches.";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "When on, will ask for a passcode for every unlocked website's password, card, location and document.";
+
+/* No comment provided by engineer. */
+"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database.";
+

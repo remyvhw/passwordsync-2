@@ -101,6 +101,8 @@
         [self.navigationController setNavigationBarHidden:YES];
     }
     
+    self.title = NSLocalizedString(@"Password Generator", nil);
+    
 }
 
 - (void)didReceiveMemoryWarning
