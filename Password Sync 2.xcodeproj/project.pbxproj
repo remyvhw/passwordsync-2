@@ -135,6 +135,12 @@
 		AD51760A1784A63000B30295 /* PSSPasscodeVerifyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */; };
 		AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */; };
 		AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */; };
+		AD53ADD717C53D3C000B9722 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53ADD317C53D3C000B9722 /* libTestFlight.a */; };
+		AD53ADD817C53D3C000B9722 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53ADD317C53D3C000B9722 /* libTestFlight.a */; };
+		AD53ADDC17C53E6A000B9722 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = AD53ADDA17C53E6A000B9722 /* iTunesArtwork.png */; };
+		AD53ADDD17C53E6A000B9722 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = AD53ADDA17C53E6A000B9722 /* iTunesArtwork.png */; };
+		AD53ADDE17C53E6A000B9722 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD53ADDB17C53E6A000B9722 /* iTunesArtwork@2x.png */; };
+		AD53ADDF17C53E6A000B9722 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD53ADDB17C53E6A000B9722 /* iTunesArtwork@2x.png */; };
 		AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */; };
 		AD547FA917A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */; };
 		AD547FAD17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD547FAC17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m */; };
@@ -589,6 +595,12 @@
 		AD5176071784A63000B30295 /* PSSPasscodeVerifyerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasscodeVerifyerViewController.m; sourceTree = "<group>"; };
 		AD51760D1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenFinishedViewController.h; sourceTree = "<group>"; };
 		AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenFinishedViewController.m; sourceTree = "<group>"; };
+		AD53ADD317C53D3C000B9722 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		AD53ADD417C53D3C000B9722 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		AD53ADD517C53D3C000B9722 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		AD53ADD617C53D3C000B9722 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		AD53ADDA17C53E6A000B9722 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		AD53ADDB17C53E6A000B9722 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		AD547FA617A1AADF008FAFFB /* PSSDocumentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentListTableViewController.h; sourceTree = "<group>"; };
 		AD547FA717A1AADF008FAFFB /* PSSDocumentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentListTableViewController.m; sourceTree = "<group>"; };
 		AD547FAB17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGenericEditorTableViewController.h; sourceTree = "<group>"; };
@@ -874,6 +886,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD53ADD717C53D3C000B9722 /* libTestFlight.a in Frameworks */,
 				AD547FE017A1C679008FAFFB /* MediaPlayer.framework in Frameworks */,
 				AD547FDE17A1C667008FAFFB /* CoreImage.framework in Frameworks */,
 				AD547FDC17A1C653008FAFFB /* ImageIO.framework in Frameworks */,
@@ -900,6 +913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */,
+				AD53ADD817C53D3C000B9722 /* libTestFlight.a in Frameworks */,
 				AD72C3E7177B7E28009AADC8 /* XCTest.framework in Frameworks */,
 				AD72C3EA177B7E28009AADC8 /* CoreData.framework in Frameworks */,
 				ADFA1A11179257BB0038EF14 /* libCardIO.a in Frameworks */,
@@ -1179,6 +1193,17 @@
 			name = SPLockScreen;
 			sourceTree = "<group>";
 		};
+		AD53ADD917C53D41000B9722 /* Testflight */ = {
+			isa = PBXGroup;
+			children = (
+				AD53ADD317C53D3C000B9722 /* libTestFlight.a */,
+				AD53ADD417C53D3C000B9722 /* TestFlight.h */,
+				AD53ADD517C53D3C000B9722 /* TestFlight+AsyncLogging.h */,
+				AD53ADD617C53D3C000B9722 /* TestFlight+ManualSessions.h */,
+			);
+			name = Testflight;
+			sourceTree = "<group>";
+		};
 		AD547FAA17A1AC24008FAFFB /* Documents */ = {
 			isa = PBXGroup;
 			children = (
@@ -1348,6 +1373,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD53ADD917C53D41000B9722 /* Testflight */,
 				ADE7F05017C14F1800589535 /* RFQuiltLayout */,
 				AD10E79317BDB6FA00CF3402 /* RSColorPicker */,
 				AD49C8A117BC6374000DE850 /* MKiCloudSync */,
@@ -1577,6 +1603,8 @@
 		ADC844B21790709800349B16 /* Temporary Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AD53ADDA17C53E6A000B9722 /* iTunesArtwork.png */,
+				AD53ADDB17C53E6A000B9722 /* iTunesArtwork@2x.png */,
 				ADC844B31790709800349B16 /* Icon76.png */,
 				ADC844B41790709800349B16 /* Icon@2x.png */,
 				ADC844B51790709800349B16 /* Logo152.png */,
@@ -1895,9 +1923,11 @@
 				AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
 				AD7B261717C2E00D00701F52 /* Localizable.strings in Resources */,
 				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
+				AD53ADDE17C53E6A000B9722 /* iTunesArtwork@2x.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
+				AD53ADDC17C53E6A000B9722 /* iTunesArtwork.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD09C9ED17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
@@ -1967,6 +1997,7 @@
 				AD7F800517B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54803B17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
 				AD54802117A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
+				AD53ADDF17C53E6A000B9722 /* iTunesArtwork@2x.png in Resources */,
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD8C835E17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
@@ -1997,6 +2028,7 @@
 				AD54806317A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
 				AD8C835B17B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib in Resources */,
 				AD54801F17A1C7EE008FAFFB /* f-setting-2-active.png in Resources */,
+				AD53ADDD17C53E6A000B9722 /* iTunesArtwork.png in Resources */,
 				AD312648179F08A600483E2F /* README.md in Resources */,
 				AD54802917A1C7EE008FAFFB /* f-setting-3-active@2x.png in Resources */,
 				AD1BECD117A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */,
@@ -2490,6 +2522,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2515,6 +2548,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2543,6 +2577,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -2567,6 +2602,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

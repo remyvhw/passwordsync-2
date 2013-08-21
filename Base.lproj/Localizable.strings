@@ -311,3 +311,13 @@
 /* No comment provided by engineer. */
 "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database.";
 
+"Password Generator" = "Password Generator";
+
+"New Password" = "New Password";
+
+"You're done!" = "You're done!";
+
+
+"Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password." = "Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password.";
+
+"There are different ways to unlock your device. Choose the passcode type that fits you best." = "There are different ways to unlock your device. Choose the passcode type that fits you best.";

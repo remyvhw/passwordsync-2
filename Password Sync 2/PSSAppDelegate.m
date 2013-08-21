@@ -21,6 +21,8 @@
 #import "PSSPasswordDetailViewController.h"
 #import "PSSPasswordSyncOneDataImporter.h"
 
+#import "TestFlight.h"
+
 @interface PSSAppDelegate ()
 
 @property (strong, nonatomic) PSSLocationBaseObject *awaitingBaseObject;
@@ -222,6 +224,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"1015eec8-43ae-46ec-9727-09a056b8ee95"];
+    
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     

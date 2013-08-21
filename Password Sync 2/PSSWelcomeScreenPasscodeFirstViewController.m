@@ -30,6 +30,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.navigationItem setHidesBackButton:YES];
+    
+    
+    UILabel * descriptionLabel = (UILabel*)[self.view viewWithTag:111];
+    descriptionLabel.text = NSLocalizedString(@"Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password.", nil);
 }
 
 - (void)didReceiveMemoryWarning

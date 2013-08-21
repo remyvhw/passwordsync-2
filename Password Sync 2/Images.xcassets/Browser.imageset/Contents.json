@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Browser.png"
+      "filename" : "browser25.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Browser@2x.png"
+      "filename" : "browser50.png"
     }
   ],
   "info" : {

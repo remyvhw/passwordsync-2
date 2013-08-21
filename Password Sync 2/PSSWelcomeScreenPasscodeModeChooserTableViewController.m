@@ -30,7 +30,7 @@
         // Custom initialization
         self.gesturePasscodeEntryDetailText = NSLocalizedString(@"Simply draw a pattern.", nil);
         self.pinPasscodeEntryDetailText = NSLocalizedString(@"Five digit passcode.", nil);
-            
+        
             
             PSSPasscodeVerifyerViewController * passcodeVerifyer = [[PSSPasscodeVerifyerViewController alloc] init];
             if (passcodeVerifyer.countOfPasscodeAttempts >= 5) {
@@ -40,6 +40,8 @@
                 
                 self.title = NSLocalizedString(@"Reset Passcode", nil);
                 
+            } else {
+                self.explanationText.text = NSLocalizedString(@"There are different ways to unlock your device. Choose the passcode type that fits you best.", nil);
             }
             
     }
