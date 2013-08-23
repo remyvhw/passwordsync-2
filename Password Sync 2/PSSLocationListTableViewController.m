@@ -87,7 +87,7 @@
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80.;
+    return 84.;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -255,6 +255,12 @@
     cell.detailTextLabel.text = object.address;
     
     cell.imageView.image = [UIImage imageWithData:object.thumbnail.data ];
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[[UIImage imageNamed:@"TableViewSquircleMask"] CGImage];
+    mask.frame = CGRectMake(0, 0, 80, 80);
+    
+    cell.imageView.layer.mask = mask;
+    cell.imageView.layer.masksToBounds = YES;
     
     /*
     if ([object.shouldGeofence boolValue]) {

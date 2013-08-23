@@ -185,6 +185,12 @@
         
         if (self.selectedColor) {
                 colorCell.imageView.image = [UIColor imageWithColor:self.selectedColor];
+                CALayer *mask = [CALayer layer];
+                mask.contents = (id)[[UIImage imageNamed:@"TableViewSquircleMask"] CGImage];
+                mask.frame = CGRectMake(0, 0, 40, 40);
+            
+                colorCell.imageView.layer.mask = mask;
+                colorCell.imageView.layer.masksToBounds = YES;
         }
             colorCell.textLabel.text = NSLocalizedString(@"Color", nil);
             colorCell.selectionStyle = UITableViewCellSelectionStyleNone;

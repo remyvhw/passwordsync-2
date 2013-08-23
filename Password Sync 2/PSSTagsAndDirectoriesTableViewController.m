@@ -667,6 +667,13 @@ typedef enum {
         cell.textLabel.text = object.name;
         cell.imageView.image = [UIColor imageWithColorDictionary:object.color];
      
+        CALayer *mask = [CALayer layer];
+        mask.contents = (id)[[UIImage imageNamed:@"TableViewSquircleMask"] CGImage];
+        mask.frame = CGRectMake(0, 0, 40, 40);
+        
+        cell.imageView.layer.mask = mask;
+        cell.imageView.layer.masksToBounds = YES;
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
