@@ -17,6 +17,7 @@
 #import "PSSLocationMapCell.h"
 #import "PSSAppDelegate.h"
 #import "PSSSwitchTableViewCell.h"
+#import "PSSObjectDecorativeImage.h"
 
 @import CoreLocation;
 @import MapKit;
@@ -44,6 +45,30 @@
 
 @implementation PSSLocationEditorTableViewController
 
+
+-(void)takeMapSnapshot{
+    
+    MKMapSnapshotOptions * snapshotOptions = [[MKMapSnapshotOptions alloc] init];
+    
+    snapshotOptions.camera = self.mapCell.mapView.camera;
+    snapshotOptions.region = self.mapCell.mapView.region;
+    snapshotOptions.size = CGSizeMake(80, 80);
+    snapshotOptions.mapType = MKMapTypeHybrid;
+    
+    MKMapSnapshotter * mapSnapshotter = [[MKMapSnapshotter alloc] initWithOptions:snapshotOptions];
+    [mapSnapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
+        
+        // Create a new thumbnail image.
+        PSSObjectDecorativeImage * thumbnail = (PSSObjectDecorativeImage*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSObjectDecorativeImage" inManagedObjectContext:APP_DELEGATE.managedObjectContext];
+        thumbnail.timestamp = [NSDate date];
+        thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
+        thumbnail.data = UIImagePNGRepresentation([snapshot image]);
+        
+        self.locationBaseObject.thumbnail = thumbnail;
+        [thumbnail.managedObjectContext save:NULL];
+    }];
+    
+}
 
 -(void)startGeofencingLocation:(PSSLocationBaseObject*)locationObject{
     
@@ -109,6 +134,8 @@
 
 -(void)saveChangesAndDismiss{
     
+    
+    
     BOOL creatingMode = NO;
     
     if (!self.locationBaseObject) {
@@ -164,10 +191,13 @@
         
     }
     
+    [self takeMapSnapshot];
+    
     // Start geofencing the saved object
     if (self.geofenceCell.switchView.isOn) {
         [self startGeofencingLocation:self.locationBaseObject];
     }
+    
     
     
     if (creatingMode) {
@@ -179,6 +209,9 @@
         }
         [self.navigationController popViewControllerAnimated:YES];
     }
+    
+    
+    
     
     
 }

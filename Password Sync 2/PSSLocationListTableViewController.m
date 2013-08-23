@@ -13,6 +13,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSLocationDetailViewController.h"
 #import "PSSLocationsSplitViewDetailViewController.h"
+#import "PSSObjectDecorativeImage.h"
 
 @interface PSSLocationListTableViewController ()
 
@@ -86,7 +87,7 @@
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 64.;
+    return 80.;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -118,7 +119,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -253,11 +254,14 @@
     cell.textLabel.text = object.displayName;
     cell.detailTextLabel.text = object.address;
     
+    cell.imageView.image = [UIImage imageWithData:object.thumbnail.data ];
+    
+    /*
     if ([object.shouldGeofence boolValue]) {
         cell.imageView.image = [[UIImage imageNamed:@"Geofenced"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     } else {
         cell.imageView.image = nil;
-    }
+    }*/
 
 }
 /*

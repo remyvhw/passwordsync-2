@@ -117,6 +117,8 @@
 		AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */; };
 		AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
+		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
+		AD4553B317C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
 		AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
 		AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
 		AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */; };
@@ -577,6 +579,9 @@
 		AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSlocationSearchTextFieldCell.m; sourceTree = "<group>"; };
 		AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationMapCell.h; sourceTree = "<group>"; };
 		AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationMapCell.m; sourceTree = "<group>"; };
+		AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
+		AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
+		AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
 		AD49C89D17BC6365000DE850 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
 		AD49C89E17BC6365000DE850 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
 		AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLegalViewController.h; sourceTree = "<group>"; };
@@ -1169,6 +1174,16 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */,
+				AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */,
+				AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */,
+			);
+			name = MSCMoreOptionTableViewCell;
+			sourceTree = "<group>";
+		};
 		AD49C8A117BC6374000DE850 /* MKiCloudSync */ = {
 			isa = PBXGroup;
 			children = (
@@ -1373,6 +1388,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */,
 				AD53ADD917C53D41000B9722 /* Testflight */,
 				ADE7F05017C14F1800589535 /* RFQuiltLayout */,
 				AD10E79317BDB6FA00CF3402 /* RSColorPicker */,
@@ -2087,6 +2103,7 @@
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD10E78B17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
 				AD547FD717A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
+				AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */,
 				ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
@@ -2261,6 +2278,7 @@
 				ADF10D4517A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD821065177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				AD82106B177D37ED00B6F501 /* RNEncryptor.m in Sources */,
+				AD4553B317C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */,
 				AD72C3F4177B7E28009AADC8 /* Password_Sync_2Tests.m in Sources */,
 				AD7FC9A717B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m in Sources */,
 				AD90A57617C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */,
