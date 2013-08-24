@@ -119,12 +119,15 @@
         [navController presentViewControllerForLocationEntity:locationObject];
         
     } else {
+        
+
         UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
         
         PSSLocationDetailViewController * detailViewController = (PSSLocationDetailViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"locationDetailViewController"];
         detailViewController.detailItem = locationObject;
         
-        [navController pushViewController:detailViewController animated:YES];
+        
+        [navController pushViewController:detailViewController animated:NO];
 
     }
     
@@ -222,6 +225,22 @@
     self.locationManager = locationManager;
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+
+    UIApplicationState state = [application applicationState];
+    if (state != UIApplicationStateActive) {
+        
+        
+        NSString * absoluteURI = [[notification userInfo] objectForKey:@"locationObjectIDURI"];
+        NSURL * uriForID = [NSURL URLWithString:absoluteURI];
+        NSManagedObject * locationObject = [self objectWithURI:uriForID];
+        
+        [self openLocationDetailView:(PSSLocationBaseObject*)locationObject];
+        
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [TestFlight takeOff:@"1015eec8-43ae-46ec-9727-09a056b8ee95"];
@@ -229,7 +248,18 @@
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
+    
+    UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (locationNotification) {
+        // We received a location notification.
+        NSString * absoluteURI = [[locationNotification userInfo] objectForKey:@"locationObjectIDURI"];
+        NSURL * uriForID = [NSURL URLWithString:absoluteURI];
+        NSManagedObject * locationObject = [self objectWithURI:uriForID];
         
+        [self openLocationDetailView:(PSSLocationBaseObject*)locationObject];
+        
+    }
+    
     ///////DEBUG 
     if (0) {
         

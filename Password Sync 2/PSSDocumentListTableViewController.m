@@ -153,7 +153,6 @@
         // PSSPasswordListViewController ↑ Splitview ↓ Detail view ↓ NavController
         
         PSSDocumentsSplitViewDetailViewController * detailController = (PSSDocumentsSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         PSSDocumentBaseObject *object = [fetchedResultsController objectAtIndexPath:indexPath];
         [detailController presentViewControllerForDocumentEntity:object];
 
