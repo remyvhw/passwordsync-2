@@ -500,9 +500,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="SkD-9N-uka">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="SP7-Ho-tWG" id="XEa-RZ-UeX"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" textLabel="jdg-If-6wT" style="IBUITableViewCellStyleDefault" id="H4G-aj-ar2">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="H4G-aj-ar2" id="p75-iY-BCn">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -517,15 +525,25 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BrH-FX-dMG" kind="push" identifier="notesDetailViewControllerSegue" id="nYG-6Z-Cch"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="BNw-of-tzA"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="sU4-5D-lKf" id="d2F-LN-SEx"/>
+                        <segue destination="BrH-FX-dMG" kind="push" id="8b5-wH-iKP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93u-3W-elh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="sU4-5D-lKf">
+                    <connections>
+                        <outlet property="delegate" destination="SP7-Ho-tWG" id="Dcn-ZP-RQ6"/>
+                        <outlet property="searchBar" destination="SkD-9N-uka" id="azO-im-0L6"/>
+                        <outlet property="searchContentsController" destination="SP7-Ho-tWG" id="y9i-MG-Oko"/>
+                        <outlet property="searchResultsDataSource" destination="SP7-Ho-tWG" id="N3q-Ya-JDQ"/>
+                        <outlet property="searchResultsDelegate" destination="SP7-Ho-tWG" id="F8M-dD-MTJ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="459" y="1465"/>
         </scene>
@@ -734,7 +752,7 @@
         <!--Document Detail Collection View Controller-->
         <scene sceneID="nTz-LB-NUW">
             <objects>
-                <viewController id="BrH-FX-dMG" customClass="PSSDocumentDetailCollectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSSDocumentDetailCollectionViewController" id="BrH-FX-dMG" customClass="PSSDocumentDetailCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dyB-P9-i0Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Kpi-Zo-NLV"/>
@@ -978,14 +996,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Frd-F5-vH2">
-                                            <rect key="frame" x="67" y="0.0" width="238" height="43"/>
+                                            <rect key="frame" x="55" y="0.0" width="250" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="CardsIcon" id="BgY-1f-2CC">
-                                            <rect key="frame" x="15" y="9" width="37" height="25"/>
+                                            <rect key="frame" x="15" y="12" width="25" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -999,14 +1017,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RY7-8u-2lO">
-                                            <rect key="frame" x="59" y="0.0" width="246" height="43"/>
+                                            <rect key="frame" x="55" y="0.0" width="250" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="Pin" id="Run-v2-ijz">
-                                            <rect key="frame" x="15" y="9" width="29" height="25"/>
+                                            <rect key="frame" x="15" y="10" width="25" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1020,14 +1038,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cHQ-eb-J94">
-                                            <rect key="frame" x="48" y="0.0" width="257" height="43"/>
+                                            <rect key="frame" x="49" y="0.0" width="256" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" image="Document" id="GTR-ws-Mp8">
-                                            <rect key="frame" x="15" y="9" width="18" height="25"/>
+                                            <rect key="frame" x="15" y="9" width="19" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1317,10 +1335,10 @@
     </scenes>
     <resources>
         <image name="Browser" width="25" height="25"/>
-        <image name="CardsIcon" width="37" height="25"/>
-        <image name="Document" width="18" height="25"/>
-        <image name="Organizer" width="21" height="25"/>
-        <image name="Pin" width="29" height="25"/>
+        <image name="CardsIcon" width="25" height="18"/>
+        <image name="Document" width="19" height="25"/>
+        <image name="Organizer" width="22" height="25"/>
+        <image name="Pin" width="25" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

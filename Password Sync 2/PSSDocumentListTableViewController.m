@@ -12,23 +12,25 @@
 #import "PSSDocumentBaseObject.h"
 #import "PSSAppDelegate.h"
 #import "PSSDocumentsSplitViewDetailViewController.h"
+#import "PSSDocumentDetailCollectionViewController.h"
 
 #import "PSSObjectDecorativeImage.h"
 
 
 @interface PSSDocumentListTableViewController ()
+@property (nonatomic, strong) NSFetchedResultsController *searchFetchedResultsController;
+
 
 @end
 
 @implementation PSSDocumentListTableViewController
+@synthesize searchFetchedResultsController = _searchFetchedResultsController;
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
 -(void)newNoteAction:(id)sender{
-    
-    
     
     PSSDocumentEditorTableViewController * notesEditor = [[PSSDocumentEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:notesEditor];
@@ -52,7 +54,6 @@
     
     PSSAppDelegate *appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
-
 
     
     
@@ -81,19 +82,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    NSInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
+    
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    NSInteger numberOfRows = 0;
+    NSFetchedResultsController *fetchController = [self fetchedResultsControllerForTableView:tableView];
+    NSArray *sections = fetchController.sections;
+    if(sections.count > 0)
+    {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        numberOfRows = [sectionInfo numberOfObjects];
+    }
+    
+    return numberOfRows;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"noteCell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"noteCell" forIndexPath:indexPath];
+    
+    if (tableView == self.tableView) {
+        [self configureCell:cell atIndexPath:indexPath];
+    } else {
+        [self configureSearchCell:cell atIndexPath:indexPath];
+    }
+    
     return cell;
 }
 
@@ -126,30 +144,89 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSFetchedResultsController * fetchedResultsController = [self fetchedResultsControllerForTableView:tableView];
+    
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         // On the iPad, we won't rely on a  segue to show the selected object in the detail view controller but, instead, intercept the tap and send the open detail view to the split view' detail navigation controller's child.
-        // CardsList ↑ Splitview ↓ Detail view ↓ NavController
+        // PSSPasswordListViewController ↑ Splitview ↓ Detail view ↓ NavController
         
         PSSDocumentsSplitViewDetailViewController * detailController = (PSSDocumentsSplitViewDetailViewController*)[self.splitViewController.viewControllers lastObject];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        PSSDocumentBaseObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        PSSDocumentBaseObject *object = [fetchedResultsController objectAtIndexPath:indexPath];
         [detailController presentViewControllerForDocumentEntity:object];
-        
-    }
-}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"notesDetailViewControllerSegue"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        
+        
+            PSSDocumentDetailCollectionViewController * detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PSSDocumentDetailCollectionViewController"];
+            
+            detailViewController.detailItem = [fetchedResultsController objectAtIndexPath:indexPath];
+            
+            [self.navigationController pushViewController:detailViewController animated:YES];
+            
+            
+        
     }
 }
 
 
 
 #pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
+{
+    // Which fetch results controller to use?
+    return tableView == self.tableView ? self.fetchedResultsController : self.searchFetchedResultsController;
+}
+
+- (NSFetchedResultsController *)searchFetchedResultsController
+{
+    if (_searchFetchedResultsController != nil) {
+        return _searchFetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PSSDocumentBaseObject" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    
+    NSString * searchString = self.searchDisplayController.searchBar.text;
+    if(searchString.length)
+    {
+        // your search predicate(s) are added to this array
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"displayName contains[cd] %@", searchString]];
+        
+    }
+    
+    
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    _searchFetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![_searchFetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+    
+    NSLog(@"COUNT: %lu", (unsigned long)_searchFetchedResultsController.fetchedObjects.count);
+    return _searchFetchedResultsController;
+}
+
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -190,19 +267,20 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView beginUpdates];
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+    [tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
@@ -211,7 +289,7 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
@@ -235,18 +313,29 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView endUpdates];
+    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+    [tableView endUpdates];
 }
 
-/*
- // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
- {
- // In the simplest, most efficient, case, reload the table view.
- [self.tableView reloadData];
- }
- */
+
+
+-(void)configureSearchCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath{
+    
+    
+    
+    PSSDocumentBaseObject *object = (PSSDocumentBaseObject*)[self.searchFetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSMutableAttributedString * attributedTitle = [[NSMutableAttributedString alloc] initWithString:object.displayName];
+    [attributedTitle addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.displayName rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
+    cell.textLabel.attributedText = attributedTitle;
+    
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+}
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
@@ -256,6 +345,45 @@
     
     cell.imageView.image = [UIImage imageWithData:[object.thumbnail data]];
     
+}
+
+
+#pragma mark - Content Filtering
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSInteger)scope
+{
+    // update the filter, in this case just blow away the FRC and let lazy evaluation create another with the relevant search info
+    self.searchFetchedResultsController.delegate = nil;
+    self.searchFetchedResultsController = nil;
+    // if you care about the scope save off the index to be used by the serchFetchedResultsController
+    self.savedScopeButtonIndex = scope;
+}
+
+#pragma mark -
+#pragma mark Search Bar
+- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView;
+{
+    // search is done so get rid of the search FRC and reclaim memory
+    self.searchFetchedResultsController.delegate = nil;
+    self.searchFetchedResultsController = nil;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text]
+                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 
