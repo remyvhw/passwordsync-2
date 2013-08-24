@@ -257,7 +257,7 @@
     cell.imageView.image = [UIImage imageWithData:object.thumbnail.data ];
     CALayer *mask = [CALayer layer];
     mask.contents = (id)[[UIImage imageNamed:@"TableViewSquircleMask"] CGImage];
-    mask.frame = CGRectMake(0, 0, 80, 80);
+    mask.frame = CGRectMake(0, 2, 78, 78);
     
     cell.imageView.layer.mask = mask;
     cell.imageView.layer.masksToBounds = YES;

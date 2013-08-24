@@ -189,55 +189,113 @@ dispatch_queue_t backgroundQueue;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (section==0) {
     return self.attachments.count;
+    } else if (section==1) {
+        // Tags
+        return self.detailItem.tags.count;
+    }
+    return 0;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"attachmentCollectionViewCell" forIndexPath:indexPath];
     
-    PSSObjectAttachment * attachmentAtIndex = [self.attachments objectAtIndex:indexPath.row];
-    PSSObjectDecorativeImage * thumbnail = attachmentAtIndex.thumbnail;
-    
-    UIImageView * imageView = (UIImageView*)[cell viewWithTag:100];
-    UIImageView * lockImageView = (UIImageView*)[cell viewWithTag:2];
-    
-    UIImage * contentImage;
-    if (self.isPasscodeUnlocked) {
-        [lockImageView setImage:nil];
+    if (indexPath.section==0) {
         
-        contentImage = thumbnail.imageNormal;
-        imageView.image = contentImage;
-    } else {
+        // Attachments
+        UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"attachmentCollectionViewCell" forIndexPath:indexPath];
         
-        [lockImageView setImage:[[UIImage imageNamed:@"LargeLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        PSSObjectAttachment * attachmentAtIndex = [self.attachments objectAtIndex:indexPath.row];
+        PSSObjectDecorativeImage * thumbnail = attachmentAtIndex.thumbnail;
         
-        // We blur the image
-        dispatch_async(backgroundQueue, ^(void) {
+        UIImageView * imageView = (UIImageView*)[cell viewWithTag:100];
+        UIImageView * lockImageView = (UIImageView*)[cell viewWithTag:2];
+        
+        UIImage * contentImage;
+        if (self.isPasscodeUnlocked) {
+            [lockImageView setImage:nil];
             
-            UIImage * blurredThumbnail = thumbnail.imageLightEffect;
+            contentImage = thumbnail.imageNormal;
+            imageView.image = contentImage;
+        } else {
             
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [lockImageView setImage:[[UIImage imageNamed:@"LargeLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+            
+            // We blur the image
+            dispatch_async(backgroundQueue, ^(void) {
                 
-                [imageView setAlpha:0.0];
-                imageView.image = blurredThumbnail;
-                [UIView animateWithDuration:0.1 animations:^{
-                    [imageView setAlpha:1.0];
-                }];
+                UIImage * blurredThumbnail = thumbnail.imageLightEffect;
                 
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    
+                    [imageView setAlpha:0.0];
+                    imageView.image = blurredThumbnail;
+                    [UIView animateWithDuration:0.1 animations:^{
+                        [imageView setAlpha:1.0];
+                    }];
+                    
+                    
+                });
                 
             });
             
-        });
+        }
+        
+        
+        
+        return cell;
+    } else if (indexPath.section == 1) {
+        
+        UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"attachmentCollectionViewCell" forIndexPath:indexPath];
+        
+        PSSObjectAttachment * attachmentAtIndex = [self.attachments objectAtIndex:indexPath.row];
+        PSSObjectDecorativeImage * thumbnail = attachmentAtIndex.thumbnail;
+        
+        UIImageView * imageView = (UIImageView*)[cell viewWithTag:100];
+        UIImageView * lockImageView = (UIImageView*)[cell viewWithTag:2];
+        
+        UIImage * contentImage;
+        if (self.isPasscodeUnlocked) {
+            [lockImageView setImage:nil];
+            
+            contentImage = thumbnail.imageNormal;
+            imageView.image = contentImage;
+        } else {
+            
+            [lockImageView setImage:[[UIImage imageNamed:@"LargeLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+            
+            // We blur the image
+            dispatch_async(backgroundQueue, ^(void) {
+                
+                UIImage * blurredThumbnail = thumbnail.imageLightEffect;
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    
+                    [imageView setAlpha:0.0];
+                    imageView.image = blurredThumbnail;
+                    [UIView animateWithDuration:0.1 animations:^{
+                        [imageView setAlpha:1.0];
+                    }];
+                    
+                    
+                });
+                
+            });
+            
+        }
+        
+        
+        
+        return cell;
+        
         
     }
     
-    
-    
-    return cell;
+    return nil;
 }
 
 #pragma mark - UICollectionViewDelegate methods
