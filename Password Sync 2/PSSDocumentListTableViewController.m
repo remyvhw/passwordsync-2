@@ -15,6 +15,8 @@
 #import "PSSDocumentDetailCollectionViewController.h"
 
 #import "PSSObjectDecorativeImage.h"
+#import "PSSObjectTag.h"
+#import "UIColor+PSSDictionaryCoding.h"
 
 
 @interface PSSDocumentListTableViewController ()
@@ -25,6 +27,21 @@
 
 @implementation PSSDocumentListTableViewController
 @synthesize searchFetchedResultsController = _searchFetchedResultsController;
+
+-(UIColor *)readableForegroundColorForColor:(UIColor*)color {
+    // oldColor is the UIColor to invert
+    
+    const CGFloat *componentColors = CGColorGetComponents(color.CGColor);
+    
+    CGFloat darknessIndice = (((componentColors[0]*255) * 299) + ((componentColors[1]*255) * 587) + ((componentColors[2]*255) * 114)) / 1000;
+    
+    if (darknessIndice >= 125) {
+        return [UIColor blackColor];
+    }
+    
+    return [UIColor whiteColor];
+}
+
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
@@ -343,6 +360,24 @@
 
     
     cell.imageView.image = [UIImage imageWithData:[object.thumbnail data]];
+    
+    // Build a list of tags
+    NSMutableAttributedString * mutableAttributedString = [[NSMutableAttributedString alloc] init];
+    for (PSSObjectTag * tag in object.tags) {
+        
+        
+        NSMutableAttributedString * tagName = [[NSMutableAttributedString alloc] initWithString:tag.name];
+        
+        NSRange rangeOfTagName = NSMakeRange(0, tagName.length);
+        UIColor * backgroundColor = [UIColor colorWithDictionary:tag.color];
+        [tagName addAttribute:NSBackgroundColorAttributeName value:backgroundColor range:rangeOfTagName];
+        [tagName addAttribute:NSForegroundColorAttributeName value:[self readableForegroundColorForColor:backgroundColor] range:rangeOfTagName];
+        
+        [mutableAttributedString appendAttributedString:tagName];
+        [mutableAttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
+    }
+    cell.detailTextLabel.attributedText = mutableAttributedString;
+    
     
 }
 
