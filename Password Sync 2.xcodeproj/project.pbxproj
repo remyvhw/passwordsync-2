@@ -83,8 +83,8 @@
 		AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
 		AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
 		AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
-		AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */; };
-		AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */; };
+		AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */; };
+		AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312642179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
 		AD312643179F08A600483E2F /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312628179F08A600483E2F /* HexColor.m */; };
@@ -554,8 +554,8 @@
 		AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagsAndDirectoriesTableViewController.m; sourceTree = "<group>"; };
 		AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsTableViewController.h; sourceTree = "<group>"; };
 		AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsTableViewController.m; sourceTree = "<group>"; };
-		AD2C9E3817BF1472009D22EE /* PSSObjectsForTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectsForTagViewController.h; sourceTree = "<group>"; };
-		AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectsForTagViewController.m; sourceTree = "<group>"; };
+		AD2C9E3817BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectsForTagOrCategoryViewController.h; sourceTree = "<group>"; };
+		AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectsForTagOrCategoryViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
 		AD312625179F08A600483E2F /* TSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessage.m; sourceTree = "<group>"; };
 		AD312627179F08A600483E2F /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -1138,8 +1138,8 @@
 				AD33DD6717BE679C008F80FD /* PSSTagsSelectorTableViewController.h */,
 				AD33DD6817BE679C008F80FD /* PSSTagsSelectorTableViewController.m */,
 				AD33DD6917BE679C008F80FD /* PSSTagsSelectorTableViewController.xib */,
-				AD2C9E3817BF1472009D22EE /* PSSObjectsForTagViewController.h */,
-				AD2C9E3917BF1472009D22EE /* PSSObjectsForTagViewController.m */,
+				AD2C9E3817BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.h */,
+				AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */,
 			);
 			name = Tags;
 			sourceTree = "<group>";
@@ -2126,7 +2126,7 @@
 				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD10E77B17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
-				AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */,
+				AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */,
 				ADAD160217ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD82106A177D37ED00B6F501 /* RNEncryptor.m in Sources */,
 				AD10E78B17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
@@ -2364,7 +2364,7 @@
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,
-				AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagViewController.m in Sources */,
+				AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */,
 				AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,

@@ -10,7 +10,7 @@
 #import "PSSObjectTag.h"
 #import "PSSAppDelegate.h"
 #import "UIColor+PSSDictionaryCoding.h"
-#import "PSSObjectsForTagViewController.h"
+#import "PSSObjectsForTagOrCategoryViewController.h"
 
 @interface PSSTagsSelectorTableViewController ()
 
@@ -183,7 +183,7 @@
         }
         
         
-        PSSObjectsForTagViewController * objectsForTagViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+        PSSObjectsForTagOrCategoryViewController * objectsForTagViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
         
         objectsForTagViewController.selectedTag = selectedTag;
         

@@ -7,7 +7,7 @@
 //
 
 #import "PSSOrganizerSplitViewDetailViewController.h"
-#import "PSSObjectsForTagViewController.h"
+#import "PSSObjectsForTagOrCategoryViewController.h"
 
 @interface PSSOrganizerSplitViewDetailViewController ()
 
@@ -37,7 +37,7 @@
 }
 
 -(void)presentViewControllerForTagEntity:(PSSObjectTag *)tagBaseObject{
-    PSSObjectsForTagViewController * detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+    PSSObjectsForTagOrCategoryViewController * detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
     
     
     detailView.selectedTag = tagBaseObject;

@@ -6,21 +6,21 @@
 //  Copyright (c) 2013 Pumax. All rights reserved.
 //
 
-#import "PSSObjectsForTagViewController.h"
+#import "PSSObjectsForTagOrCategoryViewController.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSLocationBaseObject.h"
 #import "PSSCreditCardBaseObject.h"
 #import "PSSDocumentBaseObject.h"
 #import "PSSAppDelegate.h"
 
-@interface PSSObjectsForTagViewController ()
+@interface PSSObjectsForTagOrCategoryViewController ()
 
 @property (strong, nonatomic) NSMutableArray * finalArrayOfArrays;
 @property (strong, nonatomic) NSMutableArray * arrayOfTitles;
 
 @end
 
-@implementation PSSObjectsForTagViewController
+@implementation PSSObjectsForTagOrCategoryViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -66,6 +66,17 @@
         [self.finalArrayOfArrays addObject:orderedArrayOfPasswords];
     }
     
+    // Documents
+    NSPredicate * documentsPredicate = [NSPredicate predicateWithFormat: @"self isKindOfClass: %@", [PSSDocumentBaseObject class]];
+    
+    NSSet * filteredDocuments = [setOfObjects filteredSetUsingPredicate:documentsPredicate];
+    NSArray * orderedArrayOfDocuments = [filteredDocuments sortedArrayUsingDescriptors:@[orderByNameSorter]];
+    
+    if ([orderedArrayOfDocuments count]) {
+        // If we have passwords in that tag/folder, we'll add them to the array.
+        [self.arrayOfTitles addObject:NSLocalizedString(@"Documents", nil)];
+        [self.finalArrayOfArrays addObject:orderedArrayOfDocuments];
+    }
     
     
 }
@@ -126,6 +137,21 @@
         
         
         return cell;
+    } else if ([illustratedObject isKindOfClass:[PSSDocumentBaseObject class]]) {
+        
+        
+        PSSDocumentBaseObject * documentObject = illustratedObject;
+        static NSString *CellIdentifier = @"documentCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        cell.textLabel.text = documentObject.displayName;
+        
+        UIImage * favicon = [UIImage imageWithData:[documentObject.thumbnail data]];
+        cell.imageView.image = favicon;
+        
+        
+        return cell;
     }
     
     return nil;
@@ -139,9 +165,7 @@
     NSArray * observedArray = [self.finalArrayOfArrays objectAtIndex:indexPath.section];
     id illustratedObject = [observedArray objectAtIndex:indexPath.row];
 
-    if ([illustratedObject isKindOfClass:[PSSBaseGenericObject class]]) {
-        [APP_DELEGATE openBaseObjectDetailView:illustratedObject];
-    }
+    [APP_DELEGATE openBaseObjectDetailView:illustratedObject];
     
     
 }

@@ -14,12 +14,16 @@
 #import "TSMessage.h"
 #import "PSSLocationBaseObject.h"
 #import "PSSPasswordBaseObject.h"
+#import "PSSDocumentBaseObject.h"
+#import "PSSCreditCardBaseObject.h"
 
 #import "PSSLocationDetailViewController.h"
 #import "PSSLocationsSplitViewDetailViewController.h"
 #import "PSSPasswordSplitViewDetailViewController.h"
 #import "PSSPasswordDetailViewController.h"
 #import "PSSPasswordSyncOneDataImporter.h"
+#import "PSSDocumentsSplitViewDetailViewController.h"
+#import "PSSDocumentDetailCollectionViewController.h"
 
 #import "TestFlight.h"
 
@@ -41,6 +45,8 @@
         [self openLocationDetailView:(PSSLocationBaseObject*)baseObject];
     } else if ([baseObject isKindOfClass:[PSSPasswordBaseObject class]]){
         [self openPasswordDetailView:(PSSPasswordBaseObject*)baseObject];
+    } else if ([baseObject isKindOfClass:[PSSDocumentBaseObject class]]){
+        [self openDocumentDetailView:(PSSDocumentBaseObject*)baseObject];
     }
     
     
@@ -75,6 +81,32 @@
     }
     
     return nil;
+}
+
+-(void)openDocumentDetailView:(PSSDocumentBaseObject*)documentObject {
+    
+    UITabBarController * tabBarController = (UITabBarController*)self.window.rootViewController;
+    
+    // Documents are at index 0
+    [tabBarController setSelectedIndex:3];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        UISplitViewController * splitViewForLocations = (UISplitViewController*)tabBarController.selectedViewController;
+        
+        PSSDocumentsSplitViewDetailViewController * navController = [splitViewForLocations.viewControllers lastObject];
+        [navController presentViewControllerForDocumentEntity:documentObject];
+        
+    } else {
+        UINavigationController * navController = (UINavigationController*)tabBarController.selectedViewController;
+        
+        PSSDocumentDetailCollectionViewController * detailViewController = (PSSDocumentDetailCollectionViewController*)[navController.storyboard instantiateViewControllerWithIdentifier:@"PSSDocumentDetailCollectionViewController"];
+        detailViewController.detailItem = documentObject;
+        
+        [navController pushViewController:detailViewController animated:YES];
+        
+    }
+    
 }
 
 -(void)openPasswordDetailView:(PSSPasswordBaseObject*)passwordObject {

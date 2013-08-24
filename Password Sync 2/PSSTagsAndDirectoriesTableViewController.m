@@ -12,7 +12,7 @@
 #import "PSSObjectFolder.h"
 #import "PSSAppDelegate.h"
 #import "UIColor+PSSDictionaryCoding.h"
-#import "PSSObjectsForTagViewController.h"
+#import "PSSObjectsForTagOrCategoryViewController.h"
 #import "PSSOrganizerSplitViewDetailViewController.h"
 
 typedef enum {
@@ -322,7 +322,7 @@ typedef enum {
         PSSObjectTag * objectTag = [controller objectAtIndexPath:indexPath];
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            PSSObjectsForTagViewController * tagsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+            PSSObjectsForTagOrCategoryViewController * tagsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
             
             tagsViewController.selectedTag = objectTag;
             
