@@ -239,7 +239,6 @@
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
-    NSLog(@"COUNT: %lu", (unsigned long)_searchFetchedResultsController.fetchedObjects.count);
     return _searchFetchedResultsController;
 }
 
@@ -345,7 +344,7 @@
     [attributedTitle addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.displayName rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
     cell.textLabel.attributedText = attributedTitle;
     
-    
+    cell.detailTextLabel.text = nil;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -377,6 +376,9 @@
         [mutableAttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
     }
     cell.detailTextLabel.attributedText = mutableAttributedString;
+    [cell.detailTextLabel setAlpha:0.5];
+    cell.detailTextLabel.opaque = YES;
+    
     
     
 }
