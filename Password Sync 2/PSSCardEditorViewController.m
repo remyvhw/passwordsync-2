@@ -323,10 +323,18 @@ dispatch_queue_t backgroundQueue;
     }
     
     
+}
+
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     
-    
-    
-    
+    // Update the field order so we can easily navigate using the keyboard's "next" button
+    self.nameCell.nextFormField = self.bankNameCell.textField;
+    self.bankNameCell.nextFormField = self.bankNumberCell.textField;
+    self.bankNumberCell.nextFormField = self.bankURLCell.textField;
+    self.bankURLCell.nextFormField = self.notesCell.textView;
 }
 
 - (void)didReceiveMemoryWarning

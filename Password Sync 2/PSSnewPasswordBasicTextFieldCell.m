@@ -22,6 +22,9 @@
         [self addSubview:textField];
         self.textField = textField;
         
+        [self.textField addTarget:self
+                           action:@selector(textFieldShouldReturn:)
+                 forControlEvents:UIControlEventEditingDidEndOnExit];
         
         
     }
@@ -59,12 +62,12 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
+
     
     if (self.nextFormField) {
         [self.nextFormField becomeFirstResponder];
     } else {
-        [self resignFirstResponder];
+        [textField resignFirstResponder];
     }
     
     

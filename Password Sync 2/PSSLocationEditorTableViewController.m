@@ -19,6 +19,10 @@
 #import "PSSSwitchTableViewCell.h"
 #import "PSSObjectDecorativeImage.h"
 
+
+#import "PSSLocationChoicePopoverViewController.h"
+#import "UIViewController+MJPopupViewController.h"
+
 @import CoreLocation;
 @import MapKit;
 @import AddressBookUI;
@@ -269,8 +273,19 @@
     }
 }
 
+-(void)rearrangeMapForLocation:(CLLocation*)location placemark:(CLPlacemark*)placemark{
+    self.pinLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+    self.addressString = ABCreateStringWithAddressDictionary([placemark addressDictionary], NO);
+    
+    [self.mapCell rearrangePinAndMapLocationWithLocation:self.pinLocation];
+}
 
 -(void)updateMapView{
+    
+    if ([self.locationSearchCell.textField.text isEqualToString:@""]) {
+        return;
+    }
+    
     [self.locationSearchCell setIsGeocoding:YES];
     
     CLGeocoder * geocoder = [[CLGeocoder alloc] init];
@@ -280,21 +295,40 @@
        [self.locationSearchCell setIsGeocoding:NO];
        
        if (error) {
-           UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-           [alertView show];
+           
+           if (error.code == 8) {
+               UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to Find Location", nil) message:NSLocalizedString(@"Please double check the provided address or add specific details (city's name, for example).", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+               [alertView show];
+           } else {
+               UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+               [alertView show];
+           }
+
        } else {
            
            if ([placemarks count] > 1) {
                
                // Prompt user for a specific location
+               
+               PSSLocationChoicePopoverViewController * locationPopover = [[PSSLocationChoicePopoverViewController alloc] initWithNibName:@"PSSLocationChoicePopoverViewController" bundle:[NSBundle mainBundle]];
+               
+               locationPopover.choiceOfPlacemarks = placemarks;
+               locationPopover.completionBlock = ^void(CLLocation*location, CLPlacemark * placemark){
+                   [self rearrangeMapForLocation:location placemark:placemark];
+                   [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
+               };
+               
+               
+               [self presentPopupViewController:locationPopover animationType:MJPopupViewAnimationSlideTopTop dismissed:^{
+               }];
+               
            } else {
-               CLLocation * location = [(CLPlacemark*)[placemarks objectAtIndex:0] location];
-               self.pinLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-               self.addressString = ABCreateStringWithAddressDictionary([(CLPlacemark*)[placemarks objectAtIndex:0] addressDictionary], NO);
+               CLPlacemark * placemark = (CLPlacemark*)[placemarks objectAtIndex:0];
+               [self rearrangeMapForLocation:[placemark location] placemark:placemark];
            }
            
            
-            [self.mapCell rearrangePinAndMapLocationWithLocation:self.pinLocation];
+           
            
        }
        
@@ -360,6 +394,15 @@
     
     
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    // Update the field order so we can easily navigate using the keyboard's "next" button
+    self.titleCell.nextFormField = self.passwordCell.textField;
+    self.passwordCell.nextFormField = self.locationSearchCell.textField;
+    self.locationSearchCell.nextFormField = self.notesCell.textView;
 }
 
 

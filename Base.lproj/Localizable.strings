@@ -321,3 +321,7 @@
 "Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password." = "Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password.";
 
 "There are different ways to unlock your device. Choose the passcode type that fits you best." = "There are different ways to unlock your device. Choose the passcode type that fits you best.";
+
+"Unable to Find Location" = "Can't Find Location";
+
+"Please double check the provided address or add specific details (city's name, for example)." = "Unable to find location. Please double check the provided address or add specific details (city's name, for example).";

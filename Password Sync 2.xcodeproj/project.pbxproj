@@ -119,6 +119,14 @@
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
 		AD4553B317C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
+		AD4553B817C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B617C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m */; };
+		AD4553B917C831BF00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B617C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m */; };
+		AD4553BA17C831BF00A5C395 /* PSSLocationChoicePopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4553B717C831BE00A5C395 /* PSSLocationChoicePopoverViewController.xib */; };
+		AD4553BB17C831BF00A5C395 /* PSSLocationChoicePopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4553B717C831BE00A5C395 /* PSSLocationChoicePopoverViewController.xib */; };
+		AD4553C117C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553BE17C832DD00A5C395 /* MJPopupBackgroundView.m */; };
+		AD4553C217C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553BE17C832DD00A5C395 /* MJPopupBackgroundView.m */; };
+		AD4553C317C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553C017C832DD00A5C395 /* UIViewController+MJPopupViewController.m */; };
+		AD4553C417C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553C017C832DD00A5C395 /* UIViewController+MJPopupViewController.m */; };
 		AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
 		AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C89E17BC6365000DE850 /* MKiCloudSync.m */; };
 		AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */; };
@@ -582,6 +590,13 @@
 		AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
 		AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
 		AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
+		AD4553B517C831BE00A5C395 /* PSSLocationChoicePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationChoicePopoverViewController.h; sourceTree = "<group>"; };
+		AD4553B617C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationChoicePopoverViewController.m; sourceTree = "<group>"; };
+		AD4553B717C831BE00A5C395 /* PSSLocationChoicePopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSLocationChoicePopoverViewController.xib; sourceTree = "<group>"; };
+		AD4553BD17C832DD00A5C395 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		AD4553BE17C832DD00A5C395 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		AD4553BF17C832DD00A5C395 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		AD4553C017C832DD00A5C395 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		AD49C89D17BC6365000DE850 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
 		AD49C89E17BC6365000DE850 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
 		AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLegalViewController.h; sourceTree = "<group>"; };
@@ -1169,6 +1184,7 @@
 			children = (
 				AD3637121798A04D005F1542 /* PSSLocationEditorTableViewController.h */,
 				AD3637131798A04D005F1542 /* PSSLocationEditorTableViewController.m */,
+				AD4553BC17C831CF00A5C395 /* Location choice */,
 				AD36371A179AFB6A005F1542 /* Cells */,
 			);
 			name = Editor;
@@ -1182,6 +1198,27 @@
 				AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */,
 			);
 			name = MSCMoreOptionTableViewCell;
+			sourceTree = "<group>";
+		};
+		AD4553BC17C831CF00A5C395 /* Location choice */ = {
+			isa = PBXGroup;
+			children = (
+				AD4553B517C831BE00A5C395 /* PSSLocationChoicePopoverViewController.h */,
+				AD4553B617C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m */,
+				AD4553B717C831BE00A5C395 /* PSSLocationChoicePopoverViewController.xib */,
+			);
+			name = "Location choice";
+			sourceTree = "<group>";
+		};
+		AD4553C517C832E100A5C395 /* MJPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				AD4553BD17C832DD00A5C395 /* MJPopupBackgroundView.h */,
+				AD4553BE17C832DD00A5C395 /* MJPopupBackgroundView.m */,
+				AD4553BF17C832DD00A5C395 /* UIViewController+MJPopupViewController.h */,
+				AD4553C017C832DD00A5C395 /* UIViewController+MJPopupViewController.m */,
+			);
+			name = MJPopupController;
 			sourceTree = "<group>";
 		};
 		AD49C8A117BC6374000DE850 /* MKiCloudSync */ = {
@@ -1388,6 +1425,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD4553C517C832E100A5C395 /* MJPopupController */,
 				AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */,
 				AD53ADD917C53D41000B9722 /* Testflight */,
 				ADE7F05017C14F1800589535 /* RFQuiltLayout */,
@@ -1949,6 +1987,7 @@
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
 				AD54801C17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
+				AD4553BA17C831BF00A5C395 /* PSSLocationChoicePopoverViewController.xib in Resources */,
 				AD54806017A1C7EE008FAFFB /* crop-button-icon.png in Resources */,
 				AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD54804817A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
@@ -2036,6 +2075,7 @@
 				AD54803917A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54804917A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
 				AD54806117A1C7EE008FAFFB /* crop-button-icon.png in Resources */,
+				AD4553BB17C831BF00A5C395 /* PSSLocationChoicePopoverViewController.xib in Resources */,
 				ADC844B91790709800349B16 /* Icon@2x.png in Resources */,
 				AD54800F17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
 				AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
@@ -2169,12 +2209,14 @@
 				AD1BECD417A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
+				AD4553C117C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */,
 				AD547FD517A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD10E78917BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD547FCF17A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
 				AD10E77717BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
 				AD10E73D17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */,
+				AD4553B817C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
 				AD8F5AD91782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
 				AD312641179F08A600483E2F /* TSMessage.m in Sources */,
 				ADA24C00179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,
@@ -2209,6 +2251,7 @@
 				AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
+				AD4553C317C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */,
 				ADA24BFC179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,
@@ -2291,12 +2334,15 @@
 				AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				ADA24C01179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
+				AD4553C417C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */,
 				AD547FD617A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
 				AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */,
+				AD4553B917C831BF00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
+				AD4553C217C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */,
 				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,

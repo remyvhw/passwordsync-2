@@ -112,6 +112,7 @@
 
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
+
     if (self.isGeocoding) {
         return;
     }
