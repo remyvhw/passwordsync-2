@@ -262,21 +262,9 @@
     cell.imageView.layer.mask = mask;
     cell.imageView.layer.masksToBounds = YES;
     
-    /*
-    if ([object.shouldGeofence boolValue]) {
-        cell.imageView.image = [[UIImage imageNamed:@"Geofenced"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    } else {
-        cell.imageView.image = nil;
-    }*/
-
-}
-/*
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    PSSLocationBaseObject *object = (PSSLocationBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    [(UILabel*)[cell viewWithTag:1] setText:object.displayName];
-    [(UILabel*)[cell viewWithTag:2] setText:object.address];
     
-}*/
+    
+}
+
 
 @end
