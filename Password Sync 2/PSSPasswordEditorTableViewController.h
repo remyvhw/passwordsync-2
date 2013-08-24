@@ -15,6 +15,6 @@
 
 @interface PSSPasswordEditorTableViewController : PSSGenericEditorTableViewController <PSSPasswordGeneratorTableViewControllerProtocol>
 
-@property (strong) PSSPasswordBaseObject * baseObject;
+@property (strong, nonatomic) PSSPasswordBaseObject * baseObject;
 
 @end

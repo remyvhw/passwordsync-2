@@ -122,6 +122,13 @@
     cell.textLabel.text = object.name;
     cell.imageView.image = [UIColor imageWithColorDictionary:object.color];
     
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[[UIImage imageNamed:@"TableViewSquircleMask"] CGImage];
+    mask.frame = CGRectMake(0, 0, 40, 40);
+    
+    cell.imageView.layer.mask = mask;
+    cell.imageView.layer.masksToBounds = YES;
+    
     if (self.editionMode) {
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -146,7 +153,6 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Did select");
     PSSObjectTag * selectedTag = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     
     if (self.editionMode) {

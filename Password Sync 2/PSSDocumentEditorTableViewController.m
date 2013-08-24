@@ -29,8 +29,6 @@
 #pragma mark Saving methods
 
 
-
-
 -(PSSObjectDecorativeImage*)insertNewDecorativeImageInManagedObject{
     PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -160,7 +158,7 @@
     
     // Save the object
     self.baseObject.currentVersion = version;
-    
+    self.baseObject.tags = self.itemTags;
     
     
     
@@ -355,7 +353,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 5;
 }
 
 
@@ -367,8 +365,11 @@
     } else if (section == 1) {
         // Attachments
         return [self.attachmentsArray count] + 1;
-    } else if (section == 2) {
+    } else if (section==2) {
         // Notes
+        return 1;
+    } else if (section == 3) {
+        // Advanced
         return 1;
     }
     
@@ -468,6 +469,16 @@
         
     }
     
+    // Advanced
+    if (indexPath.section == 3) {
+        
+        // Tags
+        if (indexPath.row==0) {
+            return self.tagsTableViewCell;
+        }
+        
+    }
+    
     
     
     return nil;
@@ -495,6 +506,16 @@
             }
         }
         
+        
+    } else if (indexPath.section == 3) {
+        
+       // Advanced
+        
+        if (indexPath.row ==0) {
+            
+            [self presentTagSelectorViewController];
+            
+        }
         
     }
     

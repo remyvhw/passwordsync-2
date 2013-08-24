@@ -17,6 +17,7 @@
 @interface PSSUnlockPromptViewController ()
 
 @property BOOL masterPasswordChecker;
+@property BOOL userCanCancel;
 
 @end
 
@@ -48,6 +49,7 @@
     
     self.cancelationBlock = cancelation;
     self.unlockBlock = completion;
+    self.userCanCancel = blockingView;
     
     NSNumberFormatter * numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -215,6 +217,7 @@
     
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {
