@@ -1,5 +1,7 @@
 //
 //  CardIOPaymentViewController.h
+//  Version 3.2.2
+//
 //  Copyright (c) 2011-2013 PayPal. All rights reserved.
 //
 
@@ -23,14 +25,15 @@
 // If not set, or if set to nil, defaults to the device's current language setting.
 //
 // Can be specified as a language code ("en", "fr", "zh-Hans", etc.) or as a locale ("en_AU", "fr_FR", "zh-Hant_HK", etc.).
-// If card.io does not contain localized strings for a specified locale, then will fall back to the language. E.g., "es_CO" -> "es".
-// If card.io does not contain localized strings for a specified region, then will fall back to American English.
+// If card.io does not contain localized strings for a specified locale, then it will fall back to the language. E.g., "es_CO" -> "es".
+// If card.io does not contain localized strings for a specified language, then it will fall back to American English.
 //
 // If you specify only a language code, and that code matches the device's currently preferred language,
 // then card.io will attempt to use the device's current region as well.
 // E.g., specifying "en" on a device set to "English" and "United Kingdom" will result in "en_GB".
 //
-// These localizations are currently included: da,de,en,en_AU,en_GB,en_SV,en_U5,es,fr,he,it,ja,nb,nl,pl,pt,ru,sv,tr,zh-Hans,zh-Hant_HK,zh-Hant_TW.
+// These localizations are currently included:
+// da,de,en,en_AU,en_GB,en_SV,en_U5,es,es_MX,fr,he,it,ja,ko,nb,nl,pl,pt,pt_BR,ru,sv,tr,zh-Hans,zh-Hant_HK,zh-Hant_TW.
 @property(nonatomic, copy, readwrite) NSString *languageOrLocale;
 
 // If YES, the status bar's style will be kept as whatever your app has set it to.
@@ -55,8 +58,9 @@
 // Set to NO if you don't need to collect the CVV from the user. Defaults to YES.
 @property(nonatomic, assign, readwrite) BOOL collectCVV;
 
-// Set to YES if you need to collect the billing zip code. Defaults to NO.
-@property(nonatomic, assign, readwrite) BOOL collectZip;
+// Set to YES if you need to collect the billing postal code. Defaults to NO.
+@property(nonatomic, assign, readwrite) BOOL collectPostalCode;
+@property(nonatomic, assign, readwrite, getter=collectPostalCode, setter=setCollectPostalCode:) BOOL collectZip __attribute__((deprecated("use collectPostalCode instead")));
 
 // Set to NO if you want to suppress the first-time how-to alert view. Defaults to YES.
 @property(nonatomic, assign, readwrite) BOOL showsFirstUseAlert;
