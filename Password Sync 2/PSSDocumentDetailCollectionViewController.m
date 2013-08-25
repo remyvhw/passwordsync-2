@@ -209,7 +209,7 @@ dispatch_queue_t backgroundQueue;
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     if (section==1) {
         if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
-            return UIEdgeInsetsMake(0, 10, 20, 75);
+            return UIEdgeInsetsMake(0, 15, 20, 80);
         } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             return UIEdgeInsetsMake(0, 0, 20, 0);
         }
