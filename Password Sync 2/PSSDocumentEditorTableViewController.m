@@ -328,6 +328,8 @@
         return NSLocalizedString(@"Attachments", nil);
     } else if (section == 2) {
         return NSLocalizedString(@"Notes", nil);
+    } else if (section==3) {
+        return NSLocalizedString(@"Advanced", nil);
     }
     return @"";
 }

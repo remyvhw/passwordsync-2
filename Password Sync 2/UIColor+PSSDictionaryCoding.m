@@ -69,4 +69,20 @@ typedef enum {
     return [UIColor imageWithColor:colorFromDict];
 }
 
++(UIColor *)readableForegroundColorForColor:(UIColor*)color {
+    // oldColor is the UIColor to invert
+    
+    const CGFloat *componentColors = CGColorGetComponents(color.CGColor);
+    
+    CGFloat darknessIndice = (((componentColors[0]*255) * 299) + ((componentColors[1]*255) * 587) + ((componentColors[2]*255) * 114)) / 1000;
+    
+    if (darknessIndice >= 125) {
+        return [UIColor blackColor];
+    }
+    
+    return [UIColor whiteColor];
+}
+
+
+
 @end

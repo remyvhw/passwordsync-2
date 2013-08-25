@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PSSGenericDetailViewController.h"
 
-@interface PSSGenericDetailCollectionViewController : PSSGenericDetailViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PSSGenericDetailCollectionViewController : PSSGenericDetailViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView * collectionView;
 

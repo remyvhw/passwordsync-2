@@ -28,20 +28,6 @@
 @implementation PSSDocumentListTableViewController
 @synthesize searchFetchedResultsController = _searchFetchedResultsController;
 
--(UIColor *)readableForegroundColorForColor:(UIColor*)color {
-    // oldColor is the UIColor to invert
-    
-    const CGFloat *componentColors = CGColorGetComponents(color.CGColor);
-    
-    CGFloat darknessIndice = (((componentColors[0]*255) * 299) + ((componentColors[1]*255) * 587) + ((componentColors[2]*255) * 114)) / 1000;
-    
-    if (darknessIndice >= 125) {
-        return [UIColor blackColor];
-    }
-    
-    return [UIColor whiteColor];
-}
-
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
@@ -121,6 +107,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"noteCell" forIndexPath:indexPath];
     
     if (tableView == self.tableView) {
@@ -370,7 +357,7 @@
         NSRange rangeOfTagName = NSMakeRange(0, tagName.length);
         UIColor * backgroundColor = [UIColor colorWithDictionary:tag.color];
         [tagName addAttribute:NSBackgroundColorAttributeName value:backgroundColor range:rangeOfTagName];
-        [tagName addAttribute:NSForegroundColorAttributeName value:[self readableForegroundColorForColor:backgroundColor] range:rangeOfTagName];
+        [tagName addAttribute:NSForegroundColorAttributeName value:[UIColor readableForegroundColorForColor:backgroundColor] range:rangeOfTagName];
         
         [mutableAttributedString appendAttributedString:tagName];
         [mutableAttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];

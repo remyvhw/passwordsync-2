@@ -14,6 +14,6 @@
 +(UIColor*)colorWithDictionary:(NSDictionary*)dictionary;
 +(UIImage*)imageWithColor:(UIColor*)color;
 +(UIImage*)imageWithColorDictionary:(NSDictionary*)dictionary;
-
++(UIColor *)readableForegroundColorForColor:(UIColor*)color;
 
 @end

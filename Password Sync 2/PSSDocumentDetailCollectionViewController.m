@@ -14,11 +14,16 @@
 #import "PSSExtentedNoteViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "PSSDocumentEditorTableViewController.h"
+#import "UIColor+PSSDictionaryCoding.h"
+#import "PSSObjectTag.h"
+#import "PSSAppDelegate.h"
+#import "PSSObjectsForTagOrCategoryViewController.h"
 
 @interface PSSDocumentDetailCollectionViewController ()
 
 @property (nonatomic, strong) NSArray * attachments;
 @property (nonatomic, strong) NSMutableArray * arrayOfTemporaryFilePaths;
+@property (nonatomic, strong) NSArray * orderedTags;
 
 @end
 
@@ -77,6 +82,11 @@ dispatch_queue_t backgroundQueue;
     
 }
 
+-(void)buildTagList{
+    
+    NSSortDescriptor * positionDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    self.orderedTags = [self.detailItem.tags sortedArrayUsingDescriptors:@[positionDescriptor]];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -100,6 +110,11 @@ dispatch_queue_t backgroundQueue;
     
     [self buildAttachmentList];
     
+    [self buildTagList];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PSSDocumentTagsSupplementaryView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"emptySuppViewHeader"];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"PSSDocumentTagsSupplementaryView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"emptySuppViewFooter"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -144,46 +159,89 @@ dispatch_queue_t backgroundQueue;
     return YES;
 }
 
+#pragma mark - UICollectionViewFlowLayoutDelegate methods
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section==1) {
+        
+        return CGSizeMake(self.view.bounds.size.width, 44.);
+        
+    }
+    
+    return CGSizeMake(225, 225);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    
+    if (section==0) {
+        return CGSizeMake(50, 84);
+    }
+    
+    return CGSizeMake(0, 0);
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    
+    if (section==0) {
+        return CGSizeMake(50, 84);
+    }
+    
+    return CGSizeMake(0, 0);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    if (section==1) {
+        return UIEdgeInsetsMake(0, 0, 20, 0);
+    }
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
 #pragma mark - UICollectionViewDataSource methods
+
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    if ([kind isEqual:UICollectionElementKindSectionHeader]) {
-        UICollectionReusableView * collectionReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"titleReusableView" forIndexPath:indexPath];
-        UILabel * label = (UILabel*)[collectionReusableView viewWithTag:1];
-        label.text = self.detailItem.displayName;
-        return collectionReusableView;
-
-    } else if ([kind isEqual:UICollectionElementKindSectionFooter]){
-        
-        UICollectionReusableView * collectionReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"noteReusableView" forIndexPath:indexPath];
-        UILabel * label = (UILabel*)[collectionReusableView viewWithTag:1];
-        UIImageView * accessoryView = (UIImageView*)[collectionReusableView viewWithTag:2];
-        
-        
-        NSString * decryptedNote = [(PSSDocumentVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
-        
-        if (decryptedNote && ![decryptedNote isEqualToString:@""]) {
-            if (self.isPasscodeUnlocked) {
-                [accessoryView setImage:[[UIImage imageNamed:@"Chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-                label.textColor = [UIColor darkTextColor];
-                label.text = decryptedNote;
+    if (indexPath.section==0) {
+        if ([kind isEqual:UICollectionElementKindSectionHeader]) {
+            UICollectionReusableView * collectionReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"titleReusableView" forIndexPath:indexPath];
+            UILabel * label = (UILabel*)[collectionReusableView viewWithTag:1];
+            label.text = self.detailItem.displayName;
+            return collectionReusableView;
+            
+        } else if ([kind isEqual:UICollectionElementKindSectionFooter]){
+            
+            UICollectionReusableView * collectionReusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"noteReusableView" forIndexPath:indexPath];
+            UILabel * label = (UILabel*)[collectionReusableView viewWithTag:1];
+            UIImageView * accessoryView = (UIImageView*)[collectionReusableView viewWithTag:2];
+            
+            
+            NSString * decryptedNote = [(PSSDocumentVersion*)self.detailItem.currentHardLinkedVersion decryptedNoteTextContent];
+            
+            if (decryptedNote && ![decryptedNote isEqualToString:@""]) {
+                if (self.isPasscodeUnlocked) {
+                    [accessoryView setImage:[[UIImage imageNamed:@"Chevron"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+                    label.textColor = [UIColor darkTextColor];
+                    label.text = decryptedNote;
+                } else {
+                    [accessoryView setImage:[[UIImage imageNamed:@"SmallLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+                    label.textColor = [UIColor lightGrayColor];
+                    label.text = NSLocalizedString(@"Locked", nil);
+                }
             } else {
-                [accessoryView setImage:[[UIImage imageNamed:@"SmallLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+                label.text = NSLocalizedString(@"No Notes", nil);
                 label.textColor = [UIColor lightGrayColor];
-                label.text = NSLocalizedString(@"Locked", nil);
+                label.textAlignment = NSTextAlignmentCenter;
+                
             }
-        } else {
-            label.text = NSLocalizedString(@"No Notes", nil);
-            label.textColor = [UIColor lightGrayColor];
-            label.textAlignment = NSTextAlignmentCenter;
-
+            
+            
+            return collectionReusableView;
+            
         }
 
-        
-        return collectionReusableView;
-        
     }
     return nil;
 }
@@ -201,6 +259,8 @@ dispatch_queue_t backgroundQueue;
     }
     return 0;
 }
+
+
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -250,45 +310,14 @@ dispatch_queue_t backgroundQueue;
         return cell;
     } else if (indexPath.section == 1) {
         
-        UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"attachmentCollectionViewCell" forIndexPath:indexPath];
+        UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tagForDocumentCollectionViewCell" forIndexPath:indexPath];
         
-        PSSObjectAttachment * attachmentAtIndex = [self.attachments objectAtIndex:indexPath.row];
-        PSSObjectDecorativeImage * thumbnail = attachmentAtIndex.thumbnail;
+        PSSObjectTag * attachmentAtIndex = [self.orderedTags objectAtIndex:indexPath.row];
         
-        UIImageView * imageView = (UIImageView*)[cell viewWithTag:100];
-        UIImageView * lockImageView = (UIImageView*)[cell viewWithTag:2];
-        
-        UIImage * contentImage;
-        if (self.isPasscodeUnlocked) {
-            [lockImageView setImage:nil];
-            
-            contentImage = thumbnail.imageNormal;
-            imageView.image = contentImage;
-        } else {
-            
-            [lockImageView setImage:[[UIImage imageNamed:@"LargeLock"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-            
-            // We blur the image
-            dispatch_async(backgroundQueue, ^(void) {
-                
-                UIImage * blurredThumbnail = thumbnail.imageLightEffect;
-                
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    
-                    [imageView setAlpha:0.0];
-                    imageView.image = blurredThumbnail;
-                    [UIView animateWithDuration:0.1 animations:^{
-                        [imageView setAlpha:1.0];
-                    }];
-                    
-                    
-                });
-                
-            });
-            
-        }
-        
-        
+        cell.backgroundColor = [UIColor colorWithDictionary:attachmentAtIndex.color];
+        UILabel * cellLabel = (UILabel*)[cell viewWithTag:1];
+        cellLabel.textColor = [UIColor readableForegroundColorForColor:cell.backgroundColor];
+        [cellLabel setText:attachmentAtIndex.name];
         
         return cell;
         
@@ -307,7 +336,25 @@ dispatch_queue_t backgroundQueue;
         return;
     }
     
-    [self presentQuickLookViewerForAttachmentAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        [self presentQuickLookViewerForAttachmentAtIndex:indexPath.row];
+
+    } else if (indexPath.section == 1) {
+        UIStoryboard * mainStoryboard;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:[NSBundle mainBundle]];
+        }
+        
+        
+        PSSObjectsForTagOrCategoryViewController * objectsForTagViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
+        
+        objectsForTagViewController.selectedTag = [self.orderedTags objectAtIndex:indexPath.row];
+        
+        [self.navigationController pushViewController:objectsForTagViewController animated:YES];
+ 
+    }
     
     
 }
@@ -350,5 +397,13 @@ dispatch_queue_t backgroundQueue;
     return [NSURL fileURLWithPath:filePath];
 }
 
+#pragma mark - Object editor protocol
+
+-(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
+    self.detailItem = (PSSDocumentBaseObject*)genericObject;
+    [self buildAttachmentList];
+    [self buildTagList];
+    [super objectEditor:editor finishedWithObject:genericObject];
+}
 
 @end
