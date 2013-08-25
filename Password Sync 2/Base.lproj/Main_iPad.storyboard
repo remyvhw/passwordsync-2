@@ -1041,6 +1041,32 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagForDocumentCollectionViewCell" id="ezM-Sf-zzw">
+                                        <rect key="frame" x="255" y="175" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-LP-u8g">
+                                                    <rect key="frame" x="10" y="0.0" width="300" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.180392161" green="0.5647059083" blue="0.35294118520000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Uaa-LP-u8g" firstAttribute="top" secondItem="ezM-Sf-zzw" secondAttribute="top" id="GF0-xH-BMy"/>
+                                            <constraint firstAttribute="bottom" secondItem="Uaa-LP-u8g" secondAttribute="bottom" id="Me0-mC-zU2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uaa-LP-u8g" secondAttribute="trailing" constant="10" id="WZz-Ba-9i8"/>
+                                            <constraint firstItem="Uaa-LP-u8g" firstAttribute="leading" secondItem="ezM-Sf-zzw" secondAttribute="leading" constant="10" id="eqQ-pW-7VN"/>
+                                        </constraints>
+                                        <size key="customSize" width="320" height="44"/>
+                                    </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="titleReusableView" id="XUE-cK-nB4">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="84"/>

@@ -128,6 +128,11 @@ dispatch_queue_t backgroundQueue;
 }
 
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self.collectionView performBatchUpdates:nil completion:nil];
+    
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([[segue identifier] isEqualToString:@"extendedPlainTextNoteSegue"]) {
@@ -165,7 +170,17 @@ dispatch_queue_t backgroundQueue;
     
     if (indexPath.section==1) {
         
-        return CGSizeMake(self.view.bounds.size.width, 44.);
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
+            if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+                return CGSizeMake((self.view.bounds.size.width/3)*2, 64);
+            }
+            
+            return CGSizeMake((self.view.bounds.size.width/2)-20, 50.);
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            return CGSizeMake(self.view.bounds.size.width, 44.);
+        }
+
         
     }
     
@@ -193,7 +208,12 @@ dispatch_queue_t backgroundQueue;
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     if (section==1) {
-        return UIEdgeInsetsMake(0, 0, 20, 0);
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+            return UIEdgeInsetsMake(0, 10, 20, 75);
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            return UIEdgeInsetsMake(0, 0, 20, 0);
+        }
+        
     }
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }

@@ -116,6 +116,10 @@ dispatch_queue_t backgroundQueue;
     
 }
 
+-(void)dealloc{
+    
+    
+}
 
 #pragma mark - Fetched results controller
 

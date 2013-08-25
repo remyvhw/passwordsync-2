@@ -344,8 +344,12 @@
     PSSDocumentBaseObject *object = (PSSDocumentBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
 
-    
-    cell.imageView.image = [UIImage imageWithData:[object.thumbnail data]];
+    if (object.thumbnail) {
+        cell.imageView.image = [UIImage imageWithData:[object.thumbnail data]];
+    } else {
+        cell.imageView.image = nil;
+    }
+
     
     // Build a list of tags
     NSMutableAttributedString * mutableAttributedString = [[NSMutableAttributedString alloc] init];
