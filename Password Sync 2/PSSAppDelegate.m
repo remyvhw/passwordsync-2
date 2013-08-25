@@ -24,6 +24,7 @@
 #import "PSSPasswordSyncOneDataImporter.h"
 #import "PSSDocumentsSplitViewDetailViewController.h"
 #import "PSSDocumentDetailCollectionViewController.h"
+#import "PSSDocumentEditorTableViewController.h"
 
 #import "TestFlight.h"
 
@@ -38,6 +39,21 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+-(void)saveDocumentAtURL:(NSURL*)url{
+    
+    PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURL:url];
+    
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:documentEditor];
+    
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self.window.rootViewController presentViewController:navController animated:YES completion:^{
+        
+    }];
+    
+}
+
 
 -(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject{
     
@@ -292,29 +308,6 @@
         
     }
     
-    ///////DEBUG 
-    if (0) {
-        
-        PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
-        [keychainBindings removeObjectForKey:PSSHashedMasterPasswordKeychainEntry];
-        [keychainBindings removeObjectForKey:PSSHashedPasscodeCodeKeychainEntry];
-        [keychainBindings removeObjectForKey:PSSDefinedPasscodeType];
-        [keychainBindings removeObjectForKey:PSSlastLocalMasterPasswordChange];
-        [keychainBindings removeObjectForKey:PSSFailedPasscodeAttempsCount];
-        
-        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults removeObjectForKey:PSSApplicationWasConfiguredOnAnotherDeviceDefaults];
-        [userDefaults removeObjectForKey:PSSMasterPasswordHintTextString];
-        [userDefaults removeObjectForKey:PSSMasterPasswordVerificationHash];
-        [userDefaults removeObjectForKey:PSSUserAlreadyPrintedMasterPassword];
-        [userDefaults removeObjectForKey:PSSlastGlobalMasterPasswordChange];
-        
-
-    }
-
-
-    
-    
     
     
     [self instanciateLocationManager];
@@ -349,7 +342,13 @@
     
     
     
-    
+    // Open sent document
+    NSURL *documentURL = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
+    if ([documentURL isFileURL])
+    {
+        // Handle file being passed in
+        [self saveDocumentAtURL:documentURL];
+    }
 
     
     
@@ -451,6 +450,14 @@
         
         return [dataImporter handleImportURL:url];
         
+    }
+    
+    
+    if ([url isFileURL])
+    {
+        // Handle file being passed in
+        [self saveDocumentAtURL:url];
+        return YES;
     }
     
     return NO;

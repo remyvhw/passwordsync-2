@@ -122,20 +122,29 @@
                 
                 thumbnail = [(PSSObjectAttachment*)attachment thumbnail];
                 
-            } else if ([attachment isKindOfClass:[NSString class]]) {
-                UIImage * imageObject = [UIImage imageWithContentsOfFile:attachment];
-                
+            } else if ([attachment isKindOfClass:[NSURL class]]) {
                 // We need to create a new attachment object
                 PSSObjectAttachment * attachmentObject = [self insertNewAttachmentInManagedObject];
-                
-                attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
-                // Create the attachment a thumbnail
-                
-                attachmentObject.fileExtension = @"pdf";
+
+                if ([[(NSURL*)attachment pathExtension] isEqualToString:@"pdf"]) {
+                    
+                    attachmentObject.decryptedBinaryContent = [NSData dataWithContentsOfURL:attachment];
+                    attachmentObject.fileExtension = @"pdf";
+                    
+                } else {
+                    // Image captured
+                    UIImage * imageObject = [UIImage imageWithContentsOfFile:[attachment absoluteString]];
+                    
+                    attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
+                    // Create the attachment a thumbnail
+                    
+                    attachmentObject.fileExtension = @"pdf";
+
+                }
                 
                 thumbnail = [self insertNewDecorativeImageInManagedObject];
                 thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
-                thumbnail.data = [PSSThumbnailMaker thumbnailPNGImageDataFromImageAtURL:[NSURL fileURLWithPath:attachment] maxSize:450];
+                thumbnail.data = [PSSThumbnailMaker thumbnailPNGImageDataFromImageAtURL:attachment maxSize:450];
                 attachmentObject.thumbnail = thumbnail;
                 
                 [setOfnewAttachments addObject:attachmentObject];
@@ -199,11 +208,10 @@
         
         // We won't delete it as it was saved with another version
         
-    } else if ([attachment isKindOfClass:[NSString class]]) {
+    } else if ([attachment isKindOfClass:[NSURL class]]) {
         // NSString is a path to large attachment image
         
-        NSURL * pathURL = [NSURL fileURLWithPath:(NSString*)attachment];
-        [[NSFileManager defaultManager] removeItemAtPath:(NSString*)pathURL error:nil];
+        [[NSFileManager defaultManager] removeItemAtURL:attachment error:NULL];
         
         
     }
@@ -229,9 +237,9 @@
     
     for (id attachment in self.attachmentsArray) {
         
-        if ([attachment isKindOfClass:[NSString class]]) {
+        if ([attachment isKindOfClass:[NSURL class]]) {
             
-            [[NSFileManager defaultManager] removeItemAtPath:(NSString*)attachment error:nil];
+            [[NSFileManager defaultManager] removeItemAtURL:attachment error:NULL];
             
         }
         
@@ -249,12 +257,10 @@
         UIImage * attachment = [UIImage imageWithData:objectAttachment.thumbnail.data];
         return attachment;
         
-    } else if ([attachment isKindOfClass:[NSString class]]) {
+    } else if ([attachment isKindOfClass:[NSURL class]]) {
         // NSString is a path to large attachment image
         
-        NSURL * pathURL = [NSURL fileURLWithPath:(NSString*)attachment];
-        
-        UIImage * thumbnailImage = [PSSThumbnailMaker thumbnailImageFromImageAtURL:pathURL maxSize:[UIScreen mainScreen].scale*195.];
+        UIImage * thumbnailImage = [PSSThumbnailMaker thumbnailImageFromImageAtURL:attachment maxSize:[UIScreen mainScreen].scale*195.];
         return thumbnailImage;
     }
     
@@ -280,11 +286,14 @@
 
 #pragma mark - UIViewController lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(id)initWithDocumentURL:(NSURL *)documentURL{
+    if (self = [super initWithStyle:UITableViewStyleGrouped]) {
+        
+        
+        self.attachmentsArray = [[NSMutableArray alloc] initWithObjects:documentURL, nil];
+        
+        
+        
     }
     return self;
 }
@@ -299,15 +308,18 @@
     
     //UIBarButtonItem * saveButton =
     
-    if (self.baseObject) {
-        NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
-        NSSet * attachments = [(PSSDocumentVersion*)self.baseObject.currentHardLinkedVersion attachments];
-        NSArray * arrayOfAttachments = [attachments sortedArrayUsingDescriptors:@[sortDescriptor]];
-        self.attachmentsArray = [[NSMutableArray alloc] initWithArray:arrayOfAttachments];
-    } else {
-        NSMutableArray * mutableArray = [[NSMutableArray alloc] initWithCapacity:5];
-        self.attachmentsArray = mutableArray;
+    if (!self.attachmentsArray) {
+        if (self.baseObject) {
+            NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
+            NSSet * attachments = [(PSSDocumentVersion*)self.baseObject.currentHardLinkedVersion attachments];
+            NSArray * arrayOfAttachments = [attachments sortedArrayUsingDescriptors:@[sortDescriptor]];
+            self.attachmentsArray = [[NSMutableArray alloc] initWithArray:arrayOfAttachments];
+        } else {
+            NSMutableArray * mutableArray = [[NSMutableArray alloc] initWithCapacity:5];
+            self.attachmentsArray = mutableArray;
+        }
     }
+    
     
 }
 
@@ -565,7 +577,8 @@
     [self dismissViewControllerAnimated:YES completion:^{
         if ([[NSFileManager defaultManager] fileExistsAtPath:path])
         {
-            [self.attachmentsArray addObject:path];
+            NSURL * pathURL = [NSURL fileURLWithPath:(NSString*)path];
+            [self.attachmentsArray addObject:pathURL];
             
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
