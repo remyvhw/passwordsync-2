@@ -133,8 +133,8 @@
                     
                 } else {
                     // Image captured
-                    UIImage * imageObject = [UIImage imageWithContentsOfFile:[attachment absoluteString]];
-                    
+                    UIImage * imageObject = [UIImage imageWithData:[NSData dataWithContentsOfURL:attachment]];
+
                     attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
                     // Create the attachment a thumbnail
                     
