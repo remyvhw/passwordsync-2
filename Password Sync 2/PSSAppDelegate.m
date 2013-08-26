@@ -28,6 +28,8 @@
 
 #import "TestFlight.h"
 
+@import CoreData;
+
 @interface PSSAppDelegate ()
 
 @property (strong, nonatomic) PSSLocationBaseObject *awaitingBaseObject;
@@ -490,7 +492,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
@@ -540,7 +542,7 @@
              object:_persistentStoreCoordinator];
     
     
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:[self iCloudPersistentStoreOptions] error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -619,18 +621,20 @@
  Use these options in your call to -addPersistentStore:
  */
 - (NSDictionary*) iCloudPersistentStoreOptions{
-    NSDictionary *options = @{ NSPersistentStoreUbiquitousContentNameKey : @"com~pumaxprod~Password-Sync-2" };
+    NSDictionary *options = @{ NSPersistentStoreUbiquitousContentNameKey : @"com~pumaxprod~ios~Password-Sync-two" };
     return options;
 }
 
 /**
  Subscribe to NSPersistentStoreDidImportUbiquitousContentChangesNotification
  */
+
 - (void)persistentStoreDidImportUbiquitiousContentChanges:(NSNotification*)changeNotification{
     NSManagedObjectContext *moc = [self managedObjectContext];
     [moc performBlock:^{
         [moc mergeChangesFromContextDidSaveNotification:changeNotification];
     }];
+    
 }
 
 /**
@@ -647,7 +651,7 @@
         [moc reset];
     }];
     
-    //reset user interface
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PSSGlobalUpdateNotification" object:nil];
 }
 
 /**
@@ -655,6 +659,8 @@
  */
 - (void)storesDidChange:(NSNotification *)n {
     //refresh user interface
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PSSGlobalUpdateNotification" object:nil];
 }
 
 

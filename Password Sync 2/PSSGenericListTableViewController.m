@@ -17,6 +17,21 @@
 
 @implementation PSSGenericListTableViewController
 
+
+-(void)datastoreHasBeenUpdated:(id)sender{
+    [self.tableView reloadData];
+}
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(datastoreHasBeenUpdated:) name:PSSGlobalUpdateNotification object:nil];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Table view data source
 
 -(void)deselectAllRowsAnimated:(BOOL)animated{
