@@ -88,14 +88,15 @@ dispatch_queue_t backgroundQueue;
             [basePassword setFavicon:UIImagePNGRepresentation(passwordImage)];
             
             // Save the context
-            NSError *error = nil;
+            [basePassword.managedObjectContext performBlock:^{
+                            NSError *error = nil;
             if (![basePassword.managedObjectContext save:&error]) {
                 // Replace this implementation with code to handle the error appropriately.
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
-                
             }
+
+            }];
 
             
         });

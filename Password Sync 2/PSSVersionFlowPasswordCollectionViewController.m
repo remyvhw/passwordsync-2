@@ -40,7 +40,10 @@
     self.detailItem.displayName = newManagedObject.displayName;
     self.detailItem.currentHardLinkedVersion = newManagedObject;
     
-    [newManagedObject.managedObjectContext save:NULL];
+    [newManagedObject.managedObjectContext performBlockAndWait:^{
+            [newManagedObject.managedObjectContext save:NULL];
+    }];
+
     
     // Perform animation on cell
     

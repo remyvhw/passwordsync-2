@@ -69,7 +69,10 @@
         thumbnail.data = UIImagePNGRepresentation([snapshot image]);
         
         self.locationBaseObject.thumbnail = thumbnail;
-        [thumbnail.managedObjectContext save:NULL];
+        [thumbnail.managedObjectContext performBlockAndWait:^{
+            [thumbnail.managedObjectContext save:NULL];
+        }];
+
     }];
     
 }

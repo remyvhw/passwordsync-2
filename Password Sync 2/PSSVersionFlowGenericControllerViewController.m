@@ -32,8 +32,10 @@
             NSInteger indexOfCell = [self.collectionView indexPathForCell:cell].row;
             PSSBaseObjectVersion * version = [self.orderedVersions objectAtIndex:indexOfCell];
             NSManagedObjectContext * context = version.managedObjectContext;
-            [context deleteObject:version];
-            [context save:NULL];
+            [context performBlockAndWait:^{
+                [context deleteObject:version];
+                [context save:NULL];
+            }];
         }];
         
     } completion:^(BOOL finished) {

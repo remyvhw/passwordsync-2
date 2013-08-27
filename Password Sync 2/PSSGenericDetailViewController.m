@@ -190,7 +190,10 @@
     }
     
     // Save the context
-    [self.detailItem.managedObjectContext save:NULL];
+    [self.detailItem.managedObjectContext performBlockAndWait:^{
+            [self.detailItem.managedObjectContext save:NULL];
+    }];
+
     
 }
 

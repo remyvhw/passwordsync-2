@@ -136,9 +136,19 @@
         [self savePasswordWithDictionary:passwordDict];
     }
     
-    if (![APP_DELEGATE.managedObjectContext save:&error]) {
+    __block BOOL returnNO = NO;
+    [APP_DELEGATE.managedObjectContext performBlockAndWait:^{
+        NSError * error;
+        if (![APP_DELEGATE.managedObjectContext save:&error]) {
+            returnNO = YES;
+        }
+    }];
+    
+    if (returnNO) {
         return NO;
     }
+    
+
     
     [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"You're done!", nil)];
     
