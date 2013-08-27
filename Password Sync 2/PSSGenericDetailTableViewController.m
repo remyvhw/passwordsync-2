@@ -106,7 +106,9 @@
 }
 
 
-
+-(void)datastoreHasBeenUpdated:(id)sender{
+    [self.tableView reloadData];
+}
 
 
 - (void)viewDidLoad

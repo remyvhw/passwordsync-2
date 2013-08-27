@@ -129,6 +129,10 @@
     return self;
 }
 
+-(void)datastoreHasBeenUpdated:(id)sender{
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -142,6 +146,8 @@
     // Subscribe to unlock notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unlockUIAction:) name:PSSGlobalUnlockNotification object:nil];
     
+    // Subscribe to global refresh (when the iCloud data is swapped)
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(datastoreHasBeenUpdated:) name:PSSGlobalUpdateNotification object:nil];
 
 }
 

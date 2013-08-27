@@ -492,7 +492,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
@@ -621,7 +621,11 @@
  Use these options in your call to -addPersistentStore:
  */
 - (NSDictionary*) iCloudPersistentStoreOptions{
-    NSDictionary *options = @{ NSPersistentStoreUbiquitousContentNameKey : @"com~pumaxprod~ios~Password-Sync-two" };
+    NSDictionary *options = @{
+                              NSMigratePersistentStoresAutomaticallyOption : @YES,
+                              NSInferMappingModelAutomaticallyOption : @YES,
+                              NSPersistentStoreUbiquitousContentNameKey : @"com~pumaxprod~ios~Password-Sync-two"
+                              };
     return options;
 }
 

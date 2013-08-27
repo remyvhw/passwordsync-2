@@ -418,12 +418,6 @@
 		ADAD161717AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */; };
 		ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */; };
 		ADAD161B17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */; };
-		ADC844B61790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
-		ADC844B71790709800349B16 /* Icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B31790709800349B16 /* Icon76.png */; };
-		ADC844B81790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
-		ADC844B91790709800349B16 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B41790709800349B16 /* Icon@2x.png */; };
-		ADC844BA1790709800349B16 /* Logo152.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B51790709800349B16 /* Logo152.png */; };
-		ADC844BB1790709800349B16 /* Logo152.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC844B51790709800349B16 /* Logo152.png */; };
 		ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C0179074DA00349B16 /* commonPassDict.plist */; };
 		ADC844C5179074DA00349B16 /* commonPassDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C0179074DA00349B16 /* commonPassDict.plist */; };
 		ADC844C6179074DA00349B16 /* 15Dict_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADC844C1179074DA00349B16 /* 15Dict_en.plist */; };
@@ -438,6 +432,26 @@
 		ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */; };
 		ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
 		ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
+		ADD6646617CC65D80075C99E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645C17CC65D80075C99E /* Icon-72.png */; };
+		ADD6646717CC65D80075C99E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645C17CC65D80075C99E /* Icon-72.png */; };
+		ADD6646817CC65D80075C99E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645D17CC65D80075C99E /* Icon-72@2x.png */; };
+		ADD6646917CC65D80075C99E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645D17CC65D80075C99E /* Icon-72@2x.png */; };
+		ADD6646A17CC65D80075C99E /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645E17CC65D80075C99E /* Icon-Small-50.png */; };
+		ADD6646B17CC65D80075C99E /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645E17CC65D80075C99E /* Icon-Small-50.png */; };
+		ADD6646C17CC65D80075C99E /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645F17CC65D80075C99E /* Icon-Small-50@2x.png */; };
+		ADD6646D17CC65D80075C99E /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6645F17CC65D80075C99E /* Icon-Small-50@2x.png */; };
+		ADD6646E17CC65D80075C99E /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646017CC65D80075C99E /* Icon-Small.png */; };
+		ADD6646F17CC65D80075C99E /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646017CC65D80075C99E /* Icon-Small.png */; };
+		ADD6647017CC65D80075C99E /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646117CC65D80075C99E /* Icon-Small@2x.png */; };
+		ADD6647117CC65D80075C99E /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646117CC65D80075C99E /* Icon-Small@2x.png */; };
+		ADD6647217CC65D80075C99E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646217CC65D80075C99E /* Icon.png */; };
+		ADD6647317CC65D80075C99E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646217CC65D80075C99E /* Icon.png */; };
+		ADD6647417CC65D80075C99E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646317CC65D80075C99E /* Icon@2x.png */; };
+		ADD6647517CC65D80075C99E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646317CC65D80075C99E /* Icon@2x.png */; };
+		ADD6647617CC65D80075C99E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646417CC65D80075C99E /* iTunesArtwork.png */; };
+		ADD6647717CC65D80075C99E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646417CC65D80075C99E /* iTunesArtwork.png */; };
+		ADD6647817CC65D80075C99E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646517CC65D80075C99E /* iTunesArtwork@2x.png */; };
+		ADD6647917CC65D80075C99E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD6646517CC65D80075C99E /* iTunesArtwork@2x.png */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
@@ -844,9 +858,6 @@
 		ADAD161517AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationsSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		ADAD161817AE04760035ABB4 /* PSSLocationFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationFavoritesViewController.h; sourceTree = "<group>"; };
 		ADAD161917AE04760035ABB4 /* PSSLocationFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationFavoritesViewController.m; sourceTree = "<group>"; };
-		ADC844B31790709800349B16 /* Icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76.png; sourceTree = "<group>"; };
-		ADC844B41790709800349B16 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		ADC844B51790709800349B16 /* Logo152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo152.png; sourceTree = "<group>"; };
 		ADC844C0179074DA00349B16 /* commonPassDict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commonPassDict.plist; sourceTree = "<group>"; };
 		ADC844C1179074DA00349B16 /* 15Dict_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 15Dict_en.plist; sourceTree = "<group>"; };
 		ADC844C2179074DA00349B16 /* PSSRandomPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSRandomPasswordGenerator.h; sourceTree = "<group>"; };
@@ -859,6 +870,16 @@
 		ADC9DEB017862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenPINPasscodeSetterViewController.m; sourceTree = "<group>"; };
 		ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSEncryptor.h; sourceTree = "<group>"; };
 		ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSEncryptor.m; sourceTree = "<group>"; };
+		ADD6645C17CC65D80075C99E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		ADD6645D17CC65D80075C99E /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		ADD6645E17CC65D80075C99E /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		ADD6645F17CC65D80075C99E /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		ADD6646017CC65D80075C99E /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		ADD6646117CC65D80075C99E /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		ADD6646217CC65D80075C99E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		ADD6646317CC65D80075C99E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		ADD6646417CC65D80075C99E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		ADD6646517CC65D80075C99E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
@@ -1464,7 +1485,7 @@
 		AD72C3C4177B7E27009AADC8 /* Password Sync 2 */ = {
 			isa = PBXGroup;
 			children = (
-				ADC844B21790709800349B16 /* Temporary Icons */,
+				ADD6645B17CC65D80075C99E /* ios 6 icons for Testflight */,
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
@@ -1648,17 +1669,6 @@
 			name = "HTML Parser";
 			sourceTree = "<group>";
 		};
-		ADC844B21790709800349B16 /* Temporary Icons */ = {
-			isa = PBXGroup;
-			children = (
-				ADC844B31790709800349B16 /* Icon76.png */,
-				ADC844B41790709800349B16 /* Icon@2x.png */,
-				ADC844B51790709800349B16 /* Logo152.png */,
-			);
-			name = "Temporary Icons";
-			path = Icons;
-			sourceTree = "<group>";
-		};
 		ADC844CA179074DF00349B16 /* Random Password Generator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1724,6 +1734,24 @@
 				AD7B261A17C2E00D00701F52 /* Localizable.strings */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		ADD6645B17CC65D80075C99E /* ios 6 icons for Testflight */ = {
+			isa = PBXGroup;
+			children = (
+				ADD6645C17CC65D80075C99E /* Icon-72.png */,
+				ADD6645D17CC65D80075C99E /* Icon-72@2x.png */,
+				ADD6645E17CC65D80075C99E /* Icon-Small-50.png */,
+				ADD6645F17CC65D80075C99E /* Icon-Small-50@2x.png */,
+				ADD6646017CC65D80075C99E /* Icon-Small.png */,
+				ADD6646117CC65D80075C99E /* Icon-Small@2x.png */,
+				ADD6646217CC65D80075C99E /* Icon.png */,
+				ADD6646317CC65D80075C99E /* Icon@2x.png */,
+				ADD6646417CC65D80075C99E /* iTunesArtwork.png */,
+				ADD6646517CC65D80075C99E /* iTunesArtwork@2x.png */,
+			);
+			name = "ios 6 icons for Testflight";
+			path = ios;
 			sourceTree = "<group>";
 		};
 		ADD8A31217A87F0A0025DA42 /* Other views */ = {
@@ -1955,7 +1983,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD54801417A1C7EE008FAFFB /* f-setting-tray@2x.png in Resources */,
+				ADD6647417CC65D80075C99E /* Icon@2x.png in Resources */,
 				AD54803A17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
+				ADD6646817CC65D80075C99E /* Icon-72@2x.png in Resources */,
 				AD54806417A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD8C835D17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
 				AD312645179F08A600483E2F /* LICENCE in Resources */,
@@ -1963,16 +1993,20 @@
 				AD8C835A17B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib in Resources */,
 				AD72C3D5177B7E27009AADC8 /* Main_iPad.storyboard in Resources */,
 				AD72C3E0177B7E27009AADC8 /* Images.xcassets in Resources */,
+				ADD6646C17CC65D80075C99E /* Icon-Small-50@2x.png in Resources */,
+				ADD6647617CC65D80075C99E /* iTunesArtwork.png in Resources */,
 				AD54801E17A1C7EE008FAFFB /* f-setting-2-active.png in Resources */,
 				AD54801217A1C7EE008FAFFB /* f-setting-tray.png in Resources */,
 				AD54806217A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
 				AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
+				ADD6646617CC65D80075C99E /* Icon-72.png in Resources */,
 				AD7B261717C2E00D00701F52 /* Localizable.strings in Resources */,
-				ADC844BA1790709800349B16 /* Logo152.png in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
+				ADD6647217CC65D80075C99E /* Icon.png in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
+				ADD6647017CC65D80075C99E /* Icon-Small@2x.png in Resources */,
 				AD09C9ED17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
@@ -1996,14 +2030,17 @@
 				AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
 				AD54803617A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54804617A1C7EE008FAFFB /* flash-off-button.png in Resources */,
+				ADD6646A17CC65D80075C99E /* Icon-Small-50.png in Resources */,
 				AD54802E17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
 				AD940E5E17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
+				ADD6647817CC65D80075C99E /* iTunesArtwork@2x.png in Resources */,
 				AD54802417A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
 				AD54802A17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				AD54804217A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54803E17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54800E17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
 				AD54805E17A1C7EE008FAFFB /* camera-grid.png in Resources */,
+				ADD6646E17CC65D80075C99E /* Icon-Small.png in Resources */,
 				AD7B262017C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
 				AD54803217A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD727A4D179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
@@ -2017,9 +2054,7 @@
 				AD54803817A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54806617A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */,
 				AD54803417A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
-				ADC844B61790709800349B16 /* Icon76.png in Resources */,
 				AD04EBB717BAA649009AD982 /* PSSPasswordListSearchResultCell.xib in Resources */,
-				ADC844B81790709800349B16 /* Icon@2x.png in Resources */,
 				AD54803C17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				ADAD15FE17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD54801817A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
@@ -2036,12 +2071,15 @@
 			files = (
 				AD54801317A1C7EE008FAFFB /* f-setting-tray.png in Resources */,
 				AD940E5F17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
+				ADD6647917CC65D80075C99E /* iTunesArtwork@2x.png in Resources */,
 				AD54801117A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54803D17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
 				AD7F800517B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54803B17A1C7EE008FAFFB /* enhance-button@2x.png in Resources */,
 				AD54802117A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
+				ADD6646F17CC65D80075C99E /* Icon-Small.png in Resources */,
+				ADD6646917CC65D80075C99E /* Icon-72@2x.png in Resources */,
 				AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD8C835E17B1C84500A3AE79 /* PSSVersionPasswordCollectionViewCell.xib in Resources */,
 				AD727A4E179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib in Resources */,
@@ -2051,21 +2089,23 @@
 				AD09C9EE17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803517A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
+				ADD6647517CC65D80075C99E /* Icon@2x.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				ADE7F05317C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */,
 				AD7B262117C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard in Resources */,
+				ADD6647317CC65D80075C99E /* Icon.png in Resources */,
 				AD54801D17A1C7EE008FAFFB /* f-setting-1@2x.png in Resources */,
 				AD54803717A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54803317A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD54804B17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD31267817A03AE700483E2F /* Appart.gpx in Resources */,
 				AD7B261817C2E00D00701F52 /* Localizable.strings in Resources */,
+				ADD6647117CC65D80075C99E /* Icon-Small@2x.png in Resources */,
 				AD54803F17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54803917A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54804917A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
 				AD54806117A1C7EE008FAFFB /* crop-button-icon.png in Resources */,
 				AD4553BB17C831BF00A5C395 /* PSSLocationChoicePopoverViewController.xib in Resources */,
-				ADC844B91790709800349B16 /* Icon@2x.png in Resources */,
 				AD54800F17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
 				AD8F5AE317823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
 				AD54805D17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */,
@@ -2091,18 +2131,20 @@
 				AD54802517A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
 				AD54805F17A1C7EE008FAFFB /* camera-grid.png in Resources */,
 				AD72C3F2177B7E28009AADC8 /* InfoPlist.strings in Resources */,
+				ADD6646B17CC65D80075C99E /* Icon-Small-50.png in Resources */,
 				AD04EBB817BAA649009AD982 /* PSSPasswordListSearchResultCell.xib in Resources */,
 				AD54804517A1C7EE008FAFFB /* confirm-button@2x.png in Resources */,
 				ADC844C5179074DA00349B16 /* commonPassDict.plist in Resources */,
+				ADD6646D17CC65D80075C99E /* Icon-Small-50@2x.png in Resources */,
+				ADD6647717CC65D80075C99E /* iTunesArtwork.png in Resources */,
 				AD54802717A1C7EE008FAFFB /* f-setting-3-active.png in Resources */,
 				AD54803117A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
 				AD54801517A1C7EE008FAFFB /* f-setting-tray@2x.png in Resources */,
 				ADC844C7179074DA00349B16 /* 15Dict_en.plist in Resources */,
 				AD54804117A1C7EE008FAFFB /* close-button@2x.png in Resources */,
-				ADC844B71790709800349B16 /* Icon76.png in Resources */,
 				AD54802317A1C7EE008FAFFB /* f-setting-2.png in Resources */,
+				ADD6646717CC65D80075C99E /* Icon-72.png in Resources */,
 				AD54801917A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
-				ADC844BB1790709800349B16 /* Logo152.png in Resources */,
 				ADAD15FD17AB43D60035ABB4 /* KeyImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2558,6 +2600,7 @@
 		AD72C3F8177B7E28009AADC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = Splash;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2586,6 +2629,7 @@
 		AD72C3F9177B7E28009AADC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = Splash;
 				CODE_SIGN_ENTITLEMENTS = "Password Sync 2/Password Sync 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
