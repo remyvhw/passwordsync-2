@@ -48,44 +48,7 @@
 }
 
 
--(NSString*)notes{
-    
-    NSData * encryptorData = [PSSEncryptor decryptData:self.currentVersion.notes];
-    
-    if (!encryptorData) {
-        return @"••••••••••";
-    }
-    
-    
-    return [NSString stringWithUTF8String:[encryptorData bytes]];
-    
-}
 
--(NSString*)password{
-    
-    NSData * encryptorData = [PSSEncryptor decryptData:self.currentVersion.password];
-    
-    if (!encryptorData) {
-        return @"••••••••••";
-    }
-    
-    
-    return [NSString stringWithUTF8String:[encryptorData bytes]];
-    
-}
-
--(NSString*)username{
-    
-    NSData * encryptorData = [PSSEncryptor decryptData:self.currentVersion.username];
-    
-    if (!encryptorData) {
-        return @"••••••••••";
-    }
-    
-    
-    return [NSString stringWithUTF8String:[encryptorData bytes]];
-    
-}
 
 
 -(PSSPasswordDomain*)insertNewDomainInManagedObjectWithURLString:(NSString*)urlString{

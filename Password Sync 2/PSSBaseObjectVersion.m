@@ -25,7 +25,7 @@
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString{
     PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     if (!appDelegate.isUnlocked) {
-        return @"••••••••••";
+        return NSLocalizedString(@"Locked", nil);
     }
     
     NSData * decryptedData = [PSSEncryptor decryptData:encryptedString];

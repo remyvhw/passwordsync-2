@@ -196,6 +196,8 @@
             
             if (self.isPasscodeUnlocked) {
                 cell.textLabel.text = decryptedNotes;
+                cell.textLabel.textColor = [UIColor blackColor];
+                cell.accessoryView = nil;
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Locked", nil);
                 cell.textLabel.textColor = [UIColor lightGrayColor];
