@@ -47,7 +47,6 @@
 }
 
 -(void)prepareForCollectionViewUpdates:(NSArray *)updateItems{
-    NSLog(@"%@", [updateItems description]);
 }
 
 
