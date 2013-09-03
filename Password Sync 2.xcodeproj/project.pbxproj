@@ -99,8 +99,6 @@
 		AD312671179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */; };
 		AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
 		AD312675179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */; };
-		AD31267717A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
-		AD31267817A03AE700483E2F /* Appart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD31267617A03AE700483E2F /* Appart.gpx */; };
 		AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */; };
 		AD31267E17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */; };
 		AD31267F17A07CBD00483E2F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31267C17A07CBD00483E2F /* SVProgressHUD.m */; };
@@ -562,7 +560,6 @@
 		AD31266F179F13CB00483E2F /* PSSLocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationDetailViewController.m; sourceTree = "<group>"; };
 		AD312672179F8E8A00483E2F /* PSSSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSwitchTableViewCell.h; sourceTree = "<group>"; };
 		AD312673179F8E8A00483E2F /* PSSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSwitchTableViewCell.m; sourceTree = "<group>"; };
-		AD31267617A03AE700483E2F /* Appart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Appart.gpx; sourceTree = "<group>"; };
 		AD31267A17A07CBD00483E2F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		AD31267B17A07CBD00483E2F /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		AD31267C17A07CBD00483E2F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -1388,7 +1385,6 @@
 		AD72C3B0177B7E27009AADC8 = {
 			isa = PBXGroup;
 			children = (
-				AD31267617A03AE700483E2F /* Appart.gpx */,
 				AD72C3C4177B7E27009AADC8 /* Password Sync 2 */,
 				ADC9DFB51788C988006F2858 /* Others */,
 				AD72C3DF177B7E27009AADC8 /* Images.xcassets */,
@@ -1959,7 +1955,6 @@
 				AD54806017A1C7EE008FAFFB /* crop-button-icon.png in Resources */,
 				AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD54804817A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
-				AD31267717A03AE700483E2F /* Appart.gpx in Resources */,
 				AD746918179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
 				AD54805C17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */,
 				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
@@ -2034,7 +2029,6 @@
 				AD54803717A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54803317A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD54804B17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
-				AD31267817A03AE700483E2F /* Appart.gpx in Resources */,
 				AD7B261817C2E00D00701F52 /* Localizable.strings in Resources */,
 				AD54803F17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54803917A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
