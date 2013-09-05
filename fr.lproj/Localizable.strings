@@ -318,3 +318,5 @@
 "Unable to Find Location" = "Impossible de trouver ce lieu";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "Veuillez vérifier le lieu entré .";
+
+"Two-factor Authentication" = "Validation en deux étapes";

@@ -20,6 +20,7 @@
 @property (nonatomic, retain) PSSBaseGenericObject *encryptedObject;
 @property (nonatomic, retain) PSSBaseGenericObject *currentOwningBaseObject;
 
+@property (nonatomic, strong) NSData * decryptedAdditionalJSONfields;
 
 @end
 

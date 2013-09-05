@@ -15,6 +15,8 @@
 
 @implementation PSSBaseObjectVersion
 
+@synthesize decryptedAdditionalJSONfields = _decryptedAdditionalJSONfields;
+
 @dynamic additionalJSONfields;
 @dynamic timestamp;
 @dynamic attachments;
@@ -23,8 +25,7 @@
 
 
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString{
-    PSSAppDelegate * appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
-    if (!appDelegate.isUnlocked) {
+    if (!APP_DELEGATE.isUnlocked) {
         return NSLocalizedString(@"Locked", nil);
     }
     
@@ -43,6 +44,31 @@
     return [PSSEncryptor encryptString:string];
 }
 
+
+
+
+-(NSData*)decryptedAdditionalJSONfields{
+    if (_decryptedAdditionalJSONfields) {
+        return _decryptedAdditionalJSONfields;
+    }
+    
+    if (!self.additionalJSONfields) {
+        return nil;
+    }
+    
+    
+    NSData * decryptedData = [PSSEncryptor decryptData:self.additionalJSONfields];
+    
+    _decryptedAdditionalJSONfields = decryptedData;
+    
+    return _decryptedAdditionalJSONfields;
+}
+
+-(void)setDecryptedAdditionalJSONfields:(NSData *)decryptedAdditionalJSONfields{
+    _decryptedAdditionalJSONfields = decryptedAdditionalJSONfields;
+    
+    self.additionalJSONfields = [PSSEncryptor encryptData:decryptedAdditionalJSONfields];
+}
 
 
 @end

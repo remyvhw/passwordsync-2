@@ -432,6 +432,22 @@
 		ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
+		ADDCAD9C17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCAD9A17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m */; };
+		ADDCAD9D17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCAD9A17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m */; };
+		ADDCAD9E17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDCAD9B17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib */; };
+		ADDCAD9F17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDCAD9B17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib */; };
+		ADDCADA517D6804900F3B8F7 /* OTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADA217D6804900F3B8F7 /* OTPGenerator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ADDCADA617D6804900F3B8F7 /* OTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADA217D6804900F3B8F7 /* OTPGenerator.m */; };
+		ADDCADA717D6804900F3B8F7 /* TOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADA417D6804900F3B8F7 /* TOTPGenerator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ADDCADA817D6804900F3B8F7 /* TOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADA417D6804900F3B8F7 /* TOTPGenerator.m */; };
+		ADDCADAC17D6826700F3B8F7 /* HOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADAB17D6826700F3B8F7 /* HOTPGenerator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ADDCADAD17D6826700F3B8F7 /* HOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADAB17D6826700F3B8F7 /* HOTPGenerator.m */; };
+		ADDCADB717D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADB617D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m */; };
+		ADDCADB817D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADB617D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m */; };
+		ADDCADE117D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADE017D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m */; };
+		ADDCADE217D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADE017D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m */; };
+		ADDCADE517D7F16000F3B8F7 /* DDURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADE417D7F16000F3B8F7 /* DDURLParser.m */; };
+		ADDCADE617D7F16000F3B8F7 /* DDURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDCADE417D7F16000F3B8F7 /* DDURLParser.m */; };
 		ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
 		ADDD964E1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
 		ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD9651179253FD00AB2CC5 /* PSSCardEditorViewController.m */; };
@@ -850,6 +866,21 @@
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
+		ADDCAD9917D67F0500F3B8F7 /* PSSTwoStepCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTwoStepCodeViewController.h; sourceTree = "<group>"; };
+		ADDCAD9A17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTwoStepCodeViewController.m; sourceTree = "<group>"; };
+		ADDCAD9B17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSTwoStepCodeViewController.xib; sourceTree = "<group>"; };
+		ADDCADA117D6804900F3B8F7 /* OTPGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPGenerator.h; path = "Password Sync 2/OTPGenerator.h"; sourceTree = "<group>"; };
+		ADDCADA217D6804900F3B8F7 /* OTPGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPGenerator.m; path = "Password Sync 2/OTPGenerator.m"; sourceTree = "<group>"; };
+		ADDCADA317D6804900F3B8F7 /* TOTPGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOTPGenerator.h; path = "Password Sync 2/TOTPGenerator.h"; sourceTree = "<group>"; };
+		ADDCADA417D6804900F3B8F7 /* TOTPGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOTPGenerator.m; path = "Password Sync 2/TOTPGenerator.m"; sourceTree = "<group>"; };
+		ADDCADAA17D6826700F3B8F7 /* HOTPGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOTPGenerator.h; sourceTree = "<group>"; };
+		ADDCADAB17D6826700F3B8F7 /* HOTPGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOTPGenerator.m; sourceTree = "<group>"; };
+		ADDCADB517D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTwoStepEditorTableViewController.h; sourceTree = "<group>"; };
+		ADDCADB617D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTwoStepEditorTableViewController.m; sourceTree = "<group>"; };
+		ADDCADDF17D7E25700F3B8F7 /* PSSBarcodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSBarcodeScannerViewController.h; sourceTree = "<group>"; };
+		ADDCADE017D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSBarcodeScannerViewController.m; sourceTree = "<group>"; };
+		ADDCADE317D7F16000F3B8F7 /* DDURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDURLParser.h; sourceTree = "<group>"; };
+		ADDCADE417D7F16000F3B8F7 /* DDURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDURLParser.m; sourceTree = "<group>"; };
 		ADDD964B1792539400AB2CC5 /* PSSCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsTableViewController.h; sourceTree = "<group>"; };
 		ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsTableViewController.m; sourceTree = "<group>"; };
 		ADDD9650179253FD00AB2CC5 /* PSSCardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEditorViewController.h; sourceTree = "<group>"; };
@@ -1406,6 +1437,8 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADDCADE717D7F16500F3B8F7 /* DDURLParser */,
+				ADDCADA917D6806500F3B8F7 /* google-authenticator */,
 				AD4553C517C832E100A5C395 /* MJPopupController */,
 				AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */,
 				AD53ADD917C53D41000B9722 /* Testflight */,
@@ -1464,7 +1497,7 @@
 				AD547FAA17A1AC24008FAFFB /* Documents */,
 				AD36371117989D95005F1542 /* Location */,
 				ADDD964F1792539A00AB2CC5 /* Cards */,
-				ADDD964A1792535900AB2CC5 /* Passwords */,
+				ADDD964A1792535900AB2CC5 /* Websites */,
 				AD821084177F407200B6F501 /* Splash welcome screen storyboard */,
 				ADDC8BB2177CEA9E00021D92 /* Core Data Stack */,
 				ADC9DFA91788C500006F2858 /* Master password and passcode controllers */,
@@ -1758,7 +1791,43 @@
 			name = "Core Data Stack";
 			sourceTree = "<group>";
 		};
-		ADDD964A1792535900AB2CC5 /* Passwords */ = {
+		ADDCADA017D6803E00F3B8F7 /* Two step */ = {
+			isa = PBXGroup;
+			children = (
+				ADDCAD9917D67F0500F3B8F7 /* PSSTwoStepCodeViewController.h */,
+				ADDCAD9A17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m */,
+				ADDCAD9B17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib */,
+				ADDCADB517D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.h */,
+				ADDCADB617D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m */,
+				ADDCADDF17D7E25700F3B8F7 /* PSSBarcodeScannerViewController.h */,
+				ADDCADE017D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m */,
+			);
+			name = "Two step";
+			sourceTree = "<group>";
+		};
+		ADDCADA917D6806500F3B8F7 /* google-authenticator */ = {
+			isa = PBXGroup;
+			children = (
+				ADDCADA117D6804900F3B8F7 /* OTPGenerator.h */,
+				ADDCADA217D6804900F3B8F7 /* OTPGenerator.m */,
+				ADDCADAA17D6826700F3B8F7 /* HOTPGenerator.h */,
+				ADDCADAB17D6826700F3B8F7 /* HOTPGenerator.m */,
+				ADDCADA317D6804900F3B8F7 /* TOTPGenerator.h */,
+				ADDCADA417D6804900F3B8F7 /* TOTPGenerator.m */,
+			);
+			name = "google-authenticator";
+			sourceTree = "<group>";
+		};
+		ADDCADE717D7F16500F3B8F7 /* DDURLParser */ = {
+			isa = PBXGroup;
+			children = (
+				ADDCADE317D7F16000F3B8F7 /* DDURLParser.h */,
+				ADDCADE417D7F16000F3B8F7 /* DDURLParser.m */,
+			);
+			name = DDURLParser;
+			sourceTree = "<group>";
+		};
+		ADDD964A1792535900AB2CC5 /* Websites */ = {
 			isa = PBXGroup;
 			children = (
 				ADC844CB179074F100349B16 /* New Password / Password Editor */,
@@ -1771,8 +1840,9 @@
 				ADAD160817ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.h */,
 				ADAD160917ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m */,
 				AD04EBB617BAA649009AD982 /* PSSPasswordListSearchResultCell.xib */,
+				ADDCADA017D6803E00F3B8F7 /* Two step */,
 			);
-			name = Passwords;
+			name = Websites;
 			sourceTree = "<group>";
 		};
 		ADDD964F1792539A00AB2CC5 /* Cards */ = {
@@ -1947,6 +2017,7 @@
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
+				ADDCAD9E17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib in Resources */,
 				AD09C9ED17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803017A1C7EE008FAFFB /* f-setting-4-active@2x.png in Resources */,
 				AD873B63178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
@@ -2050,6 +2121,7 @@
 				AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD312646179F08A600483E2F /* LICENCE in Resources */,
 				AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
+				ADDCAD9F17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.xib in Resources */,
 				AD9935941794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
 				AD54805B17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */,
 				AD54802F17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
@@ -2141,6 +2213,7 @@
 				AD10E78F17BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
+				ADDCADB717D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD10E79117BDB6F400CF3402 /* RSSelectionView.m in Sources */,
@@ -2149,6 +2222,7 @@
 				ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
 				AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */,
+				ADDCADAC17D6826700F3B8F7 /* HOTPGenerator.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD10E73917BD7B4600CF3402 /* PSSObjectTag.m in Sources */,
 				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
@@ -2169,6 +2243,7 @@
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD10E78917BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD547FCF17A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
+				ADDCADE517D7F16000F3B8F7 /* DDURLParser.m in Sources */,
 				AD10E77717BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
 				AD10E73D17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */,
 				AD4553B817C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
@@ -2178,6 +2253,8 @@
 				AD31266B179F08A600483E2F /* TSMessageView.m in Sources */,
 				ADAD160617ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m in Sources */,
 				AD10E78117BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */,
+				ADDCADA517D6804900F3B8F7 /* OTPGenerator.m in Sources */,
+				ADDCADA717D6804900F3B8F7 /* TOTPGenerator.m in Sources */,
 				AD72C3DB177B7E27009AADC8 /* PSSPasswordListViewController.m in Sources */,
 				AD10E78317BDB6F400CF3402 /* BitmapRotationManipulator.m in Sources */,
 				AD821026177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
@@ -2195,6 +2272,7 @@
 				AD873B6B178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
 				AD363718179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				AD5175F91784906200B30295 /* SPLockScreen.m in Sources */,
+				ADDCAD9C17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m in Sources */,
 				AD10E77D17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */,
 				AD1BECE117A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
 				AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
@@ -2221,6 +2299,7 @@
 				ADC9DEAD1786242D006F2858 /* PSSPINpasscodeButtonView.m in Sources */,
 				AD8F5AEF1782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD83AE5C17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
+				ADDCADE117D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m in Sources */,
 				ADE7F04E17C14F1300589535 /* RFQuiltLayout.m in Sources */,
 				AD8C836117B1CB7B00A3AE79 /* PSSVersionFlowPasswordCollectionViewController.m in Sources */,
 				ADC9DEB117862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
@@ -2297,6 +2376,7 @@
 				AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
 				AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD4553B917C831BF00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
+				ADDCADA617D6804900F3B8F7 /* OTPGenerator.m in Sources */,
 				AD4553C217C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */,
 				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
 				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,
@@ -2322,6 +2402,7 @@
 				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
+				ADDCADB817D68E0500F3B8F7 /* PSSTwoStepEditorTableViewController.m in Sources */,
 				AD10E79017BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,
 				AD10E72617BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */,
 				AD10E77817BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
@@ -2331,7 +2412,9 @@
 				AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,
+				ADDCADAD17D6826700F3B8F7 /* HOTPGenerator.m in Sources */,
 				AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */,
+				ADDCADE217D7E25700F3B8F7 /* PSSBarcodeScannerViewController.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */,
 				AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
@@ -2342,6 +2425,7 @@
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
 				AD10E78817BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */,
 				AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */,
+				ADDCAD9D17D67F0500F3B8F7 /* PSSTwoStepCodeViewController.m in Sources */,
 				ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD5175FE1784906200B30295 /* SPLine.m in Sources */,
 				AD8C836617B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m in Sources */,
@@ -2349,6 +2433,7 @@
 				AD10E78C17BDB6F400CF3402 /* RSColorFunctions.m in Sources */,
 				AD82102B177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD821043177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
+				ADDCADA817D6804900F3B8F7 /* TOTPGenerator.m in Sources */,
 				AD547FB217A1ACCA008FAFFB /* PSSDocumentEditorTableViewController.m in Sources */,
 				AD10E77C17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
 				AD83AE5D17AEA2CB0086F855 /* PSSDocumentsSplitViewDetailViewController.m in Sources */,
@@ -2358,6 +2443,7 @@
 				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD10E77017BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */,
 				AD727A4C179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
+				ADDCADE617D7F16000F3B8F7 /* DDURLParser.m in Sources */,
 				ADA0E5481792498C00F284B9 /* HTMLParser.m in Sources */,
 				AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,

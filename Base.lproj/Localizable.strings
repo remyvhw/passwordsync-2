@@ -325,3 +325,5 @@
 "Unable to Find Location" = "Can't Find Location";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "Unable to find location. Please double check the provided address or add specific details (city's name, for example).";
+
+"Two-factor Authentication" = "Two-factor Authentication";
