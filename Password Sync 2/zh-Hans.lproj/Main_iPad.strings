@@ -1,0 +1,144 @@
+
+/* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "0P8-gG-s9D"; */
+"0P8-gG-s9D.title" = "Settings";
+
+/* Class = "IBUIBarButtonItem"; title = "Locations"; ObjectID = "1ae-wh-fUl"; */
+"1ae-wh-fUl.title" = "Locations";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "4pU-Oi-Hlz"; */
+"4pU-Oi-Hlz.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "7dL-Mg-47K"; */
+"7dL-Mg-47K.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "AQf-hh-UVz"; */
+"AQf-hh-UVz.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "CPi-lg-9fs"; */
+"CPi-lg-9fs.text" = "Subtitle";
+
+/* Class = "IBUITabBarItem"; title = "Documents"; ObjectID = "Crj-j3-B4j"; */
+"Crj-j3-B4j.title" = "Documents";
+
+/* Class = "IBUILabel"; text = "1234 5678 9101 1121"; ObjectID = "Fbo-0E-hzm"; */
+"Fbo-0E-hzm.text" = "1234 5678 9101 1121";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "GUI-uS-44q"; */
+"GUI-uS-44q.text" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Websites"; ObjectID = "Hti-Cx-5eh"; */
+"Hti-Cx-5eh.title" = "Websites";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Itw-xW-eva"; */
+"Itw-xW-eva.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "KXu-Yf-vwq"; */
+"KXu-Yf-vwq.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "Le7-iB-phV"; */
+"Le7-iB-phV.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "Nhc-a6-Z0f"; */
+"Nhc-a6-Z0f.text" = "Subtitle";
+
+/* Class = "IBUITabBarItem"; title = "Locations"; ObjectID = "Ni5-VP-C3f"; */
+"Ni5-VP-C3f.title" = "Locations";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "PHj-vq-WHY"; */
+"PHj-vq-WHY.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "Qjp-GW-ewF"; */
+"Qjp-GW-ewF.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Qos-lf-t3S"; */
+"Qos-lf-t3S.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "SBZ-Dd-spu"; */
+"SBZ-Dd-spu.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "TUy-DP-NcF"; */
+"TUy-DP-NcF.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Uaa-LP-u8g"; */
+"Uaa-LP-u8g.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "VAb-Aj-0X4"; */
+"VAb-Aj-0X4.text" = "Title";
+
+/* Class = "IBUIBarButtonItem"; title = "Cards"; ObjectID = "WNf-ra-Ajs"; */
+"WNf-ra-Ajs.title" = "Cards";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "XWh-m2-cox"; */
+"XWh-m2-cox.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "XfI-kx-cSj"; */
+"XfI-kx-cSj.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "ZpP-MI-Ofa"; */
+"ZpP-MI-Ofa.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "aEv-Ex-CPE"; */
+"aEv-Ex-CPE.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "aMZ-qj-AH5"; */
+"aMZ-qj-AH5.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."; ObjectID = "bNl-9o-MKc"; */
+"bNl-9o-MKc.text" = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "bct-fL-XQP"; */
+"bct-fL-XQP.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Legal"; ObjectID = "bdE-f1-0rN"; */
+"bdE-f1-0rN.text" = "Legal";
+
+/* Class = "IBUITabBarItem"; title = "Cards"; ObjectID = "cpd-cj-uCe"; */
+"cpd-cj-uCe.title" = "Cards";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "fK1-Fj-CRK"; */
+"fK1-Fj-CRK.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "faj-R4-aj8"; */
+"faj-R4-aj8.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "iht-HL-FFE"; */
+"iht-HL-FFE.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "lDf-lw-Pnn"; */
+"lDf-lw-Pnn.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "lP7-4z-E5D"; */
+"lP7-4z-E5D.text" = "Title";
+
+/* Class = "IBUISegmentedControl"; lq7-wi-cYd.segmentTitles[0] = "Tags"; ObjectID = "lq7-wi-cYd"; */
+"lq7-wi-cYd.segmentTitles[0]" = "Tags";
+
+/* Class = "IBUISegmentedControl"; lq7-wi-cYd.segmentTitles[1] = "Folders"; ObjectID = "lq7-wi-cYd"; */
+"lq7-wi-cYd.segmentTitles[1]" = "Folders";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "oZc-sU-LFS"; */
+"oZc-sU-LFS.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "oxB-Ed-sMB"; */
+"oxB-Ed-sMB.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "pMV-3v-hzY"; */
+"pMV-3v-hzY.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Banque Nationale"; ObjectID = "qTW-Bo-zwi"; */
+"qTW-Bo-zwi.text" = "Banque Nationale";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "r3p-wp-7tg"; */
+"r3p-wp-7tg.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUITabBarItem"; title = "Organizer"; ObjectID = "rIK-z3-q0X"; */
+"rIK-z3-q0X.title" = "Organizer";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "rUO-oi-eeA"; */
+"rUO-oi-eeA.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "xTU-Tw-w1d"; */
+"xTU-Tw-w1d.text" = "Label";
+
+/* Class = "IBUIBarButtonItem"; title = "Websites"; ObjectID = "zU8-Pq-S5z"; */
+"zU8-Pq-S5z.title" = "Websites";

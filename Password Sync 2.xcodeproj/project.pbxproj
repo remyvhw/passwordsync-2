@@ -850,6 +850,12 @@
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
+		ADDCADE817D8F6AB00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		ADDCADE917D8F6AB00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
+		ADDCADEA17D8F6AB00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPhone.strings"; sourceTree = "<group>"; };
+		ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		ADDD964B1792539400AB2CC5 /* PSSCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsTableViewController.h; sourceTree = "<group>"; };
 		ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsTableViewController.m; sourceTree = "<group>"; };
 		ADDD9650179253FD00AB2CC5 /* PSSCardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEditorViewController.h; sourceTree = "<group>"; };
@@ -1912,6 +1918,7 @@
 				en,
 				Base,
 				fr,
+				"zh-Hans",
 			);
 			mainGroup = AD72C3B0177B7E27009AADC8;
 			productRefGroup = AD72C3BA177B7E27009AADC8 /* Products */;
@@ -2399,6 +2406,7 @@
 			children = (
 				AD72C3C8177B7E27009AADC8 /* en */,
 				AD7B261217C2C8F300701F52 /* fr */,
+				ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			path = "Password Sync 2";
@@ -2409,6 +2417,7 @@
 			children = (
 				AD72C3D1177B7E27009AADC8 /* Base */,
 				AD7B261D17C2E75500701F52 /* fr */,
+				ADDCADE817D8F6AB00F3B8F7 /* zh-Hans */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2418,6 +2427,7 @@
 			children = (
 				AD72C3D4177B7E27009AADC8 /* Base */,
 				AD7B261F17C2F55600701F52 /* fr */,
+				ADDCADE917D8F6AB00F3B8F7 /* zh-Hans */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -2427,6 +2437,7 @@
 			children = (
 				AD72C3F1177B7E28009AADC8 /* en */,
 				AD7B261317C2C8F300701F52 /* fr */,
+				ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2436,6 +2447,7 @@
 			children = (
 				AD7B261917C2E00D00701F52 /* Base */,
 				AD7B261B17C2E01900701F52 /* fr */,
+				ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2445,6 +2457,7 @@
 			children = (
 				AD7B262217C2F7DD00701F52 /* Base */,
 				AD7B262517C2F7E500701F52 /* fr */,
+				ADDCADEA17D8F6AB00F3B8F7 /* zh-Hans */,
 			);
 			name = FirstLaunchStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
