@@ -373,8 +373,6 @@
 		AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
 		AD940E5E17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD940E5F17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */; };
-		AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */; };
-		AD9935941794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */; };
 		AD9935971794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */; };
 		AD9935981794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */; };
 		ADA0E52F17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */; };
@@ -432,6 +430,8 @@
 		ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
+		ADDCADEE17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */; };
+		ADDCADEF17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */; };
 		ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
 		ADDD964E1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */; };
 		ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD9651179253FD00AB2CC5 /* PSSCardEditorViewController.m */; };
@@ -795,7 +795,6 @@
 		AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordSyncOneDataImporter.m; sourceTree = "<group>"; };
 		AD940E5A17A8651C001442F0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnlockPrompt.storyboard; sourceTree = "<group>"; };
 		AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSUnlockPromptViewController.h; sourceTree = "<group>"; };
 		AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSUnlockPromptViewController.m; sourceTree = "<group>"; };
 		ADA0E52D17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordPasswordTextFieldCell.h; sourceTree = "<group>"; };
@@ -856,6 +855,9 @@
 		ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		ADDCADF017D90F3B00F3B8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/UnlockPrompt.storyboard; sourceTree = "<group>"; };
+		ADDCADF317D90F4100F3B8F7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/UnlockPrompt.strings; sourceTree = "<group>"; };
+		ADDCADF517D90F4800F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnlockPrompt.strings"; sourceTree = "<group>"; };
 		ADDD964B1792539400AB2CC5 /* PSSCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsTableViewController.h; sourceTree = "<group>"; };
 		ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsTableViewController.m; sourceTree = "<group>"; };
 		ADDD9650179253FD00AB2CC5 /* PSSCardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEditorViewController.h; sourceTree = "<group>"; };
@@ -1801,7 +1803,7 @@
 		ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */ = {
 			isa = PBXGroup;
 			children = (
-				AD9935921794A480009BC9C8 /* UnlockPrompt.storyboard */,
+				ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */,
 				AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */,
 				AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */,
 				ADA24BEE1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.h */,
@@ -2004,7 +2006,7 @@
 				AD7F800417B082E600A590FA /* OCRA.ttf in Resources */,
 				AD54804017A1C7EE008FAFFB /* close-button@2x.png in Resources */,
 				AD54802017A1C7EE008FAFFB /* f-setting-2-active@2x.png in Resources */,
-				AD9935931794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
+				ADDCADEE17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2057,7 +2059,7 @@
 				AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD312646179F08A600483E2F /* LICENCE in Resources */,
 				AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
-				AD9935941794A480009BC9C8 /* UnlockPrompt.storyboard in Resources */,
+				ADDCADEF17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */,
 				AD54805B17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */,
 				AD54802F17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
 				AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
@@ -2460,6 +2462,16 @@
 				ADDCADEA17D8F6AB00F3B8F7 /* zh-Hans */,
 			);
 			name = FirstLaunchStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADDCADF017D90F3B00F3B8F7 /* Base */,
+				ADDCADF317D90F4100F3B8F7 /* fr */,
+				ADDCADF517D90F4800F3B8F7 /* zh-Hans */,
+			);
+			name = UnlockPrompt.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

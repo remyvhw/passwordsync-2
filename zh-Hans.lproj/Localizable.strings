@@ -166,7 +166,7 @@
 "Master" = "Master";
 
 /* No comment provided by engineer. */
-"MM/YYYY" = "MM/YYYY";
+"MM/YYYY" = "MM/YYYY (月/年)";
 
 /* No comment provided by engineer. */
 "Monitor up to 20 locations" = "监控多达 10 个位置";

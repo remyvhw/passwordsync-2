@@ -114,7 +114,7 @@
 "YEt-o2-JAt.normalTitle" = "Print";
 
 /* Class = "IBUILabel"; text = "Draw your custom gesture pattern"; ObjectID = "YJA-B0-tFF"; */
-"YJA-B0-tFF.text" = "Draw your custom gesture pattern";
+"YJA-B0-tFF.text" = "绘制您的自定义手势图案";
 
 /* Class = "IBUIBarButtonItem"; title = "Print"; ObjectID = "a5a-eY-CBQ"; */
 "a5a-eY-CBQ.title" = "刊";
