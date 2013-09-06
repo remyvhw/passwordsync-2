@@ -1,12 +1,16 @@
-/* 
-  Localizable.strings
-  Password Sync 2
-
-  Created by Remy Vanherweghem on 2013-08-19.
-  Copyright (c) 2013 Pumax. All rights reserved.
-*/
+/*
+ Localizable.strings
+ Password Sync 2
+ 
+ Created by Remy Vanherweghem on 2013-08-19.
+ Copyright (c) 2013 Pumax. All rights reserved.
+ */
 /* First master password explanation screen for first launch. */
-"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password.";
+"Clear" = "Clear";
+
+"Data" = "Data";
+
+"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "A master password is the key that will protect your Password Sync database and is the same on all other devices on which Password Sync is installed.\nChoose your password carefully! Once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, you will be unable to retrieve any of your stored passwords or documents.  There is no password retrieval link, nor is there any way to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your master password.";
 
 /* No comment provided by engineer. */
 "Address" = "Address";
@@ -24,13 +28,13 @@
 "An error occured" = "An error occured";
 
 /* First master password explanation screen for existing users. */
-"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password.";
+"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. This includes your other iOS devices and/or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password.";
 
 /* No comment provided by engineer. */
 "Attachments" = "Attachments";
 
 /* No comment provided by engineer. */
-"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.";
+"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "Before you use Password Sync to easily and safely sync your passwords, credit cards and documents across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.";
 
 /* No comment provided by engineer. */
 "Call" = "Call";
@@ -60,7 +64,7 @@
 "CCV/CVC2" = "CCV/CVC2";
 
 /* No comment provided by engineer. */
-"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!";
+"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "Choose your master password carefully! It must be very secure. We expect you to use a password longer than 12 characters. Simple advice: try putting random words together, add a couple of numbers and Voilà! “Correct Horse Battery Staple 297” is easier to remember than 28HUDhdhsuhfaisgo yet just as secure.";
 
 /* No comment provided by engineer. */
 "Color" = "Color";
@@ -198,10 +202,10 @@
 "OK" = "OK";
 
 /* No comment provided by engineer. */
-"Oops! Your gesture is different this time. Try again from scratch!" = "Oops! Your gesture is different this time. Try again from scratch!";
+"Oops! Your gesture is different this time. Try again from scratch!" = "Oops! Your gesture is different this time. Try again from the beginning!";
 
 /* No comment provided by engineer. */
-"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!";
+"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "Oops! Your gesture is invalid (overlapping or squiggly lines, too simple of a gesture, etc). Try again!";
 
 /* No comment provided by engineer. */
 "Open" = "Open";
@@ -303,13 +307,13 @@
 "Welcome to Password Sync" = "Welcome to Password Sync";
 
 /* No comment provided by engineer. */
-"When on, will ask for a passcode every time the app launches." = "When on, will ask for a passcode every time the app launches.";
+"When on, will ask for a passcode every time the app launches." = "Will ask for a passcode every time the app launches if turned on.";
 
 /* No comment provided by engineer. */
-"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "When on, will ask for a passcode for every unlocked website's password, card, location and document.";
+"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "Will ask for a passcode for every unlocked website's password, card, location and document if turned on.";
 
 /* No comment provided by engineer. */
-"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database.";
+"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync database.";
 
 "Password Generator" = "Password Generator";
 
