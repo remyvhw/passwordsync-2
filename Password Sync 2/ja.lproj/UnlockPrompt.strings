@@ -1,0 +1,12 @@
+
+/* Class = "IBUILabel"; text = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database."; ObjectID = "4uM-cu-8gW"; */
+"4uM-cu-8gW.text" = "Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database.";
+
+/* Class = "IBUITextField"; placeholder = "Master Password"; ObjectID = "XXM-WG-jFH"; */
+"XXM-WG-jFH.placeholder" = "マスターパスワード";
+
+/* Class = "IBUILabel"; text = "Enter your master password."; ObjectID = "eXF-xO-M5T"; */
+"eXF-xO-M5T.text" = "マスターパスワードを入力してください";
+
+/* Class = "IBUILabel"; text = "5"; ObjectID = "lRc-Af-9xI"; */
+"lRc-Af-9xI.text" = "5";

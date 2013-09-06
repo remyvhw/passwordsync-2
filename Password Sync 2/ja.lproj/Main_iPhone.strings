@@ -12,7 +12,7 @@
 "Ahd-Kb-wpQ.text" = "Title";
 
 /* Class = "IBUITabBarItem"; title = "Documents"; ObjectID = "Ew0-b1-0af"; */
-"Ew0-b1-0af.title" = "文档";
+"Ew0-b1-0af.title" = "文書";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "Frd-F5-vH2"; */
 "Frd-F5-vH2.text" = "Title";
@@ -48,10 +48,10 @@
 "Ns3-9a-LED.text" = "Subtitle";
 
 /* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[0] = "Tags"; ObjectID = "ON5-Om-JAI"; */
-"ON5-Om-JAI.segmentTitles[0]" = "标签";
+"ON5-Om-JAI.segmentTitles[0]" = "Tags";
 
 /* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[1] = "Folders"; ObjectID = "ON5-Om-JAI"; */
-"ON5-Om-JAI.segmentTitles[1]" = "文件夹";
+"ON5-Om-JAI.segmentTitles[1]" = "Folders";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "RY7-8u-2lO"; */
 "RY7-8u-2lO.text" = "Title";
@@ -87,7 +87,7 @@
 "iK1-XN-zMc.text" = "Title";
 
 /* Class = "IBUITabBarItem"; title = "Organizer"; ObjectID = "iVW-xh-Xqc"; */
-"iVW-xh-Xqc.title" = "文件柜";
+"iVW-xh-Xqc.title" = "Organizer";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "jQn-FG-Rx5"; */
 "jQn-FG-Rx5.text" = "Title";
@@ -96,13 +96,13 @@
 "jdg-If-6wT.text" = "Title";
 
 /* Class = "IBUITabBarItem"; title = "Websites"; ObjectID = "jnZ-aR-2hu"; */
-"jnZ-aR-2hu.title" = "网站";
+"jnZ-aR-2hu.title" = "ウェブサイト";
 
 /* Class = "IBUILabel"; text = "Legal"; ObjectID = "jne-e0-tTp"; */
-"jne-e0-tTp.text" = "法律";
+"jne-e0-tTp.text" = "Legal";
 
 /* Class = "IBUIBarButtonItem"; title = "Cards"; ObjectID = "kIa-LU-qqz"; */
-"kIa-LU-qqz.title" = "信用卡";
+"kIa-LU-qqz.title" = "クレジットカード";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "oyS-0N-vJk"; */
 "oyS-0N-vJk.text" = "Title";
@@ -114,10 +114,10 @@
 "riN-R9-TmX.text" = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
 
 /* Class = "IBUIBarButtonItem"; title = "Websites"; ObjectID = "tNZ-hZ-o1O"; */
-"tNZ-hZ-o1O.title" = "网站";
+"tNZ-hZ-o1O.title" = "ウェブサイト";
 
 /* Class = "IBUITabBarItem"; title = "Cards"; ObjectID = "tmS-v9-6bH"; */
-"tmS-v9-6bH.title" = "信用卡";
+"tmS-v9-6bH.title" = "クレジットカード";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "u6K-bS-cSO"; */
 "u6K-bS-cSO.text" = "Title";

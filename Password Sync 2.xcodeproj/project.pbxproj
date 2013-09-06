@@ -858,6 +858,13 @@
 		ADDCADF017D90F3B00F3B8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/UnlockPrompt.storyboard; sourceTree = "<group>"; };
 		ADDCADF317D90F4100F3B8F7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/UnlockPrompt.strings; sourceTree = "<group>"; };
 		ADDCADF517D90F4800F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnlockPrompt.strings"; sourceTree = "<group>"; };
+		ADDCADF617D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UnlockPrompt.strings; sourceTree = "<group>"; };
+		ADDCADF717D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		ADDCADF817D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		ADDCADF917D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPhone.strings; sourceTree = "<group>"; };
+		ADDCADFA17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADDCADFB17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ADDCADFC17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADDD964B1792539400AB2CC5 /* PSSCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsTableViewController.h; sourceTree = "<group>"; };
 		ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsTableViewController.m; sourceTree = "<group>"; };
 		ADDD9650179253FD00AB2CC5 /* PSSCardEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEditorViewController.h; sourceTree = "<group>"; };
@@ -1921,6 +1928,7 @@
 				Base,
 				fr,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = AD72C3B0177B7E27009AADC8;
 			productRefGroup = AD72C3BA177B7E27009AADC8 /* Products */;
@@ -2409,6 +2417,7 @@
 				AD72C3C8177B7E27009AADC8 /* en */,
 				AD7B261217C2C8F300701F52 /* fr */,
 				ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */,
+				ADDCADFA17D9441700F3B8F7 /* ja */,
 			);
 			name = InfoPlist.strings;
 			path = "Password Sync 2";
@@ -2420,6 +2429,7 @@
 				AD72C3D1177B7E27009AADC8 /* Base */,
 				AD7B261D17C2E75500701F52 /* fr */,
 				ADDCADE817D8F6AB00F3B8F7 /* zh-Hans */,
+				ADDCADF717D9441600F3B8F7 /* ja */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2430,6 +2440,7 @@
 				AD72C3D4177B7E27009AADC8 /* Base */,
 				AD7B261F17C2F55600701F52 /* fr */,
 				ADDCADE917D8F6AB00F3B8F7 /* zh-Hans */,
+				ADDCADF817D9441600F3B8F7 /* ja */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -2440,6 +2451,7 @@
 				AD72C3F1177B7E28009AADC8 /* en */,
 				AD7B261317C2C8F300701F52 /* fr */,
 				ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */,
+				ADDCADFC17D9441700F3B8F7 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2450,6 +2462,7 @@
 				AD7B261917C2E00D00701F52 /* Base */,
 				AD7B261B17C2E01900701F52 /* fr */,
 				ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */,
+				ADDCADFB17D9441700F3B8F7 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2460,6 +2473,7 @@
 				AD7B262217C2F7DD00701F52 /* Base */,
 				AD7B262517C2F7E500701F52 /* fr */,
 				ADDCADEA17D8F6AB00F3B8F7 /* zh-Hans */,
+				ADDCADF917D9441600F3B8F7 /* ja */,
 			);
 			name = FirstLaunchStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2470,6 +2484,7 @@
 				ADDCADF017D90F3B00F3B8F7 /* Base */,
 				ADDCADF317D90F4100F3B8F7 /* fr */,
 				ADDCADF517D90F4800F3B8F7 /* zh-Hans */,
+				ADDCADF617D9441600F3B8F7 /* ja */,
 			);
 			name = UnlockPrompt.storyboard;
 			sourceTree = "<group>";

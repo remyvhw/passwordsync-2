@@ -1,0 +1,327 @@
+/* 
+  Localizable.strings
+  Password Sync 2
+
+  Created by Remy Vanherweghem on 2013-08-19.
+  Copyright (c) 2013 Pumax. All rights reserved.
+*/
+/* First master password explanation screen for first launch. */
+"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "マスターパスワードとはPassword Syncのデータベースを暗号化するキーで、Password Syncがインストールされているすべてのデバイスで使われます。マスターパスワードは慎重に決めてください。一度決定したら、このマスターパスワードがないとデータベースをアンロックすることは完全に不可能になります。マスターパスワードを紛失したり思い出せなくなったりした場合、アプリに保管しているパスワードはまったく読み出せなくなります。パスワードを取り出す方法も、マスターパスワードのリセットをお手伝いできる人もいません。また、あなたのデータのセキュリティーレベルはこのマスターパスワードの強度に比例するということにも十分ご留意ください。";
+
+/* No comment provided by engineer. */
+"Address" = "Address";
+
+/* No comment provided by engineer. */
+"Advanced" = "Advanced";
+
+/* No comment provided by engineer. */
+"American Express" = "American Express";
+
+/* No comment provided by engineer. */
+"An Error Occured" = "エラーが発生しました";
+
+/* No comment provided by engineer. */
+"An error occured" = "エラーが発生しました";
+
+/* First master password explanation screen for existing users. */
+"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "ご存じのように、マスターパスワードはあなたのPassword Syncデータベースを暗号化する最も重要なキーです。このデバイスのマスターパスワードとPasword Sync 2を使っているすべてのデバイス (iOSデバイスやMacなど) のマスターパスワードは同じでなければなりません。次の画面で、ほかのデバイスで入力したものとまったく同じマスターパスワードを入力してください。思い出せない場合は、最初にマスターパスワードを決めたときにあなたが入力したヒントを私どもからお知らせできます。";
+
+/* No comment provided by engineer. */
+"Attachments" = "添付ファイル";
+
+/* No comment provided by engineer. */
+"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "Password Syncを使ってデバイス間で安全にパスワードやクレジットカード情報、メモを簡単に安全に同期し始める前に、いくつか重要な設定をしていただかなければなりません。心配は要りません。ほんの数分で終わります。";
+
+/* No comment provided by engineer. */
+"Call" = "電話をかける";
+
+/* No comment provided by engineer. */
+"Cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Cannot Verify Master Password" = "マスターパスワードを承認できません";
+
+/* No comment provided by engineer. */
+"Capture Document" = "文書を取り込む";
+
+/* No comment provided by engineer. */
+"Card Issuer / Bank Name" = "カードの発行者／銀行名";
+
+/* No comment provided by engineer. */
+"Card Number" = "カード番号";
+
+/* No comment provided by engineer. */
+"Card Type" = "カードの種類";
+
+/* No comment provided by engineer. */
+"Cardholder" = "カード名義人";
+
+/* No comment provided by engineer. */
+"CCV/CVC2" = "CCV/CVC2";
+
+/* No comment provided by engineer. */
+"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "マスターパスワードは慎重に決めてください。マスターパスワードは絶対忘れないものかつデータベースをきちんと暗号化できるものでなければなりません。つまり十分に強度を保ちつつ覚えやすいものが必要です。簡単な秘訣は「長ければ長いほど良い」ということですが、決して覚えやすいものにはなりません (もちろんあなたがダスティン・ホフマンだったら別ですが)。ですから、複雑でも覚えやすいものにするために、たとえば単語をランダムに並べて数字をいくつかくっつけて完成！というのはいかがですか。";
+
+/* No comment provided by engineer. */
+"Color" = "色";
+
+/* No comment provided by engineer. */
+"Confirm" = "確認";
+
+/* No comment provided by engineer. */
+"Confirm your master password" = "マスターパスワードの確認";
+
+/* No comment provided by engineer. */
+"Contact Bank" = "銀行に連絡する";
+
+/* No comment provided by engineer. */
+"Copied" = "コピーしました";
+
+/* No comment provided by engineer. */
+"Copy Card Number" = "カード番号をコピーします";
+
+/* No comment provided by engineer. */
+"Copy Cardholder's Name" = "コピーカード所有者の名前";
+
+/* No comment provided by engineer. */
+"Copy Password" = "パスワードをコピーします。";
+
+/* No comment provided by engineer. */
+"Copy Username" = "ユーザーネームをコピーします。";
+
+/* No comment provided by engineer. */
+"CVV/CVC2" = "CVV/CVC2";
+
+/* No comment provided by engineer. */
+"Decrypting..." = "暗号化中……";
+
+/* No comment provided by engineer. */
+"Draw your custom gesture pattern" = "登録したいジェスチャを描いてください";
+
+/* No comment provided by engineer. */
+"Emergency Details" = "緊急時の詳細";
+
+/* No comment provided by engineer. */
+"Emergency Phone Number" = "緊急連絡先電話番号";
+
+/* No comment provided by engineer. */
+"Enter a 5 digits passcode." = "5桁のパスコードを入力してください";
+
+/* No comment provided by engineer. */
+"Enter your Master Password" = "マスターパスワードを入力してください";
+
+/* No comment provided by engineer. */
+"Enter your passcode." = "パスコードを入力してください";
+
+/* No comment provided by engineer. */
+"Excellent! Now repeat your gesture!" = "すばらしい！　もう一度ジェスチャを描いてください";
+
+/* No comment provided by engineer. */
+"Expiration" = "有効期限";
+
+/* No comment provided by engineer. */
+"Favorite" = "お気に入り";
+
+/* No comment provided by engineer. */
+"Five digit passcode." = "5桁のパスコード";
+
+/* No comment provided by engineer. */
+"Gesture based Passcode" = "ジェスチャによるパスコード";
+
+/* No comment provided by engineer. */
+"http://www.americanexpress.com/" = "http://www.americanexpress.com/";
+
+/* No comment provided by engineer. */
+"HumanPass" = "HumanPass";
+
+/* No comment provided by engineer. */
+"Invalid gesture. Try again." = "無効なジェスチャ";
+
+/* No comment provided by engineer. */
+"Invalid Passcode" = "無効なパスコード";
+
+/* No comment provided by engineer. */
+"is nearby." = "が近くにあります";
+
+/* No comment provided by engineer. */
+"Legal" = "Legal";
+
+/* No comment provided by engineer. */
+"Location" = "位置情報";
+
+/* No comment provided by engineer. */
+"Location Alert" = "位置情報アラート";
+
+/* No comment provided by engineer. */
+"Location monotoring" = "位置情報を使用中";
+
+/* No comment provided by engineer. */
+"Locked" = "ロック済み";
+
+/* No comment provided by engineer. */
+"Login essentials" = "Login essentials";
+
+/* No comment provided by engineer. */
+"Make sure you wrote your master password exactly the same way in the two fields." = "2つの枠に入力したマスターパスワードが完全に同じであることを確認してください。";
+
+/* Master */
+"Master" = "マスター";
+
+/* No comment provided by engineer. */
+"MM/YYYY" = "MM/YYYY（月/年）";
+
+/* No comment provided by engineer. */
+"Monitor up to 20 locations" = "10か所まで位置情報を利用";
+
+/* No comment provided by engineer. */
+"Name on card" = "カード上の名前";
+
+/* No comment provided by engineer. */
+"New Card" = "新しいカード";
+
+/* No comment provided by engineer. */
+"New Location" = "新しい場所";
+
+/* No comment provided by engineer. */
+"No Notes" = "メモはありません";
+
+/* No comment provided by engineer. */
+"Note" = "メモ";
+
+/* No comment provided by engineer. */
+"Notes" = "メモ";
+
+/* No comment provided by engineer. */
+"Number" = "電話番号";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is different this time. Try again from scratch!" = "おっと！　今回のジェスチャは違うようです。もう一回やり直してください！";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "おっと！　今回のジェスチャは無効です (丸の繰り返しだったり、線が重なっていたりくねくね曲がっていたり、あるいは単純すぎるジェスチャなどは無効)。もう一度描いてください！";
+
+/* No comment provided by engineer. */
+"Open" = "開く";
+
+/* No comment provided by engineer. */
+"Other" = "その他";
+
+/* No comment provided by engineer. */
+"Passcode" = "パスコード";
+
+/* No comment provided by engineer. */
+"Passcodes did not match, try again" = "パスコードが一致しませんでした。もう一度入力してください。";
+
+/* No comment provided by engineer. */
+"Password" = "パスコード";
+
+/* No comment provided by engineer. */
+"Password is Incorrect" = "パスワードが違います";
+
+/* No comment provided by engineer. */
+"Password is Incorrect." = "パスワードが違います";
+
+/* No comment provided by engineer. */
+"PIN" = "暗証番号";
+
+/* No comment provided by engineer. */
+"PIN based Passcode" = "暗証番号によるパスコード";
+
+/* No comment provided by engineer. */
+"Please choose a new passcode." = "新しいパスコードを入力してください。";
+
+/* No comment provided by engineer. */
+"Please re-enter your master password." = "あなたのマスターパスワードを再度入力してください。";
+
+/* No comment provided by engineer. */
+"Please Wait" = "しばらくお待ちください...";
+
+/* No comment provided by engineer. */
+"Please wait 5 seconds before trying again." = "5秒後にまた試してください";
+
+/* No comment provided by engineer. */
+"Prompt for every entry" = "毎回入力を要求する";
+
+/* No comment provided by engineer. */
+"Prompt on launch" = "起動時に要求する";
+
+/* No comment provided by engineer. */
+"Re-enter your passcode" = "パスコードをもう一度入力する";
+
+/* No comment provided by engineer. */
+"Reset Passcode" = "パスコードのリセット";
+
+/* No comment provided by engineer. */
+"Search the web" = "ウェブを検索する";
+
+/* No comment provided by engineer. */
+"Settings" = "アカウント";
+
+/* No comment provided by engineer. */
+"Simply draw a pattern." = "ジェスチャを描く";
+
+/* No comment provided by engineer. */
+"Tags" = "タグ";
+
+/* No comment provided by engineer. */
+"The Internet connection appears to be offline." = "インターネットが接続されていません。";
+
+/* No comment provided by engineer. */
+"The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password." = "あなたが入力してパスワードはインターネット上で使用されているうち最も多い500のうちの一つです。別のパスワードを選んでください。";
+
+/* No comment provided by engineer. */
+"Title" = "タイトル";
+
+/* No comment provided by engineer. */
+"Type" = "種類";
+
+/* No comment provided by engineer. */
+"Unknown Bank" = "不明の銀行";
+
+/* No comment provided by engineer. */
+"URL" = "URL";
+
+/* No comment provided by engineer. */
+"Username" = "ログイン";
+
+/* No comment provided by engineer. */
+"Versions" = "バージョン";
+
+/* No comment provided by engineer. */
+"Weak Password Alert" = "弱いパスワードの警告";
+
+/* No comment provided by engineer. */
+"Website" = "ウェブサイト";
+
+/* No comment provided by engineer. */
+"Websites" = "ウェブサイト";
+
+/* No comment provided by engineer. */
+"Welcome to Password Sync" = "ようこそ!";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode every time the app launches." = "オンの場合、アプリを起動するときに毎回パスコードを要求します。";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "オンの場合、ウェブのパスワードやクレジットカード、位置情報、文書のロックを解除するのに毎回パスワードを要求します。";
+
+/* No comment provided by engineer. */
+"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "パスコードがロックされました。マスターパスワードを入力して、パスコードをリセットしてPassword Syncのデータベースのロックを解除してください。";
+
+"Password Generator" = "パスワード生成";
+
+"New Password" = "新しいパスワード";
+
+"You're done!" = "作業完了！";
+
+
+"Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password." = "パスコードを設定しましょう。パスコードとは、素早くデータベースをアンロックする単純なコードです。使用デバイス間で同じコードを使う必要はありません。また、マスターパスワードを使えばいつでもパスコードを変更することができます。";
+
+"There are different ways to unlock your device. Choose the passcode type that fits you best." = "お使いのデバイスのロックを解除するためのさまざまな方法があります。最高のあなたに合ったものを選択してください。";
+
+"Unable to Find Location" = "この場所を見つけることができません。";
+
+"Please double check the provided address or add specific details (city's name, for example)." = "特定の情報がこの場所を見つけるのに役立つかもしれない提供する。たとえば、都市の名前や近くの交差点を提供することができます。";
