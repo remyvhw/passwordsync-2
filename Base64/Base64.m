@@ -55,7 +55,7 @@
         41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 99, 99, 99, 99, 99
     };
     
-    NSData *inputData = [string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSData *inputData = [string dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     long long inputLength = [inputData length];
     const unsigned char *inputBytes = [inputData bytes];
     
@@ -147,7 +147,7 @@
         outputBytes = realloc(outputBytes, outputLength);
         return [[NSString alloc] initWithBytesNoCopy:outputBytes
                                               length:outputLength
-                                            encoding:NSASCIIStringEncoding
+                                            encoding:NSUTF8StringEncoding
                                         freeWhenDone:YES];
     }
     else if (outputBytes)

@@ -1,0 +1,125 @@
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "2s5-2Q-3o7"; */
+"2s5-2Q-3o7.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "4XU-av-1Pb"; */
+"4XU-av-1Pb.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "7Hr-ya-TRa"; */
+"7Hr-ya-TRa.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Ahd-Kb-wpQ"; */
+"Ahd-Kb-wpQ.text" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Documents"; ObjectID = "Ew0-b1-0af"; */
+"Ew0-b1-0af.title" = "文檔";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Frd-F5-vH2"; */
+"Frd-F5-vH2.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "GL1-F8-F6c"; */
+"GL1-F8-F6c.text" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Locations"; ObjectID = "GYH-V0-t4f"; */
+"GYH-V0-t4f.title" = "位置";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Gbe-Xr-24w"; */
+"Gbe-Xr-24w.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "Gz6-6l-3Dv"; */
+"Gz6-6l-3Dv.text" = "Subtitle";
+
+/* Class = "IBUIBarButtonItem"; title = "Locations"; ObjectID = "Ipe-zq-pqW"; */
+"Ipe-zq-pqW.title" = "位置";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "J9A-sB-x8q"; */
+"J9A-sB-x8q.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "L5J-gl-O0e"; */
+"L5J-gl-O0e.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "LcW-Ac-KGk"; */
+"LcW-Ac-KGk.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Lw2-70-HOE"; */
+"Lw2-70-HOE.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "Ns3-9a-LED"; */
+"Ns3-9a-LED.text" = "Subtitle";
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[0] = "Tags"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[0]" = "標簽";
+
+/* Class = "IBUISegmentedControl"; ON5-Om-JAI.segmentTitles[1] = "Folders"; ObjectID = "ON5-Om-JAI"; */
+"ON5-Om-JAI.segmentTitles[1]" = "文件夾";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "RY7-8u-2lO"; */
+"RY7-8u-2lO.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "SRB-Cf-bhD"; */
+"SRB-Cf-bhD.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "SqC-H7-pj8"; */
+"SqC-H7-pj8.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "V84-iV-st7"; */
+"V84-iV-st7.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "VC6-we-jqo"; */
+"VC6-we-jqo.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "VcU-Yc-fkN"; */
+"VcU-Yc-fkN.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "ZKW-ZI-Jfz"; */
+"ZKW-ZI-Jfz.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "cHQ-eb-J94"; */
+"cHQ-eb-J94.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "e67-hr-E3a"; */
+"e67-hr-E3a.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "gW7-LU-BXW"; */
+"gW7-LU-BXW.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "iK1-XN-zMc"; */
+"iK1-XN-zMc.text" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Organizer"; ObjectID = "iVW-xh-Xqc"; */
+"iVW-xh-Xqc.title" = "文件櫃";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "jQn-FG-Rx5"; */
+"jQn-FG-Rx5.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "jdg-If-6wT"; */
+"jdg-If-6wT.text" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Websites"; ObjectID = "jnZ-aR-2hu"; */
+"jnZ-aR-2hu.title" = "網站";
+
+/* Class = "IBUILabel"; text = "Legal"; ObjectID = "jne-e0-tTp"; */
+"jne-e0-tTp.text" = "法律";
+
+/* Class = "IBUIBarButtonItem"; title = "Cards"; ObjectID = "kIa-LU-qqz"; */
+"kIa-LU-qqz.title" = "信用卡";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "oyS-0N-vJk"; */
+"oyS-0N-vJk.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "pXP-KZ-OiQ"; */
+"pXP-KZ-OiQ.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."; ObjectID = "riN-R9-TmX"; */
+"riN-R9-TmX.text" = "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
+
+/* Class = "IBUIBarButtonItem"; title = "Websites"; ObjectID = "tNZ-hZ-o1O"; */
+"tNZ-hZ-o1O.title" = "網站";
+
+/* Class = "IBUITabBarItem"; title = "Cards"; ObjectID = "tmS-v9-6bH"; */
+"tmS-v9-6bH.title" = "信用卡";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "u6K-bS-cSO"; */
+"u6K-bS-cSO.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "yAH-0N-mms"; */
+"yAH-0N-mms.text" = "Detail";

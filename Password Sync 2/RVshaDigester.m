@@ -13,7 +13,7 @@
 @implementation RVshaDigester
 
 -(NSData*)sha512DataDigestWithString:(NSString*)source{
-    const char *s = [source cStringUsingEncoding:NSASCIIStringEncoding];
+    const char *s = [source cStringUsingEncoding:NSUTF8StringEncoding];
     
     NSData *keyData = [NSData dataWithBytes:s length:strlen(s)];
     

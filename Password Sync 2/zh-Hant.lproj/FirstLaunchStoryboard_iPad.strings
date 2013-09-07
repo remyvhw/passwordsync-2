@@ -1,4 +1,3 @@
-
 /* Class = "IBUIButton"; normalTitle = "Clear"; ObjectID = "0VI-fQ-UT3"; */
 "0VI-fQ-UT3.normalTitle" = "消去";
 
@@ -6,7 +5,7 @@
 "0ZP-UC-u79.text" = "1";
 
 /* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "1Nx-qy-Wys"; */
-"1Nx-qy-Wys.normalTitle" = "";
+"1Nx-qy-Wys.normalTitle" = "繼續";
 
 /* Class = "IBUILabel"; text = "Text"; ObjectID = "1T7-8S-jvv"; */
 "1T7-8S-jvv.text" = "Text";
@@ -18,19 +17,19 @@
 "3Od-ht-Huw.accessibilityLabel" = "8";
 
 /* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "40Y-Sm-jUK"; */
-"40Y-Sm-jUK.title" = "主密码";
+"40Y-Sm-jUK.title" = "主密碼";
 
 /* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "41t-Wx-rGy"; */
-"41t-Wx-rGy.title" = "密码";
+"41t-Wx-rGy.title" = "密碼";
 
 /* Class = "IBUILabel"; text = "Master Password"; ObjectID = "5bC-VN-KOS"; */
-"5bC-VN-KOS.text" = "主密码";
+"5bC-VN-KOS.text" = "主密碼";
 
 /* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "5cD-SY-2DK"; */
-"5cD-SY-2DK.title" = "主密码";
+"5cD-SY-2DK.title" = "主密碼";
 
 /* Class = "IBUILabel"; text = "Excellent password"; ObjectID = "5fG-Om-03q"; */
-"5fG-Om-03q.text" = "优秀的密码";
+"5fG-Om-03q.text" = "優秀的密碼";
 
 /* Class = "IBUIButton"; accessibilityLabel = "4"; ObjectID = "5hZ-0D-BW1"; */
 "5hZ-0D-BW1.accessibilityLabel" = "4";
@@ -39,25 +38,25 @@
 "72R-GY-BAB.title" = "Password Sync 2";
 
 /* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "76y-ok-h1Z"; */
-"76y-ok-h1Z.title" = "密码";
+"76y-ok-h1Z.title" = "密碼";
 
 /* Class = "IBUITextField"; placeholder = "Enter your master password"; ObjectID = "7ZR-0Y-F0F"; */
-"7ZR-0Y-F0F.placeholder" = "输入您的主密码";
+"7ZR-0Y-F0F.placeholder" = "輸入您的主密碼";
 
 /* Class = "IBUINavigationItem"; title = "Print your master password"; ObjectID = "7e9-Tc-s5o"; */
-"7e9-Tc-s5o.title" = "打印您的主密码";
+"7e9-Tc-s5o.title" = "打印您的主密碼";
 
 /* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "8cP-pt-IKI"; */
 "8cP-pt-IKI.text" = "Subtitle";
 
 /* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "8xF-sM-O93"; */
-"8xF-sM-O93.title" = "主密码";
+"8xF-sM-O93.title" = "主密碼";
 
 /* Class = "IBUILabel"; text = "Password hint text"; ObjectID = "92n-da-B5T"; */
 "92n-da-B5T.text" = "Password hint text";
 
 /* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "9md-Ye-26y"; */
-"9md-Ye-26y.normalTitle" = "继续";
+"9md-Ye-26y.normalTitle" = "繼續";
 
 /* Class = "IBUIButton"; accessibilityLabel = "6"; ObjectID = "Ahu-GP-gj8"; */
 "Ahu-GP-gj8.accessibilityLabel" = "6";
@@ -75,7 +74,7 @@
 "Bu7-cW-7ni.title" = "返回";
 
 /* Class = "IBUILabel"; text = "Passcode"; ObjectID = "EFB-Th-1TL"; */
-"EFB-Th-1TL.text" = "密码";
+"EFB-Th-1TL.text" = "密碼";
 
 /* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "F5X-hu-YHY"; */
 "F5X-hu-YHY.title" = "返回";
@@ -84,34 +83,34 @@
 "G0m-aL-icR.accessibilityLabel" = "9";
 
 /* Class = "IBUILabel"; text = "Choose a very secure password that will encrypt all your Password Sync database."; ObjectID = "I4n-mm-p7V"; */
-"I4n-mm-p7V.text" = "选用高度安全的密码以加密您所有的Password Sync数据库。";
+"I4n-mm-p7V.text" = "選用高度安全的密碼以加密您所有的Password Sync數據庫。";
 
 /* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "IPJ-DX-Qiy"; */
-"IPJ-DX-Qiy.normalTitle" = "继续";
+"IPJ-DX-Qiy.normalTitle" = "繼續";
 
 /* Class = "IBUIButton"; normalTitle = "Never ask again"; ObjectID = "KKV-JA-LXB"; */
-"KKV-JA-LXB.normalTitle" = "不再询问";
+"KKV-JA-LXB.normalTitle" = "不再詢問";
 
 /* Class = "IBUILabel"; text = "Print a copy of your master password and keep it in a safe location."; ObjectID = "LWo-3n-Vmo"; */
-"LWo-3n-Vmo.text" = "打印您的主密码并将其保存在安全地点。";
+"LWo-3n-Vmo.text" = "打印您的主密碼並將其保存在安全地點。";
 
 /* Class = "IBUILabel"; text = "Seriously bad password"; ObjectID = "M0i-hr-Ipr"; */
-"M0i-hr-Ipr.text" = "非常糟糕的密码";
+"M0i-hr-Ipr.text" = "非常糟糕的密碼";
 
 /* Class = "IBUIButton"; normalTitle = "Start using Password Sync"; ObjectID = "MD9-Cp-Vk3"; */
 "MD9-Cp-Vk3.normalTitle" = "Password Syncを使い始める";
 
 /* Class = "IBUILabel"; text = "Password Hint"; ObjectID = "MlS-YV-AKz"; */
-"MlS-YV-AKz.text" = "密码提示";
+"MlS-YV-AKz.text" = "密碼提示";
 
 /* Class = "IBUILabel"; text = "2"; ObjectID = "OLs-C9-DSe"; */
 "OLs-C9-DSe.text" = "2";
 
 /* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "OY1-Pk-thy"; */
-"OY1-Pk-thy.title" = "密码";
+"OY1-Pk-thy.title" = "密碼";
 
 /* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "P4E-q6-bHw"; */
-"P4E-q6-bHw.normalTitle" = "继续";
+"P4E-q6-bHw.normalTitle" = "繼續";
 
 /* Class = "IBUILabel"; text = "b4n@na83984"; ObjectID = "PLr-YL-fBg"; */
 "PLr-YL-fBg.text" = "b4n@na83984";
@@ -123,10 +122,10 @@
 "TyC-wq-xDW.title" = "返回";
 
 /* Class = "IBUINavigationItem"; title = "Passcode"; ObjectID = "WeN-x6-C33"; */
-"WeN-x6-C33.title" = "密码";
+"WeN-x6-C33.title" = "密碼";
 
 /* Class = "IBUITextField"; placeholder = "Enter your master password"; ObjectID = "X7y-Fr-TWD"; */
-"X7y-Fr-TWD.placeholder" = "输入您的主密码";
+"X7y-Fr-TWD.placeholder" = "輸入您的主密碼";
 
 /* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "Y19-5A-REb"; */
 "Y19-5A-REb.title" = "返回";
@@ -135,7 +134,7 @@
 "YEt-o2-JAt.normalTitle" = "刊";
 
 /* Class = "IBUILabel"; text = "Draw your custom gesture pattern"; ObjectID = "YJA-B0-tFF"; */
-"YJA-B0-tFF.text" = "绘制您的自定义手势图案";
+"YJA-B0-tFF.text" = "繪制您的自定義手勢圖案";
 
 /* Class = "IBUILabel"; text = "Good password"; ObjectID = "Yiy-10-U1a"; */
 "Yiy-10-U1a.text" = "良い";
@@ -147,7 +146,7 @@
 "avy-TM-icN.title" = "返回";
 
 /* Class = "IBUILabel"; text = "Set a simpler, per-device, way to quickly and easily unlock your Password Sync database."; ObjectID = "bXd-N8-kIY"; */
-"bXd-N8-kIY.text" = "创建一种相对简单并针对某一设备的方式以方便快捷地解锁您的 [[[Password Sync]]] 数据库。";
+"bXd-N8-kIY.text" = "創建一種相對簡單並針對某一設備的方式以方便快捷地解鎖您的 [[[Password Sync]]] 數據庫。";
 
 /* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "bcS-yk-1qZ"; */
 "bcS-yk-1qZ.title" = "返回";
@@ -168,10 +167,10 @@
 "eLw-Kj-SkL.text" = "5Cxqqj-jKW_hN7ELdw jLCY";
 
 /* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "ehc-OE-S35"; */
-"ehc-OE-S35.title" = "主密码";
+"ehc-OE-S35.title" = "主密碼";
 
 /* Class = "IBUILabel"; text = "Congratulations! Your Password Sync is now configured and ready to use on this device! Just launch Password Sync on your other devices to enable syncing and you'll be done!"; ObjectID = "gEo-0Y-Ljq"; */
-"gEo-0Y-Ljq.text" = "祝贺！您已在此设备上完成 Password Sync 的配置。只需在您的所有设备上启动Password Sync 并启用同步功能就完成了！";
+"gEo-0Y-Ljq.text" = "祝賀！您已在此設備上完成 Password Sync 的配置。隻需在您的所有設備上啟動Password Sync 並啟用同步功能就完成了！";
 
 /* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "hA6-vm-lwg"; */
 "hA6-vm-lwg.title" = "返回";
@@ -183,31 +182,31 @@
 "j7Z-IS-EaL.title" = "返回";
 
 /* Class = "IBUILabel"; text = "correctH0rseB4tteryStap!e487"; ObjectID = "jbm-J1-TkF"; */
-"jbm-J1-TkF.text" = "纠正马!电池钉书针487";
+"jbm-J1-TkF.text" = "糾正馬!電池釘書針487";
 
 /* Class = "IBUIButton"; normalTitle = "Let's begin!"; ObjectID = "jfM-GM-vK5"; */
-"jfM-GM-vK5.normalTitle" = "让我们开始吧！";
+"jfM-GM-vK5.normalTitle" = "讓我們開始吧！";
 
 /* Class = "IBUIButton"; accessibilityLabel = "3"; ObjectID = "jly-Xd-iJI"; */
 "jly-Xd-iJI.accessibilityLabel" = "3";
 
 /* Class = "IBUILabel"; text = "Data"; ObjectID = "kIA-fR-iJf"; */
-"kIA-fR-iJf.text" = "个人资料";
+"kIA-fR-iJf.text" = "個人資料";
 
 /* Class = "IBUILabel"; text = "Start filling up Password Sync with your passwords, credit cards, documents, etc."; ObjectID = "ley-ow-uQP"; */
-"ley-ow-uQP.text" = "开始把密码、信用卡信息、文档等添加到您的Password Sync。";
+"ley-ow-uQP.text" = "開始把密碼、信用卡信息、文檔等添加到您的Password Sync。";
 
 /* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "lot-A2-gsj"; */
-"lot-A2-gsj.title" = "主密码";
+"lot-A2-gsj.title" = "主密碼";
 
 /* Class = "IBUIButton"; normalTitle = "Continue"; ObjectID = "nI1-BX-QHb"; */
-"nI1-BX-QHb.normalTitle" = "继续";
+"nI1-BX-QHb.normalTitle" = "繼續";
 
 /* Class = "IBUIButton"; normalTitle = "Skip for now"; ObjectID = "pmv-to-jJc"; */
-"pmv-to-jJc.normalTitle" = "现在跳过";
+"pmv-to-jJc.normalTitle" = "現在跳過";
 
 /* Class = "IBUINavigationItem"; title = "Master Password"; ObjectID = "pzY-bR-Zgl"; */
-"pzY-bR-Zgl.title" = "主密码";
+"pzY-bR-Zgl.title" = "主密碼";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "sY2-Mj-sg5"; */
 "sY2-Mj-sg5.text" = "Title";
@@ -216,13 +215,13 @@
 "scQ-TC-LiY.text" = "Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time.";
 
 /* Class = "IBUIViewController"; title = "Master Password"; ObjectID = "sgt-0X-Ary"; */
-"sgt-0X-Ary.title" = "主密码";
+"sgt-0X-Ary.title" = "主密碼";
 
 /* Class = "IBUILabel"; text = "There are different types of passcodes to choose from. Whether you prefer a high level of security or quick and easy access to your database, we give you the choice!"; ObjectID = "tnc-Aj-Xtv"; */
 "tnc-Aj-Xtv.text" = "There are different types of passcodes to choose from. Whether you prefer a high level of security or quick and easy access to your database, we give you the choice!";
 
 /* Class = "IBUILabel"; text = "Alright! We're done with the master password. Now, Password Sync requires you to set a passcode. The passcode is a quick way to unlock and access your database. If you can't remember it, your master password will always let you access everything and will let you change passcode. It also doesn't have to be the same on all your devices: feel free to use a different one for each device...or not! It's up to you for this one."; ObjectID = "uwj-Km-9EZ"; */
-"uwj-Km-9EZ.text" = "现在要选取一个密码了。密码是允许您快速解锁数据库的更简单的代码。该密码不需要在您的每台设备上都保持一致。您应当知道，您总可以用您的主密码覆盖您的密码。";
+"uwj-Km-9EZ.text" = "現在要選取一個密碼了。密碼是允許您快速解鎖數據庫的更簡單的代碼。該密碼不需要在您的每台設備上都保持一致。您應當知道，您總可以用您的主密碼覆蓋您的密碼。";
 
 /* Class = "IBUIButton"; accessibilityLabel = "7"; ObjectID = "vtS-B9-EBh"; */
 "vtS-B9-EBh.accessibilityLabel" = "7";
@@ -231,13 +230,13 @@
 "wBc-a1-4Zg.text" = "1";
 
 /* Class = "IBUITextField"; placeholder = "Password Hint or Reminder"; ObjectID = "wDv-LG-NUI"; */
-"wDv-LG-NUI.placeholder" = "密码提示";
+"wDv-LG-NUI.placeholder" = "密碼提示";
 
 /* Class = "IBUIBarButtonItem"; title = "Back"; ObjectID = "wgh-tp-7b6"; */
 "wgh-tp-7b6.title" = "返回";
 
 /* Class = "IBUILabel"; text = "Correct password"; ObjectID = "wx0-72-kUl"; */
-"wx0-72-kUl.text" = "可接受的密码";
+"wx0-72-kUl.text" = "可接受的密碼";
 
 /* Class = "IBUILabel"; text = "banana"; ObjectID = "zx2-Qf-PRa"; */
 "zx2-Qf-PRa.text" = "banana（香蕉）";

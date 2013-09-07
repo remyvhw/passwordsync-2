@@ -578,6 +578,14 @@
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
 		AD41CE4C17DBB6C00095C090 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
+		AD41CE4D17DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UnlockPrompt.strings"; sourceTree = "<group>"; };
+		AD41CE4E17DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		AD41CE4F17DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
+		AD41CE5017DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FirstLaunchStoryboard_iPhone.strings"; sourceTree = "<group>"; };
+		AD41CE5117DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
+		AD41CE5217DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AD41CE5317DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AD41CE5417DBBD960095C090 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
 		AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
 		AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
@@ -1932,6 +1940,7 @@
 				fr,
 				"zh-Hans",
 				ja,
+				"zh-Hant",
 			);
 			mainGroup = AD72C3B0177B7E27009AADC8;
 			productRefGroup = AD72C3BA177B7E27009AADC8 /* Products */;
@@ -2421,6 +2430,7 @@
 				AD41CE4817DAB5F20095C090 /* ja */,
 				AD41CE4A17DBB0B20095C090 /* zh-Hans */,
 				AD41CE4C17DBB6C00095C090 /* fr */,
+				AD41CE5117DBBD960095C090 /* zh-Hant */,
 			);
 			name = FirstLaunchStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -2432,6 +2442,7 @@
 				AD7B261217C2C8F300701F52 /* fr */,
 				ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */,
 				ADDCADFA17D9441700F3B8F7 /* ja */,
+				AD41CE5217DBBD960095C090 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			path = "Password Sync 2";
@@ -2444,6 +2455,7 @@
 				AD7B261D17C2E75500701F52 /* fr */,
 				ADDCADE817D8F6AB00F3B8F7 /* zh-Hans */,
 				ADDCADF717D9441600F3B8F7 /* ja */,
+				AD41CE4E17DBBD960095C090 /* zh-Hant */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2455,6 +2467,7 @@
 				AD7B261F17C2F55600701F52 /* fr */,
 				ADDCADE917D8F6AB00F3B8F7 /* zh-Hans */,
 				ADDCADF817D9441600F3B8F7 /* ja */,
+				AD41CE4F17DBBD960095C090 /* zh-Hant */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -2466,6 +2479,7 @@
 				AD7B261317C2C8F300701F52 /* fr */,
 				ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */,
 				ADDCADFC17D9441700F3B8F7 /* ja */,
+				AD41CE5417DBBD960095C090 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2477,6 +2491,7 @@
 				AD7B261B17C2E01900701F52 /* fr */,
 				ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */,
 				ADDCADFB17D9441700F3B8F7 /* ja */,
+				AD41CE5317DBBD960095C090 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2488,6 +2503,7 @@
 				AD7B262517C2F7E500701F52 /* fr */,
 				ADDCADEA17D8F6AB00F3B8F7 /* zh-Hans */,
 				ADDCADF917D9441600F3B8F7 /* ja */,
+				AD41CE5017DBBD960095C090 /* zh-Hant */,
 			);
 			name = FirstLaunchStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -2499,6 +2515,7 @@
 				ADDCADF317D90F4100F3B8F7 /* fr */,
 				ADDCADF517D90F4800F3B8F7 /* zh-Hans */,
 				ADDCADF617D9441600F3B8F7 /* ja */,
+				AD41CE4D17DBBD960095C090 /* zh-Hant */,
 			);
 			name = UnlockPrompt.storyboard;
 			sourceTree = "<group>";

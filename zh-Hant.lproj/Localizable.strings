@@ -1,0 +1,325 @@
+/*
+ Localizable.strings
+ Password Sync 2
+ 
+ Created by Remy Vanherweghem on 2013-08-19.
+ Copyright (c) 2013 Pumax. All rights reserved.
+ */
+/* First master password explanation screen for first launch. */
+"A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "主密碼是保護 Password Sync 數據庫的關鍵密鑰，且在所有安裝 Password Sync 的設備上主密碼都是相同的\n請謹慎選取您的密碼！一旦設置成功，沒有主密碼是絕對無法解鎖您的其他密碼的。如果丟失或您無法記起主密碼，您將無法取回您已存儲的任何密碼信息。沒有密碼取回鏈接，也沒有任何方式能幫助您重置主密碼。另外請牢記，您的數據的安全等級與您的主密碼強度成正比。
+";
+
+/* No comment provided by engineer. */
+"Address" = "地址";
+
+/* No comment provided by engineer. */
+"Advanced" = "高級";
+
+/* No comment provided by engineer. */
+"American Express" = "American Express";
+
+/* No comment provided by engineer. */
+"An Error Occured" = "發生錯誤";
+
+/* No comment provided by engineer. */
+"An error occured" = "發生錯誤";
+
+/* First master password explanation screen for existing users. */
+"As you know, your master password is the ultimate key that encodes your Password Sync database. It must be the same on this device as it is on all your other devices running Password Sync 2. That includes your other iOS devices or Mac computers. On the following screen, you'll have to enter your master password exactly the same way as you typed it on your other devices. If you can't remember it, we'll help you with a hint you provided us when you created your master password." = "如您所知，您的主密碼是對您的 Password Sync 數據庫進行編碼的終極密鑰。在此設備和您的所有運行 Password Sync 2 的其他設備上，主密碼必須完全一致。這包含您的其他 iOS 設備和/或 Mac 電腦。在接下來的界面中，您必須輸入您的主密碼，此密碼與您在其他設備上輸入的密碼必須完全一致。如果您無法記得密碼，我們將顯示您在創建主密碼時提供給我們的提示，來幫助您回憶。";
+
+/* No comment provided by engineer. */
+"Attachments" = "附件";
+
+/* No comment provided by engineer. */
+"Before you use Password Sync to easily and safely sync your passwords, credit cards and notes across your devices, there are a couple of important things we need to configure with you. Don't worry, it'll just take a few minutes of your time." = "使用 Password Sync 可輕鬆且安全地在您設備間同步您的密碼、信用卡和備注。在此之前，我們需要一起進行幾樣重要的配置。別擔心，這隻會花您幾分鐘的時間。";
+
+/* No comment provided by engineer. */
+"Call" = "呼叫";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"Cannot Verify Master Password" = "無法驗証主密碼";
+
+/* No comment provided by engineer. */
+"Capture Document" = "捕獲文檔";
+
+/* No comment provided by engineer. */
+"Card Issuer / Bank Name" = "發卡行名稱";
+
+/* No comment provided by engineer. */
+"Card Number" = "卡號";
+
+/* No comment provided by engineer. */
+"Card Type" = "卡類型";
+
+/* No comment provided by engineer. */
+"Cardholder" = "持卡人";
+
+/* No comment provided by engineer. */
+"CCV/CVC2" = "驗証碼";
+
+/* No comment provided by engineer. */
+"Choose your master password carefully: not only will you have to remember it but it will also encrypt your database. Therefore, it has to be strong yet rememberable. Simple advice for chosing one: the longer the better, yes, but a random string of letters and numbers is not exactly memorable (unless you're Dustin Hoffman). So to keep things complex yet memorable, try putting random words together, add a couple of numbers and call it a day!" = "謹慎選取您的主密碼！該密碼必須非常安全。我們希望您能選擇長度大於 12 個字符的密碼。一個簡單建議：試著把隨機的詞組合在一起，然后再加上一些數字就 OK 了！“正確的騎馬電池裝訂297” 與 “28HUDhdhsuhfaisgo” 一樣安全，但更容易記憶。";
+
+/* No comment provided by engineer. */
+"Color" = "顏色";
+
+/* No comment provided by engineer. */
+"Confirm" = "確認";
+
+/* No comment provided by engineer. */
+"Confirm your master password" = "確認主密碼";
+
+/* No comment provided by engineer. */
+"Contact Bank" = "聯系銀行";
+
+/* No comment provided by engineer. */
+"Copied" = "已拷貝";
+
+/* No comment provided by engineer. */
+"Copy Card Number" = "復制卡數";
+
+/* No comment provided by engineer. */
+"Copy Cardholder's Name" = "復制持卡人的姓名";
+
+/* No comment provided by engineer. */
+"Copy Password" = "復制密碼";
+
+/* No comment provided by engineer. */
+"Copy Username" = "復制用戶名";
+
+/* No comment provided by engineer. */
+"Decrypting..." = "正在解密…";
+
+/* No comment provided by engineer. */
+"Draw your custom gesture pattern" = "繪制您的自定義手勢圖案";
+
+/* No comment provided by engineer. */
+"Emergency Details" = "緊急事件詳情";
+
+/* No comment provided by engineer. */
+"Emergency Phone Number" = "緊急電話號碼";
+
+/* No comment provided by engineer. */
+"Enter a 5 digits passcode." = "輸入 5 位數密碼。";
+
+/* No comment provided by engineer. */
+"Enter your Master Password" = "輸入您的主密碼";
+
+/* No comment provided by engineer. */
+"Enter your passcode." = "輸入您的密碼。";
+
+/* No comment provided by engineer. */
+"Excellent! Now repeat your gesture!" = "太棒了！現在再重復繪制一遍手勢圖案。";
+
+/* No comment provided by engineer. */
+"Expiration" = "過期日";
+
+/* No comment provided by engineer. */
+"Favorite" = "收藏";
+
+/* No comment provided by engineer. */
+"Five digit passcode." = "五位數密碼";
+
+/* No comment provided by engineer. */
+"Gesture based Passcode" = "手勢密碼";
+
+/* No comment provided by engineer. */
+"http://www.americanexpress.com/" = "http://www.americanexpress.com/";
+
+/* No comment provided by engineer. */
+"HumanPass" = "HumanPass";
+
+/* No comment provided by engineer. */
+"Invalid gesture. Try again." = "手勢無效。";
+
+/* No comment provided by engineer. */
+"Invalid Passcode" = "密碼無效";
+
+/* No comment provided by engineer. */
+"is nearby." = "在附近";
+
+/* No comment provided by engineer. */
+"Legal" = "法律";
+
+/* No comment provided by engineer. */
+"Location" = "位置";
+
+/* No comment provided by engineer. */
+"Location Alert" = "位置提醒";
+
+/* No comment provided by engineer. */
+"Location monotoring" = "位置監控";
+
+/* No comment provided by engineer. */
+"Locked" = "已鎖定";
+
+/* No comment provided by engineer. */
+"Login essentials" = "登錄必需信息";
+
+/* No comment provided by engineer. */
+"Make sure you wrote your master password exactly the same way in the two fields." = "請確保在兩字段中填寫主密碼的方式完全一致。";
+
+/* Master */
+"Master" = "Master";
+
+/* No comment provided by engineer. */
+"MM/YYYY" = "MM/YYYY (月/年)";
+
+/* No comment provided by engineer. */
+"Monitor up to 20 locations" = "監控多達 10 個位置";
+
+/* No comment provided by engineer. */
+"Name on card" = "卡面上的名字";
+
+/* No comment provided by engineer. */
+"New Card" = "新卡";
+
+/* No comment provided by engineer. */
+"New Location" = "新位置";
+
+/* No comment provided by engineer. */
+"No Notes" = "沒有備注";
+
+/* No comment provided by engineer. */
+"Note" = "備注";
+
+/* No comment provided by engineer. */
+"Notes" = "備注";
+
+/* No comment provided by engineer. */
+"Number" = "電話號碼";
+
+/* No comment provided by engineer. */
+"OK" = "行";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is different this time. Try again from scratch!" = "糟糕！這次您的手勢不一樣。請從頭開始再試！";
+
+/* No comment provided by engineer. */
+"Oops! Your gesture is invalid (repeating circles, overlapping or squiggly lines, too simple gesture, etc). Try again!" = "糟糕！您的手勢無效（重疊或波浪線，手勢太過簡單等）。請重試！";
+
+/* No comment provided by engineer. */
+"Open" = "打開";
+
+/* No comment provided by engineer. */
+"Other" = "其他";
+
+/* No comment provided by engineer. */
+"Passcode" = "密碼";
+
+/* No comment provided by engineer. */
+"Passcodes did not match, try again" = "密碼不匹配，請重試";
+
+/* No comment provided by engineer. */
+"Password" = "密碼";
+
+/* No comment provided by engineer. */
+"Password is Incorrect" = "密碼是不正確的";
+
+/* No comment provided by engineer. */
+"Password is Incorrect." = "密碼是不正確的";
+
+/* No comment provided by engineer. */
+"PIN" = "PIN";
+
+/* No comment provided by engineer. */
+"PIN based Passcode" = "PIN 密碼";
+
+/* No comment provided by engineer. */
+"Please choose a new passcode." = "請選擇新密碼。";
+
+/* No comment provided by engineer. */
+"Please re-enter your master password." = "請重新輸入您的主密碼。";
+
+/* No comment provided by engineer. */
+"Please Wait" = "請等待";
+
+/* No comment provided by engineer. */
+"Please wait 5 seconds before trying again." = "請等待5秒鐘，然后再次嘗試";
+
+/* No comment provided by engineer. */
+"Prompt for every entry" = "訪問每個項目時詢問";
+
+/* No comment provided by engineer. */
+"Prompt on launch" = "啟動時詢問";
+
+/* No comment provided by engineer. */
+"Re-enter your passcode" = "重新輸入您的密碼";
+
+/* No comment provided by engineer. */
+"Reset Passcode" = "充值密碼";
+
+/* No comment provided by engineer. */
+"Search the web" = "搜索網絡";
+
+/* No comment provided by engineer. */
+"Settings" = "設置";
+
+/* No comment provided by engineer. */
+"Simply draw a pattern." = "繪制圖案。";
+
+/* No comment provided by engineer. */
+"Tags" = "標簽";
+
+/* No comment provided by engineer. */
+"The Internet connection appears to be offline." = "Internet 連接可能已離線。";
+
+/* No comment provided by engineer. */
+"The password you entered is one of the 500 most commonly used passwords on the Internet. Please chose another password." = "您輸入的密碼是 Internet 上 500 個最為通用的密碼。請選取另一個密碼。";
+
+/* No comment provided by engineer. */
+"Title" = "標題";
+
+/* No comment provided by engineer. */
+"Type" = "卡類型";
+
+/* No comment provided by engineer. */
+"Unknown Bank" = "未知銀行";
+
+/* No comment provided by engineer. */
+"URL" = "URL";
+
+/* No comment provided by engineer. */
+"Username" = "用戶名";
+
+/* No comment provided by engineer. */
+"Versions" = "版本";
+
+/* No comment provided by engineer. */
+"Weak Password Alert" = "弱密碼警告";
+
+/* No comment provided by engineer. */
+"Website" = "網站";
+
+/* No comment provided by engineer. */
+"Websites" = "網站";
+
+/* No comment provided by engineer. */
+"Welcome to Password Sync" = "歡迎！";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode every time the app launches." = "每次 app 啟動時詢問密碼。";
+
+/* No comment provided by engineer. */
+"When on, will ask for a passcode for every unlocked website's password, card, location and document." = "開啟時，每次解鎖網站密碼、信用卡、位置和文檔時都會詢問密碼。";
+
+/* No comment provided by engineer. */
+"Your passcode has been locked. Please enter your master password to reset your passcode and unlock your Password Sync Database." = "您的密碼已被鎖定。請輸入您的主密碼來重置您的密碼並解鎖您的 Password Sync 數據庫。";
+
+"Password Generator" = "生成器";
+
+"New Password" = "新密碼";
+
+"You're done!" = "完成了！";
+
+
+"Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password." = "現在要選取一個密碼了。密碼是允許您快速解鎖數據庫的更簡單的代碼。該密碼不需要在您的每台設備上都保持一致。您應當知道，您總可以用您的主密碼覆蓋您的密碼。";
+
+"There are different ways to unlock your device. Choose the passcode type that fits you best." = "有很多方法來解鎖你的設備。選擇一個適合你的最好的。";
+
+"Unable to Find Location" = "無法找到位置";
+
+"Please double check the provided address or add specific details (city's name, for example)." = "找不到位置。請仔細檢查所提供的地址，或加入具體細節（城市的名字，例如）。";
