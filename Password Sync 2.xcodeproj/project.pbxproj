@@ -115,6 +115,8 @@
 		AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */; };
 		AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
+		AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
+		AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
 		AD4553B317C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
 		AD4553B817C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B617C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m */; };
@@ -371,8 +373,6 @@
 		AD90A57617C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */; };
 		AD940E5B17A8651C001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
 		AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD940E5A17A8651C001442F0 /* opencv2.framework */; };
-		AD940E5E17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */; };
-		AD940E5F17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD9935971794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */; };
 		AD9935981794A584009BC9C8 /* PSSUnlockPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */; };
 		ADA0E52F17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E52E17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.m */; };
@@ -574,6 +574,8 @@
 		AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSlocationSearchTextFieldCell.m; sourceTree = "<group>"; };
 		AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationMapCell.h; sourceTree = "<group>"; };
 		AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationMapCell.m; sourceTree = "<group>"; };
+		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
 		AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
 		AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
@@ -794,7 +796,6 @@
 		AD90A57317C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordSyncOneDataImporter.h; sourceTree = "<group>"; };
 		AD90A57417C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordSyncOneDataImporter.m; sourceTree = "<group>"; };
 		AD940E5A17A8651C001442F0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD9935951794A584009BC9C8 /* PSSUnlockPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSUnlockPromptViewController.h; sourceTree = "<group>"; };
 		AD9935961794A584009BC9C8 /* PSSUnlockPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSUnlockPromptViewController.m; sourceTree = "<group>"; };
 		ADA0E52D17907A6900F284B9 /* PSSnewPasswordPasswordTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordPasswordTextFieldCell.h; sourceTree = "<group>"; };
@@ -855,7 +856,7 @@
 		ADDCADEB17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		ADDCADED17D8F6AC00F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		ADDCADF017D90F3B00F3B8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/UnlockPrompt.storyboard; sourceTree = "<group>"; };
+		ADDCADF017D90F3B00F3B8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UnlockPrompt.storyboard; sourceTree = "<group>"; };
 		ADDCADF317D90F4100F3B8F7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/UnlockPrompt.strings; sourceTree = "<group>"; };
 		ADDCADF517D90F4800F3B8F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnlockPrompt.strings"; sourceTree = "<group>"; };
 		ADDCADF617D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UnlockPrompt.strings; sourceTree = "<group>"; };
@@ -1549,7 +1550,7 @@
 			isa = PBXGroup;
 			children = (
 				AD7B262317C2F7DD00701F52 /* FirstLaunchStoryboard_iPhone.storyboard */,
-				AD940E5D17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard */,
+				AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */,
 				ADD8A31217A87F0A0025DA42 /* Other views */,
 				AD51760D1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.h */,
 				AD51760E1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m */,
@@ -1982,12 +1983,12 @@
 				AD54802217A1C7EE008FAFFB /* f-setting-2.png in Resources */,
 				AD54801617A1C7EE008FAFFB /* f-setting-1-active.png in Resources */,
 				AD8F5AE217823F5600702EFA /* PSSMasterPasswordVerifyerViewController.xib in Resources */,
+				AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
 				ADAD15FC17AB43D60035ABB4 /* KeyImage.jpg in Resources */,
 				AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
 				AD54803617A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54804617A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				AD54802E17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
-				AD940E5E17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
 				AD54802417A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
 				AD54802A17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				AD54804217A1C7EE008FAFFB /* confirm-button.png in Resources */,
@@ -2023,7 +2024,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD54801317A1C7EE008FAFFB /* f-setting-tray.png in Resources */,
-				AD940E5F17A877A7001442F0 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
 				AD54801117A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
 				AD54803D17A1C7EE008FAFFB /* enhance-button.png in Resources */,
 				AD6133EA17932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */,
@@ -2068,6 +2068,7 @@
 				AD312646179F08A600483E2F /* LICENCE in Resources */,
 				AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
 				ADDCADEF17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */,
+				AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
 				AD54805B17A1C7EE008FAFFB /* camera-grid-1136@2x.png in Resources */,
 				AD54802F17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
 				AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
@@ -2411,6 +2412,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD41CE4417DAB5E60095C090 /* Base */,
+				AD41CE4817DAB5F20095C090 /* ja */,
+			);
+			name = FirstLaunchStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
