@@ -577,6 +577,7 @@
 		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
+		AD41CE4C17DBB6C00095C090 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD4553AF17C7E39C00A5C395 /* MSCMoreOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCell.h; sourceTree = "<group>"; };
 		AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMoreOptionTableViewCell.m; sourceTree = "<group>"; };
 		AD4553B117C7E39D00A5C395 /* MSCMoreOptionTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMoreOptionTableViewCellDelegate.h; sourceTree = "<group>"; };
@@ -2419,6 +2420,7 @@
 				AD41CE4417DAB5E60095C090 /* Base */,
 				AD41CE4817DAB5F20095C090 /* ja */,
 				AD41CE4A17DBB0B20095C090 /* zh-Hans */,
+				AD41CE4C17DBB6C00095C090 /* fr */,
 			);
 			name = FirstLaunchStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

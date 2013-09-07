@@ -98,7 +98,7 @@
 "Emergency Phone Number" = "Numéro de téléphone en cas d'urgence";
 
 /* No comment provided by engineer. */
-"Enter a 5 digits passcode." = "Enter a 5 digits passcode.";
+"Enter a 5 digits passcode." = "Saissez un code à cinq chiffre.";
 
 /* No comment provided by engineer. */
 "Enter your Master Password" = "Entrez votre mot de passe maître";
@@ -215,16 +215,16 @@
 "Password is Incorrect" = "Le mot de passe est incorrect";
 
 /* No comment provided by engineer. */
-"Password is Incorrect." = "Password is Incorrect.";
+"Password is Incorrect." = "Le mot de passe est incorrect";
 
 /* No comment provided by engineer. */
 "PIN" = "NIP";
 
 /* No comment provided by engineer. */
-"PIN based Passcode" = "PIN based Passcode";
+"PIN based Passcode" = "Code NIP";
 
 /* No comment provided by engineer. */
-"Please choose a new passcode." = "Please choose a new passcode.";
+"Please choose a new passcode." = "Veuillez choisir un nouveau code.";
 
 /* No comment provided by engineer. */
 "Please re-enter your master password." = "Veuillez ré-inscrire votre mot de passe maître.";
@@ -308,7 +308,7 @@
 
 "New Password" = "Nouveau";
 
-"You're done!" = "Done!";
+"You're done!" = "Terminé!";
 
 
 "Now comes the time to choose a passcode. A passcode is a simpler code that will allow you to unlock your database quickly. It doesn't have to be the same on each of your devices. You should also know that you can always override your passcode with your master password." = "Voici maintenant venu le temps de choisir un nouveau code. Le code est le petit compagnon du mot de passe maître: plutôt que d'inscrire le mot de passe maître à chaque fois que vous désirez accéder à vos données, le code vous permet de dévérouiller rapidement Password Sync tout en s'assurant d'un minimum de sécurité. Et, contrairement au mot de passe maître, pas besoin de mettre le même sur tous vos appareils. Aussi, sachez qu'en tout temps votre code peut être réinitialisé grâce à votre mot de passe maître.";
@@ -317,4 +317,4 @@
 
 "Unable to Find Location" = "Impossible de trouver ce lieu";
 
-"Please double check the provided address or add specific details (city's name, for example)." = "Veuillez vérifier le lieu entré .";
+"Please double check the provided address or add specific details (city's name, for example)." = "Veuillez vérifier le lieu entré (ou ajoutez des détails, le nom de la ville par exemple).";
