@@ -15,6 +15,7 @@
 @property (strong, nonatomic, readonly) UITableViewCell * versionsTableViewCell;
 @property (strong, nonatomic) UITableViewCell * favoriteTableViewCell;
 @property (strong, nonatomic) UITableViewCell * tagsTableViewCell;
+@property (strong, nonatomic) UITableViewCell * twoStepsTableViewCell;
 
 
 -(UIView*)lockedImageAccessoryView;

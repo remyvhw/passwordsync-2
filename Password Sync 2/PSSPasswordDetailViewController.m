@@ -14,6 +14,7 @@
 #import "UIImage+ImageEffects.h"
 #import "Reachability.h"
 #import "PSSVersionFlowPasswordCollectionViewController.h"
+#import "PSSTwoStepCodeViewController.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -71,6 +72,13 @@ dispatch_queue_t backgroundQueue;
     
 }
 
+-(void)presentTwoStepBrowser{
+    PSSTwoStepCodeViewController * twoStepController = [[PSSTwoStepCodeViewController alloc] initWithNibName:@"PSSTwoStepCodeViewController" bundle:[NSBundle mainBundle]];
+    
+    twoStepController.detailItem = self.detailItem;
+    [self.navigationController pushViewController:twoStepController animated:YES];
+}
+
 
 -(void)userDidUnlockWithPasscode{
     
@@ -118,14 +126,14 @@ dispatch_queue_t backgroundQueue;
             
         });
         
-
+        
     }
     
     
 }
 
 -(UIImage *)drawWebViewToImage:(UIView *)view{
-
+    
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
     view.hidden = NO;
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -334,7 +342,7 @@ dispatch_queue_t backgroundQueue;
         }
     } else if (section==4){
         // Buttons
-        return 3;
+        return 4;
     }
     
     return 0;
@@ -440,6 +448,8 @@ dispatch_queue_t backgroundQueue;
         } else if (indexPath.row == 2) {
             // Tags
             return [self tagsTableViewCell];
+        } else if (indexPath.row == 3){
+            return [self twoStepsTableViewCell];
         }
         
         
@@ -505,6 +515,8 @@ dispatch_queue_t backgroundQueue;
         } else if (indexPath.row == 2) {
             // Tags
             [self presentTagsBrowser:[tableView cellForRowAtIndexPath:indexPath]];
+        } else if (indexPath.row == 3){
+            [self presentTwoStepBrowser];
         }
         
         

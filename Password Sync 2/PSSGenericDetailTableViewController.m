@@ -16,6 +16,23 @@
 @synthesize detailItem = _detailItem;
 @synthesize versionsTableViewCell = _versionsTableViewCell;
 @synthesize favoriteTableViewCell = _favoriteTableViewCell;
+@synthesize twoStepsTableViewCell = _twoStepsTableViewCell;
+
+-(UITableViewCell*)twoStepsTableViewCell{
+    
+    if (_twoStepsTableViewCell) {
+        return _twoStepsTableViewCell;
+    }
+    
+    UITableViewCell * twoStepsTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    twoStepsTableViewCell.textLabel.text = NSLocalizedString(@"Two-factor Authentication", nil);
+    twoStepsTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    twoStepsTableViewCell.imageView.image = [[UIImage imageNamed:@"TwoStep"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _twoStepsTableViewCell = twoStepsTableViewCell;
+    return twoStepsTableViewCell;
+}
 
 -(UITableViewCell*)tagsTableViewCell{
     
@@ -115,7 +132,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-   
+    
 }
 
 - (void)didReceiveMemoryWarning
