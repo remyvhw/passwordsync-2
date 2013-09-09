@@ -12,6 +12,7 @@
 #import "PSSBaseObjectVersion.h"
 #import "PSSTwoStepEditorTableViewController.h"
 #import "PSSPasswordVersion.h"
+#import "OTPAuthURL.h"
 
 typedef enum {
     PSSTwoStepTypeModeNone,
@@ -25,6 +26,7 @@ typedef enum {
 @property (nonatomic, strong) NSDictionary * additionalData;
 @property (nonatomic) PSSTwoStepTypeMode twoStepMode;
 @property (nonatomic) OTPGenerator * generator;
+@property (nonatomic, strong) NSTimer*secondsTimer;
 
 @property (nonatomic, strong) UIPopoverController * editorPopover;
 
@@ -77,6 +79,25 @@ typedef enum {
     return additionalData;
 }
 
+
+-(void)refreshLabel:(id)sender{
+    
+    NSTimeInterval period;
+    if (self.twoStepMode == PSSTwoStepTypeModeTOTP) {
+        period = [(TOTPGenerator*)self.generator period];
+    } else {
+        period = [TOTPGenerator defaultPeriod];
+    }
+    
+    NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970];
+    CGFloat mod =  fmod(seconds, period);
+    CGFloat percent = mod / period;
+    
+    self.digitsLabel.text = self.generator.generateOTP;
+    
+    [self.remainingTimeIndicator setProgress:1-percent];
+}
+
 -(void)refreshTypeAndCounter{
     if ([self.additionalData objectForKey:PSSTwoStepTypeKey] && [[self.additionalData objectForKey:PSSTwoStepTypeKey] isEqualToString:@"hotp"]) {
         // We're in hotp mode
@@ -101,14 +122,25 @@ typedef enum {
     } else if (self.twoStepMode == PSSTwoStepTypeModeHOTP) {
         // Counter based
         
-        self.digitsLabel.text = [self.additionalData objectForKey:PSSTwoStepSecretKey];
+        HOTPGenerator * counterGenerator = [[HOTPGenerator alloc] initWithSecret:[[self.additionalData objectForKey:PSSTwoStepSecretKey] dataUsingEncoding:NSUTF8StringEncoding] algorithm:[self.additionalData objectForKey:PSSTwoStepAlgorithmKey] digits:[[self.additionalData objectForKey:PSSTwoStepDigitsKey] unsignedIntegerValue] counter:[[self.additionalData objectForKey:PSSTwoStepCounterKey] unsignedIntegerValue]];
+        
+        self.generator = counterGenerator;
         
     } else if (self.twoStepMode == PSSTwoStepTypeModeTOTP) {
         // Timer based
         
-        self.digitsLabel.text = [self.additionalData objectForKey:PSSTwoStepSecretKey];
+        NSData * base32DecodedData = [OTPAuthURL base32Decode:[self.additionalData objectForKey:PSSTwoStepSecretKey]];
+      
+        TOTPGenerator * counterGenerator = [[TOTPGenerator alloc] initWithSecret:base32DecodedData algorithm:[self.additionalData objectForKey:PSSTwoStepAlgorithmKey] digits:[[self.additionalData objectForKey:PSSTwoStepDigitsKey] unsignedIntegerValue] period:[[self.additionalData objectForKey:PSSTwoStepPeriodKey] doubleValue]];
+        
+        self.generator = counterGenerator;
         
     }
+    
+    NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(refreshLabel:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    self.secondsTimer = timer;
+    [self refreshLabel:nil];
 }
 
 -(void)editButtonPressed:(id)sender{
@@ -181,6 +213,11 @@ typedef enum {
     
     
     
+}
+
+
+-(void)dealloc{
+    [self.secondsTimer invalidate];
 }
 
 - (void)didReceiveMemoryWarning
