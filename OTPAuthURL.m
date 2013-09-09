@@ -235,7 +235,6 @@ NSString *const OTPAuthURLSecondsBeforeNewOTPKey
    [NSMutableDictionary dictionaryWithObject:urlData
                                       forKey:(id)kSecAttrGeneric];
   OSStatus status;
-    NSLog(@"SECRET ON SAVE: %@", [self.generator.secret base64Encoding]);
 
   if ([self isInKeychain]) {
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
