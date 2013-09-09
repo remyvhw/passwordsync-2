@@ -318,3 +318,10 @@
 "Unable to Find Location" = "Impossible de trouver ce lieu";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "Veuillez vérifier le lieu entré (ou ajoutez des détails, le nom de la ville par exemple).";
+
+"Two-factor Authentication" = "Authentification à deux facteurs";
+"Time Based" = "Basée sur l'heure";
+"Counter Based" = "Basée sur un compteur";
+"Account" = "Compte";
+"Key" = "Clé";
+"Scan Barcode" = "Lire le code-barres";

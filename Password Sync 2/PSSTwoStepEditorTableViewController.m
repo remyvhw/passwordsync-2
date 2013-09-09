@@ -332,6 +332,8 @@
                 self.keyCell.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
                 self.keyCell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
+                self.keyCell.cameraButton.accessibilityLabel = NSLocalizedString(@"Scan Barcode", nil);
+                
                 if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
                     [self.keyCell.cameraButton addTarget:self action:@selector(presentBarcodeScanner:) forControlEvents:UIControlEventTouchUpInside];
                 } else {

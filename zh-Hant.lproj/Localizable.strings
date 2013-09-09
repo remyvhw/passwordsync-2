@@ -323,3 +323,10 @@
 "Unable to Find Location" = "無法找到位置";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "找不到位置。請仔細檢查所提供的地址，或加入具體細節（城市的名字，例如）。";
+
+"Two-factor Authentication" = "雙因素身份驗證";
+"Scan Barcode" = "掃描條碼";
+"Key" = "金鑰";
+"Account" = "帳戶";
+"Time Based" = "根據時間";
+"Counter Based" = "根據計數器";

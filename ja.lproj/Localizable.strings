@@ -325,3 +325,10 @@
 "Unable to Find Location" = "この場所を見つけることができません。";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "特定の情報がこの場所を見つけるのに役立つかもしれない提供する。たとえば、都市の名前や近くの交差点を提供することができます。";
+
+"Two-factor Authentication" = "2 段階認証プロセス";
+"Scan Barcode" = "バーコードをスキャン";
+"Key" = "キー";
+"Account" = "アカウント:";
+"Time Based" = "時間ベース";
+"Counter Based" = "カウンタベース";

@@ -329,3 +329,12 @@
 "Unable to Find Location" = "Can't Find Location";
 
 "Please double check the provided address or add specific details (city's name, for example)." = "Unable to find location. Please double check the provided address or add specific details (city's name, for example).";
+
+"Two-factor Authentication" = "Two-factor Authentication";
+"Scan Barcode" = "Scan Barcode";
+"Key:" = "Key:";
+"Account:" = "Account:";
+/* iPhone Time Based Account Type */
+"Time Based" = "Time Based";
+/* iPhone Counter Based Account Type */
+"Counter Based" = "Counter Based";
