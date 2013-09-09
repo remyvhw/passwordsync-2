@@ -137,10 +137,13 @@ typedef enum {
         
     }
     
-    NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(refreshLabel:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    self.secondsTimer = timer;
-    [self refreshLabel:nil];
+    if (self.twoStepMode != PSSTwoStepTypeModeNone) {
+        NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(refreshLabel:) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        self.secondsTimer = timer;
+        [self refreshLabel:nil];
+    }
+
 }
 
 -(void)editButtonPressed:(id)sender{
@@ -215,6 +218,11 @@ typedef enum {
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.editorPopover dismissPopoverAnimated:NO];
+    self.editorPopover = nil;
+    [super viewWillDisappear:animated];
+}
 
 -(void)dealloc{
     [self.secondsTimer invalidate];
