@@ -47,32 +47,37 @@ typedef enum {
     [additionalData removeObjectForKey:PSSTwoStepSecretKey];
     [additionalData removeObjectForKey:PSSTwoStepTypeKey];
     
+    BOOL saveNew = YES;
+    if (![twoStepValues objectForKey:PSSTwoStepSecretKey] || [[twoStepValues objectForKey:PSSTwoStepSecretKey] isEqualToString:@""]) {
+        saveNew = NO;
+    }
     
-    if ([twoStepValues objectForKey:PSSTwoStepAlgorithmKey]) {
+    
+    if (saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepAlgorithmKey] forKey:PSSTwoStepAlgorithmKey];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepCounterKey]) {
+    if ([twoStepValues objectForKey:PSSTwoStepCounterKey] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepCounterKey] forKey:PSSTwoStepCounterKey];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepDigitsKey]) {
+    if ([twoStepValues objectForKey:PSSTwoStepDigitsKey] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepDigitsKey] forKey:PSSTwoStepDigitsKey];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepLabel]) {
+    if ([twoStepValues objectForKey:PSSTwoStepLabel] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepLabel] forKey:PSSTwoStepLabel];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepPeriodKey]) {
+    if ([twoStepValues objectForKey:PSSTwoStepPeriodKey] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepPeriodKey] forKey:PSSTwoStepPeriodKey];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepSecretKey]) {
+    if ([twoStepValues objectForKey:PSSTwoStepSecretKey] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepSecretKey] forKey:PSSTwoStepSecretKey];
     }
     
-    if ([twoStepValues objectForKey:PSSTwoStepTypeKey]) {
+    if ([twoStepValues objectForKey:PSSTwoStepTypeKey] && saveNew) {
         [additionalData setObject:[twoStepValues objectForKey:PSSTwoStepTypeKey] forKey:PSSTwoStepTypeKey];
     }
     
@@ -96,6 +101,15 @@ typedef enum {
     self.digitsLabel.text = self.generator.generateOTP;
     
     [self.remainingTimeIndicator setProgress:1-percent];
+    
+    
+    if (percent <= 0.83) {
+        [self.remainingTimeIndicator setTintColor:self.view.window.tintColor];
+    } else {
+        [self.remainingTimeIndicator setTintColor:[UIColor colorWithRed:143./255.0 green:45./255.0 blue:50./255.0 alpha:1.0]];
+    }
+    
+    
 }
 
 -(void)refreshTypeAndCounter{
