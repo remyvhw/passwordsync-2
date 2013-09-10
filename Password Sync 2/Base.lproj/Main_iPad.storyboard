@@ -1324,14 +1324,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bct-fL-XQP">
-                                            <rect key="frame" x="55" y="0.0" width="698" height="43"/>
+                                            <rect key="frame" x="58" y="0.0" width="695" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Browser" id="1Gx-19-hAQ">
-                                            <rect key="frame" x="15" y="9" width="25" height="25"/>
+                                            <rect key="frame" x="15" y="7" width="28" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1345,14 +1345,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZpP-MI-Ofa">
-                                            <rect key="frame" x="55" y="0.0" width="698" height="43"/>
+                                            <rect key="frame" x="58" y="0.0" width="695" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="CardsIcon" id="daF-U3-buE">
-                                            <rect key="frame" x="15" y="12" width="25" height="18"/>
+                                            <rect key="frame" x="15" y="12" width="28" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1366,14 +1366,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fK1-Fj-CRK">
-                                            <rect key="frame" x="55" y="0.0" width="698" height="43"/>
+                                            <rect key="frame" x="58" y="0.0" width="695" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Pin" id="Juu-Eo-p3Q">
-                                            <rect key="frame" x="15" y="10" width="25" height="22"/>
+                                            <rect key="frame" x="15" y="9" width="28" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1387,14 +1387,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GUI-uS-44q">
-                                            <rect key="frame" x="49" y="0.0" width="704" height="43"/>
+                                            <rect key="frame" x="50" y="0.0" width="703" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Document" id="t22-0O-RIf">
-                                            <rect key="frame" x="15" y="9" width="19" height="25"/>
+                                            <rect key="frame" x="15" y="7" width="20" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -1843,11 +1843,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Browser" width="25" height="25"/>
-        <image name="CardsIcon" width="25" height="18"/>
-        <image name="Document" width="19" height="25"/>
-        <image name="Organizer" width="22" height="25"/>
-        <image name="Pin" width="25" height="22"/>
+        <image name="Browser" width="28" height="28"/>
+        <image name="CardsIcon" width="28" height="19"/>
+        <image name="Document" width="20" height="28"/>
+        <image name="Organizer" width="24" height="28"/>
+        <image name="Pin" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

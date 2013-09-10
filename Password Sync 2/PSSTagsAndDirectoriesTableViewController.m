@@ -171,6 +171,14 @@ typedef enum {
 {
     [super viewDidLoad];
     
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Organizer-Selected"];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.navigationController.parentViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"Organizer-Selected"];
+    }
+    
+
+    
     // TEMP
     [self.tagsFoldersSegmentedControl setHidden:YES];
 

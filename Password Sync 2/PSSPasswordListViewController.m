@@ -37,7 +37,13 @@ dispatch_queue_t backgroundQueue;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Browser-Selected"];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.navigationController.parentViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"Browser-Selected"];
+    }
+    
     backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesTableViewImageRenderingThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {

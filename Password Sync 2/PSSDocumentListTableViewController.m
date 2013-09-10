@@ -55,6 +55,12 @@
 {
     [super viewDidLoad];
     
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Document-Selected"];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.navigationController.parentViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"Document-Selected"];
+    }
+    
     PSSAppDelegate *appDelegate = (PSSAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
 
