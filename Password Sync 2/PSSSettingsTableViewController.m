@@ -9,6 +9,7 @@
 #import "PSSSettingsTableViewController.h"
 #import "PSSPasswordSyncOneDataImporter.h"
 #import "PSSAppDelegate.h"
+#import "Appirater.h"
 
 @interface PSSSettingsTableViewController ()
 
@@ -85,9 +86,9 @@
     } else if (section==2) {
         // legal (and import from Password Sync One
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"passsyncjsonexport://passsynctwoupgrade?enckey=ABCD"]])
-            return 2;
+            return 4;
         
-        return 1;
+        return 3;
     }
     return 0;
 }
@@ -174,6 +175,8 @@
             
         } else if (indexPath.row == 2) {
             
+            // Twitter
+            
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
             
             cell.textLabel.text = @"@PasswordSync";
@@ -203,6 +206,29 @@
             return cell;
 
         } else if (indexPath.row == 1) {
+            // Submit a review
+            static NSString * cellIdentifier = @"normalCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+            
+            cell.textLabel.text = NSLocalizedString(@"Review Password Sync", nil);
+            
+            cell.imageView.image = [[UIImage imageNamed:@"Love-Icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            return cell;
+            
+            
+        } else if (indexPath.row == 2) {
+            // Report a problem
+            static NSString * cellIdentifier = @"normalCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+            
+            cell.textLabel.text = NSLocalizedString(@"Report a problem", nil);
+            
+            cell.imageView.image = [[UIImage imageNamed:@"Problem-Icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            return cell;
+            
+            
+        } else if (indexPath.row == 3) {
+            // Import from Password Sync 1
             
             static NSString * cellIdentifier = @"normalCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -263,6 +289,28 @@
         
         
     } else if (indexPath.section == 2 && indexPath.row == 1) {
+        // Review the app
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [(UIPopoverController*)[(UINavigationController*)self.parentViewController parentViewController] dismissPopoverAnimated:NO];
+            
+        }
+        
+        [Appirater rateApp];
+        
+        
+    } else if (indexPath.section == 2 && indexPath.row == 2) {
+        // Report a problem
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [(UIPopoverController*)[(UINavigationController*)self.parentViewController parentViewController] dismissPopoverAnimated:NO];
+            
+        }
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://passwordsync.freshdesk.com/support/tickets/new"]];
+        
+        
+    } else if (indexPath.section == 2 && indexPath.row == 3) {
         // Import from Password Sync 1
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {

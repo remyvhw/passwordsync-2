@@ -25,6 +25,7 @@
 #import "PSSDocumentsSplitViewDetailViewController.h"
 #import "PSSDocumentDetailCollectionViewController.h"
 #import "PSSDocumentEditorTableViewController.h"
+#import "Appirater.h"
 
 #import "TestFlight.h"
 
@@ -298,6 +299,8 @@
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
+    [Appirater setAppId:@"701814886"];
+    
     
     UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (locationNotification) {
@@ -353,7 +356,7 @@
     }
 
     
-    
+    [Appirater appLaunched:YES];
     
     return YES;
 }
@@ -381,6 +384,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
