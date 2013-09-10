@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="yba-44-brP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="yba-44-brP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -157,6 +157,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yba-44-brP" firstAttribute="leading" secondItem="zvb-H7-wLX" secondAttribute="leading" id="BVT-Se-6Ru"/>
+                            <constraint firstItem="yba-44-brP" firstAttribute="top" secondItem="zvb-H7-wLX" secondAttribute="top" id="Ffm-Xv-M5j"/>
+                            <constraint firstAttribute="bottom" secondItem="yba-44-brP" secondAttribute="bottom" id="QCc-2H-PXj"/>
+                            <constraint firstAttribute="trailing" secondItem="yba-44-brP" secondAttribute="trailing" id="dfc-jk-Loa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xcd-vm-fLe"/>
                     <connections>
@@ -253,7 +259,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="a3T-L2-5pk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="a3T-L2-5pk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -315,6 +321,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="a3T-L2-5pk" secondAttribute="bottom" id="B5P-mW-BzA"/>
+                            <constraint firstItem="a3T-L2-5pk" firstAttribute="top" secondItem="Gbq-hY-cEl" secondAttribute="top" id="F94-LR-a5T"/>
+                            <constraint firstAttribute="trailing" secondItem="a3T-L2-5pk" secondAttribute="trailing" id="NWW-KX-BkJ"/>
+                            <constraint firstItem="a3T-L2-5pk" firstAttribute="leading" secondItem="Gbq-hY-cEl" secondAttribute="leading" id="P4P-4b-GCe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dcC-qr-yfT"/>
                     <connections>
@@ -445,7 +457,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LaL-ED-JDH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LaL-ED-JDH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -482,6 +494,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LaL-ED-JDH" secondAttribute="trailing" id="2rZ-IS-XNT"/>
+                            <constraint firstAttribute="bottom" secondItem="LaL-ED-JDH" secondAttribute="bottom" id="LvO-qs-4aB"/>
+                            <constraint firstItem="LaL-ED-JDH" firstAttribute="leading" secondItem="hGf-dv-yET" secondAttribute="leading" id="NZW-pf-QbZ"/>
+                            <constraint firstItem="LaL-ED-JDH" firstAttribute="top" secondItem="hGf-dv-yET" secondAttribute="top" id="UOF-ot-wsB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mpB-6W-sT2"/>
                     <connections>
@@ -768,7 +786,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-GV-WBf">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-GV-WBf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uec-wf-rjM">
@@ -905,6 +923,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cw3-GV-WBf" secondAttribute="trailing" id="5x0-z1-XV4"/>
+                            <constraint firstItem="Cw3-GV-WBf" firstAttribute="top" secondItem="wUN-Cz-eam" secondAttribute="top" id="Kj8-9m-5SW"/>
+                            <constraint firstAttribute="bottom" secondItem="Cw3-GV-WBf" secondAttribute="bottom" id="PED-Ug-wj1"/>
+                            <constraint firstItem="Cw3-GV-WBf" firstAttribute="leading" secondItem="wUN-Cz-eam" secondAttribute="leading" id="QeG-wr-ayp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zPh-om-Vsa"/>
                     <connections>
@@ -1352,9 +1376,13 @@
     </scenes>
     <resources>
         <image name="Browser" width="28" height="28"/>
+        <image name="Browser" width="28" height="28"/>
+        <image name="CardsIcon" width="28" height="19"/>
         <image name="CardsIcon" width="28" height="19"/>
         <image name="Document" width="20" height="28"/>
+        <image name="Document" width="20" height="28"/>
         <image name="Organizer" width="24" height="28"/>
+        <image name="Pin" width="28" height="24"/>
         <image name="Pin" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
