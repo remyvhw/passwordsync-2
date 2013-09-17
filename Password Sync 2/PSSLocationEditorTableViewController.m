@@ -301,8 +301,8 @@
         [self.locationSearchCell setIsGeocoding:NO];
         
         if (error) {
-            
-            if (error.code == 8) {
+            NSLog(@"Error code: %lu", (long)error.code);
+            if (error.code == 4) {
                 UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to Find Location", nil) message:NSLocalizedString(@"Please double check the provided address or add specific details (city's name, for example).", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
                 [alertView show];
             } else {
