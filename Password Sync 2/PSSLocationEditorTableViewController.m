@@ -291,6 +291,61 @@
     
     [self.locationSearchCell setIsGeocoding:YES];
     
+    MKLocalSearchRequest * searchRequest = [[MKLocalSearchRequest alloc] init];
+    searchRequest.naturalLanguageQuery = self.locationSearchCell.textField.text;
+    
+    MKLocalSearch * search = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        
+        [self.locationSearchCell setIsGeocoding:NO];
+        
+        if (error) {
+            
+            if (error.code == 8) {
+                UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to Find Location", nil) message:NSLocalizedString(@"Please double check the provided address or add specific details (city's name, for example).", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [alertView show];
+            } else {
+                UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [alertView show];
+            }
+            
+        } else {
+            
+            if ([response.mapItems count] > 1) {
+                
+                // Prompt user for a specific location
+                
+                PSSLocationChoicePopoverViewController * locationPopover = [[PSSLocationChoicePopoverViewController alloc] initWithNibName:@"PSSLocationChoicePopoverViewController" bundle:[NSBundle mainBundle]];
+                
+                locationPopover.choiceOfMapItems = response.mapItems;
+                locationPopover.completionBlock = ^void(CLLocation*location, CLPlacemark * placemark){
+                    [self rearrangeMapForLocation:location placemark:placemark];
+                    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
+                };
+                
+                
+                [self presentPopupViewController:locationPopover animationType:MJPopupViewAnimationSlideTopTop dismissed:^{
+                }];
+                
+            } else {
+                CLPlacemark * placemark = [(MKMapItem*)[response.mapItems objectAtIndex:0] placemark];
+                [self rearrangeMapForLocation:[placemark location] placemark:placemark];
+            }
+            
+            
+            
+            
+        }
+        
+    }];
+    
+    
+    /*
+     
+     /// WORKING CODE
+     // Deprecated, now using way more powerful local search
+     
     CLGeocoder * geocoder = [[CLGeocoder alloc] init];
     
    [geocoder geocodeAddressString:self.locationSearchCell.textField.text inRegion:nil completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -336,7 +391,7 @@
        }
        
    }];
-    
+    */
     
 }
 

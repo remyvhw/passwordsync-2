@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) void (^completionBlock)(CLLocation * location, CLPlacemark * Placemark);
 @property (nonatomic, strong) NSArray * choiceOfPlacemarks;
+@property (nonatomic, strong) NSArray * choiceOfMapItems;
 
 @end

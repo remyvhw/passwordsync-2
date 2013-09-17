@@ -8,6 +8,7 @@
 
 #import "PSSLocationChoicePopoverViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
+@import MapKit;
 #import "UIViewController+MJPopupViewController.h"
 
 @interface PSSLocationChoicePopoverViewController ()
@@ -18,6 +19,21 @@
 @end
 
 @implementation PSSLocationChoicePopoverViewController
+@synthesize choiceOfMapItems = _choiceOfMapItems;
+
+-(void)setChoiceOfMapItems:(NSArray *)choiceOfMapItems{
+    
+    NSMutableArray * arrayOfPlacemarks = [[NSMutableArray alloc] initWithCapacity:choiceOfMapItems.count];
+    for (MKMapItem * item in choiceOfMapItems) {
+        [arrayOfPlacemarks addObject:item.placemark];
+    }
+    
+    self.choiceOfPlacemarks = arrayOfPlacemarks;
+}
+
+-(NSArray*)choiceOfMapItems{
+    return self.choiceOfPlacemarks;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
