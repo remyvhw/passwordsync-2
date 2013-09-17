@@ -24,6 +24,7 @@
         
         self.shouldDrawCircle = NO;
         self.circleRadius = @150;
+        self.userDidChangeMapRegion = NO;
     }
     return self;
 }
@@ -36,6 +37,7 @@
 
 -(void)rearrangePinAndMapLocationWithRegion:(MKCoordinateRegion)region location:(CLLocation*)pinLocation{
     
+    self.userDidChangeMapRegion = YES;
     
    if (!self.locationPin) {
         MKPointAnnotation * pinMarker = [[MKPointAnnotation alloc] init];
@@ -77,6 +79,8 @@
     CLLocation * location = [[CLLocation alloc] initWithLatitude:pinLocation.latitude longitude:pinLocation.longitude];
     
     [self rearrangePinAndMapLocationWithRegion:[self defaultRegionForLocation:location] location:location];
+    
+    self.userDidChangeMapRegion = YES;
 }
 
 -(void)rearrangePinAndMapLocationWithPlacemark:(CLPlacemark *)pinPlacemark{
@@ -88,6 +92,13 @@
 }
 
 #pragma mark - MKMapViewProtocol
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    if (animated) {
+        self.userDidChangeMapRegion = YES;
+    }
+    
+}
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState{
     if (newState == MKAnnotationViewDragStateEnding) {

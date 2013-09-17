@@ -18,6 +18,7 @@
 
 @property (nonatomic) BOOL  userEditable;
 @property (nonatomic) BOOL shouldDrawCircle;
+@property (nonatomic) BOOL userDidChangeMapRegion;
 
 @property (nonatomic, strong) NSNumber * circleRadius;
 

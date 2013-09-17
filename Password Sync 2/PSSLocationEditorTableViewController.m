@@ -291,8 +291,13 @@
     
     [self.locationSearchCell setIsGeocoding:YES];
     
+    
     MKLocalSearchRequest * searchRequest = [[MKLocalSearchRequest alloc] init];
     searchRequest.naturalLanguageQuery = self.locationSearchCell.textField.text;
+    
+    if (self.mapCell.userDidChangeMapRegion) {
+        searchRequest.region = self.mapCell.mapView.region;
+    }
     
     MKLocalSearch * search = [[MKLocalSearch alloc] initWithRequest:searchRequest];
     
@@ -311,6 +316,7 @@
             }
             
         } else {
+            
             
             if ([response.mapItems count] > 1) {
                 
