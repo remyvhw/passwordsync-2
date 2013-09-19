@@ -339,7 +339,7 @@
 		<key>bankWebsite</key>
 		<string>https://www.hsbc.com</string>
 		<key>emergencyNumber</key>
-		<string> (UK) +441442422047; (US) +1-800-975-4722; (Canada) +1-866-406-4722; (France) +330810246810</string>
+		<string>(UK) +441442422047; (US) +1-800-975-4722; (Canada) +1-866-406-4722; (France) +330810246810</string>
 		<key>bankName</key>
 		<string>HSBC</string>
 	</dict>
@@ -486,7 +486,7 @@
 		<key>bankWebsite</key>
 		<string>http://www.rbs.com/</string>
 		<key>emergencyNumber</key>
-		<string>+44 1268 500 813 (UK), 1-800-443-0164 (US)</string>
+		<string>(UK) +44 1268 500 813; (US) 1-800-443-0164</string>
 		<key>bankName</key>
 		<string>RBS / Citizens</string>
 	</dict>
@@ -542,6 +542,309 @@
 		<string>(Canada) 1-888-876-6262; (Abroad/Étranger) +1-613-907-3505</string>
 		<key>bankName</key>
 		<string>MBNA Canada</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>4510</string>
+			<string>4512</string>
+			<string>4514</string>
+			<string>451503</string>
+			<string>4519</string>
+			<string>541606</string>
+			<string>541590</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.rbcroyalbank.com/</string>
+		<key>emergencyNumber</key>
+		<string>(North America) 1-800-769-2512; (Abroad) +1-514-218-2929</string>
+		<key>bankName</key>
+		<string>RBC Royal Bank</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>4536</string>
+			<string>4537</string>
+			<string>4538</string>
+			<string>4241</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.scotiabank.com/‎</string>
+		<key>emergencyNumber</key>
+		<string>(North America) 1-800-387-6466; (Call Collect) +1-416-288-1440</string>
+		<key>bankName</key>
+		<string>Scotiabank</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>478986</string>
+			<string>541142</string>
+			<string>4500</string>
+			<string>4502</string>
+			<string>4503</string>
+			<string>4504</string>
+			<string>4505</string>
+			<string>4506</string>
+			<string>478986</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.cibc.com/</string>
+		<key>emergencyNumber</key>
+		<string>(North America) 1-800-663-4575</string>
+		<key>bankName</key>
+		<string>CIBC</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>500235</string>
+			<string>5258</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.nbc.ca</string>
+		<key>emergencyNumber</key>
+		<string>(North America) 1-800-361-0070; (Abroad/Étanger) +1-514-281-3159</string>
+		<key>bankName</key>
+		<string>National Bank of Canada</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>4544</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.banquelaurentienne.ca/</string>
+		<key>emergencyNumber</key>
+		<string>(North America) 1-800-522-1846; (Abroad/Étanger) +1-514-522-1846</string>
+		<key>bankName</key>
+		<string>Laurentian Bank of canada</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>533997</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.atb.com/</string>
+		<key>emergencyNumber</key>
+		<string>(Canada) 1-888-282-5678; (US) 1-800-247-4623; (Overseas) 1-403-245-8110</string>
+		<key>bankName</key>
+		<string>ATB Financials</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>400115</string>
+			<string>4304</string>
+			<string>433948</string>
+			<string>433950</string>
+			<string>453978</string>
+			<string>453979</string>
+			<string>465858</string>
+			<string>465859</string>
+			<string>465861</string>
+			<string>465901</string>
+			<string>465921</string>
+			<string>486424</string>
+			<string>492827</string>
+			<string>497652</string>
+			<string>513624</string>
+			<string>514021</string>
+			<string>514889</string>
+			<string>530127</string>
+			<string>530831</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.barclays.co.uk/</string>
+		<key>emergencyNumber</key>
+		<string>(UK) 08700 104 503; (Outside UK) +44 1928 584421; (India) +91 22 6000 7888</string>
+		<key>bankName</key>
+		<string>Barclays</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>411298</string>
+			<string>427342</string>
+			<string>446261</string>
+			<string>446272</string>
+			<string>446274</string>
+			<string>450823</string>
+			<string>486412</string>
+			<string>4921</string>
+			<string>512569</string>
+			<string>518791</string>
+			<string>5404</string>
+			<string>552157</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.lloydstsb.com/</string>
+		<key>emergencyNumber</key>
+		<string>(UK) 0 800 096 9779; (Outside UK) +44 (0) 1702 278 270</string>
+		<key>bankName</key>
+		<string>Lloyds TSB</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>377878</string>
+			<string>433687</string>
+			<string>455701</string>
+			<string>490292</string>
+			<string>401795</string>
+			<string>453030</string>
+			<string>560251</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.nab.com.au/</string>
+		<key>emergencyNumber</key>
+		<string>(Australia) 1800 033 103; (Overseas) +61 3 8641 9121</string>
+		<key>bankName</key>
+		<string>National Australia Bank</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>453224</string>
+			<string>533838</string>
+			<string>3754150</string>
+			<string>3754151</string>
+			<string>3754155</string>
+			<string>3754165</string>
+			<string>456445</string>
+			<string>480686</string>
+			<string>494052</string>
+			<string>494053</string>
+			<string>5217</string>
+			<string>523748</string>
+			<string>535316</string>
+			<string>535317</string>
+			<string>535318</string>
+			<string>537196</string>
+			<string>552033</string>
+			<string>552350</string>
+			<string>555005</string>
+			<string>560279</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.commbank.com.au/</string>
+		<key>emergencyNumber</key>
+		<string>(Australia) 13 2221; (Overseas) +61 2 9999 3283</string>
+		<key>bankName</key>
+		<string>Commonwealth Bank</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>454869</string>
+			<string>455047</string>
+			<string>456403</string>
+			<string>456406</string>
+			<string>456471</string>
+			<string>456472</string>
+			<string>501007</string>
+			<string>501008</string>
+			<string>516300</string>
+			<string>516310</string>
+			<string>516315</string>
+			<string>516335</string>
+			<string>516321</string>
+			<string>516337</string>
+			<string>516361</string>
+			<string>516366</string>
+			<string>51639</string>
+			<string>540223</string>
+			<string>543678</string>
+			<string>555003</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.westpac.com.au/</string>
+		<key>emergencyNumber</key>
+		<string>(Australia) 1300 651 089; (Abroad/Étanger) (+61 3) 6345 1058.</string>
+		<key>bankName</key>
+		<string>Westpac</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>407220</string>
+			<string>4509</string>
+			<string>4560</string>
+			<string>456453</string>
+			<string>456462</string>
+			<string>456468</string>
+			<string>456469</string>
+			<string>456480</string>
+			<string>462239</string>
+			<string>483531</string>
+			<string>5289</string>
+			<string>529523</string>
+			<string>540221</string>
+			<string>5430</string>
+			<string>546827</string>
+			<string>547343</string>
+			<string>560254</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.anz.com/</string>
+		<key>emergencyNumber</key>
+		<string>(Australia) 1800 033 844; (AU Overseas) +61 3 9683 7043; (New-Zeland) 0800 658 044; (NZ Overseas) +64 9 522 3010; (Singapore) 1800 269 2269; (SG Overseas) +65 6269 2269</string>
+		<key>bankName</key>
+		<string>ANZ</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>497040</string>
+			<string>497063</string>
+			<string>5130</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.labanquepostale.fr/</string>
+		<key>emergencyNumber</key>
+		<string>(France) 3639*; (Étranger) +33 1 45 45 36 39</string>
+		<key>bankName</key>
+		<string>La Banque Postale</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>4974</string>
+			<string>513453</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://www.secure.bnpparibas.net/</string>
+		<key>emergencyNumber</key>
+		<string>(France) 0 820 820 002; (Étranger FR) +33 1 40 14 44 00</string>
+		<key>bankName</key>
+		<string>BNP Paribas</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>5131</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>http://www.credit-agricole.fr/</string>
+		<key>emergencyNumber</key>
+		<string>(France) 09 69 39 92 91; (Étranger) +33 9 69 39 92 91</string>
+		<key>bankName</key>
+		<string>Crédit Agricole</string>
+	</dict>
+	<dict>
+		<key>cardID</key>
+		<array>
+			<string>497301</string>
+			<string>497302</string>
+		</array>
+		<key>bankWebsite</key>
+		<string>https://particuliers.societegenerale.fr/</string>
+		<key>emergencyNumber</key>
+		<string>09 69 39 77 77</string>
+		<key>bankName</key>
+		<string>Société Générale</string>
 	</dict>
 </array>
 </plist>
