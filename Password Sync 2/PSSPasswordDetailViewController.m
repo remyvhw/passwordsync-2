@@ -334,7 +334,10 @@ dispatch_queue_t backgroundQueue;
         return numberOfRows;
     } else if (section == 2) {
         // URL
-        return [self.detailItem.domains count];
+        if (self.detailItem.domains && [self.detailItem.domains count]>0) {
+            return [self.detailItem.domains count];
+        }
+        return 0;
     } else if (section == 3) {
         // Notes
         if ([(PSSPasswordVersion*)self.detailItem.currentHardLinkedVersion notes]) {
@@ -409,7 +412,10 @@ dispatch_queue_t backgroundQueue;
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"urlCell" forIndexPath:indexPath];
         cell.textLabel.text = NSLocalizedString(@"URL", nil);
-        cell.detailTextLabel.text = [[self.detailItem.fetchedDomains objectAtIndex:indexPath.row] hostname];
+        if ([self.detailItem.fetchedDomains count] >= 1 && [self.detailItem.fetchedDomains count] >= indexPath.row) {
+            cell.detailTextLabel.text = [[self.detailItem.fetchedDomains objectAtIndex:indexPath.row] hostname];
+        }
+        
         cell.detailTextLabel.textColor = self.view.window.tintColor;
         
         

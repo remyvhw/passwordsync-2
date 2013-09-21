@@ -172,7 +172,10 @@ dispatch_queue_t backgroundQueue;
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        if ([self.fetchedResultsController objectAtIndexPath:indexPath]) {
+            [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        }
+        
         
         
         [context performBlockAndWait:^{
@@ -362,10 +365,12 @@ dispatch_queue_t backgroundQueue;
     [attributedTitle addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.displayName rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
     cell.textLabel.attributedText = attributedTitle;
     
+    if (object.mainDomain.hostname) {
+        NSMutableAttributedString * attributedDomain = [[NSMutableAttributedString alloc] initWithString:object.mainDomain.hostname];
+        [attributedDomain addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.mainDomain.hostname rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
+        cell.detailTextLabel.attributedText = attributedDomain;
+    }
     
-    NSMutableAttributedString * attributedDomain = [[NSMutableAttributedString alloc] initWithString:object.mainDomain.hostname];
-    [attributedDomain addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[object.mainDomain.hostname rangeOfString:self.searchDisplayController.searchBar.text options:NSCaseInsensitiveSearch]];
-    cell.detailTextLabel.attributedText = attributedDomain;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         cell.accessoryType = UITableViewCellAccessoryNone;
