@@ -10,6 +10,7 @@
 #import "UIImage+ImageEffects.h"
 #import "PSSVersionsCollectionViewFlowLayout.h"
 #import "PSSBaseObjectVersion.h"
+#import "PSSDeviceCapacity.h"
 
 @interface PSSVersionFlowGenericControllerViewController ()
 
@@ -185,7 +186,14 @@
     [self orderVersionsForBaseObject];
     
     if (!self.backgroundImage.image) {
-        self.backgroundImage.image = [self.detailItem.decorativeImageForDevice applyLightEffect];
+        
+        if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
+            self.backgroundImage.image = [self.detailItem.decorativeImageForDevice applyLightEffect];
+        } else {
+            self.backgroundImage.backgroundColor = [UIColor lightGrayColor];
+        }
+        
+        
     }
     
     // We'll only use one single date formatter since allocating one is pretty ressource intensive.

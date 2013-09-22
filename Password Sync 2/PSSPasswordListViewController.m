@@ -14,6 +14,7 @@
 #import "PSSPasswordSplitViewDetailViewController.h"
 #import "SLColorArt.h"
 #import "UIImage+ImageEffects.h"
+#import "PSSDeviceCapacity.h"
 
 @interface PSSPasswordListViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *searchFetchedResultsController;
@@ -400,56 +401,64 @@ dispatch_queue_t backgroundQueue;
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     
     if (favicon) {
-        dispatch_async(backgroundQueue, ^(void) {
-            
-            
-            // Replace any transparency in the favicon by white so we don't end up with black cells (unless we have a black favicon)
-            UIImage *bottomImage = [UIImage imageNamed:@"WhiteOpaque"];
-            UIImage *topImage = favicon;
-            
-            CGSize newSize = CGSizeMake(topImage.size.width, topImage.size.height);
-            UIGraphicsBeginImageContext( newSize );
-            
-            // Use existing opacity as is
-            [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-            // Apply supplied opacity
-            [topImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1.0];
-            
-            UIImage *nonTransparentFavicon = UIGraphicsGetImageFromCurrentImageContext();
-            
-            UIGraphicsEndImageContext();
-            
-            
-            
-            SLColorArt *colorArt;
-            colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon scaledSize:CGSizeMake(40., 40.)];
-
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                if (favicon.size.height<39 || favicon.size.width<39) {
-                    
-                } else {
-                    UIImage * scaledImage = colorArt.scaledImage;;
-                    cell.imageView.image = scaledImage;
-                }
+        if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
+            dispatch_async(backgroundQueue, ^(void) {
                 
-                [UIView animateWithDuration:0.07 animations:^{
-                    
-                    cell.contentView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
-                    cell.backgroundView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
-                    
-                    cell.textLabel.textColor = colorArt.primaryColor;
-                    
-                    cell.detailTextLabel.textColor = colorArt.secondaryColor;
-
-                } completion:^(BOOL finished) {
-                    cell.backgroundColor = colorArt.backgroundColor;
-                    cell.contentView.backgroundColor = colorArt.backgroundColor;
-                }];
                 
+                // Replace any transparency in the favicon by white so we don't end up with black cells (unless we have a black favicon)
+                UIImage *bottomImage = [UIImage imageNamed:@"WhiteOpaque"];
+                UIImage *topImage = favicon;
+                
+                CGSize newSize = CGSizeMake(topImage.size.width, topImage.size.height);
+                UIGraphicsBeginImageContext( newSize );
+                
+                // Use existing opacity as is
+                [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+                // Apply supplied opacity
+                [topImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1.0];
+                
+                UIImage *nonTransparentFavicon = UIGraphicsGetImageFromCurrentImageContext();
+                
+                UIGraphicsEndImageContext();
+                
+                
+                
+                SLColorArt *colorArt;
+                colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon scaledSize:CGSizeMake(40., 40.)];
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    if (favicon.size.height<39 || favicon.size.width<39) {
+                        
+                    } else {
+                        UIImage * scaledImage = colorArt.scaledImage;;
+                        cell.imageView.image = scaledImage;
+                    }
+                    
+                    [UIView animateWithDuration:0.07 animations:^{
+                        
+                        cell.contentView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
+                        cell.backgroundView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
+                        
+                        cell.textLabel.textColor = colorArt.primaryColor;
+                        
+                        cell.detailTextLabel.textColor = colorArt.secondaryColor;
+                        
+                    } completion:^(BOOL finished) {
+                        cell.backgroundColor = colorArt.backgroundColor;
+                        cell.contentView.backgroundColor = colorArt.backgroundColor;
+                    }];
+                    
+                    
+                });
                 
             });
+            // End of background thread
+        } else {
+            // iPhone 4 or other single cpu device; just set the favicon
             
-        });
+            cell.imageView.image = favicon;
+        }
+
         
         
         

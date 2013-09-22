@@ -7,6 +7,7 @@
 //
 
 #import "PSSVersionsCollectionViewFlowLayout.h"
+#import "PSSDeviceCapacity.h"
 
 @interface PSSVersionsCollectionViewFlowLayout ()
 
@@ -33,14 +34,19 @@
             
             UIAttachmentBehavior * spring = [[UIAttachmentBehavior alloc] initWithItem:item attachedToAnchor:item.center];
             
-            // Has to be 0 so it stays to rest at the anchor point and not in an arbritary place
-            spring.length = 0;
-            
             // Fuddle with these as much as you need
-            spring.damping = 0.9;
-            spring.frequency = 0.9;
-            
+            /*if (PSSShouldRunAdvancedFeatures()) {
+                
+                
+                // Has to be 0 so it stays to rest at the anchor point and not in an arbritary place
+                spring.length = 0;
+                spring.damping = 0.9;
+                spring.frequency = 0.9;
+                
+            }*/
             [self.dynamicAnimator addBehavior:spring];
+            
+            
             
         }
     }

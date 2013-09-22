@@ -10,7 +10,7 @@
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordDomain.h"
 #import "IGHTMLDocument.h"
-#include "PSSDeviceCapacity.c"
+#import "PSSDeviceCapacity.h"
 
 @implementation PSSFaviconFetcher
 dispatch_queue_t backgroundQueue;
@@ -69,7 +69,7 @@ dispatch_queue_t backgroundQueue;
     }
     
     // We prevent the execution of background parsing on devices with a single processor. Sorry iPhone 4.
-    if (!PSSShouldRunAdvancedFeatures()) {
+    if (![PSSDeviceCapacity shouldRunAdvancedFeatures]) {
         return nil;
     }
     

@@ -123,7 +123,6 @@
 		AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB717EF805000618BF0 /* IGXMLNode.m */; };
 		AD372EC217EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
 		AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
-		AD372EC817EF968400618BF0 /* PSSDeviceCapacity.c in Sources */ = {isa = PBXBuildFile; fileRef = AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */; };
 		AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
@@ -265,6 +264,8 @@
 		AD58F94F17B14A5F00344134 /* SLColorArt.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F94D17B14A5F00344134 /* SLColorArt.m */; };
 		AD58F95317B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
 		AD58F95417B178AE00344134 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58F95217B178AE00344134 /* Reachability.m */; };
+		AD5AB57F17EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5AB57E17EFA61E00C5D41B /* PSSDeviceCapacity.m */; };
+		AD5AB58017EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5AB57E17EFA61E00C5D41B /* PSSDeviceCapacity.m */; };
 		AD5DD6C717BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */; };
 		AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */; };
 		AD5DD6CB17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
@@ -620,7 +621,6 @@
 		AD372EB917EF805000618BF0 /* IGXMLNodeQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeQuery.h; sourceTree = "<group>"; };
 		AD372EBA17EF805000618BF0 /* IGXMLNodeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeSet.h; sourceTree = "<group>"; };
 		AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLNodeSet.m; sourceTree = "<group>"; };
-		AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSSDeviceCapacity.c; sourceTree = "<group>"; };
 		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
@@ -735,6 +735,8 @@
 		AD58F94D17B14A5F00344134 /* SLColorArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLColorArt.m; sourceTree = "<group>"; };
 		AD58F95117B178AE00344134 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AD58F95217B178AE00344134 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AD5AB57D17EFA61E00C5D41B /* PSSDeviceCapacity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDeviceCapacity.h; sourceTree = "<group>"; };
+		AD5AB57E17EFA61E00C5D41B /* PSSDeviceCapacity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDeviceCapacity.m; sourceTree = "<group>"; };
 		AD5DD6C517BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSOrganizerSplitViewDetailViewController.h; sourceTree = "<group>"; };
 		AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		AD5DD6C917C00CE000DDB614 /* PSSOrganizerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSOrganizerCollectionViewController.h; sourceTree = "<group>"; };
@@ -1314,7 +1316,8 @@
 		AD372EC517EF965F00618BF0 /* Favicon Fetcher */ = {
 			isa = PBXGroup;
 			children = (
-				AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */,
+				AD5AB57D17EFA61E00C5D41B /* PSSDeviceCapacity.h */,
+				AD5AB57E17EFA61E00C5D41B /* PSSDeviceCapacity.m */,
 				ADA0E53D1792036500F284B9 /* PSSFaviconFetcher.h */,
 				ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */,
 			);
@@ -2452,6 +2455,7 @@
 				ADA24BFC179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
 				AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,
+				AD5AB57F17EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */,
 				AD1BECDC17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */,
 				ADC9DFB81788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */,
@@ -2509,6 +2513,7 @@
 				AD10E77E17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */,
 				AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
+				AD5AB58017EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
 				ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
 				AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */,
@@ -2634,7 +2639,6 @@
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
-				AD372EC817EF968400618BF0 /* PSSDeviceCapacity.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

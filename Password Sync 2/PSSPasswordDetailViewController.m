@@ -15,6 +15,7 @@
 #import "Reachability.h"
 #import "PSSVersionFlowPasswordCollectionViewController.h"
 #import "PSSTwoStepCodeViewController.h"
+#import "PSSDeviceCapacity.h"
 
 #define kKeyValueCell @"KeyValueCell"
 
@@ -201,39 +202,50 @@ dispatch_queue_t backgroundQueue;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    __webViewLoads = 0;
     
-    backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesWebViewFetchBlurThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
-    
-    
-    self.tableView.backgroundColor = [UIColor clearColor];
-    if (self.detailItem.decorativeImageForDevice) {
-        [self removeWebViewFromViewStack];
-        [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:YES];
+    // We only show a background view / capture a screenshot on devices with multiple CPUs (aka not the iPhone 4)
+    if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
+        
+        __webViewLoads = 0;
+        
+        backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.WebsitesWebViewFetchBlurThread", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
+        
+        
+        self.tableView.backgroundColor = [UIColor clearColor];
+        if (self.detailItem.decorativeImageForDevice) {
+            [self removeWebViewFromViewStack];
+            [self insertBlurredBackgroundImageViewInViewHierarchyWithImage:self.detailItem.decorativeImageForDevice animated:YES];
+        } else {
+            
+            // Test for reachability
+            
+            __weak Reachability* reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+            
+            // We only will capture a screenshot if user is currently connected to wifi
+            reachability.reachableOnWWAN = NO;
+            
+            reachability.reachableBlock = ^(Reachability*reach)
+            {
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    [self fetchDecorativeImageForCurrentDevice];
+                    [self.backgroundWebView setScalesPageToFit:YES];
+                });
+                [reachability stopNotifier];
+            };
+            
+            reachability.unreachableBlock = ^(Reachability*reach)
+            {
+                [reachability stopNotifier];
+            };
+            
+            [reachability startNotifier];
+            
+        }
+
     } else {
         
-        // Test for reachability
-        
-        __weak Reachability* reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
-        
-        // We only will capture a screenshot if user is currently connected to wifi.
-        reachability.reachableOnWWAN = NO;
-        
-        reachability.reachableBlock = ^(Reachability*reach)
-        {
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                [self fetchDecorativeImageForCurrentDevice];
-                [self.backgroundWebView setScalesPageToFit:YES];
-            });
-            [reachability stopNotifier];
-        };
-        
-        reachability.unreachableBlock = ^(Reachability*reach)
-        {
-            [reachability stopNotifier];
-        };
-        
-        [reachability startNotifier];
+        [self removeWebViewFromViewStack];
         
     }
     
