@@ -115,6 +115,14 @@
 		AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */; };
 		AD36371E179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
 		AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */; };
+		AD372EBC17EF805000618BF0 /* IGHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB217EF805000618BF0 /* IGHTMLDocument.m */; };
+		AD372EBD17EF805000618BF0 /* IGHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB217EF805000618BF0 /* IGHTMLDocument.m */; };
+		AD372EBE17EF805000618BF0 /* IGXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB517EF805000618BF0 /* IGXMLDocument.m */; };
+		AD372EBF17EF805000618BF0 /* IGXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB517EF805000618BF0 /* IGXMLDocument.m */; };
+		AD372EC017EF805000618BF0 /* IGXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB717EF805000618BF0 /* IGXMLNode.m */; };
+		AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB717EF805000618BF0 /* IGXMLNode.m */; };
+		AD372EC217EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
+		AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
 		AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
@@ -403,10 +411,6 @@
 		ADA0E5381791162C00F284B9 /* PSSPasswordDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */; };
 		ADA0E53F1792036500F284B9 /* PSSFaviconFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */; };
 		ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */; };
-		ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5421792498C00F284B9 /* HTMLNode.m */; };
-		ADA0E5461792498C00F284B9 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5421792498C00F284B9 /* HTMLNode.m */; };
-		ADA0E5471792498C00F284B9 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5441792498C00F284B9 /* HTMLParser.m */; };
-		ADA0E5481792498C00F284B9 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0E5441792498C00F284B9 /* HTMLParser.m */; };
 		ADA0E54B179249B900F284B9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA0E54A179249B900F284B9 /* libxml2.dylib */; };
 		ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */; };
 		ADA24BF11795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */; };
@@ -604,6 +608,17 @@
 		AD363717179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSlocationSearchTextFieldCell.m; sourceTree = "<group>"; };
 		AD36371C179B11E1005F1542 /* PSSLocationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSLocationMapCell.h; sourceTree = "<group>"; };
 		AD36371D179B11E1005F1542 /* PSSLocationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSLocationMapCell.m; sourceTree = "<group>"; };
+		AD372EB117EF805000618BF0 /* IGHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGHTMLDocument.h; sourceTree = "<group>"; };
+		AD372EB217EF805000618BF0 /* IGHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGHTMLDocument.m; sourceTree = "<group>"; };
+		AD372EB317EF805000618BF0 /* IGHTMLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGHTMLQuery.h; sourceTree = "<group>"; };
+		AD372EB417EF805000618BF0 /* IGXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLDocument.h; sourceTree = "<group>"; };
+		AD372EB517EF805000618BF0 /* IGXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLDocument.m; sourceTree = "<group>"; };
+		AD372EB617EF805000618BF0 /* IGXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNode.h; sourceTree = "<group>"; };
+		AD372EB717EF805000618BF0 /* IGXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLNode.m; sourceTree = "<group>"; };
+		AD372EB817EF805000618BF0 /* IGXMLNodeManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeManipulation.h; sourceTree = "<group>"; };
+		AD372EB917EF805000618BF0 /* IGXMLNodeQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeQuery.h; sourceTree = "<group>"; };
+		AD372EBA17EF805000618BF0 /* IGXMLNodeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeSet.h; sourceTree = "<group>"; };
+		AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLNodeSet.m; sourceTree = "<group>"; };
 		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
@@ -866,10 +881,6 @@
 		ADA0E5361791162C00F284B9 /* PSSPasswordDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordDomain.m; sourceTree = "<group>"; };
 		ADA0E53D1792036500F284B9 /* PSSFaviconFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSFaviconFetcher.h; sourceTree = "<group>"; };
 		ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSFaviconFetcher.m; sourceTree = "<group>"; };
-		ADA0E5411792498C00F284B9 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
-		ADA0E5421792498C00F284B9 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
-		ADA0E5431792498C00F284B9 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
-		ADA0E5441792498C00F284B9 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 		ADA0E54A179249B900F284B9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		ADA24BEE1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordPromptViewController.h; sourceTree = "<group>"; };
 		ADA24BEF1795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordPromptViewController.m; sourceTree = "<group>"; };
@@ -1280,6 +1291,24 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		AD372EC417EF829700618BF0 /* IGHTMLQuery */ = {
+			isa = PBXGroup;
+			children = (
+				AD372EB117EF805000618BF0 /* IGHTMLDocument.h */,
+				AD372EB217EF805000618BF0 /* IGHTMLDocument.m */,
+				AD372EB317EF805000618BF0 /* IGHTMLQuery.h */,
+				AD372EB417EF805000618BF0 /* IGXMLDocument.h */,
+				AD372EB517EF805000618BF0 /* IGXMLDocument.m */,
+				AD372EB617EF805000618BF0 /* IGXMLNode.h */,
+				AD372EB717EF805000618BF0 /* IGXMLNode.m */,
+				AD372EB817EF805000618BF0 /* IGXMLNodeManipulation.h */,
+				AD372EB917EF805000618BF0 /* IGXMLNodeQuery.h */,
+				AD372EBA17EF805000618BF0 /* IGXMLNodeSet.h */,
+				AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */,
+			);
+			name = IGHTMLQuery;
+			sourceTree = "<group>";
+		};
 		AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1514,6 +1543,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD372EC417EF829700618BF0 /* IGHTMLQuery */,
 				ADDE058A17DFB85B00546A49 /* appirater-master */,
 				AD9EFC9D17DE72ED0066013F /* DDURLParser */,
 				AD9EFC9E17DE72F60066013F /* Google Authenticator */,
@@ -1541,7 +1571,6 @@
 				ADFA1A12179257EF0038EF14 /* AVFoundation.framework */,
 				ADFA1A0A179257BB0038EF14 /* CardIO */,
 				ADA0E54A179249B900F284B9 /* libxml2.dylib */,
-				ADA0E5491792499100F284B9 /* HTML Parser */,
 				AD5176011784906700B30295 /* SPLockScreen */,
 				AD0FAA371780F5610066B7E7 /* Base64 */,
 				AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */,
@@ -1773,17 +1802,6 @@
 				AD9EFCA517DE735C0066013F /* PSSTwoStepEditorTableViewController.m */,
 			);
 			name = "Two Step";
-			sourceTree = "<group>";
-		};
-		ADA0E5491792499100F284B9 /* HTML Parser */ = {
-			isa = PBXGroup;
-			children = (
-				ADA0E5411792498C00F284B9 /* HTMLNode.h */,
-				ADA0E5421792498C00F284B9 /* HTMLNode.m */,
-				ADA0E5431792498C00F284B9 /* HTMLParser.h */,
-				ADA0E5441792498C00F284B9 /* HTMLParser.m */,
-			);
-			name = "HTML Parser";
 			sourceTree = "<group>";
 		};
 		ADC844CA179074DF00349B16 /* Random Password Generator */ = {
@@ -2324,9 +2342,11 @@
 				AD5176041784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				ADA24BF01795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
 				AD5DD6C717BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
+				AD372EBE17EF805000618BF0 /* IGXMLDocument.m in Sources */,
 				AD727A4B179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
 				AD8F5AE61782661000702EFA /* PSSWelcomeScreenMasterPasswordCheckForExistingUsersViewController.m in Sources */,
 				AD9EFCA817DE735C0066013F /* PSSTwoStepCodeViewController.m in Sources */,
+				AD372EC217EF805000618BF0 /* IGXMLNodeSet.m in Sources */,
 				AD8C836517B1CC7200A3AE79 /* PSSVersionGenericCollectionViewCell.m in Sources */,
 				AD547FD317A1C5A6008FAFFB /* MAImagePickerFinalViewController.mm in Sources */,
 				AD312670179F13CB00483E2F /* PSSLocationDetailViewController.m in Sources */,
@@ -2342,7 +2362,6 @@
 				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD8C835817B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
 				AD10E77F17BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */,
-				ADA0E5451792498C00F284B9 /* HTMLNode.m in Sources */,
 				AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD10E78D17BDB6F400CF3402 /* RSColorPickerView.m in Sources */,
 				AD10E78F17BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,
@@ -2377,6 +2396,7 @@
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
 				AD10E78917BDB6F400CF3402 /* RSBrightnessSlider.m in Sources */,
 				AD547FCF17A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
+				AD372EC017EF805000618BF0 /* IGXMLNode.m in Sources */,
 				AD10E77717BDB6F400CF3402 /* UIImage+ANImageBitmapRep.m in Sources */,
 				AD10E73D17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m in Sources */,
 				AD4553B817C831BE00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
@@ -2394,7 +2414,6 @@
 				ADA0E5331790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD821042177CFBD400B6F501 /* PSSPasswordVersion.m in Sources */,
 				AD9EFC9117DE72E80066013F /* DDURLParser.m in Sources */,
-				ADA0E5471792498C00F284B9 /* HTMLParser.m in Sources */,
 				AD547FD117A1C5A6008FAFFB /* MAImagePickerControllerAdjustViewController.mm in Sources */,
 				AD547FC917A1C5A6008FAFFB /* MACaptureSession.m in Sources */,
 				AD72C3CF177B7E27009AADC8 /* PSSAppDelegate.m in Sources */,
@@ -2417,6 +2436,7 @@
 				AD8F5AD51781FFBF00702EFA /* PSSWelcomeScreenPrintMasterPasswordViewController.m in Sources */,
 				AD82107F177D40F100B6F501 /* PDKeychainBindingsController.m in Sources */,
 				AD873B67178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
+				AD372EBC17EF805000618BF0 /* IGHTMLDocument.m in Sources */,
 				AD4553C317C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */,
 				ADA24BFC179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,
 				AD82107D177D40F100B6F501 /* PDKeychainBindings.m in Sources */,
@@ -2480,6 +2500,7 @@
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
 				ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
+				AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */,
 				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADAD160F17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,
 				AD821069177D37ED00B6F501 /* RNDecryptor.m in Sources */,
@@ -2508,6 +2529,7 @@
 				AD547FD617A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD9EFCAD17DE735C0066013F /* PSSTwoStepEditorTableViewController.m in Sources */,
+				AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
@@ -2525,6 +2547,7 @@
 				ADA0E5381791162C00F284B9 /* PSSPasswordDomain.m in Sources */,
 				AD547FCA17A1C5A6008FAFFB /* MACaptureSession.m in Sources */,
 				AD873B68178E5E8900B77412 /* PSSnewPasswordBasicTextFieldCell.m in Sources */,
+				AD372EBF17EF805000618BF0 /* IGXMLDocument.m in Sources */,
 				AD36371F179B11E1005F1542 /* PSSLocationMapCell.m in Sources */,
 				ADAD161B17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD10E78217BDB6F400CF3402 /* BitmapDrawManipulator.m in Sources */,
@@ -2551,11 +2574,11 @@
 				ADA0E5401792036500F284B9 /* PSSFaviconFetcher.m in Sources */,
 				AD1BECD917A42410001292E8 /* PSSGenericDetailViewController.m in Sources */,
 				AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */,
+				AD372EBD17EF805000618BF0 /* IGHTMLDocument.m in Sources */,
 				AD82104B177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD10E77617BDB6F400CF3402 /* OSCommonImage.m in Sources */,
 				AD10E73617BD79CB00CF3402 /* PSSObjectFolder.m in Sources */,
 				AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
-				ADA0E5461792498C00F284B9 /* HTMLNode.m in Sources */,
 				ADA24BF11795FB4C003BDCC5 /* PSSMasterPasswordPromptViewController.m in Sources */,
 				AD1BECDD17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */,
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
@@ -2577,7 +2600,6 @@
 				ADA0E5341790AF0C00F284B9 /* PSSPasswordStrengthGaugeView.m in Sources */,
 				AD10E77017BDB6F400CF3402 /* ANImageBitmapRep.m in Sources */,
 				AD727A4C179DE6230030707F /* PSSCardEmergencyContactTableViewController.m in Sources */,
-				ADA0E5481792498C00F284B9 /* HTMLParser.m in Sources */,
 				AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,

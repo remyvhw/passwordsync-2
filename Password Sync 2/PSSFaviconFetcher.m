@@ -9,7 +9,7 @@
 #import "PSSFaviconFetcher.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordDomain.h"
-#import "HTMLParser.h"
+#import "IGHTMLDocument.h"
 
 @implementation PSSFaviconFetcher
 dispatch_queue_t backgroundQueue;
@@ -23,40 +23,96 @@ dispatch_queue_t backgroundQueue;
     return self;
 }
 
--(UIImage*)requestFaviconFromServer:(NSURL*)fetchURL{
-    
-    NSURL * faviconURL = [fetchURL URLByAppendingPathComponent:@"favicon.ico"];
-    
-    NSData * requestData = [NSData dataWithContentsOfURL:faviconURL];
+-(UIImage*)requestImageAtURL:(NSURL*)url{
+    NSData * requestData = [NSData dataWithContentsOfURL:url];
     
     if (requestData) {
         UIImage * image = [UIImage imageWithData:requestData];
         return image;
     }
-    
     return nil;
 }
 
 
+-(UIImage*)requestFaviconFromServer:(NSURL*)fetchURL{
+    
+    NSURL * faviconURL = [fetchURL URLByAppendingPathComponent:@"favicon.ico"];
+    
+    return [self requestImageAtURL:faviconURL];
+}
+
+
+
 -(UIImage*)requestAppleTouchIconFromServer:(NSURL*)fetchURL{
+    
+    // A lot of servers have the touch icon at their root, we'll first try there.
     
     NSURL * touchIconURL = [fetchURL URLByAppendingPathComponent:@"apple-touch-icon.png"];
     
-    NSURLRequest * urlRequest = [[NSURLRequest alloc] initWithURL:touchIconURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
+    NSURLRequest * touchIconAtRootRequest = [[NSURLRequest alloc] initWithURL:touchIconURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
     
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    
-    
-    NSData * requestContent = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    NSURLResponse * touchIconAtRootRequestResponse = nil;
+    NSError * touchIconAtRootRequestError = nil;
     
     
-    if (!error && requestContent) {
-        
-        UIImage * pngImage = [UIImage imageWithData:requestContent];
-        return pngImage;
+    NSData * touchIconAtRootRequestContent = [NSURLConnection sendSynchronousRequest:touchIconAtRootRequest returningResponse:&touchIconAtRootRequestResponse error:&touchIconAtRootRequestError];
+    
+    
+    if (!touchIconAtRootRequestError && touchIconAtRootRequestContent) {
+        // A touch icon was found immediatly at the server's root (eg.: "http://apple.com/apple-touch-icon.png")
+        UIImage * pngImage = [UIImage imageWithData:touchIconAtRootRequestContent];
+        // TODO: remove comment
+        //return pngImage;
         
     }
+    
+    // We'll load the HTML in the home page and query it for an apple-touch-icon
+    
+    NSURLRequest * indexHTMLRequest = [[NSURLRequest alloc] initWithURL:fetchURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
+    
+    NSURLResponse * indexHTMLResponse = nil;
+    NSError * indexHTMLRequestError = nil;
+    
+    NSData * indexHTMLRequestContent = [NSURLConnection sendSynchronousRequest:indexHTMLRequest returningResponse:&indexHTMLResponse error:&indexHTMLRequestError];
+    
+    if (!indexHTMLRequestError && indexHTMLRequestContent) {
+        
+        
+        NSString * htmlString = [[NSString alloc] initWithData:indexHTMLRequestContent encoding:NSUTF8StringEncoding];
+        
+        if (!htmlString) {
+            // Encoding might be wrong, try ASCII
+            htmlString = [[NSString alloc] initWithData:indexHTMLRequestContent encoding:NSASCIIStringEncoding];
+        }
+        
+        NSError * documentParserImportError;
+        IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:htmlString error:&documentParserImportError];
+        
+        if (documentParserImportError) {
+            NSLog(@"Error: %@", [documentParserImportError localizedDescription]);
+            return nil;
+        }
+        
+        
+        // First, look for a apple-touch-icon
+        NSString * touchIconPath = [[[doc queryWithXPath:@"//link[@rel='apple-touch-icon']"] firstObject] attribute:@"href"];
+        if (touchIconPath) {
+            NSLog(@"%@", touchIconPath);
+            return [self requestImageAtURL:[NSURL URLWithString:touchIconPath relativeToURL:fetchURL]];
+        }
+        
+        // Sometimes, they'll instead use apple-touch-icon-precomposed
+        // First, look for a apple-touch-icon
+        touchIconPath = [[[doc queryWithXPath:@"//link[@rel='apple-touch-icon-precomposed']"] firstObject] attribute:@"href"];
+        if (touchIconPath) {
+            return [self requestImageAtURL:[NSURL URLWithString:touchIconPath relativeToURL:fetchURL]];
+        }
+        
+    }
+    
+    
+    
+    
     return nil;
     
 }
@@ -110,6 +166,7 @@ dispatch_queue_t backgroundQueue;
 }
 
 
+#pragma mark - Public methods
 -(void)backgroundFetchFaviconForBasePassword:(PSSPasswordBaseObject *)basePassword{
     
     dispatch_async(backgroundQueue, ^(void) {
