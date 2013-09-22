@@ -14,4 +14,5 @@
 
 -(void)backgroundFetchFaviconForBasePassword:(PSSPasswordBaseObject*)basePassword;
 
+
 @end

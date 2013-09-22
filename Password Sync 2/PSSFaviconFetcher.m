@@ -10,6 +10,7 @@
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordDomain.h"
 #import "IGHTMLDocument.h"
+#include "PSSDeviceCapacity.c"
 
 @implementation PSSFaviconFetcher
 dispatch_queue_t backgroundQueue;
@@ -57,13 +58,19 @@ dispatch_queue_t backgroundQueue;
     
     NSData * touchIconAtRootRequestContent = [NSURLConnection sendSynchronousRequest:touchIconAtRootRequest returningResponse:&touchIconAtRootRequestResponse error:&touchIconAtRootRequestError];
     
-    
     if (!touchIconAtRootRequestError && touchIconAtRootRequestContent) {
         // A touch icon was found immediatly at the server's root (eg.: "http://apple.com/apple-touch-icon.png")
         UIImage * pngImage = [UIImage imageWithData:touchIconAtRootRequestContent];
         // TODO: remove comment
-        //return pngImage;
+        if (pngImage) {
+            return pngImage;
+        }
         
+    }
+    
+    // We prevent the execution of background parsing on devices with a single processor. Sorry iPhone 4.
+    if (!PSSShouldRunAdvancedFeatures()) {
+        return nil;
     }
     
     // We'll load the HTML in the home page and query it for an apple-touch-icon

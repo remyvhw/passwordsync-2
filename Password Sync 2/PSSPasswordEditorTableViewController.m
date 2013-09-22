@@ -121,6 +121,12 @@
         }];
     } else {
         
+        if (!self.baseObject.favicon) {
+            PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
+            
+            [faviconFetcher backgroundFetchFaviconForBasePassword:self.baseObject];
+        }
+        
         if (self.editorDelegate) {
             [self.editorDelegate objectEditor:self finishedWithObject:self.baseObject];
         }

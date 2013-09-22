@@ -123,6 +123,7 @@
 		AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB717EF805000618BF0 /* IGXMLNode.m */; };
 		AD372EC217EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
 		AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
+		AD372EC817EF968400618BF0 /* PSSDeviceCapacity.c in Sources */ = {isa = PBXBuildFile; fileRef = AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */; };
 		AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4553B017C7E39C00A5C395 /* MSCMoreOptionTableViewCell.m */; };
@@ -619,6 +620,7 @@
 		AD372EB917EF805000618BF0 /* IGXMLNodeQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeQuery.h; sourceTree = "<group>"; };
 		AD372EBA17EF805000618BF0 /* IGXMLNodeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeSet.h; sourceTree = "<group>"; };
 		AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLNodeSet.m; sourceTree = "<group>"; };
+		AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSSDeviceCapacity.c; sourceTree = "<group>"; };
 		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
@@ -1309,6 +1311,16 @@
 			name = IGHTMLQuery;
 			sourceTree = "<group>";
 		};
+		AD372EC517EF965F00618BF0 /* Favicon Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				AD372EC617EF968400618BF0 /* PSSDeviceCapacity.c */,
+				ADA0E53D1792036500F284B9 /* PSSFaviconFetcher.h */,
+				ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */,
+			);
+			name = "Favicon Fetcher";
+			sourceTree = "<group>";
+		};
 		AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1610,8 +1622,7 @@
 				ADC9DFA91788C500006F2858 /* Master password and passcode controllers */,
 				ADC9DFB61788E00A006F2858 /* PSSEncryptor.h */,
 				ADC9DFB71788E00A006F2858 /* PSSEncryptor.m */,
-				ADA0E53D1792036500F284B9 /* PSSFaviconFetcher.h */,
-				ADA0E53E1792036500F284B9 /* PSSFaviconFetcher.m */,
+				AD372EC517EF965F00618BF0 /* Favicon Fetcher */,
 				AD1BECCB17A33C68001292E8 /* PSSThumbnailMaker.h */,
 				AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */,
 				AD8C836817B1CC9500A3AE79 /* Versions */,
@@ -2623,6 +2634,7 @@
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
+				AD372EC817EF968400618BF0 /* PSSDeviceCapacity.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
