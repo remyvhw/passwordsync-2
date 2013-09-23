@@ -104,7 +104,6 @@ dispatch_queue_t backgroundQueue;
         // First, look for a apple-touch-icon
         NSString * touchIconPath = [[[doc queryWithXPath:@"//link[@rel='apple-touch-icon']"] firstObject] attribute:@"href"];
         if (touchIconPath) {
-            NSLog(@"%@", touchIconPath);
             return [self requestImageAtURL:[NSURL URLWithString:touchIconPath relativeToURL:fetchURL]];
         }
         
