@@ -302,12 +302,12 @@ dispatch_queue_t backgroundQueue;
         
         // Add parallax effect
         UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-        interpolationHorizontal.minimumRelativeValue = @-17.0;
-        interpolationHorizontal.maximumRelativeValue = @17.0;
+        interpolationHorizontal.minimumRelativeValue = @-20.0;
+        interpolationHorizontal.maximumRelativeValue = @20.0;
         
         UIInterpolatingMotionEffect *interpolationVertical = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-        interpolationVertical.minimumRelativeValue = @-17.0;
-        interpolationVertical.maximumRelativeValue = @17.0;
+        interpolationVertical.minimumRelativeValue = @-20.0;
+        interpolationVertical.maximumRelativeValue = @20.0;
         
         [self.digitsLabel setMotionEffects:@[interpolationHorizontal, interpolationVertical]];
         [self.remainingTimeIndicator setMotionEffects:@[interpolationVertical, interpolationHorizontal]];
