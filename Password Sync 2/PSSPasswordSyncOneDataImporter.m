@@ -8,7 +8,6 @@
 
 #import "PSSPasswordSyncOneDataImporter.h"
 #import "PDKeychainBindings.h"
-#import "Base64.h"
 #import "RNDecryptor.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSPasswordVersion.h"
@@ -114,7 +113,7 @@
     
     NSString * pureBase64String = [[[queryString stringByReplacingOccurrencesOfString:@"-" withString:@"+"] stringByReplacingOccurrencesOfString:@"_" withString:@"/"] stringByReplacingOccurrencesOfString:@"*" withString:@"="];
     
-    NSData * encryptedJSONData = [NSData dataWithBase64EncodedString:pureBase64String];
+    NSData * encryptedJSONData = [[NSData alloc] initWithBase64EncodedString:pureBase64String options:0];
     
     NSString * encryptionKey = [[PDKeychainBindings sharedKeychainBindings] stringForKey:PSSPasswordSyncOneImporterEncryptionKey];
     

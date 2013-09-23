@@ -15,8 +15,6 @@
 		AD0FAA32177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */; };
 		AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
 		AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */; };
-		AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
-		AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FAA391780F5610066B7E7 /* Base64.m */; };
 		AD10E72517BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */; };
 		AD10E72617BD5E5B00CF3402 /* PSSTagEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */; };
 		AD10E72917BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E72817BD62A300CF3402 /* PSSFolderEditorViewController.m */; };
@@ -470,8 +468,6 @@
 		ADDE05B117DFB85C00546A49 /* Appirater.podspec in Resources */ = {isa = PBXBuildFile; fileRef = ADDE058E17DFB85B00546A49 /* Appirater.podspec */; };
 		ADDE05B217DFB85C00546A49 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDE059017DFB85B00546A49 /* AppiraterLocalizable.strings */; };
 		ADDE05B317DFB85C00546A49 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADDE059017DFB85B00546A49 /* AppiraterLocalizable.strings */; };
-		ADDE05B417DFB85C00546A49 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADDE05A417DFB85C00546A49 /* README.md */; };
-		ADDE05B517DFB85C00546A49 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADDE05A417DFB85C00546A49 /* README.md */; };
 		ADE7E8C5179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */; };
 		ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7E8C4179C62E900BA09E7 /* PSSPasswordDetailViewController.m */; };
 		ADE7F04E17C14F1300589535 /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE7F04D17C14F1300589535 /* RFQuiltLayout.m */; };
@@ -515,8 +511,6 @@
 		AD0FAA30177F9ADF0066B7E7 /* PSSWelcomeNewUserSetMasterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeNewUserSetMasterPasswordViewController.m; sourceTree = "<group>"; };
 		AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RVshaDigester.h; path = "Password Sync 2/RVshaDigester.h"; sourceTree = "<group>"; };
 		AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RVshaDigester.m; path = "Password Sync 2/RVshaDigester.m"; sourceTree = "<group>"; };
-		AD0FAA381780F5610066B7E7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		AD0FAA391780F5610066B7E7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		AD10E72317BD5E5B00CF3402 /* PSSTagEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagEditorTableViewController.h; sourceTree = "<group>"; };
 		AD10E72417BD5E5B00CF3402 /* PSSTagEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagEditorTableViewController.m; sourceTree = "<group>"; };
 		AD10E72717BD62A300CF3402 /* PSSFolderEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSFolderEditorViewController.h; sourceTree = "<group>"; };
@@ -969,7 +963,6 @@
 		ADDE05A117DFB85C00546A49 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		ADDE05A217DFB85C00546A49 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		ADDE05A317DFB85C00546A49 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
-		ADDE05A417DFB85C00546A49 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		ADDE05A517DFB85C00546A49 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		ADDE05A617DFB85C00546A49 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		ADDE05A717DFB85C00546A49 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
@@ -1050,15 +1043,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD0FAA371780F5610066B7E7 /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				AD0FAA381780F5610066B7E7 /* Base64.h */,
-				AD0FAA391780F5610066B7E7 /* Base64.m */,
-			);
-			path = Base64;
-			sourceTree = "<group>";
-		};
 		AD10E74717BDB6F400CF3402 /* ANImageBitmapRep */ = {
 			isa = PBXGroup;
 			children = (
@@ -1587,7 +1571,6 @@
 				ADFA1A0A179257BB0038EF14 /* CardIO */,
 				ADA0E54A179249B900F284B9 /* libxml2.dylib */,
 				AD5176011784906700B30295 /* SPLockScreen */,
-				AD0FAA371780F5610066B7E7 /* Base64 */,
 				AD0FAA331780F1E50066B7E7 /* RVshaDigester.h */,
 				AD0FAA341780F1E50066B7E7 /* RVshaDigester.m */,
 				AD821053177D37ED00B6F501 /* RNCryptor */,
@@ -1986,7 +1969,6 @@
 				ADDE058E17DFB85B00546A49 /* Appirater.podspec */,
 				ADDE058F17DFB85B00546A49 /* AppiraterDelegate.h */,
 				ADDE059017DFB85B00546A49 /* AppiraterLocalizable.strings */,
-				ADDE05A417DFB85C00546A49 /* README.md */,
 			);
 			path = "appirater-master";
 			sourceTree = "<group>";
@@ -2218,7 +2200,6 @@
 				AD54803417A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
 				AD04EBB717BAA649009AD982 /* PSSPasswordListSearchResultCell.xib in Resources */,
 				AD54803C17A1C7EE008FAFFB /* enhance-button.png in Resources */,
-				ADDE05B417DFB85C00546A49 /* README.md in Resources */,
 				ADAD15FE17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD54801817A1C7EE008FAFFB /* f-setting-1-active@2x.png in Resources */,
 				AD7F800417B082E600A590FA /* OCRA.ttf in Resources */,
@@ -2287,7 +2268,6 @@
 				AD873B64178CD2BA00B77412 /* PSSNewPasswordObjectStoryboard_iPhone.storyboard in Resources */,
 				AD54806717A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */,
 				AD54801717A1C7EE008FAFFB /* f-setting-1-active.png in Resources */,
-				ADDE05B517DFB85C00546A49 /* README.md in Resources */,
 				AD54804D17A1C7EE008FAFFB /* flash-on-button@2x.png in Resources */,
 				ADDE05B117DFB85C00546A49 /* Appirater.podspec in Resources */,
 				AD54802517A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
@@ -2318,7 +2298,6 @@
 				AD547FAD17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD6133F01793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,
 				AD5175FB1784906200B30295 /* NormalCircle.m in Sources */,
-				AD0FAA3A1780F5610066B7E7 /* Base64.m in Sources */,
 				ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */,
 				AD547FCD17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
 				AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */,
@@ -2576,7 +2555,6 @@
 				AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */,
 				AD312644179F08A600483E2F /* HexColor.m in Sources */,
 				AD5DD6CC17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */,
-				AD0FAA3B1780F5610066B7E7 /* Base64.m in Sources */,
 				ADA24BF5179851A8003BDCC5 /* PSSDocumentVersion.m in Sources */,
 				AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */,
 				AD10E79017BDB6F400CF3402 /* RSOpacitySlider.m in Sources */,

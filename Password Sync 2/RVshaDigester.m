@@ -8,7 +8,6 @@
 
 #import "RVshaDigester.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "Base64.h"
 
 @implementation RVshaDigester
 
@@ -30,8 +29,9 @@
     
     NSData * sha512data = [self sha512DataDigestWithString:source];
     
+    
     // Use the Base64 NSData category to encode the content in Bas64
-    return [sha512data base64EncodedString];
+    return [sha512data base64EncodedStringWithOptions:0];
     
     
 }
