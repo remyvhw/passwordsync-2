@@ -12,7 +12,11 @@
 #import "PSSBaseObjectVersion.h"
 #import "PSSTwoStepEditorTableViewController.h"
 #import "PSSPasswordVersion.h"
+#import "PSSPasswordBaseObject.h"
 #import "OTPAuthURL.h"
+#import "PSSDeviceCapacity.h"
+#import "UIImage+ImageEffects.h"
+#import "SLColorArt.h"
 
 typedef enum {
     PSSTwoStepTypeModeNone,
@@ -21,6 +25,7 @@ typedef enum {
 } PSSTwoStepTypeMode;
 
 @interface PSSTwoStepCodeViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *digitsLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *remainingTimeIndicator;
 @property (nonatomic, strong) NSDictionary * additionalData;
@@ -28,11 +33,15 @@ typedef enum {
 @property (nonatomic) OTPGenerator * generator;
 @property (nonatomic, strong) NSTimer*secondsTimer;
 
+@property (nonatomic, strong) UIColor * foregroundColor;
+
 @property (nonatomic, strong) UIPopoverController * editorPopover;
 
 @end
 
 @implementation PSSTwoStepCodeViewController
+dispatch_queue_t backgroundQueue;
+
 
 -(NSDictionary *)additionalDataWithExistingData:(NSDictionary*)existingData twoStepValues:(NSDictionary*)twoStepValues{
     
@@ -102,12 +111,15 @@ typedef enum {
     
     [self.remainingTimeIndicator setProgress:1-percent];
     
-    
-    if (percent <= 0.83) {
-        [self.remainingTimeIndicator setTintColor:self.view.window.tintColor];
-    } else {
-        [self.remainingTimeIndicator setTintColor:[UIColor colorWithRed:143./255.0 green:45./255.0 blue:50./255.0 alpha:1.0]];
+    if (!self.foregroundColor) {
+        // We show a red indicator
+        if (percent <= 0.83) {
+            [self.remainingTimeIndicator setTintColor:self.foregroundColor];
+        } else {
+            [self.remainingTimeIndicator setTintColor:[UIColor colorWithRed:143./255.0 green:45./255.0 blue:50./255.0 alpha:1.0]];
+        }
     }
+    
     
     
 }
@@ -227,7 +239,79 @@ typedef enum {
     
     [self refreshTypeAndCounter];
     
-    
+    if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
+        
+        if ([self.detailItem isKindOfClass:[PSSPasswordBaseObject class]]) {
+            backgroundQueue = dispatch_queue_create([[NSString stringWithFormat:@"%@.TwoStepBackgroundImageProcessingQueue", [[NSBundle mainBundle] bundleIdentifier]] cStringUsingEncoding:NSUTF8StringEncoding], NULL);
+            
+            // Configure a image view with a blur
+            self.backgroundImage.image = [[UIImage imageWithData:[(PSSPasswordBaseObject*)self.detailItem favicon]] applyLightEffect];
+            
+            [self.remainingTimeIndicator setAlpha:0.0];
+            self.digitsLabel.alpha = 0.0;
+            
+            dispatch_async(backgroundQueue, ^(void) {
+                
+                
+                // Replace any transparency in the favicon by white so we don't end up with black cells (unless we have a black favicon)
+                UIImage *bottomImage = [UIImage imageNamed:@"WhiteOpaque"];
+                UIImage *topImage = [UIImage imageWithData:[(PSSPasswordBaseObject*)self.detailItem favicon]];
+                
+                CGSize newSize = CGSizeMake(topImage.size.width, topImage.size.height);
+                UIGraphicsBeginImageContext( newSize );
+                
+                // Use existing opacity as is
+                [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+                // Apply supplied opacity
+                [topImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1.0];
+                
+                UIImage *nonTransparentFavicon = UIGraphicsGetImageFromCurrentImageContext();
+                
+                UIGraphicsEndImageContext();
+                
+                
+                
+                SLColorArt *colorArt;
+                colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon];
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    
+                    
+                    
+                    self.foregroundColor = colorArt.secondaryColor;
+                    self.digitsLabel.textColor = self.foregroundColor;
+                    self.remainingTimeIndicator.tintColor = self.foregroundColor;
+                    self.remainingTimeIndicator.trackTintColor = colorArt.backgroundColor;
+                    
+                    [UIView animateWithDuration:1.5 animations:^{
+                        [self.remainingTimeIndicator setAlpha:1.0];
+                        self.digitsLabel.alpha = 1.0;
+                    }];
+                    
+                });
+                
+            });
+            // End of background thread
+        }
+
+        
+        
+        
+        
+        
+        // Add parallax effect
+        UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+        interpolationHorizontal.minimumRelativeValue = @-17.0;
+        interpolationHorizontal.maximumRelativeValue = @17.0;
+        
+        UIInterpolatingMotionEffect *interpolationVertical = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+        interpolationVertical.minimumRelativeValue = @-17.0;
+        interpolationVertical.maximumRelativeValue = @17.0;
+        
+        [self.digitsLabel setMotionEffects:@[interpolationHorizontal, interpolationVertical]];
+        [self.remainingTimeIndicator setMotionEffects:@[interpolationVertical, interpolationHorizontal]];
+
+    }
     
     
 }
