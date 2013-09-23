@@ -246,6 +246,7 @@ dispatch_queue_t backgroundQueue;
             
             // Configure a image view with a blur
             self.backgroundImage.image = [[UIImage imageWithData:[(PSSPasswordBaseObject*)self.detailItem favicon]] applyLightEffect];
+            self.backgroundImage.clipsToBounds = YES;
             
             [self.remainingTimeIndicator setAlpha:0.0];
             self.digitsLabel.alpha = 0.0;
