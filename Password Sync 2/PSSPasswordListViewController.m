@@ -381,6 +381,7 @@ dispatch_queue_t backgroundQueue;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    
     PSSPasswordBaseObject *object = (PSSPasswordBaseObject*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = object.displayName;
     
@@ -400,8 +401,10 @@ dispatch_queue_t backgroundQueue;
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     
+    
     if (favicon) {
         if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
+            cell.alpha = 0.1;
             dispatch_async(backgroundQueue, ^(void) {
                 
                 
@@ -433,19 +436,20 @@ dispatch_queue_t backgroundQueue;
                         UIImage * scaledImage = colorArt.scaledImage;;
                         cell.imageView.image = scaledImage;
                     }
-                    
-                    [UIView animateWithDuration:0.07 animations:^{
+                    cell.backgroundColor = colorArt.backgroundColor;
+                    cell.contentView.backgroundColor = colorArt.backgroundColor;
+                    cell.detailTextLabel.textColor = colorArt.secondaryColor;
+                    cell.textLabel.textColor = colorArt.primaryColor;
+
+                    [UIView animateWithDuration:0.7 animations:^{
                         
                         cell.contentView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
                         cell.backgroundView.layer.backgroundColor = colorArt.backgroundColor.CGColor;
                         
-                        cell.textLabel.textColor = colorArt.primaryColor;
                         
-                        cell.detailTextLabel.textColor = colorArt.secondaryColor;
-                        
+                        cell.alpha = 1.0;
                     } completion:^(BOOL finished) {
-                        cell.backgroundColor = colorArt.backgroundColor;
-                        cell.contentView.backgroundColor = colorArt.backgroundColor;
+                        
                     }];
                     
                     
