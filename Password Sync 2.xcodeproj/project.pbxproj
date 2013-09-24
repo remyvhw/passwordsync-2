@@ -63,6 +63,8 @@
 		AD10E79017BDB6F400CF3402 /* RSOpacitySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */; };
 		AD10E79117BDB6F400CF3402 /* RSSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */; };
 		AD10E79217BDB6F400CF3402 /* RSSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */; };
+		AD1A386117F132360056C583 /* PSSGeneralSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */; };
+		AD1A386217F132360056C583 /* PSSGeneralSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */; };
 		AD1BECCD17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
 		AD1BECCE17A33C68001292E8 /* PSSThumbnailMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */; };
 		AD1BECD017A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */; };
@@ -79,8 +81,8 @@
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
 		AD2C5A8617BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
-		AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
-		AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */; };
+		AD2C5A8A17BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m */; };
+		AD2C5A8B17BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8917BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m */; };
 		AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */; };
 		AD2C9E3B17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */; };
 		AD312641179F08A600483E2F /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AD312625179F08A600483E2F /* TSMessage.m */; };
@@ -559,6 +561,8 @@
 		AD10E76C17BDB6F400CF3402 /* RSOpacitySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOpacitySlider.m; sourceTree = "<group>"; };
 		AD10E76D17BDB6F400CF3402 /* RSSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSelectionView.h; sourceTree = "<group>"; };
 		AD10E76E17BDB6F400CF3402 /* RSSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSelectionView.m; sourceTree = "<group>"; };
+		AD1A385F17F132360056C583 /* PSSGeneralSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSGeneralSettingsTableViewController.h; sourceTree = "<group>"; };
+		AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGeneralSettingsTableViewController.m; sourceTree = "<group>"; };
 		AD1BECCB17A33C68001292E8 /* PSSThumbnailMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSThumbnailMaker.h; sourceTree = "<group>"; };
 		AD1BECCC17A33C68001292E8 /* PSSThumbnailMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSThumbnailMaker.m; sourceTree = "<group>"; };
 		AD1BECCF17A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSNotesAttachmentTableViewCell.xib; sourceTree = "<group>"; };
@@ -574,8 +578,8 @@
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsAndDirectoriesTableViewController.h; sourceTree = "<group>"; };
 		AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSTagsAndDirectoriesTableViewController.m; sourceTree = "<group>"; };
-		AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsTableViewController.h; sourceTree = "<group>"; };
-		AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsTableViewController.m; sourceTree = "<group>"; };
+		AD2C5A8817BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasscodeSettingsTableViewController.h; sourceTree = "<group>"; };
+		AD2C5A8917BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasscodeSettingsTableViewController.m; sourceTree = "<group>"; };
 		AD2C9E3817BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSObjectsForTagOrCategoryViewController.h; sourceTree = "<group>"; };
 		AD2C9E3917BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSObjectsForTagOrCategoryViewController.m; sourceTree = "<group>"; };
 		AD312624179F08A600483E2F /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
@@ -1148,8 +1152,10 @@
 		AD2C5A8C17BC3BE100C23AFA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				AD2C5A8817BC3BDA00C23AFA /* PSSSettingsTableViewController.h */,
-				AD2C5A8917BC3BDA00C23AFA /* PSSSettingsTableViewController.m */,
+				AD2C5A8817BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.h */,
+				AD2C5A8917BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m */,
+				AD1A385F17F132360056C583 /* PSSGeneralSettingsTableViewController.h */,
+				AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */,
 				AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */,
 				AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */,
 			);
@@ -2316,6 +2322,7 @@
 				AD547FD717A1C5A6008FAFFB /* UIImage+fixOrientation.m in Sources */,
 				AD9EFCAC17DE735C0066013F /* PSSTwoStepEditorTableViewController.m in Sources */,
 				AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */,
+				AD1A386117F132360056C583 /* PSSGeneralSettingsTableViewController.m in Sources */,
 				ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
@@ -2370,7 +2377,7 @@
 				AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD10E73917BD7B4600CF3402 /* PSSObjectTag.m in Sources */,
-				AD2C5A8A17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
+				AD2C5A8A17BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m in Sources */,
 				AD10E77917BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD33DD6A17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
 				AD49C8A417BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
@@ -2491,6 +2498,7 @@
 				AD3637151798A04D005F1542 /* PSSLocationEditorTableViewController.m in Sources */,
 				AD10E77E17BDB6F400CF3402 /* BitmapContextManipulator.m in Sources */,
 				AD547FAE17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
+				AD1A386217F132360056C583 /* PSSGeneralSettingsTableViewController.m in Sources */,
 				AD5176001784906200B30295 /* SPLockOverlay.m in Sources */,
 				AD5AB58017EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
@@ -2531,7 +2539,7 @@
 				AD10E77A17BDB6F400CF3402 /* CGContextCreator.m in Sources */,
 				AD4553B917C831BF00A5C395 /* PSSLocationChoicePopoverViewController.m in Sources */,
 				AD4553C217C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */,
-				AD2C5A8B17BC3BDA00C23AFA /* PSSSettingsTableViewController.m in Sources */,
+				AD2C5A8B17BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m in Sources */,
 				AD9EFC9817DE72E80066013F /* OTPAuthURL.m in Sources */,
 				AD49C8A017BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADA24BFD179851A8003BDCC5 /* PSSLocationBaseObject.m in Sources */,

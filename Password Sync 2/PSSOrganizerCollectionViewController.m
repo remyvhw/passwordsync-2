@@ -19,7 +19,6 @@
     NSUInteger _countOfGenericObjects;
 }
 
-@property (nonatomic) BOOL passcodeUnlockedForSettingsSegue;
 
 @property (nonatomic, strong) NSFetchedResultsController * tagsFetchedResultsController;
 
@@ -138,49 +137,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-    
-    if ([identifier isEqualToString:@"presentSettingsPopoverSegue"]) {
-        
-        if (self.passcodeUnlockedForSettingsSegue) {
-            return YES;
-        } else {
-            
-            UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
-            PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
-            
-            [self.navigationController presentViewController:[unlockController promptForPasscodeBlockingView:NO completion:^{
-                
-                double delayInSeconds = 0.1;
-                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                    self.passcodeUnlockedForSettingsSegue = YES;
-                    [self performSegueWithIdentifier:@"presentSettingsPopoverSegue" sender:self.navigationItem.rightBarButtonItem];
-                });
-                
-                
-                
-            } cancelation:^{
-                
-            }] animated:YES completion:^{
-                
-            }];
-            return NO;
-        }
-        
-    }
-    
-    return YES;
-}
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    
-    if ([[segue identifier] isEqualToString:@"presentSettingsPopoverSegue"]) {
-        self.passcodeUnlockedForSettingsSegue = NO;
-    }
-    
-}
+
 
 #pragma mark - UITableViewDelegate
 

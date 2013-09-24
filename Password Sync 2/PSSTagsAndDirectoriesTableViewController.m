@@ -57,7 +57,6 @@ typedef enum {
         [UIView animateWithDuration:0.2 animations:^{
             [self.tagsFoldersSegmentedControl setAlpha:1.0];
         }];
-        [self showSettingsButtonAnimated:YES];
     }
     
 }
@@ -65,20 +64,6 @@ typedef enum {
 -(void)showNewButtonAnimated:(BOOL)animated{
     UIBarButtonItem * newButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
     [self.navigationItem setLeftBarButtonItem:newButton animated:animated];
-}
-
--(void)showSettingsButtonAnimated:(BOOL)animated{
-   
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        UIBarButtonItem * settingsButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) style:UIBarButtonItemStylePlain target:self action:@selector(presentSettingsViewAction:)];
-        
-        [self.navigationItem setLeftBarButtonItem:settingsButton animated:animated];
-
-    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-        
-    }
 }
 
 
@@ -133,30 +118,6 @@ typedef enum {
     
 }
 
--(void)presentSettingsViewAction:(id)sender{
-    
-    UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
-    PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
-    
-    [self.navigationController presentViewController:[unlockController promptForPasscodeBlockingView:NO completion:^{
-        // We only run the refresh if the UI was locked to prevent double reloads
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            
-        } else {
-            [self performSegueWithIdentifier:@"showSettingsSegue" sender:self];
-        }
-        
-        
-    } cancelation:^{
-        
-    }] animated:YES completion:^{
-        
-    }];
-
-    
-    
-}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -188,7 +149,6 @@ typedef enum {
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self showSettingsButtonAnimated:NO];
     
     
     self.presentationMode = PSSTagsAndDirectoriesPresentationModeTags;
@@ -203,7 +163,7 @@ typedef enum {
     }
     
     
-    
+    [self showNewButtonAnimated:NO];
     
     
 }

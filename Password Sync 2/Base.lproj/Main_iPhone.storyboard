@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5eQ-vE-VRM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5eQ-vE-VRM">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -22,6 +22,7 @@
                         <segue destination="nDn-CH-52o" kind="relationship" relationship="viewControllers" id="Ge4-G2-n81"/>
                         <segue destination="s7i-za-tJ6" kind="relationship" relationship="viewControllers" id="EBk-LD-2fN"/>
                         <segue destination="Ca4-DK-VkL" kind="relationship" relationship="viewControllers" id="C9g-GW-F7F"/>
+                        <segue destination="y8n-vo-OoM" kind="relationship" relationship="viewControllers" id="veS-AG-ain"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nB-2I-EZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -645,7 +646,6 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="eiH-2G-Ww3" id="y9B-2K-yJD"/>
                         <outlet property="tagsFoldersSegmentedControl" destination="ON5-Om-JAI" id="D6H-b7-JWx"/>
-                        <segue destination="9qm-PJ-udm" kind="push" identifier="showSettingsSegue" id="hXf-1A-GIo"/>
                         <segue destination="MmD-Uf-Rdb" kind="push" identifier="presentNewTagEditorSegue" id="F8m-t3-VFw"/>
                         <segue destination="3tV-MC-kL4" kind="push" identifier="presentObjectsForTagControllerSegue" id="qC4-3Q-78G"/>
                     </connections>
@@ -663,10 +663,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="2273"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Passcode Settings Table View Controller-->
         <scene sceneID="fT6-q3-t9y">
             <objects>
-                <tableViewController id="9qm-PJ-udm" customClass="PSSSettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="9qm-PJ-udm" customClass="PSSPasscodeSettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="uwS-I3-FaH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -713,9 +713,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="S9d-zq-KdX" kind="push" identifier="presentLegalViewSegue" id="yUX-xs-14C"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -727,7 +724,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3z1-P1-Kpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="2104"/>
+            <point key="canvasLocation" x="896" y="3617"/>
         </scene>
         <!--Legal View Controller-->
         <scene sceneID="wTX-0f-ePK">
@@ -756,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb0-Iw-RQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="2104"/>
+            <point key="canvasLocation" x="896" y="4564"/>
         </scene>
         <!--Navigation Controller - Organizer-->
         <scene sceneID="72U-za-whm">
@@ -773,6 +770,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0B-vP-af7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7" y="2273"/>
+        </scene>
+        <!--General Settings Table View Controller - Root View Controller-->
+        <scene sceneID="60b-EQ-sgn">
+            <objects>
+                <tableViewController id="fwN-QP-Nzm" customClass="PSSGeneralSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kjJ-Ni-bNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="submenuCell" textLabel="es5-Ko-aW6" rowHeight="44" style="IBUITableViewCellStyleDefault" id="agb-bm-PrP">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agb-bm-PrP" id="Qad-Vr-LHO">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Legal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="es5-Ko-aW6">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="RIx-SU-ewn"/>
+                    <connections>
+                        <segue destination="S9d-zq-KdX" kind="push" identifier="presentLegalViewSegue" id="0gy-CO-MGR"/>
+                        <segue destination="9qm-PJ-udm" kind="push" identifier="showPasscodeSettingsSegue" id="Ggy-mG-kjp"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U50-Os-jB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="4187"/>
+        </scene>
+        <!--Navigation Controller - Settings-->
+        <scene sceneID="GWv-Db-YQB">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="y8n-vo-OoM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="Gear" id="WDq-zy-EbI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="olC-47-LLY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fwN-QP-Nzm" kind="relationship" relationship="rootViewController" id="WUU-xu-IGp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTy-cG-ybD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="4175"/>
         </scene>
         <!--Document Detail Collection View Controller-->
         <scene sceneID="nTz-LB-NUW">
@@ -1376,13 +1427,10 @@
     </scenes>
     <resources>
         <image name="Browser" width="28" height="28"/>
-        <image name="Browser" width="28" height="28"/>
-        <image name="CardsIcon" width="28" height="19"/>
         <image name="CardsIcon" width="28" height="19"/>
         <image name="Document" width="20" height="28"/>
-        <image name="Document" width="20" height="28"/>
+        <image name="Gear" width="28" height="28"/>
         <image name="Organizer" width="24" height="28"/>
-        <image name="Pin" width="28" height="24"/>
         <image name="Pin" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
