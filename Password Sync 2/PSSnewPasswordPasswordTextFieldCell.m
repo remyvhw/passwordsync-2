@@ -59,7 +59,7 @@
         
         if ([password isEqualToString:@""]) {
             // When the text is empty, we show the generator icon
-            [self.shuffleButton setFrame:CGRectMake(self.frame.size.width-40, self.textField.frame.origin.y, 20., self.textField.frame.size.height)];
+            [self.shuffleButton setFrame:CGRectMake(self.frame.size.width-50, self.textField.frame.origin.y, 50., self.textField.frame.size.height)];
             [self.textField setFrame:CGRectMake(self.textField.frame.origin.x, self.textField.frame.origin.y, self.frame.size.width - 60., self.textField.frame.size.height)];
             [self.shuffleButton setAlpha:1.0];
             

@@ -100,7 +100,7 @@
     [super layoutSubviews];
     
     
-    [self.searchButton setFrame:CGRectMake(self.frame.size.width-40, self.textField.frame.origin.y, 20., self.textField.frame.size.height)];
+    [self.searchButton setFrame:CGRectMake(self.frame.size.width-50, self.textField.frame.origin.y, 50., self.textField.frame.size.height)];
     [self.textField setFrame:CGRectMake(self.textField.frame.origin.x, self.textField.frame.origin.y, self.frame.size.width - 60., self.textField.frame.size.height)];
     [self.searchButton setAlpha:1.0];
     
