@@ -1134,7 +1134,7 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
-		AD2C5A8717BC3BB500C23AFA /* Tags and Directories */ = {
+		AD2C5A8717BC3BB500C23AFA /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
 				AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */,
@@ -1148,7 +1148,7 @@
 				AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */,
 				ADE7F05117C1633D00589535 /* PSSTagCollectionViewCell.xib */,
 			);
-			name = "Tags and Directories";
+			name = Organizer;
 			sourceTree = "<group>";
 		};
 		AD2C5A8C17BC3BE100C23AFA /* Settings */ = {
@@ -1606,7 +1606,7 @@
 				AD2C5A8C17BC3BE100C23AFA /* Settings */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
-				AD2C5A8717BC3BB500C23AFA /* Tags and Directories */,
+				AD2C5A8717BC3BB500C23AFA /* Organizer */,
 				AD547FAA17A1AC24008FAFFB /* Documents */,
 				AD36371117989D95005F1542 /* Location */,
 				ADDD964F1792539A00AB2CC5 /* Cards */,
