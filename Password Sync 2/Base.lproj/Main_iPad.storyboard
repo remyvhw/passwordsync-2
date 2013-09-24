@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="842-ov-Ary">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="cQn-hc-JNo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rootBarController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cQn-hc-JNo" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="KaE-xt-MyS">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -46,7 +46,7 @@
         <!--Split View Controller - Cards-->
         <scene sceneID="chl-HM-kBJ">
             <objects>
-                <splitViewController id="xpx-aU-OeC" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="cardsSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xpx-aU-OeC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cards" image="CardsIcon" id="cpd-cj-uCe"/>
                     <toolbarItems/>
                     <connections>
@@ -76,7 +76,7 @@
         <!--Split View Controller - Locations-->
         <scene sceneID="WIt-h6-R2v">
             <objects>
-                <splitViewController id="T76-1X-lD9" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="locationsSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T76-1X-lD9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="Pin" id="Ni5-VP-C3f"/>
                     <toolbarItems/>
                     <connections>
@@ -106,7 +106,7 @@
         <!--Split View Controller - Documents-->
         <scene sceneID="JVm-MO-AYQ">
             <objects>
-                <splitViewController id="eT5-re-Khr" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="documentsSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eT5-re-Khr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Documents" image="Document" id="Crj-j3-B4j"/>
                     <toolbarItems/>
                     <connections>
@@ -136,7 +136,7 @@
         <!--Split View Controller - Websites-->
         <scene sceneID="st1-QE-UZ5">
             <objects>
-                <splitViewController id="Oy3-3p-RHd" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="websitesSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oy3-3p-RHd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Websites" image="Browser" id="Hti-Cx-5eh"/>
                     <toolbarItems/>
                     <connections>
@@ -891,7 +891,7 @@
         <!--Split View Controller - Organizer-->
         <scene sceneID="RgL-GL-mHv">
             <objects>
-                <splitViewController id="9F7-Fu-h5v" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="organizerSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9F7-Fu-h5v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Organizer" image="Organizer" id="rIK-z3-q0X"/>
                     <toolbarItems/>
                     <connections>
@@ -1727,8 +1727,8 @@
         <!--General Settings Table View Controller - Root View Controller-->
         <scene sceneID="1Am-GK-NfV">
             <objects>
-                <tableViewController id="j4O-Z0-e2f" customClass="PSSGeneralSettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ORj-XV-AtQ">
+                <tableViewController storyboardIdentifier="settingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j4O-Z0-e2f" customClass="PSSGeneralSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="settingsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ORj-XV-AtQ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1765,7 +1765,7 @@
         <!--Navigation Controller - Settings-->
         <scene sceneID="AAS-dU-Ffo">
             <objects>
-                <navigationController definesPresentationContext="YES" id="8MR-yn-NYQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsplitViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8MR-yn-NYQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="Gear" id="dRg-GU-1n9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D6K-EH-oLf">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1844,7 +1844,7 @@
         <!--Legal View Controller-->
         <scene sceneID="buk-1L-Qlv">
             <objects>
-                <viewController id="QSV-db-I3g" customClass="PSSLegalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="legalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QSV-db-I3g" customClass="PSSLegalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pxx-ng-sPX"/>
                         <viewControllerLayoutGuide type="bottom" id="2Sp-A6-xm0"/>
@@ -1853,7 +1853,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-Yx-ZOt">
+                            <webView contentMode="scaleToFill" restorationIdentifier="legalWebView" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-Yx-ZOt">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1879,14 +1879,10 @@
     </scenes>
     <resources>
         <image name="Browser" width="28" height="28"/>
-        <image name="Browser" width="28" height="28"/>
         <image name="CardsIcon" width="28" height="19"/>
-        <image name="CardsIcon" width="28" height="19"/>
-        <image name="Document" width="20" height="28"/>
         <image name="Document" width="20" height="28"/>
         <image name="Gear" width="28" height="28"/>
         <image name="Organizer" width="24" height="28"/>
-        <image name="Pin" width="28" height="24"/>
         <image name="Pin" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

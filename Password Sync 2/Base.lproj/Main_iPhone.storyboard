@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6wb-eU-XB3">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="5eQ-vE-VRM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rootTabBarController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5eQ-vE-VRM" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Rtv-O7-kZh">
@@ -32,7 +32,7 @@
         <!--Cards Table View Controller-->
         <scene sceneID="JEM-Lz-6GH">
             <objects>
-                <tableViewController id="R2q-NK-frj" customClass="PSSCardsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="cardsListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2q-NK-frj" customClass="PSSCardsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EgY-nS-eLg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +177,7 @@
         <!--Password List View Controller-->
         <scene sceneID="jwa-3I-GkM">
             <objects>
-                <tableViewController id="lW3-HP-KVu" customClass="PSSPasswordListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="passwordListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lW3-HP-KVu" customClass="PSSPasswordListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iut-E9-SVA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,7 +343,7 @@
         <!--Navigation Controller - Cards-->
         <scene sceneID="zZR-sC-VH5">
             <objects>
-                <navigationController definesPresentationContext="YES" id="bPR-by-1uu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="cardsNavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bPR-by-1uu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cards" image="CardsIcon" id="tmS-v9-6bH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xfa-4H-buY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -359,7 +359,7 @@
         <!--Navigation Controller - Websites-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="websitesNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Websites" image="Browser" id="jnZ-aR-2hu"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
@@ -376,7 +376,7 @@
         <!--Location List Table View Controller-->
         <scene sceneID="gKi-yg-xGo">
             <objects>
-                <tableViewController id="Lde-AW-riU" customClass="PSSLocationListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="locationListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lde-AW-riU" customClass="PSSLocationListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aaq-bq-iia">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,7 +514,7 @@
         <!--Document List Table View Controller-->
         <scene sceneID="wac-sr-3aC">
             <objects>
-                <tableViewController id="SP7-Ho-tWG" customClass="PSSDocumentListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="documentListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SP7-Ho-tWG" customClass="PSSDocumentListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8rQ-dc-WDz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,7 +576,7 @@
         <!--Tags And Directories Table View Controller-->
         <scene sceneID="89U-6c-4S9">
             <objects>
-                <tableViewController id="Ldf-Vd-i8Y" customClass="PSSTagsAndDirectoriesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tagsListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ldf-Vd-i8Y" customClass="PSSTagsAndDirectoriesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7zl-90-H42">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,7 +729,7 @@
         <!--Legal View Controller-->
         <scene sceneID="wTX-0f-ePK">
             <objects>
-                <viewController id="S9d-zq-KdX" customClass="PSSLegalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="legalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S9d-zq-KdX" customClass="PSSLegalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5xS-Q1-SmV"/>
                         <viewControllerLayoutGuide type="bottom" id="Ywe-mb-ayq"/>
@@ -738,7 +738,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-mj-mr6">
+                            <webView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="legalWebView" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-mj-mr6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -758,7 +758,7 @@
         <!--Navigation Controller - Organizer-->
         <scene sceneID="72U-za-whm">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Ca4-DK-VkL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="organizerNavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ca4-DK-VkL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Organizer" image="Organizer" id="iVW-xh-Xqc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dUH-6A-kEm">
                         <autoresizingMask key="autoresizingMask"/>
@@ -774,8 +774,8 @@
         <!--General Settings Table View Controller - Root View Controller-->
         <scene sceneID="60b-EQ-sgn">
             <objects>
-                <tableViewController id="fwN-QP-Nzm" customClass="PSSGeneralSettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kjJ-Ni-bNQ">
+                <tableViewController storyboardIdentifier="settingsGeneralTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fwN-QP-Nzm" customClass="PSSGeneralSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="settingsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kjJ-Ni-bNQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -812,7 +812,7 @@
         <!--Navigation Controller - Settings-->
         <scene sceneID="GWv-Db-YQB">
             <objects>
-                <navigationController definesPresentationContext="YES" id="y8n-vo-OoM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsNavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y8n-vo-OoM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="Gear" id="WDq-zy-EbI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="olC-47-LLY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1395,7 +1395,7 @@
         <!--Navigation Controller - Documents-->
         <scene sceneID="ezp-Ej-0Ab">
             <objects>
-                <navigationController definesPresentationContext="YES" id="s7i-za-tJ6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="documentsNavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s7i-za-tJ6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Documents" image="Document" id="Ew0-b1-0af"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="283-s2-X7W">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1411,7 +1411,7 @@
         <!--Navigation Controller - Locations-->
         <scene sceneID="bwt-EI-m9n">
             <objects>
-                <navigationController definesPresentationContext="YES" id="nDn-CH-52o" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="locationsNavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nDn-CH-52o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="Pin" id="GYH-V0-t4f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TIX-Kr-Mmy">
                         <autoresizingMask key="autoresizingMask"/>

@@ -15,6 +15,7 @@
 #import "SLColorArt.h"
 #import "UIImage+ImageEffects.h"
 #import "PSSDeviceCapacity.h"
+#import "PSSAppDelegate.h"
 
 @interface PSSPasswordListViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *searchFetchedResultsController;
@@ -38,6 +39,10 @@ dispatch_queue_t backgroundQueue;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    self.managedObjectContext = APP_DELEGATE.managedObjectContext;
+    
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Browser-Selected"];

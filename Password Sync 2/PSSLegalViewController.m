@@ -55,7 +55,6 @@
             
             
             
-            NSLog(@"%@", [urlOfRequest description]);
             
             NSURLRequest * urlRequest = [[NSURLRequest alloc] initWithURL:urlOfRequest];
             

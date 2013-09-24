@@ -66,7 +66,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Gear-selected"];
     } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.navigationController.parentViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"Gear-selected"];
+        self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"Gear-selected"];
     }
     
   

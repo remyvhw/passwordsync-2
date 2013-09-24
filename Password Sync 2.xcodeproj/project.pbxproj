@@ -739,6 +739,8 @@
 		AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerSplitViewDetailViewController.m; sourceTree = "<group>"; };
 		AD5DD6C917C00CE000DDB614 /* PSSOrganizerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSOrganizerCollectionViewController.h; sourceTree = "<group>"; };
 		AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerCollectionViewController.m; sourceTree = "<group>"; };
+		AD5E93F817F221D500152018 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
+		AD5E93F917F221D500152018 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -2016,6 +2018,8 @@
 				ADFA1A0C179257BB0038EF14 /* CardIOCreditCardInfo.h */,
 				ADFA1A0D179257BB0038EF14 /* CardIOPaymentViewController.h */,
 				ADFA1A0E179257BB0038EF14 /* CardIOPaymentViewControllerDelegate.h */,
+				AD5E93F817F221D500152018 /* CardIOView.h */,
+				AD5E93F917F221D500152018 /* CardIOViewDelegate.h */,
 				ADFA1A0F179257BB0038EF14 /* libCardIO.a */,
 			);
 			path = CardIO;

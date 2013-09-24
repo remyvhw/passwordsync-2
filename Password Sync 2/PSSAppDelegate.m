@@ -45,6 +45,9 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
+
+
 -(void)saveDocumentAtURL:(NSURL*)url{
     
     PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURL:url];
@@ -324,27 +327,6 @@
     [self.window setTintColor:[UIColor colorWithRed:46./255.0 green:144./255.0 blue:90./255.0 alpha:1.0]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     
-    UITabBarController * tabBarController = (UITabBarController *)self.window.rootViewController;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        
-        UISplitViewController *splitViewController = (UISplitViewController *)[[tabBarController viewControllers] objectAtIndex:0];
-        
-        UINavigationController *navigationController = [splitViewController.viewControllers firstObject];
-        
-        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-        
-    } else {
-        
-        
-        UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
-        PSSPasswordListViewController *controller = (PSSPasswordListViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-        
-        
-    }
-    
     [self checkForJailbreaks];
     
     
@@ -450,6 +432,8 @@
     [self saveContext];
 }
 
+
+
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     
     if ([[url scheme] isEqualToString:@"passsynctwojsonimport"] && [sourceApplication isEqualToString:@"com.pumaxprod.Password-Sync"]) {
@@ -469,6 +453,96 @@
     }
     
     return NO;
+}
+
+
+// Opt in for state preservation, so our good old UITabBarController saves the tabs order.
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+
+
+
+
+-(NSArray*)generateTabOrder
+{
+    /*
+     Convenience method, will save the main view controller's names for restoration
+     */
+    UITabBarController * tabBarController = (UITabBarController*)self.window.rootViewController;
+    NSMutableArray *savedOrder = [NSMutableArray arrayWithCapacity:tabBarController.viewControllers.count];
+    NSArray *tabOrderToSave = tabBarController.viewControllers;
+    for (UIViewController *aViewController in tabOrderToSave)
+    {
+        [savedOrder addObject:aViewController.tabBarItem.title];
+    }
+    return savedOrder;
+}
+
+
+- (void)restorTabOrderWithSavedArray:(NSArray*)savedOrder {
+    
+    UITabBarController * tabBarController = (UITabBarController*)self.window.rootViewController;
+    NSUInteger countOfArrayControllers = tabBarController.viewControllers.count;
+    NSMutableArray *orderedTabs = [NSMutableArray arrayWithCapacity:countOfArrayControllers];
+    
+    if (savedOrder.count != countOfArrayControllers) {
+        // The number of view controllers differs from the number saved. An app update might have changed the number of view controllers, therefore, we just discard the ordrer and start fresh.
+        return;
+    }
+    
+    if ([savedOrder count] > 0 )
+    {
+        for (int i = 0; i < [savedOrder count]; i++)  // loop through saved tabs
+        {
+            BOOL tabFound = NO;
+            for (UIViewController *aController in tabBarController.viewControllers) // loop through actual tabs
+            {
+                if ([aController.tabBarItem.title isEqualToString:[savedOrder objectAtIndex:i]])
+                {
+                    [orderedTabs addObject:aController];
+                    tabFound = YES;
+                }
+            }
+            if (!tabFound)
+            {
+                // So the old tab order doesn't include this tab.  Lets bail and use the default ordering
+                return;
+            }
+        }
+        tabBarController.viewControllers = orderedTabs;
+    }
+    
+}
+
+
+
+
+- (void)application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // Save the tab bar order
+        [coder encodeObject:[self generateTabOrder] forKey:PSSStateRestorationTabBarOrderKey];
+    }
+
+}
+
+-(void)application:(UIApplication*)application didDecodeRestorableStateWithCoder:(NSCoder *)coder{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        NSArray * tabOrder = [coder decodeObjectForKey:PSSStateRestorationTabBarOrderKey];
+        if (tabOrder) {
+            [self restorTabOrderWithSavedArray:tabOrder];
+        }
+    }
+    
 }
 
 
