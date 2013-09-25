@@ -26,6 +26,10 @@
     tagsSelector.detailItem = self.baseObject;
     tagsSelector.tagsSelectorDelegate = self;
     
+    if (self.itemTags) {
+        tagsSelector.selectionSet = [[NSMutableSet alloc] initWithSet:self.itemTags];
+    }
+    
     [self.navigationController pushViewController:tagsSelector animated:YES];
     
     

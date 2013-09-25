@@ -10,6 +10,7 @@
 #import "PSSObjectTag.h"
 #import "PSSAppDelegate.h"
 #import "UIColor+PSSDictionaryCoding.h"
+#import "PSSTagEditorTableViewController.h"
 #import "PSSObjectsForTagOrCategoryViewController.h"
 
 @interface PSSTagsSelectorTableViewController ()
@@ -23,6 +24,18 @@
 
 @implementation PSSTagsSelectorTableViewController
 
+-(void)createNewTag:(id)sender {
+    
+    
+    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
+    
+    PSSTagEditorTableViewController * tagTableViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"tagEditorViewController"];
+    
+    [self.navigationController pushViewController:tagTableViewController animated:YES];
+                                     
+}
+
+#pragma mark - view controller lifecycle
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -39,12 +52,23 @@
     if (self.detailItem && self.editionMode) {
         self.selectionSet = [[NSMutableSet alloc] initWithSet:self.detailItem.tags];
     } else if (self.editionMode) {
-        self.selectionSet = [[NSMutableSet alloc] init];
+        
+        // If user selected tags in the new item form, and then came back to the tag selector, we will already have a selectionSet provided by the form view controller.
+        if (!self.selectionSet) {
+            self.selectionSet = [[NSMutableSet alloc] init];
+        }
+        
+        UIBarButtonItem * addTagBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewTag:)];
+        
+        self.navigationItem.rightBarButtonItem = addTagBarButton;
+        
+        
     } else {
         NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
         NSArray * arrayOfTags = [self.detailItem.tags sortedArrayUsingDescriptors:@[sortDescriptor]];
         self.arrayOfArrangedTabObjects = arrayOfTags;
     }
+    
     
     
     
