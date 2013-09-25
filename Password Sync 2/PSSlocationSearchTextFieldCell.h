@@ -14,6 +14,7 @@ typedef void(^PSSfinishedEditingAddressBlock)(void);
 @interface PSSlocationSearchTextFieldCell : PSSnewPasswordBasicTextFieldCell
 
 @property (strong) UIButton * searchButton;
+@property (strong) UIButton * localizeButton;
 @property (strong) PSSfinishedEditingAddressBlock finishedEditingAddressBlock;
 
 @property BOOL isGeocoding;

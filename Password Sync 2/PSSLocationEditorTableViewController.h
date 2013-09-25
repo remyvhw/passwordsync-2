@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PSSLocationBaseObject.h"
 #import "PSSObjectEditorProtocol.h"
+@import CoreLocation;
 
 @protocol PSSPasswordGeneratorTableViewControllerProtocol;
 
-@interface PSSLocationEditorTableViewController : UITableViewController <PSSPasswordGeneratorTableViewControllerProtocol>
+@interface PSSLocationEditorTableViewController : UITableViewController <PSSPasswordGeneratorTableViewControllerProtocol, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) PSSLocationBaseObject * locationBaseObject;
 @property (weak, nonatomic) id<PSSObjectEditorProtocol> editorDelegate;

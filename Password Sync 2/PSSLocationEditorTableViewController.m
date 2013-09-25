@@ -23,7 +23,6 @@
 #import "PSSLocationChoicePopoverViewController.h"
 #import "UIViewController+MJPopupViewController.h"
 
-@import CoreLocation;
 @import MapKit;
 @import AddressBookUI;
 
@@ -35,15 +34,14 @@
 
 @property (strong) PSSlocationSearchTextFieldCell * locationSearchCell;
 @property (strong) PSSLocationMapCell * mapCell;
-
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
 @property (nonatomic) CLLocationCoordinate2D pinLocation;
 @property (nonatomic) NSString * addressString;
-
+@property (nonatomic, strong) CLLocationManager * currentLocationManager;
 @property (strong, nonatomic) UIPopoverController * generatorPopover;
-
-
 @property (nonatomic) BOOL isPasscodeUnlocked;
+
+@property (nonatomic) BOOL initialLocalizationLocked;
 
 @end
 
@@ -401,6 +399,23 @@
     
 }
 
+-(void)addPinAtCurrentLocation:(id)sender{
+    
+    self.locationSearchCell.isGeocoding = YES;
+    
+    CLLocationManager * currentLocationManager = [[CLLocationManager alloc] init];
+    
+    currentLocationManager.distanceFilter = kCLDistanceFilterNone;
+    currentLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    currentLocationManager.delegate = self;
+    self.initialLocalizationLocked = NO;
+    [currentLocationManager startUpdatingLocation];
+    self.currentLocationManager = currentLocationManager;
+    
+    
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -612,7 +627,7 @@
             }
             self.locationSearchCell.textField.placeholder = NSLocalizedString(@"Address", nil);
             self.locationSearchCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
+            [self.locationSearchCell.localizeButton addTarget:self action:@selector(addPinAtCurrentLocation:) forControlEvents:UIControlEventTouchUpInside];
             
             // Automatically try to complete the bank details for the typed credit card number
             // We never query bank details one existing card object / edit mode.
@@ -694,5 +709,81 @@
     
     [self.passwordCell setUnsecureTextPassword:randomPassword];
 }
+
+#pragma mark - CLLocationManagerDelegate methods
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    
+    // We received an initial location lock
+    if (!self.initialLocalizationLocked) {
+        self.initialLocalizationLocked = YES;
+        
+        // We wait two seconds so the location has the time to get better
+        double delayInSeconds = 1.5;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            
+            
+            // We will try to reverse geocode the location
+            
+            CLGeocoder * geocoder = [[CLGeocoder alloc] init];
+            
+            [geocoder reverseGeocodeLocation:self.currentLocationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
+                
+                if (error) {
+                    UIAlertView * errorView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                    [errorView show];
+                    
+                } else {
+                    if ([placemarks count] > 0) {
+                        // We have a CLPlacemark.
+                        // First, we move the map to the current location
+                        CLPlacemark * nearestPlacemark = [placemarks objectAtIndex:0];
+                        [self rearrangeMapForLocation:self.currentLocationManager.location placemark:nearestPlacemark];
+                        
+                        
+                        // Second, we update the text in the text field to reflect the current area
+                        self.locationSearchCell.textField.text = self.addressString;
+                        
+                        
+                    }
+                }
+                
+                [self.currentLocationManager stopUpdatingLocation];
+                self.currentLocationManager = nil;
+                
+                [self.locationSearchCell setIsGeocoding:NO];
+                
+            }];
+            
+            
+            
+        });
+    }
+    
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+    
+    if (self.currentLocationManager == manager) {
+        
+        [self.locationSearchCell setIsGeocoding:NO];
+        [self.locationSearchCell.searchButton setAlpha:0.0];
+        [self.locationSearchCell.localizeButton setEnabled:NO];
+        [self.geofenceCell.switchView setOn:NO];
+        [self.geofenceCell.switchView setEnabled:NO];
+        
+        [manager stopUpdatingLocation];
+        self.currentLocationManager = nil;
+    }
+    
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+    [alertView show];
+    
+    
+}
+
 
 @end
