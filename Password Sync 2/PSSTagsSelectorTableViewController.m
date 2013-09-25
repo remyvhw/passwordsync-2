@@ -49,7 +49,7 @@
 {
     [super viewDidLoad];
 
-    if (self.detailItem && self.editionMode) {
+    if (self.detailItem && self.editionMode && !self.selectionSet) {
         self.selectionSet = [[NSMutableSet alloc] initWithSet:self.detailItem.tags];
     } else if (self.editionMode) {
         
@@ -64,6 +64,11 @@
         
         
     } else {
+        // Not in edition mode!
+        
+        [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
+        [self.searchDisplayController.searchBar setAlpha:0.4];
+        
         NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
         NSArray * arrayOfTags = [self.detailItem.tags sortedArrayUsingDescriptors:@[sortDescriptor]];
         self.arrayOfArrangedTabObjects = arrayOfTags;
@@ -177,9 +182,11 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PSSObjectTag * selectedTag = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     
     if (self.editionMode) {
+        
+        PSSObjectTag * selectedTag = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+
         
         if ([self.selectionSet containsObject:selectedTag]) {
             // Object is in newly selected set already, remove it
@@ -206,6 +213,7 @@
             mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:[NSBundle mainBundle]];
         }
         
+        PSSObjectTag * selectedTag = [self.arrayOfArrangedTabObjects objectAtIndex:indexPath.row];
         
         PSSObjectsForTagOrCategoryViewController * objectsForTagViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"objectsForTagControllerSegue"];
         
