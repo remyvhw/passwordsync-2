@@ -63,7 +63,8 @@ typedef enum {
 
 -(void)showNewButtonAnimated:(BOOL)animated{
     UIBarButtonItem * newButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
-    [self.navigationItem setLeftBarButtonItem:newButton animated:animated];
+    
+    [self.navigationItem setRightBarButtonItems:@[newButton, self.editButtonItem] animated:animated];
 }
 
 
