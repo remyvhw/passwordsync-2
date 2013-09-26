@@ -24,6 +24,95 @@
 
 @implementation PSSTagsSelectorTableViewController
 
+-(void)generateOrderedArrayOfTags{
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    NSArray * arrayOfTags = [self.detailItem.tags sortedArrayUsingDescriptors:@[sortDescriptor]];
+    self.arrayOfArrangedTabObjects = arrayOfTags;
+}
+
+-(void)showAddTagButtonshowSaveButton:(BOOL)showSaveButton animated:(BOOL)animated{
+    UIBarButtonItem * addTagBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewTag:)];
+    
+    
+    if (showSaveButton) {
+        
+        UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveFromEditionMode:)];
+        
+        [self.navigationItem setRightBarButtonItems:@[saveButton, addTagBarButton] animated:animated];
+    } else {
+        [self.navigationItem setRightBarButtonItem:addTagBarButton animated:animated];
+    }
+    
+    
+}
+
+-(void)showAddTagButtonAnimated:(BOOL)animated{
+    [self showAddTagButtonshowSaveButton:NO animated:animated];
+}
+
+-(void)showEditButtonAnimated:(BOOL)animated {
+    UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(enterEditMode:)];
+    
+    [self.navigationItem setRightBarButtonItems:@[editButton] animated:animated];
+}
+
+-(void)enterEditMode:(id)sender{
+    self.selectionSet = [[NSMutableSet alloc] initWithSet:self.detailItem.tags];
+    self.editionMode = YES;
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        [self.tableView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [self.tableView reloadData];
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.tableView setAlpha:1.0];
+            [self.searchDisplayController.searchBar setAlpha:1.];
+            [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
+        }];
+        
+        
+    }];
+    
+    [self showAddTagButtonshowSaveButton:YES animated:YES];
+}
+
+-(void)exitEditionMode{
+    [self showEditButtonAnimated:YES];
+    
+    self.editionMode = NO;
+    self.selectionSet = nil;
+    [self generateOrderedArrayOfTags];
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        [self.tableView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [self.tableView reloadData];
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.tableView setAlpha:1.0];
+            [self.searchDisplayController.searchBar setAlpha:0.4];
+            [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
+        }];
+        
+        
+    }];
+
+    
+}
+
+-(void)saveFromEditionMode:(id)sender{
+    
+    self.detailItem.tags = self.selectionSet;
+    
+    [self.detailItem.managedObjectContext performBlockAndWait:^{
+        [self.detailItem.managedObjectContext save:NULL];
+    }];
+    
+    [self exitEditionMode];
+    
+}
+
 -(void)createNewTag:(id)sender {
     
     
@@ -58,9 +147,7 @@
             self.selectionSet = [[NSMutableSet alloc] init];
         }
         
-        UIBarButtonItem * addTagBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewTag:)];
-        
-        self.navigationItem.rightBarButtonItem = addTagBarButton;
+        [self showAddTagButtonAnimated:NO];
         
         
     } else {
@@ -69,9 +156,11 @@
         [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
         [self.searchDisplayController.searchBar setAlpha:0.4];
         
-        NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
-        NSArray * arrayOfTags = [self.detailItem.tags sortedArrayUsingDescriptors:@[sortDescriptor]];
-        self.arrayOfArrangedTabObjects = arrayOfTags;
+        [self generateOrderedArrayOfTags];
+        
+        [self showEditButtonAnimated:NO];
+        
+        
     }
     
     
@@ -147,7 +236,8 @@
         object = (PSSObjectTag*)[self.arrayOfArrangedTabObjects objectAtIndex:indexPath.row];
     }
     
-    
+    // Reset any preexisting checkmark
+    cell.accessoryType = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = object.name;
     cell.imageView.image = [UIColor imageWithColorDictionary:object.color];
     
@@ -158,16 +248,13 @@
     cell.imageView.layer.mask = mask;
     cell.imageView.layer.masksToBounds = YES;
     
+    
     if (self.editionMode) {
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         // In edition mode, we'll add a checkmark next to the selected objects
         
         if ([self.selectionSet containsObject:object]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        } else {
-            cell.accessoryType = UITableViewCellAccessoryNone;
         }
         
         
@@ -333,21 +420,26 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    [tableView beginUpdates];
+    if (self.editionMode) {
+        UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+        [tableView beginUpdates];
+    }
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
+    if (self.editionMode) {
+        UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+        switch(type) {
+            case NSFetchedResultsChangeInsert:
+                [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeDelete:
+                [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+        }
+
     }
 }
 
@@ -355,32 +447,37 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath forTableView:tableView];
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
+    if (self.editionMode) {
+        UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+        
+        switch(type) {
+            case NSFetchedResultsChangeInsert:
+                [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeDelete:
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeUpdate:
+                [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath forTableView:tableView];
+                break;
+                
+            case NSFetchedResultsChangeMove:
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+        }
+
     }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    [tableView endUpdates];
+    if (self.editionMode) {
+        UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
+        [tableView endUpdates];
+    }
 }
 
 
