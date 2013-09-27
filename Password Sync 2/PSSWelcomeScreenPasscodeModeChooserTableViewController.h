@@ -10,4 +10,6 @@
 
 @interface PSSWelcomeScreenPasscodeModeChooserTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic) BOOL passcodeEditorMode;
+
 @end

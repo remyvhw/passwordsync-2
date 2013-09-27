@@ -17,6 +17,7 @@ typedef void(^CancelationBlock)(void);
 @property (nonatomic, strong) SuccessfulMasterPasswordUnlockBlock masterPasswordUnlockBlock;
 @property (nonatomic, strong) CancelationBlock cancelationBlock;
 
+
 -(PSSUnlockPromptViewController*)promptForPasscodeBlockingView:(BOOL)blockingView completion:(void (^)(void))completion cancelation:(void (^)(void))cancelation;
 
 -(PSSUnlockPromptViewController*)promptForMasterPasswordBlockingView:(BOOL)blockingView completion:(void (^)(void))completion cancelation:(void (^)(void))cancelation;

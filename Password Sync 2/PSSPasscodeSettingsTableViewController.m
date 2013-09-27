@@ -9,6 +9,7 @@
 #import "PSSPasscodeSettingsTableViewController.h"
 #import "PSSPasswordSyncOneDataImporter.h"
 #import "PSSAppDelegate.h"
+#import "PSSWelcomeScreenPasscodeModeChooserTableViewController.h"
 #import "Appirater.h"
 
 @interface PSSPasscodeSettingsTableViewController ()
@@ -24,6 +25,25 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)presentPasscodeEditor{
+    UIStoryboard * welcomeStoryboard;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        welcomeStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPad" bundle:[NSBundle mainBundle]];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        welcomeStoryboard = [UIStoryboard storyboardWithName:@"FirstLaunchStoryboard_iPhone" bundle:[NSBundle mainBundle]];
+    }
+    
+    
+
+    
+    PSSWelcomeScreenPasscodeModeChooserTableViewController * passcodeChooserController = [welcomeStoryboard instantiateViewControllerWithIdentifier:@"passcodeChooserTypeSelectorViewController"];
+    
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:passcodeChooserController];
+    
+    [self presentViewController:navController animated:YES completion:NULL];
+    
 }
 
 - (void)viewDidLoad
@@ -72,7 +92,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -81,6 +101,8 @@
     if (section==0) {
         // Checkboxes
         return 2;
+    } else if (section == 1) {
+        return 1;
     }
     return 0;
 }
@@ -135,18 +157,44 @@
                 
             }
             
+            
         }
         
+          return cell;
+          
         
-        return cell;
         
-    }
+    } else if (indexPath.section == 1) {
+            
+            // Other actions
+            
+            if (indexPath.row == 0) {
+                // Change Passcode
+                
+                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"normalCell" forIndexPath:indexPath];
+                
+                cell.textLabel.text = NSLocalizedString(@"Change Passcode", nil);
+                cell.textLabel.textColor = self.view.window.tintColor;
+                NSLog(@"%@", cell.description);
+                
+                return cell;
+            }
+            
+            
+        }
     
     return nil;
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if (indexPath.section==1 && indexPath.row == 0) {
+        // Edit passcode
+        
+        [self presentPasscodeEditor];
+    }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
