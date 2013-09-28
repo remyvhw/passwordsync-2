@@ -45,6 +45,12 @@
 }
 
 
+-(NSData*)reencryptData:(NSData *)data withPassword:(NSString *)password{
+    
+    
+    
+    return nil;
+}
 
 
 -(NSData*)decryptedAdditionalJSONfields{

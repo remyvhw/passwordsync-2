@@ -42,6 +42,17 @@
 
 -(PSSUnlockPromptViewController*)promptForMasterPasswordBlockingView:(BOOL)blockingView completion:(void (^)(void))completion cancelation:(void (^)(void))cancelation{
     // Incomplete implementation;
+    
+    
+    self.cancelationBlock = cancelation;
+    self.unlockBlock = completion;
+    self.userCanCancel = blockingView;
+   
+        
+    [self presentMasterPasswordPromptControllerAnimated:NO];
+        
+  
+    
     return self;
 }
 

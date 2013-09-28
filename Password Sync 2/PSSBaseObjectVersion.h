@@ -34,5 +34,6 @@
 -(NSString*)decryptDataToUTF8String:(NSData*)encryptedString;
 -(NSData*)encryptedDataFromUTF8String:(NSString*)string;
 
+-(NSData*)reencryptData:(NSData*)data withPassword:(NSString*)password;
 
 @end

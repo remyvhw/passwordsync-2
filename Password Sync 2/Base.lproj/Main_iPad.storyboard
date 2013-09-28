@@ -1756,6 +1756,7 @@
                     <connections>
                         <segue destination="QSV-db-I3g" kind="push" identifier="presentLegalViewSegue" id="jkw-O7-uci"/>
                         <segue destination="xV9-zL-rdO" kind="push" identifier="showPasscodeSettingsSegue" id="YHp-fK-OSG"/>
+                        <segue destination="6c6-qm-HfO" kind="push" identifier="showMasterPasswordSettingsSegue" id="vdp-6X-XBL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWv-jv-Ds8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1839,7 +1840,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Btr-Qc-cE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="11512"/>
+            <point key="canvasLocation" x="187" y="11488"/>
         </scene>
         <!--Legal View Controller-->
         <scene sceneID="buk-1L-Qlv">
@@ -1874,7 +1875,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZW-Jk-A1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="13072"/>
+            <point key="canvasLocation" x="159" y="14072"/>
+        </scene>
+        <!--Master Password Settings View Controller-->
+        <scene sceneID="QZi-tR-lj0">
+            <objects>
+                <tableViewController id="6c6-qm-HfO" customClass="PSSMasterPasswordSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ASm-6S-5Xi">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsSubtitleTableViewCell" textLabel="2IB-o6-2sw" detailTextLabel="4ie-18-NvZ" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="Txe-Vs-Fyz">
+                                <rect key="frame" x="0.0" y="119" width="768" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Txe-Vs-Fyz" id="YiE-fC-3Rg">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2IB-o6-2sw">
+                                            <rect key="frame" x="15" y="23" width="31" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="674" id="4ie-18-NvZ">
+                                            <rect key="frame" x="15" y="43" width="674" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <string key="text">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</string>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="submenuCell" textLabel="z5Z-cN-Yze" rowHeight="44" style="IBUITableViewCellStyleDefault" id="PUz-bN-tQc">
+                                <rect key="frame" x="0.0" y="199" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PUz-bN-tQc" id="f8p-2L-ZHz">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Legal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z5Z-cN-Yze">
+                                            <rect key="frame" x="15" y="0.0" width="718" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6c6-qm-HfO" id="sIa-b0-BGo"/>
+                            <outlet property="delegate" destination="6c6-qm-HfO" id="N0X-RN-KID"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Wrw-oo-ybB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ZD-vU-dTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="12795"/>
         </scene>
     </scenes>
     <resources>

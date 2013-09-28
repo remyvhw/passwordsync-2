@@ -36,8 +36,6 @@
     }
     
     
-
-    
     PSSWelcomeScreenPasscodeModeChooserTableViewController * passcodeChooserController = [welcomeStoryboard instantiateViewControllerWithIdentifier:@"passcodeChooserTypeSelectorViewController"];
     
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:passcodeChooserController];
@@ -50,14 +48,9 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.title = NSLocalizedString(@"Settings", nil);
+        self.title = NSLocalizedString(@"Passcode", nil);
     }
     
     
@@ -82,12 +75,6 @@
     return 44.;
 }
 
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return NSLocalizedString(@"Passcode", nil);
-    }
-    return @"";
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -175,7 +162,6 @@
                 
                 cell.textLabel.text = NSLocalizedString(@"Change Passcode", nil);
                 cell.textLabel.textColor = self.view.window.tintColor;
-                NSLog(@"%@", cell.description);
                 
                 return cell;
             }
@@ -201,7 +187,6 @@
 
 
 #pragma mark - UISwitch handlers
-
 -(void)promptForPasscodeOnLaunchHandler:(UISwitch*)sender{
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     [standardUserDefaults setObject:[NSNumber numberWithBool:sender.isOn] forKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch];

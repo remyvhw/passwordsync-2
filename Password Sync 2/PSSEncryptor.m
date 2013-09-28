@@ -14,22 +14,30 @@
 
 @implementation PSSEncryptor
 
-
-+(NSData*)encryptData:(NSData *)dataToEncrypt{
-    
-    PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
-    NSString * hashedMasterPassword = [keychainBindings stringForKey:PSSHashedMasterPasswordKeychainEntry];
-    
++(NSData*)encryptData:(NSData*)decryptedData withPasswordHash:(NSString*)passwordHash{
     
     NSError * error;
-    NSData * encryptedData = [RNEncryptor encryptData:dataToEncrypt withSettings:kRNCryptorAES256Settings password:hashedMasterPassword error:&error];
+    NSData * encryptedData = [RNEncryptor encryptData:decryptedData withSettings:kRNCryptorAES256Settings password:passwordHash error:&error];
     
     if (error) {
         return nil;
     }
     
     return encryptedData;
+    
 }
+
++(NSData*)encryptData:(NSData *)dataToEncrypt{
+    
+    PDKeychainBindings * keychainBindings = [PDKeychainBindings sharedKeychainBindings];
+    NSString * hashedMasterPassword = [keychainBindings stringForKey:PSSHashedMasterPasswordKeychainEntry];
+    
+    NSData * encryptedData = [self encryptData:dataToEncrypt withPasswordHash:hashedMasterPassword];
+    
+    return encryptedData;
+}
+
+
 
 +(NSData*)decryptData:(NSData *)encryptedData{
     
@@ -71,6 +79,19 @@
     NSString* decryptedString = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
     
     return decryptedString;
+}
+
+
++(NSData*)reencryptData:(NSData *)originalData withPassword:(NSString *)newPassword{
+    
+    // First, we'll decrypt the provided data with the master password in the keychain
+    NSData * decryptedData = [self decryptData:originalData];
+    
+    // Encrypt the data with the provided password
+    
+    NSData * reencryptedData = [self encryptData:decryptedData withPasswordHash:newPassword];
+    return reencryptedData;
+    
 }
 
 @end

@@ -42,6 +42,30 @@
 }
 
 
+-(void)presentMasterPasswordSettings:(id)sender{
+    
+    UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
+    PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
+    
+    [self.navigationController presentViewController:[unlockController promptForMasterPasswordBlockingView:NO completion:^{
+        // We only run the refresh if the UI was locked to prevent double reloads
+        
+        [self performSegueWithIdentifier:@"showMasterPasswordSettingsSegue" sender:self];
+        
+        
+    } cancelation:^{
+        
+        
+        
+    }] animated:YES completion:^{
+        
+        
+        
+    }];
+    
+    
+}
+
 -(UIView*)lockedImageAccessoryView{
     
     UIImage * lockImage = [UIImage imageNamed:@"SmallLock"];
@@ -107,7 +131,7 @@
     // Return the number of rows in the section.
     if (section==0) {
         // Locked preferences
-        return 1;
+        return 2;
     } else if (section == 1) {
         return 3;
     } else if (section==2) {
@@ -126,7 +150,7 @@
     if (indexPath.section==0) {
         
         if (indexPath.row == 0) {
-            // Facebook
+            // Passcode
             
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
             
@@ -137,14 +161,14 @@
             
         } else if (indexPath.row== 1) {
             
-            // Pinterest
+            // Master Password
             
             
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
             
-            cell.textLabel.text = @"Pin It™";
-            cell.accessoryView = nil;
-            cell.imageView.image = [UIImage imageNamed:@"Pinterest"];
+            cell.textLabel.text = NSLocalizedString(@"Master Password", nil);
+            cell.accessoryView = [self lockedImageAccessoryView];
+            
             return cell;
             
         }
@@ -256,6 +280,11 @@
             // Passcode
             
             [self presentPasscodeSettingsViewAction:nil];
+            
+        } else if (indexPath.row == 1) {
+            
+            // Master Password
+            [self presentMasterPasswordSettings:nil];
             
         }
         

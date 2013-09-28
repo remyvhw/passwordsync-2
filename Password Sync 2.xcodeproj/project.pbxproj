@@ -270,6 +270,8 @@
 		AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6C617BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m */; };
 		AD5DD6CB17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
 		AD5DD6CC17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
+		AD5E93FC17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */; };
+		AD5E93FD17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -741,6 +743,8 @@
 		AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSOrganizerCollectionViewController.m; sourceTree = "<group>"; };
 		AD5E93F817F221D500152018 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
 		AD5E93F917F221D500152018 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
+		AD5E93FA17F52D3200152018 /* PSSMasterPasswordSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordSettingsViewController.h; sourceTree = "<group>"; };
+		AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordSettingsViewController.m; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -1156,6 +1160,8 @@
 			children = (
 				AD2C5A8817BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.h */,
 				AD2C5A8917BC3BDA00C23AFA /* PSSPasscodeSettingsTableViewController.m */,
+				AD5E93FA17F52D3200152018 /* PSSMasterPasswordSettingsViewController.h */,
+				AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */,
 				AD1A385F17F132360056C583 /* PSSGeneralSettingsTableViewController.h */,
 				AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */,
 				AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */,
@@ -2377,6 +2383,7 @@
 				AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
 				AD10E78517BDB6F400CF3402 /* BitmapScaleManipulator.m in Sources */,
 				ADF10D4417A43ED800CAB546 /* PSSExtentedNoteViewController.m in Sources */,
+				AD5E93FC17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */,
 				AD312643179F08A600483E2F /* HexColor.m in Sources */,
 				AD49C89F17BC6365000DE850 /* MKiCloudSync.m in Sources */,
 				ADED6D05177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
@@ -2507,6 +2514,7 @@
 				AD5AB58017EFA61E00C5D41B /* PSSDeviceCapacity.m in Sources */,
 				AD547FD017A1C5A6008FAFFB /* MAImagePickerController.m in Sources */,
 				ADAD160317ADC1060035ABB4 /* PSSWebsitesFavoritesViewController.m in Sources */,
+				AD5E93FD17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */,
 				AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */,
 				AD0FAA361780F1E50066B7E7 /* RVshaDigester.m in Sources */,
 				ADAD160F17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,

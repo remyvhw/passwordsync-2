@@ -753,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb0-Iw-RQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="4564"/>
+            <point key="canvasLocation" x="896" y="4964"/>
         </scene>
         <!--Navigation Controller - Organizer-->
         <scene sceneID="72U-za-whm">
@@ -803,11 +803,75 @@
                     <connections>
                         <segue destination="S9d-zq-KdX" kind="push" identifier="presentLegalViewSegue" id="0gy-CO-MGR"/>
                         <segue destination="9qm-PJ-udm" kind="push" identifier="showPasscodeSettingsSegue" id="Ggy-mG-kjp"/>
+                        <segue destination="2bw-tL-0gu" kind="push" identifier="showMasterPasswordSettingsSegue" id="yht-BL-nCo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U50-Os-jB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="4187"/>
+        </scene>
+        <!--Master Password Settings View Controller-->
+        <scene sceneID="5fz-xa-03E">
+            <objects>
+                <tableViewController id="2bw-tL-0gu" customClass="PSSMasterPasswordSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Oby-r6-dmn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsSubtitleTableViewCell" textLabel="4FV-pC-lXW" detailTextLabel="MDm-2L-n99" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="dQW-Pe-NiK">
+                                <rect key="frame" x="0.0" y="119" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dQW-Pe-NiK" id="Nuv-VS-gV3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4FV-pC-lXW">
+                                            <rect key="frame" x="15" y="10" width="31" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="MDm-2L-n99">
+                                            <rect key="frame" x="15" y="30" width="290" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <string key="text">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</string>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="submenuCell" textLabel="tjM-Qg-zdE" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Id9-oY-oCR">
+                                <rect key="frame" x="0.0" y="199" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Id9-oY-oCR" id="b7w-Hp-oR8">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Legal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tjM-Qg-zdE">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2bw-tL-0gu" id="MG8-tE-0Hm"/>
+                            <outlet property="delegate" destination="2bw-tL-0gu" id="1mZ-w3-YAw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4Db-cb-MXz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43k-h8-GQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="4321"/>
         </scene>
         <!--Navigation Controller - Settings-->
         <scene sceneID="GWv-Db-YQB">
