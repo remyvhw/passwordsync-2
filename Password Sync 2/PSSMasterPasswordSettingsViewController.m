@@ -31,7 +31,7 @@
 
 -(void)rencryptDataWithPassword:(NSString*)newMasterPassword{
     
-    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
 
     dispatch_queue_t main_queue = dispatch_get_main_queue();
@@ -79,6 +79,9 @@
             
             dispatch_sync(main_queue, ^{
                 
+                [SVProgressHUD dismiss];
+                [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+                
                 UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[saveError localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
                 [errorAlert show];
                 
@@ -89,11 +92,12 @@
             
             // Perform the official master password change
             
-            
             [masterPasswordVerifyer saveNewMasterPassword:blockSelf.passwordCell.textField.text hint:blockSelf.hintCell.textField.text];
             
             
             dispatch_sync(main_queue, ^{
+                
+                [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
                 
                 [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Success", nil)];
                 [blockSelf.navigationController popToRootViewControllerAnimated:YES];
@@ -195,7 +199,7 @@
 
 -(NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     if (section==0) {
-        return NSLocalizedString(@"Changing master password is a lengthy process that can take a few minutes. Plug your device into power and do not interrupt the operation.", nil);
+        return NSLocalizedString(@"Changing master password is a lengthy process that can take a few minutes. Plug your device into power and do not interrupt the operation. It is highly recommanded you wait a couple of minutes and restart Password Sync 2 on all your other devices after this operation.", nil);
     }
     return @"";
 }
