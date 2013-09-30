@@ -10,6 +10,9 @@
 #import "PSSnewPasswordPasswordTextFieldCell.h"
 #import "PSSnewPasswordBasicTextFieldCell.h"
 #import "SVProgressHUD.h"
+#import "PSSAppDelegate.h"
+#import "PSSMasterPasswordVerifyerViewController.h"
+#import "PSSBaseGenericObject.h"
 
 @interface PSSMasterPasswordSettingsViewController ()
 
@@ -24,7 +27,79 @@
 -(void)rencryptDataWithPassword:(NSString*)newMasterPassword{
     
     
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+
+    dispatch_queue_t main_queue = dispatch_get_main_queue();
+    dispatch_queue_t request_queue = dispatch_queue_create("com.pumaxprod.iOS.Password-Sync-2.masterPasswordChangeReencodingThread", NULL);
+
+    __block __typeof__(self) blockSelf = self;
+    
+    dispatch_async(request_queue, ^{
+        
+        
+        // Generate a new password hash.
+        PSSMasterPasswordVerifyerViewController * masterPasswordVerifyer = [[PSSMasterPasswordVerifyerViewController alloc] init];
+        
+        NSString * hashedMasterPassword = [masterPasswordVerifyer generateMasterPasswordHash:newMasterPassword hint:self.hintCell.textField.text];
+        
+        
+        NSFetchRequest * allBaseObjectsRequest = [[NSFetchRequest alloc] initWithEntityName:@"PSSBaseGenericObject"];
+        
+        allBaseObjectsRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES]];
+        
+        NSManagedObjectContext * threadSafeContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        
+        [threadSafeContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
+        
+        NSArray * allBaseObjects = [threadSafeContext executeFetchRequest:allBaseObjectsRequest error:NULL];
+
+        
+        for (PSSBaseGenericObject *baseObject in allBaseObjects) {
+            
+            [baseObject reencryptAllDependantObjectsUsingPassword:hashedMasterPassword];
+            
+        }
+        
+        __block NSError * saveError;
+        
+        [threadSafeContext performBlockAndWait:^{
+            [threadSafeContext save:&saveError];
+        }];
+        
+        if (saveError) {
+            
+            // Cancel everything and inform the user
+            
+            [threadSafeContext rollback];
+            
+            dispatch_sync(main_queue, ^{
+                
+                UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[saveError localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [errorAlert show];
+                
+            });
+            
+            
+        } else {
+            
+            // Perform the official master password change
+            
+            
+            [masterPasswordVerifyer saveMasterPassword:blockSelf.passwordCell.textField.text hint:blockSelf.hintCell.textField.text];
+            
+            
+            dispatch_sync(main_queue, ^{
+                
+                [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Success", nil)];
+                [blockSelf.navigationController popToRootViewControllerAnimated:YES];
+                
+            });
+            
+        }
+        
+        
+        
+    });
     
     
 }
@@ -200,9 +275,10 @@
         
         // Check if device is unplugged/battery level low.
         
-        NSLog(@"%f", [[UIDevice currentDevice] batteryLevel]);
+        [self.hintCell.textField resignFirstResponder];
+        [self.passwordCell.textField resignFirstResponder];
         
-        if ([[UIDevice currentDevice] batteryLevel] < 1.0 && [[UIDevice currentDevice] batteryState] == UIDeviceBatteryStateUnplugged) {
+        if ([[UIDevice currentDevice] batteryLevel] < 0.4 && [[UIDevice currentDevice] batteryState] == UIDeviceBatteryStateUnplugged) {
             UIAlertView * batteryAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Low Battery Alert", nil) message:NSLocalizedString(@"Please connect to AC power before continuing master password change.", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
             
             [batteryAlert show];

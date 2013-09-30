@@ -64,5 +64,12 @@
     self.notes = [self encryptedDataFromUTF8String:decryptedNotes];
 }
 
+-(void)reencryptAllContainedObjectsWithPasswordHash:(NSString *)newPasswordHash{
+    [super reencryptAllContainedObjectsWithPasswordHash:newPasswordHash];
+    
+    self.username = [self reencryptData:self.username withPassword:newPasswordHash];
+    self.password = [self reencryptData:self.password withPassword:newPasswordHash];
+    self.notes = [self reencryptData:self.notes withPassword:newPasswordHash];
+}
 
 @end

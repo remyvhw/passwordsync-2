@@ -7,11 +7,11 @@
 //
 
 #import "PSSBaseGenericObject.h"
-#import "PSSBaseGenericObject.h"
 #import "PSSBaseObjectVersion.h"
 #import "PSSObjectCategory.h"
 #import "PSSObjectDecorativeImage.h"
 #import "PSSObjectTag.h"
+#import "PSSObjectAttachment.h"
 
 
 @implementation PSSBaseGenericObject
@@ -137,6 +137,27 @@
     }];
     
 }
+
+
+-(void)reencryptAllVersionsUsingPassword:(NSString *)newHashedPassword{
+    
+    
+    for (PSSBaseObjectVersion * version in self.versions) {
+        [version reencryptAllContainedObjectsWithPasswordHash:newHashedPassword];
+    }
+    
+    
+}
+
+
+-(void)reencryptAllDependantObjectsUsingPassword:(NSString *)newHashedPassword{
+    
+    [self reencryptAllVersionsUsingPassword:newHashedPassword];
+    
+    
+}
+
+
 
 
 @end

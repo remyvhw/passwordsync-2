@@ -21,6 +21,12 @@
 @property (nonatomic, retain) PSSBaseGenericObject *currentOwningBaseObject;
 
 @property (nonatomic, strong) NSData * decryptedAdditionalJSONfields;
+-(NSString*)decryptDataToUTF8String:(NSData*)encryptedString;
+-(NSData*)encryptedDataFromUTF8String:(NSString*)string;
+
+-(NSData*)reencryptData:(NSData*)data withPassword:(NSString*)password;
+
+-(void)reencryptAllContainedObjectsWithPasswordHash:(NSString*)newPasswordHash;
 
 @end
 
@@ -31,9 +37,6 @@
 - (void)addAttachments:(NSSet *)values;
 - (void)removeAttachments:(NSSet *)values;
 
--(NSString*)decryptDataToUTF8String:(NSData*)encryptedString;
--(NSData*)encryptedDataFromUTF8String:(NSString*)string;
 
--(NSData*)reencryptData:(NSData*)data withPassword:(NSString*)password;
 
 @end

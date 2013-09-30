@@ -31,7 +31,6 @@
 
 -(NSString*)decryptedCardholdersName{
     if (!_decryptedCardholdersName) {
-        NSLog(@"Decrypted Name");
         NSString * decryptedCardholders = [self decryptDataToUTF8String:self.cardholdersName];
         _decryptedCardholdersName = decryptedCardholders;
     }
@@ -189,6 +188,19 @@
     
     
     return NSLocalizedString(@"Other", nil);
+}
+
+
+-(void)reencryptAllContainedObjectsWithPasswordHash:(NSString *)newPasswordHash{
+    [super reencryptAllContainedObjectsWithPasswordHash:newPasswordHash];
+    
+    self.cardholdersName = [self reencryptData:self.cardholdersName withPassword:newPasswordHash];
+    self.expiryDate = [self reencryptData:self.expiryDate withPassword:newPasswordHash];
+    self.note = [self reencryptData:self.note withPassword:newPasswordHash];
+    self.number = [self reencryptData:self.number withPassword:newPasswordHash];
+    self.pin = [self reencryptData:self.pin withPassword:newPasswordHash];
+    self.cardholdersName = [self reencryptData:self.cardholdersName withPassword:newPasswordHash];
+    self.verificationCode = [self reencryptData:self.verificationCode withPassword:newPasswordHash];
 }
 
 @end

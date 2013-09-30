@@ -47,9 +47,7 @@
 
 -(NSData*)reencryptData:(NSData *)data withPassword:(NSString *)password{
     
-    
-    
-    return nil;
+    return [PSSEncryptor reencryptData:data withPassword:password];
 }
 
 
@@ -76,5 +74,12 @@
     self.additionalJSONfields = [PSSEncryptor encryptData:decryptedAdditionalJSONfields];
 }
 
+
+-(void)reencryptAllContainedObjectsWithPasswordHash:(NSString *)newPasswordHash{
+    
+    self.additionalJSONfields = [self reencryptData:self.additionalJSONfields withPassword:newPasswordHash];
+    
+    // Will be subclassed
+}
 
 @end

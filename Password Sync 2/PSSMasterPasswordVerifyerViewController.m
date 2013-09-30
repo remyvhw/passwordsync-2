@@ -35,11 +35,20 @@
     // Do any additional setup after loading the view from its nib.
 }
 
--(void)saveMasterPasswordToKeychain:(NSString*)masterPassword{
+-(NSString*)generateMasterPasswordHash:(NSString*)masterPassword{
     RVshaDigester * shaDigester = [[RVshaDigester alloc] init];
     
-    // Save the master password itself in keychain as a SHA512 base64 encoded string.
-    [[PDKeychainBindings sharedKeychainBindings] setString:[shaDigester base64EncodedSha512DigestWithString:masterPassword] forKey:PSSHashedMasterPasswordKeychainEntry];
+    NSString* hash = [shaDigester base64EncodedSha512DigestWithString:masterPassword];
+    return hash;
+}
+
+-(NSString*)generateMasterPasswordHash:(NSString *)masterPassword hint:(NSString *)hint{
+    return [self generateMasterPasswordHash:masterPassword];
+}
+
+-(void)saveMasterPasswordToKeychain:(NSString*)masterPassword{
+        // Save the master password itself in keychain as a SHA512 base64 encoded string.
+    [[PDKeychainBindings sharedKeychainBindings] setString:[self generateMasterPasswordHash:masterPassword] forKey:PSSHashedMasterPasswordKeychainEntry];
 }
 
 -(void)saveLastMasterPasswordLocalChangeToKeychainWithDate:(NSString*)dateString{

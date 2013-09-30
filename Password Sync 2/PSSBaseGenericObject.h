@@ -30,6 +30,7 @@
 
 @property (nonatomic, strong) UIImage * decorativeImageForDevice;
 
+-(void)reencryptAllDependantObjectsUsingPassword:(NSString*)newHashedPassword;
 
 
 @end

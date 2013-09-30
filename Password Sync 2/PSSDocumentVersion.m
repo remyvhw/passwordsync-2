@@ -32,4 +32,11 @@
     self.noteTextContent = [self encryptedDataFromUTF8String:decryptedNoteTextContent];
 }
 
+-(void)reencryptAllContainedObjectsWithPasswordHash:(NSString *)newPasswordHash{
+    [super reencryptAllContainedObjectsWithPasswordHash:newPasswordHash];
+    
+    self.noteTextContent = [self reencryptData:self.noteTextContent withPassword:newPasswordHash];
+    
+}
+
 @end

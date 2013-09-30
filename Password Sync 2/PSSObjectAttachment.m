@@ -53,6 +53,12 @@
 
 
 
-
+-(void)reencryptBinaryContentWithPassword:(NSString *)password{
+    
+    NSData * reencryptedContent = [PSSEncryptor reencryptData:self.binaryContent withPassword:password];
+    
+    self.binaryContent = reencryptedContent;
+    
+}
 
 @end

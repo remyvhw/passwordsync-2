@@ -10,10 +10,14 @@
 
 @interface PSSMasterPasswordVerifyerViewController : UIViewController
 
+/// This method will save the master password and a hint in the keychain and generate a password verification hash that will be propagated via iCloud.
 -(void)saveMasterPassword:(NSString*)masterPassword hint:(NSString*)hint;
-/// @description This method will save the master password and a hint in the keychain and generate a password verification hash that will be propagated via iCloud.
 
+/// This method will generate a master password hash just as the one that calling the saveMasterPassword:hint: method would save in the keychain.
+-(NSString*)generateMasterPasswordHash:(NSString*)masterPassword hint:(NSString*)hint;
+
+/// This method will verify if the provided master password is valid. If no master password is saved in keychain, a master password hash will be used and a copy of the provided master password will be saved in keychain for further verification.
 -(BOOL)verifyMasterPasswordValidity:(NSString*)providedMasterPassword;
-/// @description This method will verify if the provided master password is valid. If no master password is saved in keychain, a master password hash will be used and a copy of the provided master password will be saved in keychain for further verification.
+
 
 @end

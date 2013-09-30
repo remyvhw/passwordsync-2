@@ -32,4 +32,6 @@
 - (void)addEncryptedObjectVersions:(NSSet *)values;
 - (void)removeEncryptedObjectVersions:(NSSet *)values;
 
+-(void)reencryptBinaryContentWithPassword:(NSString*)password;
+
 @end
