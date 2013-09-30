@@ -15,14 +15,31 @@
 #import "PSSFaviconFetcher.h"
 #import "SVProgressHUD.h"
 
+@interface PSSPasswordSyncOneDataImporter ()
+@property (nonatomic, strong) NSManagedObjectContext * threadSafeContext;
+
+@end
+
 @implementation PSSPasswordSyncOneDataImporter
 
+- (void)backgroundContextDidSave:(NSNotification *)notification {
+    /* Make sure we're on the main thread when updating the main context */
+    if (![NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(backgroundContextDidSave:)
+                               withObject:notification
+                            waitUntilDone:NO];
+        return;
+    }
+    
+    /* merge in the changes to the main context */
+    [APP_DELEGATE.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+}
 
 
 -(PSSPasswordVersion*)insertNewPasswordVersionInManagedObject{
     
     
-    NSManagedObjectContext *context = [APP_DELEGATE managedObjectContext];
+    NSManagedObjectContext *context = self.threadSafeContext;
     PSSPasswordVersion *newManagedObject = (PSSPasswordVersion*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordVersion" inManagedObjectContext:context];
     
     // We'll automatically timestamp it
@@ -34,7 +51,7 @@
 
 -(PSSPasswordBaseObject*)insertNewPasswordInManagedObject{
     
-    NSManagedObjectContext *context = [APP_DELEGATE managedObjectContext];
+    NSManagedObjectContext *context = self.threadSafeContext;
     PSSPasswordBaseObject *newManagedObject = (PSSPasswordBaseObject*)[NSEntityDescription insertNewObjectForEntityForName:@"PSSPasswordBaseObject" inManagedObjectContext:context];
     
     // We'll add a creation date automatically
@@ -125,31 +142,65 @@
         return NO;
     }
     
-    NSArray * originalArray = [NSJSONSerialization JSONObjectWithData:decodedJSONData options:0 error:&error];
+    __block NSArray * originalArray = [NSJSONSerialization JSONObjectWithData:decodedJSONData options:0 error:&error];
     
     if (error) {
         return NO;
     }
     
-    for (NSDictionary * passwordDict in originalArray) {
-        [self savePasswordWithDictionary:passwordDict];
-    }
     
-    __block BOOL returnNO = NO;
-    [APP_DELEGATE.managedObjectContext performBlockAndWait:^{
-        NSError * error;
-        if (![APP_DELEGATE.managedObjectContext save:&error]) {
-            returnNO = YES;
+    // Switch to another thread
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    
+    dispatch_queue_t main_queue = dispatch_get_main_queue();
+    dispatch_queue_t request_queue = dispatch_queue_create("com.pumaxprod.iOS.Password-Sync-2.passwordsyncOneImportThread", NULL);
+    
+    __block __typeof__(self) blockSelf = self;
+    
+    dispatch_async(request_queue, ^{
+        
+        // update and heavy lifting...
+        
+        NSManagedObjectContext * threadSafeContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [threadSafeContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
+        self.threadSafeContext = threadSafeContext;
+        
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(backgroundContextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:threadSafeContext];
+        
+        
+        for (NSDictionary * passwordDict in originalArray) {
+            [blockSelf savePasswordWithDictionary:passwordDict];
         }
-    }];
-    
-    if (returnNO) {
-        return NO;
-    }
-    
+        
+        [self.threadSafeContext performBlockAndWait:^{
+            NSError * error;
+            [self.threadSafeContext save:&error];
+        }];
+        
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:NSManagedObjectContextDidSaveNotification
+                                                      object:threadSafeContext];
+        
+        dispatch_sync(main_queue, ^{
+            
+            
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"You're done!", nil)];
 
+            
+            
+        });
+    });
     
-    [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"You're done!", nil)];
+    
+    
+    
+    
     
     return YES;
 }
