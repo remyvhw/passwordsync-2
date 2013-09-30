@@ -35,7 +35,7 @@
     
     PSSMasterPasswordVerifyerViewController * masterPasswordVerifyer = [[PSSMasterPasswordVerifyerViewController alloc] init];
     
-    [masterPasswordVerifyer saveMasterPassword:masterPassword hint:hint];
+    [masterPasswordVerifyer saveNewMasterPassword:masterPassword hint:hint];
     
 }
 

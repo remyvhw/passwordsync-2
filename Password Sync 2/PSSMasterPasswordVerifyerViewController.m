@@ -16,9 +16,46 @@
 
 @interface PSSMasterPasswordVerifyerViewController ()
 
+@property (nonatomic, retain, readonly) NSDateFormatter * dateToUserDefaultsAndKeychainStringFormatter;
+
 @end
 
 @implementation PSSMasterPasswordVerifyerViewController
+@synthesize dateToUserDefaultsAndKeychainStringFormatter = _dateToUserDefaultsAndKeychainStringFormatter;
+
+-(NSDateFormatter*)dateToUserDefaultsAndKeychainStringFormatter{
+    if (_dateToUserDefaultsAndKeychainStringFormatter) {
+        return _dateToUserDefaultsAndKeychainStringFormatter;
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+    _dateToUserDefaultsAndKeychainStringFormatter = dateFormatter;
+    
+    return _dateToUserDefaultsAndKeychainStringFormatter;
+}
+
+-(BOOL)isLocalMasterPasswordCurrent{
+
+    NSString * localMasterPasswordDateString = [[PDKeychainBindings sharedKeychainBindings] stringForKey:PSSlastLocalMasterPasswordChange];;
+    NSString * globalMasterPasswordDateString = [[NSUserDefaults standardUserDefaults] stringForKey:PSSlastGlobalMasterPasswordChange];
+    
+    NSDate * localDate = [self.dateToUserDefaultsAndKeychainStringFormatter dateFromString:localMasterPasswordDateString];
+    NSDate * globalDate = [self.dateToUserDefaultsAndKeychainStringFormatter dateFromString:globalMasterPasswordDateString];
+    
+    
+    if ([localDate compare:globalDate] == NSOrderedDescending) {
+        // localDate is later than globalDate
+        // Userdefaults probably haven't synchronized yet
+        return YES;
+    } else if ([localDate compare:globalDate] == NSOrderedAscending) {
+        // localDate is earlier than globalDate
+        return NO;
+    }
+    
+    // Dates are the same
+    return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,7 +104,7 @@
 
 
 #pragma mark - Public methods
--(void)saveMasterPassword:(NSString*)masterPassword hint:(NSString*)hint{
+-(void)saveNewMasterPassword:(NSString*)masterPassword hint:(NSString*)hint{
     
     RVshaDigester * shaDigester = [[RVshaDigester alloc] init];
 
@@ -95,9 +132,7 @@
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PSSApplicationWasConfiguredOnAnotherDeviceDefaults];
     
     NSDate * now = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
-    NSString *strDate = [dateFormatter stringFromDate:now];
+    NSString *strDate = [self.dateToUserDefaultsAndKeychainStringFormatter stringFromDate:now];
     [self saveLastMasterPasswordLocalChangeToKeychainWithDate:strDate];
     [self saveLastMasterPasswordGlobalChangeToSyncingDefaults:strDate];
     
@@ -116,6 +151,11 @@
                              
     // Check if master password is in keychain
     NSString * hashedMasterPasswordInKeychain = [keychainBindings stringForKey:PSSHashedMasterPasswordKeychainEntry];
+    
+    // If a hashed master password is in the keychain but is not current, we start from scratch and consider we don't have any.
+    if (![self isLocalMasterPasswordCurrent]) {
+        hashedMasterPasswordInKeychain = nil;
+    }
     
     if (hashedMasterPasswordInKeychain) {
         // Just compare the provided master password
@@ -146,6 +186,7 @@
         NSData * decryptedData = [RNDecryptor decryptData:encryptedVerificationStringDigest withPassword:providedMasterPassword error:&decryptionError];
         
         if (decryptionError) {
+            // Provided password is incorrect
             NSLog(@"%@", [decryptionError description]);
             return NO;
         }

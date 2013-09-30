@@ -26,6 +26,8 @@
 #import "PSSDocumentDetailCollectionViewController.h"
 #import "PSSDocumentEditorTableViewController.h"
 #import "Appirater.h"
+#import "PSSMasterPasswordVerifyerViewController.h"
+#import "PSSUnlockPromptViewController.h"
 
 
 
@@ -408,12 +410,30 @@
             
         } else {
             
+            // Check for master password in keychain's validity
+            PSSMasterPasswordVerifyerViewController * masterPasswordVerifyer = [[PSSMasterPasswordVerifyerViewController alloc] init];
             
-            NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-            
-            if ([[standardUserDefaults objectForKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch] boolValue]) {
-                [self presentUnlockPromptAnimated:YES];
+            if ([masterPasswordVerifyer isLocalMasterPasswordCurrent]) {
+                // Local master password is correct
+                
+                NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+                
+                if ([[standardUserDefaults objectForKey:PSSUserSettingsPromptForPasscodeAtEveryLaunch] boolValue]) {
+                    [self presentUnlockPromptAnimated:YES];
+                }
+
+            } else {
+                // Local master password is incorrect; user might have changed it on another device
+                
+                UIStoryboard * unlockStoryboard = [UIStoryboard storyboardWithName:@"UnlockPrompt" bundle:[NSBundle mainBundle]];
+                PSSUnlockPromptViewController * unlockController = (PSSUnlockPromptViewController*)[unlockStoryboard instantiateInitialViewController];
+                
+                [self.window.rootViewController presentViewController:[unlockController promptForMasterPasswordBlockingView:NO completion:^{} cancelation:^{}] animated:YES completion:^{}];
+                
+                
             }
+            
+            
             
             
             

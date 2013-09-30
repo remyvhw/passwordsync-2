@@ -24,6 +24,11 @@
 
 @implementation PSSMasterPasswordSettingsViewController
 
+
+-(void)lockUIAction:(id)notification{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 -(void)rencryptDataWithPassword:(NSString*)newMasterPassword{
     
     
@@ -85,7 +90,7 @@
             // Perform the official master password change
             
             
-            [masterPasswordVerifyer saveMasterPassword:blockSelf.passwordCell.textField.text hint:blockSelf.hintCell.textField.text];
+            [masterPasswordVerifyer saveNewMasterPassword:blockSelf.passwordCell.textField.text hint:blockSelf.hintCell.textField.text];
             
             
             dispatch_sync(main_queue, ^{
@@ -169,6 +174,8 @@
         self.title = NSLocalizedString(@"Master Password", nil);
     }
     
+    // Subscribe to the lock notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUIAction:) name:PSSGlobalLockNotification object:nil];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"normalCell"];
     
@@ -178,6 +185,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table view data source

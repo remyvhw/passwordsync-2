@@ -18,6 +18,10 @@
 
 @implementation PSSPasscodeSettingsTableViewController
 
+-(void)lockUIAction:(id)notification{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -53,6 +57,8 @@
         self.title = NSLocalizedString(@"Passcode", nil);
     }
     
+    // Subscribe to the lock notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lockUIAction:) name:PSSGlobalLockNotification object:nil];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"normalCell"];
     
@@ -62,6 +68,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table view data source
