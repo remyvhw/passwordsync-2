@@ -34,15 +34,16 @@
     [self.masterPasswordField setEnabled:NO];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
     self.counterField.text = NSLocalizedString(@"Please wait 5 seconds before trying again.", nil);
+    self.detailsTextField.alpha = 0.0;
+    [self.detailsTextField setHidden:NO];
     [UIView animateWithDuration:0.5 animations:^{
         self.detailsTextField.textColor = replacementColor;
         self.detailsTextField.text = NSLocalizedString(@"Password is Incorrect.", nil);
         [self.counterField setAlpha:1.0];
     }];
     
-    int64_t delayInSeconds = 5; // Your Game Interval as mentioned above by you
     
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 5.0 * NSEC_PER_SEC);
     
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
@@ -50,10 +51,17 @@
         [self.masterPasswordField setEnabled:YES];
         [self.navigationItem.rightBarButtonItem setEnabled:YES];
         [self.masterPasswordField becomeFirstResponder];
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             [self.counterField setAlpha:0.0];
+        } completion:^(BOOL finished) {
+            
             self.detailsTextField.textColor = originalTextColor;
-            self.detailsTextField.text = NSLocalizedString(@"Enter your Master Password", nil);
+            self.detailsTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PSSMasterPasswordHintTextString];
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.detailsTextField setAlpha:1.0];
+            }];
+            
         }];
         
         
