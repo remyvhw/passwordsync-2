@@ -24,9 +24,34 @@
 
 @implementation PSSMasterPasswordSettingsViewController
 
+/* Save notification handler for the background context */
+- (void)backgroundContextDidSave:(NSNotification *)notification {
+    /* Make sure we're on the main thread when updating the main context */
+    if (![NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(backgroundContextDidSave:)
+                               withObject:notification
+                            waitUntilDone:NO];
+        return;
+    }
+    
+    /* Merge in the changes to the main context */
+    [APP_DELEGATE.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+}
 
 -(void)lockUIAction:(id)notification{
     [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+
+-(void)manuallySetMasterPassword:(NSString*)newMasterPassword{
+    
+    PSSMasterPasswordVerifyerViewController * masterPasswordController = [[PSSMasterPasswordVerifyerViewController alloc] init];
+    
+    [masterPasswordController manuallySetMasterPasswordWithNoSync:newMasterPassword];
+    
+    
+    [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Success", nil)];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)rencryptDataWithPassword:(NSString*)newMasterPassword{
@@ -65,11 +90,22 @@
             
         }
         
+        
+        // Subscribe to the save notification so our main object context (in the App_delegate) is notified and run a merge.
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(backgroundContextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:threadSafeContext];
+        
         __block NSError * saveError;
         
         [threadSafeContext performBlockAndWait:^{
             [threadSafeContext save:&saveError];
         }];
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:NSManagedObjectContextDidSaveNotification
+                                                      object:threadSafeContext];
         
         if (saveError) {
             
@@ -119,9 +155,19 @@
     
     
     [promptAlertView setAlertViewStyle:UIAlertViewStyleSecureTextInput];
-    
+    [promptAlertView setTag:100];
     [promptAlertView show];
     
+}
+
+
+-(void)promptForManualMasterPassword{
+    UIAlertView * promptAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Manually set your master password", nil) message:NSLocalizedString(@"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"Confirm", nil), nil];
+    
+    
+    [promptAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [promptAlertView setTag:101];
+    [promptAlertView show];
 }
 
 -(void)showPasswordGenerator:(id)sender{
@@ -207,6 +253,8 @@
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section==0) {
         return NSLocalizedString(@"Change Master Password", nil);
+    } else if (section==1) {
+        return NSLocalizedString(@"Advanced", nil);
     }
     return @"";
 }
@@ -220,7 +268,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -229,7 +277,11 @@
     if (section==0) {
         // Password and hint
         return 3;
+    } else if (section == 1) {
+        // Advanced
+        return 1;
     }
+    
     return 0;
 }
 
@@ -278,6 +330,21 @@
         }
         
         
+    } else if (indexPath.section==1) {
+        // Advanced
+        
+        if (indexPath.row == 0) {
+            // Manually set master password
+            
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"normalCell" forIndexPath:indexPath];
+            
+            cell.textLabel.text = NSLocalizedString(@"Manually set master password", nil);
+            cell.textLabel.textColor = self.view.window.tintColor;
+            
+            return cell;
+            
+        }
+        
     }
     
     return nil;
@@ -300,10 +367,11 @@
         } else {
             
             [self promptForPasswordConfirmation];
-            
         }
         
-        
+    } else if (indexPath.section==1 && indexPath.row == 0) {
+        // Manually set master password
+        [self promptForManualMasterPassword];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -324,33 +392,46 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
     
-    if (buttonIndex == 0) {
-        [self.passwordCell.textField becomeFirstResponder];
-    } else {
-        
-        // Check if master password is the same in both fields
-        if ([[[alertView textFieldAtIndex:0] text] isEqualToString:self.passwordCell.textField.text]) {
-            //[self saveMasterPassword:self.passwordCell.textField.text hint:self.passwordHintTextField.text];
-            
-            
-            // If user already printer it's master Password, jump to the passcode chooser
-            
-            
-            [self rencryptDataWithPassword:[[alertView textFieldAtIndex:0] text]];
-            
-            
-            
+    if (alertView.tag == 100) {
+        // Confirm master password alert view
+        if (buttonIndex == 0) {
+            [self.passwordCell.textField becomeFirstResponder];
         } else {
             
-            UIAlertView * errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Verify Master Password", nil) message:NSLocalizedString(@"Make sure you wrote your master password exactly the same way in the two fields.", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-            [errorAlertView show];
+            // Check if master password is the same in both fields
+            if ([[[alertView textFieldAtIndex:0] text] isEqualToString:self.passwordCell.textField.text]) {
+                //[self saveMasterPassword:self.passwordCell.textField.text hint:self.passwordHintTextField.text];
+                
+                
+                // If user already printer it's master Password, jump to the passcode chooser
+                
+                
+                [self rencryptDataWithPassword:[[alertView textFieldAtIndex:0] text]];
+                
+                
+                
+            } else {
+                
+                UIAlertView * errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Verify Master Password", nil) message:NSLocalizedString(@"Make sure you wrote your master password exactly the same way in the two fields.", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [errorAlertView show];
+                
+            }
+            
+            
+            
+        }
+    } else if (alertView.tag == 101) {
+        // Manually set master password
+        
+        if (buttonIndex != 0) {
+            // Confirm button
+            
+            [self manuallySetMasterPassword:[[alertView textFieldAtIndex:0] text]];
             
         }
         
-        
-        
-    }
-    
+    }// End of alertview.tag == 101
+
     
 }
 

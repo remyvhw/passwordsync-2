@@ -211,4 +211,13 @@
     
 }
 
+
+-(void)manuallySetMasterPasswordWithNoSync:(NSString *)manualMasterPassword{
+    
+    [self saveMasterPasswordToKeychain:manualMasterPassword];
+    [self saveLastMasterPasswordLocalChangeToKeychainWithDate:[self.dateToUserDefaultsAndKeychainStringFormatter stringFromDate:[NSDate date]]];
+    
+    
+}
+
 @end

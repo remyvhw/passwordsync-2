@@ -22,7 +22,10 @@
 
 /// Make sure the password stored in the keychain of this device is the actual last password used across other devices.
 -(BOOL)isLocalMasterPasswordCurrent;
-    
+
+
+/// This method will set the master password in the keychain manually, without any kind of notification or reencoding of the hint/verification text. Will change local master password date to current date.
+-(void)manuallySetMasterPasswordWithNoSync:(NSString*)manualMasterPassword;
 
 
 @end
