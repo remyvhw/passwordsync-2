@@ -162,7 +162,7 @@
 
 
 -(void)promptForManualMasterPassword{
-    UIAlertView * promptAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Manually set your master password", nil) message:NSLocalizedString(@"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"Confirm", nil), nil];
+    UIAlertView * promptAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Manually set master password", nil) message:NSLocalizedString(@"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"Confirm", nil), nil];
     
     
     [promptAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];

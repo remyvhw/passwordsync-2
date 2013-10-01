@@ -328,3 +328,13 @@
 
 "Report a problem" = "Signaler un problème";
 "Review Password Sync" = "Évaluer Password Sync";
+
+"Change Master Password" = "Changer le mot de passe maître";
+"Changing master password is a lengthy process that can take a few minutes. Plug your device into power and do not interrupt the operation. It is highly recommanded you wait a couple of minutes and restart Password Sync 2 on all your other devices after this operation." = "Changer de mot de passe maître est une opération complexe nécessitant plusieurs minutes. Branchez votre appareil à une source d'alimentation et n'interrompez pas le processus. Il est hautement recommandé de fermer toutes les autres copies de Password Sync sur ses autres appareils.";
+"New Master Password" = "Nouveau mot de passe maître";
+"Change Password" = "Changer le mot de passe";
+"Manually set master password" = "Entrée manuelle";
+"Low Battery Alert" = "Pile faible";
+"Please connect to AC power before continuing master password change." = "Veuillez connecter votre appareil à une source d'alimentation électrique avant de poursuivre.";
+"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one." = "Entrer manuellement un mot de passe maître permet de changer le mot de passe maître sauvegardé sur cet appareil sans réencrypter la base de donnée ou notifier les autres copies de Password Sync sur vos autres appareils. N'utiliser qu'en connaissance de cause.";
+"Success" = "Succès";

@@ -335,3 +335,13 @@
 
 "Report a problem" = "問題を報告する";
 "Review Password Sync" = "アプリをレビュー";
+
+"Change Master Password" = "マスターパスワードの変更";
+"Changing master password is a lengthy process that can take a few minutes. Plug your device into power and do not interrupt the operation. It is highly recommanded you wait a couple of minutes and restart Password Sync 2 on all your other devices after this operation." = "この操作には数分かかることがあります";
+"New Master Password" = "新しいマスターパスワード";
+"Change Password" = "パスワードの変更";
+"Manually set master password" = "マスターパスワードのマニュアルエントリ";
+"Low Battery Alert" = "ローバッテリー警告";
+"Please connect to AC power before continuing master password change." = "AC電源に接続してください。";
+"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one." = "この操作は、現在暗号化されたデータには影響しません。";
+"Success" = "上首尾";

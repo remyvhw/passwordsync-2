@@ -333,3 +333,13 @@
 
 "Report a problem" = "報告問題";
 "Review Password Sync" = "評價這個應用程序";
+
+"Change Master Password" = "修改主密碼";
+"Changing master password is a lengthy process that can take a few minutes. Plug your device into power and do not interrupt the operation. It is highly recommanded you wait a couple of minutes and restart Password Sync 2 on all your other devices after this operation." = "此操作可能需要幾分鐘的時間。";
+"New Master Password" = "新的主密碼";
+"Change Password" = "更改密碼";
+"Manually set master password" = "主密碼的手動輸入";
+"Low Battery Alert" = "低電量警告";
+"Please connect to AC power before continuing master password change." = "請連接到交流電源。”;
+"Manually setting the master password let you change the master password used by the app on this device without rencrypting the entire database or notifying installations running on other devices. Setting the master password manually could be necessary if, after a master password change on another device, you cannot decrypt your passwords on this one." = "此操作不會影響當前已加密的數據。";
+"Success" = "成功";
