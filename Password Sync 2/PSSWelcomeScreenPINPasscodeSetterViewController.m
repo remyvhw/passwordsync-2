@@ -10,6 +10,7 @@
 #import "PSSPINpasscodeButtonView.h"
 #import "PSSPasscodeVerifyerViewController.h"
 #import "PSSUnlockPromptViewController.h"
+@import AudioToolbox;
 
 @interface PSSWelcomeScreenPINPasscodeSetterViewController ()
 @property (weak, nonatomic) IBOutlet PSSPINpasscodeButtonView *pinOneButton;
@@ -281,6 +282,8 @@
 
 
 -(IBAction)pressedKeypad:(PSSPINpasscodeButtonView*)sender{
+    
+    AudioServicesPlaySystemSound(0x450);
     
     if (self.passcodeStatus == PSSPINpasscodeStatusUndefined || self.passcodeStatus == PSSPINpasscodeStatusDoubleEntryInvalid || self.passcodeStatus == PSSPINpasscodeStatusPromptInvalid) {
         [self.passcodeString appendString:[sender numberForCurrentPasscodeNumber]];

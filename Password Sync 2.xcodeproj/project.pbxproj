@@ -794,6 +794,7 @@
 		AD7F800317B082E600A590FA /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		AD7FC9A417B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVersionsCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		AD7FC9A517B2A874004AC34C /* PSSVersionsCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVersionsCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		AD80265617FC76980078C823 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD82101E177CFB2900B6F501 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD821024177CFBD400B6F501 /* PSSPasswordBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSPasswordBaseObject.h; sourceTree = "<group>"; };
 		AD821025177CFBD400B6F501 /* PSSPasswordBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordBaseObject.m; sourceTree = "<group>"; };
@@ -943,7 +944,6 @@
 		ADDCADF817D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		ADDCADF917D9441600F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		ADDCADFA17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ADDCADFB17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ADDCADFC17D9441700F3B8F7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADDD964B1792539400AB2CC5 /* PSSCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardsTableViewController.h; sourceTree = "<group>"; };
 		ADDD964C1792539400AB2CC5 /* PSSCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardsTableViewController.m; sourceTree = "<group>"; };
@@ -2718,8 +2718,8 @@
 				AD7B261917C2E00D00701F52 /* Base */,
 				AD7B261B17C2E01900701F52 /* fr */,
 				ADDCADEC17D8F6AC00F3B8F7 /* zh-Hans */,
-				ADDCADFB17D9441700F3B8F7 /* ja */,
 				AD41CE5317DBBD960095C090 /* zh-Hant */,
+				AD80265617FC76980078C823 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

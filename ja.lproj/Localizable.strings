@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  Password Sync 2
-
-  Created by Remy Vanherweghem on 2013-08-19.
-  Copyright (c) 2013 Pumax. All rights reserved.
-*/
+/*
+ Localizable.strings
+ Password Sync 2
+ 
+ Created by Remy Vanherweghem on 2013-08-19.
+ Copyright (c) 2013 Pumax. All rights reserved.
+ */
 /* First master password explanation screen for first launch. */
 "A master password is the key that will encode your Password Sync database and is the same for all other devices that have the Password Sync App installed. \nChoose your password carefully: once set, it is absolutely impossible to unlock your passwords without it. If the master password is lost or you find yourself unable to recall it, then you will be unable to retrieve any of your stored passwords.  There is no password retrieval link, nor is there anyone to help you reset it. It is also important to remember that the security level of your data will be proportional to the strength of your password." = "マスターパスワードとはPassword Syncのデータベースを暗号化するキーで、Password Syncがインストールされているすべてのデバイスで使われます。マスターパスワードは慎重に決めてください。一度決定したら、このマスターパスワードがないとデータベースをアンロックすることは完全に不可能になります。マスターパスワードを紛失したり思い出せなくなったりした場合、アプリに保管しているパスワードはまったく読み出せなくなります。パスワードを取り出す方法も、マスターパスワードのリセットをお手伝いできる人もいません。また、あなたのデータのセキュリティーレベルはこのマスターパスワードの強度に比例するということにも十分ご留意ください。";
 
