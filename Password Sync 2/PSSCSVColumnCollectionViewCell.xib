@@ -5,8 +5,7 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PSSCSVColumnCollectionViewCell" id="RBR-vB-X7H" customClass="PSSCSVColumnCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="columnCollectionViewCell" id="RBR-vB-X7H" customClass="PSSCSVColumnCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="280" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -17,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="280" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="IzZ-Bw-8zt" id="2vI-Li-Trz"/>
-                            <outlet property="delegate" destination="IzZ-Bw-8zt" id="0Jy-dY-tb3"/>
-                        </connections>
                     </tableView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -28,9 +23,8 @@
             <size key="customSize" width="280" height="480"/>
             <connections>
                 <outlet property="tableView" destination="NBZ-ug-k1B" id="mRp-SH-LSn"/>
-                <outlet property="tableViewDataSource" destination="IzZ-Bw-8zt" id="pcU-bb-vHu"/>
             </connections>
         </collectionViewCell>
-        <customObject id="IzZ-Bw-8zt" customClass="PSSCSVColumnTableViewDatasource"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
 </document>

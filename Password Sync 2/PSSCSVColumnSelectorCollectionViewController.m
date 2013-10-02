@@ -8,12 +8,26 @@
 
 #import "PSSCSVColumnSelectorCollectionViewController.h"
 #import "PSSCSVColumnCollectionViewCell.h"
+#import "PSSCSVImporterNavigationController.h"
+
 
 @interface PSSCSVColumnSelectorCollectionViewController ()
 
 @end
 
 @implementation PSSCSVColumnSelectorCollectionViewController
+
+
+
+-(NSArray*)fieldsForDataType{
+    
+    
+    NSArray * websiteArray = @[NSLocalizedString(@"Title", nil), NSLocalizedString(@"Username", nil), NSLocalizedString(@"Password", nil), NSLocalizedString(@"URL", nil), NSLocalizedString(@"Notes", nil)];
+    
+    
+    return websiteArray;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +43,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    NSLog(@"%@", [self.collectionView description]);
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"columnCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PSSCSVColumnCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"columnCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"PSSCSVColumnCollectionHeaderReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PSSCSVColumnHeaderView"];
     
@@ -43,31 +59,42 @@
 #pragma mark - UICollectionViewDataSource
 
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+    
+    UICollectionReusableView * reusableHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PSSCSVColumnHeaderView" forIndexPath:indexPath];
         
-        UICollectionReusableView * reusableHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PSSCSVColumnHeaderView" forIndexPath:indexPath];
+    UILabel * titleLabel = (UILabel*)[reusableHeader viewWithTag:1];
         
-        UILabel * titleLabel = (UILabel*)[reusableHeader viewWithTag:1];
+    titleLabel.text = [[self fieldsForDataType] objectAtIndex:indexPath.section];
         
-        titleLabel.text = NSLocalizedString(@"Title", nil);
-        
-        return reusableHeader;
-    }
-    return nil;
+    return reusableHeader;
+    
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 0;
+    PSSCSVImporterNavigationController * navigationController = (PSSCSVImporterNavigationController*)self.navigationController;
+
+    if (navigationController.lines.count < 1) {
+        // The array is empty
+        return 0;
+    }
+    
+    return [[navigationController.lines objectAtIndex:0] count];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 0;
+    return [self fieldsForDataType].count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    return nil;
+    PSSCSVColumnCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"columnCollectionViewCell" forIndexPath:indexPath];
+    
+    
+    
+    
+    
+    return cell;
 }
 
 

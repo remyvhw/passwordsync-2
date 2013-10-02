@@ -9,6 +9,7 @@
 #import "PSSCSVImporterNavigationController.h"
 #import "PSSCSVImporterEncodingChooserTableViewController.h"
 #import "SVProgressHUD.h"
+#import "PSSCSVColumnSelectorCollectionViewController.h"
 
 @interface PSSCSVImporterNavigationController ()
 
@@ -118,7 +119,10 @@
         self.lines = [[NSMutableArray alloc] initWithArray:_lines copyItems:YES];
         [SVProgressHUD dismiss];
         
-        NSLog(@"%@", [self.lines description]);
+        PSSCSVColumnSelectorCollectionViewController * columnSelectorViewController = [[PSSCSVColumnSelectorCollectionViewController alloc] initWithNibName:@"PSSCSVColumnSelectorCollectionViewController" bundle:[NSBundle mainBundle]];
+        
+        [self pushViewController:columnSelectorViewController animated:YES];
+        
         
         
     });
