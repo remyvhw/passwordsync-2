@@ -272,6 +272,24 @@
 		AD5DD6CC17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5DD6CA17C00CE000DDB614 /* PSSOrganizerCollectionViewController.m */; };
 		AD5E93FC17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */; };
 		AD5E93FD17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */; };
+		AD5E940017FB47C300152018 /* PSSCSVImporterNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FF17FB47C300152018 /* PSSCSVImporterNavigationController.m */; };
+		AD5E940117FB47C300152018 /* PSSCSVImporterNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E93FF17FB47C300152018 /* PSSCSVImporterNavigationController.m */; };
+		AD5E940517FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E940417FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m */; };
+		AD5E940617FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E940417FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m */; };
+		AD5E940917FB5A3600152018 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E940817FB5A3600152018 /* CHCSVParser.m */; };
+		AD5E940A17FB5A3600152018 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E940817FB5A3600152018 /* CHCSVParser.m */; };
+		AD5E942517FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E942317FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m */; };
+		AD5E942617FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E942317FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m */; };
+		AD5E942717FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E942417FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib */; };
+		AD5E942817FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E942417FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib */; };
+		AD5E942A17FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E942917FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib */; };
+		AD5E942B17FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E942917FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib */; };
+		AD5E942E17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E942D17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m */; };
+		AD5E942F17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E942D17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m */; };
+		AD5E943217FBA44100152018 /* PSSCSVColumnTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E943117FBA44100152018 /* PSSCSVColumnTableViewDatasource.m */; };
+		AD5E943317FBA44100152018 /* PSSCSVColumnTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E943117FBA44100152018 /* PSSCSVColumnTableViewDatasource.m */; };
+		AD5E943917FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E943817FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib */; };
+		AD5E943A17FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5E943817FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib */; };
 		AD6133E617930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E717930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */; };
 		AD6133E917932EAD004CEDF2 /* bankEmercyContacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */; };
@@ -745,6 +763,21 @@
 		AD5E93F917F221D500152018 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
 		AD5E93FA17F52D3200152018 /* PSSMasterPasswordSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSMasterPasswordSettingsViewController.h; sourceTree = "<group>"; };
 		AD5E93FB17F52D3200152018 /* PSSMasterPasswordSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSMasterPasswordSettingsViewController.m; sourceTree = "<group>"; };
+		AD5E93FE17FB47C300152018 /* PSSCSVImporterNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCSVImporterNavigationController.h; sourceTree = "<group>"; };
+		AD5E93FF17FB47C300152018 /* PSSCSVImporterNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCSVImporterNavigationController.m; sourceTree = "<group>"; };
+		AD5E940317FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCSVImporterEncodingChooserTableViewController.h; sourceTree = "<group>"; };
+		AD5E940417FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCSVImporterEncodingChooserTableViewController.m; sourceTree = "<group>"; };
+		AD5E940717FB5A3600152018 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		AD5E940817FB5A3600152018 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		AD5E942217FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCSVColumnSelectorCollectionViewController.h; sourceTree = "<group>"; };
+		AD5E942317FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCSVColumnSelectorCollectionViewController.m; sourceTree = "<group>"; };
+		AD5E942417FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSCSVColumnSelectorCollectionViewController.xib; sourceTree = "<group>"; };
+		AD5E942917FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSCSVColumnCollectionViewCell.xib; sourceTree = "<group>"; };
+		AD5E942C17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCSVColumnCollectionViewCell.h; sourceTree = "<group>"; };
+		AD5E942D17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCSVColumnCollectionViewCell.m; sourceTree = "<group>"; };
+		AD5E943017FBA44100152018 /* PSSCSVColumnTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCSVColumnTableViewDatasource.h; sourceTree = "<group>"; };
+		AD5E943117FBA44100152018 /* PSSCSVColumnTableViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCSVColumnTableViewDatasource.m; sourceTree = "<group>"; };
+		AD5E943817FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSCSVColumnCollectionHeaderReusableView.xib; sourceTree = "<group>"; };
 		AD6133E417930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewCardNumberTextFieldCell.h; sourceTree = "<group>"; };
 		AD6133E517930DFD004CEDF2 /* PSSnewCardNumberTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewCardNumberTextFieldCell.m; sourceTree = "<group>"; };
 		AD6133E817932EAD004CEDF2 /* bankEmercyContacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bankEmercyContacts.plist; sourceTree = "<group>"; };
@@ -1496,6 +1529,67 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		AD5E940217FB47C700152018 /* CSV Importer */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E93FE17FB47C300152018 /* PSSCSVImporterNavigationController.h */,
+				AD5E93FF17FB47C300152018 /* PSSCSVImporterNavigationController.m */,
+				AD5E943617FBA69900152018 /* Encoding */,
+				AD5E943717FBA6A400152018 /* Column Selector */,
+			);
+			name = "CSV Importer";
+			sourceTree = "<group>";
+		};
+		AD5E940B17FB5A3C00152018 /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E940717FB5A3600152018 /* CHCSVParser.h */,
+				AD5E940817FB5A3600152018 /* CHCSVParser.m */,
+			);
+			name = CHCSVParser;
+			sourceTree = "<group>";
+		};
+		AD5E943417FBA68300152018 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E942917FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib */,
+				AD5E942C17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.h */,
+				AD5E942D17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m */,
+				AD5E943517FBA68900152018 /* Data Source */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		AD5E943517FBA68900152018 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E943017FBA44100152018 /* PSSCSVColumnTableViewDatasource.h */,
+				AD5E943117FBA44100152018 /* PSSCSVColumnTableViewDatasource.m */,
+			);
+			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		AD5E943617FBA69900152018 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E940317FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.h */,
+				AD5E940417FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m */,
+			);
+			name = Encoding;
+			sourceTree = "<group>";
+		};
+		AD5E943717FBA6A400152018 /* Column Selector */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E943817FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib */,
+				AD5E942217FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.h */,
+				AD5E942317FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m */,
+				AD5E942417FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib */,
+				AD5E943417FBA68300152018 /* Cell */,
+			);
+			name = "Column Selector";
+			sourceTree = "<group>";
+		};
 		AD6133F21793BFC2004CEDF2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1556,6 +1650,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD5E940B17FB5A3C00152018 /* CHCSVParser */,
 				AD372EC417EF829700618BF0 /* IGHTMLQuery */,
 				ADDE058A17DFB85B00546A49 /* appirater-master */,
 				AD9EFC9D17DE72ED0066013F /* DDURLParser */,
@@ -1629,6 +1724,7 @@
 				AD8C836917B1CCA500A3AE79 /* Password */,
 				AD10E73B17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.h */,
 				AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */,
+				AD5E940217FB47C700152018 /* CSV Importer */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -2179,6 +2275,7 @@
 				AD31267D17A07CBD00483E2F /* SVProgressHUD.bundle in Resources */,
 				AD54804817A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
 				AD746918179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
+				AD5E942717FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib in Resources */,
 				AD54805C17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */,
 				ADC844C4179074DA00349B16 /* commonPassDict.plist in Resources */,
 				AD54804417A1C7EE008FAFFB /* confirm-button@2x.png in Resources */,
@@ -2197,6 +2294,7 @@
 				AD54802417A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
 				AD54802A17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				ADDE05B217DFB85C00546A49 /* AppiraterLocalizable.strings in Resources */,
+				AD5E943917FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib in Resources */,
 				AD54804217A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54803E17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54800E17A1C7EE008FAFFB /* f-setting-rotate@2x.png in Resources */,
@@ -2211,6 +2309,7 @@
 				AD74691B179DF4A20019E4B1 /* BankContactPhoneNumberCell.xib in Resources */,
 				AD54802C17A1C7EE008FAFFB /* f-setting-3@2x.png in Resources */,
 				AD54804C17A1C7EE008FAFFB /* flash-on-button@2x.png in Resources */,
+				AD5E942A17FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib in Resources */,
 				AD54803817A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54806617A1C7EE008FAFFB /* toolbar-icon-crop.png in Resources */,
 				AD54803417A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
@@ -2246,6 +2345,7 @@
 				ADAD15FF17AB43D60035ABB4 /* KeyImage@2x.jpg in Resources */,
 				AD09C9EE17B33D04002408BF /* PSSVersionBacksideView.xib in Resources */,
 				AD54803517A1C7EE008FAFFB /* f-setting-4@2x.png in Resources */,
+				AD5E942817FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.xib in Resources */,
 				AD54801B17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD54804717A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				ADE7F05317C1633D00589535 /* PSSTagCollectionViewCell.xib in Resources */,
@@ -2255,6 +2355,7 @@
 				AD54803317A1C7EE008FAFFB /* f-setting-4.png in Resources */,
 				AD54804B17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD7B261817C2E00D00701F52 /* Localizable.strings in Resources */,
+				AD5E942B17FBA1F400152018 /* PSSCSVColumnCollectionViewCell.xib in Resources */,
 				AD54803F17A1C7EE008FAFFB /* close-button.png in Resources */,
 				AD54803917A1C7EE008FAFFB /* f-setting-indicator-active@2x.png in Resources */,
 				AD54804917A1C7EE008FAFFB /* flash-off-button@2x.png in Resources */,
@@ -2266,6 +2367,7 @@
 				AD54805D17A1C7EE008FAFFB /* camera-grid@2x.png in Resources */,
 				AD54802D17A1C7EE008FAFFB /* f-setting-3@2x.png in Resources */,
 				AD54806317A1C7EE008FAFFB /* crop-button-icon@2x.png in Resources */,
+				AD5E943A17FBA9B200152018 /* PSSCSVColumnCollectionHeaderReusableView.xib in Resources */,
 				AD8C835B17B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib in Resources */,
 				AD54801F17A1C7EE008FAFFB /* f-setting-2-active.png in Resources */,
 				AD312648179F08A600483E2F /* README.md in Resources */,
@@ -2333,6 +2435,7 @@
 				AD9EFCAC17DE735C0066013F /* PSSTwoStepEditorTableViewController.m in Sources */,
 				AD4553B217C7E39D00A5C395 /* MSCMoreOptionTableViewCell.m in Sources */,
 				AD1A386117F132360056C583 /* PSSGeneralSettingsTableViewController.m in Sources */,
+				AD5E940917FB5A3600152018 /* CHCSVParser.m in Sources */,
 				ADAD161217ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
 				AD312674179F8E8A00483E2F /* PSSSwitchTableViewCell.m in Sources */,
 				AD0FAA351780F1E50066B7E7 /* RVshaDigester.m in Sources */,
@@ -2364,13 +2467,16 @@
 				ADAD160E17ADF9BC0035ABB4 /* PSSCardsFavoritesViewController.m in Sources */,
 				AD727A42179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD51760F1784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
+				AD5E940517FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m in Sources */,
 				AD10E72917BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */,
 				AD82102A177CFBD400B6F501 /* PSSCreditCardBaseObject.m in Sources */,
 				AD10E78717BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */,
 				ADF10D4817A4665D00CAB546 /* UIImage+ImageEffects.m in Sources */,
 				AD10E74517BDB56E00CF3402 /* PSSTagColorPickerViewController.m in Sources */,
+				AD5E942517FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m in Sources */,
 				ADAD160A17ADEA870035ABB4 /* PSSPasswordSplitViewDetailViewController.m in Sources */,
 				AD8C835817B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */,
+				AD5E940017FB47C300152018 /* PSSCSVImporterNavigationController.m in Sources */,
 				AD10E77F17BDB6F400CF3402 /* BitmapCropManipulator.m in Sources */,
 				AD58F94E17B14A5F00344134 /* SLColorArt.m in Sources */,
 				AD10E78D17BDB6F400CF3402 /* RSColorPickerView.m in Sources */,
@@ -2400,8 +2506,10 @@
 				ADC844CE1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD90A57517C3C54100FAFE57 /* PSSPasswordSyncOneDataImporter.m in Sources */,
 				AD1BECD417A391BD001292E8 /* PSSObjectDecorativeImage.m in Sources */,
+				AD5E943217FBA44100152018 /* PSSCSVColumnTableViewDatasource.m in Sources */,
 				AD821064177D37ED00B6F501 /* RNCryptor.m in Sources */,
 				ADAD161617AE04110035ABB4 /* PSSLocationsSplitViewDetailViewController.m in Sources */,
+				AD5E942E17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m in Sources */,
 				AD4553C117C832DD00A5C395 /* MJPopupBackgroundView.m in Sources */,
 				AD547FD517A1C5A6008FAFFB /* MAOpenCV.mm in Sources */,
 				ADDD9652179253FD00AB2CC5 /* PSSCardEditorViewController.m in Sources */,
@@ -2486,6 +2594,7 @@
 				AD49C8A517BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
 				AD10E79217BDB6F400CF3402 /* RSSelectionView.m in Sources */,
+				AD5E942617FBA0F000152018 /* PSSCSVColumnSelectorCollectionViewController.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,
 				AD9EFC9A17DE72E80066013F /* OTPGenerator.m in Sources */,
@@ -2545,6 +2654,7 @@
 				ADC844CF1790758D00349B16 /* PSSPasswordGeneratorTableViewController.m in Sources */,
 				AD9EFCAD17DE735C0066013F /* PSSTwoStepEditorTableViewController.m in Sources */,
 				AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */,
+				AD5E940617FB489300152018 /* PSSCSVImporterEncodingChooserTableViewController.m in Sources */,
 				AD8F5AF01782865100702EFA /* PSSWelcomeScreenPasscodeModeChooserTableViewController.m in Sources */,
 				AD5175FC1784906200B30295 /* NormalCircle.m in Sources */,
 				AD33DD6B17BE679C008F80FD /* PSSTagsSelectorTableViewController.m in Sources */,
@@ -2597,6 +2707,7 @@
 				AD1BECDD17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */,
 				AD5176101784CB8300B30295 /* PSSWelcomeScreenFinishedViewController.m in Sources */,
 				AD10E78817BDB6F400CF3402 /* BGRSLoupeLayer.m in Sources */,
+				AD5E940117FB47C300152018 /* PSSCSVImporterNavigationController.m in Sources */,
 				AD5175FA1784906200B30295 /* SPLockScreen.m in Sources */,
 				ADED6D06177F4CD9007EDBFA /* PSSWelcomeScreenMasterPasswordExplanationViewController.m in Sources */,
 				AD5175FE1784906200B30295 /* SPLine.m in Sources */,
@@ -2617,6 +2728,7 @@
 				AD727A43179DBA350030707F /* PSSCardDetailViewController.m in Sources */,
 				AD5176051784926B00B30295 /* PSSWelcomeScreenGesturePasscodeSetterViewController.m in Sources */,
 				AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */,
+				AD5E940A17FB5A3600152018 /* CHCSVParser.m in Sources */,
 				AD31268017A07CBD00483E2F /* SVProgressHUD.m in Sources */,
 				AD10E72A17BD62A300CF3402 /* PSSFolderEditorViewController.m in Sources */,
 				AD8F5ADA1782056B00702EFA /* PSSMasterPasswordPrintView.m in Sources */,
@@ -2634,8 +2746,10 @@
 				AD8F5AEB17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
 				AD9EFC9217DE72E80066013F /* DDURLParser.m in Sources */,
 				ADAD161317ADFB0E0035ABB4 /* PSSCardsSplitViewDetailViewController.m in Sources */,
+				AD5E942F17FBA2DE00152018 /* PSSCSVColumnCollectionViewCell.m in Sources */,
 				ADC9DEB217862C40006F2858 /* PSSWelcomeScreenPINPasscodeSetterViewController.m in Sources */,
 				AD5DD6C817BFEF3A00DDB614 /* PSSOrganizerSplitViewDetailViewController.m in Sources */,
+				AD5E943317FBA44100152018 /* PSSCSVColumnTableViewDatasource.m in Sources */,
 				AD821027177CFBD400B6F501 /* PSSPasswordBaseObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
