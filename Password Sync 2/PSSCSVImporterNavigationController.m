@@ -71,19 +71,28 @@
     
     [SVProgressHUD show];
     
+    dispatch_queue_t request_queue = dispatch_queue_create("com.pumaxprod.iOS.Password-Sync-2.csvImportParsingQueue", NULL);
     
+    __block __typeof__(self) blockSelf = self;
     
-    NSStringEncoding encoding = self.fileEncoding;
-    
-    NSInputStream *stream = [NSInputStream inputStreamWithURL:self.documentURL];
-	CHCSVParser * parser = [[CHCSVParser alloc] initWithInputStream:stream usedEncoding:&encoding delimiter:[self.separator characterAtIndex:0]];
-    [parser setRecognizesBackslashesAsEscapes:YES];
-    [parser setSanitizesFields:YES];
+    dispatch_async(request_queue, ^{
+        
+        
+        NSStringEncoding encoding = self.fileEncoding;
+        
+        NSInputStream *stream = [NSInputStream inputStreamWithURL:self.documentURL];
+        CHCSVParser * parser = [[CHCSVParser alloc] initWithInputStream:stream usedEncoding:&encoding delimiter:[self.separator characterAtIndex:0]];
+        [parser setRecognizesBackslashesAsEscapes:YES];
+        [parser setSanitizesFields:YES];
 		
-	[parser setDelegate:self];
-	
-	[parser parse];
-    self.parser = parser;
+        [parser setDelegate:self];
+        
+        [parser parse];
+        blockSelf.parser = parser;
+        
+    });
+    
+    
     
 }
 
@@ -104,12 +113,36 @@
     _currentLine = nil;
 }
 - (void)parserDidEndDocument:(CHCSVParser *)parser {
-    	NSLog(@"parser ended: %@", [_lines description]);
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        
+        self.lines = [[NSMutableArray alloc] initWithArray:_lines copyItems:YES];
+        [SVProgressHUD dismiss];
+        
+        NSLog(@"%@", [self.lines description]);
+        
+        
+    });
 }
 
 - (void)parser:(CHCSVParser *)parser didFailWithError:(NSError *)error {
 	
-    _lines = nil;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        
+        [SVProgressHUD dismiss];
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An Error Occured", nil) message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+        
+        [alert show];
+        
+        
+        
+        _lines = nil;
+        
+        
+        
+    });
+    
+    
 }
 
 @end
