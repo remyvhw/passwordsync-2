@@ -8,7 +8,6 @@
 
 #import "PSSCSVImporterEncodingChooserTableViewController.h"
 #import "PSSCSVImporterNavigationController.h"
-#import "PSSCSVColumnSelectorCollectionViewController.h"
 
 @interface PSSCSVImporterEncodingChooserTableViewController ()
 
