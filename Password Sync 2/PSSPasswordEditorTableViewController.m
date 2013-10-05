@@ -14,6 +14,7 @@
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordDomain.h"
 #import "PSSAppDelegate.h"
+#import "TestFlight.h"
 
 #import "PSSFaviconFetcher.h"
 
@@ -117,6 +118,12 @@
             PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
             
             [faviconFetcher backgroundFetchFaviconForBasePassword:self.baseObject];
+            
+            
+#ifdef DEBUG
+#else
+            [TestFlight passCheckpoint:@"WEBSITE_CREATED"];
+#endif
             
         }];
     } else {

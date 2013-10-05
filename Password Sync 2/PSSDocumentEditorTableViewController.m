@@ -14,7 +14,7 @@
 #import "PSSObjectDecorativeImage.h"
 #import "PSSThumbnailMaker.h"
 #import "PSSAppDelegate.h"
-
+#import "TestFlight.h"
 
 @interface PSSDocumentEditorTableViewController ()
 
@@ -185,7 +185,9 @@
     
     if (creatingMode) {
        
-        [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            [TestFlight passCheckpoint:@"DOCUMENT_CREATED"];
+        }];
         
        
     } else {

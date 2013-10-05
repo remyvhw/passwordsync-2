@@ -18,7 +18,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSSwitchTableViewCell.h"
 #import "PSSObjectDecorativeImage.h"
-
+#import "TestFlight.h"
 
 #import "PSSLocationChoicePopoverViewController.h"
 #import "UIViewController+MJPopupViewController.h"
@@ -207,6 +207,7 @@
     
     if (creatingMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            [TestFlight passCheckpoint:@"LOCATION_CREATED"];
         }];
     } else {
         if (self.editorDelegate) {

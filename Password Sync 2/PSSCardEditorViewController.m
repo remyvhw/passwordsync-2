@@ -15,6 +15,7 @@
 #import "PSSCreditCardVersion.h"
 #import "PSSCreditCardBaseObject.h"
 #import "PSSAppDelegate.h"
+#import "TestFlight.h"
 
 @interface PSSCardEditorViewController ()
 
@@ -178,6 +179,12 @@ dispatch_queue_t backgroundQueue;
     
     if (creationMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+#ifdef DEBUG
+            
+#else
+            [TestFlight passCheckpoint:@"CARD_CREATED"];
+#endif
             
         }];
     } else {

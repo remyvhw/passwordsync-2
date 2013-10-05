@@ -14,6 +14,7 @@
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordBaseObject.h"
 #import "PSSFaviconFetcher.h"
+#import "TestFlight.h"
 
 @interface PSSCSVImporterNavigationController ()
 
@@ -29,7 +30,10 @@
 -(void)finishImportation{
     [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Success", nil)];
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        #ifdef DEBUG
+        #else
+        [TestFlight passCheckpoint:@"CSV_IMPORT_COMPLETED"];
+        #endif
     }];
 }
 
