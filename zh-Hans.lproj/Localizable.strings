@@ -334,11 +334,3 @@
 "Report a problem" = "报告问题";
 "Review Password Sync" = "评价这个应用程序";
 
-// CSV Import
-"Imported Attributes" = "輸入された属性";
-"Importing" = "导入";
-"Import" = "进口";
-"Success" = "成功";
-"Title field cannot be left empty." = "“标题”字段不能为空。";
-"Leave Empty" = "留空。";
-"Column" = "电子表格列";
