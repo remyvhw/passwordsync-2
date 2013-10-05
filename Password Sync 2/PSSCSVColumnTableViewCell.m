@@ -44,7 +44,6 @@
     self.collectionView.dataSource = dataSourceDelegate;
     self.collectionView.delegate = dataSourceDelegate;
     self.collectionView.index = index;
-    
     [self.collectionView reloadData];
 }
 

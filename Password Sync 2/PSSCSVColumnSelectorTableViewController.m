@@ -21,6 +21,14 @@
 @implementation PSSCSVColumnSelectorTableViewController
 @synthesize columnContent = _columnContent;
 
+-(void)doneButtonPressed:(id)sender{
+    
+    PSSCSVImporterNavigationController * navigationController = (PSSCSVImporterNavigationController*)self.navigationController;
+    
+    [navigationController endWithDataArrangment:self.contentOffsetDictionary];
+    
+}
+
 -(NSArray*)columnContent{
     
     if (!_columnContent) {
@@ -69,11 +77,11 @@
 
 -(NSArray*)fieldsForDataType{
     
+    PSSCSVImporterNavigationController * navController = (PSSCSVImporterNavigationController*)self.navigationController;
     
-    NSArray * websiteArray = @[NSLocalizedString(@"Title", nil), NSLocalizedString(@"Username", nil), NSLocalizedString(@"Password", nil), NSLocalizedString(@"URL", nil), NSLocalizedString(@"Notes", nil)];
+    NSArray* appropriateArray = [navController fieldsForDataType];
     
-    
-    return websiteArray;
+    return appropriateArray;
 }
 
 -(void)loadView
@@ -104,21 +112,26 @@
     }
     
     
-    self.contentOffsetDictionary = [NSMutableDictionary dictionary];
+    self.contentOffsetDictionary = [[NSMutableDictionary alloc] initWithCapacity:[self fieldsForDataType].count];
+    
+    NSInteger i = 0;
+    while (i<[self fieldsForDataType].count) {
+        self.contentOffsetDictionary[[@(i) stringValue]] = @(0);
+        i++;
+    }
+    
+    
 }
 
-- (void)viewDidLoad
-{
+-(void)viewDidLoad{
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+    
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -161,11 +174,11 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(PSSCSVColumnTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [cell setCollectionViewDataSourceDelegate:self index:indexPath.row];
+    [cell setCollectionViewDataSourceDelegate:self index:indexPath.section];
     NSInteger index = cell.collectionView.index;
-    
-    CGFloat horizontalOffset = [self.contentOffsetDictionary[[@(index) stringValue]] floatValue];
-    [cell.collectionView setContentOffset:CGPointMake(horizontalOffset, 0)];
+    int horizontalOffset = [self.contentOffsetDictionary[[@(index) stringValue]] integerValue];
+    [cell.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:horizontalOffset inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    //[cell.collectionView setContentOffset:CGPointMake(horizontalOffset, 0)];
 }
 
 #pragma mark - UITableView Delegate
@@ -197,13 +210,15 @@
     
     PSSCSVImporterCSVColumnCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor whiteColor]; //collectionViewArray[indexPath.item];
-    
+    cell.backgroundColor = [UIColor whiteColor];
     
     if (indexPath.row == 0) {
         // First row is always the "Leave empty row"
         cell.columnIndicator.text = NSLocalizedString(@"Leave Empty", nil);
         cell.emptyColumn = YES;
+        
+        
+        
     } else {
         cell.columnIndicator.text = [NSString stringWithFormat:@"%@ %ld/%lu", NSLocalizedString(@"Column", nil), (long)indexPath.row, (unsigned long)[[navigationController.lines objectAtIndex:0] count]];
         
@@ -222,12 +237,13 @@
 {
     if (![scrollView isKindOfClass:[PSSCSVColumnIndexedCollectionView class]]) return;
     
-    CGFloat horizontalOffset = scrollView.contentOffset.x;
+    int page = scrollView.contentOffset.x / scrollView.frame.size.width;
     
     PSSCSVColumnIndexedCollectionView *collectionView = (PSSCSVColumnIndexedCollectionView *)scrollView;
     NSInteger index = collectionView.index;
-    self.contentOffsetDictionary[[@(index) stringValue]] = @(horizontalOffset);
+    self.contentOffsetDictionary[[@(index) stringValue]] = @(page);
 }
+
 
 
 @end

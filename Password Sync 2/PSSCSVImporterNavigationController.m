@@ -21,10 +21,25 @@
 @synthesize currentLine = _currentLine;
 @synthesize lines = _lines;
 
+-(void)endWithDataArrangment:(NSDictionary *)arrangementDictionary{
+    
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Importing", nil) maskType:SVProgressHUDMaskTypeGradient];
+    
+}
+
 -(void)cancelAndDismiss:(id)sender{
     
     [self dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+-(NSArray*)fieldsForDataType{
+    
+    
+    NSArray * websiteArray = @[NSLocalizedString(@"Title", nil), NSLocalizedString(@"Username", nil), NSLocalizedString(@"Password", nil), NSLocalizedString(@"URL", nil), NSLocalizedString(@"Notes", nil)];
+    
+    
+    return websiteArray;
 }
 
 -(void)deduceSeparatorFromFileUTI:(NSURL*)fileURL{
@@ -119,7 +134,7 @@
         self.lines = [[NSMutableArray alloc] initWithArray:_lines copyItems:YES];
         [SVProgressHUD dismiss];
         
-        PSSCSVColumnSelectorTableViewController * columnSelectorViewController = [[PSSCSVColumnSelectorTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        PSSCSVColumnSelectorTableViewController * columnSelectorViewController = [[PSSCSVColumnSelectorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
         
         [self pushViewController:columnSelectorViewController animated:YES];
         

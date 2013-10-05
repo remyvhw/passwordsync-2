@@ -23,4 +23,7 @@
 
 @property (nonatomic, strong) NSMutableArray * lines;
 
+-(NSArray*)fieldsForDataType;
+-(void)endWithDataArrangment:(NSDictionary*)arrangementDictionary;
+
 @end
