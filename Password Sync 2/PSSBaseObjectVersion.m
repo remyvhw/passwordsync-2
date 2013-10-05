@@ -79,7 +79,8 @@
     
     self.additionalJSONfields = [self reencryptData:self.additionalJSONfields withPassword:newPasswordHash];
     
-    // Will be subclassed
+    // Base implementation. Really meant to be subclassed.
+    
 }
 
 @end

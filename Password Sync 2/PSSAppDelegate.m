@@ -29,6 +29,7 @@
 #import "PSSMasterPasswordVerifyerViewController.h"
 #import "PSSUnlockPromptViewController.h"
 
+#import "PSSCSVImporterNavigationController.h"
 
 
 #import "TestFlight.h"
@@ -458,6 +459,9 @@
     
     if ([[url scheme] isEqualToString:@"passsynctwojsonimport"] && [sourceApplication isEqualToString:@"com.pumaxprod.Password-Sync"]) {
         
+        
+        // Import data from the url
+        
         PSSPasswordSyncOneDataImporter * dataImporter = [[PSSPasswordSyncOneDataImporter alloc] init];
         
         return [dataImporter handleImportURL:url];
@@ -467,7 +471,30 @@
     
     if ([url isFileURL])
     {
-        // Handle file being passed in
+        // An application 'shared' a file with us.
+        
+        // Check if the file is of type CSV
+        
+        UIDocumentInteractionController * documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
+        
+        
+        
+        if ([documentController.UTI isEqualToString:@"public.comma-separated-values-text"] || [documentController.UTI isEqualToString:@"public.tab-separated-values-text"]) {
+            
+            PSSCSVImporterNavigationController * csvImporterController = [[PSSCSVImporterNavigationController alloc] initWithCSVDocumentURL:url];
+            
+            [self.window.rootViewController presentViewController:csvImporterController animated:YES completion:^{
+                
+            }];
+            
+            
+            
+            return YES;
+            
+        }
+        
+        
+        // It's not a CSV so we can consider this as a document to import
         [self saveDocumentAtURL:url];
         return YES;
     }
