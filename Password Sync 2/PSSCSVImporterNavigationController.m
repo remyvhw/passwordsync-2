@@ -13,6 +13,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSPasswordVersion.h"
 #import "PSSPasswordBaseObject.h"
+#import "PSSFaviconFetcher.h"
 
 @interface PSSCSVImporterNavigationController ()
 
@@ -166,6 +167,8 @@
         
         // Create the stuff
         
+        NSMutableArray * savedPasswords = [[NSMutableArray alloc] initWithCapacity:[blockSelf.lines count]];
+        
         for (NSArray * line in blockSelf.lines) {
             
             if (line.count >= biggerIndex) {
@@ -210,7 +213,6 @@
                 
                 passwordBase.currentVersion = version;
                 
-                //TODO: Keep other columns and add them to the JSON payload.
                 
                 // Remove empty lines
                 [remainingFields removeObject:@""];
@@ -225,6 +227,8 @@
                     version.decryptedAdditionalJSONfields = jsonPayload;
                     
                 }
+                
+                [savedPasswords addObject:passwordBase];
                 
             }
             
@@ -251,7 +255,9 @@
             
             
         });
-
+        
+        PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
+        [faviconFetcher fetchFaviconForBasePasswords:savedPasswords inContext:threadSafeContext];
         
     });
 

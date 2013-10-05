@@ -13,6 +13,6 @@
 @interface PSSFaviconFetcher : NSObject
 
 -(void)backgroundFetchFaviconForBasePassword:(PSSPasswordBaseObject*)basePassword;
-
+-(void)fetchFaviconForBasePasswords:(NSArray *)basePasswords inContext:(NSManagedObjectContext*)context;
 
 @end

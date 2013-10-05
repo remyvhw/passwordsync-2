@@ -11,6 +11,13 @@
 #import "PSSPasswordDomain.h"
 #import "IGHTMLDocument.h"
 #import "PSSDeviceCapacity.h"
+#import "PSSAppDelegate.h"
+
+@interface PSSFaviconFetcher ()
+
+@property (nonatomic, strong) NSManagedObjectContext * context;
+
+@end
 
 @implementation PSSFaviconFetcher
 dispatch_queue_t backgroundQueue;
@@ -23,6 +30,21 @@ dispatch_queue_t backgroundQueue;
     }
     return self;
 }
+
+
+- (void)backgroundContextDidSave:(NSNotification *)notification {
+    /* Make sure we're on the main thread when updating the main context */
+    if (![NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(backgroundContextDidSave:)
+                               withObject:notification
+                            waitUntilDone:NO];
+        return;
+    }
+    
+    /* merge in the changes to the main context */
+    [APP_DELEGATE.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+}
+
 
 -(UIImage*)requestImageAtURL:(NSURL*)url{
     NSData * requestData = [NSData dataWithContentsOfURL:url];
@@ -42,6 +64,11 @@ dispatch_queue_t backgroundQueue;
     return [self requestImageAtURL:faviconURL];
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSManagedObjectContextDidSaveNotification
+                                                  object:self.context];
+}
 
 
 -(UIImage*)requestAppleTouchIconFromServer:(NSURL*)fetchURL{
@@ -61,7 +88,6 @@ dispatch_queue_t backgroundQueue;
     if (!touchIconAtRootRequestError && touchIconAtRootRequestContent) {
         // A touch icon was found immediatly at the server's root (eg.: "http://apple.com/apple-touch-icon.png")
         UIImage * pngImage = [UIImage imageWithData:touchIconAtRootRequestContent];
-        // TODO: remove comment
         if (pngImage) {
             return pngImage;
         }
@@ -123,8 +149,31 @@ dispatch_queue_t backgroundQueue;
     
 }
 
+-(void)saveInContext:(NSManagedObjectContext*)context{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(backgroundContextDidSave:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:context];
+    
+    
+    
+    // Save the context
+    [context performBlock:^{
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
+        
+    }];
+    
+    
+    
 
--(UIImage*)fetchIconForURL:(NSURL*)fetchURL basePassword:(PSSPasswordBaseObject*)basePassword{
+}
+
+-(UIImage*)fetchIconForURL:(NSURL*)fetchURL basePassword:(PSSPasswordBaseObject*)basePassword context:(NSManagedObjectContext*)context save:(BOOL)save{
     
     
     // First, we'll try to extract an apple-touch-icon icon from the domain's main page.
@@ -142,35 +191,36 @@ dispatch_queue_t backgroundQueue;
         }
     }
     
-    
     if (passwordImage) {
+        [basePassword setFavicon:UIImagePNGRepresentation(passwordImage)];
+    }
+    
+    if (save) {
         
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
+        
+        
+        [self saveInContext:context];
+        
             
-            [basePassword setFavicon:UIImagePNGRepresentation(passwordImage)];
-            
-            // Save the context
-            [basePassword.managedObjectContext performBlock:^{
-                            NSError *error = nil;
-            if (![basePassword.managedObjectContext save:&error]) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            }
-
-            }];
-
-            
-        });
         
         
         
     }
     
     
-    return nil;
+    return passwordImage;
 }
 
+-(UIImage*)fetchIconForURL:(NSURL*)fetchURL basePassword:(PSSPasswordBaseObject*)basePassword{
+    
+    NSManagedObjectContext * backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    
+    [backgroundContext setPersistentStoreCoordinator:APP_DELEGATE.persistentStoreCoordinator];
+    
+    self.context = backgroundContext;
+    
+    return [self fetchIconForURL:fetchURL basePassword:basePassword context:backgroundContext save:YES];
+}
 
 #pragma mark - Public methods
 -(void)backgroundFetchFaviconForBasePassword:(PSSPasswordBaseObject *)basePassword{
@@ -192,6 +242,30 @@ dispatch_queue_t backgroundQueue;
     
 }
 
+
+-(void)fetchFaviconForBasePasswords:(NSArray *)basePasswords inContext:(NSManagedObjectContext *)context{
+    
+    self.context = context;
+    
+        for (PSSPasswordBaseObject * basePassword in basePasswords) {
+            NSString * domainHostname = [[basePassword mainDomain] hostname];
+            
+            NSURL * hostnameURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", domainHostname]];
+            
+            [self fetchIconForURL:hostnameURL basePassword:basePassword context:context save:NO];
+            [self saveInContext:context];
+            
+        }
+    
+    
+    
+        
+        
+        
+        
+    
+    
+}
 
 
 @end

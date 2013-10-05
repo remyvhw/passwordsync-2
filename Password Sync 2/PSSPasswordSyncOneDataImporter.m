@@ -61,7 +61,7 @@
     
 }
 
--(void)savePasswordWithDictionary:(NSDictionary*)passwordDict{
+-(PSSPasswordBaseObject*)savePasswordWithDictionary:(NSDictionary*)passwordDict{
     
     PSSPasswordBaseObject* passwordBase = [self insertNewPasswordInManagedObject];
     
@@ -88,8 +88,7 @@
     
     passwordBase.currentVersion = version;
     
-    PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
-    [faviconFetcher backgroundFetchFaviconForBasePassword:passwordBase];
+    return passwordBase;
     
 }
 
@@ -172,9 +171,10 @@
                                                      name:NSManagedObjectContextDidSaveNotification
                                                    object:threadSafeContext];
         
+        NSMutableArray * importedPasswords = [[NSMutableArray alloc] initWithCapacity:originalArray.count];
         
         for (NSDictionary * passwordDict in originalArray) {
-            [blockSelf savePasswordWithDictionary:passwordDict];
+            [importedPasswords addObject:[blockSelf savePasswordWithDictionary:passwordDict]];
         }
         
         [self.threadSafeContext performBlockAndWait:^{
@@ -187,14 +187,23 @@
                                                         name:NSManagedObjectContextDidSaveNotification
                                                       object:threadSafeContext];
         
+        
+        
+        
+        
+        
         dispatch_sync(main_queue, ^{
             
             
             [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"You're done!", nil)];
-
+            
             
             
         });
+        
+        PSSFaviconFetcher * faviconFetcher = [[PSSFaviconFetcher alloc] init];
+        [faviconFetcher fetchFaviconForBasePasswords:importedPasswords inContext:threadSafeContext];
+        
     });
     
     
