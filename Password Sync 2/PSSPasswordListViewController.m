@@ -432,7 +432,10 @@ dispatch_queue_t backgroundQueue;
                 
                 
                 SLColorArt *colorArt;
-                colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon scaledSize:CGSizeMake(40., 40.)];
+                
+                CGFloat squareLenght = 40 * [[UIScreen mainScreen] scale];
+                
+                colorArt = [[SLColorArt alloc] initWithImage:nonTransparentFavicon scaledSize:CGSizeMake(squareLenght, squareLenght)];
                 
                 dispatch_async(dispatch_get_main_queue(), ^(void) {
                     if (favicon.size.height<39 || favicon.size.width<39) {
