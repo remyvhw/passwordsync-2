@@ -335,3 +335,12 @@
 
 "Report a problem" = "問題を報告する";
 "Review Password Sync" = "アプリをレビュー";
+
+// CSV Import
+"Imported Attributes" = "輸入された属性";
+"Importing" = "進行中の輸入";
+"Import" = "インポート";
+"Success" = "成功";
+"Title field cannot be left empty." = "'タイトル'フィールドは空のままにすることはできません。";
+"Leave Empty" = "空のままに";
+"Column" = "コラム";

@@ -341,3 +341,13 @@
 
 "Report a problem" = "Report a problem";
 "Review Password Sync" = "Rate Password Sync";
+
+
+// CSV Import
+"Imported Attributes" = "Imported Attributes";
+"Importing" = "Importing";
+"Import" = "Import";
+"Success" = "Success";
+"Title field cannot be left empty." = "Title field cannot be left empty.";
+"Leave Empty" = "Leave Empty";
+"Column" = "Column";

@@ -328,3 +328,12 @@
 
 "Report a problem" = "Signaler un problème";
 "Review Password Sync" = "Évaluer Password Sync";
+
+// CSV Import
+"Imported Attributes" = "Attributs importés";
+"Importing" = "Importation";
+"Import" = "Importer";
+"Success" = "Succès";
+"Title field cannot be left empty." = "Le champ Titre ne peut être laissé vide.";
+"Leave Empty" = "Laisser vide";
+"Column" = "Colonne";

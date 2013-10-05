@@ -333,3 +333,12 @@
 
 "Report a problem" = "報告問題";
 "Review Password Sync" = "評價這個應用程序";
+
+// CSV Import
+"Imported Attributes" = "輸入された屬性";
+"Importing" = "導入";
+"Import" = "進口";
+"Success" = "成功";
+"Title field cannot be left empty." = "“標題”字段不能為空。";
+"Leave Empty" = "留空。";
+"Column" = "電子表格列";
