@@ -335,21 +335,14 @@
     } else if (indexPath.section == 2 && indexPath.row == 1) {
         // Review the app
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            [(UIPopoverController*)[(UINavigationController*)self.parentViewController parentViewController] dismissPopoverAnimated:NO];
-            
-        }
+        
         
         [Appirater rateApp];
         
         
     } else if (indexPath.section == 2 && indexPath.row == 2) {
         // Report a problem
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            [(UIPopoverController*)[(UINavigationController*)self.parentViewController parentViewController] dismissPopoverAnimated:NO];
-            
-        }
+       
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://passwordsync.freshdesk.com/support/tickets/new"]];
         
@@ -357,11 +350,7 @@
     } else if (indexPath.section == 2 && indexPath.row == 3) {
         // Import from Password Sync 1
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            [(UIPopoverController*)[(UINavigationController*)self.parentViewController parentViewController] dismissPopoverAnimated:NO];
-            
-        }
-        [(UITabBarController*)APP_DELEGATE.window.rootViewController setSelectedIndex:0];
+                [(UITabBarController*)APP_DELEGATE.window.rootViewController setSelectedIndex:0];
         
         PSSPasswordSyncOneDataImporter * dataImporter = [[PSSPasswordSyncOneDataImporter alloc] init];
         [dataImporter beginImportProcedure:self];
