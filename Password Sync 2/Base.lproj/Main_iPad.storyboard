@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="cQn-hc-JNo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="cQn-hc-JNo">
     <dependencies>
         <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -1757,6 +1757,7 @@
                         <segue destination="QSV-db-I3g" kind="push" identifier="presentLegalViewSegue" id="jkw-O7-uci"/>
                         <segue destination="xV9-zL-rdO" kind="push" identifier="showPasscodeSettingsSegue" id="YHp-fK-OSG"/>
                         <segue destination="6c6-qm-HfO" kind="push" identifier="showMasterPasswordSettingsSegue" id="vdp-6X-XBL"/>
+                        <segue destination="fp3-0e-QIw" kind="push" identifier="presentImportViewSegue" id="XXG-8V-eDP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWv-jv-Ds8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1875,7 +1876,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZW-Jk-A1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="14072"/>
+            <point key="canvasLocation" x="151" y="15136"/>
         </scene>
         <!--Master Password Settings View Controller-->
         <scene sceneID="QZi-tR-lj0">
@@ -1939,6 +1940,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ZD-vU-dTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="151" y="12795"/>
+        </scene>
+        <!--Settings Import View Controller-->
+        <scene sceneID="eXD-JJ-6xY">
+            <objects>
+                <tableViewController storyboardIdentifier="settingsImportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fp3-0e-QIw" customClass="PSSSettingsImportViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="52j-56-pk3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonCell" id="xTH-sl-y72">
+                                <rect key="frame" x="0.0" y="119" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTH-sl-y72" id="LGq-PJ-WZB">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="306" id="GLm-ZW-ky6">
+                                <rect key="frame" x="0.0" y="163" width="768" height="306"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GLm-ZW-ky6" id="xAg-fz-Urr">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="305"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9BV-Qf-MS2">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="305"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9BV-Qf-MS2" firstAttribute="leading" secondItem="xAg-fz-Urr" secondAttribute="leading" id="EX4-Ps-tjf"/>
+                                        <constraint firstAttribute="bottom" secondItem="9BV-Qf-MS2" secondAttribute="bottom" id="WFU-JX-Qfk"/>
+                                        <constraint firstItem="9BV-Qf-MS2" firstAttribute="top" secondItem="xAg-fz-Urr" secondAttribute="top" id="bsV-LZ-MBa"/>
+                                        <constraint firstAttribute="trailing" secondItem="9BV-Qf-MS2" secondAttribute="trailing" id="lVj-CC-Y4K"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fp3-0e-QIw" id="hPR-cV-KDT"/>
+                            <outlet property="delegate" destination="fp3-0e-QIw" id="X2q-15-8su"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YaX-7f-iWh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiN-aZ-07n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="187" y="14029"/>
         </scene>
     </scenes>
     <resources>

@@ -192,7 +192,12 @@
         
         UIImageView * imageView = (UIImageView*)[cell viewWithTag:1];
         
-        imageView.image = [UIImage imageNamed:@"Import-Other-App-View"];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            imageView.image = [UIImage imageNamed:@"Import-Other-App-View-iPad"];
+        } else {
+            imageView.image = [UIImage imageNamed:@"Import-Other-App-View"];
+        }
+        
         
         
         cell.selectionStyle =UITableViewCellSelectionStyleNone;
