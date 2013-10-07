@@ -12,25 +12,40 @@
 @implementation PSSThumbnailMaker
 
 
-//+(UIImage*)thumbnailImageWith
 
 +(UIImage*)thumbnailImageFromImageAtURL:(NSURL *)imgURL maxSize:(double)maxSize{
-    CGImageSourceRef src = CGImageSourceCreateWithURL((__bridge CFURLRef)imgURL, NULL);
+    NSLog(@"%@", [imgURL description]);
     
+    if ([UIImage imageWithData:[NSData dataWithContentsOfURL:imgURL]] || [[imgURL pathExtension] isEqualToString:@"pdf"]) {
+        // It is indeed an image
+        CGImageSourceRef src = CGImageSourceCreateWithURL((__bridge CFURLRef)imgURL, NULL);
+        
+        
+        NSDictionary *thumbnailOptions = [NSDictionary dictionaryWithObjectsAndKeys:(id)kCFBooleanTrue, kCGImageSourceCreateThumbnailWithTransform,
+                                          kCFBooleanTrue, kCGImageSourceCreateThumbnailFromImageAlways,
+                                          [NSNumber numberWithFloat:maxSize], kCGImageSourceThumbnailMaxPixelSize,
+                                          nil];
+        CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, (__bridge CFDictionaryRef)thumbnailOptions);
+        
+        
+        CFRelease(src);
+        UIImage* img = [[UIImage alloc] initWithCGImage:thumbnail];
+        CGImageRelease(thumbnail);
+        
+        return img;
+        
+    } else {
+        // It is NOT an image or a PDF.
+        NSString *placeholderPath = [[NSBundle mainBundle] pathForResource:@"DocumentPlaceholder" ofType:@"pdf"];
+        
+        return [PSSThumbnailMaker thumbnailImageFromImageAtURL:[NSURL fileURLWithPath:placeholderPath] maxSize:maxSize];
+        
+    }
     
-    NSDictionary *thumbnailOptions = [NSDictionary dictionaryWithObjectsAndKeys:(id)kCFBooleanTrue, kCGImageSourceCreateThumbnailWithTransform,
-                                      kCFBooleanTrue, kCGImageSourceCreateThumbnailFromImageAlways,
-                                      [NSNumber numberWithFloat:maxSize], kCGImageSourceThumbnailMaxPixelSize,
-                                      nil];
-    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, (__bridge CFDictionaryRef)thumbnailOptions);
     
 
-    CFRelease(src);
-    UIImage* img = [[UIImage alloc] initWithCGImage:thumbnail];
-    CGImageRelease(thumbnail);
-
     
-    return img;
+    return nil;
 }
 
 

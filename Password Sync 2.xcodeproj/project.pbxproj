@@ -83,6 +83,8 @@
 		AD1DF65F1802020E0046AF3C /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1DF65B1802020E0046AF3C /* DBChooser.framework */; };
 		AD1DF668180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */; };
 		AD1DF669180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */; };
+		AD1DF66B18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */; };
+		AD1DF66C18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
@@ -600,6 +602,7 @@
 		AD1DF65B1802020E0046AF3C /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
 		AD1DF666180210DE0046AF3C /* PSSSettingsImportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsImportViewController.h; sourceTree = "<group>"; };
 		AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsImportViewController.m; sourceTree = "<group>"; };
+		AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DocumentPlaceholder.pdf; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsAndDirectoriesTableViewController.h; sourceTree = "<group>"; };
@@ -1977,6 +1980,7 @@
 		ADC9DFB51788C988006F2858 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */,
 				ADD8A31617A883350025DA42 /* Background JPG */,
 				AD7F800317B082E600A590FA /* OCRA.ttf */,
 				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
@@ -2297,6 +2301,7 @@
 				AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */,
 				ADAD15FC17AB43D60035ABB4 /* KeyImage.jpg in Resources */,
 				AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
+				AD1DF66B18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */,
 				AD54803617A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54804617A1C7EE008FAFFB /* flash-off-button.png in Resources */,
 				AD1DF65C1802020E0046AF3C /* DBChooser.bundle in Resources */,
@@ -2378,6 +2383,7 @@
 				AD312648179F08A600483E2F /* README.md in Resources */,
 				AD54802917A1C7EE008FAFFB /* f-setting-3-active@2x.png in Resources */,
 				AD1BECD117A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */,
+				AD1DF66C18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */,
 				AD54804317A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54802B17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
 				AD1DF65D1802020E0046AF3C /* DBChooser.bundle in Resources */,

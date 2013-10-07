@@ -127,21 +127,27 @@
                 // We need to create a new attachment object
                 PSSObjectAttachment * attachmentObject = [self insertNewAttachmentInManagedObject];
 
-                if ([[(NSURL*)attachment pathExtension] isEqualToString:@"pdf"]) {
+                
+                if (self.fileimport) {
                     
+                    // We keep other imported documents as is
                     attachmentObject.decryptedBinaryContent = [NSData dataWithContentsOfURL:attachment];
-                    attachmentObject.fileExtension = @"pdf";
+                    // Create the attachment a thumbnail
+                    
+                    attachmentObject.fileExtension = [attachment pathExtension];
                     
                 } else {
+                    
                     // Image captured
                     UIImage * imageObject = [UIImage imageWithData:[NSData dataWithContentsOfURL:attachment]];
-
+                    
+                    // We convert snapped photos to PDF
                     attachmentObject.decryptedBinaryContent = [PSSThumbnailMaker createPDFfromImage:imageObject];
                     // Create the attachment a thumbnail
                     
                     attachmentObject.fileExtension = @"pdf";
-
                 }
+                
                 
                 thumbnail = [self insertNewDecorativeImageInManagedObject];
                 thumbnail.viewportIdentifier = PSSDecorativeImageTypeThumbnail;
@@ -187,7 +193,10 @@
     if (creatingMode) {
        
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
+#ifdef DEBUG
+#else
             [TestFlight passCheckpoint:@"DOCUMENT_CREATED"];
+#endif
         }];
         
        
@@ -383,6 +392,10 @@
         return 1;
     } else if (section == 1) {
         // Attachments
+        if (self.fileimport) {
+            // When we file import, we don't show a picture scanner button
+            return [self.attachmentsArray count];
+        }
         return [self.attachmentsArray count] + 1;
     } else if (section==2) {
         // Notes

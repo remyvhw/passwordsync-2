@@ -207,7 +207,10 @@
     
     if (creatingMode) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
+#ifdef DEBUG
+#else
             [TestFlight passCheckpoint:@"LOCATION_CREATED"];
+#endif
         }];
     } else {
         if (self.editorDelegate) {
