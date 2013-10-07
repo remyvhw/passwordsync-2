@@ -302,6 +302,8 @@
             
             PSSCSVImporterNavigationController * csvImporterController = [[PSSCSVImporterNavigationController alloc] initWithCSVDocumentURL:url];
             
+            csvImporterController.modalPresentationStyle = UIModalPresentationFormSheet;
+            
             [self.window.rootViewController presentViewController:csvImporterController animated:YES completion:^{
                 
             }];

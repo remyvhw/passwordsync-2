@@ -139,6 +139,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -181,6 +182,7 @@
     //[cell.collectionView setContentOffset:CGPointMake(horizontalOffset, 0)];
 }
 
+
 #pragma mark - UITableView Delegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -189,6 +191,9 @@
 }
 
 #pragma mark - UICollectionViewDataSource Methods
+
+
+
 
 -(NSInteger)collectionView:(PSSCSVColumnIndexedCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -228,6 +233,12 @@
     }
     
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout  *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Adjust cell size for orientation
+    return CGSizeMake(self.view.bounds.size.width, 370);
 }
 
 

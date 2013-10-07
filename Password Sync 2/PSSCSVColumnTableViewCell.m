@@ -20,7 +20,7 @@
     layout.sectionInset = UIEdgeInsetsMake(10, 0, 9, 0);
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
-    layout.itemSize = CGSizeMake(self.frame.size.width, 370);
+    layout.itemSize = CGSizeMake(self.bounds.size.width, 370);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.collectionView = [[PSSCSVColumnIndexedCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     self.collectionView.pagingEnabled = YES;
