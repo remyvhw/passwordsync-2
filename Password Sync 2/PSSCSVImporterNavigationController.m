@@ -226,7 +226,9 @@
                     
                     NSDictionary * jsonPayloadDict = @{NSLocalizedString(@"Imported Attributes", nil): remainingFields};
                     
-                    NSData * jsonPayload = [NSJSONSerialization dataWithJSONObject:jsonPayloadDict options:0 error:NULL];
+                    NSArray * jsonPayloadArray = @[jsonPayloadDict];
+                    
+                    NSData * jsonPayload = [NSJSONSerialization dataWithJSONObject:jsonPayloadArray options:0 error:NULL];
                     
                     version.decryptedAdditionalJSONfields = jsonPayload;
                     
