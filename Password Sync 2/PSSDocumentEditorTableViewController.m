@@ -21,6 +21,7 @@
 @property (strong, nonatomic) PSSnewPasswordBasicTextFieldCell * titleCell;
 @property (strong, nonatomic) PSSnewPasswordMultilineTextFieldCell * notesCell;
 @property (strong, nonatomic) NSMutableArray * attachmentsArray;
+@property (nonatomic) BOOL fileimport;
 
 @end
 
@@ -293,7 +294,7 @@
 -(id)initWithDocumentURL:(NSURL *)documentURL{
     if (self = [super initWithStyle:UITableViewStyleGrouped]) {
         
-        
+        self.fileimport = YES;
         self.attachmentsArray = [[NSMutableArray alloc] initWithObjects:documentURL, nil];
         
         

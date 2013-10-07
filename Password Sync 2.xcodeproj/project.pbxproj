@@ -77,6 +77,12 @@
 		AD1BECDD17A42896001292E8 /* PSSGenericDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */; };
 		AD1BECE117A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */; };
 		AD1BECE217A42919001292E8 /* PSSDocumentDetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */; };
+		AD1DF65C1802020E0046AF3C /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF65A1802020E0046AF3C /* DBChooser.bundle */; };
+		AD1DF65D1802020E0046AF3C /* DBChooser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF65A1802020E0046AF3C /* DBChooser.bundle */; };
+		AD1DF65E1802020E0046AF3C /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1DF65B1802020E0046AF3C /* DBChooser.framework */; };
+		AD1DF65F1802020E0046AF3C /* DBChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1DF65B1802020E0046AF3C /* DBChooser.framework */; };
+		AD1DF668180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */; };
+		AD1DF669180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
@@ -590,6 +596,10 @@
 		AD1BECDB17A42896001292E8 /* PSSGenericDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSGenericDetailCollectionViewController.m; sourceTree = "<group>"; };
 		AD1BECDF17A42919001292E8 /* PSSDocumentDetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSDocumentDetailCollectionViewController.h; sourceTree = "<group>"; };
 		AD1BECE017A42919001292E8 /* PSSDocumentDetailCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSDocumentDetailCollectionViewController.m; sourceTree = "<group>"; };
+		AD1DF65A1802020E0046AF3C /* DBChooser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DBChooser.bundle; sourceTree = "<group>"; };
+		AD1DF65B1802020E0046AF3C /* DBChooser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBChooser.framework; sourceTree = "<group>"; };
+		AD1DF666180210DE0046AF3C /* PSSSettingsImportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsImportViewController.h; sourceTree = "<group>"; };
+		AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsImportViewController.m; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsAndDirectoriesTableViewController.h; sourceTree = "<group>"; };
@@ -1050,6 +1060,7 @@
 				ADFA1A1B179258350038EF14 /* OpenGLES.framework in Frameworks */,
 				ADFA1A191792581C0038EF14 /* MobileCoreServices.framework in Frameworks */,
 				ADFA1A17179257FF0038EF14 /* CoreMedia.framework in Frameworks */,
+				AD1DF65E1802020E0046AF3C /* DBChooser.framework in Frameworks */,
 				ADFA1A15179257F80038EF14 /* AudioToolbox.framework in Frameworks */,
 				ADFA1A13179257EF0038EF14 /* AVFoundation.framework in Frameworks */,
 				ADA0E54B179249B900F284B9 /* libxml2.dylib in Frameworks */,
@@ -1068,6 +1079,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1DF65F1802020E0046AF3C /* DBChooser.framework in Frameworks */,
 				AD940E5C17A8651D001442F0 /* opencv2.framework in Frameworks */,
 				AD53ADD817C53D3C000B9722 /* libTestFlight.a in Frameworks */,
 				AD72C3E7177B7E28009AADC8 /* XCTest.framework in Frameworks */,
@@ -1166,6 +1178,23 @@
 			name = Editor;
 			sourceTree = "<group>";
 		};
+		AD1DF660180202180046AF3C /* Dropbox dropin */ = {
+			isa = PBXGroup;
+			children = (
+				AD1DF661180202350046AF3C /* Chooser */,
+			);
+			name = "Dropbox dropin";
+			sourceTree = "<group>";
+		};
+		AD1DF661180202350046AF3C /* Chooser */ = {
+			isa = PBXGroup;
+			children = (
+				AD1DF65A1802020E0046AF3C /* DBChooser.bundle */,
+				AD1DF65B1802020E0046AF3C /* DBChooser.framework */,
+			);
+			name = Chooser;
+			sourceTree = "<group>";
+		};
 		AD2C5A8717BC3BB500C23AFA /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1194,6 +1223,8 @@
 				AD1A386017F132360056C583 /* PSSGeneralSettingsTableViewController.m */,
 				AD49C8A217BC6F12000DE850 /* PSSLegalViewController.h */,
 				AD49C8A317BC6F12000DE850 /* PSSLegalViewController.m */,
+				AD1DF666180210DE0046AF3C /* PSSSettingsImportViewController.h */,
+				AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1628,6 +1659,7 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD1DF660180202180046AF3C /* Dropbox dropin */,
 				AD5E940B17FB5A3C00152018 /* CHCSVParser */,
 				AD372EC417EF829700618BF0 /* IGHTMLQuery */,
 				ADDE058A17DFB85B00546A49 /* appirater-master */,
@@ -2267,6 +2299,7 @@
 				AD33DD6C17BE679C008F80FD /* PSSTagsSelectorTableViewController.xib in Resources */,
 				AD54803617A1C7EE008FAFFB /* f-setting-indicator-active.png in Resources */,
 				AD54804617A1C7EE008FAFFB /* flash-off-button.png in Resources */,
+				AD1DF65C1802020E0046AF3C /* DBChooser.bundle in Resources */,
 				AD54802E17A1C7EE008FAFFB /* f-setting-4-active.png in Resources */,
 				AD54802417A1C7EE008FAFFB /* f-setting-2@2x.png in Resources */,
 				AD54802A17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
@@ -2347,6 +2380,7 @@
 				AD1BECD117A36946001292E8 /* PSSNotesAttachmentTableViewCell.xib in Resources */,
 				AD54804317A1C7EE008FAFFB /* confirm-button.png in Resources */,
 				AD54802B17A1C7EE008FAFFB /* f-setting-3.png in Resources */,
+				AD1DF65D1802020E0046AF3C /* DBChooser.bundle in Resources */,
 				AD54806517A1C7EE008FAFFB /* toolbar-icon-crop@2x.png in Resources */,
 				AD312646179F08A600483E2F /* LICENCE in Resources */,
 				AD746919179DEC720019E4B1 /* BankContactWebsiteCell.xib in Resources */,
@@ -2457,6 +2491,7 @@
 				AD82104A177CFBD400B6F501 /* PSSCreditCardVersion.m in Sources */,
 				AD72C3DE177B7E27009AADC8 /* PSSGenericDetailTableViewController.m in Sources */,
 				AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */,
+				AD1DF668180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */,
 				AD821068177D37ED00B6F501 /* RNDecryptor.m in Sources */,
 				AD10E79117BDB6F400CF3402 /* RSSelectionView.m in Sources */,
 				AD547FA817A1AADF008FAFFB /* PSSDocumentListTableViewController.m in Sources */,
@@ -2567,6 +2602,7 @@
 				AD31266C179F08A600483E2F /* TSMessageView.m in Sources */,
 				AD49C8A517BC6F12000DE850 /* PSSLegalViewController.m in Sources */,
 				AD82102F177CFBD400B6F501 /* PSSDocumentBaseObject.m in Sources */,
+				AD1DF669180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */,
 				AD10E79217BDB6F400CF3402 /* RSSelectionView.m in Sources */,
 				ADC9DFB91788E00A006F2858 /* PSSEncryptor.m in Sources */,
 				ADE7E8C6179C62E900BA09E7 /* PSSPasswordDetailViewController.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "PSSAppDelegate.h"
+#import <DBChooser/DBChooser.h>
+
 #import "MKiCloudSync.h"
 #import "PSSPasswordListViewController.h"
 #import "PDKeychainBindings.h"
@@ -284,6 +286,45 @@
     self.locationManager = locationManager;
 }
 
+-(BOOL)handleFileURL:(NSURL*)url{
+    
+    if ([url isFileURL])
+    {
+        // An application 'shared' a file with us.
+        
+        // Check if the file is of type CSV
+        
+        UIDocumentInteractionController * documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
+        
+        
+        
+        if ([documentController.UTI isEqualToString:@"public.comma-separated-values-text"] || [documentController.UTI isEqualToString:@"public.tab-separated-values-text"]) {
+            
+            PSSCSVImporterNavigationController * csvImporterController = [[PSSCSVImporterNavigationController alloc] initWithCSVDocumentURL:url];
+            
+            [self.window.rootViewController presentViewController:csvImporterController animated:YES completion:^{
+                
+            }];
+            
+            
+            
+            return YES;
+            
+        }
+        
+        
+        // It's not a CSV so we can consider this as a document to import
+        [self saveDocumentAtURL:url];
+        return YES;
+    }
+    // not a file url, probably shared by dropbox (points to a https:// file)
+        
+    
+    return NO;
+}
+
+#pragma mark - Application lifecycle
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
 
@@ -466,40 +507,22 @@
         
         return [dataImporter handleImportURL:url];
         
-    }
-    
-    
-    if ([url isFileURL])
-    {
-        // An application 'shared' a file with us.
+    } else if ([[url scheme] isEqualToString:@"db-n8f8upv1u23hrso"]) {
         
-        // Check if the file is of type CSV
-        
-        UIDocumentInteractionController * documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
-        
-        
-        
-        if ([documentController.UTI isEqualToString:@"public.comma-separated-values-text"] || [documentController.UTI isEqualToString:@"public.tab-separated-values-text"]) {
-            
-            PSSCSVImporterNavigationController * csvImporterController = [[PSSCSVImporterNavigationController alloc] initWithCSVDocumentURL:url];
-            
-            [self.window.rootViewController presentViewController:csvImporterController animated:YES completion:^{
-                
-            }];
-            
-            
-            
+        if ([[DBChooser defaultChooser] handleOpenURL:url]) {
+            // This was a Chooser response and handleOpenURL automatically ran the
+            // completion block
             return YES;
-            
         }
         
+        return NO;
+
         
-        // It's not a CSV so we can consider this as a document to import
-        [self saveDocumentAtURL:url];
-        return YES;
     }
     
-    return NO;
+    
+    
+    return [self handleFileURL:url];
 }
 
 

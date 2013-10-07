@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5eQ-vE-VRM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5eQ-vE-VRM">
     <dependencies>
         <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -726,6 +726,55 @@
             </objects>
             <point key="canvasLocation" x="896" y="3617"/>
         </scene>
+        <!--Settings Import View Controller-->
+        <scene sceneID="xZ0-Ip-3pb">
+            <objects>
+                <tableViewController storyboardIdentifier="settingsImportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jhs-UH-JZZ" customClass="PSSSettingsImportViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gcG-dJ-xPu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buttonCell" id="TmN-ej-A0e">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TmN-ej-A0e" id="bPY-Y8-bC1">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="306" id="JKo-ro-tXY">
+                                <rect key="frame" x="0.0" y="163" width="320" height="306"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKo-ro-tXY" id="84P-RS-Otu">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f3D-PT-wb3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="305"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="f3D-PT-wb3" firstAttribute="leading" secondItem="84P-RS-Otu" secondAttribute="leading" id="4De-Hl-18R"/>
+                                        <constraint firstAttribute="bottom" secondItem="f3D-PT-wb3" secondAttribute="bottom" id="GcN-Gz-LAd"/>
+                                        <constraint firstAttribute="trailing" secondItem="f3D-PT-wb3" secondAttribute="trailing" id="Uge-KK-Hdp"/>
+                                        <constraint firstItem="f3D-PT-wb3" firstAttribute="top" secondItem="84P-RS-Otu" secondAttribute="top" id="emh-PO-9nC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jhs-UH-JZZ" id="Ruf-H3-ywd"/>
+                            <outlet property="delegate" destination="jhs-UH-JZZ" id="1SV-hv-2I2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Bhb-ds-OOO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UO-b1-rJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="5069"/>
+        </scene>
         <!--Legal View Controller-->
         <scene sceneID="wTX-0f-ePK">
             <objects>
@@ -753,7 +802,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb0-Iw-RQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="4964"/>
+            <point key="canvasLocation" x="896" y="5730"/>
         </scene>
         <!--Navigation Controller - Organizer-->
         <scene sceneID="72U-za-whm">
@@ -804,6 +853,7 @@
                         <segue destination="S9d-zq-KdX" kind="push" identifier="presentLegalViewSegue" id="0gy-CO-MGR"/>
                         <segue destination="9qm-PJ-udm" kind="push" identifier="showPasscodeSettingsSegue" id="Ggy-mG-kjp"/>
                         <segue destination="2bw-tL-0gu" kind="push" identifier="showMasterPasswordSettingsSegue" id="yht-BL-nCo"/>
+                        <segue destination="jhs-UH-JZZ" kind="push" identifier="presentImportViewSegue" id="NKp-Si-JRV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U50-Os-jB0" userLabel="First Responder" sceneMemberID="firstResponder"/>

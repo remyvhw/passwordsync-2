@@ -27,5 +27,6 @@
 -(void)presentUnlockPromptAnimated:(BOOL)animated;
 
 -(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject;
+-(BOOL)handleFileURL:(NSURL*)url;
 
 @end

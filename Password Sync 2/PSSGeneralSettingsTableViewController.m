@@ -137,9 +137,9 @@
     } else if (section==2) {
         // legal (and import from Password Sync One
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"passsyncjsonexport://passsynctwoupgrade?enckey=ABCD"]])
-            return 4;
+            return 5;
         
-        return 3;
+        return 4;
     }
     return 0;
 }
@@ -226,12 +226,22 @@
             static NSString *CellIdentifier = @"submenuCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
             
+            cell.textLabel.text = NSLocalizedString(@"Import", nil);
+            cell.accessoryView = nil;
+            cell.imageView.image = [[UIImage imageNamed:@"Import-Icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            return cell;
+            
+        } else if (indexPath.row == 1) {
+            
+            static NSString *CellIdentifier = @"submenuCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            
             cell.textLabel.text = NSLocalizedString(@"Legal", nil);
             cell.accessoryView = nil;
             cell.imageView.image = [[UIImage imageNamed:@"Mug"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             return cell;
             
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 2) {
             // Submit a review
             static NSString * cellIdentifier = @"normalCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -242,7 +252,7 @@
             return cell;
             
             
-        } else if (indexPath.row == 2) {
+        } else if (indexPath.row == 3) {
             // Report a problem
             static NSString * cellIdentifier = @"normalCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -253,7 +263,7 @@
             return cell;
             
             
-        } else if (indexPath.row == 3) {
+        } else if (indexPath.row == 4) {
             // Import from Password Sync 1
             
             static NSString * cellIdentifier = @"normalCell";
@@ -330,9 +340,13 @@
         
     } else if (indexPath.section == 2 && indexPath.row == 0) {
         
-        [self performSegueWithIdentifier:@"presentLegalViewSegue" sender:self];
+        [self performSegueWithIdentifier:@"presentImportViewSegue" sender:self];
         
     } else if (indexPath.section == 2 && indexPath.row == 1) {
+        
+        [self performSegueWithIdentifier:@"presentLegalViewSegue" sender:self];
+        
+    } else if (indexPath.section == 2 && indexPath.row == 2) {
         // Review the app
         
         
@@ -340,14 +354,14 @@
         [Appirater rateApp];
         
         
-    } else if (indexPath.section == 2 && indexPath.row == 2) {
+    } else if (indexPath.section == 2 && indexPath.row == 3) {
         // Report a problem
        
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://passwordsync.freshdesk.com/support/tickets/new"]];
         
         
-    } else if (indexPath.section == 2 && indexPath.row == 3) {
+    } else if (indexPath.section == 2 && indexPath.row == 4) {
         // Import from Password Sync 1
         
                 [(UITabBarController*)APP_DELEGATE.window.rootViewController setSelectedIndex:0];
