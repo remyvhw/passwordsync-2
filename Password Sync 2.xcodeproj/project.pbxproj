@@ -379,6 +379,8 @@
 		AD873B6C178E614F00B77412 /* PSSPasswordEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */; };
 		AD873B6F178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */; };
 		AD873B70178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */; };
+		AD8BEB5118037427006868CD /* PSSKeyValuePairTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8BEB5018037427006868CD /* PSSKeyValuePairTableViewController.m */; };
+		AD8BEB5218037427006868CD /* PSSKeyValuePairTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8BEB5018037427006868CD /* PSSKeyValuePairTableViewController.m */; };
 		AD8C835817B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C835617B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m */; };
 		AD8C835917B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C835617B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m */; };
 		AD8C835A17B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8C835717B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib */; };
@@ -877,6 +879,8 @@
 		AD873B6A178E614F00B77412 /* PSSPasswordEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSPasswordEditorTableViewController.m; sourceTree = "<group>"; };
 		AD873B6D178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSnewPasswordMultilineTextFieldCell.h; sourceTree = "<group>"; };
 		AD873B6E178F625600B77412 /* PSSnewPasswordMultilineTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSnewPasswordMultilineTextFieldCell.m; sourceTree = "<group>"; };
+		AD8BEB4F18037427006868CD /* PSSKeyValuePairTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSKeyValuePairTableViewController.h; sourceTree = "<group>"; };
+		AD8BEB5018037427006868CD /* PSSKeyValuePairTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSKeyValuePairTableViewController.m; sourceTree = "<group>"; };
 		AD8C835517B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVersionFlowGenericControllerViewController.h; sourceTree = "<group>"; };
 		AD8C835617B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVersionFlowGenericControllerViewController.m; sourceTree = "<group>"; };
 		AD8C835717B1C65600A3AE79 /* PSSVersionFlowGenericControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSVersionFlowGenericControllerViewController.xib; sourceTree = "<group>"; };
@@ -1738,6 +1742,7 @@
 				AD10E73B17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.h */,
 				AD10E73C17BDA6F900CF3402 /* UIColor+PSSDictionaryCoding.m */,
 				AD5E940217FB47C700152018 /* CSV Importer */,
+				AD8BEB53180374B7006868CD /* Key Value browser */,
 			);
 			path = "Password Sync 2";
 			sourceTree = "<group>";
@@ -1804,6 +1809,15 @@
 				AD8F5AEC17827F8300702EFA /* Passcode */,
 			);
 			name = "Splash welcome screen storyboard";
+			sourceTree = "<group>";
+		};
+		AD8BEB53180374B7006868CD /* Key Value browser */ = {
+			isa = PBXGroup;
+			children = (
+				AD8BEB4F18037427006868CD /* PSSKeyValuePairTableViewController.h */,
+				AD8BEB5018037427006868CD /* PSSKeyValuePairTableViewController.m */,
+			);
+			name = "Key Value browser";
 			sourceTree = "<group>";
 		};
 		AD8C836717B1CC7B00A3AE79 /* Generic */ = {
@@ -2430,6 +2444,7 @@
 				AD5175FB1784906200B30295 /* NormalCircle.m in Sources */,
 				ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */,
 				AD547FCD17A1C5A6008FAFFB /* MADrawRect.m in Sources */,
+				AD8BEB5118037427006868CD /* PSSKeyValuePairTableViewController.m in Sources */,
 				AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */,
 				AD9EFC9317DE72E80066013F /* GTMStringEncoding.m in Sources */,
 				AD5175FD1784906200B30295 /* SPLine.m in Sources */,
@@ -2663,6 +2678,7 @@
 				AD363719179AFA4D005F1542 /* PSSlocationSearchTextFieldCell.m in Sources */,
 				ADA24C01179851A8003BDCC5 /* PSSLocationVersion.m in Sources */,
 				AD42B42617FE1AED0058917D /* PSSCSVColumnTableViewCell.m in Sources */,
+				AD8BEB5218037427006868CD /* PSSKeyValuePairTableViewController.m in Sources */,
 				AD9EFCA917DE735C0066013F /* PSSTwoStepCodeViewController.m in Sources */,
 				AD82104F177CFBD400B6F501 /* PSSBaseGenericObject.m in Sources */,
 				AD4553C417C832DD00A5C395 /* UIViewController+MJPopupViewController.m in Sources */,

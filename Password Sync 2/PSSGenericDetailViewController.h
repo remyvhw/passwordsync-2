@@ -20,9 +20,8 @@
 -(void)editorAction:(id)sender;
 -(void)lockUIAction:(id)notification;
 -(void)presentVersionsBrowser:(id)sender;
-
 -(void)presentTagsBrowser:(id)sender;
-
+-(void)presentKeyValuePairsBrowser:(id)sender;
 
 -(void)toggleFavorite;
 

@@ -16,11 +16,13 @@
 @property (strong, nonatomic) UITableViewCell * favoriteTableViewCell;
 @property (strong, nonatomic) UITableViewCell * tagsTableViewCell;
 @property (strong, nonatomic) UITableViewCell * twoStepsTableViewCell;
+@property (strong, nonatomic) UITableViewCell * keyValueTableViewCell;
 
 
 -(UIView*)lockedImageAccessoryView;
 -(UIView*)copyImageAccessoryView;
 
+-(BOOL)shouldHaveKeyValuePairCell;
 
 
 @end

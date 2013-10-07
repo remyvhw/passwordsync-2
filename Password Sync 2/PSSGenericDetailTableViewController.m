@@ -17,6 +17,23 @@
 @synthesize versionsTableViewCell = _versionsTableViewCell;
 @synthesize favoriteTableViewCell = _favoriteTableViewCell;
 @synthesize twoStepsTableViewCell = _twoStepsTableViewCell;
+@synthesize keyValueTableViewCell = _keyValueTableViewCell;
+
+-(UITableViewCell*)keyValueTableViewCell{
+    
+    if (_keyValueTableViewCell) {
+        return _keyValueTableViewCell;
+    }
+    
+    UITableViewCell * twoStepsTableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
+    twoStepsTableViewCell.textLabel.text = NSLocalizedString(@"Key-Value Pairs", nil);
+    twoStepsTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    twoStepsTableViewCell.imageView.image = [[UIImage imageNamed:@"More-Icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    _twoStepsTableViewCell = twoStepsTableViewCell;
+    return twoStepsTableViewCell;
+}
 
 -(UITableViewCell*)twoStepsTableViewCell{
     
@@ -141,7 +158,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(BOOL)shouldHaveKeyValuePairCell{
+    return NO;
+}
 
 
 #pragma mark - UITableViewDataSource methods

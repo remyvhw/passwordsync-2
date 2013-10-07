@@ -357,7 +357,11 @@ dispatch_queue_t backgroundQueue;
         }
     } else if (section==4){
         // Buttons
-        return 4;
+        NSInteger buttonCount = 4;
+        if ([self shouldHaveKeyValuePairCell]) {
+            buttonCount++;
+        }
+        return buttonCount;
     }
     
     return 0;
@@ -468,6 +472,8 @@ dispatch_queue_t backgroundQueue;
             return [self tagsTableViewCell];
         } else if (indexPath.row == 3){
             return [self twoStepsTableViewCell];
+        } else if ([self shouldHaveKeyValuePairCell] && indexPath.row == 4){
+            return [self keyValueTableViewCell];
         }
         
         
@@ -535,6 +541,8 @@ dispatch_queue_t backgroundQueue;
             [self presentTagsBrowser:[tableView cellForRowAtIndexPath:indexPath]];
         } else if (indexPath.row == 3){
             [self presentTwoStepBrowser];
+        } else if (indexPath.row == 4) {
+            [self presentKeyValuePairsBrowser:nil];
         }
         
         

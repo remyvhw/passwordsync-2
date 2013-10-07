@@ -19,6 +19,11 @@
 
 @implementation PSSGenericDetailViewController
 
+-(void)presentKeyValuePairsBrowser:(id)sender{
+    
+    
+    
+}
 
 -(void)presentTagsBrowser:(id)sender{
     
