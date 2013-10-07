@@ -355,3 +355,7 @@
 "Title field cannot be left empty." = "'タイトル'フィールドは空のままにすることはできません。";
 "Leave Empty" = "空のままに";
 "Column" = "コラム";
+
+"Password Sync can import website passwords from a CSV file, as well as documents from many file (.pdf, .docx, .pptx, etc.) or image (.png, .jpg, .tiff, etc.) formats." = "あなたは、CSV文書からWebサイトのパスワードをインポートすることができます。また、多くの種類のファイル（。PDF、。JPG、。DOCXなど）からドキュメントをインポートすることができます。";
+"Import from..." = "からインポート...";
+"Import from other apps" = "他のアプリからのインポート";

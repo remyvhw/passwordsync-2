@@ -353,3 +353,7 @@
 "Title field cannot be left empty." = "“标题”字段不能为空。";
 "Leave Empty" = "留空。";
 "Column" = "电子表格列";
+
+"Password Sync can import website passwords from a CSV file, as well as documents from many file (.pdf, .docx, .pptx, etc.) or image (.png, .jpg, .tiff, etc.) formats." = "您可以从CSV文件导入网站密码。您还可以导入多种文件类型的文件（PDF，JPG，DOCX等）。";
+"Import from..." = "导入...";
+"Import from other apps" = "从其他应用程序导入";

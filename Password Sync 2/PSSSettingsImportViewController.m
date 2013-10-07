@@ -134,6 +134,13 @@
 
 #pragma mark - Table view data source
 
+-(NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    if (section == 1) {
+        return NSLocalizedString(@"Password Sync can import website passwords from a CSV file, as well as documents from many file (.pdf, .docx, .pptx, etc.) or image (.png, .jpg, .tiff, etc.) formats.", nil);
+    }
+    return @"";
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         return 444.;

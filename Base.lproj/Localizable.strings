@@ -361,3 +361,7 @@
 "Title field cannot be left empty." = "Title field cannot be left empty.";
 "Leave Empty" = "Leave Empty";
 "Column" = "Column";
+
+"Password Sync can import website passwords from a CSV file, as well as documents from many file (.pdf, .docx, .pptx, etc.) or image (.png, .jpg, .tiff, etc.) formats." = "Password Sync can import website passwords from a CSV file, as well as documents from many file (.pdf, .docx, .pptx, etc.) or image (.png, .jpg, .tiff, etc.) formats.";
+"Import from..." = "Import from...";
+"Import from other apps" = "Import from other apps";
