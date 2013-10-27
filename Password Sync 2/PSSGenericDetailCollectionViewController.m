@@ -14,6 +14,19 @@
 
 @implementation PSSGenericDetailCollectionViewController
 
+-(void)adjustContentInsetForBannerView{
+    if (self.bannerView) {
+        
+        CGFloat tabBarHeight = 49.;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            tabBarHeight = 56.;
+        }
+        
+        self.collectionView.contentInset = UIEdgeInsetsMake(self.collectionView.contentInset.top, self.collectionView.contentInset.left, tabBarHeight + self.bannerView.frame.size.height, self.collectionView.contentInset.right);
+        
+    }
+}
+
 -(void)userDidUnlockWithPasscode{
     [super userDidUnlockWithPasscode];
     [self.collectionView reloadData];
@@ -48,6 +61,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - UICollectionViewDataSource methods
 

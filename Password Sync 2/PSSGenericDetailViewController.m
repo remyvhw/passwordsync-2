@@ -127,6 +127,9 @@
     }
 }
 
+-(void)adjustContentInsetForBannerView{
+    
+}
 
 #pragma mark - Common stuff
 
@@ -158,6 +161,37 @@
     
     // Subscribe to global refresh (when the iCloud data is swapped)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(datastoreHasBeenUpdated:) name:PSSGlobalUpdateNotification object:nil];
+    
+    
+    
+    if (APP_DELEGATE.shouldPresentAds) {
+        
+        // Insert an ad
+        
+        ADBannerView * bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+        
+        CGFloat bannerHeight = 0.0;
+        CGFloat bannerTopFromOrigin = 0.0;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            // On the iPhone, the ad's height is 50 points
+            bannerHeight = 50.;
+            bannerTopFromOrigin = self.view.frame.size.height - bannerHeight - 49;
+        } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            // On iPad 66 points
+            bannerHeight = 66.;
+            bannerTopFromOrigin = self.view.frame.size.height - bannerHeight - 56;
+        }
+        
+        CGRect bannerRect = CGRectMake(0, bannerTopFromOrigin, self.view.frame.size.width, bannerHeight);
+        
+        bannerView.frame = bannerRect;
+        bannerView.delegate = self;
+        self.bannerView = bannerView;
+        
+        [self.view addSubview:bannerView];
+        
+        
+    }
 
 }
 
@@ -213,6 +247,21 @@
 -(void)objectEditor:(id)editor finishedWithObject:(PSSBaseGenericObject *)genericObject{
     
     
+}
+
+#pragma mark - ADBannerViewDelegate methods
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.bannerView setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        self.bannerView = nil;
+        [self adjustContentInsetForBannerView];
+    }];
+}
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [self adjustContentInsetForBannerView];
 }
 
 

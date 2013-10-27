@@ -7,12 +7,17 @@
 //
 
 @import UIKit;
+@import iAd;
+
 #import "PSSObjectEditorProtocol.h"
 #import "PSSBaseGenericObject.h"
 
-@interface PSSGenericDetailViewController : UIViewController <PSSObjectEditorProtocol, UISplitViewControllerDelegate>
+@interface PSSGenericDetailViewController : UIViewController <PSSObjectEditorProtocol, UISplitViewControllerDelegate, ADBannerViewDelegate>
 
 @property (strong, nonatomic) PSSBaseGenericObject* detailItem;
+
+@property (weak, nonatomic) ADBannerView * bannerView;
+
 @property BOOL isPasscodeUnlocked;
 
 -(void)showUnlockingViewController;
@@ -25,5 +30,6 @@
 
 -(void)toggleFavorite;
 
+-(void)adjustContentInsetForBannerView;
 
 @end

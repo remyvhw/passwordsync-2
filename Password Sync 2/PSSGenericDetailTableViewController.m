@@ -7,7 +7,7 @@
 //
 
 #import "PSSGenericDetailTableViewController.h"
-
+#import "PSSAppDelegate.h"
 
 
 
@@ -144,6 +144,18 @@
     [self.tableView reloadData];
 }
 
+-(void)adjustContentInsetForBannerView{
+    if (self.bannerView) {
+        
+        CGFloat tabBarHeight = 49.;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            tabBarHeight = 56.;
+        }
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(self.tableView.contentInset.top, self.tableView.contentInset.left, tabBarHeight + self.bannerView.frame.size.height, self.tableView.contentInset.right);
+        
+    }
+}
 
 - (void)viewDidLoad
 {
