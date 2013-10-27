@@ -300,14 +300,22 @@
 
 #pragma mark - UIViewController lifecycle
 
--(id)initWithDocumentURL:(NSURL *)documentURL{
+
+
+-(id)initWithDocumentURLs:(NSArray *)documentURLs{
     if (self = [super initWithStyle:UITableViewStyleGrouped]) {
         
         self.fileimport = YES;
-        self.attachmentsArray = [[NSMutableArray alloc] initWithObjects:documentURL, nil];
+        
+        self.attachmentsArray = [[NSMutableArray alloc] initWithArray:documentURLs];
         
         
-        
+    }
+    return self;
+}
+
+-(id)initWithDocumentURL:(NSURL *)documentURL{
+    if (self = [self initWithDocumentURLs:@[documentURL]]) {
     }
     return self;
 }
@@ -320,7 +328,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"PSSNotesAttachmentTableViewCell" bundle:[NSBundle mainBundle]]  forCellReuseIdentifier:@"attachmentCell"];
     
     
-    //UIBarButtonItem * saveButton =
     
     if (!self.attachmentsArray) {
         if (self.baseObject) {

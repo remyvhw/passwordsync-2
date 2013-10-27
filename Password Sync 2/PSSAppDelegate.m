@@ -51,11 +51,8 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 
-
-
--(void)saveDocumentAtURL:(NSURL*)url{
-    
-    PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURL:url];
+-(void)saveDocumentsAtURL:(NSArray*)urls{
+    PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURLs:urls];
     
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:documentEditor];
     
@@ -64,6 +61,12 @@
     [self.window.rootViewController presentViewController:navController animated:YES completion:^{
         
     }];
+}
+
+
+-(void)saveDocumentAtURL:(NSURL*)url{
+    
+    [self saveDocumentsAtURL:@[url]];
     
 }
 
@@ -285,6 +288,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     self.locationManager = locationManager;
 }
+
 
 -(BOOL)handleFileURL:(NSURL*)url{
     

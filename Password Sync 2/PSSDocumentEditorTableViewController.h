@@ -15,5 +15,6 @@
 @property (strong, nonatomic) PSSDocumentBaseObject * baseObject;
 
 -(id)initWithDocumentURL:(NSURL*)documentURL;
+-(id)initWithDocumentURLs:(NSArray*)documentURLs;
 
 @end

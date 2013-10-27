@@ -11,6 +11,7 @@
 @interface PSSKeyValuePairTableViewController ()
 
 
+
 @end
 
 @implementation PSSKeyValuePairTableViewController
@@ -28,32 +29,35 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
     if (!self.baseArray) {
         
-        id decryptedObject = [NSJSONSerialization JSONObjectWithData:self.detailItem.currentHardLinkedVersion.decryptedAdditionalJSONfields options:0 error:NULL];
-        
-        
-        if ([decryptedObject isKindOfClass:[NSDictionary class]]) {
+        NSData * decryptedData = self.detailItem.currentHardLinkedVersion.decryptedAdditionalJSONfields;
+        if (decryptedData) {
+            id decryptedObject = [NSJSONSerialization JSONObjectWithData:self.detailItem.currentHardLinkedVersion.decryptedAdditionalJSONfields options:0 error:NULL];
+
+            if ([decryptedObject isKindOfClass:[NSArray class]]) {
+                self.baseArray = decryptedObject;
+            } else if ([decryptedObject isKindOfClass:[NSDictionary class]]) {
+                self.baseArray = @[decryptedObject];
+            }
             
-            // We put the Dictionary in an array
-            self.baseArray = @[decryptedObject];
             
-        } else if ([decryptedObject isKindOfClass:[NSArray class]]) {
             
-            // It's already an array
-            self.baseArray = decryptedObject;
+            
             
         }
         
+        
+        
     }
     
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"buttonCell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"keyValueCell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"keyButtonCell"];
     
     
     
@@ -71,24 +75,86 @@
 {
 
     // Return the number of sections.
-    return 0;
+    return self.baseArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
     // Return the number of rows in the section.
+    
+    id objectForSection = [self.baseArray objectAtIndex:section];
+    
+    if ([objectForSection isKindOfClass:[NSArray class]]) {
+        // One object linking to another array
+        return 1;
+    } else if ([objectForSection isKindOfClass:[NSDictionary class]]) {
+        return [(NSDictionary*)objectForSection count];
+    }
+    
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     
-    return cell;
+    
+    
+    id objectForSection = [self.baseArray objectAtIndex:indexPath.section];
+    
+    if ([objectForSection isKindOfClass:[NSArray class]]) {
+        // One object linking to another array
+        
+        
+        static NSString *CellIdentifier = @"buttonCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        cell.textLabel.textColor = self.view.window.tintColor;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = NSLocalizedString(@"More...", nil);
+        
+        return cell;
+    } else if ([objectForSection isKindOfClass:[NSDictionary class]]) {
+        
+        NSDictionary * sectionDictionary = objectForSection;
+        
+        NSArray * sortedKeys = [[sectionDictionary allKeys] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+        NSArray * objects = [sectionDictionary objectsForKeys: sortedKeys notFoundMarker: [NSNull null]];
+        
+        if ([[objects objectAtIndex:indexPath.row] isKindOfClass:[NSArray class]]) {
+            
+            static NSString *CellIdentifier = @"keyButtonCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            
+            cell.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.text = [sortedKeys objectAtIndex:indexPath.row];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            return cell;
+            
+        } else if ([[objects objectAtIndex:indexPath.row] isKindOfClass:[NSString class]]) {
+            
+            static NSString *CellIdentifier = @"keyValueCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        cell.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.detailTextLabel.text = [sortedKeys objectAtIndex:indexPath.row];
+        cell.textLabel.text = [objects objectAtIndex:indexPath.row];
+        return cell;
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    return nil;
 }
 
 /*

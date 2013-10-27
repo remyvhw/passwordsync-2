@@ -10,6 +10,7 @@
 #import "PSSUnlockPromptViewController.h"
 #import "PSSAppDelegate.h"
 #import "PSSTagsSelectorTableViewController.h"
+#import "PSSKeyValuePairTableViewController.h"
 
 @interface PSSGenericDetailViewController ()
 
@@ -21,7 +22,11 @@
 
 -(void)presentKeyValuePairsBrowser:(id)sender{
     
+    PSSKeyValuePairTableViewController * keyValueController = [[PSSKeyValuePairTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
+    keyValueController.detailItem = self.detailItem;
+    
+    [self.navigationController pushViewController:keyValueController animated:YES];
     
 }
 
