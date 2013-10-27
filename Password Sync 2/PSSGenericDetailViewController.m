@@ -186,6 +186,7 @@
         
         bannerView.frame = bannerRect;
         bannerView.delegate = self;
+        bannerView.alpha = 0.0;
         self.bannerView = bannerView;
         
         [self.view addSubview:bannerView];
@@ -262,6 +263,12 @@
 
 -(void)bannerViewDidLoadAd:(ADBannerView *)banner{
     [self adjustContentInsetForBannerView];
+}
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    [UIView animateWithDuration:0.1 animations:^{
+        [self.bannerView setAlpha:1.0];
+    }];
 }
 
 
