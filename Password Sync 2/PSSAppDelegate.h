@@ -21,6 +21,10 @@
 
 @property BOOL isUnlocked;
 
+@property BOOL shouldPresentAds;
+@property BOOL shouldAllowUnlimitedFeatures;
+
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

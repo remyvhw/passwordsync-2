@@ -33,8 +33,13 @@
 
 #import "PSSCSVImporterNavigationController.h"
 
-
 #import "TestFlight.h"
+
+#import "RMStore.h"
+#import "RMStoreTransactionReceiptVerificator.h"
+#import "RMStoreAppReceiptVerificator.h"
+#import "RMStoreKeychainPersistence.h"
+#import "RMAppReceipt.h"
 
 @import CoreData;
 
@@ -44,12 +49,77 @@
 
 @end
 
-@implementation PSSAppDelegate
+@implementation PSSAppDelegate {
+    id<RMStoreReceiptVerificator> _receiptVerificator;
+    RMStoreKeychainPersistence *_persistence;
+}
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+#pragma mark In App Purchase configuration
+
+
+-(void)updatePurchasedOptions{
+    // Receive the original app receipt
+    RMAppReceipt * appReceipt = [RMAppReceipt bundleReceipt];
+    
+    // Check if user has bought a version of the app that was not using the Freemium model
+    
+    NSString * initialPurchaseVersion = [appReceipt originalAppVersion];
+    
+    if ([initialPurchaseVersion isEqualToString:@"1.0XXX"] || [initialPurchaseVersion isEqualToString:@"1.0.0"] || [initialPurchaseVersion isEqualToString:@"1.0.1"] || [initialPurchaseVersion isEqualToString:@"1.0.2"] || [initialPurchaseVersion isEqualToString:@"1.0.3"] || [initialPurchaseVersion isEqualToString:@"1.0.4"] || [initialPurchaseVersion isEqualToString:@"1.0.5"]) {
+        
+        // Unlock everything and remove ads
+        self.shouldAllowUnlimitedFeatures = YES;
+        self.shouldPresentAds = NO;
+        
+    } else {
+        // User did NOT purchase the app prior to the migration to freemium model.
+        
+        // Set values to default
+        self.shouldAllowUnlimitedFeatures = NO;
+        self.shouldPresentAds = YES;
+        
+        // Check if user bough the all in one package that disabled ads
+        
+        NSSet * purchasedIDs = [_persistence purchasedProductIdentifiers];
+        
+        if ([purchasedIDs containsObject:PSSPasswordSyncTwoAllowUnlimitedItems]) {
+            self.shouldAllowUnlimitedFeatures = YES;
+        }
+        
+        if ([purchasedIDs containsObject:PSSPasswordSyncTwoRemoveAdsPurchase]) {
+            self.shouldPresentAds = NO;
+        }
+        
+        if ([purchasedIDs containsObject:PSSPasswordSyncTwoRemoveAdsAndAllowUnlimitedItems]) {
+            // User paid to disable ads AND allow unlimited objects
+            self.shouldPresentAds = NO;
+            self.shouldAllowUnlimitedFeatures = YES;
+        }
+        
+    }
+
+    
+}
+
+- (void)configureStore
+{
+    _receiptVerificator = [[RMStoreAppReceiptVerificator alloc] init];
+    [RMStore defaultStore].receiptVerificator = _receiptVerificator;
+    
+    _persistence = [[RMStoreKeychainPersistence alloc] init];
+    [RMStore defaultStore].transactionPersistor = _persistence;
+    
+    
+    [self updatePurchasedOptions];
+    
+}
+
+
+#pragma mark -
 
 -(void)saveDocumentsAtURL:(NSArray*)urls{
     PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURLs:urls];
@@ -356,6 +426,8 @@
     
     [Appirater setAppId:@"701814886"];
     
+    
+    [self configureStore];
     
     UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (locationNotification) {
