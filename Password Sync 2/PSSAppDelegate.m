@@ -143,6 +143,23 @@
 
 #pragma mark -
 
+-(void)triggerInterstitialAd{
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.shouldPresentAds) {
+        [self.window.rootViewController requestInterstitialAdPresentation];
+    }
+    
+}
+
+- (void)prepareInterstitialAd
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && self.shouldPresentAds) {
+        [UIViewController prepareInterstitialAds];
+    }
+    
+}
+
 -(void)saveDocumentsAtURL:(NSArray*)urls{
     PSSDocumentEditorTableViewController * documentEditor = [[PSSDocumentEditorTableViewController alloc] initWithDocumentURLs:urls];
     
@@ -937,7 +954,6 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PSSGlobalUpdateNotification" object:nil];
 }
-
 
 
 

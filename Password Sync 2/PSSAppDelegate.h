@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @import CoreLocation;
+@import iAd;
 
 @class PSSBaseGenericObject;
 @interface PSSAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
@@ -36,5 +37,8 @@
 
 -(void)openBaseObjectDetailView:(PSSBaseGenericObject*)baseObject;
 -(BOOL)handleFileURL:(NSURL*)url;
+
+-(void)triggerInterstitialAd;
+- (void)prepareInterstitialAd;
 
 @end

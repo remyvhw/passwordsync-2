@@ -125,6 +125,10 @@
             [TestFlight passCheckpoint:@"WEBSITE_CREATED"];
 #endif
             
+            // When the user hasn't paid to remove the ads, insert a full screen intersticial ad
+            [APP_DELEGATE triggerInterstitialAd];
+            
+            
         }];
     } else {
         
@@ -286,6 +290,12 @@
     self.usernameCell.nextFormField = self.passwordCell.textField;
     self.passwordCell.nextFormField = self.hostCell.textField;
     self.hostCell.nextFormField = self.notesCell.textView;
+
+    if (!self.baseObject) {
+        // In creation mode, prepare for interstitial ad
+        [APP_DELEGATE prepareInterstitialAd];
+    }
+
 }
 
 
