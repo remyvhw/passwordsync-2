@@ -406,6 +406,8 @@
                 
                 UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:upgradePurchaseViewController];
                 
+                navController.modalPresentationStyle = UIModalPresentationFormSheet;
+                
                 [self.window.rootViewController presentViewController:navController animated:YES completion:NULL];
                 
                 return NO;

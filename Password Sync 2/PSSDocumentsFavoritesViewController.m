@@ -13,6 +13,7 @@
 #import "PSSDocumentBaseObject.h"
 #import "PSSDocumentVersion.h"
 #import "PSSDocumentsSplitViewDetailViewController.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSDocumentsFavoritesViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -40,6 +41,13 @@ dispatch_queue_t backgroundQueue;
 }
 
 - (void)insertNewObject:(id)sender {
+    
+    if (!APP_DELEGATE.shouldAllowNewData) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     PSSDocumentEditorTableViewController * notesEditor = [[PSSDocumentEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:notesEditor];

@@ -12,6 +12,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSObjectDecorativeImage.h"
 #import "PSSPasswordSplitViewDetailViewController.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSWebsitesFavoritesViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -25,6 +26,12 @@
 
 - (void)insertNewObject:(id)sender
 {
+    if (!APP_DELEGATE.shouldAllowNewData) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     UIStoryboard * storyboardContainingEditor = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
     UINavigationController * passwordEditorNavController = [storyboardContainingEditor instantiateInitialViewController];

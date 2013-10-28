@@ -13,6 +13,7 @@
 #import "PSSAppDelegate.h"
 #import "PSSLocationVersion.h"
 #import "PSSLocationBaseObject.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 #define MAP_PADDING 2.6
 #define MINIMUM_VISIBLE_LATITUDE 0.01
@@ -125,6 +126,13 @@
 
 
 - (void)insertNewObject:(id)sender {
+    
+    if (!APP_DELEGATE.shouldAllowUnlimitedFeatures) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:locationEditor];

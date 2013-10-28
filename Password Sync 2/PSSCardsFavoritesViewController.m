@@ -14,6 +14,7 @@
 #import "PSSCardsSplitViewDetailViewController.h"
 #import "PSSAppDelegate.h"
 #import "CardIOCreditCardInfo.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSCardsFavoritesViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -26,6 +27,13 @@
 @implementation PSSCardsFavoritesViewController
 
 - (void)insertNewObject:(id)sender {
+    
+    if (!APP_DELEGATE.shouldAllowNewData) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
