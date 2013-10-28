@@ -14,6 +14,7 @@
 #import "PSSLocationDetailViewController.h"
 #import "PSSLocationsSplitViewDetailViewController.h"
 #import "PSSObjectDecorativeImage.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSLocationListTableViewController ()
 
@@ -23,6 +24,13 @@
 
 
 - (void)insertNewObject:(id)sender {
+    
+    if (!APP_DELEGATE.shouldAllowUnlimitedFeatures) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     PSSLocationEditorTableViewController * locationEditor = [[PSSLocationEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:locationEditor];

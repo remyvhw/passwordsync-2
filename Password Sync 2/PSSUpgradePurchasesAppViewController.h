@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalTitle;
 @property (weak, nonatomic) IBOutlet UILabel *totalExplanationText;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
+
+@property BOOL isPresentedModally;
+
 - (IBAction)proAction:(id)sender;
 - (IBAction)totalAction:(id)sender;
 - (IBAction)noadsAction:(id)sender;

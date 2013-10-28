@@ -37,9 +37,9 @@
 -(void)newCardAction:(id)sender{
     
     if (APP_DELEGATE.shouldAllowNewData) {
-            PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
-    [self.navigationController presentViewController:editorNavController animated:YES completion:^{}];
+        PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
+        [self.navigationController presentViewController:editorNavController animated:YES completion:^{}];
 
     } else {
         

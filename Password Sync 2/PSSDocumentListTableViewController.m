@@ -17,6 +17,7 @@
 #import "PSSObjectDecorativeImage.h"
 #import "PSSObjectTag.h"
 #import "UIColor+PSSDictionaryCoding.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 
 @interface PSSDocumentListTableViewController ()
@@ -34,6 +35,13 @@
 }
 
 -(void)newNoteAction:(id)sender{
+    
+    if (!APP_DELEGATE.shouldAllowNewData) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     PSSDocumentEditorTableViewController * notesEditor = [[PSSDocumentEditorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:notesEditor];

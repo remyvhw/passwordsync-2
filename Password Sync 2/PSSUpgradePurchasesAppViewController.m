@@ -20,6 +20,10 @@
 @implementation PSSUpgradePurchasesAppViewController
 dispatch_queue_t backgroundQueue;
 
+-(void)dismissModalSelf:(id)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+}
+
 -(void)settingsButtonAction:(id)sender{
     
     UIActionSheet * settingsActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Restore Purchases", nil), nil];
@@ -101,10 +105,27 @@ dispatch_queue_t backgroundQueue;
     [self.noadsButton setBackgroundImage:[UIImage imageNamed:@"large_button_white_highlight"] forState:UIControlStateHighlighted];
     [self.totalButton setBackgroundImage:[UIImage imageNamed:@"large_button_white_highlight"] forState:UIControlStateHighlighted];
     
+    // Localize UI
+    self.proTitle.text = NSLocalizedString(@"Unlock all features", nil);
+    self.proExplanationText.text = NSLocalizedString(@"Unlock access to all of Password Sync, including location based password, data import and more than 25 entries.", nil);
+    self.noadsTitle.text = NSLocalizedString(@"Remove Ads", nil);
+    self.proExplanationText.text = NSLocalizedString(@"Unclutter Password Sync by removing banner ads from the interface.", nil);
+    self.totalTitle.text = NSLocalizedString(@"Unlock all + remove ads", nil);
+    self.proExplanationText.text = NSLocalizedString(@"Unlock access to all of Password Sync, including location based passwords, data import and more than 25 entries, and remove banner ads from the app, all at once!", nil);
+    
 
     // Add a button to restore purchases
-    UIBarButtonItem * restorePurchasesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Wrench"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonAction:)];
+    UIBarButtonItem * restorePurchasesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"CloudDownload"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonAction:)];
+    restorePurchasesButton.accessibilityLabel = NSLocalizedString(@"Restore Purchases", nil);
     self.navigationItem.rightBarButtonItem = restorePurchasesButton;
+    
+    if (self.isPresentedModally) {
+        // Add a cancel button
+        
+        UIBarButtonItem * cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissModalSelf:)];
+        self.navigationItem.leftBarButtonItem = cancelButton;
+    }
+    
     
     if ([PSSDeviceCapacity shouldRunAdvancedFeatures]) {
         
@@ -117,13 +138,15 @@ dispatch_queue_t backgroundQueue;
         dispatch_async(backgroundQueue, ^(void) {
                 
                 UIImage * backgroundLogoImage = [[UIImage imageNamed:@"KeyImage.jpg"] applyLightEffect];
+            
                 
                 // Replace any transparency in the favicon by white so we don't end up with black cells (unless we have a black favicon)
                
                 
                 
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    
+                
+                self.backgroundImage.clipsToBounds = YES;
                 self.backgroundImage.image = backgroundLogoImage;
                 
                     
@@ -132,7 +155,7 @@ dispatch_queue_t backgroundQueue;
                     }];
                     
                 });
-                
+            
             });
             // End of background thread
        

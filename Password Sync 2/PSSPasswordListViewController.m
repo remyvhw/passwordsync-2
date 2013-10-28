@@ -16,6 +16,7 @@
 #import "UIImage+ImageEffects.h"
 #import "PSSDeviceCapacity.h"
 #import "PSSAppDelegate.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSPasswordListViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *searchFetchedResultsController;
@@ -116,6 +117,13 @@ dispatch_queue_t backgroundQueue;
 
 - (void)insertNewObject:(id)sender
 {
+    
+    if (!APP_DELEGATE.shouldAllowNewData) {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        return;
+    }
     
     UIStoryboard * storyboardContainingEditor = [UIStoryboard storyboardWithName:@"PSSNewPasswordObjectStoryboard_iPhone" bundle:[NSBundle mainBundle]];
     UINavigationController * passwordEditorNavController = [storyboardContainingEditor instantiateInitialViewController];

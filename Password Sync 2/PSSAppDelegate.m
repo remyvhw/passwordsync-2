@@ -30,6 +30,7 @@
 #import "Appirater.h"
 #import "PSSMasterPasswordVerifyerViewController.h"
 #import "PSSUnlockPromptViewController.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 #import "PSSCSVImporterNavigationController.h"
 
@@ -394,6 +395,22 @@
         
         
         if ([documentController.UTI isEqualToString:@"public.comma-separated-values-text"] || [documentController.UTI isEqualToString:@"public.tab-separated-values-text"]) {
+            
+            
+            // User is trying to import a CSV file. Prevent the import if user did not buy Pro features
+            if (!self.shouldAllowUnlimitedFeatures) {
+                
+                PSSUpgradePurchasesAppViewController * upgradePurchaseViewController = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+                
+                upgradePurchaseViewController.isPresentedModally = YES;
+                
+                UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:upgradePurchaseViewController];
+                
+                [self.window.rootViewController presentViewController:navController animated:YES completion:NULL];
+                
+                return NO;
+            }
+            
             
             PSSCSVImporterNavigationController * csvImporterController = [[PSSCSVImporterNavigationController alloc] initWithCSVDocumentURL:url];
             
