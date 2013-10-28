@@ -5,18 +5,18 @@
         "mode" : "9-part",
         "center" : {
           "mode" : "fill",
-          "width" : 19,
-          "height" : 14
+          "width" : 1,
+          "height" : 1
         },
         "capInsets" : {
-          "bottom" : 11,
-          "top" : 11,
-          "right" : 19,
-          "left" : 18
+          "bottom" : 10,
+          "top" : 10,
+          "right" : 12,
+          "left" : 12
         }
       },
       "idiom" : "universal",
-      "filename" : "GreenButton.png",
+      "filename" : "large_button_white.png",
       "scale" : "1x"
     },
     {
@@ -24,18 +24,18 @@
         "mode" : "9-part",
         "center" : {
           "mode" : "fill",
-          "width" : 27,
-          "height" : 22
+          "width" : 1,
+          "height" : 1
         },
         "capInsets" : {
-          "bottom" : 25,
-          "top" : 24,
-          "right" : 42,
-          "left" : 42
+          "bottom" : 20,
+          "top" : 20,
+          "right" : 25,
+          "left" : 24
         }
       },
       "idiom" : "universal",
-      "filename" : "GreenButton@2x.png",
+      "filename" : "large_button_white@2x.png",
       "scale" : "2x"
     }
   ],

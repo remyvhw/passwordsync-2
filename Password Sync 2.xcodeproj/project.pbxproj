@@ -491,6 +491,8 @@
 		ADCD58DE181D943B00BA5F8E /* RMStoreUserDefaultsPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD58D2181D943B00BA5F8E /* RMStoreUserDefaultsPersistence.m */; };
 		ADCD58DF181D943B00BA5F8E /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD58D5181D943B00BA5F8E /* RMStore.m */; };
 		ADCD58E1181D94EF00BA5F8E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCD58E0181D94EF00BA5F8E /* iAd.framework */; };
+		ADCD58E5181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD58E3181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m */; };
+		ADCD58E6181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD58E4181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADDCADEE17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */; };
@@ -1077,6 +1079,9 @@
 		ADCD58D4181D943B00BA5F8E /* RMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStore.h; sourceTree = "<group>"; };
 		ADCD58D5181D943B00BA5F8E /* RMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStore.m; sourceTree = "<group>"; };
 		ADCD58E0181D94EF00BA5F8E /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		ADCD58E2181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSUpgradePurchasesAppViewController.h; sourceTree = "<group>"; };
+		ADCD58E3181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSUpgradePurchasesAppViewController.m; sourceTree = "<group>"; };
+		ADCD58E4181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSUpgradePurchasesAppViewController.xib; sourceTree = "<group>"; };
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
@@ -1834,6 +1839,7 @@
 				AD2C5A8D17BC3BE900C23AFA /* Generic controllers */,
 				ADAD160417ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.h */,
 				ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */,
+				ADCD58E7181DD5DC00BA5F8E /* UpgradeViewController */,
 				AD2C5A8C17BC3BE100C23AFA /* Settings */,
 				ADE7E8C2179C5C8400BA09E7 /* Unlock Prompt */,
 				ADC9DFA81788C4BA006F2858 /* Main Storyboard */,
@@ -2248,6 +2254,16 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		ADCD58E7181DD5DC00BA5F8E /* UpgradeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ADCD58E2181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.h */,
+				ADCD58E3181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m */,
+				ADCD58E4181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib */,
+			);
+			name = UpgradeViewController;
+			sourceTree = "<group>";
+		};
 		ADD8A31217A87F0A0025DA42 /* Other views */ = {
 			isa = PBXGroup;
 			children = (
@@ -2533,6 +2549,7 @@
 				AD7B261717C2E00D00701F52 /* Localizable.strings in Resources */,
 				AD72C3D2177B7E27009AADC8 /* Main_iPhone.storyboard in Resources */,
 				AD54801017A1C7EE008FAFFB /* f-setting-rotate.png in Resources */,
+				ADCD58E6181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib in Resources */,
 				AD54804A17A1C7EE008FAFFB /* flash-on-button.png in Resources */,
 				AD54801A17A1C7EE008FAFFB /* f-setting-1.png in Resources */,
 				AD9EFCAA17DE735C0066013F /* PSSTwoStepCodeViewController.xib in Resources */,
@@ -2681,6 +2698,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCD58E5181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m in Sources */,
 				ADDD964D1792539400AB2CC5 /* PSSCardsTableViewController.m in Sources */,
 				AD547FAD17A1AC7C008FAFFB /* PSSGenericEditorTableViewController.m in Sources */,
 				AD6133F01793BFBB004CEDF2 /* PSSCardsEditorCardTypeSelectorTableViewController.m in Sources */,

@@ -21,8 +21,12 @@
 
 @property BOOL isUnlocked;
 
-@property BOOL shouldPresentAds;
-@property BOOL shouldAllowUnlimitedFeatures;
+@property (nonatomic) BOOL shouldPresentAds;
+@property (nonatomic) BOOL shouldAllowUnlimitedFeatures;
+/**
+ * Should user be able to use a New button or Import new data into the app.
+ */
+@property (nonatomic, readonly) BOOL shouldAllowNewData;
 
 
 - (void)saveContext;

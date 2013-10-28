@@ -13,6 +13,7 @@
 #import "PSSCreditCardVersion.h"
 #import "PSSCardDetailViewController.h"
 #import "PSSCardsSplitViewDetailViewController.h"
+#import "PSSUpgradePurchasesAppViewController.h"
 
 @interface PSSCardsTableViewController ()
 
@@ -34,9 +35,19 @@
 }
 
 -(void)newCardAction:(id)sender{
-    PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    if (APP_DELEGATE.shouldAllowNewData) {
+            PSSCardEditorViewController * cardEditor = [[PSSCardEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * editorNavController = [[UINavigationController alloc] initWithRootViewController:cardEditor];
     [self.navigationController presentViewController:editorNavController animated:YES completion:^{}];
+
+    } else {
+        
+        PSSUpgradePurchasesAppViewController * updateAppViewcontroller = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+        [self.navigationController pushViewController:updateAppViewcontroller animated:YES];
+        
+    }
+    
     
     
 }

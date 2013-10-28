@@ -60,6 +60,27 @@
 
 #pragma mark In App Purchase configuration
 
+-(BOOL)shouldAllowNewData{
+    
+    // If user paid for unlimited features, sure, go ahead!
+    if (self.shouldAllowUnlimitedFeatures) {
+        return YES;
+    }
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"PSSBaseGenericObject" inManagedObjectContext:self.managedObjectContext]];
+    
+    [request setIncludesSubentities:YES];
+    NSError *err;
+    NSUInteger count = [self.managedObjectContext countForFetchRequest:request error:&err];
+    
+    if(count != NSNotFound && count > 25) {
+        return NO;
+        
+    }
+    
+    return YES;
+}
 
 -(void)updatePurchasedOptions{
     // Receive the original app receipt
