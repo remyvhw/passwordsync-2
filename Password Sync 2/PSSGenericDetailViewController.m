@@ -164,7 +164,7 @@
     
     
     
-    if (APP_DELEGATE.shouldPresentAds) {
+    if (APP_DELEGATE.shouldPresentAds && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         
         // Insert an ad
         
@@ -172,6 +172,7 @@
         
         CGFloat bannerHeight = 0.0;
         CGFloat bannerTopFromOrigin = 0.0;
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             // On the iPhone, the ad's height is 50 points
             bannerHeight = 50.;
@@ -186,7 +187,6 @@
         
         bannerView.frame = bannerRect;
         bannerView.delegate = self;
-        bannerView.alpha = 0.0;
         self.bannerView = bannerView;
         
         [self.view addSubview:bannerView];
@@ -265,11 +265,6 @@
     [self adjustContentInsetForBannerView];
 }
 
--(void)bannerViewWillLoadAd:(ADBannerView *)banner{
-    [UIView animateWithDuration:0.1 animations:^{
-        [self.bannerView setAlpha:1.0];
-    }];
-}
 
 
 @end

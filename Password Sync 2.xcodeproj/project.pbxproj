@@ -85,6 +85,7 @@
 		AD1DF669180210DE0046AF3C /* PSSSettingsImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */; };
 		AD1DF66B18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */; };
 		AD1DF66C18032F720046AF3C /* DocumentPlaceholder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */; };
+		AD239887181F15E200891343 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD239886181F15E200891343 /* BannerViewController.m */; };
 		AD2787A217813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2787A317813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */; };
 		AD2C5A8517BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C5A8417BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.m */; };
@@ -618,6 +619,8 @@
 		AD1DF666180210DE0046AF3C /* PSSSettingsImportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSettingsImportViewController.h; sourceTree = "<group>"; };
 		AD1DF667180210DE0046AF3C /* PSSSettingsImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSettingsImportViewController.m; sourceTree = "<group>"; };
 		AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DocumentPlaceholder.pdf; sourceTree = "<group>"; };
+		AD239885181F15E200891343 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		AD239886181F15E200891343 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		AD2787A017813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.h; sourceTree = "<group>"; };
 		AD2787A117813B64007257A5 /* PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSWelcomeScreenMasterPasswordGoodPracticesViewController.m; sourceTree = "<group>"; };
 		AD2C5A8317BC3BAE00C23AFA /* PSSTagsAndDirectoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSTagsAndDirectoriesTableViewController.h; sourceTree = "<group>"; };
@@ -1836,6 +1839,8 @@
 				ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */,
 				AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */,
 				AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */,
+				AD239885181F15E200891343 /* BannerViewController.h */,
+				AD239886181F15E200891343 /* BannerViewController.m */,
 				AD2C5A8D17BC3BE900C23AFA /* Generic controllers */,
 				ADAD160417ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.h */,
 				ADAD160517ADEA5B0035ABB4 /* PSSSplitViewGenericDetailNavigationViewController.m */,
@@ -2712,6 +2717,7 @@
 				AD9EFC9917DE72E80066013F /* OTPGenerator.m in Sources */,
 				ADAD161A17AE04760035ABB4 /* PSSLocationFavoritesViewController.m in Sources */,
 				AD8F5AEA17827F7D00702EFA /* PSSWelcomeScreenPasscodeFirstViewController.m in Sources */,
+				AD239887181F15E200891343 /* BannerViewController.m in Sources */,
 				AD10E77B17BDB6F400CF3402 /* CGImageContainer.m in Sources */,
 				AD2C9E3A17BF1472009D22EE /* PSSObjectsForTagOrCategoryViewController.m in Sources */,
 				AD9EFC9517DE72E80066013F /* HOTPGenerator.m in Sources */,
