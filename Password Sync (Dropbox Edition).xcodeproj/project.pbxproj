@@ -816,15 +816,15 @@
 		AD727A48179DE6230030707F /* PSSCardEmergencyContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSCardEmergencyContactTableViewController.h; sourceTree = "<group>"; };
 		AD727A49179DE6230030707F /* PSSCardEmergencyContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSCardEmergencyContactTableViewController.m; sourceTree = "<group>"; };
 		AD727A4A179DE6230030707F /* PSSCardEmergencyContactTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSCardEmergencyContactTableViewController.xib; sourceTree = "<group>"; };
-		AD72C3B9177B7E27009AADC8 /* Password Sync 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Sync 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD72C3B9177B7E27009AADC8 /* Password Sync (Dropbox Edition).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Sync (Dropbox Edition).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72C3BC177B7E27009AADC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD72C3BE177B7E27009AADC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AD72C3C0177B7E27009AADC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD72C3C2177B7E27009AADC8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Password Sync 2-Info.plist"; path = "Password Sync 2/Password Sync 2-Info.plist"; sourceTree = "<group>"; };
+		AD72C3C6177B7E27009AADC8 /* Password Sync (Dropbox Edition)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Password Sync (Dropbox Edition)-Info.plist"; path = "Password Sync 2/Password Sync (Dropbox Edition)-Info.plist"; sourceTree = "<group>"; };
 		AD72C3C8177B7E27009AADC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD72C3CA177B7E27009AADC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Password Sync 2/main.m"; sourceTree = "<group>"; };
-		AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Password Sync 2-Prefix.pch"; path = "Password Sync 2/Password Sync 2-Prefix.pch"; sourceTree = "<group>"; };
+		AD72C3CC177B7E27009AADC8 /* Password Sync (Dropbox Edition)-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Password Sync (Dropbox Edition)-Prefix.pch"; path = "Password Sync 2/Password Sync (Dropbox Edition)-Prefix.pch"; sourceTree = "<group>"; };
 		AD72C3CD177B7E27009AADC8 /* PSSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSAppDelegate.h; sourceTree = "<group>"; };
 		AD72C3CE177B7E27009AADC8 /* PSSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSAppDelegate.m; sourceTree = "<group>"; };
 		AD72C3D1177B7E27009AADC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -835,9 +835,9 @@
 		AD72C3DC177B7E27009AADC8 /* PSSGenericDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSGenericDetailTableViewController.h; sourceTree = "<group>"; };
 		AD72C3DD177B7E27009AADC8 /* PSSGenericDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSGenericDetailTableViewController.m; sourceTree = "<group>"; };
 		AD72C3DF177B7E27009AADC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Password Sync 2/Images.xcassets"; sourceTree = "<group>"; };
-		AD72C3E5177B7E28009AADC8 /* Password Sync 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password Sync 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD72C3E5177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password Sync (Dropbox Edition)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD72C3E6177B7E28009AADC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		AD72C3EF177B7E28009AADC8 /* Password Sync 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Sync 2Tests-Info.plist"; sourceTree = "<group>"; };
+		AD72C3EF177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Sync (Dropbox Edition)Tests-Info.plist"; sourceTree = "<group>"; };
 		AD72C3F1177B7E28009AADC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD72C3F3177B7E28009AADC8 /* Password_Sync_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_Sync_2Tests.m; sourceTree = "<group>"; };
 		AD746917179DEC720019E4B1 /* BankContactWebsiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankContactWebsiteCell.xib; sourceTree = "<group>"; };
@@ -1773,8 +1773,8 @@
 		AD72C3BA177B7E27009AADC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD72C3B9177B7E27009AADC8 /* Password Sync 2.app */,
-				AD72C3E5177B7E28009AADC8 /* Password Sync 2Tests.xctest */,
+				AD72C3B9177B7E27009AADC8 /* Password Sync (Dropbox Edition).app */,
+				AD72C3E5177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1895,7 +1895,7 @@
 		AD72C3EE177B7E28009AADC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD72C3EF177B7E28009AADC8 /* Password Sync 2Tests-Info.plist */,
+				AD72C3EF177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests-Info.plist */,
 				AD72C3F0177B7E28009AADC8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -2121,10 +2121,10 @@
 				AD1DF66A18032F720046AF3C /* DocumentPlaceholder.pdf */,
 				ADD8A31617A883350025DA42 /* Background JPG */,
 				AD7F800317B082E600A590FA /* OCRA.ttf */,
-				AD72C3C6177B7E27009AADC8 /* Password Sync 2-Info.plist */,
+				AD72C3C6177B7E27009AADC8 /* Password Sync (Dropbox Edition)-Info.plist */,
 				AD72C3C7177B7E27009AADC8 /* InfoPlist.strings */,
 				AD72C3CA177B7E27009AADC8 /* main.m */,
-				AD72C3CC177B7E27009AADC8 /* Password Sync 2-Prefix.pch */,
+				AD72C3CC177B7E27009AADC8 /* Password Sync (Dropbox Edition)-Prefix.pch */,
 				AD7B261A17C2E00D00701F52 /* Localizable.strings */,
 			);
 			name = Others;
@@ -2421,9 +2421,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD72C3B8177B7E27009AADC8 /* Password Sync 2 */ = {
+		AD72C3B8177B7E27009AADC8 /* Password Sync (Dropbox Edition) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD72C3F7177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync 2" */;
+			buildConfigurationList = AD72C3F7177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync (Dropbox Edition)" */;
 			buildPhases = (
 				AD72C3B5177B7E27009AADC8 /* Sources */,
 				AD72C3B6177B7E27009AADC8 /* Frameworks */,
@@ -2433,14 +2433,14 @@
 			);
 			dependencies = (
 			);
-			name = "Password Sync 2";
+			name = "Password Sync (Dropbox Edition)";
 			productName = "Password Sync 2";
-			productReference = AD72C3B9177B7E27009AADC8 /* Password Sync 2.app */;
+			productReference = AD72C3B9177B7E27009AADC8 /* Password Sync (Dropbox Edition).app */;
 			productType = "com.apple.product-type.application";
 		};
-		AD72C3E4177B7E28009AADC8 /* Password Sync 2Tests */ = {
+		AD72C3E4177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD72C3FA177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync 2Tests" */;
+			buildConfigurationList = AD72C3FA177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync (Dropbox Edition)Tests" */;
 			buildPhases = (
 				AD72C3E1177B7E28009AADC8 /* Sources */,
 				AD72C3E2177B7E28009AADC8 /* Frameworks */,
@@ -2451,9 +2451,9 @@
 			dependencies = (
 				AD72C3EC177B7E28009AADC8 /* PBXTargetDependency */,
 			);
-			name = "Password Sync 2Tests";
+			name = "Password Sync (Dropbox Edition)Tests";
 			productName = "Password Sync 2Tests";
-			productReference = AD72C3E5177B7E28009AADC8 /* Password Sync 2Tests.xctest */;
+			productReference = AD72C3E5177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -2488,7 +2488,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD72C3B4177B7E27009AADC8 /* Build configuration list for PBXProject "Password Sync 2" */;
+			buildConfigurationList = AD72C3B4177B7E27009AADC8 /* Build configuration list for PBXProject "Password Sync (Dropbox Edition)" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2526,8 +2526,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD72C3B8177B7E27009AADC8 /* Password Sync 2 */,
-				AD72C3E4177B7E28009AADC8 /* Password Sync 2Tests */,
+				AD72C3B8177B7E27009AADC8 /* Password Sync (Dropbox Edition) */,
+				AD72C3E4177B7E28009AADC8 /* Password Sync (Dropbox Edition)Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -3065,7 +3065,7 @@
 /* Begin PBXTargetDependency section */
 		AD72C3EC177B7E28009AADC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD72C3B8177B7E27009AADC8 /* Password Sync 2 */;
+			target = AD72C3B8177B7E27009AADC8 /* Password Sync (Dropbox Edition) */;
 			targetProxy = AD72C3EB177B7E28009AADC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -3288,9 +3288,9 @@
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
+				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync (Dropbox Edition)-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Password Sync 2/Password Sync 2-Info.plist";
+				INFOPLIST_FILE = "Password Sync 2/Password Sync (Dropbox Edition)-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
@@ -3298,7 +3298,7 @@
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Optional/openssl-1.0.1e/lib",
 				);
 				OTHER_LDFLAGS = "-lc++";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Password Sync (Dropbox Edition)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3318,9 +3318,9 @@
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
+				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync (Dropbox Edition)-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Password Sync 2/Password Sync 2-Info.plist";
+				INFOPLIST_FILE = "Password Sync 2/Password Sync (Dropbox Edition)-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
@@ -3328,7 +3328,7 @@
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Optional/openssl-1.0.1e/lib",
 				);
 				OTHER_LDFLAGS = "-lc++";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Password Sync (Dropbox Edition)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3351,13 +3351,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Password Sync 2Tests/Password Sync 2Tests-Info.plist";
+				INFOPLIST_FILE = "Password Sync 2Tests/Password Sync (Dropbox Edition)Tests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Password Sync (Dropbox Edition)Tests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -3376,13 +3376,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync 2-Prefix.pch";
-				INFOPLIST_FILE = "Password Sync 2Tests/Password Sync 2Tests-Info.plist";
+				INFOPLIST_FILE = "Password Sync 2Tests/Password Sync (Dropbox Edition)Tests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CardIO",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Password Sync (Dropbox Edition)Tests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -3391,7 +3391,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD72C3B4177B7E27009AADC8 /* Build configuration list for PBXProject "Password Sync 2" */ = {
+		AD72C3B4177B7E27009AADC8 /* Build configuration list for PBXProject "Password Sync (Dropbox Edition)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD72C3F5177B7E28009AADC8 /* Debug */,
@@ -3400,7 +3400,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD72C3F7177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync 2" */ = {
+		AD72C3F7177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync (Dropbox Edition)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD72C3F8177B7E28009AADC8 /* Debug */,
@@ -3409,7 +3409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD72C3FA177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync 2Tests" */ = {
+		AD72C3FA177B7E28009AADC8 /* Build configuration list for PBXNativeTarget "Password Sync (Dropbox Edition)Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD72C3FB177B7E28009AADC8 /* Debug */,

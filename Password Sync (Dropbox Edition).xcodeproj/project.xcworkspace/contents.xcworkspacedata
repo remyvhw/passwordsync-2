@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Password Sync 2.xcodeproj">
+      location = "self:Password Sync (Dropbox Edition).xcodeproj">
    </FileRef>
 </Workspace>

@@ -42,6 +42,7 @@
 #import "RMStoreKeychainPersistence.h"
 #import "RMAppReceipt.h"
 
+
 @import CoreData;
 
 @interface PSSAppDelegate ()
@@ -60,6 +61,64 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 #pragma mark In App Purchase configuration
+
+-(void)toggleUpgradeTabBarItem{
+    
+    // Look for an item with the @"Upgrade" title
+    __block BOOL itemAlreadyExists = NO;
+    __block UIViewController * upgradeViewController = nil;
+    
+    UITabBarController * appTabBar = (UITabBarController*)self.window.rootViewController;
+    
+    [appTabBar.viewControllers enumerateObjectsUsingBlock:^(UIViewController * obj, NSUInteger idx, BOOL *stop) {
+        
+        if ([obj.tabBarItem.title isEqualToString:NSLocalizedString(@"Upgrade", nil)]) {
+            itemAlreadyExists = YES;
+            upgradeViewController = obj;
+            *stop = YES;
+        }
+        
+    }];
+    
+    if (self.shouldPresentAds || !self.shouldAllowUnlimitedFeatures) {
+        
+        if (!itemAlreadyExists) {
+            // Show the upgrade item
+            PSSUpgradePurchasesAppViewController * upgradeViewController = [[PSSUpgradePurchasesAppViewController alloc] initWithNibName:@"PSSUpgradePurchasesAppViewController" bundle:[NSBundle mainBundle]];
+            
+            
+            NSMutableArray * tabBarViewControllers = [[NSMutableArray alloc] initWithArray:appTabBar.viewControllers];
+            
+            [tabBarViewControllers addObject:upgradeViewController];
+            
+            [appTabBar setViewControllers:tabBarViewControllers animated:YES];
+        }
+        
+    } else {
+        
+        // User bought everything
+        
+        if (itemAlreadyExists) {
+            // We should remove it
+            
+            NSMutableArray * tabBarViewControllers = [[NSMutableArray alloc] initWithArray:appTabBar.viewControllers];
+            
+            [tabBarViewControllers removeObject:upgradeViewController];
+            
+            [appTabBar setViewControllers:tabBarViewControllers animated:YES];
+            
+        }
+        
+    }
+    
+    
+    
+}
+
+-(void)paymentNotificationWasPosted:(NSNotification*)notification {
+    [self toggleUpgradeTabBarItem];
+}
+
 
 -(BOOL)shouldAllowNewData{
     
@@ -122,6 +181,8 @@
             self.shouldAllowUnlimitedFeatures = YES;
         }
         
+        
+        [self toggleUpgradeTabBarItem];
     }
 
     
@@ -521,6 +582,11 @@
     
     [Appirater appLaunched:YES];
     
+    
+    // Register to in app purchase notification
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paymentNotificationWasPosted:) name:PSSGlobalInAppPurchaseNotification object:nil];
+    
     return YES;
 }
 							
@@ -548,6 +614,8 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     [Appirater appEnteredForeground:YES];
+    
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -619,6 +687,8 @@
     });
     
     
+    
+    
 
     
 }
@@ -686,7 +756,9 @@
     NSArray *tabOrderToSave = tabBarController.viewControllers;
     for (UIViewController *aViewController in tabOrderToSave)
     {
+        
         [savedOrder addObject:aViewController.tabBarItem.title];
+        
     }
     return savedOrder;
 }
@@ -705,6 +777,7 @@
     
     if ([savedOrder count] > 0 )
     {
+        
         for (int i = 0; i < [savedOrder count]; i++)  // loop through saved tabs
         {
             BOOL tabFound = NO;
@@ -766,6 +839,10 @@
 
         }];
     }
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Core Data stack

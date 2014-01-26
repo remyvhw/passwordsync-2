@@ -85,6 +85,10 @@ dispatch_queue_t backgroundQueue;
         
     }
     
+    if (!APP_DELEGATE.shouldPresentAds && APP_DELEGATE.shouldAllowUnlimitedFeatures) {
+        [self.totalButton setTitle:@"✓" forState:UIControlStateNormal];
+    }
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -92,8 +96,15 @@ dispatch_queue_t backgroundQueue;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = NSLocalizedString(@"Upgrade", nil);
+        self.tabBarItem.image = [UIImage imageNamed:@"Keyhole"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"Keyhole-selected"];
     }
     return self;
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad
@@ -184,6 +195,9 @@ dispatch_queue_t backgroundQueue;
     
     [self refreshViewForCurrentStatusAnimated:NO];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paymentNotificationWasPosted:) name:PSSGlobalInAppPurchaseNotification object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,7 +212,9 @@ dispatch_queue_t backgroundQueue;
         
         
         APP_DELEGATE.shouldAllowUnlimitedFeatures = YES;
-        [self refreshViewForCurrentStatusAnimated:YES];
+        
+        [self postPaymentNotification];
+        
         
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
         
@@ -211,12 +227,18 @@ dispatch_queue_t backgroundQueue;
 
 - (IBAction)totalAction:(id)sender {
     
+    [self postPaymentNotification];
+    APP_DELEGATE.shouldAllowUnlimitedFeatures = YES;
+    APP_DELEGATE.shouldPresentAds = NO;
+    return;
+    
     [[RMStore defaultStore] addPayment:PSSPasswordSyncTwoRemoveAdsAndAllowUnlimitedItems success:^(SKPaymentTransaction *transaction) {
         
         
         APP_DELEGATE.shouldAllowUnlimitedFeatures = YES;
         APP_DELEGATE.shouldPresentAds = NO;
-        [self refreshViewForCurrentStatusAnimated:YES];
+        
+        [self postPaymentNotification];
         
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
         
@@ -233,7 +255,8 @@ dispatch_queue_t backgroundQueue;
         
         
         APP_DELEGATE.shouldPresentAds = NO;
-        [self refreshViewForCurrentStatusAnimated:YES];
+        
+        [self postPaymentNotification];
         
     } failure:^(SKPaymentTransaction *transaction, NSError *error) {
         
@@ -242,6 +265,14 @@ dispatch_queue_t backgroundQueue;
         
     }];
     
+}
+
+-(void)paymentNotificationWasPosted:(NSNotification*)notification{
+    [self refreshViewForCurrentStatusAnimated:YES];
+}
+
+-(void)postPaymentNotification{
+    [[NSNotificationCenter defaultCenter] postNotificationName:PSSGlobalInAppPurchaseNotification object:self];
 }
 
 #pragma mark - UIActionSheetDelegate methods
