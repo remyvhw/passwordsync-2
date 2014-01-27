@@ -132,6 +132,10 @@
 		AD372EC117EF805000618BF0 /* IGXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EB717EF805000618BF0 /* IGXMLNode.m */; };
 		AD372EC217EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
 		AD372EC317EF805000618BF0 /* IGXMLNodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */; };
+		AD3F70051895CA6F006F8BC9 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3F70041895CA6F006F8BC9 /* Dropbox.framework */; };
+		AD3F70071895CA93006F8BC9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3F70061895CA93006F8BC9 /* CFNetwork.framework */; };
+		AD3F70091895CB5A006F8BC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3F70081895CB59006F8BC9 /* SystemConfiguration.framework */; };
+		AD3F700B1895CB66006F8BC9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3F700A1895CB66006F8BC9 /* libc++.dylib */; };
 		AD41CE4517DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD41CE4617DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD41CE4317DAB5E60095C090 /* FirstLaunchStoryboard_iPad.storyboard */; };
 		AD42B42117FDFF330058917D /* PSSCSVColumnSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD42B42017FDFF330058917D /* PSSCSVColumnSelectorTableViewController.m */; };
@@ -494,6 +498,8 @@
 		ADCD58E1181D94EF00BA5F8E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCD58E0181D94EF00BA5F8E /* iAd.framework */; };
 		ADCD58E5181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD58E3181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m */; };
 		ADCD58E6181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD58E4181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib */; };
+		ADD555EE1895CF9D002448F9 /* libParcelKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD555ED1895CF9D002448F9 /* libParcelKit.a */; };
+		ADD555F01895D4D5002448F9 /* ParcelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD555EF1895D4D5002448F9 /* ParcelKit.framework */; };
 		ADD8A31017A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADD8A31117A87F040025DA42 /* PSSSplashWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */; };
 		ADDCADEE17D90F3B00F3B8F7 /* UnlockPrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDCADF117D90F3B00F3B8F7 /* UnlockPrompt.storyboard */; };
@@ -666,6 +672,10 @@
 		AD372EB917EF805000618BF0 /* IGXMLNodeQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeQuery.h; sourceTree = "<group>"; };
 		AD372EBA17EF805000618BF0 /* IGXMLNodeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGXMLNodeSet.h; sourceTree = "<group>"; };
 		AD372EBB17EF805000618BF0 /* IGXMLNodeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGXMLNodeSet.m; sourceTree = "<group>"; };
+		AD3F70041895CA6F006F8BC9 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		AD3F70061895CA93006F8BC9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AD3F70081895CB59006F8BC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AD3F700A1895CB66006F8BC9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		AD41CE4417DAB5E60095C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstLaunchStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AD41CE4817DAB5F20095C090 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/FirstLaunchStoryboard_iPad.strings; sourceTree = "<group>"; };
 		AD41CE4A17DBB0B20095C090 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FirstLaunchStoryboard_iPad.strings"; sourceTree = "<group>"; };
@@ -1085,6 +1095,8 @@
 		ADCD58E2181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSUpgradePurchasesAppViewController.h; sourceTree = "<group>"; };
 		ADCD58E3181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSUpgradePurchasesAppViewController.m; sourceTree = "<group>"; };
 		ADCD58E4181DD56200BA5F8E /* PSSUpgradePurchasesAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSUpgradePurchasesAppViewController.xib; sourceTree = "<group>"; };
+		ADD555ED1895CF9D002448F9 /* libParcelKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libParcelKit.a; sourceTree = "<group>"; };
+		ADD555EF1895D4D5002448F9 /* ParcelKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParcelKit.framework; sourceTree = "<group>"; };
 		ADD8A30E17A87F040025DA42 /* PSSSplashWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSSplashWelcomeViewController.h; sourceTree = "<group>"; };
 		ADD8A30F17A87F040025DA42 /* PSSSplashWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSSplashWelcomeViewController.m; sourceTree = "<group>"; };
 		ADDC8BCB177CF83100021D92 /* Password Sync 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Password Sync 2.entitlements"; sourceTree = "<group>"; };
@@ -1172,10 +1184,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3F700B1895CB66006F8BC9 /* libc++.dylib in Frameworks */,
+				AD3F70091895CB5A006F8BC9 /* SystemConfiguration.framework in Frameworks */,
+				AD3F70071895CA93006F8BC9 /* CFNetwork.framework in Frameworks */,
 				ADCD58E1181D94EF00BA5F8E /* iAd.framework in Frameworks */,
 				AD53ADD717C53D3C000B9722 /* libTestFlight.a in Frameworks */,
 				AD547FE017A1C679008FAFFB /* MediaPlayer.framework in Frameworks */,
 				ADCD58D8181D943B00BA5F8E /* libssl.a in Frameworks */,
+				ADD555EE1895CF9D002448F9 /* libParcelKit.a in Frameworks */,
 				AD547FDE17A1C667008FAFFB /* CoreImage.framework in Frameworks */,
 				AD547FDC17A1C653008FAFFB /* ImageIO.framework in Frameworks */,
 				ADFA1A1D179258410038EF14 /* QuartzCore.framework in Frameworks */,
@@ -1186,11 +1202,13 @@
 				ADFA1A15179257F80038EF14 /* AudioToolbox.framework in Frameworks */,
 				ADFA1A13179257EF0038EF14 /* AVFoundation.framework in Frameworks */,
 				ADA0E54B179249B900F284B9 /* libxml2.dylib in Frameworks */,
+				ADD555F01895D4D5002448F9 /* ParcelKit.framework in Frameworks */,
 				AD821073177D37FA00B6F501 /* Security.framework in Frameworks */,
 				AD82101F177CFB2900B6F501 /* StoreKit.framework in Frameworks */,
 				AD940E5B17A8651C001442F0 /* opencv2.framework in Frameworks */,
 				ADFA1A10179257BB0038EF14 /* libCardIO.a in Frameworks */,
 				AD72C3BF177B7E27009AADC8 /* CoreGraphics.framework in Frameworks */,
+				AD3F70051895CA6F006F8BC9 /* Dropbox.framework in Frameworks */,
 				AD72C3C3177B7E27009AADC8 /* CoreData.framework in Frameworks */,
 				AD72C3C1177B7E27009AADC8 /* UIKit.framework in Frameworks */,
 				AD72C3BD177B7E27009AADC8 /* Foundation.framework in Frameworks */,
@@ -1504,6 +1522,14 @@
 			name = "Favicon Fetcher";
 			sourceTree = "<group>";
 		};
+		AD3F70031895C39C006F8BC9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				ADFA1A0C179257BB0038EF14 /* CardIOCreditCardInfo.h */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		AD4553B417C7E3A700A5C395 /* MSCMoreOptionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1782,6 +1808,12 @@
 		AD72C3BB177B7E27009AADC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADD555EF1895D4D5002448F9 /* ParcelKit.framework */,
+				ADD555ED1895CF9D002448F9 /* libParcelKit.a */,
+				AD3F700A1895CB66006F8BC9 /* libc++.dylib */,
+				AD3F70081895CB59006F8BC9 /* SystemConfiguration.framework */,
+				AD3F70061895CA93006F8BC9 /* CFNetwork.framework */,
+				AD3F70041895CA6F006F8BC9 /* Dropbox.framework */,
 				ADCD58E0181D94EF00BA5F8E /* iAd.framework */,
 				ADCD5874181D943B00BA5F8E /* Optional */,
 				ADCD58D3181D943B00BA5F8E /* RMStore-Prefix.pch */,
@@ -2408,7 +2440,7 @@
 			isa = PBXGroup;
 			children = (
 				ADFA1A0B179257BB0038EF14 /* CardIO.h */,
-				ADFA1A0C179257BB0038EF14 /* CardIOCreditCardInfo.h */,
+				AD3F70031895C39C006F8BC9 /* New Group */,
 				ADFA1A0D179257BB0038EF14 /* CardIOPaymentViewController.h */,
 				ADFA1A0E179257BB0038EF14 /* CardIOPaymentViewControllerDelegate.h */,
 				AD5E93F817F221D500152018 /* CardIOView.h */,
@@ -3286,6 +3318,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ (Dropbox\\ edition)/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync (Dropbox Edition)-Prefix.pch";
@@ -3296,6 +3329,7 @@
 					"$(SRCROOT)/CardIO",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Optional/openssl-1.0.1e/lib",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ (Dropbox\\ edition)/Password\\ Sync\\ 2",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "Password Sync (Dropbox Edition)";
@@ -3316,6 +3350,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ (Dropbox\\ edition)/Password\\ Sync\\ 2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Sync 2/Password Sync (Dropbox Edition)-Prefix.pch";
@@ -3326,6 +3361,7 @@
 					"$(SRCROOT)/CardIO",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2",
 					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Password\\ Sync\\ 2/Optional/openssl-1.0.1e/lib",
+					"/Users/remy/Development/iOS/Password\\ Sync/Password\\ Sync\\ 2/Password\\ Sync\\ (Dropbox\\ edition)/Password\\ Sync\\ 2",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "Password Sync (Dropbox Edition)";

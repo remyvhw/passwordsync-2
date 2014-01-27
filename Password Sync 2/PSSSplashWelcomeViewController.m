@@ -8,10 +8,12 @@
 
 #import "PSSSplashWelcomeViewController.h"
 #import "UIImage+ImageEffects.h"
+#import <Dropbox/Dropbox.h>
 
 @interface PSSSplashWelcomeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *welcomeText;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
+- (IBAction)connectToDropboxButton:(id)sender;
 
 @end
 
@@ -78,4 +80,14 @@
 
 
 
+- (IBAction)connectToDropboxButton:(id)sender {
+    
+    DBAccount *account = [[DBAccountManager sharedManager] linkedAccount];
+    if (account) {
+        
+    } else {
+        [[DBAccountManager sharedManager] linkFromController:self];
+    }
+    
+}
 @end

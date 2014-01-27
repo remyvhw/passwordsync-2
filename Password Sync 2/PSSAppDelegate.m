@@ -42,6 +42,8 @@
 #import "RMStoreKeychainPersistence.h"
 #import "RMAppReceipt.h"
 
+#import <Dropbox/Dropbox.h>
+#import <ParcelKit/ParcelKit.h>
 
 @import CoreData;
 
@@ -537,15 +539,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"1015eec8-43ae-46ec-9727-09a056b8ee95"];
+    [TestFlight takeOff:@"581bc76b-bb17-405b-9539-fc6fb3b41f33"];
     
     // Start iCloud synchronization of NSUserDefaults
     [MKiCloudSync start];
     
     [Appirater setAppId:@"701814886"];
     
+    // Dropbox api
+    DBAccountManager *accountManager =
+    [[DBAccountManager alloc] initWithAppKey:@"gwpf7v7zuazzth1" secret:@"lwbzhdh8srhrftn"];
+    [DBAccountManager setSharedManager:accountManager];
     
     [self configureStore];
+    
+    
     
     UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (locationNotification) {
@@ -712,7 +720,13 @@
         
         return [dataImporter handleImportURL:url];
         
-    } else if ([[url scheme] isEqualToString:@"db-n8f8upv1u23hrso"]) {
+    } else if ([[url scheme] isEqualToString:@"db-gwpf7v7zuazzth1"]) {
+        
+        DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
+        if (account) {
+            NSLog(@"App linked successfully!");
+            return YES;
+        }
         
         if ([[DBChooser defaultChooser] handleOpenURL:url]) {
             // This was a Chooser response and handleOpenURL automatically ran the

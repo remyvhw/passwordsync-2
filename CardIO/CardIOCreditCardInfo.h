@@ -1,6 +1,6 @@
 //
 //  CardIOCreditCardInfo.h
-//  Version 3.3.0
+//  Version 3.4.4
 //
 //  Copyright (c) 2011-2013 PayPal. All rights reserved.
 //
@@ -63,8 +63,10 @@ typedef NS_ENUM(NSInteger, CardIOCreditCardType) {
 
 
 /// Derived from cardNumber.
-/// @note CardIOCreditInfo objects returned by userDidProvideCreditCardInfo:inPaymentViewController:
-///       will never return a cardType of CardIOCreditCardTypeUnrecognized or CardIOCreditCardTypeAmbiguous.
+/// @note CardIOCreditInfo objects returned by either of the delegate methods
+///       userDidProvideCreditCardInfo:inPaymentViewController:
+///       or cardIOView:didScanCard:
+///       will never return a cardType of CardIOCreditCardTypeAmbiguous.
 @property(nonatomic, assign, readonly) CardIOCreditCardType cardType;
 
 /// Convenience method which returns a card type string suitable for display (e.g. "Visa", "American Express", "JCB", "MasterCard", or "Discover").
